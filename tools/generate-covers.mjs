@@ -216,6 +216,69 @@ const covers = {
       sun(260, 200, 60, false),
     C.cream,
   ),
+
+  "vitamines": svg(
+    "Tranches d'agrumes et feuilles sur fond crème",
+    `<circle cx="600" cy="420" r="310" fill="#FFEFC9"/>` +
+      [
+        [470, 360, 110, C.orange, "#FFB35C"],
+        [700, 330, 90, C.sun, "#FFE08A"],
+        [620, 540, 100, C.leafLight, "#E4F4D2"],
+      ]
+        .map(([x, y, s, rind, flesh]) => {
+          let seg = "";
+          for (let i = 0; i < 8; i++) {
+            const a = (i * Math.PI) / 4;
+            seg += `<path d="M${x} ${y} L${r(x + Math.cos(a) * (s - 18))} ${r(y + Math.sin(a) * (s - 18))}" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>`;
+          }
+          return `<circle cx="${x}" cy="${y}" r="${s}" fill="${rind}"/><circle cx="${x}" cy="${y}" r="${s - 14}" fill="${flesh}"/>${seg}<circle cx="${x}" cy="${y}" r="10" fill="#fff" fill-opacity=".8"/>`;
+        })
+        .join("") +
+      leaf({ x: 300, y: 760, len: 260, width: 64, angle: -32, fill: C.leaf }) +
+      leaf({ x: 900, y: 760, len: 240, width: 60, angle: 30, fill: C.forest }),
+    C.cream,
+  ),
+
+  "mobilite": svg(
+    "Chemin sinueux à travers des collines, évoquant le mouvement",
+    bgGradient("bg9", "#F1F9F1", C.mint) +
+      `<rect width="${W}" height="${H}" fill="url(#bg9)"/>` +
+      sun(940, 200, 80, false) +
+      `<path d="M0 480 Q320 380 640 460 T1200 420 V800 H0Z" fill="${C.leafLight}"/>` +
+      `<path d="M0 600 Q300 520 620 590 T1200 560 V800 H0Z" fill="${C.leaf}"/>` +
+      `<path d="M520 800 C560 700 700 660 640 590 S520 520 600 470" fill="none" stroke="${C.cream}" stroke-width="34" stroke-linecap="round"/>` +
+      leaf({ x: 180, y: 760, len: 220, width: 52, angle: -16, fill: C.forest }) +
+      leaf({ x: 1040, y: 760, len: 200, width: 50, angle: 20, fill: C.olive }),
+    C.mint,
+  ),
+
+  "apres-soleil": svg(
+    "Soleil couchant et feuilles d'aloe vera perlées de gouttes",
+    bgGradient("bg10", "#FFE7CF", "#FFF3D6") +
+      `<rect width="${W}" height="${H}" fill="url(#bg10)"/>` +
+      sun(820, 300, 130) +
+      aloeLeaf({ x: 420, y: 840, len: 600, width: 68, angle: -12 }) +
+      aloeLeaf({ x: 500, y: 840, len: 480, width: 58, angle: 18 }) +
+      aloeLeaf({ x: 340, y: 840, len: 420, width: 54, angle: -40 }) +
+      drop(470, 420, 16) +
+      drop(520, 520, 10) +
+      drop(400, 560, 8),
+    C.cream,
+  ),
+
+  "anti-age": svg(
+    "Pétales et gouttes d'huile, évoquant un soin du visage",
+    `<circle cx="600" cy="420" r="300" fill="${C.mint}"/>` +
+      [0, 60, 120, 180, 240, 300]
+        .map((a) => leaf({ x: 600, y: 420, len: 230, width: 74, angle: a, fill: a % 120 === 0 ? C.leaf : C.leafLight, rib: false, opacity: 0.9 }))
+        .join("") +
+      `<circle cx="600" cy="420" r="54" fill="url(#sun)"/>` +
+      drop(820, 250, 22) +
+      drop(380, 600, 16) +
+      drop(860, 600, 12) +
+      leaf({ x: 260, y: 780, len: 220, width: 56, angle: -30, fill: C.forest }),
+    C.cream,
+  ),
 };
 
 

@@ -5,6 +5,7 @@ category: beaute
 date: 2026-10-08
 cover: /covers/aloe-peau.svg
 coverAlt: "Illustration de feuilles d'aloe vera perlées de gouttes d'eau sous un soleil levant"
+products: [aloe-vera-emergency-spray, aloe-vera-dermaintense-creme-regeneratrice]
 featured: true
 ---
 

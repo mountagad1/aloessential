@@ -5,6 +5,7 @@ category: conseils
 date: 2026-10-01
 cover: /covers/gel-aloe.svg
 coverAlt: "Illustration d'une goutte de gel d'aloe vera translucide entourée de feuilles"
+products: [aloe-vera-emergency-spray]
 ---
 
 Face aux dizaines de gels « à l'aloe vera » proposés en magasin, difficile de s'y retrouver. Quelques repères simples permettent de faire un choix éclairé.

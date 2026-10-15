@@ -5,6 +5,7 @@ category: sante
 date: 2026-09-24
 cover: /covers/jus-aloe.svg
 coverAlt: "Illustration d'un verre de jus vert pâle à côté d'une feuille d'aloe vera"
+products: [aloe-vera-drinking-gel-active-freedom, aloe-vera-gel-a-boire-immune-plus]
 ---
 
 Le jus d'aloe vera s'est fait une place dans les rayons bien-être. Mais entre les allégations commerciales et les données scientifiques, l'écart est parfois important.
