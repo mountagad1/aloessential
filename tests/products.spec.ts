@@ -40,6 +40,8 @@ test.describe("product page", () => {
     await page.waitForTimeout(1000);
     const disclosure = page.locator(".product-hero .disclosure-inline");
     await expect(disclosure).toContainText("Lien partenaire");
+    // Directly under the first CTA, whatever the screen height.
+    await expect(page.locator(".product-hero__actions + .disclosure-inline")).toHaveCount(1);
     await expect(disclosure).toBeInViewport();
     await disclosure.getByRole("link", { name: "En savoir plus" }).click();
     await expect(page).toHaveURL(/\/transparence\/$/);

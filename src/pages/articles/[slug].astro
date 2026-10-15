@@ -7,6 +7,7 @@ import ReadingProgress from "../../components/ReadingProgress.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
 import ProductCallout from "../../components/ProductCallout.astro";
 import { resolvePublished } from "../../lib/products";
+import { articleLd, breadcrumbLd, organizationLd } from "../../lib/seo";
 import { CATEGORIES } from "../../data/categories";
 import { formatDate, getArticles, readingTime, type Article } from "../../lib/articles";
 
@@ -27,10 +28,23 @@ const cat = CATEGORIES[category];
 const products = await resolvePublished(article.data.products);
 
 const others = all.filter((a) => a.id !== article.id);
+const path = `/articles/${article.id}/`;
+const jsonLd = [
+  organizationLd(Astro.site),
+  articleLd({ title, description, date, cover, path }, Astro.site),
+  breadcrumbLd(
+    [
+      { name: "Accueil", path: "/" },
+      { name: cat.label, path: `/rubriques/${cat.slug}/` },
+      { name: title, path },
+    ],
+    Astro.site,
+  ),
+];
 const related = [...others.filter((a) => a.data.category === category), ...others.filter((a) => a.data.category !== category)].slice(0, 3);
 ---
 
-<BaseLayout title={title} description={description} current={category}>
+<BaseLayout title={title} description={description} current={category} ogType="article" jsonLd={jsonLd}>
   <article class="article" data-article>
     <ReadingProgress />
 

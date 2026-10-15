@@ -8,6 +8,7 @@ import StickyCta from "../../components/StickyCta.astro";
 import { CATEGORIES } from "../../data/categories";
 import { formatDate, getArticles } from "../../lib/articles";
 import { getPublishedProducts, KIND_LABEL, SUPPLEMENT_MENTIONS, type Product } from "../../lib/products";
+import { breadcrumbLd } from "../../lib/seo";
 
 export async function getStaticPaths() {
   const products = await getPublishedProducts();
@@ -29,9 +30,22 @@ const citing = articles.filter((a) => a.data.products.some((ref) => ref.id === p
 const related = [...citing, ...articles.filter((a) => !citing.includes(a) && a.data.category === d.category)].slice(0, 3);
 
 const isSupplement = d.kind === "complement";
+
+// The page reviews the product; it does not sell it, so no Product/Offer markup.
+const seoTitle = `${d.name} : composition et avis`;
+const jsonLd = [
+  breadcrumbLd(
+    [
+      { name: "Accueil", path: "/" },
+      { name: "Produits", path: "/produits/" },
+      { name: d.name, path: `/produits/${product.id}/` },
+    ],
+    Astro.site,
+  ),
+];
 ---
 
-<BaseLayout title={d.name} description={d.summary} current="produits">
+<BaseLayout title={seoTitle} description={d.tagline} current="produits" jsonLd={jsonLd}>
   <article class="product">
     <header class="product-hero">
       <div class="container product-hero__grid">
@@ -56,15 +70,16 @@ const isSupplement = d.kind === "complement";
             <ShopButton href={d.shopUrl} productName={d.name} />
             <a class="btn btn--outline" href="#avis">Lire notre avis <Icon name="arrow-right" class="btn__icon" /></a>
           </div>
+          <!-- Right under the first CTA, so it is read before any click. -->
+          <p class="disclosure-inline" data-hero-step style="--step: 3">
+            <Icon name="info" /> Lien partenaire : nous pouvons percevoir une commission, sans surcoût pour vous.{" "}
+            <a href="/transparence/">En savoir plus</a>
+          </p>
           <ul class="product-facts" data-hero-step style="--step: 3">
             {d.format && <li><Icon name="check" /> {d.format}</li>}
             <li><Icon name="check" /> Réf. LR {d.sku}</li>
             <li><Icon name="check" /> Prix et disponibilité sur la boutique officielle</li>
           </ul>
-          <p class="disclosure-inline" data-hero-step style="--step: 3">
-            <Icon name="info" /> Lien partenaire : nous pouvons percevoir une commission, sans surcoût pour vous.{" "}
-            <a href="/transparence/">En savoir plus</a>
-          </p>
         </div>
       </div>
     </header>

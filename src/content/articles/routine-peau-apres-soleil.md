@@ -1,6 +1,6 @@
 ---
 title: "Peau sensible après le soleil : la routine qui apaise"
-description: "Rafraîchir, nettoyer en douceur, hydrater, protéger : une routine simple pour retrouver une peau confortable après une journée au soleil, et les signes qui doivent faire consulter."
+description: "Rafraîchir, nettoyer en douceur, hydrater, protéger : la routine qui apaise une peau sensible après le soleil, et quand consulter."
 category: beaute
 date: 2026-10-14
 cover: /covers/apres-soleil.svg

@@ -7,7 +7,7 @@ status: published
 kind: complement
 category: sante
 range: "Démonstration"
-tagline: "Un produit fictif pour tester le gabarit."
+tagline: "Un produit fictif qui sert uniquement à tester le gabarit des fiches produit."
 summary: "Fiche fictive utilisée par les tests automatisés : elle exerce chaque bloc du gabarit produit."
 format: "1 000 ml"
 highlights:

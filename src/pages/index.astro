@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { organizationLd, websiteLd } from "../lib/seo";
 import Hero from "../components/Hero.astro";
 import FeaturedArticle from "../components/FeaturedArticle.astro";
 import CardGrid from "../components/CardGrid.astro";
@@ -18,9 +19,11 @@ const pillars = [
   { icon: "drop", title: "Équilibre", text: "Un mode de vie plus harmonieux" },
   { icon: "heart", title: "Bien-être", text: "Pour le corps et l'esprit" },
 ] as const;
+const jsonLd = [organizationLd(Astro.site), websiteLd(Astro.site)];
 ---
 
 <BaseLayout
+  jsonLd={jsonLd}
   title="Aloessential"
   description="Conseils, santé, beauté et nutrition au naturel : Aloessential, votre source bien-être pour une vie plus saine et plus équilibrée."
 >

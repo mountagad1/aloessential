@@ -6,7 +6,10 @@ export default defineConfig({
   output: "static",
   // Test builds include fictional fixture content: keep them out of dist/.
   outDir: process.env.CONTENT_FIXTURES ? "./dist-test" : "./dist",
-  trailingSlash: "ignore",
+  // Canonical origin (docs/seo/ALOESSENTIAL_BASELINE.md, decision of 2026-10-15):
+  // apex domain, every page URL ends with a slash.
+  site: "https://aloessential.com",
+  trailingSlash: "always",
   build: {
     // Small stylesheets are inlined to save a request on first paint.
     inlineStylesheets: "auto",

@@ -1,6 +1,6 @@
 ---
 title: "Soin anti-âge : quels actifs pour quels besoins ?"
-description: "Protection solaire, rétinol, vitamine C, niacinamide, acide hyaluronique : ce que font vraiment les actifs des soins anti-âge, comment les associer et quoi attendre d'une crème."
+description: "Protection solaire, rétinol, vitamine C, niacinamide, acide hyaluronique : ce que font vraiment les actifs anti-âge et comment les associer."
 category: beaute
 date: 2026-10-10
 cover: /covers/anti-age.svg

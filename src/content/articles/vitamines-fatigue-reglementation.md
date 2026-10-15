@@ -1,6 +1,6 @@
 ---
 title: "Vitamines et fatigue : ce que dit vraiment la réglementation"
-description: "Quelles vitamines et quels minéraux peuvent légalement « contribuer à réduire la fatigue » ? Comment lire les VNR sur une étiquette, et quand la fatigue mérite plutôt un avis médical."
+description: "Quels nutriments peuvent « contribuer à réduire la fatigue » ? Lire les VNR sur une étiquette, et savoir quand la fatigue mérite un avis médical."
 category: sante
 date: 2026-10-13
 cover: /covers/vitamines.svg

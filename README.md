@@ -44,6 +44,7 @@ tests/                Playwright suite
 ```bash
 python3 tools/prepare-brand-assets.py   # wordmark (colour and white), emblem, favicons
 node tools/generate-covers.mjs          # cover illustrations
+python3 tools/generate-og-image.py       # default share image (public/brand/og-default.png)
 ```
 
 ## Adding an article
@@ -61,6 +62,14 @@ coverAlt: "Description de l'image"
 featured: false      # true puts it in "À la une" on the homepage
 ---
 ```
+
+## SEO foundations
+
+- Canonical origin: `https://aloessential.com`, every page URL ends with `/` (`site` and `trailingSlash: "always"` in `astro.config.mjs`).
+- `src/layouts/BaseLayout.astro` emits the canonical, Open Graph (shared image `public/brand/og-default.png`) and one JSON-LD `@graph` per page; helpers live in `src/lib/seo.ts`.
+- `/sitemap.xml` and `/robots.txt` are generated from the content (`src/pages/sitemap.xml.ts`, `src/pages/robots.txt.ts`); drafts and the 404 page are never listed.
+- Structured data only describes what a page shows: Organization, WebSite, Article, BreadcrumbList. No Product, Offer, Review or rating markup.
+- `tests/seo.spec.ts` checks canonicals, title and description lengths, JSON-LD, the sitemap and trailing slashes on every built page.
 
 ## Product pages (LR partner selection)
 

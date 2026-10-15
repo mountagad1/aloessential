@@ -6,16 +6,25 @@ import Footer from "../components/Footer.astro";
 import poppins600 from "@fontsource/poppins/files/poppins-latin-600-normal.woff2?url";
 import poppins700 from "@fontsource/poppins/files/poppins-latin-700-normal.woff2?url";
 import interLatin from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
+import { DEFAULT_OG_IMAGE, SITE_LOCALE, SITE_NAME, absoluteUrl, graph } from "../lib/seo";
 
 interface Props {
   title: string;
   description: string;
   /** Category slug (or "articles") highlighted in the navigation. */
   current?: string;
+  /** Open Graph type: "article" for articles, "website" otherwise. */
+  ogType?: "website" | "article";
+  /** schema.org nodes for this page, emitted as one JSON-LD @graph. */
+  jsonLd?: Record<string, unknown>[];
+  /** Error pages: no canonical, kept out of the index. */
+  noindex?: boolean;
 }
 
-const { title, description, current } = Astro.props;
+const { title, description, current, ogType = "website", jsonLd = [], noindex = false } = Astro.props;
 const fullTitle = title === "Aloessential" ? "Aloessential — Naturellement essentiel" : `${title} · Aloessential`;
+const canonical = absoluteUrl(Astro.url.pathname, Astro.site);
+const ogImage = absoluteUrl(DEFAULT_OG_IMAGE, Astro.site);
 ---
 
 <!doctype html>
@@ -25,10 +34,19 @@ const fullTitle = title === "Aloessential" ? "Aloessential — Naturellement ess
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
     <meta name="theme-color" content="#0F5132" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:locale" content={SITE_LOCALE} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    {!noindex && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {jsonLd.length > 0 && <script type="application/ld+json" set:html={graph(jsonLd)} />}
     <link rel="preload" href={poppins700} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={poppins600} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />

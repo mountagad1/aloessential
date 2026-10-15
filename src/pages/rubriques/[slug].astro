@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { breadcrumbLd } from "../../lib/seo";
 import CardGrid from "../../components/CardGrid.astro";
 import Newsletter from "../../components/Newsletter.astro";
 import { CATEGORIES, categoryList, type CategorySlug } from "../../data/categories";
@@ -12,9 +13,18 @@ export function getStaticPaths() {
 const slug = Astro.params.slug as CategorySlug;
 const category = CATEGORIES[slug];
 const articles = (await getArticles()).filter((a) => a.data.category === slug);
+const jsonLd = [
+  breadcrumbLd(
+    [
+      { name: "Accueil", path: "/" },
+      { name: category.label, path: `/rubriques/${slug}/` },
+    ],
+    Astro.site,
+  ),
+];
 ---
 
-<BaseLayout title={category.label} description={category.description} current={slug}>
+<BaseLayout title={category.label} description={category.description} current={slug} jsonLd={jsonLd}>
   <header class="page-header">
     <div class="container">
       <p class="eyebrow" data-hero-step style="--step: 0">Rubrique</p>

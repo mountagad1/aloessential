@@ -1,6 +1,6 @@
 ---
 title: "Articulations et mobilité : les bons gestes au quotidien"
-description: "Bouger régulièrement, renforcer ses muscles, bien manger : ce qui aide vraiment à rester mobile, ce que les compléments peuvent légalement promettre, et quand consulter."
+description: "Bouger, renforcer ses muscles, bien manger : ce qui aide à rester mobile, ce que les compléments peuvent promettre et quand consulter."
 category: sante
 date: 2026-10-12
 cover: /covers/mobilite.svg

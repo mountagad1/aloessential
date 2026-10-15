@@ -11,17 +11,17 @@
 | --- | --- | --- | --- | --- |
 | R01 | Pas de mentions légales | Légal / confiance | P0 | Élevée |
 | R02 | Pas de politique de confidentialité, newsletter sans information RGPD | Légal / RGPD | P0 (avant d'activer la newsletter) | Élevée |
-| R03 | Aucune URL de référence : pas de `site`, de canonical, de sitemap ni de `robots.txt` | SEO technique | P0 | Élevée |
+| R03 | Aucune URL de référence : pas de `site`, de canonical, de sitemap ni de `robots.txt` | SEO technique | P0 → **traité dans le code** (redirections hébergeur à faire) | Élevée |
 | R04 | Hébergement, domaine et statut en ligne inconnus | Données / technique | P0 | Élevée |
 | R05 | Aucune mesure : pas de Search Console vérifiable ici, pas d'analytics | Données | P0 | Élevée |
 | R06 | Contenus santé sans auteur, sans relecteur et sans sources | E-E-A-T / YMYL / conformité | P1 | Élevée |
 | R07 | Conformité aux règles LR pour les sites de partenaires non vérifiée | Affiliation / marque | P1 | Faible (inconnu) |
 | R08 | Antériorité de marque « Aloe Essentials » | Marque | P1 | Faible (à vérifier) |
-| R09 | Aucune donnée structurée | SEO / GEO | P1 | Élevée |
+| R09 | Aucune donnée structurée | SEO / GEO | P1 → **traité** (Organization, WebSite, Article, BreadcrumbList ; auteur à ajouter avec R06) | Élevée |
 | R10 | Positionnement « aloe vera » faible dans l'architecture | Stratégie SEO | P1 | Moyenne |
-| R11 | Meta descriptions des fiches produit trop longues, titres peu informatifs | SEO on-page | P2 | Élevée |
+| R11 | Meta descriptions des fiches produit trop longues, titres peu informatifs | SEO on-page | P2 → **traité** | Élevée |
 | R12 | Rubriques et hubs minces | Contenu | P2 | Élevée |
-| R13 | Open Graph incomplet (pas d'image, d'URL, de locale) | Partage / GEO | P2 | Élevée |
+| R13 | Open Graph incomplet (pas d'image, d'URL, de locale) | Partage / GEO | P2 → **traité** (image commune ; images par article à prévoir) | Élevée |
 | R14 | Données LR incohérentes reprises par le site | Exactitude produit | P2 | Élevée |
 | R15 | Contenu réglementaire daté (aloe, appel C-38/25 P) | Exactitude | P2 | Élevée |
 | R16 | « Signalez-la-nous » sans moyen de contact | Confiance | P1 | Élevée |
@@ -34,6 +34,19 @@
 | O03 | Transparence d'affiliation déjà en place et testée | Opportunité | — | Élevée |
 
 ---
+
+## Suivi des traitements
+
+### Prompt 01 — fondations SEO techniques (2026-10-15)
+- `site: "https://aloessential.com"`, `trailingSlash: "always"` ; canonical absolu et `og:url` sur toutes les pages indexables ; `noindex` et pas de canonical sur la 404.
+- `/sitemap.xml` (28 URL, `lastmod` = date de publication des articles et date de vérification des fiches produit) et `/robots.txt` qui le référence.
+- Open Graph complet : `og:site_name`, `og:locale`, `og:url`, `og:image` 1200 × 630 (`public/brand/og-default.png`, généré par `tools/generate-og-image.py`), `og:type=article` sur les articles, `twitter:card`.
+- JSON-LD : `Organization` + `WebSite` (accueil), `Article` + `BreadcrumbList` (articles), `BreadcrumbList` (fiches produit, rubriques). Aucun balisage Product/Offer/Review.
+- Fiches produit : titre « {Nom} : composition et avis », description = accroche (≤ 129 caractères).
+- 4 descriptions d'articles raccourcies sous 160 caractères.
+- Mention « Lien partenaire » placée juste sous le premier bouton ; sur mobile, l'illustration du hero passe sous le texte. Sur un écran de 839 px de haut, la mention est visible dès l'arrivée sur 5 fiches sur 6 (DermaIntense : quelques pixels sous la ligne de flottaison) ; sur un petit écran de 667 px, elle reste juste sous la ligne de flottaison mais immédiatement après le bouton.
+- Nouveaux tests : `tests/seo.spec.ts` (7 tests) ; `tests/products.spec.ts` vérifie en plus que la mention suit directement le bouton.
+- **Reste à faire hors dépôt :** redirections 301 `www → apex`, `http → https`, sans slash → avec slash chez l'hébergeur ; soumettre `https://aloessential.com/sitemap.xml` dans la Search Console.
 
 ## Détail
 

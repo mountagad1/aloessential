@@ -181,7 +181,7 @@ Valeurs relevées dans le dépôt au commit `dc0068e`. Ce sont des **mesures de 
 | Pages avec canonical | 0 | parse `dist/` |
 | Pages avec JSON-LD | 0 | parse `dist/` |
 | `robots.txt` / sitemap | absent / absent | `ls dist/robots.txt dist/sitemap*` |
-| Descriptions > 160 caractères | 6 (toutes les fiches produit) | parse `dist/` |
+| Descriptions > 160 caractères | 10 (6 fiches produit, 4 articles ; corrigé, l'audit initial indiquait 6) | parse `dist/` |
 | Articles citant au moins une source externe | 0 / 14 | `grep -c '](http' src/content/articles/*.md` |
 | Articles avec auteur nommé | 0 / 14 | schéma de contenu (pas de champ auteur) |
 | Pages légales obligatoires (mentions légales, confidentialité) | 0 / 2 | `ls src/pages` |
@@ -198,6 +198,16 @@ Valeurs relevées dans le dépôt au commit `dc0068e`. Ce sont des **mesures de 
 | Date | Décision | Conséquence |
 | --- | --- | --- |
 | 2026-10-15 | Domaine canonique : `https://aloessential.com` (sans `www`), URL avec slash final | `site: "https://aloessential.com"` et `trailingSlash: "always"` dans `astro.config.mjs` ; canonical absolus et sitemap sur cette base ; redirections 301 `www → apex`, `http → https` et sans slash → avec slash à configurer chez l'hébergeur (encore inconnu) |
+
+### Indicateurs après le Prompt 01 (2026-10-15)
+
+| Indicateur | Avant | Après |
+| --- | --- | --- |
+| Pages avec canonical | 0 | 28 / 28 indexables (404 en `noindex`) |
+| Pages avec JSON-LD | 0 | 28 |
+| `robots.txt` / sitemap | absent / absent | présent / 28 URL |
+| Descriptions > 160 caractères | 10 (6 fiches produit, 4 articles) | 0 |
+| Tests Playwright | 91 réussis | 98 réussis (7 nouveaux tests SEO, 1 test renforcé) |
 
 ## 10. Commandes exécutées pendant l'audit
 
