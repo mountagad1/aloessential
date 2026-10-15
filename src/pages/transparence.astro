@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { LR_HOME_URL } from "../lib/partner";
 ---
 
 <BaseLayout
@@ -28,6 +29,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <p>
           Aloessential n'est pas un site officiel de LR Health &amp; Beauty. La commande, le paiement, la livraison, les
           retours et le service client sont entièrement gérés par LR.
+        </p>
+        <p>
+          Tous nos liens vers LR portent notre identifiant partenaire (<code>ref=cros</code>), y compris le lien vers la{" "}
+          <a href={LR_HOME_URL} target="_blank" rel="sponsored noopener">boutique officielle LR<span class="visually-hidden"> (nouvel onglet)</span></a>.
         </p>
 
         <h2>Ce que la commission ne change pas</h2>

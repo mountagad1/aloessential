@@ -1,5 +1,6 @@
 ---
 import { categoryList } from "../data/categories";
+import { LR_HOME_URL } from "../lib/partner";
 
 const year = new Date().getFullYear();
 ---
@@ -33,6 +34,11 @@ const year = new Date().getFullYear();
           <li><a href="/produits/">Notre sélection LR</a></li>
           <li><a href="/#newsletter">Newsletter</a></li>
           <li><a href="/transparence/">Transparence et liens partenaires</a></li>
+          <li>
+            <a href={LR_HOME_URL} target="_blank" rel="sponsored noopener">
+              Boutique officielle LR<span class="visually-hidden"> (lien partenaire, nouvel onglet)</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

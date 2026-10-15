@@ -1,9 +1,9 @@
 ---
-# DRAFT — not published. Only name, sku and shopUrl come from the partner link;
+# DRAFT — not published. Only name, sku and shopUrl (with the partner tag ref=cros) are set;
 # every other field must be filled from the official LR product page.
 name: "Aloe Vera Emergency Spray"
 sku: "20600-301"
-shopUrl: "https://shop.lrworld.com/product?productAlias=20600-301&casrnc=dfc44"
+shopUrl: "https://shop.lrworld.com/product?productAlias=20600-301&ref=cros"
 status: draft
 kind: soin
 category: beaute

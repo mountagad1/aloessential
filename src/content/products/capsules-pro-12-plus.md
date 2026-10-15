@@ -1,9 +1,9 @@
 ---
-# DRAFT — not published. Only name, sku and shopUrl come from the partner link;
+# DRAFT — not published. Only name, sku and shopUrl (with the partner tag ref=cros) are set;
 # every other field must be filled from the official LR product page.
 name: "Capsules PRO 12 +"
 sku: "81180-99"
-shopUrl: "https://shop.lrworld.com/product?productAlias=81180-99&casrnc=10d52e"
+shopUrl: "https://shop.lrworld.com/product?productAlias=81180-99&ref=cros"
 status: draft
 kind: complement
 category: sante

@@ -1,5 +1,6 @@
 ---
 import Icon from "./Icon.astro";
+import { withPartnerRef } from "../lib/partner";
 
 interface Props {
   href: string;
@@ -14,7 +15,7 @@ const { href, productName, variant = "sun", label = "Voir sur la boutique LR", c
 
 <a
   class:list={["btn", "shop-btn", { "btn--sun": variant === "sun", "btn--outline": variant === "outline" }, className]}
-  href={href}
+  href={withPartnerRef(href)}
   target="_blank"
   rel="sponsored noopener"
   data-shop-link

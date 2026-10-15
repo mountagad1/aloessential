@@ -1,9 +1,9 @@
 ---
-# DRAFT — not published. Only name, sku and shopUrl come from the partner link;
+# DRAFT — not published. Only name, sku and shopUrl (with the partner tag ref=cros) are set;
 # every other field must be filled from the official LR product page.
 name: "Crème Anti-age Platinum"
 sku: "28449-201"
-shopUrl: "https://shop.lrworld.com/product/fr/fr/creme_anti-age_platinum.html?productAlias=28449-201&casrnc=9bd34"
+shopUrl: "https://shop.lrworld.com/product/fr/fr/creme_anti-age_platinum.html?productAlias=28449-201&ref=cros"
 status: draft
 kind: soin
 category: beaute

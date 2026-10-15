@@ -10,7 +10,8 @@ How LR Health & Beauty product pages are written, sourced and published on Aloes
 
 | Field | Source | Rule |
 | --- | --- | --- |
-| `name`, `sku`, `shopUrl` | The partner link | Copied exactly |
+| `name`, `sku` | The partner link | Copied exactly |
+| `shopUrl` | The product link with the partner tag `ref=cros` | Required: the build fails on an LR link without `ref=cros`. Other tracking parameters (e.g. `casrnc`) are removed |
 | `format`, `composition`, `usage`, `precautions` | Official LR product page or packaging (FR) | Copied, never inferred, rounded or "completed" |
 | Health and cosmetic statements | The official page, filtered through section 3 | Only what the regulation allows |
 | `sourceCheckedAt` | The day the official page was read | Required before `status: published` |
@@ -71,6 +72,7 @@ The mobile purchase bar appears only between the hero CTA and the final CTA.
 ## 4. Transparency
 
 * Every page with a shop link shows the inline disclosure near the first CTA, and the final CTA repeats it.
+* **Every link to an LR site carries `ref=cros`.** Use `withPartnerRef()` from `src/lib/partner.ts` (the `ShopButton` component does this), or `LR_HOME_URL` for the shop home page. The content schema rejects untagged product links, and a test scans every built page for LR links without the tag.
 * Shop links use `rel="sponsored noopener"` and open in a new tab, which is announced to screen readers.
 * `/transparence/` explains the partnership, says Aloessential is not an official LR site, and explains that LR handles orders.
 * Articles link to **our product pages**, which carry the full context, never straight to the shop.

@@ -1,9 +1,9 @@
 ---
-# DRAFT — not published. Only name, sku and shopUrl come from the partner link;
+# DRAFT — not published. Only name, sku and shopUrl (with the partner tag ref=cros) are set;
 # every other field must be filled from the official LR product page.
 name: "Vita Active fruits rouges"
 sku: "80301-699"
-shopUrl: "https://shop.lrworld.com/product/fr/fr/vita_active_fruits_rouges.html?productAlias=80301-699&casrnc=b7d45"
+shopUrl: "https://shop.lrworld.com/product/fr/fr/vita_active_fruits_rouges.html?productAlias=80301-699&ref=cros"
 status: draft
 kind: complement
 category: nutrition

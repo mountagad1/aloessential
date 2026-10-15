@@ -1,9 +1,9 @@
 ---
-# DRAFT — not published. Only name, sku and shopUrl come from the partner link;
+# DRAFT — not published. Only name, sku and shopUrl (with the partner tag ref=cros) are set;
 # every other field must be filled from the official LR product page.
 name: "AV Gel à Boire Immune Plus"
 sku: "81000-4"
-shopUrl: "https://shop.lrworld.com/product/fr/fr/av_gel_a_boire_immune_plus.html?productAlias=81000-4&casrnc=aa330"
+shopUrl: "https://shop.lrworld.com/product/fr/fr/av_gel_a_boire_immune_plus.html?productAlias=81000-4&ref=cros"
 status: draft
 kind: complement
 category: sante

@@ -1,6 +1,7 @@
 import { defineCollection, reference, z } from "astro:content";
 import { glob } from "astro/loaders";
 import { CATEGORY_SLUGS } from "./data/categories";
+import { hasPartnerRef } from "./lib/partner";
 
 /*
  * CONTENT_FIXTURES=1 (set by the Playwright config) adds the fictional
@@ -47,8 +48,8 @@ const products = defineCollection({
     name: z.string(),
     /** LR article number, e.g. "81180-99". */
     sku: z.string(),
-    /** Partner link to the LR shop, including the referral parameter. */
-    shopUrl: z.string().url(),
+    /** Partner link to the LR shop. LR links must carry ref=cros (see src/lib/partner.ts). */
+    shopUrl: z.string().url().refine(hasPartnerRef, { message: "LR links must include ?ref=cros" }),
     status: z.enum(["draft", "published"]).default("draft"),
     /** Drives legally required mentions: food supplements get the French mandatory notices. */
     kind: z.enum(["complement", "soin", "set"]),

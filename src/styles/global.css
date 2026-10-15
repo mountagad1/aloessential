@@ -1979,3 +1979,10 @@ main:focus {
     transition: none;
   }
 }
+
+.empty-state {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-4);
+  max-width: 36rem;
+}

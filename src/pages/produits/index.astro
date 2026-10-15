@@ -3,6 +3,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProductCard from "../../components/ProductCard.astro";
 import Newsletter from "../../components/Newsletter.astro";
 import { getPublishedProducts } from "../../lib/products";
+import ShopButton from "../../components/ShopButton.astro";
+import { LR_HOME_URL } from "../../lib/partner";
 
 const products = await getPublishedProducts();
 ---
@@ -39,7 +41,10 @@ const products = await getPublishedProducts();
             ))}
           </ul>
         ) : (
-          <p>Notre sélection arrive très bientôt.</p>
+          <div class="empty-state">
+            <p>Notre sélection arrive très bientôt. En attendant, la gamme complète est disponible sur la boutique officielle.</p>
+            <ShopButton href={LR_HOME_URL} productName="Boutique officielle LR" label="Découvrir la boutique LR" />
+          </div>
         )
       }
     </div>

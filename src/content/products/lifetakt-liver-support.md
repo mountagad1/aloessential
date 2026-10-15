@@ -1,9 +1,9 @@
 ---
-# DRAFT — not published. Only name, sku and shopUrl come from the partner link;
+# DRAFT — not published. Only name, sku and shopUrl (with the partner tag ref=cros) are set;
 # every other field must be filled from the official LR product page.
 name: "LR LIFETAKT Liver Support"
 sku: "81330-99"
-shopUrl: "https://shop.lrworld.com/product/fr/fr/lr_lifetakt_liver_support.html?productAlias=81330-99&casrnc=92dc4"
+shopUrl: "https://shop.lrworld.com/product/fr/fr/lr_lifetakt_liver_support.html?productAlias=81330-99&ref=cros"
 status: draft
 kind: complement
 category: sante

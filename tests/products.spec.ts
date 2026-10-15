@@ -27,7 +27,7 @@ test.describe("product page", () => {
     const links = page.locator("[data-shop-link]");
     expect(await links.count()).toBeGreaterThanOrEqual(3); // hero, final CTA, sticky bar
     for (const link of await links.all()) {
-      await expect(link).toHaveAttribute("href", "https://shop.example.test/produit?ref=demo");
+      await expect(link).toHaveAttribute("href", "https://shop.lrworld.com/product?productAlias=00000-00&ref=cros");
       await expect(link).toHaveAttribute("rel", /sponsored/);
       await expect(link).toHaveAttribute("rel", /noopener/);
       await expect(link).toHaveAttribute("target", "_blank");

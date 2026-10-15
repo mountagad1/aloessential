@@ -2,7 +2,7 @@
 # FICTIONAL FIXTURE used only by the test suite (CONTENT_FIXTURES=1). Not a real product.
 name: "Gel de démonstration"
 sku: "00000-00"
-shopUrl: "https://shop.example.test/produit?ref=demo"
+shopUrl: "https://shop.lrworld.com/product?productAlias=00000-00&ref=cros"
 status: published
 kind: complement
 category: sante
