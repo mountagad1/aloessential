@@ -1,7 +1,7 @@
 ---
 name: "Capsules PRO 12 +"
 sku: "81180-99"
-shopUrl: "https://shop.lrworld.com/product?productAlias=81180-99&ref=cros"
+shopUrl: "https://shop.lrworld.com/product/fr/fr/capsules_pro_12_+.html?productAlias=81180-99&ref=cros"
 status: published
 kind: complement
 category: sante

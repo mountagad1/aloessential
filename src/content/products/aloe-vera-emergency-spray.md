@@ -1,7 +1,7 @@
 ---
 name: "Aloe Vera Emergency Spray"
 sku: "20600-301"
-shopUrl: "https://shop.lrworld.com/product?productAlias=20600-301&ref=cros"
+shopUrl: "https://shop.lrworld.com/product/fr/fr/aloe_vera_emergency_spray.html?productAlias=20600-301&ref=cros"
 status: published
 kind: soin
 category: beaute
