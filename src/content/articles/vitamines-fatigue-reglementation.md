@@ -30,7 +30,7 @@ La vitamine D, le zinc ou les plantes dites « énergisantes » n'en font pas pa
 
 ## La condition : une quantité significative
 
-Une allégation n'est valable que si le produit apporte une **quantité significative** du nutriment. En règle générale, cela correspond à au moins 15 % de la valeur nutritionnelle de référence (VNR) par dose journalière.
+Une allégation n'est valable que si le produit apporte une **quantité significative** du nutriment. Le règlement (UE) n° 1169/2011 fixe ce seuil à 15 % de la valeur nutritionnelle de référence (VNR) pour 100 g, ou par portion lorsque l'emballage n'en contient qu'une (7,5 % pour 100 ml pour les boissons). Pour un complément alimentaire, on raisonne en pratique par dose journalière.
 
 C'est pour cela que l'étiquette affiche une colonne « % VNR ». Prenez l'habitude de la lire :
 

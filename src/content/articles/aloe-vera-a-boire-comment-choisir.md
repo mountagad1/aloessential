@@ -24,7 +24,9 @@ Aucune de ces formes n'est « mauvaise » en soi. L'important est que l'étiquet
 
 ## L'aloïne, un point réglementaire
 
-Depuis le règlement (UE) 2021/468, l'Union européenne interdit dans les denrées alimentaires l'aloe-émodine, l'émodine et les préparations de feuilles d'aloe contenant des dérivés hydroxyanthracéniques. En pratique, les fabricants utilisent du gel filtré ou décoloré, dont ces composés ont été retirés.
+En 2021, le règlement (UE) 2021/468 a interdit dans les denrées alimentaires l'aloe-émodine, l'émodine et les préparations de feuilles d'aloe contenant des dérivés hydroxyanthracéniques. En novembre 2024, le Tribunal de l'Union européenne a annulé la partie de ce texte qui visait les préparations de feuilles d'aloe (affaire T-189/21). La Commission a formé un pourvoi, et l'affaire est toujours pendante devant la Cour de justice. L'interdiction de l'aloe-émodine et de l'émodine, elle, n'a pas été remise en cause.
+
+En pratique, les fabricants sérieux utilisent du gel filtré ou décoloré, débarrassé de ces composés, et le précisent souvent sur l'étiquette.
 
 Ce que cela change pour vous : une boisson vendue légalement en Europe ne doit pas être une préparation laxative déguisée. Si un produit est vendu hors des circuits contrôlés, sans liste d'ingrédients en français ni adresse de fabricant dans l'UE, passez votre chemin.
 

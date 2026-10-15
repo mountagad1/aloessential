@@ -18,7 +18,7 @@ L'Organisation mondiale de la santé recommande aux adultes :
 
 - **150 à 300 minutes** d'activité d'intensité modérée par semaine (marche rapide, vélo, natation), ou 75 à 150 minutes d'activité soutenue ;
 - des exercices de **renforcement musculaire** au moins deux jours par semaine ;
-- pour les plus de 65 ans, des exercices d'**équilibre** pour limiter le risque de chute.
+- pour les plus de 65 ans, des activités variées associant **équilibre** et renforcement, au moins trois jours par semaine, pour limiter le risque de chute.
 
 Pas besoin de tout faire d'un coup : dix minutes de marche plusieurs fois par jour comptent aussi.
 
@@ -46,8 +46,8 @@ Commencez doucement, et arrêtez si un exercice provoque une douleur vive.
 
 Une alimentation variée apporte les nutriments utiles aux os et aux muscles. Parmi les allégations de santé autorisées dans l'Union européenne :
 
-- la **vitamine C** contribue à la formation normale de collagène pour assurer le fonctionnement normal des cartilages et des os ;
-- la **vitamine D** contribue au maintien d'une ossature normale et d'une fonction musculaire normale ;
+- la **vitamine C** contribue à la formation normale de collagène pour assurer la fonction normale des cartilages, et des os ;
+- la **vitamine D** contribue au maintien d'une ossature normale, et au maintien d'une fonction musculaire normale ;
 - le **calcium** est nécessaire au maintien d'une ossature normale.
 
 On trouve la vitamine C dans les fruits et légumes frais, le calcium dans les produits laitiers, certaines eaux minérales et les légumes verts, la vitamine D surtout grâce au soleil et aux poissons gras.
