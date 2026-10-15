@@ -266,6 +266,29 @@ const covers = {
     C.cream,
   ),
 
+  "digestion": svg(
+    "Bol de céréales, fibres et feuilles sur fond menthe",
+    bgGradient("bg11", "#F1F9F1", C.mint) +
+      `<rect width="${W}" height="${H}" fill="url(#bg11)"/>` +
+      `<circle cx="600" cy="440" r="290" fill="#fff" fill-opacity=".55"/>` +
+      [
+        [520, 400, C.sun],
+        [600, 370, C.olive],
+        [680, 400, C.orange],
+        [560, 440, C.leafLight],
+        [640, 440, C.sun],
+      ]
+        .map(([x, y, c]) => `<ellipse cx="${x}" cy="${y}" rx="44" ry="24" fill="${c}" transform="rotate(${x % 3 === 0 ? -18 : 18} ${x} ${y})"/>`)
+        .join("") +
+      `<path d="M360 450 H840 A240 210 0 0 1 360 450Z" fill="${C.forest}"/>` +
+      `<path d="M382 472 H818" stroke="#fff" stroke-opacity=".25" stroke-width="6" stroke-linecap="round"/>` +
+      leaf({ x: 260, y: 780, len: 260, width: 64, angle: -28, fill: C.leaf }) +
+      leaf({ x: 940, y: 780, len: 240, width: 60, angle: 28, fill: C.olive }) +
+      drop(860, 250, 18) +
+      drop(330, 280, 12),
+    C.mint,
+  ),
+
   "anti-age": svg(
     "Pétales et gouttes d'huile, évoquant un soin du visage",
     `<circle cx="600" cy="420" r="300" fill="${C.mint}"/>` +

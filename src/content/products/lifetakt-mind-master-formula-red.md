@@ -1,6 +1,6 @@
 ---
-# DRAFT — not published. Only name, sku and shopUrl (with the partner tag ref=cros) are set;
-# every other field must be filled from the official LR product page.
+# DRAFT — not published. Official page read 2026-10-15: the nutrition table only shows energy and macronutrients; no vitamin, iron
+# or selenium amounts. Needs the packaging values before publishing.
 name: "LR Lifetakt Mind Master Formula Red"
 sku: "80950-604"
 shopUrl: "https://shop.lrworld.com/product/fr/fr/lr_lifetakt_mind_master_formula_red.html?productAlias=80950-604&ref=cros"

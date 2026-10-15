@@ -1,6 +1,6 @@
 ---
-# DRAFT — not published. Only name, sku and shopUrl (with the partner tag ref=cros) are set;
-# every other field must be filled from the official LR product page.
+# DRAFT — not published. Official page read 2026-10-15: no vitamin C/E, glucosamine or collagen amounts per 90 ml (only macronutrients).
+# Needs the packaging values before publishing. The FR page also says 88 % aloe vera gel.
 name: "Aloe Vera Drinking Gel Active Freedom"
 sku: "80850-682"
 shopUrl: "https://shop.lrworld.com/product/fr/fr/aloe_vera_drinking_gel_active_freedom.html?productAlias=80850-682&ref=cros"

@@ -1,6 +1,6 @@
 ---
-# DRAFT — not published. Only name, sku and shopUrl (with the partner tag ref=cros) are set;
-# every other field must be filled from the official LR product page.
+# DRAFT — not published. Official page read 2026-10-15: ingredients and usage are there, but no vitamin amounts or %VNR per 5 ml.
+# Needs the nutrition table from the packaging before any claim or composition can be published.
 name: "Vita Active fruits rouges"
 sku: "80301-699"
 shopUrl: "https://shop.lrworld.com/product/fr/fr/vita_active_fruits_rouges.html?productAlias=80301-699&ref=cros"

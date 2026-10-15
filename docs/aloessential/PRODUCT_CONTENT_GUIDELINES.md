@@ -54,7 +54,7 @@ The mobile purchase bar appears only between the hero CTA and the final CTA.
 * The claim is about the **nutrient**, and the page must state which nutrient carries it.
 * **Botanical claims** (aloe vera, plant extracts) are mostly "on hold" at EU level. Use them conservatively, or not at all. Prefer authorised vitamin and mineral claims.
 * **Never:** prevention, treatment or cure of a disease ("soigne", "guérit", "contre l'arthrose", "renforce l'immunité contre les virus"). No "détox". No weight-loss figures. No claims that a balanced diet isn't enough.
-* **Aloe and hydroxyanthracenes:** Regulation (EU) 2021/468 restricts aloe-emodin, emodin and preparations containing them. Mention the processing (e.g. aloin-reduced) only if LR states it.
+* **Aloe and hydroxyanthracenes:** Regulation (EU) 2021/468 prohibits aloe-emodin and emodin in food. Its entry on aloe leaf preparations containing hydroxyanthracene derivatives was annulled by the General Court on 13 November 2024 (T-189/21); the Commission's appeal (C-38/25 P) was still pending in October 2026. Check its status before writing about it. Mention the processing (e.g. aloin-reduced) only if LR states it.
 * **Mandatory mentions** (décret n° 2006-352): these are added automatically by the template.
 
 ### Cosmetics (`kind: soin`): Regulation (EC) 1223/2009 and (EU) 655/2013
