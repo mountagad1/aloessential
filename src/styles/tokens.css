@@ -1,0 +1,165 @@
+/*
+ * Aloessential design tokens.
+ * Colour and type values come from the brand board (brand/source/brand-board.webp).
+ * Motion tokens are specified in docs/aloessential/MOTION_DESIGN_SYSTEM.md —
+ * change them here, never inline in components.
+ */
+
+/* Metric-matched fallbacks keep text from reflowing when web fonts swap in. */
+@font-face {
+  font-family: "Poppins Fallback";
+  src: local("Arial"), local("Liberation Sans"), local("Helvetica");
+  ascent-override: 92.33%;
+  descent-override: 30.78%;
+  line-gap-override: 8.79%;
+  size-adjust: 113.73%;
+}
+
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial"), local("Liberation Sans"), local("Helvetica");
+  ascent-override: 90.2%;
+  descent-override: 22.48%;
+  line-gap-override: 0%;
+  size-adjust: 107.4%;
+}
+
+:root {
+  /* ---- Colour: brand palette ---- */
+  --color-forest: #0f5132;
+  --color-leaf: #5da645;
+  --color-leaf-light: #a3d477;
+  --color-olive: #6f8f24;
+  --color-sun: #f9c23c;
+  --color-orange: #ff8a1f;
+  --color-cream: #fff8e9;
+  --color-mint: #e9f5ea;
+  --color-ink: #183126;
+
+  /* ---- Colour: roles ---- */
+  --color-bg: #fffdf7;
+  --color-surface: #ffffff;
+  --color-surface-soft: var(--color-cream);
+  --color-surface-green: var(--color-mint);
+  --color-text: var(--color-ink);
+  --color-text-muted: #4b5f55;
+  --color-heading: var(--color-forest);
+  --color-link: var(--color-forest);
+  --color-border: #dfe8df;
+  --color-border-strong: #c2d4c4;
+  --color-focus: var(--color-orange);
+  --color-success: #2f7a3b;
+  --color-error: #b3261e;
+
+  /* ---- Typography ---- */
+  --font-heading: "Poppins", "Poppins Fallback", system-ui, sans-serif;
+  --font-body: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --text-2xl: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
+  --text-3xl: clamp(2.25rem, 1.6rem + 3vw, 3.75rem);
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-body: 1.7;
+
+  /* ---- Space & shape ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 6rem;
+
+  --gutter: 1rem;
+  --container: 72rem;
+  --measure: 42rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgb(15 81 50 / 0.06), 0 8px 24px -12px rgb(15 81 50 / 0.18);
+
+  --header-height: 4rem;
+
+  /* ================================================================
+   * MOTION TOKENS
+   * Durations
+   * ================================================================ */
+  --motion-duration-micro: 150ms;   /* colour, underline, focus, icon nudge */
+  --motion-duration-ui: 200ms;      /* buttons, menu, form messages */
+  --motion-duration-reveal: 560ms;  /* editorial entrance on scroll */
+  --motion-duration-hero: 640ms;    /* hero entrance sequence */
+  --motion-duration-media: 600ms;   /* image hover scale, image load fade */
+  --motion-duration-glow: 1200ms;   /* one-time sunlight warm-up on the hero emblem */
+  --motion-duration-ambient: 9s;    /* the single continuous botanical accent */
+
+  /* Easing — restrained ease-out for everything that enters or responds. */
+  --motion-ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --motion-ease-in-out: cubic-bezier(0.45, 0.05, 0.35, 1);
+  --motion-ease-ambient: cubic-bezier(0.37, 0, 0.63, 1); /* sine-like, for the breeze */
+
+  /* Distances & scales */
+  --motion-distance-nudge: 3px;  /* arrow in a CTA */
+  --motion-distance-reveal: 14px;
+  --motion-distance-hero: 18px;
+  --motion-scale-media-hover: 1.02;
+  --motion-sway-angle: 0.7deg;
+  --motion-sway-lift: -3px;
+
+  /* Choreography */
+  --motion-stagger: 70ms;
+  --motion-hero-step: 90ms;
+}
+
+/* Small screens: shorter travel, tighter stagger. */
+@media (max-width: 47.99rem) {
+  :root {
+    --motion-distance-reveal: 10px;
+    --motion-distance-hero: 12px;
+    --motion-stagger: 50ms;
+    --motion-hero-step: 70ms;
+  }
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --gutter: 1.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --gutter: 2rem;
+    --header-height: 4.5rem;
+  }
+}
+
+/* Reduced motion: no travel, no scaling, no ambient loop.
+ * Opacity fades stay but become short; state feedback stays immediate. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration-reveal: 180ms;
+    --motion-duration-hero: 0ms;
+    --motion-duration-media: 0ms;
+    --motion-duration-glow: 0ms;
+    --motion-distance-nudge: 0px;
+    --motion-distance-reveal: 0px;
+    --motion-distance-hero: 0px;
+    --motion-scale-media-hover: 1;
+    --motion-sway-angle: 0deg;
+    --motion-sway-lift: 0px;
+    --motion-stagger: 0ms;
+    --motion-hero-step: 0ms;
+  }
+}

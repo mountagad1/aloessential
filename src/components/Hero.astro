@@ -1,0 +1,46 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div>
+      <p class="eyebrow" data-hero-step style="--step: 0">
+        <Icon name="leaf" class="pillar-leaf" /> Naturellement essentiel
+      </p>
+      <h1 class="hero__title" id="hero-title" data-hero-step style="--step: 1">
+        Votre source <em>bien-être</em> naturelle
+      </h1>
+      <p class="hero__lead" data-hero-step style="--step: 2">
+        Conseils, santé, beauté et nutrition pour une vie plus saine, plus équilibrée et plus sereine. Une approche
+        naturelle et accessible, appuyée sur des sources fiables.
+      </p>
+      <div class="hero__actions" data-hero-step style="--step: 3">
+        <a class="btn" href="/rubriques/conseils/">
+          Découvrir nos conseils <Icon name="arrow-right" class="btn__icon" />
+        </a>
+        <a class="btn btn--sun" href="/articles/">
+          Explorer les articles <Icon name="arrow-right" class="btn__icon" />
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__visual" data-hero-step="visual" style="--step: 1">
+      <div class="hero__halo" aria-hidden="true">
+        <div class="accent-glow"></div>
+      </div>
+      <div class="hero__emblem accent-sway">
+        <img
+          src="/brand/icon-720.webp"
+          srcset="/brand/icon-400.webp 400w, /brand/icon-720.webp 720w"
+          sizes="(min-width: 48rem) 26rem, 15rem"
+          alt="Emblème Aloessential : une feuille d'aloe vera perlée de rosée devant un soleil levant"
+          width="720"
+          height="720"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  id?: string;
+}
+
+const { id = "newsletter" } = Astro.props;
+const endpoint = import.meta.env.PUBLIC_NEWSLETTER_ENDPOINT || undefined;
+---
+
+<section class="section section--tight" id={id} aria-labelledby={`${id}-title`}>
+  <div class="container">
+    <div class="newsletter on-dark" data-reveal>
+      <p class="eyebrow" style="color: var(--color-sun)">Newsletter</p>
+      <h2 id={`${id}-title`}>Conseils naturels pour une vie meilleure</h2>
+      <p class="newsletter__lead">
+        Un e-mail par mois : nos meilleurs articles, des routines simples et des idées de saison. Sans spam.
+      </p>
+      <form class="newsletter__form" method="post" action={endpoint} data-newsletter data-endpoint={endpoint}>
+        <div class="newsletter__field">
+          <label for={`${id}-email`}>Adresse e-mail</label>
+          <div class="newsletter__row">
+            <input
+              class="newsletter__input"
+              id={`${id}-email`}
+              name="email"
+              type="email"
+              autocomplete="email"
+              inputmode="email"
+              placeholder="prenom@exemple.fr"
+              required
+              aria-describedby={`${id}-status ${id}-note`}
+            />
+            <button class="btn btn--sun" type="submit">
+              <span data-label>S'inscrire</span>
+              <span class="btn__spinner" aria-hidden="true"></span>
+              <Icon name="arrow-right" class="btn__icon" />
+            </button>
+          </div>
+        </div>
+        <p class="newsletter__status" id={`${id}-status`} role="status" aria-live="polite" data-newsletter-status></p>
+        <p class="newsletter__note" id={`${id}-note`}>Vous pouvez vous désinscrire à tout moment.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  import "../scripts/newsletter";
+</script>

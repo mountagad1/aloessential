@@ -1,0 +1,30 @@
+---
+import Icon from "./Icon.astro";
+import { CATEGORIES } from "../data/categories";
+import { articleUrl, formatDate, readingTime, type Article } from "../lib/articles";
+
+interface Props {
+  article: Article;
+}
+
+const { article } = Astro.props;
+const { title, description, category, date, cover, coverAlt } = article.data;
+---
+
+<article class="featured" data-reveal>
+  <div class="media">
+    <img src={cover} alt={coverAlt} width="1200" height="800" loading="lazy" decoding="async" data-fade />
+  </div>
+  <div class="featured__body">
+    <p class="card__meta">
+      <span class="card__category">{CATEGORIES[category].label}</span>
+      <span aria-hidden="true">·</span>
+      <time datetime={date.toISOString()}>{formatDate(date)}</time>
+    </p>
+    <h3 class="featured__title"><a href={articleUrl(article)}>{title}</a></h3>
+    <p class="featured__excerpt">{description}</p>
+    <p class="card__more" aria-hidden="true">
+      Lire l'article · {readingTime(article)} min <Icon name="arrow-right" class="btn__icon" />
+    </p>
+  </div>
+</article>

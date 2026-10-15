@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CardGrid from "../../components/CardGrid.astro";
+import Newsletter from "../../components/Newsletter.astro";
+import { CATEGORIES, categoryList, type CategorySlug } from "../../data/categories";
+import { getArticles } from "../../lib/articles";
+
+export function getStaticPaths() {
+  return categoryList.map((c) => ({ params: { slug: c.slug } }));
+}
+
+const slug = Astro.params.slug as CategorySlug;
+const category = CATEGORIES[slug];
+const articles = (await getArticles()).filter((a) => a.data.category === slug);
+---
+
+<BaseLayout title={category.label} description={category.description} current={slug}>
+  <header class="page-header">
+    <div class="container">
+      <p class="eyebrow" data-hero-step style="--step: 0">Rubrique</p>
+      <h1 data-hero-step style="--step: 1">{category.label}</h1>
+      <p data-hero-step style="--step: 2">{category.description}</p>
+      <ul class="chip-list" aria-label="Changer de rubrique" data-hero-step style="--step: 3">
+        <li><a class="chip" href="/articles/">Tout</a></li>
+        {
+          categoryList.map((c) => (
+            <li>
+              <a class="chip" href={`/rubriques/${c.slug}/`} aria-current={c.slug === slug ? "page" : undefined}>
+                {c.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </header>
+
+  <section class="section section--tight" aria-label={`Articles de la rubrique ${category.label}`}>
+    <div class="container">
+      {
+        articles.length ? (
+          <CardGrid articles={articles} headingLevel={2} priority={3} />
+        ) : (
+          <p>Aucun article dans cette rubrique pour le moment.</p>
+        )
+      }
+    </div>
+  </section>
+
+  <Newsletter />
+</BaseLayout>

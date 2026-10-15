@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+---
+
+<BaseLayout title="Page introuvable" description="Cette page n'existe pas ou a été déplacée.">
+  <section class="not-found container">
+    <img src="/brand/icon-160.webp" alt="" width="160" height="160" />
+    <h1>Cette page s'est envolée avec le vent</h1>
+    <p>La page que vous cherchez n'existe pas ou a été déplacée. Reprenons depuis l'accueil.</p>
+    <a class="btn" href="/">Retour à l'accueil <Icon name="arrow-right" class="btn__icon" /></a>
+  </section>
+</BaseLayout>

@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CardGrid from "../../components/CardGrid.astro";
+import Newsletter from "../../components/Newsletter.astro";
+import { categoryList } from "../../data/categories";
+import { getArticles } from "../../lib/articles";
+
+const articles = await getArticles();
+---
+
+<BaseLayout
+  title="Tous les articles"
+  description="Tous les articles Aloessential : conseils, santé, beauté et nutrition au naturel."
+  current="articles"
+>
+  <header class="page-header">
+    <div class="container">
+      <p class="eyebrow" data-hero-step style="--step: 0">Le magazine</p>
+      <h1 data-hero-step style="--step: 1">Tous les articles</h1>
+      <p data-hero-step style="--step: 2">
+        {articles.length} articles pour prendre soin de soi, naturellement.
+      </p>
+      <ul class="chip-list" aria-label="Filtrer par rubrique" data-hero-step style="--step: 3">
+        <li><a class="chip" href="/articles/" aria-current="page">Tout</a></li>
+        {
+          categoryList.map((c) => (
+            <li>
+              <a class="chip" href={`/rubriques/${c.slug}/`}>
+                {c.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </header>
+
+  <section class="section section--tight" aria-label="Liste des articles">
+    <div class="container">
+      <CardGrid articles={articles} headingLevel={2} priority={3} />
+    </div>
+  </section>
+
+  <Newsletter />
+</BaseLayout>

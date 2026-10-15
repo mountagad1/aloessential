@@ -1,0 +1,141 @@
+/*
+ * Aloessential motion layer.
+ *
+ * Contract:
+ *  - Content is visible by default. Elements are only hidden-before-reveal
+ *    when <html> carries `.motion` — set by the inline boot script in
+ *    BaseLayout only when JavaScript runs and IntersectionObserver exists.
+ *    If the reveal module never starts, the boot script removes `.motion`.
+ *  - Only `opacity` and `transform` are animated.
+ *  - Every value comes from tokens.css; reduced-motion overrides live there
+ *    and at the bottom of this file.
+ */
+
+/* ---------- Scroll reveal ---------------------------------------------- */
+
+[data-reveal] {
+  transition:
+    opacity var(--motion-duration-reveal) var(--motion-ease-out) var(--reveal-delay, 0ms),
+    transform var(--motion-duration-reveal) var(--motion-ease-out) var(--reveal-delay, 0ms);
+}
+
+.motion [data-reveal]:not(.is-revealed) {
+  opacity: 0;
+  transform: translate3d(0, var(--motion-distance-reveal), 0);
+}
+
+/* Elements revealed while off-screen (e.g. after an anchor jump) skip the transition. */
+[data-reveal].is-instant {
+  transition: none;
+}
+
+/* ---------- Hero entrance (pure CSS, runs without JavaScript) ---------- */
+
+@keyframes motion-rise-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--motion-distance-hero), 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes motion-settle-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-hero-step] {
+  animation: motion-rise-in var(--motion-duration-hero) var(--motion-ease-out) both;
+  animation-delay: calc(var(--motion-hero-step) * var(--step, 0));
+}
+
+[data-hero-step="visual"] {
+  animation-name: motion-settle-in;
+  animation-duration: calc(var(--motion-duration-hero) + 160ms);
+}
+
+/* ---------- The single botanical accent: hero emblem ------------------- */
+
+@keyframes motion-breeze {
+  0%,
+  100% {
+    transform: rotate(calc(var(--motion-sway-angle) * -1)) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(var(--motion-sway-angle)) translate3d(0, var(--motion-sway-lift), 0);
+  }
+}
+
+@keyframes motion-sun-warm {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Warm sunlight that settles behind the emblem once, on load. */
+.accent-glow {
+  animation: motion-sun-warm var(--motion-duration-glow) var(--motion-ease-out) 200ms both;
+}
+
+/* Continuous breeze: desktop only (battery), never under reduced motion,
+ * and paused by the reveal module while the hero is off-screen. */
+@media (min-width: 48rem) and (prefers-reduced-motion: no-preference) {
+  .accent-sway {
+    transform-origin: 50% 88%;
+    animation: motion-breeze var(--motion-duration-ambient) var(--motion-ease-ambient) 1.2s infinite;
+  }
+
+  .accent-sway.is-paused {
+    animation-play-state: paused;
+  }
+}
+
+/* ---------- Image load fade ------------------------------------------- */
+
+.motion img[data-fade]:not(.is-loaded) {
+  opacity: 0;
+}
+
+img[data-fade] {
+  transition: opacity var(--motion-duration-media) var(--motion-ease-out);
+}
+
+/* ---------- Reduced motion -------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hero-step],
+  .accent-glow,
+  .accent-sway {
+    animation: none;
+  }
+
+  [data-reveal] {
+    transition: opacity var(--motion-duration-reveal) linear;
+  }
+}
+
+/* Print: everything visible, nothing moving. */
+@media print {
+  .motion [data-reveal]:not(.is-revealed),
+  .motion img[data-fade]:not(.is-loaded) {
+    opacity: 1;
+    transform: none;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

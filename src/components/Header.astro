@@ -1,0 +1,73 @@
+---
+import { categoryList } from "../data/categories";
+
+interface Props {
+  /** Category slug of the current page, for aria-current. */
+  current?: string;
+}
+
+const { current } = Astro.props;
+const links = categoryList.map((c) => ({ href: `/rubriques/${c.slug}/`, label: c.label, slug: c.slug }));
+---
+
+<div class="header-sentinel" data-header-sentinel aria-hidden="true"></div>
+<header class="site-header" data-site-header>
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Aloessential — accueil">
+      <img src="/brand/wordmark.webp" alt="" width="433" height="80" />
+    </a>
+
+    <nav class="nav" aria-label="Rubriques">
+      <ul class="nav__list">
+        {
+          links.map((link) => (
+            <li>
+              <a class="nav-link" href={link.href} aria-current={current === link.slug ? "page" : undefined}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a class="nav-link" href="/articles/" aria-current={current === "articles" ? "page" : undefined}>
+            Tous les articles
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      aria-label="Ouvrir le menu"
+      data-menu-toggle
+    >
+      <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menu principal">
+    <ul class="container">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} aria-current={current === link.slug ? "page" : undefined}>
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a href="/articles/" aria-current={current === "articles" ? "page" : undefined}>
+          Tous les articles
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  import "../scripts/header";
+</script>

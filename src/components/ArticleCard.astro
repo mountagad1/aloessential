@@ -1,0 +1,42 @@
+---
+import Icon from "./Icon.astro";
+import { CATEGORIES } from "../data/categories";
+import { articleUrl, formatDate, readingTime, type Article } from "../lib/articles";
+
+interface Props {
+  article: Article;
+  headingLevel?: 2 | 3;
+  /** Above-the-fold card: load eagerly and skip the image fade. */
+  priority?: boolean;
+}
+
+const { article, headingLevel = 3, priority = false } = Astro.props;
+const { title, description, category, date, cover, coverAlt } = article.data;
+const Heading = `h${headingLevel}` as "h2" | "h3";
+---
+
+<article class="card">
+  <div class="media">
+    <img
+      src={cover}
+      alt={coverAlt}
+      width="1200"
+      height="800"
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
+      data-fade={priority ? undefined : ""}
+    />
+  </div>
+  <div class="card__body">
+    <p class="card__meta">
+      <span class="card__category">{CATEGORIES[category].label}</span>
+      <span aria-hidden="true">·</span>
+      <time datetime={date.toISOString()}>{formatDate(date)}</time>
+    </p>
+    <Heading class="card__title"><a href={articleUrl(article)}>{title}</a></Heading>
+    <p class="card__excerpt">{description}</p>
+    <p class="card__more" aria-hidden="true">
+      Lire · {readingTime(article)} min <Icon name="arrow-right" class="btn__icon" />
+    </p>
+  </div>
+</article>

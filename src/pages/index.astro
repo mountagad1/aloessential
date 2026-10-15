@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import FeaturedArticle from "../components/FeaturedArticle.astro";
+import CardGrid from "../components/CardGrid.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Icon from "../components/Icon.astro";
+import { categoryList } from "../data/categories";
+import { getArticles } from "../lib/articles";
+
+const articles = await getArticles();
+const featured = articles.find((a) => a.data.featured) ?? articles[0];
+const latest = articles.filter((a) => a !== featured).slice(0, 6);
+
+const pillars = [
+  { icon: "leaf", title: "Naturel", text: "Des solutions saines et authentiques" },
+  { icon: "sun", title: "Vitalité", text: "Plus d'énergie au quotidien", sun: true },
+  { icon: "drop", title: "Équilibre", text: "Un mode de vie plus harmonieux" },
+  { icon: "heart", title: "Bien-être", text: "Pour le corps et l'esprit" },
+] as const;
+---
+
+<BaseLayout
+  title="Aloessential"
+  description="Conseils, santé, beauté et nutrition au naturel : Aloessential, votre source bien-être pour une vie plus saine et plus équilibrée."
+>
+  <Hero />
+
+  <section class="section" aria-labelledby="featured-title">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow">À la une</p>
+          <h2 id="featured-title">L'article du moment</h2>
+        </div>
+      </div>
+      <FeaturedArticle article={featured} />
+    </div>
+  </section>
+
+  <section class="section section--soft" aria-labelledby="latest-title">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow">Derniers articles</p>
+          <h2 id="latest-title">Fraîchement publiés</h2>
+        </div>
+        <a class="text-link" href="/articles/">
+          Tous les articles <Icon name="arrow-right" class="btn__icon" />
+        </a>
+      </div>
+      <CardGrid articles={latest} />
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="pillars-title">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow">Notre philosophie</p>
+          <h2 id="pillars-title">Ce qui nous guide</h2>
+          <p>Une approche naturelle et accessible, pour une vie plus saine, plus équilibrée et plus sereine.</p>
+        </div>
+      </div>
+      <ul class="pillars">
+        {
+          pillars.map((p) => (
+            <li class="pillar" data-reveal>
+              <span class:list={["pillar__icon", { "pillar__icon--sun": "sun" in p }]}>
+                <Icon name={p.icon} />
+              </span>
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--green" aria-labelledby="categories-title">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow">Rubriques</p>
+          <h2 id="categories-title">Explorer par thème</h2>
+        </div>
+      </div>
+      <ul class="category-grid">
+        {
+          categoryList.map((c) => (
+            <li data-reveal>
+              <a class="category-tile" href={`/rubriques/${c.slug}/`}>
+                <span class="category-tile__swatch" style={`--swatch: ${c.swatch}`} aria-hidden="true" />
+                <h3>{c.label}</h3>
+                <p>{c.description}</p>
+                <span class="text-link">
+                  Voir la rubrique <Icon name="arrow-right" class="btn__icon" />
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <Newsletter />
+</BaseLayout>

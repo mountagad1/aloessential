@@ -1,0 +1,29 @@
+---
+import type { MarkdownHeading } from "astro";
+import Icon from "./Icon.astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const items = Astro.props.headings.filter((h) => h.depth === 2);
+---
+
+{
+  items.length > 1 && (
+    <details class="toc">
+      <summary>
+        Sommaire <Icon name="chevron-down" class="toc__chevron" />
+      </summary>
+      <nav aria-label="Sommaire de l'article">
+        <ol>
+          {items.map((h) => (
+            <li>
+              <a href={`#${h.slug}`}>{h.text}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </details>
+  )
+}
