@@ -193,7 +193,13 @@ Valeurs relevées dans le dépôt au commit `dc0068e`. Ce sont des **mesures de 
 
 ---
 
-## 9. Commandes exécutées pendant l'audit
+## 9. Décisions validées
+
+| Date | Décision | Conséquence |
+| --- | --- | --- |
+| 2026-10-15 | Domaine canonique : `https://aloessential.com` (sans `www`), URL avec slash final | `site: "https://aloessential.com"` et `trailingSlash: "always"` dans `astro.config.mjs` ; canonical absolus et sitemap sur cette base ; redirections 301 `www → apex`, `http → https` et sans slash → avec slash à configurer chez l'hébergeur (encore inconnu) |
+
+## 10. Commandes exécutées pendant l'audit
 
 | Commande | Résultat |
 | --- | --- |

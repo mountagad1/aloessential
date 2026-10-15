@@ -55,6 +55,7 @@
 - **Impact :** Google doit deviner l'URL de référence ; risque de doublons (`/x` et `/x/`, `www` et apex, `http` et `https`) selon l'hébergeur ; découverte des pages moins fiable ; pas de sitemap à soumettre dans la Search Console.
 - **Vérification :** après déploiement, `curl -I` sur les variantes d'URL ; GSC > Pages > « Page en double sans URL canonique sélectionnée ».
 - **Recommandation :** définir `site`, générer canonical absolus, ajouter un sitemap XML et un `robots.txt` qui le référence, fixer `trailingSlash: "always"` (cohérent avec les liens internes, qui finissent tous par `/`).
+- **Décision (2026-10-15) :** domaine canonique `https://aloessential.com`, URL avec slash final. Reste ouvert : redirections chez l'hébergeur (lié à R04).
 
 ### R04 — Hébergement, domaine et statut en ligne inconnus · P0 · Confiance élevée
 - **Preuve :** aucun fichier de configuration d'hébergement ; le domaine n'est pas joignable depuis l'environnement d'audit (refus du proxy, ce qui n'informe pas sur le site).
