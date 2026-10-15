@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import Newsletter from "../../components/Newsletter.astro";
+import { getPublishedProducts } from "../../lib/products";
+
+const products = await getPublishedProducts();
+---
+
+<BaseLayout
+  title="Notre sélection LR"
+  description="Les produits LR Health & Beauty à l'aloe vera et les compléments LR Lifetakt que nous avons étudiés : composition, usage, précautions et avis."
+  current="produits"
+>
+  <header class="page-header">
+    <div class="container">
+      <p class="eyebrow" data-hero-step style="--step: 0">Notre sélection</p>
+      <h1 data-hero-step style="--step: 1">Les produits que nous avons étudiés</h1>
+      <p data-hero-step style="--step: 2">
+        Soins à l'aloe vera et compléments LR Lifetakt : pour chaque produit, sa composition, son mode d'emploi, ses
+        précautions et notre avis, avant de le commander sur la boutique officielle LR.
+      </p>
+      <p class="disclosure-inline" data-hero-step style="--step: 3">
+        Aloessential est partenaire indépendant LR Health &amp; Beauty : les liens vers la boutique sont des liens
+        partenaires. <a href="/transparence/">Notre transparence</a>
+      </p>
+    </div>
+  </header>
+
+  <section class="section section--tight" aria-label="Liste des produits">
+    <div class="container">
+      {
+        products.length ? (
+          <ul class="card-grid">
+            {products.map((product, i) => (
+              <li data-reveal={i < 3 ? undefined : ""}>
+                <ProductCard product={product} headingLevel={2} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Notre sélection arrive très bientôt.</p>
+        )
+      }
+    </div>
+  </section>
+
+  <Newsletter />
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  href: string;
+  productName: string;
+  variant?: "sun" | "primary" | "outline";
+  label?: string;
+  class?: string;
+}
+
+const { href, productName, variant = "sun", label = "Voir sur la boutique LR", class: className } = Astro.props;
+---
+
+<a
+  class:list={["btn", "shop-btn", { "btn--sun": variant === "sun", "btn--outline": variant === "outline" }, className]}
+  href={href}
+  target="_blank"
+  rel="sponsored noopener"
+  data-shop-link
+>
+  {label}<span class="visually-hidden"> : {productName} (lien partenaire, nouvel onglet)</span>
+  <Icon name="external" class="btn__icon" />
+</a>

@@ -1,0 +1,33 @@
+---
+/* "Pour aller plus loin" block at the end of an article: links to our own
+ * product pages (which carry the full context and disclosure), not straight
+ * to the shop. */
+import ProductCard from "./ProductCard.astro";
+import type { Product } from "../lib/products";
+
+interface Props {
+  products: Product[];
+}
+
+const { products } = Astro.props;
+---
+
+{
+  products.length > 0 && (
+    <aside class="product-callout prose" aria-labelledby="product-callout-title" data-reveal>
+      <p class="eyebrow">Notre sélection</p>
+      <h2 id="product-callout-title">Pour aller plus loin</h2>
+      <p class="product-callout__note">
+        Des produits LR que nous avons étudiés en lien avec ce sujet. Liens partenaires :{" "}
+        <a href="/transparence/">en savoir plus</a>.
+      </p>
+      <ul class="card-grid card-grid--compact">
+        {products.map((product) => (
+          <li>
+            <ProductCard product={product} />
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )
+}

@@ -1,0 +1,22 @@
+---
+/* Mobile-only purchase bar. Appears once the hero CTA has scrolled out of view
+ * and hides again when the closing CTA is on screen. Without JavaScript it is
+ * not rendered visibly: the in-flow CTAs remain. */
+import ShopButton from "./ShopButton.astro";
+
+interface Props {
+  href: string;
+  productName: string;
+}
+
+const { href, productName } = Astro.props;
+---
+
+<div class="sticky-cta" data-sticky-cta aria-hidden="true" inert>
+  <p class="sticky-cta__name">{productName}</p>
+  <ShopButton href={href} productName={productName} label="Voir le produit" />
+</div>
+
+<script>
+  import "../scripts/sticky-cta";
+</script>

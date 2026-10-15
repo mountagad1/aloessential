@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Illustration d'un flacon spray et d'une feuille d'aloe vera">
+<defs>
+  <linearGradient id="aloe" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#0F5132"/><stop offset=".55" stop-color="#5DA645"/><stop offset="1" stop-color="#A3D477"/></linearGradient>
+  <radialGradient id="sun" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#FFE9A8"/><stop offset=".55" stop-color="#F9C23C"/><stop offset="1" stop-color="#FF8A1F"/></radialGradient>
+  <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8A1F"/><stop offset="1" stop-color="#F9C23C"/></linearGradient>
+  <linearGradient id="gel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7F6D7"/><stop offset="1" stop-color="#A3D477"/></linearGradient>
+</defs><rect width="1200" height="800" fill="#E9F5EA"/><g transform="translate(430 820) rotate(-14)"><path d="M50 -72 L63 -82 L52 -86Z" fill="#6F8F24"/><path d="M41.4 -152 L54.4 -162 L43.4 -166Z" fill="#6F8F24"/><path d="M32.7 -232 L45.7 -242 L34.7 -246Z" fill="#6F8F24"/><path d="M24 -312 L37 -322 L26 -326Z" fill="#6F8F24"/><path d="M15.3 -392 L28.3 -402 L17.3 -406Z" fill="#6F8F24"/><path d="M6.7 -472 L19.7 -482 L8.7 -486Z" fill="#6F8F24"/><path d="M-66 0 C-66 -224 -23.1 -448 0 -560 C19.8 -420 66 -224 66 0Z" fill="url(#aloe)"/><path d="M-23.1 -10 C-19.8 -252 -6.6 -420 0 -515.2" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="5" stroke-linecap="round"/></g><g transform="translate(660 720)">
+        <rect x="-26" y="-500" width="52" height="70" rx="10" fill="#0F5132"/>
+        <rect x="-70" y="-520" width="70" height="26" rx="8" fill="#0F5132"/>
+        <rect x="-40" y="-436" width="80" height="40" fill="#fff" fill-opacity=".9"/>
+        <rect x="-100" y="-400" width="200" height="400" rx="40" fill="#fff" fill-opacity=".92" stroke="#fff" stroke-width="5"/>
+        <rect x="-86" y="-250" width="172" height="236" rx="30" fill="#A3D477" fill-opacity=".85"/>
+      </g><circle cx="560" cy="210" r="6" fill="#5DA645" fill-opacity=".55"/><circle cx="530" cy="190" r="4" fill="#5DA645" fill-opacity=".55"/><circle cx="520" cy="230" r="5" fill="#5DA645" fill-opacity=".55"/><circle cx="500" cy="205" r="3" fill="#5DA645" fill-opacity=".55"/><circle cx="545" cy="170" r="3" fill="#5DA645" fill-opacity=".55"/><circle cx="490" cy="240" r="4" fill="#5DA645" fill-opacity=".55"/><g transform="translate(960 180)"><circle r="60" fill="url(#sun)"/></g></svg>

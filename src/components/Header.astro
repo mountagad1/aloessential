@@ -33,6 +33,11 @@ const links = categoryList.map((c) => ({ href: `/rubriques/${c.slug}/`, label: c
             Tous les articles
           </a>
         </li>
+        <li>
+          <a class="nav-link" href="/produits/" aria-current={current === "produits" ? "page" : undefined}>
+            Produits
+          </a>
+        </li>
       </ul>
     </nav>
 
@@ -62,6 +67,11 @@ const links = categoryList.map((c) => ({ href: `/rubriques/${c.slug}/`, label: c
       <li>
         <a href="/articles/" aria-current={current === "articles" ? "page" : undefined}>
           Tous les articles
+        </a>
+      </li>
+      <li>
+        <a href="/produits/" aria-current={current === "produits" ? "page" : undefined}>
+          Produits
         </a>
       </li>
     </ul>

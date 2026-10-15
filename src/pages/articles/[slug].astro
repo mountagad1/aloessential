@@ -5,6 +5,8 @@ import CardGrid from "../../components/CardGrid.astro";
 import Newsletter from "../../components/Newsletter.astro";
 import ReadingProgress from "../../components/ReadingProgress.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
+import ProductCallout from "../../components/ProductCallout.astro";
+import { resolvePublished } from "../../lib/products";
 import { CATEGORIES } from "../../data/categories";
 import { formatDate, getArticles, readingTime, type Article } from "../../lib/articles";
 
@@ -22,6 +24,7 @@ const { article, all } = Astro.props;
 const { title, description, category, date, cover, coverAlt } = article.data;
 const { Content, headings } = await render(article);
 const cat = CATEGORIES[category];
+const products = await resolvePublished(article.data.products);
 
 const others = all.filter((a) => a.id !== article.id);
 const related = [...others.filter((a) => a.data.category === category), ...others.filter((a) => a.data.category !== category)].slice(0, 3);
@@ -67,6 +70,7 @@ const related = [...others.filter((a) => a.data.category === category), ...other
         Cet article est informatif et ne remplace pas l'avis d'un médecin, d'un pharmacien ou d'un diététicien. En cas de
         doute, de grossesse, de traitement en cours ou de symptômes persistants, consultez un professionnel de santé.
       </p>
+      <ProductCallout products={products} />
     </div>
   </article>
 

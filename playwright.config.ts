@@ -22,9 +22,9 @@ export default defineConfig({
       use: { ...devices["Pixel 7"] },
     },
   ],
-  // Tests run against the production build, not the dev server.
+  // Tests run against a production build (plus fictional fixture content), not the dev server.
   webServer: {
-    command: `npm run build && npx astro preview --port ${PORT}`,
+    command: `CONTENT_FIXTURES=1 npm run build && CONTENT_FIXTURES=1 npx astro preview --port ${PORT}`,
     url: `http://localhost:${PORT}`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

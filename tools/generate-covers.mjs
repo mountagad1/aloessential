@@ -218,6 +218,98 @@ const covers = {
   ),
 };
 
+
+// Product illustrations: generic packaging shapes, deliberately not imitations
+// of LR packaging, so they never pass for official product photos.
+function bottle(x, y, w, h, fill = "#fff", liquid = C.leafLight) {
+  const neck = w * 0.34;
+  return `<g transform="translate(${x} ${y})">
+    <rect x="${r(-neck / 2 - 6)}" y="${r(-h - 70)}" width="${r(neck + 12)}" height="56" rx="10" fill="${C.forest}"/>
+    <rect x="${r(-neck / 2)}" y="${r(-h - 22)}" width="${r(neck)}" height="40" fill="${fill}" fill-opacity=".9"/>
+    <rect x="${r(-w / 2)}" y="${-h}" width="${w}" height="${h}" rx="${r(w * 0.18)}" fill="${fill}" fill-opacity=".92" stroke="#fff" stroke-width="5"/>
+    <rect x="${r(-w / 2 + 14)}" y="${r(-h * 0.62)}" width="${w - 28}" height="${r(h * 0.62 - 14)}" rx="${r(w * 0.14)}" fill="${liquid}" fill-opacity=".85"/>
+    <rect x="${r(-w / 2 + 26)}" y="${r(-h * 0.5)}" width="${r(w * 0.5)}" height="${r(h * 0.22)}" rx="8" fill="#fff" fill-opacity=".85"/>
+    <path d="M${r(-w / 2 + 34)} ${r(-h * 0.39)} h${r(w * 0.3)}" stroke="${C.leaf}" stroke-width="6" stroke-linecap="round"/>
+  </g>`;
+}
+
+function capsule(x, y, angle, a = C.leaf, b = C.cream) {
+  return `<g transform="translate(${x} ${y}) rotate(${angle})"><rect x="-70" y="-26" width="140" height="52" rx="26" fill="${b}" stroke="#fff" stroke-width="4"/><path d="M0 -26 H44 A26 26 0 0 1 44 26 H0Z" fill="${a}"/><rect x="-52" y="-14" width="34" height="8" rx="4" fill="#fff" fill-opacity=".7"/></g>`;
+}
+
+Object.assign(covers, {
+  "produit-gel-boire": svg(
+    "Illustration d'une bouteille de gel à boire et de feuilles d'aloe vera",
+    `<circle cx="600" cy="420" r="300" fill="#fff" fill-opacity=".55"/>` +
+      aloeLeaf({ x: 420, y: 800, len: 520, width: 60, angle: -18 }) +
+      aloeLeaf({ x: 790, y: 800, len: 470, width: 56, angle: 20 }) +
+      bottle(600, 700, 210, 420) +
+      drop(720, 300, 14) +
+      drop(470, 360, 10),
+    C.mint,
+  ),
+  "produit-gelules": svg(
+    "Illustration de gélules et de feuilles",
+    `<circle cx="600" cy="420" r="300" fill="${C.mint}"/>` +
+      capsule(520, 360, -24) +
+      capsule(700, 420, 18, C.olive) +
+      capsule(560, 520, 8, C.leafLight) +
+      capsule(760, 280, -40, C.leaf) +
+      leaf({ x: 330, y: 760, len: 280, width: 70, angle: -30, fill: C.leaf }) +
+      leaf({ x: 880, y: 760, len: 260, width: 64, angle: 32, fill: C.forest }),
+    C.cream,
+  ),
+  "produit-spray": svg(
+    "Illustration d'un flacon spray et d'une feuille d'aloe vera",
+    aloeLeaf({ x: 430, y: 820, len: 560, width: 66, angle: -14 }) +
+      `<g transform="translate(660 720)">
+        <rect x="-26" y="-500" width="52" height="70" rx="10" fill="${C.forest}"/>
+        <rect x="-70" y="-520" width="70" height="26" rx="8" fill="${C.forest}"/>
+        <rect x="-40" y="-436" width="80" height="40" fill="#fff" fill-opacity=".9"/>
+        <rect x="-100" y="-400" width="200" height="400" rx="40" fill="#fff" fill-opacity=".92" stroke="#fff" stroke-width="5"/>
+        <rect x="-86" y="-250" width="172" height="236" rx="30" fill="${C.leafLight}" fill-opacity=".85"/>
+      </g>` +
+      [[560, 210, 6], [530, 190, 4], [520, 230, 5], [500, 205, 3], [545, 170, 3], [490, 240, 4]]
+        .map(([x, y, s]) => `<circle cx="${x}" cy="${y}" r="${s}" fill="${C.leaf}" fill-opacity=".55"/>`)
+        .join("") +
+      sun(960, 180, 60, false),
+    C.mint,
+  ),
+  "produit-creme": svg(
+    "Illustration d'un pot de crème et de feuilles",
+    `<circle cx="600" cy="430" r="300" fill="#FFEFC9"/>` +
+      leaf({ x: 420, y: 700, len: 330, width: 80, angle: -40, fill: C.leaf }) +
+      leaf({ x: 790, y: 700, len: 300, width: 74, angle: 42, fill: C.olive }) +
+      `<rect x="430" y="390" width="340" height="80" rx="20" fill="${C.forest}"/>
+       <rect x="410" y="460" width="380" height="220" rx="36" fill="#fff" stroke="#fff" stroke-width="5"/>
+       <rect x="470" y="520" width="260" height="90" rx="14" fill="${C.mint}"/>
+       <path d="M500 566 h200" stroke="${C.leaf}" stroke-width="8" stroke-linecap="round"/>
+       <path d="M560 380 q40 -60 80 0" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round"/>`,
+    C.cream,
+  ),
+  "produit-flacon": svg(
+    "Illustration d'un flacon de concentré et de fruits",
+    `<circle cx="600" cy="430" r="300" fill="#FFE7CF"/>` +
+      bottle(600, 690, 170, 320, "#fff", "#FFB35C") +
+      [[400, 640, 46, C.orange], [460, 690, 34, "#FFB35C"], [780, 650, 50, C.orange], [840, 700, 30, C.sun], [730, 700, 28, "#FFB35C"]]
+        .map(([x, y, s, c]) => `<circle cx="${x}" cy="${y}" r="${s}" fill="${c}"/><circle cx="${x - s * 0.3}" cy="${y - s * 0.3}" r="${r(s * 0.22)}" fill="#fff" fill-opacity=".6"/>`)
+        .join("") +
+      leaf({ x: 420, y: 600, len: 120, width: 34, angle: -30, fill: C.leaf }) +
+      leaf({ x: 790, y: 600, len: 120, width: 34, angle: 30, fill: C.leaf }),
+    C.cream,
+  ),
+  "produit-coffret": svg(
+    "Illustration d'un coffret avec deux flacons",
+    `<circle cx="600" cy="430" r="310" fill="${C.mint}"/>` +
+      bottle(520, 520, 150, 280) +
+      bottle(690, 520, 150, 250, "#fff", "#FFB35C") +
+      `<rect x="330" y="470" width="540" height="250" rx="24" fill="${C.forest}"/>
+       <rect x="580" y="470" width="40" height="250" fill="${C.sun}"/>
+       <path d="M600 470 q-80 -70 -120 -20 q40 40 120 20 q80 20 120 -20 q-40 -50 -120 20Z" fill="${C.sun}"/>`,
+    C.cream,
+  ),
+});
+
 mkdirSync(OUT, { recursive: true });
 for (const [name, content] of Object.entries(covers)) {
   writeFileSync(join(OUT, `${name}.svg`), content);

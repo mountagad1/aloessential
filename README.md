@@ -61,3 +61,9 @@ coverAlt: "Description de l'image"
 featured: false      # true puts it in "À la une" on the homepage
 ---
 ```
+
+## Product pages (LR partner selection)
+
+Products live in `src/content/products/<slug>.md` and only get a public page at `/produits/<slug>/` once `status: published`. Follow [`docs/aloessential/PRODUCT_CONTENT_GUIDELINES.md`](docs/aloessential/PRODUCT_CONTENT_GUIDELINES.md): every composition, dose and usage line comes from the official LR page, and health claims must be authorised EU claims. To link an article to products, add `products: [slug-a, slug-b]` to its front matter.
+
+Tests build with `CONTENT_FIXTURES=1`, which adds the fictional entries in `tests/fixtures/` and writes the output to `dist-test/`.

@@ -1,0 +1,15 @@
+---
+# DRAFT — not published. Only name, sku and shopUrl come from the partner link;
+# every other field must be filled from the official LR product page.
+name: "Set vitalité"
+sku: "97902-4"
+shopUrl: "https://shop.lrworld.com/product/fr/fr/set_vitalite.html?productAlias=97902-4&casrnc=650af"
+status: draft
+kind: set
+category: sante
+range: "LR Lifetakt"
+tagline: "À rédiger depuis la fiche officielle."
+summary: "À rédiger depuis la fiche officielle."
+cover: /covers/produit-coffret.svg
+coverAlt: "Illustration botanique"
+---

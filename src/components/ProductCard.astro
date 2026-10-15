@@ -1,0 +1,32 @@
+---
+import Icon from "./Icon.astro";
+import { KIND_LABEL, productUrl, type Product } from "../lib/products";
+
+interface Props {
+  product: Product;
+  headingLevel?: 2 | 3;
+}
+
+const { product, headingLevel = 3 } = Astro.props;
+const { name, tagline, kind, range, cover, coverAlt, format } = product.data;
+const Heading = `h${headingLevel}` as "h2" | "h3";
+---
+
+<article class="card product-card">
+  <div class="media" style="--ratio: 4 / 3">
+    <img src={cover} alt={coverAlt} width="1200" height="800" loading="lazy" decoding="async" data-fade />
+  </div>
+  <div class="card__body">
+    <p class="card__meta">
+      <span class="card__category">{KIND_LABEL[kind]}</span>
+      <span aria-hidden="true">·</span>
+      <span>{range}</span>
+      {format && <><span aria-hidden="true">·</span><span>{format}</span></>}
+    </p>
+    <Heading class="card__title"><a href={productUrl(product)}>{name}</a></Heading>
+    <p class="card__excerpt">{tagline}</p>
+    <p class="card__more" aria-hidden="true">
+      Découvrir <Icon name="arrow-right" class="btn__icon" />
+    </p>
+  </div>
+</article>
