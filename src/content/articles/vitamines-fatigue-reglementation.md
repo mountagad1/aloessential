@@ -5,7 +5,7 @@ category: sante
 date: 2026-10-13
 cover: /covers/vitamines.svg
 coverAlt: "Illustration de tranches d'agrumes colorées entourées de feuilles"
-products: [vita-active-fruits-rouges]
+products: [set-vitalite, vita-active-fruits-rouges]
 ---
 
 « Coup de fatigue ? » Les compléments alimentaires qui promettent de l'énergie sont nombreux. Derrière ces promesses, il existe pourtant un cadre très précis. Le connaître aide à lire les étiquettes avec un œil plus critique, et à ne pas passer à côté d'une fatigue qui mérite autre chose qu'une cure de vitamines.

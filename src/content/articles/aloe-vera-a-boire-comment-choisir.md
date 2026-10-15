@@ -5,7 +5,7 @@ category: nutrition
 date: 2026-10-15
 cover: /covers/jus-aloe.svg
 coverAlt: "Illustration d'un verre de boisson vert pâle à côté d'une feuille d'aloe vera"
-products: [aloe-vera-drinking-gel-active-freedom, aloe-vera-gel-a-boire-immune-plus]
+products: [aloe-vera-drinking-gel-active-freedom, aloe-vera-gel-a-boire-immune-plus, set-vitalite]
 ---
 
 Les boissons à base d'aloe vera se ressemblent toutes en rayon : une bouteille, une feuille verte, une promesse de bien-être. Leurs compositions, elles, varient beaucoup. Avant de choisir, mieux vaut savoir ce que l'on cherche sur l'étiquette… et ce qu'elle n'a pas le droit de promettre.
