@@ -2191,7 +2191,7 @@ main:focus {
   margin: 0 0 var(--space-6);
 }
 
-/* ---------- Production line (homepage) -------------------------------- */
+/* ---------- Production line: notes pinned on lined paper --------------- */
 
 .production__lead {
   max-width: 40rem;
@@ -2199,78 +2199,114 @@ main:focus {
   color: var(--color-text-muted);
 }
 
-.production__line {
-  --node: 3rem;
+/* The board: ruled lines and a red-ish margin rule, from brand tokens. */
+.production__board {
   position: relative;
+  margin-top: var(--space-6);
+  padding: var(--space-6) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(90deg, transparent calc(var(--space-6) - 1px), rgb(255 138 31 / 0.28) calc(var(--space-6) - 1px), rgb(255 138 31 / 0.28) var(--space-6), transparent var(--space-6)),
+    repeating-linear-gradient(180deg, transparent 0 calc(2rem - 1px), var(--color-border) calc(2rem - 1px) 2rem);
+}
+
+.production__line {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: var(--space-6);
-  margin: var(--space-6) 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* The line linking the steps: vertical on small screens, horizontal from 64rem.
-   ::before is the track, ::after the filled part. */
-.production__line::before,
-.production__line::after {
+.production__note {
+  --tilt: -1deg;
+  --note: color-mix(in srgb, var(--color-sun) 22%, var(--color-surface));
+  position: relative;
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  border-radius: 0.25rem 0.25rem var(--radius-md) 0.25rem;
+  background: var(--note);
+  box-shadow:
+    0 1px 2px rgb(15 81 50 / 0.08),
+    0 14px 28px -16px rgb(15 81 50 / 0.35);
+  transform: rotate(var(--tilt));
+  transition: transform var(--motion-duration-ui) var(--motion-ease-out);
+}
+
+.production__step:nth-child(3n + 2) .production__note {
+  --note: var(--color-mint);
+}
+
+.production__step:nth-child(3n) .production__note {
+  --note: color-mix(in srgb, var(--color-orange) 14%, var(--color-surface));
+}
+
+.production__step:nth-child(even) .production__note {
+  --tilt: 1.2deg;
+}
+
+/* The pin. */
+.production__note::before {
   content: "";
   position: absolute;
-  top: calc(var(--node) / 2);
-  bottom: calc(var(--node) / 2);
-  left: calc(var(--node) / 2 - 1px);
-  width: 2px;
-  border-radius: 2px;
-  background: var(--color-border);
-}
-
-.production__line::after {
-  background: linear-gradient(180deg, var(--color-leaf), var(--color-sun));
-  transform-origin: top;
-}
-
-.production__step {
-  position: relative;
-  padding-left: calc(var(--node) + var(--space-4));
-}
-
-.production__node {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  display: grid;
-  place-items: center;
-  width: var(--node);
-  height: var(--node);
-  border: 2px solid var(--color-leaf);
+  top: -0.5rem;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin-left: -0.5rem;
   border-radius: 50%;
-  background: var(--color-bg);
-  color: var(--color-forest);
+  background: radial-gradient(circle at 35% 35%, #ffd27a, var(--color-orange) 60%, #c25e05);
+  box-shadow: 0 3px 4px rgb(24 49 38 / 0.35);
 }
 
-.production__node svg {
-  width: 1.4rem;
-  height: 1.4rem;
+.production__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
 }
 
 .production__number {
   margin: 0;
-  color: var(--color-olive, var(--color-leaf));
-  font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: var(--color-forest);
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.production__node {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px dashed var(--color-leaf);
+  border-radius: 50%;
+  color: var(--color-forest);
+}
+
+.production__node svg {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .production__step h3 {
-  margin-top: var(--space-1, 0.25rem);
+  margin-top: var(--space-3);
   font-size: var(--text-lg);
 }
 
-.production__step p:last-child {
+.production__note p:last-child {
   margin-top: var(--space-2, 0.5rem);
   color: var(--color-text-muted);
   font-size: var(--text-sm);
+}
+
+/* The dashed path linking the notes: wide screens only. */
+.production__path {
+  display: none;
 }
 
 .production__more {
@@ -2280,71 +2316,88 @@ main:focus {
   margin-top: var(--space-7);
 }
 
-@media (min-width: 64rem) {
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .production__note:hover {
+    transform: rotate(0deg) translateY(-2px);
+  }
+}
+
+@media (min-width: 48rem) {
+  .production__board {
+    padding: var(--space-7) var(--space-6);
+  }
+
+  /* Zig-zag: odd notes on the left, even on the right, each tucked a little
+     under the previous one. */
   .production__line {
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--space-5);
-  }
-
-  .production__line::before,
-  .production__line::after {
-    top: calc(var(--node) / 2 - 1px);
-    bottom: auto;
-    left: calc(100% / 12);
-    right: calc(100% / 12);
-    width: auto;
-    height: 2px;
-  }
-
-  .production__line::after {
-    background: linear-gradient(90deg, var(--color-leaf), var(--color-sun));
-    transform-origin: left;
+    gap: 0;
   }
 
   .production__step {
-    padding-left: 0;
-    padding-top: calc(var(--node) + var(--space-4));
-    text-align: center;
+    width: 48%;
   }
 
-  .production__node {
-    left: 50%;
-    transform: translateX(-50%);
+  .production__step:nth-child(odd) {
+    justify-self: start;
+  }
+
+  .production__step:nth-child(even) {
+    justify-self: end;
+  }
+
+  .production__step + .production__step {
+    margin-top: calc(var(--space-5) * -1);
+  }
+
+  .production__note {
+    --tilt: -2deg;
+  }
+
+  .production__step:nth-child(even) .production__note {
+    --tilt: 2deg;
+  }
+
+  .production__path {
+    position: absolute;
+    inset: var(--space-7) var(--space-6);
+    display: block;
+    width: calc(100% - 2 * var(--space-6));
+    height: calc(100% - 2 * var(--space-7));
+    overflow: visible;
+    fill: none;
+    stroke: var(--color-leaf);
+    stroke-width: 2;
+    stroke-dasharray: 8 8;
+    stroke-linecap: round;
+  }
+
+  .production__path path {
+    vector-effect: non-scaling-stroke;
   }
 }
 
-/* The filled line follows the section through the viewport. */
+/* The path is uncovered from top to bottom as the board scrolls through the
+   viewport. No loop: it stops when the board stops. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .production__line {
+    .production__board {
       view-timeline: --production;
     }
 
-    .production__line::after {
-      animation: production-fill linear both;
+    .production__path {
+      animation: production-draw linear both;
       animation-timeline: --production;
-      animation-range: entry 30% cover 55%;
+      animation-range: entry 25% cover 70%;
     }
   }
 }
 
-@keyframes production-fill {
+@keyframes production-draw {
   from {
-    transform: scaleY(0);
+    clip-path: inset(0 0 100% 0);
   }
   to {
-    transform: scaleY(1);
-  }
-}
-
-@media (min-width: 64rem) {
-  @keyframes production-fill {
-    from {
-      transform: scaleX(0);
-    }
-    to {
-      transform: scaleX(1);
-    }
+    clip-path: inset(0 0 0 0);
   }
 }
 

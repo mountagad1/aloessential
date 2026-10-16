@@ -4,10 +4,14 @@ import Icon from "./Icon.astro";
 /*
  * "Du champ au flacon": how aloe vera gel is generally produced, in six steps.
  * Generic process, true of the sector as a whole: it does not describe any
- * one brand's factory. The connecting line fills as the section scrolls into
- * view (CSS scroll-driven animation; drawn in full without support or with
- * reduced motion). Steps reveal with the shared data-reveal system.
+ * one brand's factory. Each step is a note pinned on lined paper; on wide
+ * screens the notes zig-zag and a dashed path links them, drawn as the board
+ * scrolls through the viewport (CSS scroll-driven animation, no loop; drawn
+ * in full without support or with reduced motion). Notes reveal with the
+ * shared data-reveal system.
  */
+const CONNECTOR =
+  "M26 10 C55 10 45 30 74 30 C45 30 55 50 26 50 C55 50 45 70 74 70 C45 70 55 90 26 90 C55 90 45 110 74 110";
 const steps = [
   {
     icon: "sun",
@@ -55,20 +59,32 @@ const steps = [
       </div>
     </div>
 
-    <ol class="production__line">
-      {
-        steps.map((step, i) => (
-          <li class="production__step" data-reveal>
-            <span class="production__node">
-              <Icon name={step.icon} />
-            </span>
-            <p class="production__number">Étape {i + 1}</p>
-            <h3>{step.title}</h3>
-            <p>{step.text}</p>
-          </li>
-        ))
-      }
-    </ol>
+    <div class="production__board">
+      <svg class="production__path" viewBox="0 0 100 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d={CONNECTOR} />
+      </svg>
+      <ol class="production__line">
+        {
+          steps.map((step, i) => (
+            <li class="production__step" data-reveal>
+              <div class="production__note">
+                <div class="production__top">
+                  <p class="production__number">
+                    <span class="visually-hidden">Étape </span>
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <span class="production__node">
+                    <Icon name={step.icon} />
+                  </span>
+                </div>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
 
     <p class="production__more" data-reveal>
       <a class="text-link" href="/articles/choisir-gel-aloe-vera/">

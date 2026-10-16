@@ -44,4 +44,29 @@ test.describe("production line", () => {
     await expect(steps.first()).toHaveText("Culture");
     await expect(steps.last()).toHaveText("Contrôle et flacon");
   });
+
+  test("pins the notes on lined paper and draws the dashed path with the scroll, never in a loop", async ({ page, isMobile }) => {
+    await page.goto("/");
+    await expect(page.locator(".production__number").first()).toHaveText(/01/);
+    const path = page.locator(".production__path");
+    if (isMobile) {
+      await expect(path).toBeHidden();
+      return;
+    }
+    await expect(path).toBeVisible();
+    const style = await path.evaluate((el) => {
+      const cs = getComputedStyle(el);
+      return { name: cs.animationName, count: cs.animationIterationCount };
+    });
+    expect(style.name).toBe("production-draw");
+    expect(style.count).toBe("1");
+  });
+
+  test("leaves the path drawn and still with reduced motion", async ({ browser }) => {
+    const context = await browser.newContext({ reducedMotion: "reduce" });
+    const page = await context.newPage();
+    await page.goto("/");
+    expect(await animationName(page, ".production__path")).toBe("none");
+    await context.close();
+  });
 });
