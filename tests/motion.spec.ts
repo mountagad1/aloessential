@@ -1,19 +1,21 @@
 import { test, expect, scrollThrough, computed } from "./fixtures";
 
 test.describe("homepage hero entrance", () => {
-  test("content is in the DOM immediately and settles fully visible", async ({ page }) => {
+  test("photo enters on load; the introduction under it rises in with the scroll", async ({ page }) => {
     await page.goto("/");
     // Accessible from the first frame, regardless of animation state.
-    await expect(page.getByRole("heading", { level: 1, name: /Votre source/ })).toBeAttached();
-    expect(await computed(page, ".hero__title", "animation-name")).toBe("motion-rise-in");
+    await expect(page.getByRole("heading", { level: 1, name: /Votre source de bien-être/ })).toBeAttached();
+    expect(await computed(page, ".hero__title", "animation-name")).toBe("hero-line-in");
 
+    await page.locator(".hero__actions").scrollIntoViewIfNeeded();
+    await page.evaluate(() => window.scrollBy({ top: 300, behavior: "instant" }));
     await page.waitForTimeout(1300);
     for (const selector of [".hero .eyebrow", ".hero__title", ".hero__lead", ".hero__actions", ".hero__visual"]) {
       expect(await computed(page, selector, "opacity"), selector).toBe("1");
     }
   });
 
-  test("sequence is short: content steps finish within one second", async ({ page }) => {
+  test("the photo's load entrance is short: it finishes within one second", async ({ page }) => {
     await page.goto("/");
     const endTimes = await page.evaluate(() =>
       document
@@ -21,7 +23,7 @@ test.describe("homepage hero entrance", () => {
         .filter((a) => ((a.effect as KeyframeEffect).target as Element | null)?.matches("[data-hero-step]"))
         .map((a) => a.effect!.getComputedTiming().endTime as number),
     );
-    expect(endTimes.length).toBeGreaterThanOrEqual(4);
+    expect(endTimes.length).toBeGreaterThanOrEqual(1);
     expect(Math.max(...endTimes)).toBeLessThanOrEqual(1000);
   });
 });

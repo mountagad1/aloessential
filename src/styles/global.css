@@ -548,7 +548,7 @@ html:not(.js) .menu-toggle {
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: var(--space-7) 0;
+  padding-block: var(--space-7) var(--space-5);
   background:
     radial-gradient(60rem 30rem at 85% 10%, rgb(249 194 60 / 0.14), transparent 60%),
     linear-gradient(180deg, var(--color-cream), var(--color-bg));
@@ -592,6 +592,9 @@ html:not(.js) .menu-toggle {
 .hero-stage {
   --inset: max(var(--gutter), calc((100% - var(--container)) / 2));
   position: relative;
+}
+
+.hero__intro {
   margin-top: var(--space-7);
 }
 
@@ -703,6 +706,19 @@ html:not(.js) .menu-toggle {
       animation-name: stage-settle;
     }
 
+    /* The words arrive from both sides and meet over the first 25vh,
+       while the photo is still well in view. */
+    .hero-stage__title span {
+      animation-range: 0 25vh;
+    }
+
+    /* Shorter photo on small screens: the words land sooner. */
+    @media (max-width: 47.99rem) {
+      .hero-stage__title span {
+        animation-range: 0 12vh;
+      }
+    }
+
     .hero-stage__title span:first-child {
       animation-name: stage-split-start;
     }
@@ -710,6 +726,29 @@ html:not(.js) .menu-toggle {
     .hero-stage__title span:last-child {
       animation-name: stage-split-end;
     }
+  }
+}
+
+/* Introduction under the photo: each line rises in as it enters the
+   viewport, one after the other (--i), tied to the scroll position. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    [data-hero-scroll] {
+      animation: hero-line-in linear both;
+      animation-timeline: view();
+      animation-range: entry calc(var(--i, 0) * 10%) entry calc(70% + var(--i, 0) * 10%);
+    }
+  }
+}
+
+@keyframes hero-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-distance-hero));
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -732,14 +771,14 @@ html:not(.js) .menu-toggle {
 }
 
 @keyframes stage-split-start {
-  to {
+  from {
     transform: translateX(-12vw);
     opacity: 0;
   }
 }
 
 @keyframes stage-split-end {
-  to {
+  from {
     transform: translateX(12vw);
     opacity: 0;
   }
@@ -760,10 +799,10 @@ html:not(.js) .menu-toggle {
 
 @media (min-width: 48rem) {
   .hero {
-    padding-block: var(--space-8) 0;
+    padding-block: var(--space-8) var(--space-6);
   }
 
-  .hero-stage {
+  .hero__intro {
     margin-top: var(--space-8);
   }
 
