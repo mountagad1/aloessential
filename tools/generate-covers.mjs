@@ -289,6 +289,41 @@ const covers = {
     C.mint,
   ),
 
+  "aloe-pot": svg(
+    "Aloe vera en pot de terre cuite sur un rebord de fenêtre ensoleillé",
+    bgGradient("bg12", "#FFF3D6", C.cream) +
+      `<rect width="${W}" height="${H}" fill="url(#bg12)"/>` +
+      sun(920, 200, 80) +
+      `<rect x="0" y="640" width="${W}" height="160" fill="#E9DCC0"/>` +
+      aloeLeaf({ x: 560, y: 470, len: 330, width: 46, angle: -30 }) +
+      aloeLeaf({ x: 600, y: 470, len: 380, width: 52, angle: -4 }) +
+      aloeLeaf({ x: 640, y: 470, len: 330, width: 46, angle: 26 }) +
+      aloeLeaf({ x: 520, y: 480, len: 240, width: 40, angle: -52 }) +
+      aloeLeaf({ x: 680, y: 480, len: 240, width: 40, angle: 50 }) +
+      `<path d="M440 460 H760 L725 660 Q722 680 700 680 H500 Q478 680 475 660Z" fill="#C8693A"/>` +
+      `<rect x="425" y="445" width="350" height="44" rx="10" fill="#B95C30"/>` +
+      `<path d="M470 520 H730" stroke="#fff" stroke-opacity=".18" stroke-width="8" stroke-linecap="round"/>`,
+    C.cream,
+  ),
+
+  "aloe-coupe": svg(
+    "Feuille d'aloe vera coupée laissant voir son gel translucide",
+    bgGradient("bg13", "#F1F9F1", C.mint) +
+      `<rect width="${W}" height="${H}" fill="url(#bg13)"/>` +
+      `<g transform="rotate(-14 600 420)">
+        <path d="M200 380 C420 330 820 330 1000 400 C820 470 420 480 200 430Z" fill="${C.leaf}"/>
+        <path d="M250 392 C440 360 800 360 950 404 C800 440 440 448 250 418Z" fill="url(#gel)"/>
+        <path d="M300 398 C470 380 760 382 900 405" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="6" stroke-linecap="round"/>
+        <path d="M200 380 C420 330 820 330 1000 400" fill="none" stroke="${C.sun}" stroke-opacity=".8" stroke-width="5"/>
+      </g>` +
+      drop(560, 560, 16) +
+      drop(620, 610, 11) +
+      drop(500, 620, 8) +
+      leaf({ x: 250, y: 790, len: 240, width: 60, angle: -24, fill: C.olive }) +
+      leaf({ x: 960, y: 790, len: 220, width: 56, angle: 26, fill: C.forest }),
+    C.mint,
+  ),
+
   "anti-age": svg(
     "Pétales et gouttes d'huile, évoquant un soin du visage",
     `<circle cx="600" cy="420" r="300" fill="${C.mint}"/>` +

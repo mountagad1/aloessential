@@ -7,6 +7,9 @@ cover: /covers/aloe-peau.svg
 coverAlt: "Illustration de feuilles d'aloe vera perlées de gouttes d'eau sous un soleil levant"
 products: [aloe-vera-emergency-spray, aloe-vera-dermaintense-creme-regeneratrice]
 featured: true
+sources:
+  - title: "NCCIH (National Institutes of Health), Aloe Vera : usages et sécurité"
+    url: "https://www.nccih.nih.gov/health/aloe-vera"
 ---
 
 L'aloe vera est l'une des plantes les plus présentes dans les salles de bains. Son gel, extrait du cœur de la feuille, est composé à plus de 98 % d'eau, mais aussi de polysaccharides, de vitamines et de minéraux. Voici ce que l'on peut raisonnablement en attendre.

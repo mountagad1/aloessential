@@ -11,6 +11,8 @@ sources:
     url: "https://eur-lex.europa.eu/eli/reg/2021/468/oj"
   - title: "Tribunal de l'UE, arrêt du 13 novembre 2024, Aloe Vera of Europe / Commission (T-189/21)"
     url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:62021TJ0189"
+  - title: "NCCIH (National Institutes of Health), Aloe Vera : usages et sécurité"
+    url: "https://www.nccih.nih.gov/health/aloe-vera"
 ---
 
 Le jus d'aloe vera s'est fait une place dans les rayons bien-être. Mais entre les allégations commerciales et les données scientifiques, l'écart est parfois important.
