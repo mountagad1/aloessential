@@ -6,7 +6,7 @@
 
 export const PUBLISHER = {
   name: "Philip Cros",
-  role: "Partenaire indépendant LR Health & Beauty",
+  role: "partenaire indépendant LR Health & Beauty",
   /** Displayed form and E.164 digits for wa.me links. */
   phone: "+33 7 66 98 48 72",
   phoneHref: "tel:+33766984872",
