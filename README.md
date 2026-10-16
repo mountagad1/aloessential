@@ -45,6 +45,7 @@ tests/                Playwright suite
 python3 tools/prepare-brand-assets.py   # wordmark (colour and white), emblem, favicons
 node tools/generate-covers.mjs          # cover illustrations
 python3 tools/generate-og-image.py       # default share image (public/brand/og-default.png)
+python3 tools/prepare-hero-media.py     # homepage harvest photo (public/media/)
 ```
 
 ## Adding an article

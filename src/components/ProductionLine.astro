@@ -1,0 +1,82 @@
+---
+import Icon from "./Icon.astro";
+
+/*
+ * "Du champ au flacon": how aloe vera gel is generally produced, in six steps.
+ * Generic process, true of the sector as a whole: it does not describe any
+ * one brand's factory. The connecting line fills as the section scrolls into
+ * view (CSS scroll-driven animation; drawn in full without support or with
+ * reduced motion). Steps reveal with the shared data-reveal system.
+ */
+const steps = [
+  {
+    icon: "sun",
+    title: "Culture",
+    text: "Aloe barbadensis Miller pousse en plein soleil, sur des sols bien drainés. C'est l'espèce utilisée pour l'alimentation et la cosmétique.",
+  },
+  {
+    icon: "knife",
+    title: "Récolte à la main",
+    text: "On coupe à la base les feuilles extérieures, les plus mûres. Le cœur de la plante reste en place et continue de pousser.",
+  },
+  {
+    icon: "truck",
+    title: "Transport rapide",
+    text: "Une fois coupé, le gel s'oxyde. Les feuilles sont lavées et transformées au plus vite après la récolte.",
+  },
+  {
+    icon: "layers",
+    title: "Filetage",
+    text: "L'écorce verte et le latex jaune, riche en aloïne, sont retirés. Seul le gel translucide du centre de la feuille est conservé.",
+  },
+  {
+    icon: "filter",
+    title: "Filtration et stabilisation",
+    text: "Le gel est filtré, souvent décoloré pour réduire sa teneur en aloïne, puis stabilisé pour qu'il se conserve.",
+  },
+  {
+    icon: "bottle",
+    title: "Contrôle et flacon",
+    text: "Teneur en aloe, aloïne, qualité microbiologique : le lot est analysé avant d'être conditionné. Certains producteurs le font certifier.",
+  },
+] as const;
+---
+
+<section class="section production" aria-labelledby="production-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <div>
+        <p class="eyebrow">Du champ au flacon</p>
+        <h2 id="production-title">Comment naît un gel d'aloe vera</h2>
+        <p class="production__lead">
+          Six étapes séparent une feuille fraîchement coupée du produit que vous achetez. Les connaître aide à lire une
+          étiquette et à reconnaître un produit soigné.
+        </p>
+      </div>
+    </div>
+
+    <ol class="production__line">
+      {
+        steps.map((step, i) => (
+          <li class="production__step" data-reveal>
+            <span class="production__node">
+              <Icon name={step.icon} />
+            </span>
+            <p class="production__number">Étape {i + 1}</p>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="production__more" data-reveal>
+      <a class="text-link" href="/articles/choisir-gel-aloe-vera/">
+        Bien choisir son gel d'aloe vera <Icon name="arrow-right" class="btn__icon" />
+      </a>
+      <a class="text-link" href="/articles/aloe-vera-a-boire-comment-choisir/">
+        Aloe vera à boire : comment le choisir <Icon name="arrow-right" class="btn__icon" />
+      </a>
+    </p>
+  </div>
+</section>

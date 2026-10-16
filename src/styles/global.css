@@ -548,16 +548,14 @@ html:not(.js) .menu-toggle {
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: var(--space-7) var(--space-8);
+  padding-block: var(--space-7) 0;
   background:
     radial-gradient(60rem 30rem at 85% 10%, rgb(249 194 60 / 0.14), transparent 60%),
     linear-gradient(180deg, var(--color-cream), var(--color-bg));
 }
 
-.hero__grid {
-  display: grid;
-  gap: var(--space-6);
-  align-items: center;
+.hero__intro {
+  max-width: calc(var(--container) + var(--gutter) * 2);
 }
 
 .hero__title {
@@ -588,53 +586,193 @@ html:not(.js) .menu-toggle {
   margin-top: var(--space-6);
 }
 
-.hero__visual {
+/* Harvest stage: a framed photo that opens to the full width while scrolling.
+   --inset is the gap between the frame and the viewport edge, aligned with
+   the container. */
+.hero-stage {
+  --inset: max(var(--gutter), calc((100% - var(--container)) / 2));
   position: relative;
-  justify-self: center;
-  width: min(56vw, 15rem);
-  aspect-ratio: 1;
+  margin-top: var(--space-7);
 }
 
-.hero__halo {
+.hero-stage__frame {
+  position: relative;
+  height: clamp(18rem, 52vw, 38rem);
+  max-height: 78vh;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-forest);
+  clip-path: inset(0 var(--inset) round var(--radius-lg));
+}
+
+.hero-stage__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40% 45%;
+}
+
+.hero-stage__frame::after {
+  content: "";
   position: absolute;
-  inset: 4%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 55%, #fff 0%, var(--color-mint) 70%);
+  inset: 0;
+  background: linear-gradient(180deg, rgb(11 63 39 / 0) 45%, rgb(11 63 39 / 0.65) 100%);
+  pointer-events: none;
 }
 
-.hero__halo .accent-glow {
+.hero-stage__title {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.3em;
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  text-align: center;
+  text-shadow: 0 2px 18px rgb(0 0 0 / 0.35);
+}
+
+.hero-stage__caption {
+  position: absolute;
+  z-index: 1;
+  right: calc(var(--inset) + var(--space-4));
+  bottom: var(--space-3);
+  color: rgb(255 255 255 / 0.85);
+  font-size: var(--text-xs, 0.75rem);
+}
+
+.hero-stage__badge {
+  position: absolute;
+  z-index: 2;
+  top: calc(var(--space-7) * -0.5);
+  right: calc(var(--inset) + var(--space-5));
+  width: 5.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 55%, #fff 0%, var(--color-mint) 75%);
+  box-shadow: 0 10px 30px rgb(15 81 50 / 0.18);
+}
+
+.hero-stage__badge .accent-glow {
   position: absolute;
   inset: 0;
   border-radius: inherit;
   background: radial-gradient(circle at 50% 42%, rgb(249 194 60 / 0.35) 0%, rgb(255 138 31 / 0.08) 45%, transparent 70%);
 }
 
-.hero__emblem {
+.hero-stage__emblem {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 9%;
+  padding: 14%;
 }
 
-.hero__emblem img {
+.hero-stage__emblem img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
+/* Scroll-driven opening. Linked to the page scroll over the first 60vh, so
+   it costs no JavaScript and never holds the page. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-stage__frame,
+    .hero-stage__img,
+    .hero-stage__title span {
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: scroll(root);
+      animation-range: 0 60vh;
+    }
+
+    .hero-stage__frame {
+      animation-name: stage-open;
+    }
+
+    .hero-stage__img {
+      animation-name: stage-settle;
+    }
+
+    .hero-stage__title span:first-child {
+      animation-name: stage-split-start;
+    }
+
+    .hero-stage__title span:last-child {
+      animation-name: stage-split-end;
+    }
+  }
+}
+
+@keyframes stage-open {
+  from {
+    clip-path: inset(0 var(--inset) round var(--radius-lg));
+  }
+  to {
+    clip-path: inset(0 0 round 0);
+  }
+}
+
+@keyframes stage-settle {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes stage-split-start {
+  to {
+    transform: translateX(-12vw);
+    opacity: 0;
+  }
+}
+
+@keyframes stage-split-end {
+  to {
+    transform: translateX(12vw);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero__intro {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-7);
+    align-items: end;
+  }
+
+  .hero__aside .hero__lead {
+    margin-top: 0;
+  }
+}
+
 @media (min-width: 48rem) {
   .hero {
-    padding-block: var(--space-8) var(--space-9);
+    padding-block: var(--space-8) 0;
   }
 
-  .hero__grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: var(--space-7);
+  .hero-stage {
+    margin-top: var(--space-8);
   }
 
-  .hero__visual {
-    width: 100%;
-    max-width: 26rem;
+  .hero-stage__title {
+    font-size: var(--text-3xl);
+  }
+
+  .hero-stage__badge {
+    width: 7.5rem;
   }
 }
 
@@ -2012,4 +2150,161 @@ main:focus {
 
 .rubrique-intro {
   margin: 0 0 var(--space-6);
+}
+
+/* ---------- Production line (homepage) -------------------------------- */
+
+.production__lead {
+  max-width: 40rem;
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.production__line {
+  --node: 3rem;
+  position: relative;
+  display: grid;
+  gap: var(--space-6);
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The line linking the steps: vertical on small screens, horizontal from 64rem.
+   ::before is the track, ::after the filled part. */
+.production__line::before,
+.production__line::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--node) / 2);
+  bottom: calc(var(--node) / 2);
+  left: calc(var(--node) / 2 - 1px);
+  width: 2px;
+  border-radius: 2px;
+  background: var(--color-border);
+}
+
+.production__line::after {
+  background: linear-gradient(180deg, var(--color-leaf), var(--color-sun));
+  transform-origin: top;
+}
+
+.production__step {
+  position: relative;
+  padding-left: calc(var(--node) + var(--space-4));
+}
+
+.production__node {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: var(--node);
+  height: var(--node);
+  border: 2px solid var(--color-leaf);
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-forest);
+}
+
+.production__node svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.production__number {
+  margin: 0;
+  color: var(--color-olive, var(--color-leaf));
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.production__step h3 {
+  margin-top: var(--space-1, 0.25rem);
+  font-size: var(--text-lg);
+}
+
+.production__step p:last-child {
+  margin-top: var(--space-2, 0.5rem);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.production__more {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  margin-top: var(--space-7);
+}
+
+@media (min-width: 64rem) {
+  .production__line {
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-5);
+  }
+
+  .production__line::before,
+  .production__line::after {
+    top: calc(var(--node) / 2 - 1px);
+    bottom: auto;
+    left: calc(100% / 12);
+    right: calc(100% / 12);
+    width: auto;
+    height: 2px;
+  }
+
+  .production__line::after {
+    background: linear-gradient(90deg, var(--color-leaf), var(--color-sun));
+    transform-origin: left;
+  }
+
+  .production__step {
+    padding-left: 0;
+    padding-top: calc(var(--node) + var(--space-4));
+    text-align: center;
+  }
+
+  .production__node {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* The filled line follows the section through the viewport. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .production__line {
+      view-timeline: --production;
+    }
+
+    .production__line::after {
+      animation: production-fill linear both;
+      animation-timeline: --production;
+      animation-range: entry 30% cover 55%;
+    }
+  }
+}
+
+@keyframes production-fill {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@media (min-width: 64rem) {
+  @keyframes production-fill {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
 }
