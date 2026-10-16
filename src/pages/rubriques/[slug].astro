@@ -47,6 +47,9 @@ const jsonLd = [
 
   <section class="section section--tight" aria-label={`Articles de la rubrique ${category.label}`}>
     <div class="container">
+      <div class="rubrique-intro prose">
+        {category.intro.map((p) => <p>{p}</p>)}
+      </div>
       {
         articles.length ? (
           <CardGrid articles={articles} headingLevel={2} priority={3} />

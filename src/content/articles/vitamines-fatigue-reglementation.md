@@ -6,6 +6,13 @@ date: 2026-10-13
 cover: /covers/vitamines.svg
 coverAlt: "Illustration de tranches d'agrumes colorées entourées de feuilles"
 products: [set-vitalite, vita-active-fruits-rouges]
+sources:
+  - title: "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé"
+    url: "https://eur-lex.europa.eu/eli/reg/2006/1924/oj"
+  - title: "Règlement (UE) n° 432/2012 : liste des allégations de santé autorisées"
+    url: "https://eur-lex.europa.eu/eli/reg/2012/432/oj"
+  - title: "Règlement (UE) n° 1169/2011 concernant l'information des consommateurs (annexe XIII : quantités significatives)"
+    url: "https://eur-lex.europa.eu/eli/reg/2011/1169/oj"
 ---
 
 « Coup de fatigue ? » Les compléments alimentaires qui promettent de l'énergie sont nombreux. Derrière ces promesses, il existe pourtant un cadre très précis. Le connaître aide à lire les étiquettes avec un œil plus critique, et à ne pas passer à côté d'une fatigue qui mérite autre chose qu'une cure de vitamines.

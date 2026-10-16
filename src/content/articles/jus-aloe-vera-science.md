@@ -6,6 +6,11 @@ date: 2026-09-24
 cover: /covers/jus-aloe.svg
 coverAlt: "Illustration d'un verre de jus vert pâle à côté d'une feuille d'aloe vera"
 products: [aloe-vera-drinking-gel-active-freedom, aloe-vera-gel-a-boire-immune-plus]
+sources:
+  - title: "Règlement (UE) 2021/468 relatif aux dérivés hydroxyanthracéniques"
+    url: "https://eur-lex.europa.eu/eli/reg/2021/468/oj"
+  - title: "Tribunal de l'UE, arrêt du 13 novembre 2024, Aloe Vera of Europe / Commission (T-189/21)"
+    url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:62021TJ0189"
 ---
 
 Le jus d'aloe vera s'est fait une place dans les rayons bien-être. Mais entre les allégations commerciales et les données scientifiques, l'écart est parfois important.

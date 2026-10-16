@@ -22,7 +22,7 @@ Aucun chiffre de trafic, de volume de recherche, de position, de backlink ou de 
 | Question | Statut | Preuve |
 | --- | --- | --- |
 | Le domaine aloessential.com répond-il ? | **INC** | Le proxy réseau de l'environnement d'audit refuse la connexion (`CONNECT 403`, 2026-10-15 16:18 UTC). Ce n'est pas une information sur le site. |
-| Ce dépôt est-il déployé sur aloessential.com ? | **INC** | Aucun fichier de configuration d'hébergement dans le dépôt (pas de `vercel.json`, `netlify.toml`, `_redirects`, `_headers`, workflow CI). |
+| Ce dépôt est-il déployé sur aloessential.com ? | **OBS (2026-10-16)** | Oui : projet Vercel `aloessential`, déploiement automatique en production à chaque push sur `claude/sleepy-wozniak-wbf030` (voir le registre des risques, lot 2). |
 | Les pages sont-elles indexées ? | **GSC** | Une recherche web « aloessential.com » (2026-10-15) ne renvoie aucun résultat sur le domaine. Cela **ne prouve pas** une absence d'indexation (règle n° 7). Seul le rapport « Pages » de la Search Console fait foi. |
 | Historique du domaine (ancien site, pénalité, redirections héritées) | **EXT** | Registrar, Wayback Machine, Search Console (onglet « Actions manuelles »). |
 

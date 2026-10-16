@@ -6,6 +6,11 @@ date: 2026-10-15
 cover: /covers/digestion.svg
 coverAlt: "Illustration d'un bol de céréales colorées entouré de feuilles"
 products: [capsules-pro-12-plus, lifetakt-liver-support]
+sources:
+  - title: "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé"
+    url: "https://eur-lex.europa.eu/eli/reg/2006/1924/oj"
+  - title: "Règlement (UE) n° 432/2012 : liste des allégations de santé autorisées"
+    url: "https://eur-lex.europa.eu/eli/reg/2012/432/oj"
 ---
 
 Au printemps comme après les fêtes, les cures « détox » et les compléments pour l'intestin envahissent les rayons. Leurs emballages promettent de nettoyer, de drainer, de rééquilibrer. Le cadre européen est pourtant strict sur ce qu'un complément alimentaire peut affirmer. Le connaître permet de faire le tri.

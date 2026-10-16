@@ -79,6 +79,23 @@ const related = [...others.filter((a) => a.data.category === category), ...other
       </div>
       <div class="prose">
         <Content />
+        {
+          article.data.sources.length > 0 && (
+            <section class="sources" aria-labelledby="sources-title">
+              <h2 id="sources-title">Sources</h2>
+              <ul>
+                {article.data.sources.map((s) => (
+                  <li>
+                    <a href={s.url} rel="noopener" target="_blank">
+                      {s.title}
+                      <span class="visually-hidden"> (nouvel onglet)</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
       </div>
       <p class="disclaimer prose">
         Cet article est informatif et ne remplace pas l'avis d'un médecin, d'un pharmacien ou d'un diététicien. En cas de

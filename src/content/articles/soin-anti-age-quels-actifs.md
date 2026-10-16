@@ -6,6 +6,9 @@ date: 2026-10-10
 cover: /covers/anti-age.svg
 coverAlt: "Illustration d'une fleur stylisée et de gouttes d'huile sur fond crème"
 products: [creme-anti-age-platinum, aloe-vera-dermaintense-creme-regeneratrice]
+sources:
+  - title: "Règlement (UE) 2024/996 (vitamine A dans les cosmétiques)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/996/oj"
 ---
 
 Les rayons « anti-âge » regorgent de noms d'actifs, de pourcentages et de promesses. Pour s'y retrouver, il faut partir d'une idée simple : une crème agit sur l'**aspect** de la peau (hydratation, éclat, souplesse, apparence des ridules). Elle ne remonte pas le temps. Bien choisie et bien utilisée, elle peut en revanche faire une vraie différence au quotidien.

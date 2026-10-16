@@ -6,6 +6,13 @@ date: 2026-10-15
 cover: /covers/jus-aloe.svg
 coverAlt: "Illustration d'un verre de boisson vert pâle à côté d'une feuille d'aloe vera"
 products: [aloe-vera-drinking-gel-active-freedom, aloe-vera-gel-a-boire-immune-plus, set-vitalite]
+sources:
+  - title: "Règlement (UE) 2021/468 relatif aux dérivés hydroxyanthracéniques"
+    url: "https://eur-lex.europa.eu/eli/reg/2021/468/oj"
+  - title: "Tribunal de l'UE, arrêt du 13 novembre 2024, Aloe Vera of Europe / Commission (T-189/21)"
+    url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:62021TJ0189"
+  - title: "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé"
+    url: "https://eur-lex.europa.eu/eli/reg/2006/1924/oj"
 ---
 
 Les boissons à base d'aloe vera se ressemblent toutes en rayon : une bouteille, une feuille verte, une promesse de bien-être. Leurs compositions, elles, varient beaucoup. Avant de choisir, mieux vaut savoir ce que l'on cherche sur l'étiquette… et ce qu'elle n'a pas le droit de promettre.

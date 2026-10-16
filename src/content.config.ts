@@ -26,6 +26,8 @@ const articles = defineCollection({
     featured: z.boolean().default(false),
     /** LR products discussed in the article; only published ones are shown. */
     products: z.array(reference("products")).default([]),
+    /** Primary sources (regulation, agencies, studies) backing the article's factual statements. */
+    sources: z.array(z.object({ title: z.string(), url: z.string().url() })).default([]),
   }),
 });
 

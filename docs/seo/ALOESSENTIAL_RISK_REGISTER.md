@@ -12,23 +12,23 @@
 | R01 | Pas de mentions légales | Légal / confiance | P0 | Élevée |
 | R02 | Pas de politique de confidentialité, newsletter sans information RGPD | Légal / RGPD | P0 (avant d'activer la newsletter) | Élevée |
 | R03 | Aucune URL de référence : pas de `site`, de canonical, de sitemap ni de `robots.txt` | SEO technique | P0 → **traité dans le code** (redirections hébergeur à faire) | Élevée |
-| R04 | Hébergement, domaine et statut en ligne inconnus | Données / technique | P0 | Élevée |
+| R04 | Hébergement, domaine et statut en ligne inconnus | Données / technique | P0 → **identifié** (Vercel) ; `www` redirigé dans `vercel.json` | Élevée |
 | R05 | Aucune mesure : pas de Search Console vérifiable ici, pas d'analytics | Données | P0 | Élevée |
-| R06 | Contenus santé sans auteur, sans relecteur et sans sources | E-E-A-T / YMYL / conformité | P1 | Élevée |
+| R06 | Contenus santé sans auteur, sans relecteur et sans sources | E-E-A-T / YMYL / conformité | P1 → **partiel** (sources sur 6 articles ; auteur et relecteur en attente) | Élevée |
 | R07 | Conformité aux règles LR pour les sites de partenaires non vérifiée | Affiliation / marque | P1 | Faible (inconnu) |
 | R08 | Antériorité de marque « Aloe Essentials » | Marque | P1 | Faible (à vérifier) |
 | R09 | Aucune donnée structurée | SEO / GEO | P1 → **traité** (Organization, WebSite, Article, BreadcrumbList ; auteur à ajouter avec R06) | Élevée |
 | R10 | Positionnement « aloe vera » faible dans l'architecture | Stratégie SEO | P1 | Moyenne |
 | R11 | Meta descriptions des fiches produit trop longues, titres peu informatifs | SEO on-page | P2 → **traité** | Élevée |
-| R12 | Rubriques et hubs minces | Contenu | P2 | Élevée |
+| R12 | Rubriques et hubs minces | Contenu | P2 → **partiel** (introductions de rubrique) | Élevée |
 | R13 | Open Graph incomplet (pas d'image, d'URL, de locale) | Partage / GEO | P2 → **traité** (image commune ; images par article à prévoir) | Élevée |
 | R14 | Données LR incohérentes reprises par le site | Exactitude produit | P2 | Élevée |
 | R15 | Contenu réglementaire daté (aloe, appel C-38/25 P) | Exactitude | P2 | Élevée |
 | R16 | « Signalez-la-nous » sans moyen de contact | Confiance | P1 | Élevée |
-| R17 | Imprécision botanique (« liliacées ») | Exactitude éditoriale | P3 | Élevée |
+| R17 | Imprécision botanique (« liliacées ») | Exactitude éditoriale | P3 → **traité** | Élevée |
 | R18 | Slogans d'accueil vagues (« Plus d'énergie au quotidien ») | Allégations | P3 | Moyenne |
 | R19 | Visuels produits génériques (SVG) | Conversion / images | P3 | Élevée |
-| R20 | Pas d'intégration continue | Qualité | P2 | Élevée |
+| R20 | Pas d'intégration continue | Qualité | P2 → **traité** (`.github/workflows/ci.yml`) | Élevée |
 | O01 | Base technique saine (HTML statique, 2 Ko JS, tests) | Opportunité | — | Élevée |
 | O02 | Fiches produit très documentées et conformes | Opportunité | — | Élevée |
 | O03 | Transparence d'affiliation déjà en place et testée | Opportunité | — | Élevée |
@@ -47,6 +47,15 @@
 - Mention « Lien partenaire » placée juste sous le premier bouton ; sur mobile, l'illustration du hero passe sous le texte. Sur un écran de 839 px de haut, la mention est visible dès l'arrivée sur 5 fiches sur 6 (DermaIntense : quelques pixels sous la ligne de flottaison) ; sur un petit écran de 667 px, elle reste juste sous la ligne de flottaison mais immédiatement après le bouton.
 - Nouveaux tests : `tests/seo.spec.ts` (7 tests) ; `tests/products.spec.ts` vérifie en plus que la mention suit directement le bouton.
 - **Reste à faire hors dépôt :** redirections 301 `www → apex`, `http → https`, sans slash → avec slash chez l'hébergeur ; soumettre `https://aloessential.com/sitemap.xml` dans la Search Console.
+
+### Lot 2 — hébergement, sources, rubriques, CI (2026-10-16)
+- **Hébergement identifié (OBS, API Vercel) :** projet Vercel `aloessential`, framework Astro, Node 24.x. Domaines : `aloessential.com`, `www.aloessential.com` (tous deux vérifiés), `aloessential.vercel.app`. Les URL `*.vercel.app` sont protégées par l'authentification Vercel ; seuls les domaines personnalisés sont publics.
+- **Déploiement :** chaque push sur `claude/sleepy-wozniak-wbf030` part **en production** (déploiements `target: production` pour chaque commit de la branche). La branche de travail est donc aussi la branche de production : tout push est une mise en ligne.
+- **Avant ce lot, `www.aloessential.com` servait le site sans redirection** (doublon atténué par les canonicals). `vercel.json` ajoute une redirection permanente `www` → `aloessential.com` et `trailingSlash: true` (URL sans slash redirigées vers la version avec slash). `http → https` est assuré par Vercel.
+- **Sources :** nouveau champ `sources` dans le schéma des articles, affiché en fin d'article ; renseigné sur les 6 articles qui s'appuient sur des textes réglementaires ou des recommandations (EUR-Lex, Tribunal de l'UE, OMS, EFSA).
+- **Rubriques :** texte d'introduction éditorial sur chaque page de rubrique.
+- **R17 :** « liliacées » corrigé (l'aloe appartient aux asphodélacées ; la mise en garde allergique est conservée).
+- **CI :** GitHub Actions lance `npm run build` et la suite Playwright à chaque push et pull request.
 
 ## Détail
 

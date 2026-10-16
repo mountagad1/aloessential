@@ -6,6 +6,13 @@ date: 2026-10-12
 cover: /covers/mobilite.svg
 coverAlt: "Illustration d'un chemin sinueux à travers des collines vertes"
 products: [lifetakt-active-freedom-capsules, aloe-vera-drinking-gel-active-freedom]
+sources:
+  - title: "OMS, lignes directrices sur l'activité physique et la sédentarité (2020)"
+    url: "https://www.who.int/publications/i/item/9789240015128"
+  - title: "Règlement (UE) n° 432/2012 : liste des allégations de santé autorisées"
+    url: "https://eur-lex.europa.eu/eli/reg/2012/432/oj"
+  - title: "EFSA, avis sur les allégations relatives à la glucosamine, seule ou associée à la chondroïtine, et aux articulations"
+    url: "https://www.efsa.europa.eu/en/efsajournal/pub/1264"
 ---
 
 Se lever sans raideur, monter les escaliers sans y penser, jardiner une après-midi entière : la mobilité est un confort que l'on remarque surtout quand il diminue. Bonne nouvelle, une grande partie de ce qui l'entretient se joue dans nos habitudes.

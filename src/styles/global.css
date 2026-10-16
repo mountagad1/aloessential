@@ -1524,6 +1524,22 @@ html:not(.js) .menu-toggle {
   font-size: var(--text-sm);
 }
 
+.prose .sources {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+
+.prose .sources h2 {
+  margin-top: 0;
+  font-size: var(--text-lg);
+}
+
+.prose .sources a {
+  overflow-wrap: anywhere;
+}
+
 /* ---------- Not found ------------------------------------------------- */
 
 .not-found {
@@ -1990,4 +2006,10 @@ main:focus {
   justify-items: start;
   gap: var(--space-4);
   max-width: 36rem;
+}
+
+/* ---------- Section page introduction ---------------------------------- */
+
+.rubrique-intro {
+  margin: 0 0 var(--space-6);
 }

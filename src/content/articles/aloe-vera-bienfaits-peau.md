@@ -31,7 +31,7 @@ Après le rasage ou l'épilation, une fine couche de gel peut calmer les rougeur
 
 ## Les bons réflexes
 
-- **Testez d'abord** sur une petite zone, au creux du coude, pendant 24 heures : des allergies existent, notamment chez les personnes sensibles aux plantes de la famille des liliacées.
+- **Testez d'abord** sur une petite zone, au creux du coude, pendant 24 heures : des allergies existent, notamment chez les personnes allergiques à l'ail, à l'oignon ou à la tulipe, des plantes longtemps classées avec l'aloe dans la famille des liliacées (l'aloe appartient aujourd'hui aux asphodélacées).
 - **Lisez la liste des ingrédients** : l'aloe vera doit idéalement apparaître en tête.
 - **Conservez le gel au frais** une fois ouvert, et respectez la durée d'utilisation indiquée.
 
