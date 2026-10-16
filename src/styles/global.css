@@ -2512,7 +2512,17 @@ main:focus {
   font-size: var(--text-sm);
   font-weight: 600;
   text-decoration: none;
-  transition: background-color var(--motion-duration-ui) var(--motion-ease-out);
+  transition:
+    background-color var(--motion-duration-ui) var(--motion-ease-out),
+    transform var(--motion-duration-ui) var(--motion-ease-out);
+}
+
+/* Product pages, small screens: when the purchase bar slides up, the button
+   rises with it so the two never overlap. */
+@media (max-width: 55.99rem) {
+  .js body:has(.sticky-cta.is-visible) .distributor-fab {
+    transform: translateY(calc(-1 * (44px + 2 * var(--space-3) + env(safe-area-inset-bottom))));
+  }
 }
 
 .distributor-fab svg {

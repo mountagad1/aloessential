@@ -50,8 +50,28 @@ test.describe("distributor invitation", () => {
     await expect(section).toContainText("nous ne promettons aucun gain");
   });
 
-  test("product pages keep the bottom of the screen for the purchase bar", async ({ page }) => {
+  test("is offered on every page, product pages included", async ({ page }) => {
+    for (const path of ["/", "/articles/", "/produits/", "/produits/produit-demo/", "/contact/", "/mentions-legales/"]) {
+      await page.goto(path);
+      await expect(page.locator("[data-distributor-open]")).toBeVisible();
+      await expect(page.locator("#distributor-dialog")).toHaveCount(1);
+    }
+  });
+
+  test("on product pages it rises above the purchase bar instead of covering it", async ({ page, isMobile }) => {
+    test.skip(!isMobile, "the purchase bar only exists on small screens");
     await page.goto("/produits/produit-demo/");
-    await expect(page.locator("[data-distributor-open]")).toHaveCount(0);
+    await page.locator("#avis").evaluate((el) => el.scrollIntoView({ behavior: "instant" }));
+    const bar = page.locator("[data-sticky-cta]");
+    await expect(bar).toHaveClass(/is-visible/);
+    const fab = page.locator("[data-distributor-open]");
+    await expect
+      .poll(async () => {
+        const [f, b] = await Promise.all([fab.boundingBox(), bar.boundingBox()]);
+        return f!.y + f!.height <= b!.y;
+      })
+      .toBe(true);
+    await fab.click();
+    await expect(page.locator("#distributor-dialog")).toBeVisible();
   });
 });
