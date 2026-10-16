@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { HOST, PUBLISHER } from "../data/site";
+---
+
+<BaseLayout
+  title="Politique de confidentialité"
+  description="Quelles données Aloessential traite, pourquoi, combien de temps, et comment exercer vos droits : pas de cookie, pas d'outil de mesure d'audience."
+>
+  <article class="article">
+    <header class="article-header container">
+      <div class="article-header__inner">
+        <p class="eyebrow" data-hero-step style="--step: 0">Vos données</p>
+        <h1 data-hero-step style="--step: 1">Politique de confidentialité</h1>
+        <p class="article-header__dek" data-hero-step style="--step: 2">
+          Aloessential collecte le moins de données possible. Voici exactement lesquelles, et pourquoi.
+        </p>
+      </div>
+    </header>
+    <div class="container">
+      <div class="prose">
+        <h2>Responsable du traitement</h2>
+        <p>
+          {PUBLISHER.name}, éditeur du site. Contact : <a href="/contact/">page contact</a> ou
+          <a href={PUBLISHER.phoneHref}>{PUBLISHER.phone}</a>.
+        </p>
+
+        <h2>Ni cookie, ni mesure d'audience</h2>
+        <p>
+          Le site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience ni de publicité. Les polices de
+          caractères sont hébergées sur le site lui-même : votre navigateur ne contacte aucun service tiers pour les
+          charger.
+        </p>
+
+        <h2>Journaux techniques de l'hébergeur</h2>
+        <p>
+          Comme tout hébergeur, {HOST.name} enregistre des données techniques de connexion (adresse IP, page demandée,
+          date, navigateur) pour assurer la sécurité et le bon fonctionnement du service. Ces données sont traitées par
+          l'hébergeur, qui peut les traiter hors de l'Union européenne, dans le cadre de ses propres engagements.
+        </p>
+
+        <h2>Liens vers la boutique LR</h2>
+        <p>
+          Les liens vers la boutique LR contiennent notre identifiant partenaire (<code>ref=cros</code>). Le suivi des
+          visites et des commandes se fait sur le site de LR, selon la politique de confidentialité de LR Health &amp;
+          Beauty. Aloessential ne reçoit aucune donnée personnelle sur les acheteurs par ce biais.
+        </p>
+
+        <h2>Si vous nous écrivez</h2>
+        <p>
+          Si vous nous contactez par WhatsApp ou par téléphone, nous utilisons vos coordonnées et votre message
+          uniquement pour vous répondre, et nous ne les conservons pas plus longtemps que nécessaire à cet échange.
+          WhatsApp est un service de Meta, soumis à sa propre politique de confidentialité.
+        </p>
+
+        <h2>Newsletter</h2>
+        <p>
+          Les inscriptions à la newsletter ne sont pas encore ouvertes. Avant leur ouverture, cette page précisera le
+          prestataire utilisé, la durée de conservation de votre adresse et la façon de vous désinscrire.
+        </p>
+
+        <h2>Vos droits</h2>
+        <p>
+          Vous pouvez demander l'accès à vos données, leur rectification ou leur effacement, ou vous opposer à leur
+          traitement, en nous contactant. Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une
+          réclamation à la CNIL (<a href="https://www.cnil.fr" rel="noopener" target="_blank">cnil.fr<span
+            class="visually-hidden"> (nouvel onglet)</span></a>).
+        </p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

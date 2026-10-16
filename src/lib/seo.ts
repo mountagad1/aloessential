@@ -58,7 +58,7 @@ export function breadcrumbLd(crumbs: Crumb[], site: URL | undefined): JsonLd {
 }
 
 export function articleLd(
-  a: { title: string; description: string; date: Date; cover: string; path: string },
+  a: { title: string; description: string; date: Date; cover: string; path: string; author: string },
   site: URL | undefined,
 ): JsonLd {
   return {
@@ -69,6 +69,7 @@ export function articleLd(
     image: absoluteUrl(a.cover, site),
     inLanguage: "fr-FR",
     mainEntityOfPage: absoluteUrl(a.path, site),
+    author: { "@type": "Person", name: a.author, url: absoluteUrl("/equipe/", site) },
     publisher: { "@id": absoluteUrl("/#organization", site) },
   };
 }

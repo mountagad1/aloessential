@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { organizationLd, websiteLd } from "../lib/seo";
 import Hero from "../components/Hero.astro";
 import ProductionLine from "../components/ProductionLine.astro";
+import DistributorSection from "../components/DistributorSection.astro";
 import FeaturedArticle from "../components/FeaturedArticle.astro";
 import CardGrid from "../components/CardGrid.astro";
 import Newsletter from "../components/Newsletter.astro";
@@ -110,6 +111,8 @@ const jsonLd = [organizationLd(Astro.site), websiteLd(Astro.site)];
       </ul>
     </div>
   </section>
+
+  <DistributorSection />
 
   <Newsletter />
 </BaseLayout>

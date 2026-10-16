@@ -19,6 +19,11 @@ const links = categoryList.map((c) => ({ href: `/rubriques/${c.slug}/`, label: c
 
     <nav class="nav" aria-label="Rubriques">
       <ul class="nav__list">
+        <li>
+          <a class="nav-link" href="/aloe-vera/" aria-current={current === "aloe-vera" ? "page" : undefined}>
+            Aloe vera
+          </a>
+        </li>
         {
           links.map((link) => (
             <li>
@@ -55,6 +60,11 @@ const links = categoryList.map((c) => ({ href: `/rubriques/${c.slug}/`, label: c
 
   <nav class="mobile-nav" id="mobile-nav" aria-label="Menu principal">
     <ul class="container">
+      <li>
+        <a href="/aloe-vera/" aria-current={current === "aloe-vera" ? "page" : undefined}>
+          Aloe vera
+        </a>
+      </li>
       {
         links.map((link) => (
           <li>

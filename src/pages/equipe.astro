@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { TEAM } from "../data/site";
+---
+
+<BaseLayout
+  title="L'équipe"
+  description="Qui écrit et relit les contenus d'Aloessential, et comment nous travaillons : sources officielles, relecture, transparence sur nos liens partenaires."
+>
+  <article class="article">
+    <header class="article-header container">
+      <div class="article-header__inner">
+        <p class="eyebrow" data-hero-step style="--step: 0">À propos</p>
+        <h1 data-hero-step style="--step: 1">L'équipe Aloessential</h1>
+        <p class="article-header__dek" data-hero-step style="--step: 2">
+          Un média indépendant sur l'aloe vera, la beauté botanique et le bien-être, écrit et relu par deux personnes.
+        </p>
+      </div>
+    </header>
+    <div class="container">
+      <div class="prose">
+        <ul class="team-list">
+          {
+            TEAM.map((m) => (
+              <li>
+                <h2>{m.name}</h2>
+                <p class="team-list__role">{m.role}</p>
+                <p>{m.text}</p>
+              </li>
+            ))
+          }
+        </ul>
+
+        <h2>Comment nous travaillons</h2>
+        <ul>
+          <li>Chaque information sur un produit vient de sa fiche officielle ou de son étiquette, avec la date de vérification.</li>
+          <li>Les allégations de santé se limitent à celles autorisées par la réglementation européenne.</li>
+          <li>Les articles citent leurs sources réglementaires et scientifiques en fin de texte.</li>
+          <li>
+            Nos liens vers la boutique LR sont des liens partenaires, signalés et expliqués sur la page
+            <a href="/transparence/">Transparence</a>.
+          </li>
+          <li>
+            Nos contenus ne remplacent pas un avis médical. Une erreur ? <a href="/contact/">Écrivez-nous</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

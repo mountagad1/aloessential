@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import DistributorSection from "../components/DistributorSection.astro";
+import Icon from "../components/Icon.astro";
+import { CONTACT_MESSAGE, PUBLISHER, whatsappUrl } from "../data/site";
+---
+
+<BaseLayout
+  title="Contact"
+  description="Écrire à Aloessential : une question sur un article, une erreur à signaler ou l'activité de distributeur LR."
+>
+  <article class="article">
+    <header class="article-header container">
+      <div class="article-header__inner">
+        <p class="eyebrow" data-hero-step style="--step: 0">Contact</p>
+        <h1 data-hero-step style="--step: 1">Nous écrire</h1>
+        <p class="article-header__dek" data-hero-step style="--step: 2">
+          Une question sur un article, une composition qui a changé, une erreur à signaler : {PUBLISHER.name} vous répond.
+        </p>
+      </div>
+    </header>
+    <div class="container">
+      <div class="prose">
+        <p>
+          <a class="btn btn--sun" href={whatsappUrl(CONTACT_MESSAGE)} target="_blank" rel="noopener">
+            <Icon name="message" class="btn__icon" /> Écrire sur WhatsApp
+            <span class="visually-hidden"> (nouvel onglet)</span>
+          </a>
+        </p>
+        <p>Par téléphone : <a href={PUBLISHER.phoneHref}>{PUBLISHER.phone}</a>.</p>
+        <p>
+          Nous ne pouvons pas répondre aux questions médicales personnelles : pour un symptôme, un traitement ou une
+          grossesse, adressez-vous à votre médecin ou à votre pharmacien. Pour une commande LR (livraison, retour,
+          paiement), le service client de LR est le bon interlocuteur.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <DistributorSection />
+</BaseLayout>

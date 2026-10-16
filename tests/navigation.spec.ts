@@ -73,7 +73,8 @@ test.describe("mobile menu", () => {
 
     await toggle.focus();
     await page.keyboard.press("Tab");
-    await expect(panel.getByRole("link", { name: "Conseils" })).toBeFocused();
+    // First menu entry: the aloe vera guide.
+    await expect(panel.getByRole("link", { name: "Aloe vera" })).toBeFocused();
 
     await page.keyboard.press("Escape");
     await expect(toggle).toHaveAttribute("aria-expanded", "false");

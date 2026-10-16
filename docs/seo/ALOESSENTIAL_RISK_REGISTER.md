@@ -9,11 +9,11 @@
 
 | ID | Sujet | Catégorie | Priorité | Confiance |
 | --- | --- | --- | --- | --- |
-| R01 | Pas de mentions légales | Légal / confiance | P0 | Élevée |
-| R02 | Pas de politique de confidentialité, newsletter sans information RGPD | Légal / RGPD | P0 (avant d'activer la newsletter) | Élevée |
+| R01 | Pas de mentions légales | Légal / confiance | P0 → **partiel** (`/mentions-legales/` ; adresse postale et statut juridique de l'éditeur à compléter) | Élevée |
+| R02 | Pas de politique de confidentialité, newsletter sans information RGPD | Légal / RGPD | P0 → **traité** (`/confidentialite/` ; à compléter avant d'ouvrir la newsletter) | Élevée |
 | R03 | Aucune URL de référence : pas de `site`, de canonical, de sitemap ni de `robots.txt` | SEO technique | P0 → **traité dans le code** (redirections hébergeur à faire) | Élevée |
 | R04 | Hébergement, domaine et statut en ligne inconnus | Données / technique | P0 → **identifié** (Vercel) ; `www` redirigé dans `vercel.json` | Élevée |
-| R05 | Aucune mesure : pas de Search Console vérifiable ici, pas d'analytics | Données | P0 | Élevée |
+| R05 | Aucune mesure : pas de Search Console vérifiable ici, pas d'analytics | Données | P0 → **décidé** (mesure via l'espace partenaire LR, pas d'outil sur le site ; Search Console à brancher) | Élevée |
 | R06 | Contenus santé sans auteur, sans relecteur et sans sources | E-E-A-T / YMYL / conformité | P1 → **partiel** (sources sur 6 articles ; auteur et relecteur en attente) | Élevée |
 | R07 | Conformité aux règles LR pour les sites de partenaires non vérifiée | Affiliation / marque | P1 | Faible (inconnu) |
 | R08 | Antériorité de marque « Aloe Essentials » | Marque | P1 | Faible (à vérifier) |
@@ -24,7 +24,7 @@
 | R13 | Open Graph incomplet (pas d'image, d'URL, de locale) | Partage / GEO | P2 → **traité** (image commune ; images par article à prévoir) | Élevée |
 | R14 | Données LR incohérentes reprises par le site | Exactitude produit | P2 | Élevée |
 | R15 | Contenu réglementaire daté (aloe, appel C-38/25 P) | Exactitude | P2 | Élevée |
-| R16 | « Signalez-la-nous » sans moyen de contact | Confiance | P1 | Élevée |
+| R16 | « Signalez-la-nous » sans moyen de contact | Confiance | P1 → **traité** (`/contact/`) | Élevée |
 | R17 | Imprécision botanique (« liliacées ») | Exactitude éditoriale | P3 → **traité** | Élevée |
 | R18 | Slogans d'accueil vagues (« Plus d'énergie au quotidien ») | Allégations | P3 | Moyenne |
 | R19 | Visuels produits génériques (SVG) | Conversion / images | P3 | Élevée |
@@ -56,6 +56,13 @@
 - **Rubriques :** texte d'introduction éditorial sur chaque page de rubrique.
 - **R17 :** « liliacées » corrigé (l'aloe appartient aux asphodélacées ; la mise en garde allergique est conservée).
 - **CI :** GitHub Actions lance `npm run build` et la suite Playwright à chaque push et pull request.
+
+### Lot 4 — éditeur, équipe, pôle aloe vera, distributeur (2026-10-16)
+- **Décisions de l'éditeur :** éditeur et directeur de la publication Philip Cros ; mesure via le site LR (espace partenaire, `ref=cros`) et aucun outil sur Aloessential ; auteur Mountaga Diallo, relecture Philip Cros ; pôle « aloe vera » signé « l'équipe Aloessential ».
+- **Pages créées :** `/mentions-legales/`, `/confidentialite/`, `/contact/`, `/equipe/`, `/aloe-vera/` (page pilier : la plante, la chaîne de production, les guides et les produits à l'aloe). Liens dans le pied de page ; « Aloe vera » en tête de la navigation.
+- **Bylines :** chaque article affiche « Par Mountaga Diallo · Relecture : Philip Cros » (surchargeable par article) ; `author` (Person) ajouté au JSON-LD Article. Aucune qualification de santé n'est attribuée : R06 reste partiel tant qu'aucun professionnel de santé ne relit les contenus santé.
+- **Distributeur LR :** section « Vous voulez devenir distributeur LR ? » (accueil et contact) et bouton flottant qui ouvre une fenêtre (`<dialog>` natif) avec lien WhatsApp (+33 7 66 98 48 72). Aucune promesse de revenus ; mention explicite « nous ne promettons aucun gain ». Bouton absent des fiches produit (barre d'achat mobile).
+- **Reste à compléter (R01) :** adresse postale de l'éditeur, statut (auto-entrepreneur, VDI…) et numéro SIRET le cas échéant ; une adresse e-mail de contact. L'adresse de Vercel Inc. vient d'une source tierce et est à confirmer.
 
 ## Détail
 

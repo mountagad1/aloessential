@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { HOST, PUBLISHER } from "../data/site";
+---
+
+<BaseLayout
+  title="Mentions légales"
+  description="Éditeur, directeur de la publication, hébergeur et conditions d'utilisation du site Aloessential."
+>
+  <article class="article">
+    <header class="article-header container">
+      <div class="article-header__inner">
+        <p class="eyebrow" data-hero-step style="--step: 0">Informations légales</p>
+        <h1 data-hero-step style="--step: 1">Mentions légales</h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class="prose">
+        <h2>Éditeur du site</h2>
+        <p>
+          Le site aloessential.com est édité par <strong>{PUBLISHER.name}</strong>, {PUBLISHER.role.toLowerCase()}.<br />
+          Téléphone et WhatsApp : <a href={PUBLISHER.phoneHref}>{PUBLISHER.phone}</a><br />
+          Pour toute demande : <a href="/contact/">page contact</a>.
+        </p>
+
+        <h2>Directeur de la publication</h2>
+        <p>{PUBLISHER.name}.</p>
+
+        <h2>Hébergement</h2>
+        <p>
+          {HOST.name}, {HOST.address}. <a href={HOST.url} rel="noopener" target="_blank">vercel.com<span
+              class="visually-hidden"> (nouvel onglet)</span></a>
+        </p>
+
+        <h2>Liens partenaires</h2>
+        <p>
+          Aloessential n'est pas un site officiel de LR Health &amp; Beauty. Les liens vers la boutique LR sont des liens
+          partenaires : l'éditeur peut percevoir une commission sur les commandes passées après un clic, sans surcoût
+          pour l'acheteur. Le détail est expliqué sur la page <a href="/transparence/">Transparence</a>. Les commandes,
+          paiements, livraisons et retours sont entièrement gérés par LR.
+        </p>
+
+        <h2>Contenus santé</h2>
+        <p>
+          Les contenus du site sont informatifs. Ils ne remplacent pas l'avis d'un médecin, d'un pharmacien ou d'un
+          diététicien.
+        </p>
+
+        <h2>Propriété intellectuelle</h2>
+        <p>
+          Les textes, illustrations et la marque Aloessential sont protégés. Toute reproduction sans autorisation est
+          interdite. Les noms de produits et marques LR appartiennent à leurs propriétaires respectifs.
+        </p>
+
+        <h2>Données personnelles</h2>
+        <p>Voir notre <a href="/confidentialite/">politique de confidentialité</a>.</p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,130 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CardGrid from "../components/CardGrid.astro";
+import ProductCard from "../components/ProductCard.astro";
+import ProductionLine from "../components/ProductionLine.astro";
+import Newsletter from "../components/Newsletter.astro";
+import { getArticles } from "../lib/articles";
+import { getPublishedProducts } from "../lib/products";
+import { breadcrumbLd } from "../lib/seo";
+import { EDITORIAL_TEAM } from "../data/site";
+
+/*
+ * Pillar page of the "aloe vera" editorial pole: what the plant is, how its
+ * gel is made, and every guide and product page about it. Signed by the team.
+ */
+const ALOE_ARTICLES = [
+  "aloe-vera-bienfaits-peau",
+  "choisir-gel-aloe-vera",
+  "aloe-vera-a-boire-comment-choisir",
+  "jus-aloe-vera-science",
+  "routine-peau-apres-soleil",
+];
+const ALOE_PRODUCTS = [
+  "aloe-vera-gel-a-boire-immune-plus",
+  "aloe-vera-emergency-spray",
+  "aloe-vera-dermaintense-creme-regeneratrice",
+  "set-vitalite",
+];
+
+const articles = (await getArticles()).filter((a) => ALOE_ARTICLES.includes(a.id));
+const products = (await getPublishedProducts()).filter((p) => ALOE_PRODUCTS.includes(p.id));
+const jsonLd = [
+  breadcrumbLd(
+    [
+      { name: "Accueil", path: "/" },
+      { name: "Aloe vera", path: "/aloe-vera/" },
+    ],
+    Astro.site,
+  ),
+];
+---
+
+<BaseLayout
+  title="Aloe vera : le guide complet"
+  description="Gel ou latex, peau ou boisson, étiquettes et réglementation : tout ce qu'il faut savoir sur l'aloe vera, du champ au flacon."
+  current="aloe-vera"
+  jsonLd={jsonLd}
+>
+  <article>
+    <header class="page-header">
+      <div class="container">
+        <p class="eyebrow" data-hero-step style="--step: 0">Le guide</p>
+        <h1 data-hero-step style="--step: 1">L'aloe vera, du champ au flacon</h1>
+        <p data-hero-step style="--step: 2">
+          Ce que contient vraiment la plante, comment son gel est produit, ce qu'il peut faire pour la peau et ce que la
+          réglementation permet de promettre.
+        </p>
+        <p class="byline" data-hero-step style="--step: 3">Par {EDITORIAL_TEAM}</p>
+      </div>
+    </header>
+
+    <section class="section section--tight" aria-labelledby="plant-title">
+      <div class="container">
+        <div class="prose">
+          <h2 id="plant-title">Une plante, deux substances</h2>
+          <p>
+            Parmi plusieurs centaines d'espèces d'aloès, c'est <em>Aloe barbadensis</em> Miller, l'aloe vera, que l'on
+            retrouve dans les soins et les boissons. Sa feuille charnue contient deux substances très différentes :
+          </p>
+          <ul>
+            <li>
+              <strong>le gel</strong>, au cœur de la feuille, translucide et composé surtout d'eau : c'est lui qu'on
+              utilise en cosmétique et dans les boissons ;
+            </li>
+            <li>
+              <strong>le latex</strong>, jaune et amer, juste sous l'écorce, qui contient de l'aloïne : il est retiré lors
+              de la transformation.
+            </li>
+          </ul>
+          <p>
+            Sur la peau, le gel d'aloe hydrate et apaise : ce sont des fonctions cosmétiques. Dans une boisson, les
+            allégations propres à l'aloe ne sont pas autorisées en Europe ; quand un produit en revendique, c'est grâce à
+            une vitamine ou un minéral ajouté. Nos guides détaillent ces nuances.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <ProductionLine />
+
+    <section class="section section--soft" aria-labelledby="aloe-guides-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="eyebrow">Nos guides</p>
+            <h2 id="aloe-guides-title">Tout comprendre sur l'aloe vera</h2>
+          </div>
+        </div>
+        <CardGrid articles={articles} headingLevel={3} />
+      </div>
+    </section>
+
+    {
+      products.length > 0 && (
+        <section class="section" aria-labelledby="aloe-products-title">
+          <div class="container">
+            <div class="section-head" data-reveal>
+              <div>
+                <p class="eyebrow">Notre sélection</p>
+                <h2 id="aloe-products-title">Les produits à l'aloe vera que nous avons étudiés</h2>
+                <p class="disclosure-inline">
+                  Liens partenaires LR Health &amp; Beauty. <a href="/transparence/">Notre transparence</a>
+                </p>
+              </div>
+            </div>
+            <ul class="card-grid">
+              {products.map((p) => (
+                <li data-reveal>
+                  <ProductCard product={p} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+  </article>
+
+  <Newsletter />
+</BaseLayout>

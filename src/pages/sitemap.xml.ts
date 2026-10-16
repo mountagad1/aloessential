@@ -16,7 +16,12 @@ export const GET: APIRoute = async ({ site }) => {
     { path: "/" },
     { path: "/articles/" },
     { path: "/produits/" },
+    { path: "/aloe-vera/" },
     { path: "/transparence/" },
+    { path: "/equipe/" },
+    { path: "/contact/" },
+    { path: "/mentions-legales/" },
+    { path: "/confidentialite/" },
     ...categoryList.map((c) => ({ path: `/rubriques/${c.slug}/` })),
     ...articles.map((a) => ({ path: `/articles/${a.id}/`, lastmod: day(a.data.date) })),
     ...products.map((p) => ({

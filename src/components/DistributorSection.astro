@@ -1,0 +1,42 @@
+---
+import Icon from "./Icon.astro";
+import { DISTRIBUTOR_MESSAGE, PUBLISHER, whatsappUrl } from "../data/site";
+
+interface Props {
+  /** Heading level of the section title. */
+  headingLevel?: 2 | 3;
+}
+
+const { headingLevel = 2 } = Astro.props;
+const Heading = `h${headingLevel}` as "h2" | "h3";
+---
+
+<!--
+  "Become an LR distributor" invitation. Factual on purpose: no income
+  figures or promises (French rules on direct selling and on misleading
+  commercial practices). Contact goes to the publisher on WhatsApp.
+-->
+<section class="section distributor" id="distributeur" aria-labelledby="distributor-title">
+  <div class="container">
+    <div class="distributor__card on-dark" data-reveal>
+      <p class="eyebrow" style="color: var(--color-sun)">Rejoindre LR</p>
+      <Heading id="distributor-title">Vous voulez devenir distributeur LR ?</Heading>
+      <p>
+        Aloessential est édité par {PUBLISHER.name}, partenaire indépendant LR Health &amp; Beauty. Si l'activité de
+        distributeur indépendant vous intéresse, {PUBLISHER.name} vous explique comment elle fonctionne : le statut, les
+        premiers pas, l'accompagnement, et ce qu'il faut savoir avant de se lancer.
+      </p>
+      <p class="distributor__note">
+        Échange sans engagement. Les revenus d'un distributeur dépendent entièrement de son activité : nous ne
+        promettons aucun gain.
+      </p>
+      <div class="distributor__actions">
+        <a class="btn btn--sun" href={whatsappUrl(DISTRIBUTOR_MESSAGE)} target="_blank" rel="noopener">
+          <Icon name="message" class="btn__icon" /> Écrire sur WhatsApp
+          <span class="visually-hidden"> (nouvel onglet)</span>
+        </a>
+        <a class="distributor__phone" href={PUBLISHER.phoneHref}>{PUBLISHER.phone}</a>
+      </div>
+    </div>
+  </div>
+</section>

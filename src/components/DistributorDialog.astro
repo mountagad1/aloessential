@@ -1,0 +1,55 @@
+---
+import Icon from "./Icon.astro";
+import { DISTRIBUTOR_MESSAGE, PUBLISHER, whatsappUrl } from "../data/site";
+---
+
+<!--
+  Floating "Devenir distributeur LR" button. Without JavaScript it is a plain
+  link to the contact page section; with JavaScript it opens a native modal
+  <dialog> (focus trap, Escape and backdrop close handled by the browser).
+  It never opens on its own.
+-->
+<a class="distributor-fab" href="/contact/#distributeur" data-distributor-open>
+  <Icon name="message" />
+  <span>Devenir distributeur LR</span>
+</a>
+
+<dialog class="distributor-dialog" id="distributor-dialog" aria-labelledby="distributor-dialog-title">
+  <div class="distributor-dialog__body">
+    <form method="dialog" class="distributor-dialog__close">
+      <button type="submit" aria-label="Fermer"><Icon name="close" /></button>
+    </form>
+    <p class="eyebrow">Rejoindre LR</p>
+    <h2 id="distributor-dialog-title">Vous voulez devenir distributeur LR ?</h2>
+    <p>
+      {PUBLISHER.name}, éditeur d'Aloessential et partenaire indépendant LR Health &amp; Beauty, répond à vos questions
+      sur l'activité de distributeur : statut, démarrage, accompagnement.
+    </p>
+    <p class="distributor__note">
+      Échange sans engagement. Les revenus dépendent entièrement de votre activité : nous ne promettons aucun gain.
+    </p>
+    <div class="distributor__actions">
+      <a class="btn btn--sun" href={whatsappUrl(DISTRIBUTOR_MESSAGE)} target="_blank" rel="noopener">
+        <Icon name="message" class="btn__icon" /> Écrire sur WhatsApp
+        <span class="visually-hidden"> (nouvel onglet)</span>
+      </a>
+      <a class="distributor__phone" href={PUBLISHER.phoneHref}>{PUBLISHER.phone}</a>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.getElementById("distributor-dialog") as HTMLDialogElement | null;
+  const opener = document.querySelector<HTMLAnchorElement>("[data-distributor-open]");
+  if (dialog && opener && typeof dialog.showModal === "function") {
+    opener.addEventListener("click", (event) => {
+      event.preventDefault();
+      dialog.showModal();
+    });
+    // A click on the backdrop (outside the dialog box) closes it.
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener("close", () => opener.focus());
+  }
+</script>

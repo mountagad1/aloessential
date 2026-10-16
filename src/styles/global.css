@@ -2308,3 +2308,219 @@ main:focus {
     }
   }
 }
+
+/* ---------- Bylines, team -------------------------------------------- */
+
+.byline {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.team-list {
+  display: grid;
+  gap: var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.team-list > li {
+  margin: 0;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.team-list h2 {
+  margin-top: 0;
+}
+
+.team-list__role {
+  margin-top: var(--space-1);
+  color: var(--color-olive);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-sm);
+}
+
+/* ---------- Distributor invitation ------------------------------------ */
+
+.distributor__card {
+  padding: var(--space-7) var(--space-5);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(28rem 18rem at 0% 100%, rgb(249 194 60 / 0.18), transparent 70%),
+    var(--color-forest);
+  color: #f1f7ef;
+}
+
+.distributor__card h2,
+.distributor__card h3 {
+  max-width: 22ch;
+  color: #fff;
+  font-size: var(--text-2xl);
+}
+
+.distributor__card > p:not(.eyebrow) {
+  max-width: 42rem;
+  margin-top: var(--space-4);
+}
+
+.distributor__note {
+  font-size: var(--text-sm);
+  opacity: 0.85;
+}
+
+.distributor__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.distributor__phone {
+  font-weight: 600;
+  color: inherit;
+}
+
+@media (min-width: 48rem) {
+  .distributor__card {
+    padding: var(--space-8) var(--space-7);
+  }
+}
+
+/* Floating button: bottom right, above the page, never over the footer
+   links' tap targets on its own (it is small and can be scrolled past). */
+.distributor-fab {
+  position: fixed;
+  z-index: 40;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  background: var(--color-forest);
+  box-shadow: 0 8px 24px rgb(15 81 50 / 0.28);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--motion-duration-ui) var(--motion-ease-out);
+}
+
+.distributor-fab svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.distributor-fab:hover,
+.distributor-fab:focus-visible {
+  background: color-mix(in srgb, var(--color-forest) 85%, #000);
+  color: #fff;
+}
+
+.distributor-fab:focus-visible {
+  outline: 3px solid var(--color-sun);
+  outline-offset: 3px;
+}
+
+@media (max-width: 30rem) {
+  /* Small screens: icon-only pill, label kept for screen readers. */
+  .distributor-fab {
+    padding: 0.85rem;
+  }
+
+  .distributor-fab span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+.distributor-dialog {
+  width: min(32rem, calc(100vw - 2 * var(--gutter)));
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(24rem 16rem at 100% 0%, rgb(249 194 60 / 0.18), transparent 70%),
+    var(--color-forest);
+  color: #f1f7ef;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.3);
+}
+
+.distributor-dialog::backdrop {
+  background: rgb(11 63 39 / 0.45);
+}
+
+.distributor-dialog__body {
+  position: relative;
+  padding: var(--space-6) var(--space-5) var(--space-5);
+}
+
+.distributor-dialog h2 {
+  max-width: 18ch;
+  color: #fff;
+  font-size: var(--text-xl, var(--text-lg));
+}
+
+.distributor-dialog .eyebrow {
+  color: var(--color-sun);
+}
+
+.distributor-dialog__body > p:not(.eyebrow) {
+  margin-top: var(--space-3);
+}
+
+.distributor-dialog__close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  margin: 0;
+}
+
+.distributor-dialog__close button {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.1);
+  color: #fff;
+  cursor: pointer;
+}
+
+.distributor-dialog__close svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.distributor-dialog__close button:focus-visible {
+  outline: 3px solid var(--color-sun);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .distributor-fab {
+    transition: none;
+  }
+}
