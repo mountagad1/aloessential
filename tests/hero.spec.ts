@@ -70,3 +70,14 @@ test.describe("production line", () => {
     await context.close();
   });
 });
+
+test.describe("homepage photo delivery", () => {
+  test("phones get the lighter 1.4:1 crop, wide screens the full picture", async ({ page, isMobile }) => {
+    await page.goto("/");
+    const img = page.locator(".hero-stage__img");
+    await expect.poll(() => img.evaluate((el: HTMLImageElement) => el.currentSrc)).toMatch(
+      isMobile ? /\/media\/aloe-harvest-mobile-\d+\.webp$/ : /\/media\/aloe-harvest-\d+\.webp$/,
+    );
+    await expect(img).toHaveAttribute("alt", /cueilleuse/);
+  });
+});

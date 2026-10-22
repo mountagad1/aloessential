@@ -608,6 +608,11 @@ html:not(.js) .menu-toggle {
   clip-path: inset(0 var(--inset) round var(--radius-lg));
 }
 
+/* The <picture> wrapper must not become a box: the image fills the frame. */
+.hero-stage__frame picture {
+  display: contents;
+}
+
 .hero-stage__img {
   width: 100%;
   height: 100%;

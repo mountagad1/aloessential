@@ -1,6 +1,6 @@
 # International SEO architecture
 
-*2026-10-22. Status: **design, not implemented.** Today the site is French-only and must stay so until a translation is actually published. Target locales: fr (source), en, es, de, pt-pt, pl.*
+*2026-10-22. Status: **design, not implemented.** Today the site is French-only and must stay so until a translation is actually published. Target locales: fr (source), en, es, de, **it**, pt-pt, pl (Italian added 2026-10-22).*
 
 ## 1. Current state [measured]
 
@@ -12,11 +12,12 @@
 
 | # | Decision | Recommendation |
 | --- | --- | --- |
-| D1 | URL structure | **Subdirectories on the same domain**, French unprefixed: `/` (fr), `/en/`, `/es/`, `/de/`, `/pt-pt/`, `/pl/`. Keeps all links and authority on one host and preserves every existing French URL. ccTLDs or subdomains add cost and split authority for no gain at this size. |
+| D1 | URL structure | **Subdirectories on the same domain**, French unprefixed: `/` (fr), `/en/`, `/es/`, `/de/`, `/it/`, `/pt-pt/`, `/pl/`. Keeps all links and authority on one host and preserves every existing French URL. ccTLDs or subdomains add cost and split authority for no gain at this size. |
 | D2 | Slugs | Translated slugs per locale (`/en/articles/aloe-vera-skin/`), mapped through a shared translation key. |
 | D3 | Which content gets translated | Only pages with a real, reviewed translation. No machine-only publication without human review (health and regulatory content). |
 | D4 | Products | LR partner pages differ by country (shop URL, availability, legal mentions such as the French supplement notices). A product page is published in a locale only with that country's shop link carrying `ref=cros` and the local mandatory mentions. |
-| D5 | First locale | Pick one (likely `en` or `de`, depending on where LR partnership traffic is wanted) and ship it end to end before adding others. |
+| D5 | First locale | Pick one (likely `en`, `de` or `it`, depending on where LR partnership traffic is wanted) and ship it end to end before adding others. |
+| D6 | Italian products | Same rule as D4: an Italian product page needs the Italian LR shop link with `ref=cros` and the mentions required in Italy for food supplements and cosmetics, reviewed locally. |
 
 ## 3. Target model
 
@@ -29,6 +30,7 @@ export const LOCALES = {
   en: { prefix: "/en", htmlLang: "en", ogLocale: "en_GB", schemaLang: "en", published: false },
   es: { prefix: "/es", htmlLang: "es", ogLocale: "es_ES", schemaLang: "es-ES", published: false },
   de: { prefix: "/de", htmlLang: "de", ogLocale: "de_DE", schemaLang: "de-DE", published: false },
+  it: { prefix: "/it", htmlLang: "it", ogLocale: "it_IT", schemaLang: "it-IT", published: false },
   "pt-pt": { prefix: "/pt-pt", htmlLang: "pt-PT", ogLocale: "pt_PT", schemaLang: "pt-PT", published: false },
   pl: { prefix: "/pl", htmlLang: "pl", ogLocale: "pl_PL", schemaLang: "pl-PL", published: false },
 } as const;
@@ -71,4 +73,4 @@ Test fixtures: one fictional article translated into one extra locale, plus one 
 2. UI strings (header, footer, legal pages per country — legal content needs local review) — M to L.
 3. Each further locale — S for plumbing, content effort dominates.
 
-Open questions: D1–D5 above; who translates and reviews; whether legal pages (mentions légales, confidentialité) must be adapted per country.
+Open questions: D1–D6 above; who translates and reviews; whether legal pages (mentions légales, confidentialité) must be adapted per country.

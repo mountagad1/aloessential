@@ -23,7 +23,7 @@ flowchart LR
 
 Request flow for any page: browser → Vercel CDN → cached static file (no origin computation). Redirects (www → apex, missing trailing slash) are answered at the edge.
 
-## 2. Target state (1 M visits/month, six locales)
+## 2. Target state (1 M visits/month, seven locales)
 
 ```mermaid
 flowchart LR
@@ -36,7 +36,7 @@ flowchart LR
   CI -->|"green"| Build["Vercel build (static)"]
   Build --> Deploy["Immutable deployment"]
   Deploy --> CDN["Vercel CDN<br/>HTML revalidate · assets immutable · images 1 day"]
-  User["Visitors (fr, en, es, de, pt-pt, pl)"] --> CDN
+  User["Visitors (fr, en, es, de, it, pt-pt, pl)"] --> CDN
   Crawler["Googlebot / Discover"] --> CDN
   CDN -. "beacon (cookieless)" .-> RUM["Web Analytics + Speed Insights<br/>(pending ADR-006)"]
   Newsletter["Newsletter provider<br/>(when chosen)"]
@@ -49,7 +49,7 @@ What changes from today:
 | --- | --- | --- | --- |
 | Rendering | 100 % static | **unchanged**: 100 % static, including every locale | — |
 | Listings | paginated (done) | paginated per locale | done |
-| Locales | fr | fr + translations published one at a time | owner decisions D1–D5 |
+| Locales | fr | fr + translations published one at a time | owner decisions D1–D6 |
 | Measurement | none | cookieless analytics + RUM, Search Console | ADR-006 |
 | Images | SVG covers + share twins (done) | + licensed photography for key articles, versioned names | content decision |
 | Sitemap | single file | sitemap index per locale when > 40 k URLs | scale-check |

@@ -44,6 +44,8 @@ Fonts (62–70 KB) and CSS (8 KB) are hashed and `immutable`: they are paid once
 
 With `prefers-reduced-motion: reduce`: `/` LCP 1752, `/articles/` 824, article 812. CLS stays 0 in every case; the Playwright suite also enforces CLS < 0.1 after a full scroll on four pages (`tests/performance.spec.ts`).
 
+After the mobile hero crop (2026-10-22, same profile): `/` FCP 844, **LCP 1484**, CLS 0.000; mobile homepage first view 222.3 KB (was 282.7 KB).
+
 Reading: LCP is under Google's 2.5 s "good" threshold in this harsh lab profile for all three pages. The homepage LCP is the hero photo (finding F10 in SCALABILITY_AUDIT.md).
 
 ## 4. Catalogue growth [measured]

@@ -16,17 +16,27 @@ import Icon from "./Icon.astro";
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero__visual hero-stage" data-hero-step="visual" style="--step: 0">
     <figure class="hero-stage__frame">
-      <img
-        class="hero-stage__img"
-        src="/media/aloe-harvest-1024.webp"
-        srcset="/media/aloe-harvest-640.webp 640w, /media/aloe-harvest-1024.webp 1024w, /media/aloe-harvest-1600.webp 1600w"
-        sizes="100vw"
-        alt="Dans un champ d'aloe vera, une cueilleuse coupe une feuille au couteau ; derrière elle, d'autres cueilleurs remplissent des caisses de feuilles."
-        width="1600"
-        height="785"
-        fetchpriority="high"
-        decoding="async"
-      />
+      <picture>
+        {/* Phones show ~70 % of the wide frame: they get a 1.4:1 crop (tools/prepare-hero-media.py). */}
+        <source
+          media="(max-width: 30rem)"
+          srcset="/media/aloe-harvest-mobile-480.webp 480w, /media/aloe-harvest-mobile-800.webp 800w, /media/aloe-harvest-mobile-1100.webp 1100w"
+          sizes="100vw"
+          width="1100"
+          height="786"
+        />
+        <img
+          class="hero-stage__img"
+          src="/media/aloe-harvest-1024.webp"
+          srcset="/media/aloe-harvest-640.webp 640w, /media/aloe-harvest-1024.webp 1024w, /media/aloe-harvest-1600.webp 1600w"
+          sizes="100vw"
+          alt="Dans un champ d'aloe vera, une cueilleuse coupe une feuille au couteau ; derrière elle, d'autres cueilleurs remplissent des caisses de feuilles."
+          width="1600"
+          height="785"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
       <p class="hero-stage__title" aria-hidden="true">
         <span>Du champ</span>
         <span>au flacon</span>

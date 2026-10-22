@@ -8,7 +8,7 @@
 | --- | --- | --- | --- | --- | --- |
 | Editorial covers | `public/covers/*.svg` | SVG, 1200 × 800 viewBox, 1.9–6.2 KB | one file, scales | article/product pages, cards | generated in-house (`tools/generate-covers.mjs`) |
 | **Share twins of covers** (new) | `public/covers/*.jpg` | JPEG q85, **1200 × 800**, 17–50 KB | one | `og:image`, Article JSON-LD `image` only — never downloaded by visitors | derived from the SVG |
-| Homepage photo | `public/media/aloe-harvest-{640,1024,1600}.webp` | WebP | 46 / 91 / 158 KB | homepage hero, `srcset` + `sizes="100vw"` | **open question** in `docs/seo/ALOESSENTIAL_RISK_REGISTER.md` (AI-looking image supplied by the owner) |
+| Homepage photo | `public/media/aloe-harvest-{640,1024,1600}.webp` + `aloe-harvest-mobile-{480,800,1100}.webp` | WebP | 46 / 91 / 158 KB; mobile crop 31 / 62 / 94 KB | homepage hero, `srcset` + `sizes="100vw"` | **open question** in `docs/seo/ALOESSENTIAL_RISK_REGISTER.md` (AI-looking image supplied by the owner) |
 | Brand | `public/brand/*` | WebP / PNG | icon 160/400/720, wordmark 433 × 80 (24 KB), OG default 1200 × 630 PNG | header, footer, favicon, default share image | owner |
 
 Every `<img>` declares `width` and `height` (now tested), above-the-fold images load eagerly with `fetchpriority="high"`, the rest lazily with a fade.
@@ -37,7 +37,7 @@ Other pages (home, listings, legal) keep the 1200 × 630 brand image.
 ## 4. Responsive delivery
 
 - Covers are SVG: one tiny file serves every screen; no responsive variants needed.
-- The homepage photo offers 640/1024/1600 w. On a 412 px, DPR 2.6 phone the browser picks 1600 w (158 KB) — backlog B6: add a 1200–1280 w variant (≈ 110–120 KB expected, to be measured) and regenerate with `tools/prepare-hero-media.py`.
+- The homepage photo offers 640/1024/1600 w for wide screens. Phones (≤ 30rem) get a `<picture>` source with a 1.4:1 crop centred on the harvester, 480/800/1100 w at WebP q70: a phone shows only ~70 % of the wide frame, so it no longer downloads the hidden part. Measured on a Pixel 7 profile: 1100 w chosen, **94 KB instead of 158 KB**; mobile homepage first view 283 → 222 KB; throttled LCP 1.77 → 1.47 s. Regenerate with `python3 tools/prepare-hero-media.py`.
 - Vercel Image Optimization is **not** used and is not needed while images are pre-generated; adopting it would add per-transformation cost and a runtime dependency.
 - AVIF: not adopted. WebP already serves the one photo; revisit when photography becomes common (measure the saving first).
 

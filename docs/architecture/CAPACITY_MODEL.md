@@ -66,7 +66,7 @@ No prices are quoted here: Vercel's prices and included amounts change, and the 
 
 | Driver | Unit | Grows with | Lever |
 | --- | --- | --- | --- |
-| Fast Data Transfer | GB | visits × page weight | lighter hero (B6), wordmark (B7), browser caching (done) |
+| Fast Data Transfer | GB | visits × page weight | lighter hero (B6, done), wordmark (B7), browser caching (done) |
 | Edge Requests | count | visits × requests per view | browser caching of images (done), fewer image files per page |
 | Build minutes | minutes | deploys × build duration | batch content changes; scale-check |
 | Image Optimization | transformations | not used | keep pre-generated variants |
@@ -87,11 +87,11 @@ Recommended alerts (configure in Vercel Spend Management / usage notifications o
 | --- | --- | --- |
 | 36 (today) | 3–5 s | measured |
 | 5,452 (5,000 articles) | 32–65 s | measured, two runs |
-| ≈ 33,000 (5,000 articles × 6 locales + listings) | ≈ 3–7 min | **extrapolation**, linear trend assumed |
+| ≈ 38,000 (5,000 articles × 7 locales + listings) | ≈ 3.5–8 min | **extrapolation**, linear trend assumed |
 
 Storage: `dist/` reached 147 MB at 5,000 articles [measured]. Each article adds about 27 KB of HTML per locale plus its share image (20–50 KB JPEG); covers are shared between locales (IMAGE_DELIVERY.md). Check Vercel's deployment size and build duration limits for the plan before passing ~20,000 pages.
 
-Sitemap: 5,451 URLs at 5,000 articles [measured]; the protocol limit is 50,000 URLs per file. Split into a sitemap index before 40,000 URLs (backlog B9).
+Sitemap: 5,451 URLs at 5,000 articles [measured]; the protocol limit is 50,000 URLs per file. Split into a sitemap index before 40,000 URLs (backlog B9). With seven locales, 5,000 articles per locale already gives ≈ 38,000 URLs: plan one sitemap per locale under a sitemap index as part of the i18n rollout.
 
 ## 7. Missing measurements (in priority order)
 

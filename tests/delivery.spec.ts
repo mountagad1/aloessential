@@ -118,7 +118,7 @@ test.describe("locale integrity (French is the only published locale)", () => {
 
   test("no page lives under a language prefix yet", () => {
     for (const file of indexable()) {
-      expect(pathOf(file), "translations need the i18n rollout first").not.toMatch(/^\/(en|es|de|pt-pt|pt|pl|fr)\//);
+      expect(pathOf(file), "translations need the i18n rollout first").not.toMatch(/^\/(en|es|de|it|pt-pt|pt|pl|fr)\//);
     }
   });
 });
