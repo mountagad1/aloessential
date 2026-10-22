@@ -15,6 +15,8 @@
 | --- | --- |
 | Italian routes in production | none (before and after this change) |
 | Italian content | 0 of 16 published; **7 drafts** (the aloe vera pole) in `src/content/articles/it/`, awaiting an Italian-speaking reviewer — see docs/i18n/TRANSLATION_WORKFLOW.md |
+| English content (UK) | 0 of 16 published; **7 drafts** in `src/content/articles/en/`; interface and category text in British English; GB LR shop linked in the English footer |
+| es, de, pt-pt, pl | registry and routing only; no interface text, no content, no shop link yet |
 | Products in Italian | none; product pages stay French-only (decision D4/D6) |
 | hreflang | none in production: no page has a published translation, so none is emitted (by design) |
 | Fallbacks | none: a locale without a published article has no URL at all; `/it/anything/` returns the real 404 status |
@@ -132,7 +134,8 @@ Mutation checks run during development:
 | D4 | Products per country need that country's LR link with `ref=cros` and local mentions | open — products stay French-only |
 | D5 | First locale | Italian infrastructure ready; owner chooses which articles to translate first |
 | D6 | Italian product pages: Italian LR shop link + mentions required in Italy | **partly done**: Italian shop home `https://shop.lrworld.com/home/IT/it?ref=cros` (from the publisher, 2026-10-22) is linked in the Italian footer with a partner disclosure (`LR_SHOP_HOME` in `src/lib/partner.ts`). Product pages still need each product's Italian shop URL and the Italian mandatory mentions |
-| D7 | Distributor window on Italian pages: Italian text and WhatsApp message to Philippe — does he take Italian-speaking contacts? | **owner to confirm** (shown today only on Italian pages, which do not exist in production yet) |
+| D7 | Distributor window on translated pages (Italian, English…): text and WhatsApp message in that language to Philippe — does he take contacts in those languages? | **owner to confirm** (shown only on translated pages, none in production yet) |
+| D9 | English targets the UK (GB shop link, British English, GB rules); hreflang stays `en` so other English readers are not excluded | **done** (EN_STYLE_GUIDE.md) |
 | D8 | Native-speaker review of the Italian interface and category text (`src/i18n/ui.ts`, `CATEGORY_I18N`) | open, required before the first Italian publication |
 
 ## 9. Adding a further locale (e.g. German)

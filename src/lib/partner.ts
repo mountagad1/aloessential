@@ -11,13 +11,14 @@ export const LR_HOME_URL = `https://www.lrworld.com/fr-fr?ref=${PARTNER_REF}`;
 
 /**
  * LR shop home per site locale, with the partner tag. A locale without an
- * entry shows no shop link. Italian: shop.lrworld.com/home/IT/it, supplied by
- * the publisher on 2026-10-22 (verified: Italian shop, ref=cros kept after LR's
- * redirects).
+ * entry shows no shop link. Links supplied by the publisher on 2026-10-22 and
+ * verified (right country shop, ref=cros kept after LR's redirects).
  */
 export const LR_SHOP_HOME: Partial<Record<string, string>> = {
   fr: LR_HOME_URL,
   it: `https://shop.lrworld.com/home/IT/it?ref=${PARTNER_REF}`,
+  // Great Britain shop (English, GBP), supplied by the publisher; verified 2026-10-22.
+  en: `https://shop.lrworld.com/home/GB/en?ref=${PARTNER_REF}`,
 };
 
 export function isLrUrl(url: string): boolean {

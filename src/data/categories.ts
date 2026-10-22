@@ -70,6 +70,44 @@ export interface LocalizedCategory {
 }
 
 export const CATEGORY_I18N: Partial<Record<string, Record<CategorySlug, LocalizedCategory>>> = {
+  en: {
+    conseils: {
+      slug: "advice",
+      label: "Advice",
+      description: "Simple habits and realistic routines for looking after yourself every day.",
+      intro: [
+        "Aloessential's practical guides: how to choose an aloe vera gel, read a label or set up a morning routine. Every tip starts from real situations and stays realistic: a few well-chosen habits beat a complicated routine.",
+        "When we mention a product, it is to illustrate a buying criterion, never to replace the information.",
+      ],
+    },
+    sante: {
+      slug: "health",
+      label: "Health",
+      description: "Understanding your body, sleep and energy, with reliable sources.",
+      intro: [
+        "What science and the rules on food and supplements really allow us to say about aloe vera, vitamins, digestion, sleep or mobility. We separate what has been shown from what is still being studied, and we cite our regulatory sources.",
+        "These articles inform; they do not replace advice from a doctor or pharmacist, especially if you are pregnant, taking medication or have symptoms that persist.",
+      ],
+    },
+    beaute: {
+      slug: "beauty",
+      label: "Beauty",
+      description: "Skin and hair care inspired by nature, without miracle promises.",
+      intro: [
+        "Skin and hair care inspired by plants, starting with aloe vera. We explain what each ingredient does, how to build a routine and how to read an ingredient list (INCI).",
+        "A cosmetic moisturises, soothes, protects or improves the look of the skin: it does not treat. We stick to what these products can really promise.",
+      ],
+    },
+    nutrition: {
+      slug: "nutrition",
+      label: "Nutrition",
+      description: "Tasty, balanced eating, from the plate to the glass of water.",
+      intro: [
+        "Varied, tasty eating, from the plate to the glass: hydration, breakfast, aloe vera drinks, food supplements and nutrition labels.",
+        "We explain what an authorised health claim means, and why a supplement never replaces a balanced diet.",
+      ],
+    },
+  },
   it: {
     conseils: {
       slug: "consigli",

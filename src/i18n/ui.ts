@@ -5,8 +5,9 @@ import type { Locale } from "./locales";
  * dictionary exists here and is complete (enforced by `ui()` at build time
  * and by tests/i18n.spec.ts). French strings are the site's existing text.
  *
- * Italian: written for the first rollout; to be reviewed by a native speaker
- * before the first Italian page is published (INTERNATIONAL_SEO_ARCHITECTURE.md).
+ * Italian and English (British): written for the first rollout; to be
+ * reviewed by a native speaker before the first page in that language is
+ * published (docs/i18n/TRANSLATION_WORKFLOW.md).
  */
 
 export interface UiStrings {
@@ -196,7 +197,70 @@ const it: UiStrings = {
   all: "Tutti",
 };
 
-export const UI: Partial<Record<Locale, UiStrings>> = { fr, it };
+const en: UiStrings = {
+  skipLink: "Skip to content",
+  brandHome: "Aloessential — home",
+  navLabel: "Topics",
+  mobileNavLabel: "Main menu",
+  menuOpen: "Open menu",
+  menuClose: "Close menu",
+  home: "Home",
+  allArticles: "All articles",
+  breadcrumb: "Breadcrumb",
+  publishedOn: "Published on",
+  minRead: (n) => `${n} min read`,
+  readCard: (n) => `Read · ${n} min`,
+  by: "By",
+  review: "Reviewed by",
+  sources: "Sources",
+  newTab: " (opens in a new tab)",
+  disclaimer:
+    "This article is for information only and does not replace advice from a doctor, pharmacist or dietitian. If in doubt, if you are pregnant, taking medication or have symptoms that persist, speak to a healthcare professional.",
+  relatedEyebrow: "Read next",
+  relatedTitle: "Keep reading",
+  toc: "Contents",
+  tocNav: "Article contents",
+  pagination: "Pagination",
+  previousPage: "Previous page",
+  nextPage: "Next page",
+  pageStatus: (p, t) => `Page ${p} of ${t}`,
+  pageSuffix: (p) => ` (page ${p})`,
+  alsoIn: "Also available in:",
+  footerTagline: "Naturally essential",
+  footerCategories: "Topics",
+  footerExplore: "Explore",
+  footerLegal: (y) =>
+    `© ${y} Aloessential. The content on this site is for information only and does not replace advice from a healthcare professional.`,
+  shopLink: "Official LR shop",
+  shopLinkHidden: " (partner link, opens in a new tab)",
+  transparency: "Transparency and partner links",
+  inFrench: " (in French)",
+  frenchSite: "Aloessential in French",
+  team: "Our team",
+  contact: "Contact",
+  legalNotice: "Legal notice",
+  privacy: "Privacy",
+  distributorFab: "Become an LR distributor",
+  distributorEyebrow: "Join LR",
+  distributorTitle: "Would you like to become an LR distributor?",
+  distributorBody: (name) =>
+    `${name}, publisher of Aloessential and independent LR Health & Beauty partner, answers your questions about becoming a distributor: status, getting started, support.`,
+  distributorNote:
+    "No obligation. Earnings depend entirely on your own activity: we promise no income.",
+  distributorWhatsapp: "Message on WhatsApp",
+  distributorMessage: (name) =>
+    `Hello ${name}, I found Aloessential and would like to know more about becoming an LR distributor.`,
+  close: "Close",
+  homeEyebrow: "The magazine",
+  homeTitle: "All articles",
+  homeDescription: "All Aloessential articles in English: everyday advice, health, beauty and nutrition, the natural way.",
+  homeLead: (n) => (n === 1 ? "1 article to help you look after yourself, naturally." : `${n} articles to help you look after yourself, naturally.`),
+  categoryEyebrow: "Topic",
+  filterLabel: "Filter by topic",
+  all: "All",
+};
+
+export const UI: Partial<Record<Locale, UiStrings>> = { fr, it, en };
 
 /** Interface strings for a locale. Throws if the locale has no dictionary yet. */
 export function ui(locale: Locale): UiStrings {

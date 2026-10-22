@@ -1,6 +1,6 @@
 # Translation workflow
 
-*How an article goes from French to a published translation. Architecture: docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md. Italian conventions: IT_STYLE_GUIDE.md.*
+*How an article goes from French to a published translation. Architecture: docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md. Conventions per language: IT_STYLE_GUIDE.md (Italian), EN_STYLE_GUIDE.md (English, UK).*
 
 ## 1. Status today (2026-10-22)
 
@@ -19,12 +19,24 @@
 | gel-aloe-vera-maison | `it/gel-di-aloe-vera-fatto-in-casa` | IARC instead of CIRC; links to Italian articles |
 | cultiver-aloe-vera-en-pot | `it/coltivare-aloe-vera-in-vaso` | frost-free coasts and islands |
 
+**English** (UK readers): 0 published, **7 drafts** (the same aloe vera pole), 9 not started.
+
+| French source | English draft | Localization beyond translation |
+| --- | --- | --- |
+| aloe-vera-bienfaits-peau | `en/aloe-vera-for-skin` | pharmacist / GP / NHS 111 |
+| choisir-gel-aloe-vera | `en/how-to-choose-aloe-vera-gel` | chemist and health food shop context |
+| aloe-vera-a-boire-comment-choisir | `en/aloe-vera-drinks-how-to-choose` | **GB rules**: EU 2021/468 not in GB law (legislation.gov.uk), Northern Ireland follows EU; GB NHC register; ASA on "on hold" botanical claims |
+| jus-aloe-vera-science | `en/aloe-vera-juice-what-science-says` | GB/EU difference on aloin rules |
+| routine-peau-apres-soleil | `en/after-sun-care-for-sensitive-skin` | NHS urgent signs and NHS 111; NHS source |
+| gel-aloe-vera-maison | `en/using-aloe-vera-gel-from-your-plant` | British spelling, links to English articles |
+| cultiver-aloe-vera-en-pot | `en/how-to-grow-aloe-vera-in-a-pot` | overwinters indoors in the UK; RHS |
+
 Drafts are never built into the site. **Review notes for the reviewer** are written as `#` comments at the top of each file.
 
 ## 2. Roles
 
 - **Translator**: adapts the text (may be Claude Code, a professional or the editorial team).
-- **Reviewer**: fluent in the target language and able to check health and regulatory statements for that country. Their name goes in `translationReviewer` and is shown on the page as the reviewer (*Revisione:*). **Philippe Cros reviews French content; Italian content needs an Italian-speaking reviewer.**
+- **Reviewer**: fluent in the target language and able to check health and regulatory statements for that country (for English: UK rules). Their name goes in `translationReviewer` and is shown on the page as the reviewer (*Revisione:*). **Philippe Cros reviews French content; Italian content needs an Italian-speaking reviewer.**
 
 ## 3. Steps
 
