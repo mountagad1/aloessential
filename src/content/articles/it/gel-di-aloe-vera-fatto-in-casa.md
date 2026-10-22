@@ -1,7 +1,7 @@
 ---
 # Bozza: traduzione e adattamento di gel-aloe-vera-maison.
 # Da revisionare prima della pubblicazione (docs/i18n/TRANSLATION_WORKFLOW.md).
-title: "Usare il gel di aloe vera della propria pianta: le istruzioni prudenti"
+title: "Il gel di aloe vera della tua pianta: istruzioni prudenti"
 description: "Tagliare una foglia, far colare il lattice, estrarre e conservare il gel: come usare sulla pelle il gel della tua pianta, e perché non berlo."
 category: beaute
 date: 2026-10-22

@@ -19,6 +19,8 @@ export const LR_SHOP_HOME: Partial<Record<string, string>> = {
   it: `https://shop.lrworld.com/home/IT/it?ref=${PARTNER_REF}`,
   // Great Britain shop (English, GBP), supplied by the publisher; verified 2026-10-22.
   en: `https://shop.lrworld.com/home/GB/en?ref=${PARTNER_REF}`,
+  // Germany shop (German, EUR), supplied by the publisher; verified 2026-10-22.
+  de: `https://shop.lrworld.com/home/DE/de?ref=${PARTNER_REF}`,
 };
 
 export function isLrUrl(url: string): boolean {

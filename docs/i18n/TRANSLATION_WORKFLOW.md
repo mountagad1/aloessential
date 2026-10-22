@@ -1,6 +1,6 @@
 # Translation workflow
 
-*How an article goes from French to a published translation. Architecture: docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md. Conventions per language: IT_STYLE_GUIDE.md (Italian), EN_STYLE_GUIDE.md (English, UK).*
+*How an article goes from French to a published translation. Architecture: docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md. Conventions per language: IT_STYLE_GUIDE.md (Italian), EN_STYLE_GUIDE.md (English, UK), DE_STYLE_GUIDE.md (German, Germany).*
 
 ## 1. Status today (2026-10-22)
 
@@ -30,6 +30,18 @@
 | routine-peau-apres-soleil | `en/after-sun-care-for-sensitive-skin` | NHS urgent signs and NHS 111; NHS source |
 | gel-aloe-vera-maison | `en/using-aloe-vera-gel-from-your-plant` | British spelling, links to English articles |
 | cultiver-aloe-vera-en-pot | `en/how-to-grow-aloe-vera-in-a-pot` | overwinters indoors in the UK; RHS |
+
+**German** (readers in Germany): 0 published, **7 drafts**, 9 not started. EU rules apply as in French; the adaptation covers register (*Sie*), German typography, Apotheke/Drogerie/Reformhaus, Hausarztpraxis, 116117 and 112, overwintering indoors.
+
+| French source | German draft |
+| --- | --- |
+| aloe-vera-bienfaits-peau | `de/aloe-vera-fuer-die-haut` |
+| choisir-gel-aloe-vera | `de/aloe-vera-gel-kaufen-worauf-achten` |
+| aloe-vera-a-boire-comment-choisir | `de/aloe-vera-trinken-worauf-achten` |
+| jus-aloe-vera-science | `de/aloe-vera-saft-was-sagt-die-wissenschaft` |
+| routine-peau-apres-soleil | `de/haut-nach-der-sonne-pflegen` |
+| gel-aloe-vera-maison | `de/aloe-vera-gel-aus-der-eigenen-pflanze` |
+| cultiver-aloe-vera-en-pot | `de/aloe-vera-im-topf-pflegen` |
 
 Drafts are never built into the site. **Review notes for the reviewer** are written as `#` comments at the top of each file.
 

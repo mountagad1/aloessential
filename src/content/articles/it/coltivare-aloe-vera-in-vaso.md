@@ -63,7 +63,7 @@ L'aloe vera è **tossica per cani e gatti**. Il lattice giallo delle foglie può
 
 ## E per usarne il gel?
 
-Una pianta ben avviata può fornire di tanto in tanto una foglia da usare sulla pelle. Meglio sapere come fare: lo spieghiamo in [«Usare il gel di aloe vera della propria pianta»](/it/articoli/gel-di-aloe-vera-fatto-in-casa/).
+Una pianta ben avviata può fornire di tanto in tanto una foglia da usare sulla pelle. Meglio sapere come fare: lo spieghiamo in [«Il gel di aloe vera della tua pianta»](/it/articoli/gel-di-aloe-vera-fatto-in-casa/).
 
 ## In sintesi
 

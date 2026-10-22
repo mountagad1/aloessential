@@ -93,14 +93,8 @@ const related = [...others.filter((a) => a.data.category === category), ...other
           otherVersions.length > 0 && (
             <p class="article-languages" data-hero-step style="--step: 3">
               {t.alsoIn}{" "}
-              {otherVersions.map((a, i) => (
-                <>
-                  {i > 0 && ", "}
-                  <a href={a.path} hreflang={a.hreflang} lang={a.hreflang}>
-                    {LOCALES[a.locale].name}
-                  </a>
-                </>
-              ))}
+              {/* One line on purpose: no whitespace may sit between a link and its comma. */}
+              {otherVersions.map((a, i) => [i > 0 ? ", " : "", <a href={a.path} hreflang={a.hreflang} lang={a.hreflang}>{LOCALES[a.locale].name}</a>])}
             </p>
           )
         }

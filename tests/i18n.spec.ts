@@ -9,8 +9,8 @@ import { freshness, parseMarkdown, translations } from "../tools/i18n-lib.mjs";
 
 /*
  * International SEO regression checks (docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md).
- * The test build includes fictional Italian and English translations of the
- * demo article (tests/fixtures/articles/{it,en}/) and an unreviewed Italian
+ * The test build includes fictional Italian, English and German translations
+ * of the demo article (tests/fixtures/articles/{it,en,de}/) and an unreviewed Italian
  * draft (bozza-demo.md) that must never surface. Every check runs for each
  * published test locale described in PUBLISHED below.
  */
@@ -61,6 +61,21 @@ const PUBLISHED = {
     transparency: "Transparency and partner links",
     menu: ["Open menu", "Close menu"],
   },
+  de: {
+    home: "/de/",
+    article: "/de/artikel/demo-artikel/",
+    category: "/de/rubriken/gesundheit/",
+    categoryLabel: "Gesundheit",
+    emptyCategories: ["de/rubriken/tipps", "de/rubriken/schoenheit", "de/rubriken/ernaehrung"],
+    body: "Testabsatz auf Deutsch",
+    name: "Deutsch",
+    fab: "LR-Vertriebspartner werden",
+    whatsapp: /text=Hallo%20Philippe/,
+    shopLabel: "Offizieller LR-Shop",
+    shopUrl: "https://shop.lrworld.com/home/DE/de?ref=cros",
+    transparency: "Transparenz und Partnerlinks",
+    menu: ["Menü öffnen", "Menü schließen"],
+  },
 } as const;
 const published = Object.entries(PUBLISHED) as [keyof typeof PUBLISHED, (typeof PUBLISHED)[keyof typeof PUBLISHED]][];
 
@@ -86,9 +101,10 @@ test.describe("locale registry", () => {
     }
     expect(LOCALES.it).toMatchObject({ prefix: "/it", htmlLang: "it", ogLocale: "it_IT", schemaLang: "it-IT" });
     expect(LOCALES.en).toMatchObject({ prefix: "/en", htmlLang: "en", ogLocale: "en_GB" });
+    expect(LOCALES.de).toMatchObject({ prefix: "/de", htmlLang: "de", ogLocale: "de_DE", schemaLang: "de-DE" });
   });
 
-  for (const locale of ["it", "en"] as const) {
+  for (const locale of ["it", "en", "de"] as const) {
     test(`${locale}: interface text and category text are complete`, () => {
       expect(Object.keys(UI[locale]!).sort()).toEqual(Object.keys(UI.fr!).sort());
       for (const [key, value] of Object.entries(UI[locale]!)) {
@@ -132,6 +148,15 @@ test.describe("translation files", () => {
         expect(target, `${id} links to ${href}: link to a ${t.locale} article instead`).toBeTruthy();
         expect(existsSync(join(base, t.locale, `${target![1]}.md`)), `${id} → ${href} has no ${t.locale} file`).toBe(true);
       }
+    }
+  });
+
+  test("titles and descriptions fit search results, already in drafts", () => {
+    for (const { t } of all()) {
+      const id = `${t.locale}/${t.slug}`;
+      expect(t.data.description.length, `${id} description`).toBeGreaterThanOrEqual(50);
+      expect(t.data.description.length, `${id} description`).toBeLessThanOrEqual(160);
+      expect(t.data.title.length, `${id} title`).toBeLessThanOrEqual(65);
     }
   });
 
@@ -212,11 +237,12 @@ test.describe("localized pages (static scan)", () => {
         expect(alternatesOf(targetHtml), `reciprocity ${p} ↔ ${target}`).toEqual(alts);
       }
     }
-    // Demo article, homepages and the Santé/Salute/Health categories, in fr, it and en.
-    expect(annotated).toBe(9);
+    // Demo article, homepages and the Santé category, in fr, it, en and de.
+    expect(annotated).toBe(12);
     expect(alternatesOf(read("articles/article-demo"))).toEqual({
       fr: `${ORIGIN}/articles/article-demo/`,
       en: `${ORIGIN}/en/articles/demo-article/`,
+      de: `${ORIGIN}/de/artikel/demo-artikel/`,
       it: `${ORIGIN}/it/articoli/articolo-demo/`,
       "x-default": `${ORIGIN}/articles/article-demo/`,
     });
@@ -319,6 +345,7 @@ test.describe("localized pages (browser)", () => {
     allowConsoleError(/404/);
     expect((await page.goto("/it/articoli/n-existe-pas/"))?.status()).toBe(404);
     expect((await page.goto("/en/articles/does-not-exist/"))?.status()).toBe(404);
-    expect((await page.goto("/de/"))?.status()).toBe(404);
+    expect((await page.goto("/de/artikel/gibt-es-nicht/"))?.status()).toBe(404);
+    expect((await page.goto("/es/"))?.status()).toBe(404);
   });
 });

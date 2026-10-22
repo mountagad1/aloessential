@@ -108,6 +108,44 @@ export const CATEGORY_I18N: Partial<Record<string, Record<CategorySlug, Localize
       ],
     },
   },
+  de: {
+    conseils: {
+      slug: "tipps",
+      label: "Tipps",
+      description: "Einfache Gewohnheiten und realistische Routinen, um im Alltag gut für sich zu sorgen.",
+      intro: [
+        "Die praktischen Ratgeber von Aloessential: wie Sie ein Aloe-vera-Gel auswählen, ein Etikett lesen oder eine Morgenroutine gestalten. Jeder Tipp geht von konkreten Situationen aus und bleibt realistisch: Ein paar gut gewählte Gewohnheiten sind mehr wert als eine komplizierte Routine.",
+        "Wenn wir ein Produkt erwähnen, dann um ein Auswahlkriterium zu veranschaulichen, nie anstelle der Information.",
+      ],
+    },
+    sante: {
+      slug: "gesundheit",
+      label: "Gesundheit",
+      description: "Körper, Schlaf und Energie besser verstehen, mit verlässlichen Quellen.",
+      intro: [
+        "Was Wissenschaft und europäisches Recht über Aloe vera, Vitamine, Verdauung, Schlaf oder Beweglichkeit wirklich sagen lassen. Wir trennen Belegtes von dem, was noch erforscht wird, und nennen unsere rechtlichen Quellen.",
+        "Diese Artikel informieren; sie ersetzen nicht den Rat einer Ärztin, eines Arztes oder der Apotheke, besonders in der Schwangerschaft, bei laufender Behandlung oder bei anhaltenden Beschwerden.",
+      ],
+    },
+    beaute: {
+      slug: "schoenheit",
+      label: "Schönheit",
+      description: "Haut- und Haarpflege nach dem Vorbild der Natur, ohne Wunderversprechen.",
+      intro: [
+        "Haut- und Haarpflege mit Pflanzen, allen voran Aloe vera. Wir erklären, was die einzelnen Wirkstoffe tun, wie man eine Pflegeroutine aufbaut und wie man eine Inhaltsstoffliste (INCI) liest.",
+        "Ein Kosmetikum spendet Feuchtigkeit, beruhigt, schützt oder verbessert das Aussehen der Haut: Es heilt nicht. Wir halten uns an das, was diese Produkte wirklich versprechen können.",
+      ],
+    },
+    nutrition: {
+      slug: "ernaehrung",
+      label: "Ernährung",
+      description: "Genussvoll und ausgewogen essen, vom Teller bis zum Glas Wasser.",
+      intro: [
+        "Eine abwechslungsreiche, genussvolle Ernährung, vom Teller bis zum Glas: Flüssigkeitszufuhr, Frühstück, Aloe-vera-Getränke, Nahrungsergänzungsmittel und Nährwertkennzeichnung.",
+        "Wir erklären, was eine zugelassene gesundheitsbezogene Angabe bedeutet und warum ein Nahrungsergänzungsmittel nie eine ausgewogene Ernährung ersetzt.",
+      ],
+    },
+  },
   it: {
     conseils: {
       slug: "consigli",

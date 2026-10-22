@@ -16,7 +16,8 @@
 | Italian routes in production | none (before and after this change) |
 | Italian content | 0 of 16 published; **7 drafts** (the aloe vera pole) in `src/content/articles/it/`, awaiting an Italian-speaking reviewer — see docs/i18n/TRANSLATION_WORKFLOW.md |
 | English content (UK) | 0 of 16 published; **7 drafts** in `src/content/articles/en/`; interface and category text in British English; GB LR shop linked in the English footer |
-| es, de, pt-pt, pl | registry and routing only; no interface text, no content, no shop link yet |
+| German content (Germany) | 0 of 16 published; **7 drafts** in `src/content/articles/de/`; interface and category text (*Sie*); DE LR shop linked in the German footer |
+| es, pt-pt, pl | registry and routing only; no interface text, no content, no shop link yet |
 | Products in Italian | none; product pages stay French-only (decision D4/D6) |
 | hreflang | none in production: no page has a published translation, so none is emitted (by design) |
 | Fallbacks | none: a locale without a published article has no URL at all; `/it/anything/` returns the real 404 status |
