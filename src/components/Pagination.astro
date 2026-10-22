@@ -1,0 +1,37 @@
+---
+import Icon from "./Icon.astro";
+import { listingPath } from "../lib/pagination";
+
+/* Previous / next links between listing pages. Renders nothing for a single page. */
+interface Props {
+  base: string;
+  page: number;
+  total: number;
+}
+
+const { base, page, total } = Astro.props;
+---
+
+{
+  total > 1 && (
+    <nav class="pagination" aria-label="Pagination">
+      {page > 1 ? (
+        <a class="text-link" href={listingPath(base, page - 1)} rel="prev">
+          Page précédente
+        </a>
+      ) : (
+        <span />
+      )}
+      <p class="pagination__status">
+        Page {page} sur {total}
+      </p>
+      {page < total ? (
+        <a class="text-link" href={listingPath(base, page + 1)} rel="next">
+          Page suivante <Icon name="arrow-right" class="btn__icon" />
+        </a>
+      ) : (
+        <span />
+      )}
+    </nav>
+  )
+}

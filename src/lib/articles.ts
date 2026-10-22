@@ -4,7 +4,8 @@ export type Article = CollectionEntry<"articles">;
 
 export async function getArticles(): Promise<Article[]> {
   const all = await getCollection("articles");
-  return all.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  // Newest first; same-day articles by id (descending) so every build lists them in the same order.
+  return all.sort((a, b) => b.data.date.getTime() - a.data.date.getTime() || b.id.localeCompare(a.id));
 }
 
 /** Estimated reading time in minutes, at ~200 words per minute. */

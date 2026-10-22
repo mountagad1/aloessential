@@ -8,7 +8,7 @@ import StickyCta from "../../components/StickyCta.astro";
 import { CATEGORIES } from "../../data/categories";
 import { formatDate, getArticles } from "../../lib/articles";
 import { getPublishedProducts, KIND_LABEL, SUPPLEMENT_MENTIONS, type Product } from "../../lib/products";
-import { breadcrumbLd } from "../../lib/seo";
+import { breadcrumbLd, coverShareImage } from "../../lib/seo";
 
 export async function getStaticPaths() {
   const products = await getPublishedProducts();
@@ -45,7 +45,13 @@ const jsonLd = [
 ];
 ---
 
-<BaseLayout title={seoTitle} description={d.tagline} current="produits" jsonLd={jsonLd}>
+<BaseLayout
+  title={seoTitle}
+  description={d.tagline}
+  current="produits"
+  jsonLd={jsonLd}
+  image={coverShareImage(d.cover, d.coverAlt)}
+>
   <article class="product">
     <header class="product-hero">
       <div class="container product-hero__grid">

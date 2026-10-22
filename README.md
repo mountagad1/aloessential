@@ -5,6 +5,7 @@
 - **Stack:** [Astro](https://astro.build) 5, static output, no UI framework and no client-side hydration.
 - **Motion:** CSS-first, no animation library. See [`docs/aloessential/MOTION_DESIGN_SYSTEM.md`](docs/aloessential/MOTION_DESIGN_SYSTEM.md).
 - **Tests:** Playwright against the production build (desktop and mobile projects).
+- **Architecture, capacity and caching:** see [`docs/architecture/`](docs/architecture/README.md).
 
 ## Getting started
 
@@ -44,8 +45,15 @@ tests/                Playwright suite
 ```bash
 python3 tools/prepare-brand-assets.py   # wordmark (colour and white), emblem, favicons
 node tools/generate-covers.mjs          # cover illustrations
+node tools/rasterize-covers.mjs        # 1200 × 800 JPEG twin of each cover (share images; required by tests)
 python3 tools/generate-og-image.py       # default share image (public/brand/og-default.png)
 python3 tools/prepare-hero-media.py     # homepage harvest photo (public/media/)
+```
+
+Catalogue growth check (synthetic articles in a temporary copy; nothing is written to the repository):
+
+```bash
+node tools/scale-check.mjs 5000
 ```
 
 ## Adding an article

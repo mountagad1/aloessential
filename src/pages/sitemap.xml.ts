@@ -3,6 +3,7 @@ import { categoryList } from "../data/categories";
 import { getArticles } from "../lib/articles";
 import { getPublishedProducts } from "../lib/products";
 import { absoluteUrl } from "../lib/seo";
+import { listingPages } from "../lib/pagination";
 
 /*
  * XML sitemap of every indexable page (canonical URLs, trailing slash).
@@ -14,7 +15,7 @@ export const GET: APIRoute = async ({ site }) => {
 
   const entries: { path: string; lastmod?: string }[] = [
     { path: "/" },
-    { path: "/articles/" },
+    ...listingPages("/articles/", articles.length).map(({ path }) => ({ path })),
     { path: "/produits/" },
     { path: "/aloe-vera/" },
     { path: "/transparence/" },
@@ -22,7 +23,11 @@ export const GET: APIRoute = async ({ site }) => {
     { path: "/contact/" },
     { path: "/mentions-legales/" },
     { path: "/confidentialite/" },
-    ...categoryList.map((c) => ({ path: `/rubriques/${c.slug}/` })),
+    ...categoryList.flatMap((c) =>
+      listingPages(`/rubriques/${c.slug}/`, articles.filter((a) => a.data.category === c.slug).length).map(({ path }) => ({
+        path,
+      })),
+    ),
     ...articles.map((a) => ({ path: `/articles/${a.id}/`, lastmod: day(a.data.date) })),
     ...products.map((p) => ({
       path: `/produits/${p.id}/`,

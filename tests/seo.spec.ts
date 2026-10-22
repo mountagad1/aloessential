@@ -61,7 +61,16 @@ test.describe("SEO foundations", () => {
     for (const file of pages()) {
       const html = readFileSync(file, "utf8");
       const p = pathOf(file);
-      expect(attr(html, /<meta property="og:image" content="([^"]*)"/), p).toBe(`${ORIGIN}/brand/og-default.png`);
+      const image = attr(html, /<meta property="og:image" content="([^"]*)"/) ?? "";
+      if (/^\/(articles|produits)\/[^/]+\/$/.test(p) && !/^\/articles\/\d+\/$/.test(p)) {
+        // Articles and product pages share their own cover, as a raster (see image delivery tests).
+        expect(image, p).toMatch(new RegExp(`^${ORIGIN}/covers/[a-z0-9-]+\\.jpg$`));
+        expect(html, p).toContain('<meta property="og:image:width" content="1200">');
+        expect(html, p).toContain('<meta property="og:image:height" content="800">');
+        expect(html, p).toContain('<meta property="og:image:alt"');
+      } else {
+        expect(image, p).toBe(`${ORIGIN}/brand/og-default.png`);
+      }
       expect(html, p).toContain('<meta property="og:locale" content="fr_FR">');
       const type = attr(html, /<meta property="og:type" content="([^"]*)"/);
       expect(type, p).toBe(p.startsWith("/articles/") && p !== "/articles/" ? "article" : "website");

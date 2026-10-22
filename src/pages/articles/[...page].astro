@@ -3,25 +3,44 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import CardGrid from "../../components/CardGrid.astro";
 import Newsletter from "../../components/Newsletter.astro";
 import { categoryList } from "../../data/categories";
-import { getArticles } from "../../lib/articles";
+import Pagination from "../../components/Pagination.astro";
+import { getArticles, type Article } from "../../lib/articles";
+import { listingPages, pageSlice } from "../../lib/pagination";
 
-const articles = await getArticles();
+/* /articles/ is page 1; /articles/2/, /articles/3/… follow (src/lib/pagination.ts). */
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return listingPages("/articles/", articles.length).map(({ page, param }, _, all) => ({
+    params: { page: param },
+    props: { page, pages: all.length, all: articles },
+  }));
+}
+
+interface Props {
+  page: number;
+  pages: number;
+  all: Article[];
+}
+
+const { page, pages, all } = Astro.props;
+const articles = pageSlice(all, page);
+const suffix = page > 1 ? ` (page ${page})` : "";
 ---
 
 <BaseLayout
-  title="Tous les articles"
-  description="Tous les articles Aloessential : conseils, santé, beauté et nutrition au naturel."
+  title={`Tous les articles${suffix}`}
+  description={`Tous les articles Aloessential : conseils, santé, beauté et nutrition au naturel.${page > 1 ? ` Page ${page}.` : ""}`}
   current="articles"
 >
   <header class="page-header">
     <div class="container">
       <p class="eyebrow" data-hero-step style="--step: 0">Le magazine</p>
-      <h1 data-hero-step style="--step: 1">Tous les articles</h1>
+      <h1 data-hero-step style="--step: 1">Tous les articles{suffix}</h1>
       <p data-hero-step style="--step: 2">
-        {articles.length} articles pour prendre soin de soi, naturellement.
+        {all.length} articles pour prendre soin de soi, naturellement.
       </p>
       <ul class="chip-list" aria-label="Filtrer par rubrique" data-hero-step style="--step: 3">
-        <li><a class="chip" href="/articles/" aria-current="page">Tout</a></li>
+        <li><a class="chip" href="/articles/" aria-current={page === 1 ? "page" : undefined}>Tout</a></li>
         {
           categoryList.map((c) => (
             <li>
@@ -38,6 +57,7 @@ const articles = await getArticles();
   <section class="section section--tight" aria-label="Liste des articles">
     <div class="container">
       <CardGrid articles={articles} headingLevel={2} priority={3} />
+      <Pagination base="/articles/" page={page} total={pages} />
     </div>
   </section>
 

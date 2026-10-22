@@ -7,7 +7,7 @@ import DistributorDialog from "../components/DistributorDialog.astro";
 import poppins600 from "@fontsource/poppins/files/poppins-latin-600-normal.woff2?url";
 import poppins700 from "@fontsource/poppins/files/poppins-latin-700-normal.woff2?url";
 import interLatin from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
-import { DEFAULT_OG_IMAGE, SITE_LOCALE, SITE_NAME, absoluteUrl, graph } from "../lib/seo";
+import { DEFAULT_SHARE_IMAGE, SITE_LOCALE, SITE_NAME, absoluteUrl, graph, type ShareImage } from "../lib/seo";
 
 interface Props {
   title: string;
@@ -20,12 +20,22 @@ interface Props {
   jsonLd?: Record<string, unknown>[];
   /** Error pages: no canonical, kept out of the index. */
   noindex?: boolean;
+  /** Share image (raster, ≥ 1200 px wide). Defaults to the brand image. */
+  image?: ShareImage;
 }
 
-const { title, description, current, ogType = "website", jsonLd = [], noindex = false } = Astro.props;
+const {
+  title,
+  description,
+  current,
+  ogType = "website",
+  jsonLd = [],
+  noindex = false,
+  image = DEFAULT_SHARE_IMAGE,
+} = Astro.props;
 const fullTitle = title === "Aloessential" ? "Aloessential — Naturellement essentiel" : `${title} · Aloessential`;
 const canonical = absoluteUrl(Astro.url.pathname, Astro.site);
-const ogImage = absoluteUrl(DEFAULT_OG_IMAGE, Astro.site);
+const ogImage = absoluteUrl(image.src, Astro.site);
 ---
 
 <!doctype html>
@@ -36,6 +46,8 @@ const ogImage = absoluteUrl(DEFAULT_OG_IMAGE, Astro.site);
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    {/* Lets Google show large image previews (Discover, results). docs/architecture/IMAGE_DELIVERY.md */}
+    {!noindex && <meta name="robots" content="max-image-preview:large" />}
     <meta name="theme-color" content="#0F5132" />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:locale" content={SITE_LOCALE} />
@@ -44,8 +56,9 @@ const ogImage = absoluteUrl(DEFAULT_OG_IMAGE, Astro.site);
     <meta property="og:type" content={ogType} />
     {!noindex && <meta property="og:url" content={canonical} />}
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content={String(image.width)} />
+    <meta property="og:image:height" content={String(image.height)} />
+    {image.alt && <meta property="og:image:alt" content={image.alt} />}
     <meta name="twitter:card" content="summary_large_image" />
     {jsonLd.length > 0 && <script type="application/ld+json" set:html={graph(jsonLd)} />}
     <link rel="preload" href={poppins700} as="font" type="font/woff2" crossorigin />

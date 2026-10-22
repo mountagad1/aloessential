@@ -7,7 +7,7 @@ import ReadingProgress from "../../components/ReadingProgress.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
 import ProductCallout from "../../components/ProductCallout.astro";
 import { resolvePublished } from "../../lib/products";
-import { articleLd, breadcrumbLd, organizationLd } from "../../lib/seo";
+import { articleLd, breadcrumbLd, coverShareImage, organizationLd } from "../../lib/seo";
 import { DEFAULT_AUTHOR, DEFAULT_REVIEWER } from "../../data/site";
 import { CATEGORIES } from "../../data/categories";
 import { formatDate, getArticles, readingTime, type Article } from "../../lib/articles";
@@ -47,7 +47,14 @@ const jsonLd = [
 const related = [...others.filter((a) => a.data.category === category), ...others.filter((a) => a.data.category !== category)].slice(0, 3);
 ---
 
-<BaseLayout title={title} description={description} current={category} ogType="article" jsonLd={jsonLd}>
+<BaseLayout
+  title={title}
+  description={description}
+  current={category}
+  ogType="article"
+  jsonLd={jsonLd}
+  image={coverShareImage(cover, coverAlt)}
+>
   <article class="article" data-article>
     <ReadingProgress />
 
