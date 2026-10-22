@@ -131,7 +131,7 @@ Mutation checks run during development:
 | D3 | Only reviewed translations are published | **enforced** (`translationReviewer`) |
 | D4 | Products per country need that country's LR link with `ref=cros` and local mentions | open — products stay French-only |
 | D5 | First locale | Italian infrastructure ready; owner chooses which articles to translate first |
-| D6 | Italian product pages: Italian LR shop link + mentions required in Italy | open |
+| D6 | Italian product pages: Italian LR shop link + mentions required in Italy | **partly done**: Italian shop home `https://shop.lrworld.com/home/IT/it?ref=cros` (from the publisher, 2026-10-22) is linked in the Italian footer with a partner disclosure (`LR_SHOP_HOME` in `src/lib/partner.ts`). Product pages still need each product's Italian shop URL and the Italian mandatory mentions |
 | D7 | Distributor window on Italian pages: Italian text and WhatsApp message to Philippe — does he take Italian-speaking contacts? | **owner to confirm** (shown today only on Italian pages, which do not exist in production yet) |
 | D8 | Native-speaker review of the Italian interface and category text (`src/i18n/ui.ts`, `CATEGORY_I18N`) | open, required before the first Italian publication |
 

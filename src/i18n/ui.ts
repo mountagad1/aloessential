@@ -41,6 +41,10 @@ export interface UiStrings {
   footerCategories: string;
   footerExplore: string;
   footerLegal: (year: number) => string;
+  /** LR shop link in the footer (partner link). */
+  shopLink: string;
+  shopLinkHidden: string;
+  transparency: string;
   /** Pages that only exist in French, linked from other locales. */
   inFrench: string;
   frenchSite: string;
@@ -100,6 +104,9 @@ const fr: UiStrings = {
   footerExplore: "Explorer",
   footerLegal: (y) =>
     `© ${y} Aloessential. Les contenus de ce site sont informatifs et ne remplacent pas l'avis d'un professionnel de santé.`,
+  shopLink: "Boutique officielle LR",
+  shopLinkHidden: " (lien partenaire, nouvel onglet)",
+  transparency: "Transparence et liens partenaires",
   inFrench: "",
   frenchSite: "",
   team: "L'équipe",
@@ -160,6 +167,9 @@ const it: UiStrings = {
   footerExplore: "Esplora",
   footerLegal: (y) =>
     `© ${y} Aloessential. I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere di un professionista sanitario.`,
+  shopLink: "Negozio ufficiale LR",
+  shopLinkHidden: " (link partner, nuova scheda)",
+  transparency: "Trasparenza e link partner",
   inFrench: " (in francese)",
   frenchSite: "Aloessential in francese",
   team: "La redazione",

@@ -261,6 +261,14 @@ test.describe("localized pages (browser)", () => {
     await expect(dialog.getByRole("link", { name: /WhatsApp/ })).toHaveAttribute("href", /text=Buongiorno%20Philippe/);
   });
 
+  test("Italian pages link to the Italian LR shop, tagged and disclosed", async ({ page }) => {
+    await page.goto("/it/");
+    const shop = page.locator(".site-footer a", { hasText: "Negozio ufficiale LR" });
+    await expect(shop).toHaveAttribute("href", "https://shop.lrworld.com/home/IT/it?ref=cros");
+    await expect(shop).toHaveAttribute("rel", /sponsored/);
+    await expect(page.locator(".site-footer a", { hasText: "Trasparenza e link partner" })).toHaveAttribute("hreflang", "fr");
+  });
+
   test("the mobile menu button is labelled in Italian", async ({ page, isMobile }) => {
     test.skip(!isMobile, "menu button is mobile-only");
     await page.goto("/it/");

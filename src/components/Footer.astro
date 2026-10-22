@@ -1,6 +1,6 @@
 ---
 import { categoryList, localizedCategory } from "../data/categories";
-import { LR_HOME_URL } from "../lib/partner";
+import { LR_HOME_URL, LR_SHOP_HOME } from "../lib/partner";
 import { DEFAULT_LOCALE, categoryPath, homePath, type Locale } from "../i18n/locales";
 import { ui } from "../i18n/ui";
 import { getArticles } from "../lib/articles";
@@ -24,6 +24,7 @@ const categories = categoryList
       : { href: categoryPath(locale, localizedCategory(c.slug, locale).slug), label: localizedCategory(c.slug, locale).label },
   );
 const frenchOnly = french ? undefined : "fr";
+const shopHome = LR_SHOP_HOME[locale];
 ---
 
 <footer class="site-footer on-dark">
@@ -68,6 +69,18 @@ const frenchOnly = french ? undefined : "fr";
             <ul>
               <li><a href={homePath(locale)}>{t.allArticles}</a></li>
               <li><a href="/" hreflang="fr" lang="fr">{t.frenchSite}</a></li>
+              {shopHome && (
+                <>
+                  <li>
+                    <a href="/transparence/" hreflang="fr">{t.transparency}{t.inFrench}</a>
+                  </li>
+                  <li>
+                    <a href={shopHome} target="_blank" rel="sponsored noopener">
+                      {t.shopLink}<span class="visually-hidden">{t.shopLinkHidden}</span>
+                    </a>
+                  </li>
+                </>
+              )}
             </ul>
           )
         }

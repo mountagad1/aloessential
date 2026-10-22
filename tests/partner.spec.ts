@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { test, expect } from "@playwright/test";
-import { hasPartnerRef, withPartnerRef } from "../src/lib/partner";
+import { LR_SHOP_HOME, hasPartnerRef, withPartnerRef } from "../src/lib/partner";
 
 test.describe("partner tag ref=cros", () => {
   test("withPartnerRef adds the tag, replaces stray tracking, ignores other sites", () => {
@@ -12,6 +12,11 @@ test.describe("partner tag ref=cros", () => {
     expect(withPartnerRef("https://www.lrworld.com/fr-fr?ref=other")).toBe("https://www.lrworld.com/fr-fr?ref=cros");
     expect(withPartnerRef("https://example.com/?a=1")).toBe("https://example.com/?a=1");
     expect(hasPartnerRef("https://shop.lrworld.com/x?casrnc=1")).toBe(false);
+    // Shop home per locale: tagged, no other LR tracking parameter.
+    for (const [locale, url] of Object.entries(LR_SHOP_HOME)) {
+      expect(hasPartnerRef(url!), locale).toBe(true);
+      expect(url, locale).not.toContain("casrnc");
+    }
   });
 
   test("every LR link in the built site carries ref=cros", ({}, testInfo) => {
