@@ -1,0 +1,99 @@
+---
+/*
+ * Every page of every non-French locale, generated only from published
+ * translations (docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md):
+ *   /<locale>/                         all articles (page 1), /<locale>/2/ …
+ *   /<locale>/<categories>/<slug>/     one category, paginated the same way
+ *   /<locale>/<articles>/<slug>/       one article
+ * A locale with no published article has no page at all: nothing falls back
+ * to French under a foreign prefix.
+ */
+import ArticleView from "../../components/ArticleView.astro";
+import LocaleListing from "../../components/LocaleListing.astro";
+import { categoryList, localizedCategory, type CategorySlug } from "../../data/categories";
+import { LOCALES, categoryPath, homePath, type Locale } from "../../i18n/locales";
+import { ui } from "../../i18n/ui";
+import {
+  articleSlug,
+  categoryAlternates,
+  getArticles,
+  getTranslatedLocales,
+  homeAlternates,
+  type Alternate,
+  type Article,
+} from "../../lib/articles";
+import { listingPages, pageCount, pageSlice } from "../../lib/pagination";
+
+type PageProps =
+  | { kind: "article"; article: Article; others: Article[] }
+  | {
+      kind: "listing";
+      category?: CategorySlug;
+      all: Article[];
+      page: number;
+      pages: number;
+      base: string;
+      categories: CategorySlug[];
+      alternates: Alternate[];
+    };
+
+export async function getStaticPaths() {
+  const paths: { params: { locale: string; path: string | undefined }; props: PageProps }[] = [];
+  const homeAlts = await homeAlternates();
+  for (const locale of await getTranslatedLocales()) {
+    ui(locale); // fails the build if the locale has no interface text yet
+    const l = LOCALES[locale];
+    const articles = await getArticles(locale);
+    const categories = categoryList.map((c) => c.slug).filter((slug) => articles.some((a) => a.data.category === slug));
+    const sub = (path: string) => path.slice(l.prefix.length + 1, -1) || undefined; // "/it/a/b/" → "a/b"
+
+    for (const p of listingPages(homePath(locale), articles.length)) {
+      paths.push({
+        params: { locale, path: sub(p.path) },
+        props: { kind: "listing", all: articles, page: p.page, pages: pageCount(articles.length), base: homePath(locale), categories, alternates: homeAlts },
+      });
+    }
+
+    for (const category of categories) {
+      const inCategory = articles.filter((a) => a.data.category === category);
+      const base = categoryPath(locale, localizedCategory(category, locale).slug);
+      const alternates = await categoryAlternates(category, (loc) => localizedCategory(category, loc).slug);
+      for (const p of listingPages(base, inCategory.length)) {
+        paths.push({
+          params: { locale, path: sub(p.path) },
+          props: { kind: "listing", category, all: inCategory, page: p.page, pages: pageCount(inCategory.length), base, categories, alternates },
+        });
+      }
+    }
+
+    for (const article of articles) {
+      paths.push({
+        params: { locale, path: `${l.segments.articles}/${articleSlug(article)}` },
+        props: { kind: "article", article, others: articles.filter((a) => a.id !== article.id) },
+      });
+    }
+  }
+  return paths;
+}
+
+const props = Astro.props as PageProps;
+const locale = Astro.params.locale as Locale;
+---
+
+{
+  props.kind === "article" ? (
+    <ArticleView article={props.article} others={props.others} />
+  ) : (
+    <LocaleListing
+      locale={locale}
+      category={props.category}
+      articles={pageSlice(props.all, props.page)}
+      total={props.all.length}
+      page={props.page}
+      pages={props.pages}
+      base={props.base}
+      categories={props.categories}
+      alternates={props.alternates}
+    />
+  )
+}

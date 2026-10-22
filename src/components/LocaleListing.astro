@@ -1,0 +1,104 @@
+---
+/*
+ * Article listing for a non-French locale: the locale homepage (all
+ * articles) or one category. Paginated like the French listings.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CardGrid from "./CardGrid.astro";
+import Pagination from "./Pagination.astro";
+import { categoryList, localizedCategory, type CategorySlug } from "../data/categories";
+import { categoryPath, homePath, type Locale } from "../i18n/locales";
+import { ui } from "../i18n/ui";
+import { breadcrumbLd } from "../lib/seo";
+import type { Alternate, Article } from "../lib/articles";
+
+interface Props {
+  locale: Locale;
+  /** Category of the listing; undefined for the locale homepage. */
+  category?: CategorySlug;
+  articles: Article[];
+  /** Articles of the whole listing (all pages). */
+  total: number;
+  page: number;
+  pages: number;
+  base: string;
+  /** Categories that hold at least one article in this locale. */
+  categories: CategorySlug[];
+  alternates: Alternate[];
+}
+
+const { locale, category, articles, total, page, pages, base, categories, alternates } = Astro.props;
+const t = ui(locale);
+const cat = category ? localizedCategory(category, locale) : undefined;
+const suffix = page > 1 ? t.pageSuffix(page) : "";
+const title = `${cat ? cat.label : t.homeTitle}${suffix}`;
+const baseDescription = cat ? cat.description : t.homeDescription;
+const description = page > 1 ? `${baseDescription} ${t.pageStatus(page, pages)}.` : baseDescription;
+const jsonLd = cat
+  ? [
+      breadcrumbLd(
+        [
+          { name: t.home, path: homePath(locale) },
+          { name: cat.label, path: base },
+        ],
+        Astro.site,
+      ),
+    ]
+  : [];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  current={category ?? "articles"}
+  jsonLd={jsonLd}
+  locale={locale}
+  alternates={page === 1 ? alternates : []}
+>
+  <header class="page-header">
+    <div class="container">
+      <p class="eyebrow" data-hero-step style="--step: 0">{cat ? t.categoryEyebrow : t.homeEyebrow}</p>
+      <h1 data-hero-step style="--step: 1">{title}</h1>
+      <p data-hero-step style="--step: 2">{cat ? cat.description : t.homeLead(total)}</p>
+      <ul class="chip-list" aria-label={t.filterLabel} data-hero-step style="--step: 3">
+        <li>
+          <a class="chip" href={homePath(locale)} aria-current={!cat && page === 1 ? "page" : undefined}>{t.all}</a>
+        </li>
+        {
+          categoryList
+            .filter((c) => categories.includes(c.slug))
+            .map((c) => {
+              const lc = localizedCategory(c.slug, locale);
+              return (
+                <li>
+                  <a
+                    class="chip"
+                    href={categoryPath(locale, lc.slug)}
+                    aria-current={c.slug === category && page === 1 ? "page" : undefined}
+                  >
+                    {lc.label}
+                  </a>
+                </li>
+              );
+            })
+        }
+      </ul>
+    </div>
+  </header>
+
+  <section class="section section--tight" aria-label={title}>
+    <div class="container">
+      {
+        cat && page === 1 && (
+          <div class="rubrique-intro prose">
+            {cat.intro.map((p) => (
+              <p>{p}</p>
+            ))}
+          </div>
+        )
+      }
+      <CardGrid articles={articles} headingLevel={2} priority={3} />
+      <Pagination base={base} page={page} total={pages} locale={locale} />
+    </div>
+  </section>
+</BaseLayout>

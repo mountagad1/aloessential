@@ -1,134 +1,22 @@
 ---
-import { render } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import CardGrid from "../../components/CardGrid.astro";
-import Newsletter from "../../components/Newsletter.astro";
-import ReadingProgress from "../../components/ReadingProgress.astro";
-import TableOfContents from "../../components/TableOfContents.astro";
-import ProductCallout from "../../components/ProductCallout.astro";
-import { resolvePublished } from "../../lib/products";
-import { articleLd, breadcrumbLd, coverShareImage, organizationLd } from "../../lib/seo";
-import { DEFAULT_AUTHOR, DEFAULT_REVIEWER } from "../../data/site";
-import { CATEGORIES } from "../../data/categories";
-import { formatDate, getArticles, readingTime, type Article } from "../../lib/articles";
+import ArticleView from "../../components/ArticleView.astro";
+import { getArticles, type Article } from "../../lib/articles";
 
+/* French articles. Translations are rendered by src/pages/[locale]/[...path].astro. */
 export async function getStaticPaths() {
   const articles = await getArticles();
-  return articles.map((article) => ({ params: { slug: article.id }, props: { article, all: articles } }));
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article, others: articles.filter((a) => a.id !== article.id) },
+  }));
 }
 
 interface Props {
   article: Article;
-  all: Article[];
+  others: Article[];
 }
 
-const { article, all } = Astro.props;
-const { title, description, category, date, cover, coverAlt } = article.data;
-const { Content, headings } = await render(article);
-const cat = CATEGORIES[category];
-const products = await resolvePublished(article.data.products);
-
-const others = all.filter((a) => a.id !== article.id);
-const path = `/articles/${article.id}/`;
-const author = article.data.author ?? DEFAULT_AUTHOR;
-const reviewer = article.data.reviewer ?? DEFAULT_REVIEWER;
-const jsonLd = [
-  organizationLd(Astro.site),
-  articleLd({ title, description, date, cover, path, author }, Astro.site),
-  breadcrumbLd(
-    [
-      { name: "Accueil", path: "/" },
-      { name: cat.label, path: `/rubriques/${cat.slug}/` },
-      { name: title, path },
-    ],
-    Astro.site,
-  ),
-];
-const related = [...others.filter((a) => a.data.category === category), ...others.filter((a) => a.data.category !== category)].slice(0, 3);
+const { article, others } = Astro.props;
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  current={category}
-  ogType="article"
-  jsonLd={jsonLd}
-  image={coverShareImage(cover, coverAlt)}
->
-  <article class="article" data-article>
-    <ReadingProgress />
-
-    <header class="article-header container">
-      <div class="article-header__inner">
-        <nav class="breadcrumb" aria-label="Fil d'Ariane" data-hero-step style="--step: 0">
-          <ol>
-            <li><a href="/">Accueil</a></li>
-            <li><a href={`/rubriques/${cat.slug}/`}>{cat.label}</a></li>
-            <li aria-current="page">{title}</li>
-          </ol>
-        </nav>
-        <h1 data-hero-step style="--step: 1">{title}</h1>
-        <p class="article-header__dek" data-hero-step style="--step: 2">{description}</p>
-        <p class="article-meta" data-hero-step style="--step: 3">
-          <a href={`/rubriques/${cat.slug}/`}>{cat.label}</a>
-          <span>Publié le <time datetime={date.toISOString()}>{formatDate(date)}</time></span>
-          <span>{readingTime(article)} min de lecture</span>
-        </p>
-        <p class="byline" data-hero-step style="--step: 3">
-          Par <a href="/equipe/">{author}</a>{reviewer !== author && <> · Relecture : <a href="/equipe/">{reviewer}</a></>}
-        </p>
-      </div>
-    </header>
-
-    <figure class="article-cover container" data-hero-step="visual" style="--step: 3">
-      <div class="media">
-        <img src={cover} alt={coverAlt} width="1200" height="800" fetchpriority="high" decoding="async" />
-      </div>
-    </figure>
-
-    <div class="container">
-      <div class="article-aside">
-        <TableOfContents headings={headings} />
-      </div>
-      <div class="prose">
-        <Content />
-        {
-          article.data.sources.length > 0 && (
-            <section class="sources" aria-labelledby="sources-title">
-              <h2 id="sources-title">Sources</h2>
-              <ul>
-                {article.data.sources.map((s) => (
-                  <li>
-                    <a href={s.url} rel="noopener" target="_blank">
-                      {s.title}
-                      <span class="visually-hidden"> (nouvel onglet)</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )
-        }
-      </div>
-      <p class="disclaimer prose">
-        Cet article est informatif et ne remplace pas l'avis d'un médecin, d'un pharmacien ou d'un diététicien. En cas de
-        doute, de grossesse, de traitement en cours ou de symptômes persistants, consultez un professionnel de santé.
-      </p>
-      <ProductCallout products={products} />
-    </div>
-  </article>
-
-  <section class="section" aria-labelledby="related-title">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <div>
-          <p class="eyebrow">À lire aussi</p>
-          <h2 id="related-title">Poursuivre la lecture</h2>
-        </div>
-      </div>
-      <CardGrid articles={related} />
-    </div>
-  </section>
-
-  <Newsletter />
-</BaseLayout>
+<ArticleView article={article} others={others} />

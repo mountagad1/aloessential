@@ -3,9 +3,9 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { breadcrumbLd } from "../../../lib/seo";
 import CardGrid from "../../../components/CardGrid.astro";
 import Newsletter from "../../../components/Newsletter.astro";
-import { CATEGORIES, categoryList, type CategorySlug } from "../../../data/categories";
+import { CATEGORIES, categoryList, localizedCategory, type CategorySlug } from "../../../data/categories";
 import Pagination from "../../../components/Pagination.astro";
-import { getArticles, type Article } from "../../../lib/articles";
+import { categoryAlternates, getArticles, type Article } from "../../../lib/articles";
 import { listingPages, pageSlice } from "../../../lib/pagination";
 
 /* /rubriques/<slug>/ is page 1; /rubriques/<slug>/2/… follow (src/lib/pagination.ts). */
@@ -32,6 +32,8 @@ const category = CATEGORIES[slug];
 const base = `/rubriques/${slug}/`;
 const articles = pageSlice(all, page);
 const suffix = page > 1 ? ` (page ${page})` : "";
+// Language versions of this category (page 1; hreflang only once another locale publishes in it).
+const alternates = page === 1 ? await categoryAlternates(slug, (locale) => localizedCategory(slug, locale).slug) : [];
 const jsonLd = [
   breadcrumbLd(
     [
@@ -48,6 +50,7 @@ const jsonLd = [
   description={page > 1 ? `${category.description} Page ${page}.` : category.description}
   current={slug}
   jsonLd={jsonLd}
+  alternates={alternates}
 >
   <header class="page-header">
     <div class="container">

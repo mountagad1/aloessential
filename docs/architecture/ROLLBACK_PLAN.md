@@ -23,6 +23,7 @@ On the production branch, revert the offending commit (`git revert <sha>`), neve
 | Share images + `max-image-preview:large` | `src/lib/seo.ts`, `src/layouts/BaseLayout.astro`, article and product pages, `public/covers/*.jpg`, `tools/rasterize-covers.mjs` | Articles share the brand image again; robots meta removed | none |
 | Security and image cache headers | `vercel.json` | Previous headers | Browsers may keep cached images up to 1 day after a revert — harmless (same files) |
 | Deterministic order | `src/lib/articles.ts` | Same-day order may flip between builds | none |
+| Locale infrastructure (Italian first-class) | `src/i18n/*`, `src/content.config.ts`, `src/lib/articles.ts`, `src/data/categories.ts`, `src/components/{ArticleView,LocaleListing,Header,Footer,DistributorDialog,ArticleCard,TableOfContents,Pagination}.astro`, `src/layouts/BaseLayout.astro`, `src/pages/[locale]/[...path].astro`, `src/pages/articles/[slug].astro`, `src/pages/index.astro`, rubriques page, `src/pages/sitemap.xml.ts`, `src/scripts/header.ts` | Back to French-only rendering | none while no translation is published (no URL under a prefix exists in production). After Italian pages are published, a revert would 404 them: unpublish (`status: draft`) instead |
 | Tests and docs | `tests/delivery.spec.ts`, `tests/seo.spec.ts`, `docs/architecture/*` | — | none |
 
 ## 4. When to roll back

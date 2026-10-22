@@ -21,7 +21,9 @@ if (toggle && panel) {
 
   const setOpen = (open: boolean, { restoreFocus = false } = {}) => {
     toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+    // Labels come from the page's language (data attributes set by Header.astro).
+    const label = open ? toggle.dataset.labelClose : toggle.dataset.labelOpen;
+    if (label) toggle.setAttribute("aria-label", label);
     panel.classList.toggle("is-open", open);
     if (!open && restoreFocus) toggle.focus();
   };

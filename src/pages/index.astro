@@ -9,7 +9,7 @@ import CardGrid from "../components/CardGrid.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Icon from "../components/Icon.astro";
 import { categoryList } from "../data/categories";
-import { getArticles } from "../lib/articles";
+import { getArticles, homeAlternates } from "../lib/articles";
 
 const articles = await getArticles();
 const featured = articles.find((a) => a.data.featured) ?? articles[0];
@@ -22,9 +22,12 @@ const pillars = [
   { icon: "heart", title: "Bien-être", text: "Pour le corps et l'esprit" },
 ] as const;
 const jsonLd = [organizationLd(Astro.site), websiteLd(Astro.site)];
+// Language versions of the homepage (hreflang only once another locale publishes).
+const alternates = await homeAlternates();
 ---
 
 <BaseLayout
+  alternates={alternates}
   jsonLd={jsonLd}
   title="Aloessential"
   description="Conseils, santé, beauté et nutrition au naturel : Aloessential, votre source bien-être pour une vie plus saine et plus équilibrée."

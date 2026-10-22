@@ -1,56 +1,84 @@
 ---
-import { categoryList } from "../data/categories";
+import { categoryList, localizedCategory } from "../data/categories";
 import { LR_HOME_URL } from "../lib/partner";
+import { DEFAULT_LOCALE, categoryPath, homePath, type Locale } from "../i18n/locales";
+import { ui } from "../i18n/ui";
+import { getArticles } from "../lib/articles";
 
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = DEFAULT_LOCALE } = Astro.props;
+const t = ui(locale);
 const year = new Date().getFullYear();
+const french = locale === DEFAULT_LOCALE;
+
+/* Other locales list only their own sections; French-only pages are marked as such (hreflang="fr"). */
+const present = french ? null : new Set((await getArticles(locale)).map((a) => a.data.category));
+const categories = categoryList
+  .filter((c) => !present || present.has(c.slug))
+  .map((c) =>
+    french
+      ? { href: `/rubriques/${c.slug}/`, label: c.label }
+      : { href: categoryPath(locale, localizedCategory(c.slug, locale).slug), label: localizedCategory(c.slug, locale).label },
+  );
+const frenchOnly = french ? undefined : "fr";
 ---
 
 <footer class="site-footer on-dark">
   <div class="container">
     <div class="site-footer__grid">
       <div>
-        <a class="site-footer__brand" href="/" aria-label="Aloessential — accueil">
+        <a class="site-footer__brand" href={homePath(locale)} aria-label={t.brandHome}>
           <img src="/brand/icon-160.webp" alt="" width="160" height="160" loading="lazy" />
           <img src="/brand/wordmark-white.webp" alt="" width="433" height="80" loading="lazy" />
         </a>
-        <p class="site-footer__tagline">Naturellement essentiel</p>
+        <p class="site-footer__tagline">{t.footerTagline}</p>
       </div>
       <div>
-        <h2>Rubriques</h2>
+        <h2>{t.footerCategories}</h2>
         <ul>
           {
-            categoryList.map((c) => (
+            categories.map((c) => (
               <li>
-                <a href={`/rubriques/${c.slug}/`}>{c.label}</a>
+                <a href={c.href}>{c.label}</a>
               </li>
             ))
           }
         </ul>
       </div>
       <div>
-        <h2>Explorer</h2>
-        <ul>
-          <li><a href="/articles/">Tous les articles</a></li>
-          <li><a href="/produits/">Notre sélection LR</a></li>
-          <li><a href="/#newsletter">Newsletter</a></li>
-          <li><a href="/aloe-vera/">Le guide de l'aloe vera</a></li>
-          <li><a href="/transparence/">Transparence et liens partenaires</a></li>
-          <li>
-            <a href={LR_HOME_URL} target="_blank" rel="sponsored noopener">
-              Boutique officielle LR<span class="visually-hidden"> (lien partenaire, nouvel onglet)</span>
-            </a>
-          </li>
-        </ul>
+        <h2>{t.footerExplore}</h2>
+        {
+          french ? (
+            <ul>
+              <li><a href="/articles/">Tous les articles</a></li>
+              <li><a href="/produits/">Notre sélection LR</a></li>
+              <li><a href="/#newsletter">Newsletter</a></li>
+              <li><a href="/aloe-vera/">Le guide de l'aloe vera</a></li>
+              <li><a href="/transparence/">Transparence et liens partenaires</a></li>
+              <li>
+                <a href={LR_HOME_URL} target="_blank" rel="sponsored noopener">
+                  Boutique officielle LR<span class="visually-hidden"> (lien partenaire, nouvel onglet)</span>
+                </a>
+              </li>
+            </ul>
+          ) : (
+            <ul>
+              <li><a href={homePath(locale)}>{t.allArticles}</a></li>
+              <li><a href="/" hreflang="fr" lang="fr">{t.frenchSite}</a></li>
+            </ul>
+          )
+        }
       </div>
     </div>
     <ul class="site-footer__links">
-      <li><a href="/equipe/">L'équipe</a></li>
-      <li><a href="/contact/">Contact</a></li>
-      <li><a href="/mentions-legales/">Mentions légales</a></li>
-      <li><a href="/confidentialite/">Confidentialité</a></li>
+      <li><a href="/equipe/" hreflang={frenchOnly}>{t.team}{t.inFrench}</a></li>
+      <li><a href="/contact/" hreflang={frenchOnly}>{t.contact}{t.inFrench}</a></li>
+      <li><a href="/mentions-legales/" hreflang={frenchOnly}>{t.legalNotice}{t.inFrench}</a></li>
+      <li><a href="/confidentialite/" hreflang={frenchOnly}>{t.privacy}{t.inFrench}</a></li>
     </ul>
-    <p class="site-footer__legal">
-      © {year} Aloessential. Les contenus de ce site sont informatifs et ne remplacent pas l'avis d'un professionnel de santé.
-    </p>
+    <p class="site-footer__legal">{t.footerLegal(year)}</p>
   </div>
 </footer>

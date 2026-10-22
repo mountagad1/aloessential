@@ -1,21 +1,25 @@
 ---
 import type { MarkdownHeading } from "astro";
 import Icon from "./Icon.astro";
+import { DEFAULT_LOCALE, type Locale } from "../i18n/locales";
+import { ui } from "../i18n/ui";
 
 interface Props {
   headings: MarkdownHeading[];
+  locale?: Locale;
 }
 
 const items = Astro.props.headings.filter((h) => h.depth === 2);
+const t = ui(Astro.props.locale ?? DEFAULT_LOCALE);
 ---
 
 {
   items.length > 1 && (
     <details class="toc">
       <summary>
-        Sommaire <Icon name="chevron-down" class="toc__chevron" />
+        {`${t.toc} `}<Icon name="chevron-down" class="toc__chevron" />
       </summary>
-      <nav aria-label="Sommaire de l'article">
+      <nav aria-label={t.tocNav}>
         <ol>
           {items.map((h) => (
             <li>

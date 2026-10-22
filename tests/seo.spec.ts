@@ -62,7 +62,8 @@ test.describe("SEO foundations", () => {
       const html = readFileSync(file, "utf8");
       const p = pathOf(file);
       const image = attr(html, /<meta property="og:image" content="([^"]*)"/) ?? "";
-      if (/^\/(articles|produits)\/[^/]+\/$/.test(p) && !/^\/articles\/\d+\/$/.test(p)) {
+      const isArticle = /^\/(it\/articoli|articles)\/[^/]+\/$/.test(p) && !/^\/articles\/\d+\/$/.test(p);
+      if (isArticle || /^\/produits\/[^/]+\/$/.test(p)) {
         // Articles and product pages share their own cover, as a raster (see image delivery tests).
         expect(image, p).toMatch(new RegExp(`^${ORIGIN}/covers/[a-z0-9-]+\\.jpg$`));
         expect(html, p).toContain('<meta property="og:image:width" content="1200">');
@@ -71,9 +72,10 @@ test.describe("SEO foundations", () => {
       } else {
         expect(image, p).toBe(`${ORIGIN}/brand/og-default.png`);
       }
-      expect(html, p).toContain('<meta property="og:locale" content="fr_FR">');
+      // Locale-specific Open Graph locale; full locale checks in tests/i18n.spec.ts.
+      expect(html, p).toContain(`<meta property="og:locale" content="${p.startsWith("/it/") ? "it_IT" : "fr_FR"}">`);
       const type = attr(html, /<meta property="og:type" content="([^"]*)"/);
-      expect(type, p).toBe(p.startsWith("/articles/") && p !== "/articles/" ? "article" : "website");
+      expect(type, p).toBe(isArticle ? "article" : "website");
     }
     expect(existsSync(join(dist, "brand", "og-default.png"))).toBe(true);
   });

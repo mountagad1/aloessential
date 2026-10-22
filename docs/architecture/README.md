@@ -13,7 +13,7 @@
 | [ARCHITECTURE_DECISIONS.md](ARCHITECTURE_DECISIONS.md) | ADR-001 to ADR-009 |
 | [CACHING_STRATEGY.md](CACHING_STRATEGY.md) | Cache policy matrix, stale-content rule, validation commands |
 | [IMAGE_DELIVERY.md](IMAGE_DELIVERY.md) | Image data model, share images, Discover signals, validation |
-| [INTERNATIONAL_SEO_ARCHITECTURE.md](INTERNATIONAL_SEO_ARCHITECTURE.md) | Locale design for fr/en/es/de/it/pt-pt/pl, decisions needed, regression checks |
+| [INTERNATIONAL_SEO_ARCHITECTURE.md](INTERNATIONAL_SEO_ARCHITECTURE.md) | Locales fr/en/es/de/it/pt-pt/pl: implemented infrastructure, Italian first-class, publication policy, Italian search-intent method, regression checks |
 | [OBSERVABILITY.md](OBSERVABILITY.md) | What to measure, alerts, cost and security monitoring |
 | [LOAD_TEST_PLAN.md](LOAD_TEST_PLAN.md) | Why and how to load test safely (not executed) |
 | [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md) | Current setup, deploy steps, post-deploy checks |
@@ -41,7 +41,7 @@ Related, older: `docs/seo/` (SEO baseline, route inventory, risk register), `doc
 - 11 new regression tests.
 
 **Not done and why:**
-- International SEO is designed, not built: it needs six owner decisions and real translations.
+- International SEO infrastructure is built and tested (Italian first-class); no translation is published yet: that needs reviewed translations and owner decisions D4, D6–D8.
 - No load test was run: it needs authorisation, and it would measure Vercel's CDN rather than this code.
 - The Astro 7 upgrade for `npm audit` findings is deferred: the affected features are not used, and a major upgrade deserves its own change.
 
@@ -56,21 +56,27 @@ Related, older: `docs/seo/` (SEO baseline, route inventory, risk register), `doc
 | B5 | Gate production on CI: protected `main` as production branch (ADR-007) | P2 | availability | S | **yes** | open |
 | B6 | Homepage hero: 1.4:1 mobile crop (480/800/1100 w) for screens ≤ 30rem | P2 | hero 158 → 94 KB on phones; mobile homepage 283 → 222 KB; throttled LCP 1.77 → 1.47 s | S | no | **done** |
 | B7 | Lighter header wordmark (SVG or smaller WebP) | P3 | −10–20 KB per first view | S | no | open |
-| B8 | i18n step 1: locale registry, content fields, one extra locale end to end, hreflang + sitemap alternates + tests | P4 | international SEO | M | **decisions D1–D6** | designed |
+| B8 | i18n infrastructure: locale registry, content fields, Italian end to end, hreflang + sitemap alternates + tests | P4 | international SEO | M | no | **done** (ADR-008) |
+| B8b | First Italian articles: search-intent research, translation, native review, publish | P4 | Italian organic traffic | content | **yes** (D5, D8) | open |
 | B9 | Sitemap index when > 40 k URLs | P4 | crawl | S | no | not needed yet |
 | B10 | Licensed photography for key articles (Discover) | P4 | Discover eligibility | content | **yes** | open |
 | B11 | `npm audit` + Dependabot in CI | P5 | security monitoring | XS | partly | open |
 | B12 | Uptime probe and usage alerts | P5 | operations | XS | **yes** | open |
 | B13 | Staging load test per LOAD_TEST_PLAN.md (optional) | P6 | provider validation | S | **authorisation** | not run |
 
-## Tests (2026-10-22, this working tree)
+## Tests (latest run, 2026-10-22)
 
-- `npm run build`: 36 pages, no errors.
-- `npx playwright test`: **142 passed, 30 skipped, 0 failed**. The skips are by design: the file-scan suites run once, on desktop, and the device-specific tests run only on their device. Before the change: 131 passed, 19 skipped.
-- New `tests/delivery.spec.ts` (11 tests), all passing. A mutation check removed one share image and the suite failed as expected.
-- `node tools/scale-check.mjs 5000`: passes, largest page 41.0 KB, 5,451 sitemap URLs, build 31.8 s.
+- `npm run build`: 36 pages (production content), no errors; with test fixtures 41 pages (adds `/it/`, `/it/rubriche/salute/`, `/it/articoli/articolo-demo/`, and the fixture pages).
+- `npx playwright test`: **163 passed, 37 skipped, 0 failed**. The skips are by design: the file-scan suites run once, on desktop, and the device-specific tests run only on their device.
+- `tests/i18n.spec.ts` (Italian routing, metadata, canonical, hreflang, sitemap, internal links, localization integrity): all passing.
+  - Two mutation checks failed as expected: removing a French-only link marker, and a wrong `x-default`.
+- French production output: normalised diff of all 36 pages = 0 differences; sitemap byte-identical; no page under any locale prefix.
+- Type check (`@astrojs/check` run from a scratch install): 26 errors, against 22 on the previous commit. The errors come from:
+  - missing `@types/node` in tests and config files;
+  - two pre-existing script redeclarations.
+  The 4 new ones are the same `@types/node` errors in the new test file. There are 0 errors in `src/` code added by this change.
 - Not tested:
-  - production headers after deployment (nothing deployed);
+  - real Italian content (none exists);
+  - production headers after the next deployment;
   - real-user metrics;
-  - load;
-  - other locales (none exist).
+  - load.

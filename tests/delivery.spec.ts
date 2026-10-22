@@ -5,7 +5,7 @@ import { LISTING_PAGE_SIZE, listingPages, listingPath, pageCount, pageSlice } fr
 
 /*
  * Static checks on the built site (dist-test/) and on vercel.json: listing
- * pagination, share images, locale integrity and delivery headers.
+ * pagination, share images and delivery headers.
  * See docs/architecture/.
  */
 const ORIGIN = "https://aloessential.com";
@@ -64,7 +64,8 @@ test.describe("image delivery", () => {
   test("every cover used by content has a 1200 × 800 raster twin for sharing", () => {
     const covers = new Set<string>();
     for (const dir of ["src/content/articles", "src/content/products", "tests/fixtures/articles", "tests/fixtures/products"]) {
-      for (const name of readdirSync(join(root, dir))) {
+      for (const name of readdirSync(join(root, dir), { recursive: true }) as string[]) {
+        if (!name.endsWith(".md")) continue;
         const cover = readFileSync(join(root, dir, name), "utf8").match(/^cover: (\S+)/m)?.[1];
         if (cover) covers.add(cover);
       }
@@ -102,26 +103,7 @@ test.describe("image delivery", () => {
   });
 });
 
-test.describe("locale integrity (French is the only published locale)", () => {
-  // docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md: hreflang appears only
-  // once a page has a published translation. Until then every page must say
-  // French consistently and must not point to alternates that do not exist.
-  test("every page declares French in html, Open Graph and structured data, with no hreflang", () => {
-    for (const file of htmlFiles(dist)) {
-      const html = readFileSync(file, "utf8");
-      const p = pathOf(file);
-      expect(html, p).toContain('<html lang="fr">');
-      expect(html, p).not.toContain("hreflang");
-      for (const [, lang] of html.matchAll(/"inLanguage":"([^"]+)"/g)) expect(lang, p).toBe("fr-FR");
-    }
-  });
-
-  test("no page lives under a language prefix yet", () => {
-    for (const file of indexable()) {
-      expect(pathOf(file), "translations need the i18n rollout first").not.toMatch(/^\/(en|es|de|it|pt-pt|pt|pl|fr)\//);
-    }
-  });
-});
+// Locale routing, hreflang and sitemap alternates: tests/i18n.spec.ts.
 
 test.describe("vercel.json delivery rules", () => {
   const config = JSON.parse(readFileSync(join(root, "vercel.json"), "utf8"));

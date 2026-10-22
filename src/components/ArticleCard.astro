@@ -1,6 +1,7 @@
 ---
 import Icon from "./Icon.astro";
-import { CATEGORIES } from "../data/categories";
+import { localizedCategory } from "../data/categories";
+import { ui } from "../i18n/ui";
 import { articleUrl, formatDate, readingTime, type Article } from "../lib/articles";
 
 interface Props {
@@ -13,6 +14,8 @@ interface Props {
 const { article, headingLevel = 3, priority = false } = Astro.props;
 const { title, description, category, date, cover, coverAlt } = article.data;
 const Heading = `h${headingLevel}` as "h2" | "h3";
+const { locale } = article.data;
+const t = ui(locale);
 ---
 
 <article class="card">
@@ -29,14 +32,14 @@ const Heading = `h${headingLevel}` as "h2" | "h3";
   </div>
   <div class="card__body">
     <p class="card__meta">
-      <span class="card__category">{CATEGORIES[category].label}</span>
+      <span class="card__category">{localizedCategory(category, locale).label}</span>
       <span aria-hidden="true">·</span>
-      <time datetime={date.toISOString()}>{formatDate(date)}</time>
+      <time datetime={date.toISOString()}>{formatDate(date, locale)}</time>
     </p>
     <Heading class="card__title"><a href={articleUrl(article)}>{title}</a></Heading>
     <p class="card__excerpt">{description}</p>
     <p class="card__more" aria-hidden="true">
-      Lire · {readingTime(article)} min <Icon name="arrow-right" class="btn__icon" />
+      {`${t.readCard(readingTime(article))} `}<Icon name="arrow-right" class="btn__icon" />
     </p>
   </div>
 </article>

@@ -2651,3 +2651,11 @@ main:focus {
     transition: none;
   }
 }
+
+/* ---------- Article: other language versions ----------------------------- */
+
+.article-languages {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}

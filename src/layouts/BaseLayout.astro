@@ -7,7 +7,10 @@ import DistributorDialog from "../components/DistributorDialog.astro";
 import poppins600 from "@fontsource/poppins/files/poppins-latin-600-normal.woff2?url";
 import poppins700 from "@fontsource/poppins/files/poppins-latin-700-normal.woff2?url";
 import interLatin from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
-import { DEFAULT_SHARE_IMAGE, SITE_LOCALE, SITE_NAME, absoluteUrl, graph, type ShareImage } from "../lib/seo";
+import { DEFAULT_SHARE_IMAGE, SITE_NAME, absoluteUrl, graph, type ShareImage } from "../lib/seo";
+import { DEFAULT_LOCALE, LOCALES, type Locale } from "../i18n/locales";
+import { ui } from "../i18n/ui";
+import type { Alternate } from "../lib/articles";
 
 interface Props {
   title: string;
@@ -22,6 +25,14 @@ interface Props {
   noindex?: boolean;
   /** Share image (raster, ≥ 1200 px wide). Defaults to the brand image. */
   image?: ShareImage;
+  /** Language of the page. */
+  locale?: Locale;
+  /**
+   * Published language versions of this page, itself included. hreflang
+   * links are emitted only when there are at least two
+   * (docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md).
+   */
+  alternates?: Alternate[];
 }
 
 const {
@@ -32,14 +43,20 @@ const {
   jsonLd = [],
   noindex = false,
   image = DEFAULT_SHARE_IMAGE,
+  locale = DEFAULT_LOCALE,
+  alternates = [],
 } = Astro.props;
+const lang = LOCALES[locale];
+const t = ui(locale);
+const hreflangs = !noindex && alternates.length > 1 ? alternates : [];
+const xDefault = hreflangs.find((a) => a.locale === DEFAULT_LOCALE);
 const fullTitle = title === "Aloessential" ? "Aloessential — Naturellement essentiel" : `${title} · Aloessential`;
 const canonical = absoluteUrl(Astro.url.pathname, Astro.site);
 const ogImage = absoluteUrl(image.src, Astro.site);
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang={lang.htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -50,7 +67,14 @@ const ogImage = absoluteUrl(image.src, Astro.site);
     {!noindex && <meta name="robots" content="max-image-preview:large" />}
     <meta name="theme-color" content="#0F5132" />
     <meta property="og:site_name" content={SITE_NAME} />
-    <meta property="og:locale" content={SITE_LOCALE} />
+    {hreflangs.map((a) => <link rel="alternate" hreflang={a.hreflang} href={absoluteUrl(a.path, Astro.site)} />)}
+    {xDefault && <link rel="alternate" hreflang="x-default" href={absoluteUrl(xDefault.path, Astro.site)} />}
+    <meta property="og:locale" content={lang.ogLocale} />
+    {
+      hreflangs
+        .filter((a) => a.locale !== locale)
+        .map((a) => <meta property="og:locale:alternate" content={LOCALES[a.locale].ogLocale} />)
+    }
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={ogType} />
@@ -87,13 +111,13 @@ const ogImage = absoluteUrl(image.src, Astro.site);
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Aller au contenu</a>
-    <Header current={current} />
+    <a class="skip-link" href="#main">{t.skipLink}</a>
+    <Header current={current} locale={locale} />
     <main id="main" tabindex="-1">
       <slot />
     </main>
-    <Footer />
-    <DistributorDialog />
+    <Footer locale={locale} />
+    <DistributorDialog locale={locale} />
     <script>
       import "../scripts/motion";
     </script>

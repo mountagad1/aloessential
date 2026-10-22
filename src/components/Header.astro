@@ -1,48 +1,63 @@
 ---
-import { categoryList } from "../data/categories";
+import { categoryList, localizedCategory } from "../data/categories";
+import { DEFAULT_LOCALE, categoryPath, homePath, type Locale } from "../i18n/locales";
+import { ui } from "../i18n/ui";
+import { getArticles } from "../lib/articles";
 
 interface Props {
   /** Category slug of the current page, for aria-current. */
   current?: string;
+  locale?: Locale;
 }
 
-const { current } = Astro.props;
-const links = categoryList.map((c) => ({ href: `/rubriques/${c.slug}/`, label: c.label, slug: c.slug }));
+const { current, locale = DEFAULT_LOCALE } = Astro.props;
+const t = ui(locale);
+
+/*
+ * French: the full navigation. Other locales: only sections that exist in
+ * that locale (categories with published articles, the article listing), so
+ * navigation never leads to an empty page or silently to French.
+ */
+let links: { href: string; label: string; key: string }[];
+if (locale === DEFAULT_LOCALE) {
+  links = [
+    { href: "/aloe-vera/", label: "Aloe vera", key: "aloe-vera" },
+    ...categoryList.map((c) => ({ href: `/rubriques/${c.slug}/`, label: c.label, key: c.slug })),
+    { href: "/articles/", label: t.allArticles, key: "articles" },
+    { href: "/produits/", label: "Produits", key: "produits" },
+  ];
+} else {
+  const present = new Set((await getArticles(locale)).map((a) => a.data.category));
+  links = [
+    ...categoryList
+      .filter((c) => present.has(c.slug))
+      .map((c) => {
+        const lc = localizedCategory(c.slug, locale);
+        return { href: categoryPath(locale, lc.slug), label: lc.label, key: c.slug };
+      }),
+    { href: homePath(locale), label: t.allArticles, key: "articles" },
+  ];
+}
 ---
 
 <div class="header-sentinel" data-header-sentinel aria-hidden="true"></div>
 <header class="site-header" data-site-header>
   <div class="container site-header__inner">
-    <a class="brand" href="/" aria-label="Aloessential — accueil">
+    <a class="brand" href={homePath(locale)} aria-label={t.brandHome}>
       <img src="/brand/wordmark.webp" alt="" width="433" height="80" />
     </a>
 
-    <nav class="nav" aria-label="Rubriques">
+    <nav class="nav" aria-label={t.navLabel}>
       <ul class="nav__list">
-        <li>
-          <a class="nav-link" href="/aloe-vera/" aria-current={current === "aloe-vera" ? "page" : undefined}>
-            Aloe vera
-          </a>
-        </li>
         {
           links.map((link) => (
             <li>
-              <a class="nav-link" href={link.href} aria-current={current === link.slug ? "page" : undefined}>
+              <a class="nav-link" href={link.href} aria-current={current === link.key ? "page" : undefined}>
                 {link.label}
               </a>
             </li>
           ))
         }
-        <li>
-          <a class="nav-link" href="/articles/" aria-current={current === "articles" ? "page" : undefined}>
-            Tous les articles
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="/produits/" aria-current={current === "produits" ? "page" : undefined}>
-            Produits
-          </a>
-        </li>
       </ul>
     </nav>
 
@@ -51,39 +66,26 @@ const links = categoryList.map((c) => ({ href: `/rubriques/${c.slug}/`, label: c
       type="button"
       aria-expanded="false"
       aria-controls="mobile-nav"
-      aria-label="Ouvrir le menu"
+      aria-label={t.menuOpen}
+      data-label-open={t.menuOpen}
+      data-label-close={t.menuClose}
       data-menu-toggle
     >
       <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
     </button>
   </div>
 
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Menu principal">
+  <nav class="mobile-nav" id="mobile-nav" aria-label={t.mobileNavLabel}>
     <ul class="container">
-      <li>
-        <a href="/aloe-vera/" aria-current={current === "aloe-vera" ? "page" : undefined}>
-          Aloe vera
-        </a>
-      </li>
       {
         links.map((link) => (
           <li>
-            <a href={link.href} aria-current={current === link.slug ? "page" : undefined}>
+            <a href={link.href} aria-current={current === link.key ? "page" : undefined}>
               {link.label}
             </a>
           </li>
         ))
       }
-      <li>
-        <a href="/articles/" aria-current={current === "articles" ? "page" : undefined}>
-          Tous les articles
-        </a>
-      </li>
-      <li>
-        <a href="/produits/" aria-current={current === "produits" ? "page" : undefined}>
-          Produits
-        </a>
-      </li>
     </ul>
   </nav>
 </header>

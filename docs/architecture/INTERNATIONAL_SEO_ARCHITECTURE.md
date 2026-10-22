@@ -1,76 +1,133 @@
 # International SEO architecture
 
-*2026-10-22. Status: **design, not implemented.** Today the site is French-only and must stay so until a translation is actually published. Target locales: fr (source), en, es, de, **it**, pt-pt, pl (Italian added 2026-10-22).*
+*Updated 2026-10-22.*
 
-## 1. Current state [measured]
+**Status:**
+- The locale **infrastructure is implemented and tested**.
+- **No translation is published yet**, so production remains French-only (verified: production build page set and sitemap unchanged).
+- Supported locales: fr (source), en, es, de, **it**, pt-pt, pl.
+- **Italian is first-class:** registry, interface text, category text, routing, metadata, hreflang, sitemap and tests.
+- The other five locales exist in the registry only. They cannot publish until their interface text is added; the build enforces this.
 
-- One locale: `<html lang="fr">`, `og:locale` `fr_FR`, JSON-LD `inLanguage` `fr-FR`, French slugs at the root (`/articles/<slug>/`).
-- No hreflang, no locale prefixes, no translated content, no translation workflow.
-- Guard tests (`tests/delivery.spec.ts` › "locale integrity"): every page declares French consistently, no hreflang is emitted, and no page lives under a language prefix. These tests are meant to be replaced by the full checks in §5 when the first translation ships, not deleted.
+## 1. Audit (2026-10-22) [measured]
 
-## 2. Decisions to take (owner)
+| Item | Finding |
+| --- | --- |
+| Italian routes in production | none (before and after this change) |
+| Italian content | 0 of 16 French articles translated; 0 drafts in `src/content/articles/it/` |
+| Products in Italian | none; product pages stay French-only (decision D4/D6) |
+| hreflang | none in production: no page has a published translation, so none is emitted (by design) |
+| Fallbacks | none: a locale without a published article has no URL at all; `/it/anything/` returns the real 404 status |
 
-| # | Decision | Recommendation |
+## 2. URL structure (decisions D1, D2 — implemented)
+
+French stays at the root and keeps every existing URL. Each other locale lives under its own prefix with translated path segments and slugs:
+
+| Page | French | Italian (pattern) |
 | --- | --- | --- |
-| D1 | URL structure | **Subdirectories on the same domain**, French unprefixed: `/` (fr), `/en/`, `/es/`, `/de/`, `/it/`, `/pt-pt/`, `/pl/`. Keeps all links and authority on one host and preserves every existing French URL. ccTLDs or subdomains add cost and split authority for no gain at this size. |
-| D2 | Slugs | Translated slugs per locale (`/en/articles/aloe-vera-skin/`), mapped through a shared translation key. |
-| D3 | Which content gets translated | Only pages with a real, reviewed translation. No machine-only publication without human review (health and regulatory content). |
-| D4 | Products | LR partner pages differ by country (shop URL, availability, legal mentions such as the French supplement notices). A product page is published in a locale only with that country's shop link carrying `ref=cros` and the local mandatory mentions. |
-| D5 | First locale | Pick one (likely `en`, `de` or `it`, depending on where LR partnership traffic is wanted) and ship it end to end before adding others. |
-| D6 | Italian products | Same rule as D4: an Italian product page needs the Italian LR shop link with `ref=cros` and the mentions required in Italy for food supplements and cosmetics, reviewed locally. |
+| Home / all articles | `/` (home), `/articles/` (list) | `/it/` (list of all Italian articles), `/it/2/` … |
+| Category | `/rubriques/sante/` | `/it/rubriche/salute/` (`consigli`, `salute`, `bellezza`, `nutrizione`) |
+| Article | `/articles/<slug>/` | `/it/articoli/<slug-italiano>/` |
 
-## 3. Target model
+Segments for the other locales are defined in `src/i18n/locales.ts` (e.g. `/de/artikel/`, `/es/articulos/`, `/pt-pt/artigos/`, `/pl/artykuly/`, `/en/articles/`).
 
-**Single source of truth** — a new `src/i18n/locales.ts`:
+**Single source of truth:** `src/i18n/locales.ts` holds:
+- the code, prefix, `html lang`/hreflang code, `og:locale`, schema.org language, date locale and native name;
+- the path segments, plus the path builders `homePath`, `articlePath`, `categoryPath`.
 
-```ts
-// Sketch, not implemented.
-export const LOCALES = {
-  fr: { prefix: "", htmlLang: "fr", ogLocale: "fr_FR", schemaLang: "fr-FR", published: true },
-  en: { prefix: "/en", htmlLang: "en", ogLocale: "en_GB", schemaLang: "en", published: false },
-  es: { prefix: "/es", htmlLang: "es", ogLocale: "es_ES", schemaLang: "es-ES", published: false },
-  de: { prefix: "/de", htmlLang: "de", ogLocale: "de_DE", schemaLang: "de-DE", published: false },
-  it: { prefix: "/it", htmlLang: "it", ogLocale: "it_IT", schemaLang: "it-IT", published: false },
-  "pt-pt": { prefix: "/pt-pt", htmlLang: "pt-PT", ogLocale: "pt_PT", schemaLang: "pt-PT", published: false },
-  pl: { prefix: "/pl", htmlLang: "pl", ogLocale: "pl_PL", schemaLang: "pl-PL", published: false },
-} as const;
-```
+## 3. Content model and publication policy
 
-**Content identity** — each article/product file gains `locale` (default `fr`) and `translationKey` (default: the French id). Translations live in `src/content/articles/<locale>/<slug>.md`. A translation only renders when `status: published` (the products collection already has this field; articles would gain it).
+- A translation is a Markdown file in `src/content/articles/<locale>/<slug>.md` with:
+  - `locale: it`
+  - `translationOf: <French article id>` — the shared translation identity
+  - `status: draft | published` — **draft by default for translations is the policy; write `status: draft` until reviewed**
+  - `translationReviewer: <name>` — **required** for `status: published`, enforced by the content schema
+- Translations cannot list `products` (schema error): product pages and their LR links are French-only until D4/D6 are settled.
+- **Build failures guard integrity.** The build fails when:
+  - a translation names a French source that does not exist;
+  - two translations of one source share a locale;
+  - a file's `locale` disagrees with its folder;
+  - a locale has published content but no interface text.
+- **Drafts never surface.** They are not rendered, not linked, not in hreflang and not in the sitemap (tested).
+- Cover images are shared by all language versions (one file). Only `coverAlt`, title, description and body are translated. No per-locale image duplication.
 
-**Alternates** — computed at build time from the set of published entries sharing a `translationKey`:
+Interface text: `src/i18n/ui.ts`, French (the site's existing text, unchanged) and Italian. Category text: `CATEGORY_I18N` in `src/data/categories.ts`. **The Italian strings must be reviewed by a native speaker before the first Italian article is published.**
 
-- `<link rel="alternate" hreflang="…" href="…">` for every published version, **including itself**;
-- `x-default` → the French version (the source, and the only complete locale), justified because French remains the default audience;
-- emitted only when ≥ 2 published versions exist; a page with no translation emits none;
-- the same alternates in the sitemap (`xhtml:link`), generated from the same function, so HTML and sitemap cannot disagree.
+## 4. Rendering
 
-**Per-locale requirements** — self-canonical per locale (never canonicalise a translation to French); localized `title`, `description`, H1, body, breadcrumbs, `og:locale`, `og:locale:alternate`, `coverAlt`, JSON-LD `inLanguage`; locale-aware internal links (an English page links to English pages where they exist, otherwise to nothing rather than silently to French, except an explicit "read in French" link); listings and categories per locale, paginated with the same helper.
+| Route | File | Notes |
+| --- | --- | --- |
+| French pages | unchanged files; articles now render through `src/components/ArticleView.astro` | output identical to before (normalised diff of all 36 pages: 0 differences) |
+| Every non-French page | `src/pages/[locale]/[...path].astro` | generated only from published translations; listing view `src/components/LocaleListing.astro`; paginated with `src/lib/pagination.ts` |
 
-**What never happens** — no automatic language redirect based on `Accept-Language` or IP (it blocks crawlers and users); no fallback rendering of French content under an `/en/` URL; no empty locale homepages or category pages; no hreflang to an unpublished or `noindex` page.
+On a translated page:
 
-## 4. Programmatic and landing pages
+- **Language metadata:** `<html lang>`, `og:locale` (+ `og:locale:alternate`), JSON-LD `inLanguage`, title, description, H1, breadcrumbs (home → localized category → article), dates (`Intl` per locale) and reading-time text are all localized.
+- **Navigation:** header and footer list only that locale's sections: categories with articles, and its home. Brand, menu button and skip link are localized.
+- **French-only pages:** pages that exist only in French (team, contact, legal notice, privacy, distributor contact section, the French site) are linked with `hreflang="fr"` and labelled "(in francese)". They are never presented as Italian pages.
+- **Not shown in Italian:** the newsletter block (French list) and the LR shop link (French shop) are not shown.
+- **Distributor window:** the "Diventa distributore LR" window is shown in Italian, with an Italian WhatsApp message (owner confirmation needed, §8).
+- **Language switcher:** an article with other published versions shows "Disponibile anche in: Français" (and the French page shows "Également disponible en : Italiano").
 
-Every new page family (e.g. "aloe vera for X") needs, before it is built: a distinct search intent, genuinely useful localized content, and a written indexability decision. Families that would produce near-duplicates across locales or products are not built. This applies the same rule as the existing products policy (`docs/aloessential/PRODUCT_CONTENT_GUIDELINES.md`).
+## 5. hreflang and sitemap
 
-## 5. Regression checks to add with the first translation
+- **Pages that carry alternates:** articles (French source + each published translation), locale homes (`/` ↔ `/it/`) and category pages that hold articles in both languages (`/rubriques/sante/` ↔ `/it/rubriche/salute/`).
+- **Page 1 only:** paginated pages (`/it/2/`) carry none.
+- **Which links each annotated page lists:** every published version, itself included, plus `x-default` → the French version (the source and the default audience). A page with a single version emits no hreflang.
+- **Sitemap:** it lists every published URL in every locale. When alternates exist, it adds `xhtml:link` entries generated by the same functions as the HTML tags (`articleAlternates`, `homeAlternates`, `categoryAlternates` in `src/lib/articles.ts`). The `xmlns:xhtml` namespace appears only when needed, so today's sitemap is byte-identical to before.
+- **Sitemap index:** with seven locales the sitemap reaches ~38,000 URLs at 5,000 articles per locale. Switch to one sitemap per locale under a sitemap index before 40,000 URLs (backlog B9).
 
-Static scan of the test build, for every page of every published locale:
+## 6. Italian search intent (before translating)
 
-1. `<html lang>`, `og:locale`, JSON-LD `inLanguage` match the page's locale.
-2. Self-canonical, absolute, trailing slash, under the locale's prefix.
-3. hreflang set is reciprocal (A → B implies B → A), includes self, uses valid codes, points only to 200, indexable, self-canonical URLs; `x-default` present exactly once when alternates exist.
-4. Sitemap alternates equal HTML alternates.
-5. No page under a locale prefix contains another locale's body text (detect via a per-locale marker or `lang` of the main content).
-6. Titles and descriptions unique per locale and within length.
-7. No unpublished translation renders; drafts never appear in sitemap or hreflang.
+Do not translate French keywords word for word. For each article planned in Italian:
 
-Test fixtures: one fictional article translated into one extra locale, plus one untranslated article, so both paths are exercised.
+1. Identify how Italian searchers phrase the need. Examples to verify, not assumptions:
+   - « gel di aloe vera puro » vs « gel aloe vera 100% »;
+   - « succo di aloe vera » vs « aloe da bere ».
+2. Sources: Google Search Console (once Italian pages exist), Google Trends for Italy, autocomplete and "People also ask" on google.it, Italian competitors' headings, and a keyword tool with Italian data if the owner has one.
+3. **Never invent search volumes** (rule R3). Record the source and date of any figure.
+4. Choose the Italian slug, title and description from that research. Adapt examples, units and regulation references to Italy:
+   - Italian Ministry of Health guidance on botanicals in supplements;
+   - Italian mandatory mentions.
+   EU health-claim rules (Regulation 1924/2006, register 432/2012) apply as in France.
+5. Have the translation reviewed (fluency + health/regulatory accuracy), then set `status: published` with `translationReviewer`.
 
-## 6. Effort and sequencing (estimate)
+## 7. Regression tests (`tests/i18n.spec.ts`, plus locale-aware checks in `tests/seo.spec.ts`)
 
-1. Locale registry, content fields, routing for one extra locale, alternates helper, tests — M.
-2. UI strings (header, footer, legal pages per country — legal content needs local review) — M to L.
-3. Each further locale — S for plumbing, content effort dominates.
+The test build includes a fictional published Italian translation (`tests/fixtures/articles/it/articolo-demo.md`) and an unreviewed Italian draft (`bozza-demo.md`). Checks:
 
-Open questions: D1–D6 above; who translates and reviews; whether legal pages (mentions légales, confidentialité) must be adapted per country.
+- registry: every locale once, valid codes and prefixes; Italian interface and category text complete;
+- Italian pages exist only for published content; no empty Italian category; no page for locales without content;
+- the draft never appears (HTML, links, sitemap) and its French source has no hreflang;
+- `html lang`, `og:locale`, `inLanguage` match the URL's locale on every page;
+- Italian pages indexable and self-canonical under `/it/`;
+- hreflang reciprocal, self-referencing, pointing to existing, self-canonical pages in the right language, `x-default` = French; exactly the expected six annotated pages;
+- sitemap alternates equal HTML alternates for every URL; Italian URLs listed;
+- links on Italian pages stay under `/it/` or carry `hreflang="fr"`;
+- no French interface text on Italian pages; the Italian article renders its own body;
+- browser: Italian routes return 200 and `lang="it"`; unknown `/it/…` and `/en/` return 404; language switcher both ways; Italian distributor window and WhatsApp text; Italian mobile menu labels.
+
+Mutation checks run during development:
+- removing `hreflang="fr"` from one link fails the link test;
+- pointing `x-default` at the wrong version fails the reciprocity test.
+
+## 8. Decisions and open questions
+
+| # | Decision | Status |
+| --- | --- | --- |
+| D1 | Subdirectories, French unprefixed | **done** |
+| D2 | Translated slugs per locale | **done** (segments in the registry; article slug = file name) |
+| D3 | Only reviewed translations are published | **enforced** (`translationReviewer`) |
+| D4 | Products per country need that country's LR link with `ref=cros` and local mentions | open — products stay French-only |
+| D5 | First locale | Italian infrastructure ready; owner chooses which articles to translate first |
+| D6 | Italian product pages: Italian LR shop link + mentions required in Italy | open |
+| D7 | Distributor window on Italian pages: Italian text and WhatsApp message to Philippe — does he take Italian-speaking contacts? | **owner to confirm** (shown today only on Italian pages, which do not exist in production yet) |
+| D8 | Native-speaker review of the Italian interface and category text (`src/i18n/ui.ts`, `CATEGORY_I18N`) | open, required before the first Italian publication |
+
+## 9. Adding a further locale (e.g. German)
+
+1. Add its interface text to `src/i18n/ui.ts` and its category text to `CATEGORY_I18N`.
+2. Extend the registry test in `tests/i18n.spec.ts` with that locale.
+3. Translate and review articles into `src/content/articles/de/`.
+
+Routing, hreflang and the sitemap need no change.

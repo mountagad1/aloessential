@@ -1,37 +1,49 @@
 ---
 import Icon from "./Icon.astro";
-import { DISTRIBUTOR_MESSAGE, PUBLISHER, whatsappUrl } from "../data/site";
+import { PUBLISHER, whatsappUrl } from "../data/site";
+import { DEFAULT_LOCALE, type Locale } from "../i18n/locales";
+import { ui } from "../i18n/ui";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = DEFAULT_LOCALE } = Astro.props;
+const t = ui(locale);
+const firstName = PUBLISHER.name.split(" ")[0];
+
+/*
+ * Floating "Devenir distributeur LR" button. Without JavaScript it is a plain
+ * link to the contact page section; with JavaScript it opens a native modal
+ * <dialog> (focus trap, Escape and backdrop close handled by the browser).
+ * It never opens on its own.
+ */
 ---
 
-<!--
-  Floating "Devenir distributeur LR" button. Without JavaScript it is a plain
-  link to the contact page section; with JavaScript it opens a native modal
-  <dialog> (focus trap, Escape and backdrop close handled by the browser).
-  It never opens on its own.
--->
-<a class="distributor-fab" href="/contact/#distributeur" data-distributor-open>
+<a
+  class="distributor-fab"
+  href="/contact/#distributeur"
+  hreflang={locale === DEFAULT_LOCALE ? undefined : "fr"}
+  data-distributor-open
+>
   <Icon name="message" />
-  <span>Devenir distributeur LR</span>
+  <span>{t.distributorFab}</span>
 </a>
 
 <dialog class="distributor-dialog" id="distributor-dialog" aria-labelledby="distributor-dialog-title">
   <div class="distributor-dialog__body">
     <form method="dialog" class="distributor-dialog__close">
-      <button type="submit" aria-label="Fermer"><Icon name="close" /></button>
+      <button type="submit" aria-label={t.close}><Icon name="close" /></button>
     </form>
-    <p class="eyebrow">Rejoindre LR</p>
-    <h2 id="distributor-dialog-title">Vous voulez devenir distributeur LR ?</h2>
-    <p>
-      {PUBLISHER.name}, éditeur d'Aloessential et partenaire indépendant LR Health &amp; Beauty, répond à vos questions
-      sur l'activité de distributeur : statut, démarrage, accompagnement.
-    </p>
-    <p class="distributor__note">
-      Échange sans engagement. Les revenus dépendent entièrement de votre activité : nous ne promettons aucun gain.
-    </p>
+    <p class="eyebrow">{t.distributorEyebrow}</p>
+    <h2 id="distributor-dialog-title">{t.distributorTitle}</h2>
+    <p>{t.distributorBody(PUBLISHER.name)}</p>
+    <p class="distributor__note">{t.distributorNote}</p>
     <div class="distributor__actions">
-      <a class="btn btn--sun" href={whatsappUrl(DISTRIBUTOR_MESSAGE)} target="_blank" rel="noopener">
-        <Icon name="message" class="btn__icon" /> Écrire sur WhatsApp
-        <span class="visually-hidden"> (nouvel onglet)</span>
+      <a class="btn btn--sun" href={whatsappUrl(t.distributorMessage(firstName))} target="_blank" rel="noopener">
+        <Icon name="message" class="btn__icon" />
+        {t.distributorWhatsapp}
+        <span class="visually-hidden">{t.newTab}</span>
       </a>
       <a class="distributor__phone" href={PUBLISHER.phoneHref}>{PUBLISHER.phone}</a>
     </div>

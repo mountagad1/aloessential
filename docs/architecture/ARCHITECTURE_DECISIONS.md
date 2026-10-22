@@ -58,9 +58,14 @@
 - **Recommendation**: (a): it also gives preview URLs per pull request for review.
 - **Needs**: owner action in GitHub and Vercel settings (production branch change); no code change.
 
-## ADR-008 — Subdirectory locales with French unprefixed (Proposed)
+## ADR-008 — Subdirectory locales with French unprefixed (Implemented 2026-10-22)
 
-See INTERNATIONAL_SEO_ARCHITECTURE.md §2–3. Keeps every existing URL; hreflang and sitemap alternates generated from one function; translations published one at a time.
+- **Problem**: serve fr, en, es, de, it, pt-pt, pl without touching existing French URLs, and without publishing unreviewed or fallback content.
+- **Decision**: locale registry `src/i18n/locales.ts`; translations in `src/content/articles/<locale>/` linked by `translationOf`, published only with a `translationReviewer`; one static route `src/pages/[locale]/[...path].astro` generated from published translations; hreflang and sitemap alternates from the same functions. Details: INTERNATIONAL_SEO_ARCHITECTURE.md.
+- **Alternatives**: Astro's built-in i18n routing (adds fallback/redirect behaviours we explicitly do not want, and would move French under rules we would have to override); ccTLDs or subdomains (cost, split authority); runtime language detection (blocks crawlers).
+- **Cost/complexity**: one registry, one dictionary per locale, one route file, two view components; zero runtime cost (static).
+- **Verification**: French output identical after normalisation (36/36 pages), sitemap byte-identical, 0 pages under any prefix in production; `tests/i18n.spec.ts`.
+- **Rollback**: revert the commit; no URL exists in production under a prefix yet, so nothing is lost.
 
 ## ADR-009 — Deterministic listing order (Implemented)
 

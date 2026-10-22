@@ -28,7 +28,7 @@ Request flow for any page: browser → Vercel CDN → cached static file (no ori
 ```mermaid
 flowchart LR
   subgraph Repo["GitHub repository"]
-    Content["Content per locale<br/>src/content/&lt;collection&gt;/&lt;locale&gt;/*.md<br/>translationKey + status"] --> Build
+    Content["Content per locale<br/>src/content/&lt;collection&gt;/&lt;locale&gt;/*.md<br/>translationOf + status + reviewer"] --> Build
     Locales["Locale registry<br/>src/i18n/locales.ts"] --> Build
     Media["Pre-generated images<br/>SVG covers + JPEG share twins<br/>WebP photos (named by version)"] --> Build
   end
@@ -49,7 +49,7 @@ What changes from today:
 | --- | --- | --- | --- |
 | Rendering | 100 % static | **unchanged**: 100 % static, including every locale | — |
 | Listings | paginated (done) | paginated per locale | done |
-| Locales | fr | fr + translations published one at a time | owner decisions D1–D6 |
+| Locales | fr; infrastructure for 7 locales (done) | fr + reviewed translations published one at a time | reviewed content; decisions D4, D6–D8 |
 | Measurement | none | cookieless analytics + RUM, Search Console | ADR-006 |
 | Images | SVG covers + share twins (done) | + licensed photography for key articles, versioned names | content decision |
 | Sitemap | single file | sitemap index per locale when > 40 k URLs | scale-check |

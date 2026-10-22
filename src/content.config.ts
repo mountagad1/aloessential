@@ -2,6 +2,7 @@ import { defineCollection, reference, z } from "astro:content";
 import { glob } from "astro/loaders";
 import { CATEGORY_SLUGS } from "./data/categories";
 import { hasPartnerRef } from "./lib/partner";
+import { DEFAULT_LOCALE, LOCALE_CODES } from "./i18n/locales";
 
 /*
  * CONTENT_FIXTURES=1 (set by the Playwright config) adds the fictional
@@ -9,29 +10,61 @@ import { hasPartnerRef } from "./lib/partner";
  */
 const FIXTURES = !!process.env.CONTENT_FIXTURES;
 const fileId = ({ entry }: { entry: string }) => entry.split("/").pop()!.replace(/\.md$/, "");
+/** Articles: "slug" for French files, "<locale>/slug" for translations in a locale folder. */
+const articleId = ({ entry }: { entry: string }) => {
+  const parts = entry.replace(/\.md$/, "").split("/");
+  const folder = parts.at(-2);
+  return folder && (LOCALE_CODES as readonly string[]).includes(folder) ? `${folder}/${parts.at(-1)}` : parts.at(-1)!;
+};
 
 const articles = defineCollection({
   loader: glob({
     base: ".",
-    pattern: FIXTURES ? ["src/content/articles/*.md", "tests/fixtures/articles/*.md"] : "src/content/articles/*.md",
-    generateId: fileId,
+    pattern: FIXTURES
+      ? ["src/content/articles/**/*.md", "tests/fixtures/articles/**/*.md"]
+      : "src/content/articles/**/*.md",
+    generateId: articleId,
   }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    category: z.enum(CATEGORY_SLUGS),
-    date: z.coerce.date(),
-    cover: z.string(),
-    coverAlt: z.string(),
-    featured: z.boolean().default(false),
-    /** LR products discussed in the article; only published ones are shown. */
-    products: z.array(reference("products")).default([]),
-    /** Byline. Defaults to the site's writer and reviewer (src/data/site.ts). */
-    author: z.string().optional(),
-    reviewer: z.string().optional(),
-    /** Primary sources (regulation, agencies, studies) backing the article's factual statements. */
-    sources: z.array(z.object({ title: z.string(), url: z.string().url() })).default([]),
-  }),
+  schema: z
+    .object({
+      title: z.string(),
+      description: z.string(),
+      category: z.enum(CATEGORY_SLUGS),
+      date: z.coerce.date(),
+      cover: z.string(),
+      coverAlt: z.string(),
+      featured: z.boolean().default(false),
+      /** LR products discussed in the article; only published ones are shown. */
+      products: z.array(reference("products")).default([]),
+      /** Byline. Defaults to the site's writer and reviewer (src/data/site.ts). */
+      author: z.string().optional(),
+      reviewer: z.string().optional(),
+      /** Primary sources (regulation, agencies, studies) backing the article's factual statements. */
+      sources: z.array(z.object({ title: z.string(), url: z.string().url() })).default([]),
+      /*
+       * Translations (docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md).
+       * French articles sit in src/content/articles/; a translation sits in
+       * src/content/articles/<locale>/, names its French source and stays a
+       * draft until a reviewer fluent in that language has checked it.
+       */
+      locale: z.enum(LOCALE_CODES).default(DEFAULT_LOCALE),
+      /** Id of the French article this one translates (translations only). */
+      translationOf: z.string().optional(),
+      status: z.enum(["draft", "published"]).default("published"),
+      /** Who reviewed the translation; required to publish one. */
+      translationReviewer: z.string().optional(),
+    })
+    .superRefine((a, ctx) => {
+      if (a.locale === DEFAULT_LOCALE) {
+        if (a.translationOf) ctx.addIssue({ code: "custom", message: "French articles are sources: no translationOf" });
+        return;
+      }
+      if (!a.translationOf) ctx.addIssue({ code: "custom", message: "A translation must name its French source (translationOf)" });
+      if (a.products.length > 0)
+        ctx.addIssue({ code: "custom", message: "Product pages are French-only: translations cannot list products yet" });
+      if (a.status === "published" && !a.translationReviewer)
+        ctx.addIssue({ code: "custom", message: "A published translation needs a translationReviewer" });
+    }),
 });
 
 /*
