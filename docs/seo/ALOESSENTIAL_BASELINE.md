@@ -198,9 +198,9 @@ Valeurs relevées dans le dépôt au commit `dc0068e`. Ce sont des **mesures de 
 | Date | Décision | Conséquence |
 | --- | --- | --- |
 | 2026-10-15 | Domaine canonique : `https://aloessential.com` (sans `www`), URL avec slash final | `site: "https://aloessential.com"` et `trailingSlash: "always"` dans `astro.config.mjs` ; canonical absolus et sitemap sur cette base ; redirections 301 `www → apex`, `http → https` et sans slash → avec slash à configurer chez l'hébergeur (fait le 2026-10-16 dans `vercel.json`) |
-| 2026-10-16 | Éditeur et directeur de la publication : Philip Cros | Mentions légales, contact, politique de confidentialité |
+| 2026-10-16 | Éditeur et directeur de la publication : Philippe Cros | Mentions légales, contact, politique de confidentialité |
 | 2026-10-16 | Mesure : via le site LR (espace partenaire), aucun outil sur Aloessential | Pas de cookie ni de bandeau ; baseline de trafic organique à prendre dans la Search Console |
-| 2026-10-16 | Auteur : Mountaga Diallo ; relecture : Philip Cros | Bylines et JSON-LD `author` |
+| 2026-10-16 | Auteur : Mountaga Diallo ; relecture : Philippe Cros | Bylines et JSON-LD `author` |
 | 2026-10-16 | Pôle « aloe vera » signé « l'équipe Aloessential » | Page pilier `/aloe-vera/` |
 
 ### Indicateurs après le Prompt 01 (2026-10-15)

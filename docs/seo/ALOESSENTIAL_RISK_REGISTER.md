@@ -58,9 +58,9 @@
 - **CI :** GitHub Actions lance `npm run build` et la suite Playwright à chaque push et pull request.
 
 ### Lot 4 — éditeur, équipe, pôle aloe vera, distributeur (2026-10-16)
-- **Décisions de l'éditeur :** éditeur et directeur de la publication Philip Cros ; mesure via le site LR (espace partenaire, `ref=cros`) et aucun outil sur Aloessential ; auteur Mountaga Diallo, relecture Philip Cros ; pôle « aloe vera » signé « l'équipe Aloessential ».
+- **Décisions de l'éditeur :** éditeur et directeur de la publication Philippe Cros ; mesure via le site LR (espace partenaire, `ref=cros`) et aucun outil sur Aloessential ; auteur Mountaga Diallo, relecture Philippe Cros ; pôle « aloe vera » signé « l'équipe Aloessential ».
 - **Pages créées :** `/mentions-legales/`, `/confidentialite/`, `/contact/`, `/equipe/`, `/aloe-vera/` (page pilier : la plante, la chaîne de production, les guides et les produits à l'aloe). Liens dans le pied de page ; « Aloe vera » en tête de la navigation.
-- **Bylines :** chaque article affiche « Par Mountaga Diallo · Relecture : Philip Cros » (surchargeable par article) ; `author` (Person) ajouté au JSON-LD Article. Aucune qualification de santé n'est attribuée : R06 reste partiel tant qu'aucun professionnel de santé ne relit les contenus santé.
+- **Bylines :** chaque article affiche « Par Mountaga Diallo · Relecture : Philippe Cros » (surchargeable par article) ; `author` (Person) ajouté au JSON-LD Article. Aucune qualification de santé n'est attribuée : R06 reste partiel tant qu'aucun professionnel de santé ne relit les contenus santé.
 - **Distributeur LR :** section « Vous voulez devenir distributeur LR ? » (accueil et contact) et bouton flottant qui ouvre une fenêtre (`<dialog>` natif) avec lien WhatsApp (+33 7 66 98 48 72). Aucune promesse de revenus ; mention explicite « nous ne promettons aucun gain ». Bouton absent des fiches produit (barre d'achat mobile).
 - **Reste à compléter (R01) :** adresse postale de l'éditeur, statut (auto-entrepreneur, VDI…) et numéro SIRET le cas échéant ; une adresse e-mail de contact. L'adresse de Vercel Inc. vient d'une source tierce et est à confirmer.
 

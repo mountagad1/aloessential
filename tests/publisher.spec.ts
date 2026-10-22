@@ -18,7 +18,7 @@ test.describe("publisher and legal pages", () => {
 
   test("legal notice names the publisher and the host", async ({ page }) => {
     await page.goto("/mentions-legales/");
-    await expect(page.locator(".prose")).toContainText("Philip Cros");
+    await expect(page.locator(".prose")).toContainText("Philippe Cros");
     await expect(page.locator(".prose")).toContainText("Vercel Inc.");
     await expect(page.locator("footer").getByRole("link", { name: "Mentions légales" })).toBeVisible();
   });
@@ -26,7 +26,7 @@ test.describe("publisher and legal pages", () => {
   test("articles carry an author and a reviewer", async ({ page }) => {
     await page.goto("/articles/article-demo/");
     await expect(page.locator(".byline")).toContainText("Mountaga Diallo");
-    await expect(page.locator(".byline")).toContainText("Philip Cros");
+    await expect(page.locator(".byline")).toContainText("Philippe Cros");
   });
 });
 
