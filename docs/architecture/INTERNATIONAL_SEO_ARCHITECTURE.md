@@ -14,7 +14,7 @@
 | Item | Finding |
 | --- | --- |
 | Italian routes in production | none (before and after this change) |
-| Italian content | 0 of 16 French articles translated; 0 drafts in `src/content/articles/it/` |
+| Italian content | 0 of 16 published; **7 drafts** (the aloe vera pole) in `src/content/articles/it/`, awaiting an Italian-speaking reviewer — see docs/i18n/TRANSLATION_WORKFLOW.md |
 | Products in Italian | none; product pages stay French-only (decision D4/D6) |
 | hreflang | none in production: no page has a published translation, so none is emitted (by design) |
 | Fallbacks | none: a locale without a published article has no URL at all; `/it/anything/` returns the real 404 status |
@@ -41,7 +41,8 @@ Segments for the other locales are defined in `src/i18n/locales.ts` (e.g. `/de/a
   - `locale: it`
   - `translationOf: <French article id>` — the shared translation identity
   - `status: draft | published` — **draft by default for translations is the policy; write `status: draft` until reviewed**
-  - `translationReviewer: <name>` — **required** for `status: published`, enforced by the content schema
+  - `translationReviewer: <name>` — **required** for `status: published`, enforced by the content schema; shown as the page's reviewer
+  - `sourceHash: <12 hex>` — fingerprint of the French title, description and body the translation matches (`node tools/i18n-status.mjs --stamp`). **Required** to publish. A published translation whose French source changed is *stale* and fails the tests until updated and re-stamped
 - Translations cannot list `products` (schema error): product pages and their LR links are French-only until D4/D6 are settled.
 - **Build failures guard integrity.** The build fails when:
   - a translation names a French source that does not exist;
@@ -79,6 +80,8 @@ On a translated page:
 
 ## 6. Italian search intent (before translating)
 
+Working method and per-article status: docs/i18n/TRANSLATION_WORKFLOW.md. Style and terminology: docs/i18n/IT_STYLE_GUIDE.md.
+
 Do not translate French keywords word for word. For each article planned in Italian:
 
 1. Identify how Italian searchers phrase the need. Examples to verify, not assumptions:
@@ -93,6 +96,14 @@ Do not translate French keywords word for word. For each article planned in Ital
 5. Have the translation reviewed (fluency + health/regulatory accuracy), then set `status: published` with `translationReviewer`.
 
 ## 7. Regression tests (`tests/i18n.spec.ts`, plus locale-aware checks in `tests/seo.spec.ts`)
+
+Translation files (all locales, drafts included):
+- published translations are not stale;
+- every translation names an existing French source and carries a `sourceHash`;
+- body links point only to articles of the same language that exist as files;
+- Italian texts use Italian typography (no French space before `: ; ? !`).
+
+Whole build: every internal link resolves to a built page (`tests/seo.spec.ts`).
 
 The test build includes a fictional published Italian translation (`tests/fixtures/articles/it/articolo-demo.md`) and an unreviewed Italian draft (`bozza-demo.md`). Checks:
 

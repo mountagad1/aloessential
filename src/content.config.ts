@@ -50,6 +50,13 @@ const articles = defineCollection({
       locale: z.enum(LOCALE_CODES).default(DEFAULT_LOCALE),
       /** Id of the French article this one translates (translations only). */
       translationOf: z.string().optional(),
+      /**
+       * Fingerprint of the French version the translation matches
+       * (`node tools/i18n-status.mjs --stamp <locale>/<slug>`). A published
+       * translation whose source changed since is reported stale and fails
+       * tests/i18n.spec.ts until it is updated and re-stamped.
+       */
+      sourceHash: z.string().optional(),
       status: z.enum(["draft", "published"]).default("published"),
       /** Who reviewed the translation; required to publish one. */
       translationReviewer: z.string().optional(),
@@ -64,6 +71,8 @@ const articles = defineCollection({
         ctx.addIssue({ code: "custom", message: "Product pages are French-only: translations cannot list products yet" });
       if (a.status === "published" && !a.translationReviewer)
         ctx.addIssue({ code: "custom", message: "A published translation needs a translationReviewer" });
+      if (a.status === "published" && !a.sourceHash)
+        ctx.addIssue({ code: "custom", message: "A published translation needs a sourceHash (tools/i18n-status.mjs --stamp)" });
     }),
 });
 

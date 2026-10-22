@@ -9,6 +9,7 @@ cover: /covers/aloe-peau.svg
 coverAlt: "Illustrazione di prova"
 locale: it
 translationOf: article-demo
+sourceHash: "79609c492a19"
 status: published
 translationReviewer: "Revisore di prova"
 ---

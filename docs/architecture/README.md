@@ -57,7 +57,8 @@ Related, older: `docs/seo/` (SEO baseline, route inventory, risk register), `doc
 | B6 | Homepage hero: 1.4:1 mobile crop (480/800/1100 w) for screens ≤ 30rem | P2 | hero 158 → 94 KB on phones; mobile homepage 283 → 222 KB; throttled LCP 1.77 → 1.47 s | S | no | **done** |
 | B7 | Lighter header wordmark (SVG or smaller WebP) | P3 | −10–20 KB per first view | S | no | open |
 | B8 | i18n infrastructure: locale registry, content fields, Italian end to end, hreflang + sitemap alternates + tests | P4 | international SEO | M | no | **done** (ADR-008) |
-| B8b | First Italian articles: search-intent research, translation, native review, publish | P4 | Italian organic traffic | content | **yes** (D5, D8) | open |
+| B8b | First Italian articles: 7 aloe drafts written and adapted to Italian regulation; native review, then publish | P4 | Italian organic traffic | content | **yes** (reviewer, D7, D8) | drafts done, review open |
+| B8c | Localization tooling: status/staleness report, draft scaffolding, translation QA tests, link integrity | P4 | translation quality over time | S | no | **done** |
 | B9 | Sitemap index when > 40 k URLs | P4 | crawl | S | no | not needed yet |
 | B10 | Licensed photography for key articles (Discover) | P4 | Discover eligibility | content | **yes** | open |
 | B11 | `npm audit` + Dependabot in CI | P5 | security monitoring | XS | partly | open |

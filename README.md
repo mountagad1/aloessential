@@ -56,6 +56,14 @@ Catalogue growth check (synthetic articles in a temporary copy; nothing is writt
 node tools/scale-check.mjs 5000
 ```
 
+Translations (see [`docs/i18n/TRANSLATION_WORKFLOW.md`](docs/i18n/TRANSLATION_WORKFLOW.md)):
+
+```bash
+node tools/i18n-status.mjs                        # coverage per locale, drafts, stale translations
+node tools/new-translation.mjs it <id> <slug>     # start a draft from a French article
+node tools/i18n-status.mjs --stamp it/<slug>      # record the French version a translation matches
+```
+
 ## Adding an article
 
 Create `src/content/articles/<slug>.md`:

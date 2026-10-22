@@ -4,6 +4,8 @@ import { test, expect } from "./fixtures";
 import { DEFAULT_LOCALE, LOCALES, LOCALE_CODES } from "../src/i18n/locales";
 import { UI } from "../src/i18n/ui";
 import { CATEGORY_I18N, CATEGORY_SLUGS } from "../src/data/categories";
+// @ts-expect-error plain .mjs helper shared with tools/i18n-status.mjs
+import { freshness, parseMarkdown, translations } from "../tools/i18n-lib.mjs";
 
 /*
  * International SEO regression checks (docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md).
@@ -62,6 +64,45 @@ test.describe("locale registry", () => {
       slugs.add(it.slug);
     }
     expect(slugs.size).toBe(CATEGORY_SLUGS.length);
+  });
+});
+
+test.describe("translation files", () => {
+  test.beforeEach(({}, testInfo) => {
+    test.skip(testInfo.project.name !== "desktop", "file scan runs once");
+  });
+
+  const roots = ["src/content/articles", "tests/fixtures/articles"].map((d) => join(process.cwd(), d));
+  type T = { locale: string; slug: string; file: string; data: Record<string, string> };
+  const all = (): { base: string; t: T }[] => roots.flatMap((base) => (translations(base) as T[]).map((t) => ({ base, t })));
+
+  test("every published translation matches the current French source (not stale)", () => {
+    for (const { t } of all().filter(({ t }) => t.data.status === "published")) {
+      expect(freshness(t, roots), `${t.locale}/${t.slug}: update it, then run node tools/i18n-status.mjs --stamp ${t.locale}/${t.slug}`).toBe("current");
+    }
+  });
+
+  test("drafts are complete enough to review: source, stamp, and links to pages of the same language", () => {
+    for (const { base, t } of all()) {
+      const id = `${t.locale}/${t.slug}`;
+      expect(t.data.locale, id).toBe(t.locale);
+      expect(["current", "stale"], `${id} needs translationOf + sourceHash`).toContain(freshness(t, roots));
+      const { body } = parseMarkdown(readFileSync(t.file, "utf8"));
+      for (const [, href] of body.matchAll(/\]\((\/[^)\s]*)\)/g)) {
+        const target = href.match(new RegExp(`^/${t.locale}/${LOCALES[t.locale as keyof typeof LOCALES].segments.articles}/([a-z0-9-]+)/$`));
+        expect(target, `${id} links to ${href}: link to a ${t.locale} article instead`).toBeTruthy();
+        expect(existsSync(join(base, t.locale, `${target![1]}.md`)), `${id} → ${href} has no ${t.locale} file`).toBe(true);
+      }
+    }
+  });
+
+  test("Italian texts use Italian typography (no French space before : ; ? !)", () => {
+    for (const { t } of all().filter(({ t }) => t.locale === "it")) {
+      const { data, body } = parseMarkdown(readFileSync(t.file, "utf8"));
+      const text = [data.title, data.description, data.coverAlt, body].join("\n").replace(/\]\([^)]*\)/g, "]");
+      const bad = text.match(/.{0,20}[ \u00a0\u202f][:;?!](?=\s|$).{0,10}/gm) ?? [];
+      expect(bad, `${t.locale}/${t.slug}`).toEqual([]);
+    }
   });
 });
 

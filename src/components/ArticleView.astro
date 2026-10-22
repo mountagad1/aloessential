@@ -38,7 +38,8 @@ const otherVersions = alternates.filter((a) => a.locale !== locale);
 
 const path = articleUrl(article);
 const author = article.data.author ?? DEFAULT_AUTHOR;
-const reviewer = article.data.reviewer ?? DEFAULT_REVIEWER;
+// A translation is vouched for by the person who reviewed it in that language.
+const reviewer = article.data.reviewer ?? article.data.translationReviewer ?? DEFAULT_REVIEWER;
 // The team page exists in French only: links to it say so.
 const teamLang = french ? undefined : "fr";
 const jsonLd = [

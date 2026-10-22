@@ -9,6 +9,7 @@ cover: /covers/aloe-peau.svg
 coverAlt: "Illustrazione di prova"
 locale: it
 translationOf: jus-aloe-vera-science
+sourceHash: "63507b38c25e"
 status: draft
 ---
 

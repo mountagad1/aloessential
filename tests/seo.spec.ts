@@ -118,6 +118,18 @@ test.describe("SEO foundations", () => {
     expect([...problems]).toEqual([]);
   });
 
+  test("every internal page link resolves to a built page", () => {
+    const missing = new Set<string>();
+    for (const file of htmlFiles(dist)) {
+      for (const [, href] of readFileSync(file, "utf8").matchAll(/href="(\/[^"]*)"/g)) {
+        const path = href.split(/[?#]/)[0];
+        if (path.includes(".")) continue; // files
+        if (!existsSync(join(dist, path, "index.html"))) missing.add(`${pathOf(file)} → ${href}`);
+      }
+    }
+    expect([...missing]).toEqual([]);
+  });
+
   test("sitemap lists every indexable page and nothing else; robots.txt points to it", () => {
     const sitemap = readFileSync(join(dist, "sitemap.xml"), "utf8");
     const locs = [...sitemap.matchAll(/<loc>([^<]*)<\/loc>/g)].map((m) => m[1]).sort();
