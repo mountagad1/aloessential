@@ -2,12 +2,12 @@
 
 *How an article goes from French to a published translation. Architecture: docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md. Conventions per language: IT_STYLE_GUIDE.md (Italian), EN_STYLE_GUIDE.md (English, UK), DE_STYLE_GUIDE.md (German, Germany), ES_STYLE_GUIDE.md (Spanish, Spain), PT_STYLE_GUIDE.md (Portuguese, Portugal), PL_STYLE_GUIDE.md (Polish).*
 
-## 1. Status today (2026-10-22)
+## 1. Status today (2026-10-23)
 
 `node tools/i18n-status.mjs`:
 
-- **Italian:** 0 published, **7 drafts** (the whole aloe vera pole), 9 not started.
-- **Other locales:** nothing yet; they also need their interface text first (§6).
+- **Italian:** 0 published, **16 drafts** (every French article), 0 not started.
+- **Other locales:** 7 drafts each (the aloe vera pole), see below.
 
 | French source | Italian draft | Localization beyond translation |
 | --- | --- | --- |
@@ -18,6 +18,15 @@
 | routine-peau-apres-soleil | `it/pelle-sensibile-dopo-il-sole` | sea/pool context; link to the untranslated hydration article replaced by a short tip |
 | gel-aloe-vera-maison | `it/gel-di-aloe-vera-fatto-in-casa` | IARC instead of CIRC; links to Italian articles |
 | cultiver-aloe-vera-en-pot | `it/coltivare-aloe-vera-in-vaso` | frost-free coasts and islands |
+| vitamines-fatigue-reglementation | `it/vitamine-stanchezza-cosa-dice-la-normativa` | **Italian botanicals rules**: ginseng, rodiola, guaranà may carry the ministerial effect «tonico (stanchezza fisica, mentale)», not an EFSA claim; VNR; Italian EUR-Lex + Ministry sources |
+| digestion-foie-detox-complements | `it/digestione-fegato-detox-integratori` | ministerial effects for carciofo and cardo mariano (funzione epatica, funzioni depurative); **«probiotico» allowed in Italy** under the Ministry guidelines (≥1 billion live cells, quantity per strain); pasta e fagioli |
+| articulations-mobilite-quotidien | `it/articolazioni-mobilita-gesti-quotidiani` | boswellia and artiglio del diavolo: ministerial «funzionalità articolare» |
+| hydratation-aliments-riches-en-eau | `it/idratazione-alimenti-ricchi-di-acqua` | minestrone |
+| petit-dejeuner-equilibre | `it/colazione-equilibrata-idee-semplici` | ricotta, olio extravergine, cornetto |
+| routine-matin-energie | `it/routine-del-mattino-energia` | link to the Italian breakfast article |
+| soin-anti-age-quels-actifs | `it/crema-anti-age-quali-attivi` | products dropped (French-only); Italian EUR-Lex source |
+| soins-cheveux-naturel | `it/cura-dei-capelli-al-naturale` | — |
+| sommeil-pilier-bien-etre | `it/sonno-pilastro-del-benessere` | — |
 
 **English** (UK readers): 0 published, **7 drafts** (the same aloe vera pole), 9 not started.
 
@@ -113,12 +122,12 @@ Drafts are never built into the site. **Review notes for the reviewer** are writ
   - no disease prevention or cure;
   - cosmetic effects stay cosmetic;
   - limits and "see a doctor" sentences kept.
-- [ ] Italy-specific regulation correct and current. For the two drinking articles: the aloe gel wording in the Allegato 1 of the DM 10 agosto 2018 (Ministero della Salute). Checked here in the 2014 version of the ministerial guidelines; **confirm against the current annex**.
+- [ ] Italy-specific regulation correct and current. For the two drinking articles, the vitamins, digestion and joints articles: the plant wordings in the Allegato 1 of the DM 10 agosto 2018 (Ministero della Salute); for digestion, also the current probiotics guidelines. Checked here in the 2014 version of the ministerial guidelines; **confirm against the current annex**.
 - [ ] Sources open and are the Italian versions where they exist.
 - [ ] Register *tu*, Italian typography, terminology table respected.
 - [ ] Title ≤ ~60 characters and description 50–160 characters, both phrased as Italians search; slug final (changing it after publication needs a redirect).
 - [ ] `coverAlt` describes the image in Italian.
-- [ ] Internal links resolve to Italian articles published in the same batch.
+- [ ] Internal links resolve to Italian articles published in the same batch (vitamins → sleep and breakfast; digestion and morning routine → breakfast).
 
 ## 5. Open decisions (owner)
 

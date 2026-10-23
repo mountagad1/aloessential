@@ -14,7 +14,7 @@
 | Item | Finding |
 | --- | --- |
 | Italian routes in production | none (before and after this change) |
-| Italian content | 0 of 16 published; **7 drafts** (the aloe vera pole) in `src/content/articles/it/`, awaiting an Italian-speaking reviewer — see docs/i18n/TRANSLATION_WORKFLOW.md |
+| Italian content | 0 of 16 published; **16 drafts** (every article) in `src/content/articles/it/`, awaiting an Italian-speaking reviewer — see docs/i18n/TRANSLATION_WORKFLOW.md |
 | English content (UK) | 0 of 16 published; **7 drafts** in `src/content/articles/en/`; interface and category text in British English; GB LR shop linked in the English footer |
 | German content (Germany) | 0 of 16 published; **7 drafts** in `src/content/articles/de/`; interface and category text (*Sie*); DE LR shop linked in the German footer |
 | Spanish content (Spain) | 0 of 16 published; **7 drafts** in `src/content/articles/es/`; interface and category text (*tú*); ES LR shop linked in the Spanish footer |
