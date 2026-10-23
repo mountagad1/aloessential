@@ -49,7 +49,7 @@
 | soins-cheveux-naturel | `en/natural-hair-care` | GP |
 | sommeil-pilier-bien-etre | `en/sleep-a-pillar-of-wellbeing` | GP |
 
-**German** (readers in Germany): 0 published, **7 drafts**, 9 not started. EU rules apply as in French; the adaptation covers register (*Sie*), German typography, Apotheke/Drogerie/Reformhaus, Hausarztpraxis, 116117 and 112, overwintering indoors.
+**German** (readers in Germany): 0 published, **16 drafts** (every French article), 0 not started. EU rules apply as in French; the adaptation covers register (*Sie*), German typography, Apotheke/Drogerie/Reformhaus, Hausarztpraxis, 116117 and 112, overwintering indoors.
 
 | French source | German draft |
 | --- | --- |
@@ -60,6 +60,15 @@
 | routine-peau-apres-soleil | `de/haut-nach-der-sonne-pflegen` |
 | gel-aloe-vera-maison | `de/aloe-vera-gel-aus-der-eigenen-pflanze` |
 | cultiver-aloe-vera-en-pot | `de/aloe-vera-im-topf-pflegen` |
+| vitamines-fatigue-reglementation | `de/vitamine-und-muedigkeit-was-gilt` |
+| digestion-foie-detox-complements | `de/verdauung-leber-detox-nahrungsergaenzung` |
+| articulations-mobilite-quotidien | `de/gelenke-beweglichkeit-im-alltag` |
+| hydratation-aliments-riches-en-eau | `de/wasserreiche-lebensmittel` |
+| petit-dejeuner-equilibre | `de/ausgewogenes-fruehstueck-ideen` |
+| routine-matin-energie | `de/morgenroutine-fuer-mehr-energie` |
+| soin-anti-age-quels-actifs | `de/anti-aging-pflege-welche-wirkstoffe` (products dropped) |
+| soins-cheveux-naturel | `de/haarpflege-natuerlich` |
+| sommeil-pilier-bien-etre | `de/schlaf-saeule-des-wohlbefindens` |
 
 **Spanish** (readers in Spain): 0 published, **7 drafts**, 9 not started. EU rules apply as in French; adaptation: *tú*, Spanish typography (« », ¿?, 98 %), farmacia/parafarmacia/herbolario, centro de salud and 112, frost-free coasts and Canary Islands.
 
