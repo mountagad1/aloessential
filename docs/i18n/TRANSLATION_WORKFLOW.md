@@ -28,7 +28,7 @@
 | soins-cheveux-naturel | `it/cura-dei-capelli-al-naturale` | — |
 | sommeil-pilier-bien-etre | `it/sonno-pilastro-del-benessere` | — |
 
-**English** (UK readers): 0 published, **7 drafts** (the same aloe vera pole), 9 not started.
+**English** (UK readers): 0 published, **16 drafts** (every French article), 0 not started.
 
 | French source | English draft | Localization beyond translation |
 | --- | --- | --- |
@@ -39,6 +39,15 @@
 | routine-peau-apres-soleil | `en/after-sun-care-for-sensitive-skin` | NHS urgent signs and NHS 111; NHS source |
 | gel-aloe-vera-maison | `en/using-aloe-vera-gel-from-your-plant` | British spelling, links to English articles |
 | cultiver-aloe-vera-en-pot | `en/how-to-grow-aloe-vera-in-a-pot` | overwinters indoors in the UK; RHS |
+| vitamines-fatigue-reglementation | `en/vitamins-and-tiredness-what-the-rules-say` | GB NHC register and assimilated 1924/2006, 432/2012, 1169/2011 (legislation.gov.uk); plant claims "on hold"; %NRV; GP |
+| digestion-foie-detox-complements | `en/digestion-liver-detox-supplements` | **ASA treats "probiotic" as an implied health claim** (CAP advice, 2023 ruling); 30 g fibre per UK guidelines (NHS source) |
+| articulations-mobilite-quotidien | `en/joint-health-and-mobility-daily-habits` | GB register version of 432/2012; GP |
+| hydratation-aliments-riches-en-eau | `en/hydration-water-rich-foods` | courgette |
+| petit-dejeuner-equilibre | `en/healthy-breakfast-ideas` | overnight oats, cottage cheese |
+| routine-matin-energie | `en/morning-routine-for-more-energy` | link to the English breakfast article |
+| soin-anti-age-quels-actifs | `en/anti-ageing-skincare-which-actives` | products dropped; **GB retinol limits not checked** (EU 2024/996 cited as EU), reviewer to confirm with OPSS |
+| soins-cheveux-naturel | `en/natural-hair-care` | GP |
+| sommeil-pilier-bien-etre | `en/sleep-a-pillar-of-wellbeing` | GP |
 
 **German** (readers in Germany): 0 published, **7 drafts**, 9 not started. EU rules apply as in French; the adaptation covers register (*Sie*), German typography, Apotheke/Drogerie/Reformhaus, Hausarztpraxis, 116117 and 112, overwintering indoors.
 
