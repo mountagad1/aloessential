@@ -70,7 +70,7 @@
 | soins-cheveux-naturel | `de/haarpflege-natuerlich` |
 | sommeil-pilier-bien-etre | `de/schlaf-saeule-des-wohlbefindens` |
 
-**Spanish** (readers in Spain): 0 published, **7 drafts**, 9 not started. EU rules apply as in French; adaptation: *tú*, Spanish typography (« », ¿?, 98 %), farmacia/parafarmacia/herbolario, centro de salud and 112, frost-free coasts and Canary Islands.
+**Spanish** (readers in Spain): 0 published, **16 drafts** (every French article), 0 not started. EU rules apply as in French; adaptation: *tú*, Spanish typography (« », ¿?, 98 %), farmacia/parafarmacia/herbolario, centro de salud and 112, frost-free coasts and Canary Islands.
 
 | French source | Spanish draft |
 | --- | --- |
@@ -81,6 +81,15 @@
 | routine-peau-apres-soleil | `es/piel-sensible-despues-del-sol` |
 | gel-aloe-vera-maison | `es/gel-de-aloe-vera-de-tu-planta` |
 | cultiver-aloe-vera-en-pot | `es/cultivar-aloe-vera-en-maceta` |
+| vitamines-fatigue-reglementation | `es/vitaminas-y-cansancio-que-dice-la-normativa` |
+| digestion-foie-detox-complements | `es/digestion-higado-detox-complementos` |
+| articulations-mobilite-quotidien | `es/articulaciones-y-movilidad-dia-a-dia` |
+| hydratation-aliments-riches-en-eau | `es/alimentos-ricos-en-agua` |
+| petit-dejeuner-equilibre | `es/desayuno-equilibrado-ideas-sencillas` |
+| routine-matin-energie | `es/rutina-de-manana-para-mas-energia` |
+| soin-anti-age-quels-actifs | `es/crema-antiedad-que-activos-elegir` (products dropped) |
+| soins-cheveux-naturel | `es/cuidado-natural-del-cabello` |
+| sommeil-pilier-bien-etre | `es/el-sueno-pilar-del-bienestar` |
 
 **Portuguese** (Portugal, `pt-pt`) and **Polish** (`pl`): 0 published, **7 drafts each**, 9 not started. EU rules apply as in French. Portuguese: *tu*, European Portuguese, farmácia/ervanária, SNS 24 (808 24 24 24) and 112, frost-free coast and islands; footer links to LR Portugal's site (the PT shop requires login). Polish: *ty*, „…” quotes, suplement diety, apteka/drogeria/sklep zielarski, lekarz rodzinny, nocna i świąteczna opieka, NFZ 800 190 590, 112/999.
 
