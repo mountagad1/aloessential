@@ -23,6 +23,12 @@ export const LR_SHOP_HOME: Partial<Record<string, string>> = {
   de: `https://shop.lrworld.com/home/DE/de?ref=${PARTNER_REF}`,
   // Spain shop (Spanish, EUR), supplied by the publisher; verified 2026-10-23.
   es: `https://shop.lrworld.com/home/ES/es?ref=${PARTNER_REF}`,
+  // Portugal: the shop link supplied (shop.lrworld.com/PT/pt) answers 404, and
+  // /home/PT/pt ends on the LR login page for visitors without an account
+  // (checked 2026-10-23). LR Portugal's site is used instead, as for France.
+  "pt-pt": `https://www.lrworld.com/pt-pt?ref=${PARTNER_REF}`,
+  // Poland shop (Polish, PLN), supplied by the publisher; verified 2026-10-23.
+  pl: `https://shop.lrworld.com/home/PL/pl?ref=${PARTNER_REF}`,
 };
 
 export function isLrUrl(url: string): boolean {

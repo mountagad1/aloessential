@@ -1,6 +1,6 @@
 # Translation workflow
 
-*How an article goes from French to a published translation. Architecture: docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md. Conventions per language: IT_STYLE_GUIDE.md (Italian), EN_STYLE_GUIDE.md (English, UK), DE_STYLE_GUIDE.md (German, Germany), ES_STYLE_GUIDE.md (Spanish, Spain).*
+*How an article goes from French to a published translation. Architecture: docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md. Conventions per language: IT_STYLE_GUIDE.md (Italian), EN_STYLE_GUIDE.md (English, UK), DE_STYLE_GUIDE.md (German, Germany), ES_STYLE_GUIDE.md (Spanish, Spain), PT_STYLE_GUIDE.md (Portuguese, Portugal), PL_STYLE_GUIDE.md (Polish).*
 
 ## 1. Status today (2026-10-22)
 
@@ -54,6 +54,18 @@
 | routine-peau-apres-soleil | `es/piel-sensible-despues-del-sol` |
 | gel-aloe-vera-maison | `es/gel-de-aloe-vera-de-tu-planta` |
 | cultiver-aloe-vera-en-pot | `es/cultivar-aloe-vera-en-maceta` |
+
+**Portuguese** (Portugal, `pt-pt`) and **Polish** (`pl`): 0 published, **7 drafts each**, 9 not started. EU rules apply as in French. Portuguese: *tu*, European Portuguese, farmácia/ervanária, SNS 24 (808 24 24 24) and 112, frost-free coast and islands; footer links to LR Portugal's site (the PT shop requires login). Polish: *ty*, „…” quotes, suplement diety, apteka/drogeria/sklep zielarski, lekarz rodzinny, nocna i świąteczna opieka, NFZ 800 190 590, 112/999.
+
+| French source | Portuguese draft | Polish draft |
+| --- | --- | --- |
+| aloe-vera-bienfaits-peau | `pt-pt/aloe-vera-para-a-pele` | `pl/aloes-na-skore` |
+| choisir-gel-aloe-vera | `pt-pt/como-escolher-gel-de-aloe-vera` | `pl/jak-wybrac-zel-aloesowy` |
+| aloe-vera-a-boire-comment-choisir | `pt-pt/aloe-vera-para-beber-como-escolher` | `pl/aloes-do-picia-jak-wybrac` |
+| jus-aloe-vera-science | `pt-pt/sumo-de-aloe-vera-o-que-diz-a-ciencia` | `pl/sok-z-aloesu-co-mowi-nauka` |
+| routine-peau-apres-soleil | `pt-pt/pele-sensivel-depois-do-sol` | `pl/skora-wrazliwa-po-sloncu` |
+| gel-aloe-vera-maison | `pt-pt/gel-de-aloe-vera-da-tua-planta` | `pl/zel-z-wlasnego-aloesu` |
+| cultiver-aloe-vera-en-pot | `pt-pt/cultivar-aloe-vera-em-vaso` | `pl/uprawa-aloesu-w-doniczce` |
 
 Drafts are never built into the site. **Review notes for the reviewer** are written as `#` comments at the top of each file.
 

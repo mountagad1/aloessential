@@ -108,6 +108,82 @@ export const CATEGORY_I18N: Partial<Record<string, Record<CategorySlug, Localize
       ],
     },
   },
+  pl: {
+    conseils: {
+      slug: "porady",
+      label: "Porady",
+      description: "Proste nawyki i realistyczne rutyny, by codziennie o siebie dbać.",
+      intro: [
+        "Praktyczne poradniki Aloessential: jak wybrać żel aloesowy, czytać etykiety i zaplanować poranną rutynę. Każda porada wychodzi od konkretnych sytuacji i pozostaje realistyczna: kilka dobrze dobranych nawyków jest wartych więcej niż skomplikowana rutyna.",
+        "Jeśli wspominamy o produkcie, to po to, by pokazać kryterium wyboru, nigdy zamiast rzetelnej informacji.",
+      ],
+    },
+    sante: {
+      slug: "zdrowie",
+      label: "Zdrowie",
+      description: "Lepiej rozumieć swoje ciało, sen i energię, w oparciu o wiarygodne źródła.",
+      intro: [
+        "Co nauka i przepisy europejskie naprawdę pozwalają powiedzieć o aloesie, witaminach, trawieniu, śnie czy sprawności ruchowej. Oddzielamy to, co udowodnione, od tego, co wciąż jest badane, i podajemy nasze źródła prawne.",
+        "Te artykuły informują; nie zastępują porady lekarza ani farmaceuty, zwłaszcza w ciąży, w trakcie leczenia lub przy utrzymujących się objawach.",
+      ],
+    },
+    beaute: {
+      slug: "uroda",
+      label: "Uroda",
+      description: "Pielęgnacja skóry i włosów inspirowana naturą, bez cudownych obietnic.",
+      intro: [
+        "Pielęgnacja skóry i włosów z roślinami, przede wszystkim z aloesem. Wyjaśniamy, jak działa każdy składnik, jak zbudować rutynę i jak czytać skład (INCI).",
+        "Kosmetyk nawilża, łagodzi, chroni lub poprawia wygląd skóry: nie leczy. Trzymamy się tego, co te produkty mogą naprawdę obiecać.",
+      ],
+    },
+    nutrition: {
+      slug: "odzywianie",
+      label: "Odżywianie",
+      description: "Smaczne i zbilansowane jedzenie, od talerza po szklankę wody.",
+      intro: [
+        "Urozmaicone, smaczne jedzenie, od talerza po szklankę: nawodnienie, śniadanie, napoje z aloesem, suplementy diety i etykiety wartości odżywczej.",
+        "Wyjaśniamy, co oznacza dozwolone oświadczenie zdrowotne i dlaczego suplement nigdy nie zastąpi zbilansowanej diety.",
+      ],
+    },
+  },
+  "pt-pt": {
+    conseils: {
+      slug: "conselhos",
+      label: "Conselhos",
+      description: "Gestos simples e rotinas realistas para cuidares de ti todos os dias.",
+      intro: [
+        "Os guias práticos da Aloessential: como escolher um gel de aloe vera, ler um rótulo ou organizar uma rotina matinal. Cada conselho parte de situações concretas e é realista: alguns gestos bem escolhidos valem mais do que uma rotina complicada.",
+        "Quando mencionamos um produto, é para ilustrar um critério de escolha, nunca para substituir a informação.",
+      ],
+    },
+    sante: {
+      slug: "saude",
+      label: "Saúde",
+      description: "Compreender o teu corpo, o teu sono e a tua energia, com fontes fiáveis.",
+      intro: [
+        "O que a ciência e a regulamentação europeia permitem realmente afirmar sobre o aloe vera, as vitaminas, a digestão, o sono ou a mobilidade. Distinguimos o que está demonstrado do que ainda está a ser estudado e citamos as nossas fontes regulamentares.",
+        "Estes artigos informam; não substituem o parecer de um médico ou de um farmacêutico, sobretudo em caso de gravidez, tratamento ou sintomas que persistem.",
+      ],
+    },
+    beaute: {
+      slug: "beleza",
+      label: "Beleza",
+      description: "Cuidados com a pele e o cabelo inspirados na natureza, sem promessas milagrosas.",
+      intro: [
+        "Cuidados com a pele e o cabelo à base de plantas, a começar pelo aloe vera. Explicamos o que faz cada ativo, como construir uma rotina e como ler uma lista de ingredientes (INCI).",
+        "Um cosmético hidrata, acalma, protege ou melhora o aspeto da pele: não trata. Ficamo-nos pelo que estes produtos podem realmente prometer.",
+      ],
+    },
+    nutrition: {
+      slug: "nutricao",
+      label: "Nutrição",
+      description: "Uma alimentação saborosa e equilibrada, do prato ao copo de água.",
+      intro: [
+        "Uma alimentação variada e saborosa, do prato ao copo: hidratação, pequeno-almoço, bebidas de aloe vera, suplementos alimentares e rotulagem nutricional.",
+        "Explicamos o que significa uma alegação de saúde autorizada e porque é que um suplemento nunca substitui uma alimentação equilibrada.",
+      ],
+    },
+  },
   es: {
     conseils: {
       slug: "consejos",

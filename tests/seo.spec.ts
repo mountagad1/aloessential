@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { test, expect } from "@playwright/test";
+import { DEFAULT_LOCALE, LOCALES, LOCALE_CODES } from "../src/i18n/locales";
 
 /*
  * Static checks on the built site (dist-test/, which includes the fixtures).
@@ -62,7 +63,10 @@ test.describe("SEO foundations", () => {
       const html = readFileSync(file, "utf8");
       const p = pathOf(file);
       const image = attr(html, /<meta property="og:image" content="([^"]*)"/) ?? "";
-      const isArticle = /^\/(it\/articoli|en\/articles|de\/artikel|es\/articulos|articles)\/[^/]+\/$/.test(p) && !/^\/(en\/|it\/|de\/|es\/)?(articles|articoli|artikel|articulos)\/\d+\/$/.test(p);
+      // Locale of the page from its prefix; article pages are /<prefix>/<articles segment>/<slug>/.
+      const locale = LOCALE_CODES.find((l) => l !== DEFAULT_LOCALE && p.startsWith(`${LOCALES[l].prefix}/`)) ?? DEFAULT_LOCALE;
+      const articles = `${LOCALES[locale].prefix}/${LOCALES[locale].segments.articles}/`;
+      const isArticle = p.startsWith(articles) && p !== articles && !/^\d+\/$/.test(p.slice(articles.length));
       if (isArticle || /^\/produits\/[^/]+\/$/.test(p)) {
         // Articles and product pages share their own cover, as a raster (see image delivery tests).
         expect(image, p).toMatch(new RegExp(`^${ORIGIN}/covers/[a-z0-9-]+\\.jpg$`));
@@ -73,7 +77,7 @@ test.describe("SEO foundations", () => {
         expect(image, p).toBe(`${ORIGIN}/brand/og-default.png`);
       }
       // Locale-specific Open Graph locale; full locale checks in tests/i18n.spec.ts.
-      expect(html, p).toContain(`<meta property="og:locale" content="${p.startsWith("/it/") ? "it_IT" : p.startsWith("/en/") ? "en_GB" : p.startsWith("/de/") ? "de_DE" : p.startsWith("/es/") ? "es_ES" : "fr_FR"}">`);
+      expect(html, p).toContain(`<meta property="og:locale" content="${LOCALES[locale].ogLocale}">`);
       const type = attr(html, /<meta property="og:type" content="([^"]*)"/);
       expect(type, p).toBe(isArticle ? "article" : "website");
     }

@@ -5,7 +5,8 @@ import type { Locale } from "./locales";
  * dictionary exists here and is complete (enforced by `ui()` at build time
  * and by tests/i18n.spec.ts). French strings are the site's existing text.
  *
- * Italian, English (British), German and Spanish (Spain): written for the rollout; to be
+ * Italian, English (British), German, Spanish (Spain), Portuguese (Portugal)
+ * and Polish: written for the rollout; to be
  * reviewed by a native speaker before the first page in that language is
  * published (docs/i18n/TRANSLATION_WORKFLOW.md).
  */
@@ -386,7 +387,136 @@ const es: UiStrings = {
   all: "Todos",
 };
 
-export const UI: Partial<Record<Locale, UiStrings>> = { fr, it, en, de, es };
+const ptPt: UiStrings = {
+  skipLink: "Ir para o conteúdo",
+  brandHome: "Aloessential — início",
+  navLabel: "Rubricas",
+  mobileNavLabel: "Menu principal",
+  menuOpen: "Abrir o menu",
+  menuClose: "Fechar o menu",
+  home: "Início",
+  allArticles: "Todos os artigos",
+  breadcrumb: "Caminho de navegação",
+  publishedOn: "Publicado a",
+  minRead: (n) => `${n} min de leitura`,
+  readCard: (n) => `Ler · ${n} min`,
+  by: "Por",
+  review: "Revisto por",
+  sources: "Fontes",
+  newTab: " (abre num novo separador)",
+  disclaimer:
+    "Este artigo é informativo e não substitui o parecer de um médico, de um farmacêutico ou de um nutricionista. Em caso de dúvida, gravidez, tratamento em curso ou sintomas que persistem, consulta um profissional de saúde.",
+  relatedEyebrow: "Também te pode interessar",
+  relatedTitle: "Continuar a ler",
+  toc: "Índice",
+  tocNav: "Índice do artigo",
+  pagination: "Paginação",
+  previousPage: "Página anterior",
+  nextPage: "Página seguinte",
+  pageStatus: (p, t) => `Página ${p} de ${t}`,
+  pageSuffix: (p) => ` (página ${p})`,
+  alsoIn: "Também disponível em:",
+  footerTagline: "Naturalmente essencial",
+  footerCategories: "Rubricas",
+  footerExplore: "Explorar",
+  footerLegal: (y) =>
+    `© ${y} Aloessential. Os conteúdos deste site são informativos e não substituem o parecer de um profissional de saúde.`,
+  shopLink: "Site oficial da LR",
+  shopLinkHidden: " (link de parceiro, abre num novo separador)",
+  transparency: "Transparência e links de parceiro",
+  inFrench: " (em francês)",
+  frenchSite: "Aloessential em francês",
+  team: "A nossa equipa",
+  contact: "Contacto",
+  legalNotice: "Informação legal",
+  privacy: "Privacidade",
+  distributorFab: "Torna-te distribuidor LR",
+  distributorEyebrow: "Junta-te à LR",
+  distributorTitle: "Queres ser distribuidor LR?",
+  distributorBody: (name) =>
+    `${name}, editor da Aloessential e parceiro independente da LR Health & Beauty, responde às tuas perguntas sobre a atividade de distribuidor: estatuto, primeiros passos, acompanhamento.`,
+  distributorNote:
+    "Sem compromisso. Os rendimentos dependem inteiramente da tua própria atividade: não prometemos nenhum ganho.",
+  distributorWhatsapp: "Escrever no WhatsApp",
+  distributorMessage: (name) =>
+    `Olá ${name}, descobri a Aloessential e gostava de saber mais sobre a atividade de distribuidor LR.`,
+  close: "Fechar",
+  homeEyebrow: "A revista",
+  homeTitle: "Todos os artigos",
+  homeDescription: "Todos os artigos da Aloessential em português: conselhos, saúde, beleza e nutrição de forma natural.",
+  homeLead: (n) => (n === 1 ? "1 artigo para cuidares de ti de forma natural." : `${n} artigos para cuidares de ti de forma natural.`),
+  categoryEyebrow: "Rubrica",
+  filterLabel: "Filtrar por rubrica",
+  all: "Todos",
+};
+
+const pl: UiStrings = {
+  skipLink: "Przejdź do treści",
+  brandHome: "Aloessential — strona główna",
+  navLabel: "Działy",
+  mobileNavLabel: "Menu główne",
+  menuOpen: "Otwórz menu",
+  menuClose: "Zamknij menu",
+  home: "Strona główna",
+  allArticles: "Wszystkie artykuły",
+  breadcrumb: "Ścieżka nawigacji",
+  publishedOn: "Opublikowano",
+  minRead: (n) => `${n} min czytania`,
+  readCard: (n) => `Czytaj · ${n} min`,
+  by: "Autor:",
+  review: "Sprawdzone przez:",
+  sources: "Źródła",
+  newTab: " (otwiera się w nowej karcie)",
+  disclaimer:
+    "Ten artykuł ma charakter informacyjny i nie zastępuje porady lekarza, farmaceuty ani dietetyka. W razie wątpliwości, w ciąży, w trakcie leczenia lub przy utrzymujących się objawach skonsultuj się z pracownikiem ochrony zdrowia.",
+  relatedEyebrow: "Przeczytaj też",
+  relatedTitle: "Czytaj dalej",
+  toc: "Spis treści",
+  tocNav: "Spis treści artykułu",
+  pagination: "Stronicowanie",
+  previousPage: "Poprzednia strona",
+  nextPage: "Następna strona",
+  pageStatus: (p, t) => `Strona ${p} z ${t}`,
+  pageSuffix: (p) => ` (strona ${p})`,
+  alsoIn: "Dostępne także w języku:",
+  footerTagline: "Naturalnie niezbędne",
+  footerCategories: "Działy",
+  footerExplore: "Odkrywaj",
+  footerLegal: (y) =>
+    `© ${y} Aloessential. Treści w tym serwisie mają charakter informacyjny i nie zastępują porady specjalisty ochrony zdrowia.`,
+  shopLink: "Oficjalny sklep LR",
+  shopLinkHidden: " (link partnerski, otwiera się w nowej karcie)",
+  transparency: "Przejrzystość i linki partnerskie",
+  inFrench: " (po francusku)",
+  frenchSite: "Aloessential po francusku",
+  team: "Nasz zespół",
+  contact: "Kontakt",
+  legalNotice: "Informacje prawne",
+  privacy: "Prywatność",
+  distributorFab: "Zostań dystrybutorem LR",
+  distributorEyebrow: "Dołącz do LR",
+  distributorTitle: "Chcesz zostać dystrybutorem LR?",
+  distributorBody: (name) =>
+    `${name}, wydawca Aloessential i niezależny partner LR Health & Beauty, odpowiada na Twoje pytania o działalność dystrybutora: formę współpracy, pierwsze kroki, wsparcie.`,
+  distributorNote:
+    "Bez zobowiązań. Dochody zależą wyłącznie od Twojej własnej aktywności: nie obiecujemy żadnych zarobków.",
+  distributorWhatsapp: "Napisz na WhatsAppie",
+  distributorMessage: (name) =>
+    `Dzień dobry ${name}, odkryłem/odkryłam Aloessential i chciałbym/chciałabym dowiedzieć się więcej o działalności dystrybutora LR.`,
+  close: "Zamknij",
+  homeEyebrow: "Magazyn",
+  homeTitle: "Wszystkie artykuły",
+  homeDescription: "Wszystkie artykuły Aloessential po polsku: porady, zdrowie, uroda i odżywianie w naturalny sposób.",
+  homeLead: (n) =>
+    n === 1
+      ? "1 artykuł, by naturalnie o siebie zadbać."
+      : `${n} ${n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? "artykuły" : "artykułów"}, by naturalnie o siebie zadbać.`,
+  categoryEyebrow: "Dział",
+  filterLabel: "Filtruj według działu",
+  all: "Wszystkie",
+};
+
+export const UI: Partial<Record<Locale, UiStrings>> = { fr, it, en, de, es, "pt-pt": ptPt, pl };
 
 /** Interface strings for a locale. Throws if the locale has no dictionary yet. */
 export function ui(locale: Locale): UiStrings {
