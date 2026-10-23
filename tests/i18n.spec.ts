@@ -9,8 +9,8 @@ import { freshness, parseMarkdown, translations } from "../tools/i18n-lib.mjs";
 
 /*
  * International SEO regression checks (docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md).
- * The test build includes fictional Italian, English and German translations
- * of the demo article (tests/fixtures/articles/{it,en,de}/) and an unreviewed Italian
+ * The test build includes fictional Italian, English, German and Spanish
+ * translations of the demo article (tests/fixtures/articles/{it,en,de,es}/) and an unreviewed Italian
  * draft (bozza-demo.md) that must never surface. Every check runs for each
  * published test locale described in PUBLISHED below.
  */
@@ -76,6 +76,21 @@ const PUBLISHED = {
     transparency: "Transparenz und Partnerlinks",
     menu: ["Menü öffnen", "Menü schließen"],
   },
+  es: {
+    home: "/es/",
+    article: "/es/articulos/articulo-demo/",
+    category: "/es/secciones/salud/",
+    categoryLabel: "Salud",
+    emptyCategories: ["es/secciones/consejos", "es/secciones/belleza", "es/secciones/nutricion"],
+    body: "Párrafo de prueba en español",
+    name: "Español",
+    fab: "Hazte distribuidor de LR",
+    whatsapp: /text=Hola%20Philippe/,
+    shopLabel: "Tienda oficial de LR",
+    shopUrl: "https://shop.lrworld.com/home/ES/es?ref=cros",
+    transparency: "Transparencia y enlaces de afiliado",
+    menu: ["Abrir el menú", "Cerrar el menú"],
+  },
 } as const;
 const published = Object.entries(PUBLISHED) as [keyof typeof PUBLISHED, (typeof PUBLISHED)[keyof typeof PUBLISHED]][];
 
@@ -102,9 +117,10 @@ test.describe("locale registry", () => {
     expect(LOCALES.it).toMatchObject({ prefix: "/it", htmlLang: "it", ogLocale: "it_IT", schemaLang: "it-IT" });
     expect(LOCALES.en).toMatchObject({ prefix: "/en", htmlLang: "en", ogLocale: "en_GB" });
     expect(LOCALES.de).toMatchObject({ prefix: "/de", htmlLang: "de", ogLocale: "de_DE", schemaLang: "de-DE" });
+    expect(LOCALES.es).toMatchObject({ prefix: "/es", htmlLang: "es", ogLocale: "es_ES", schemaLang: "es-ES" });
   });
 
-  for (const locale of ["it", "en", "de"] as const) {
+  for (const locale of ["it", "en", "de", "es"] as const) {
     test(`${locale}: interface text and category text are complete`, () => {
       expect(Object.keys(UI[locale]!).sort()).toEqual(Object.keys(UI.fr!).sort());
       for (const [key, value] of Object.entries(UI[locale]!)) {
@@ -237,12 +253,13 @@ test.describe("localized pages (static scan)", () => {
         expect(alternatesOf(targetHtml), `reciprocity ${p} ↔ ${target}`).toEqual(alts);
       }
     }
-    // Demo article, homepages and the Santé category, in fr, it, en and de.
-    expect(annotated).toBe(12);
+    // Demo article, homepages and the Santé category, in fr, it, en, de and es.
+    expect(annotated).toBe(15);
     expect(alternatesOf(read("articles/article-demo"))).toEqual({
       fr: `${ORIGIN}/articles/article-demo/`,
       en: `${ORIGIN}/en/articles/demo-article/`,
       de: `${ORIGIN}/de/artikel/demo-artikel/`,
+      es: `${ORIGIN}/es/articulos/articulo-demo/`,
       it: `${ORIGIN}/it/articoli/articolo-demo/`,
       "x-default": `${ORIGIN}/articles/article-demo/`,
     });
@@ -346,6 +363,7 @@ test.describe("localized pages (browser)", () => {
     expect((await page.goto("/it/articoli/n-existe-pas/"))?.status()).toBe(404);
     expect((await page.goto("/en/articles/does-not-exist/"))?.status()).toBe(404);
     expect((await page.goto("/de/artikel/gibt-es-nicht/"))?.status()).toBe(404);
-    expect((await page.goto("/es/"))?.status()).toBe(404);
+    expect((await page.goto("/es/articulos/no-existe/"))?.status()).toBe(404);
+    expect((await page.goto("/pl/"))?.status()).toBe(404);
   });
 });

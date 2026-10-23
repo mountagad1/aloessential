@@ -1,6 +1,6 @@
 # Translation workflow
 
-*How an article goes from French to a published translation. Architecture: docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md. Conventions per language: IT_STYLE_GUIDE.md (Italian), EN_STYLE_GUIDE.md (English, UK), DE_STYLE_GUIDE.md (German, Germany).*
+*How an article goes from French to a published translation. Architecture: docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md. Conventions per language: IT_STYLE_GUIDE.md (Italian), EN_STYLE_GUIDE.md (English, UK), DE_STYLE_GUIDE.md (German, Germany), ES_STYLE_GUIDE.md (Spanish, Spain).*
 
 ## 1. Status today (2026-10-22)
 
@@ -42,6 +42,18 @@
 | routine-peau-apres-soleil | `de/haut-nach-der-sonne-pflegen` |
 | gel-aloe-vera-maison | `de/aloe-vera-gel-aus-der-eigenen-pflanze` |
 | cultiver-aloe-vera-en-pot | `de/aloe-vera-im-topf-pflegen` |
+
+**Spanish** (readers in Spain): 0 published, **7 drafts**, 9 not started. EU rules apply as in French; adaptation: *tú*, Spanish typography (« », ¿?, 98 %), farmacia/parafarmacia/herbolario, centro de salud and 112, frost-free coasts and Canary Islands.
+
+| French source | Spanish draft |
+| --- | --- |
+| aloe-vera-bienfaits-peau | `es/aloe-vera-para-la-piel` |
+| choisir-gel-aloe-vera | `es/como-elegir-gel-de-aloe-vera` |
+| aloe-vera-a-boire-comment-choisir | `es/aloe-vera-para-beber-como-elegirlo` |
+| jus-aloe-vera-science | `es/zumo-de-aloe-vera-que-dice-la-ciencia` |
+| routine-peau-apres-soleil | `es/piel-sensible-despues-del-sol` |
+| gel-aloe-vera-maison | `es/gel-de-aloe-vera-de-tu-planta` |
+| cultiver-aloe-vera-en-pot | `es/cultivar-aloe-vera-en-maceta` |
 
 Drafts are never built into the site. **Review notes for the reviewer** are written as `#` comments at the top of each file.
 

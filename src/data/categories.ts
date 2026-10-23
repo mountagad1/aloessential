@@ -108,6 +108,44 @@ export const CATEGORY_I18N: Partial<Record<string, Record<CategorySlug, Localize
       ],
     },
   },
+  es: {
+    conseils: {
+      slug: "consejos",
+      label: "Consejos",
+      description: "Gestos sencillos y rutinas realistas para cuidarte cada día.",
+      intro: [
+        "Las guías prácticas de Aloessential: cómo elegir un gel de aloe vera, leer una etiqueta u organizar una rutina de mañana. Cada consejo parte de situaciones concretas y es realista: unos pocos gestos bien elegidos valen más que una rutina complicada.",
+        "Cuando mencionamos un producto, es para ilustrar un criterio de elección, nunca para sustituir la información.",
+      ],
+    },
+    sante: {
+      slug: "salud",
+      label: "Salud",
+      description: "Entender tu cuerpo, tu sueño y tu energía, con fuentes fiables.",
+      intro: [
+        "Lo que la ciencia y la normativa europea permiten afirmar de verdad sobre el aloe vera, las vitaminas, la digestión, el sueño o la movilidad. Distinguimos lo demostrado de lo que aún se estudia y citamos nuestras fuentes normativas.",
+        "Estos artículos informan; no sustituyen la opinión de un médico o un farmacéutico, sobre todo si estás embarazada, sigues un tratamiento o tienes síntomas que no desaparecen.",
+      ],
+    },
+    beaute: {
+      slug: "belleza",
+      label: "Belleza",
+      description: "Cuidado de la piel y del cabello inspirado en la naturaleza, sin promesas milagrosas.",
+      intro: [
+        "Cuidado de la piel y del cabello con plantas, empezando por el aloe vera. Explicamos qué hace cada activo, cómo construir una rutina y cómo leer una lista de ingredientes (INCI).",
+        "Un cosmético hidrata, calma, protege o mejora el aspecto de la piel: no cura. Nos ceñimos a lo que estos productos pueden prometer de verdad.",
+      ],
+    },
+    nutrition: {
+      slug: "nutricion",
+      label: "Nutrición",
+      description: "Una alimentación sabrosa y equilibrada, del plato al vaso de agua.",
+      intro: [
+        "Una alimentación variada y sabrosa, del plato al vaso: hidratación, desayuno, bebidas de aloe vera, complementos alimenticios y etiquetado nutricional.",
+        "Explicamos qué significa una declaración de propiedades saludables autorizada y por qué un complemento nunca sustituye una alimentación equilibrada.",
+      ],
+    },
+  },
   de: {
     conseils: {
       slug: "tipps",
