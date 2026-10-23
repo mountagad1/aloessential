@@ -123,7 +123,7 @@ Drafts are never built into the site. **Review notes for the reviewer** are writ
 ## 5. Open decisions (owner)
 
 - **Who reviews Italian content** (D8 in INTERNATIONAL_SEO_ARCHITECTURE.md). The same reviewer should also review the Italian interface text (`src/i18n/ui.ts`) and category text.
-- **Distributor window in Italian** with an Italian WhatsApp message to Philippe (D7).
+- ~~Distributor window in other languages (D7)~~: decided 2026-10-23, Philippe accepts contacts in all supported languages.
 - **Product pages for Italy** (D6): Italian LR shop links with `ref=cros` and Italian mandatory mentions. Until then Italian articles carry no product links (enforced by the schema).
 
 ## 6. Adding another locale
