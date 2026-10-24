@@ -19,7 +19,8 @@ sources:
 locale: es
 translationOf: articulations-mobilite-quotidien
 sourceHash: "30e39976d2dc"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Levantarse sin rigidez, subir las escaleras sin pensarlo, pasar una tarde entera en el huerto o el jardín: la movilidad es una comodidad que se nota sobre todo cuando disminuye. La buena noticia es que gran parte de lo que la mantiene depende de nuestros hábitos.

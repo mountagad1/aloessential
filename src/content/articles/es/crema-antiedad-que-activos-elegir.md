@@ -13,7 +13,8 @@ sources:
 locale: es
 translationOf: soin-anti-age-quels-actifs
 sourceHash: "75f22806a9f4"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Los lineales «antiedad» están llenos de nombres de activos, porcentajes y promesas. Para orientarse, conviene partir de una idea sencilla: una crema actúa sobre el **aspecto** de la piel (hidratación, luminosidad, flexibilidad, aspecto de las arrugas finas). No da marcha atrás al reloj. Bien elegida y bien usada, en cambio, puede marcar una diferencia real en el día a día.

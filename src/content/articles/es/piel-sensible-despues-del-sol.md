@@ -10,7 +10,8 @@ coverAlt: "Ilustración de una puesta de sol detrás de hojas de aloe vera con g
 locale: es
 translationOf: routine-peau-apres-soleil
 sourceHash: "284a4c8eb2a1"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Un día al aire libre, en la playa o en la piscina, y por la noche la piel tira, arde un poco y se enrojece. Quien tiene la piel sensible lo sabe bien: el sol la pone a prueba, incluso con protección. Unos gestos sencillos ayudan a recuperar el confort. No sustituyen a una buena protección solar y no curan una verdadera quemadura.

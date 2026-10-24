@@ -17,7 +17,8 @@ sources:
 locale: es
 translationOf: digestion-foie-detox-complements
 sourceHash: "85886cfc227c"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 En primavera, igual que después de las fiestas, las curas «detox» y los complementos para el intestino invaden las estanterías. Sus envases prometen limpiar, drenar, reequilibrar. El marco europeo es, sin embargo, estricto sobre lo que un complemento alimenticio puede afirmar. Conocerlo permite separar lo útil de lo demás.

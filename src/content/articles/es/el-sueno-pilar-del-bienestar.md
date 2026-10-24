@@ -8,7 +8,8 @@ coverAlt: "Ilustración de una luna creciente dorada sobre un follaje oscuro"
 locale: es
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 El sueño influye en el humor, la concentración, el apetito y la recuperación. La buena noticia: algunos hábitos tienen un efecto real en su calidad.

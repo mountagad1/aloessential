@@ -13,7 +13,8 @@ sources:
 locale: es
 translationOf: aloe-vera-bienfaits-peau
 sourceHash: "c26974842af3"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 El aloe vera es una de las plantas más presentes en nuestros cuartos de baño. Su gel, extraído del interior de la hoja, está compuesto en más de un 98 % por agua, pero también contiene polisacáridos, vitaminas y minerales. Esto es lo que puedes esperar razonablemente de él.

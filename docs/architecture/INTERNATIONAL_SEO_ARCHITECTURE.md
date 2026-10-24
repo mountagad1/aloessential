@@ -4,7 +4,7 @@
 
 **Status:**
 - The locale **infrastructure is implemented and tested**.
-- **Italian, English and German are published** (2026-10-24): 16 articles each, reviewed by Philippe Cros, under `/it/`, `/en/` and `/de/`. The other locales are drafts only.
+- **Italian, English, German and Spanish are published** (2026-10-24): 16 articles each, reviewed by Philippe Cros, under `/it/`, `/en/`, `/de/` and `/es/`. The other locales are drafts only.
 - Supported locales: fr (source), en, es, de, **it**, pt-pt, pl.
 - **Italian is first-class:** registry, interface text, category text, routing, metadata, hreflang, sitemap and tests.
 - The other five locales exist in the registry only. They cannot publish until their interface text is added; the build enforces this.
@@ -17,11 +17,11 @@
 | Italian content | **16 of 16 published** (reviewer: Philippe Cros) in `src/content/articles/it/`, awaiting an Italian-speaking reviewer — see docs/i18n/TRANSLATION_WORKFLOW.md |
 | English content (UK) | **16 of 16 published** (2026-10-24, reviewer: Philippe Cros) in `src/content/articles/en/`; interface and category text in British English; GB LR shop linked in the English footer |
 | German content (Germany) | **16 of 16 published** (2026-10-24, reviewer: Philippe Cros) in `src/content/articles/de/`; interface and category text (*Sie*); DE LR shop linked in the German footer |
-| Spanish content (Spain) | 0 of 16 published; **16 drafts** in `src/content/articles/es/`; interface and category text (*tú*); ES LR shop linked in the Spanish footer |
+| Spanish content (Spain) | **16 of 16 published** (2026-10-24, reviewer: Philippe Cros) in `src/content/articles/es/`; interface and category text (*tú*); ES LR shop linked in the Spanish footer |
 | Portuguese content (Portugal) | 0 of 16 published; **16 drafts** in `src/content/articles/pt-pt/`; interface and category text (*tu*); footer links to LR Portugal's site (the PT shop requires an LR login) |
 | Polish content (Poland) | 0 of 16 published; **16 drafts** in `src/content/articles/pl/`; interface and category text (*ty*); PL LR shop linked in the Polish footer |
 | Products in Italian | none; product pages stay French-only (decision D4/D6) |
-| hreflang | French ↔ Italian ↔ English ↔ German on the home page, the 4 categories and the 16 articles; none for the other locales (drafts) |
+| hreflang | French ↔ Italian ↔ English ↔ German ↔ Spanish on the home page, the 4 categories and the 16 articles; none for the other locales (drafts) |
 | Fallbacks | none: a locale without a published article has no URL at all; `/it/anything/` returns the real 404 status |
 
 ## 2. URL structure (decisions D1, D2 — implemented)

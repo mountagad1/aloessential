@@ -20,7 +20,8 @@ sources:
 locale: es
 translationOf: vitamines-fatigue-reglementation
 sourceHash: "364ffbf6ad87"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 «¿Bajón de energía?» Los complementos alimenticios que prometen energía son muchos. Detrás de esas promesas, sin embargo, existe un marco muy preciso. Conocerlo ayuda a leer las etiquetas con ojo crítico y a no pasar por alto un cansancio que necesita algo más que una tanda de vitaminas.

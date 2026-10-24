@@ -70,9 +70,9 @@
 | soins-cheveux-naturel | `de/haarpflege-natuerlich` |
 | sommeil-pilier-bien-etre | `de/schlaf-saeule-des-wohlbefindens` |
 
-**Spanish** (readers in Spain): 0 published, **16 drafts** (every French article), 0 not started. EU rules apply as in French; adaptation: *tú*, Spanish typography (« », ¿?, 98 %), farmacia/parafarmacia/herbolario, centro de salud and 112, frost-free coasts and Canary Islands.
+**Spanish** (readers in Spain): **16 published** (2026-10-24, reviewer Philippe Cros). EU rules apply as in French; adaptation: *tú*, Spanish typography (« », ¿?, 98 %), farmacia/parafarmacia/herbolario, centro de salud and 112, frost-free coasts and Canary Islands.
 
-| French source | Spanish draft |
+| French source | Spanish article (published) |
 | --- | --- |
 | aloe-vera-bienfaits-peau | `es/aloe-vera-para-la-piel` |
 | choisir-gel-aloe-vera | `es/como-elegir-gel-de-aloe-vera` |

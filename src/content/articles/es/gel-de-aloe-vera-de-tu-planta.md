@@ -15,7 +15,8 @@ sources:
 locale: es
 translationOf: gel-aloe-vera-maison
 sourceHash: "bd3c649d5e58"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Tener un aloe vera en el alféizar invita a usar su gel. Se puede, sobre la piel, respetando algunas precauciones. La principal: separar bien el gel del látex.

@@ -17,7 +17,8 @@ sources:
 locale: es
 translationOf: jus-aloe-vera-science
 sourceHash: "63507b38c25e"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 El zumo de aloe vera se ha hecho un hueco en los lineales de bienestar. Pero entre las promesas comerciales y los datos científicos, la distancia a veces es grande.

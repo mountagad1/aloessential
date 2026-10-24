@@ -15,7 +15,8 @@ sources:
 locale: es
 translationOf: cultiver-aloe-vera-en-pot
 sourceHash: "68d1d6053660"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 El aloe vera es una de las plantas de interior más fáciles de mantener… siempre que no lo quieras demasiado. Esta planta suculenta procede de regiones cálidas y secas: lo que la mata casi nunca es el olvido, sino el exceso de agua.

@@ -8,7 +8,8 @@ coverAlt: "Ilustración de un sol saliendo sobre colinas verdes"
 locale: es
 translationOf: routine-matin-energie
 sourceHash: "31ab0570e763"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 No hace falta una rutina de dos horas para arrancar bien. A menudo bastan unos pocos gestos regulares para cambiar cómo va una mañana.

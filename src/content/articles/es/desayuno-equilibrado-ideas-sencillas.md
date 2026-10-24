@@ -8,7 +8,8 @@ coverAlt: "Ilustración de un cuenco de fruta fresca naranja, amarilla y verde"
 locale: es
 translationOf: petit-dejeuner-equilibre
 sourceHash: "2cf27e1bfb8d"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Un desayuno equilibrado no tiene nada de complicado. Se basa en tres elementos: fibra, proteínas y una fruta.

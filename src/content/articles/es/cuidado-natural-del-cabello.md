@@ -8,7 +8,8 @@ coverAlt: "Ilustración de curvas verdes fluidas que evocan una melena, con una 
 locale: es
 translationOf: soins-cheveux-naturel
 sourceHash: "abbfae249c0a"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Un cabello sano depende a menudo más de la suavidad de los gestos que de la cantidad de productos.
