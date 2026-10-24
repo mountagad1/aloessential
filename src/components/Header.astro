@@ -1,18 +1,21 @@
 ---
 import { categoryList, localizedCategory } from "../data/categories";
-import { DEFAULT_LOCALE, categoryPath, homePath, productsPath, type Locale } from "../i18n/locales";
+import Icon from "./Icon.astro";
+import { DEFAULT_LOCALE, LOCALES, categoryPath, homePath, productsPath, type Locale } from "../i18n/locales";
 import { productUi } from "../i18n/product-ui";
 import { ui } from "../i18n/ui";
-import { getArticles } from "../lib/articles";
+import { getArticles, getTranslatedLocales, type Alternate } from "../lib/articles";
 import { getPublishedProducts } from "../lib/products";
 
 interface Props {
   /** Category slug of the current page, for aria-current. */
   current?: string;
   locale?: Locale;
+  /** Language versions of this page (from BaseLayout), for the language switcher. */
+  alternates?: Alternate[];
 }
 
-const { current, locale = DEFAULT_LOCALE } = Astro.props;
+const { current, locale = DEFAULT_LOCALE, alternates = [] } = Astro.props;
 const t = ui(locale);
 
 /*
@@ -44,6 +47,20 @@ if (locale === DEFAULT_LOCALE) {
     links.push({ href: productsPath(locale), label: productUi(locale).products, key: "produits" });
   }
 }
+
+/*
+ * Language switcher: every published locale, linking to this page in that
+ * language when it exists, otherwise to that locale's home page (never to a
+ * missing page). Each link declares the language it leads to.
+ */
+const languages = [DEFAULT_LOCALE, ...(await getTranslatedLocales())].map((code) => ({
+  code,
+  name: LOCALES[code].name,
+  short: code.slice(0, 2).toUpperCase(),
+  hreflang: LOCALES[code].htmlLang,
+  href: alternates.find((a) => a.locale === code)?.path ?? homePath(code),
+  current: code === locale,
+}));
 ---
 
 <div class="header-sentinel" data-header-sentinel aria-hidden="true"></div>
@@ -67,18 +84,41 @@ if (locale === DEFAULT_LOCALE) {
       </ul>
     </nav>
 
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="mobile-nav"
-      aria-label={t.menuOpen}
-      data-label-open={t.menuOpen}
-      data-label-close={t.menuClose}
-      data-menu-toggle
-    >
-      <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
-    </button>
+    <div class="site-header__actions">
+      <details class="lang-switch" data-lang-switch>
+        <summary class="lang-switch__toggle" aria-label={t.languageLabel(LOCALES[locale].name)}>
+          <Icon name="globe" class="lang-switch__globe" />
+          <span class="lang-switch__code" aria-hidden="true">{LOCALES[locale].code.slice(0, 2).toUpperCase()}</span>
+          <Icon name="chevron-down" class="lang-switch__chevron" />
+        </summary>
+        <ul class="lang-switch__menu">
+          {
+            languages.map((l) => (
+              <li>
+                <a href={l.href} hreflang={l.hreflang} lang={l.hreflang} aria-current={l.current ? "true" : undefined}>
+                  <span class="lang-switch__short" aria-hidden="true">{l.short}</span>
+                  {l.name}
+                  {l.current && <Icon name="check" class="lang-switch__check" />}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </details>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label={t.menuOpen}
+        data-label-open={t.menuOpen}
+        data-label-close={t.menuClose}
+        data-menu-toggle
+      >
+        <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
   </div>
 
   <nav class="mobile-nav" id="mobile-nav" aria-label={t.mobileNavLabel}>

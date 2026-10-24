@@ -73,7 +73,12 @@ On a translated page:
 - **French-only pages:** pages that exist only in French (team, contact, legal notice, privacy, distributor contact section, the French site) are linked with `hreflang="fr"` and labelled "(in francese)". They are never presented as Italian pages.
 - **Not shown in Italian:** the newsletter block (French list) and the LR shop link (French shop) are not shown.
 - **Distributor window:** the "Diventa distributore LR" window is shown in Italian, with an Italian WhatsApp message (owner confirmation needed, §8).
-- **Language switcher:** an article with other published versions shows "Disponibile anche in: Français" (and the French page shows "Également disponible en : Italiano").
+- **Language switcher, header (every page):** a globe button with the current language code opens the list of published languages.
+  - Each entry links to the same page in that language when a version exists (the page's alternates). Otherwise it links to that language's home page, so it never leads to a missing page.
+  - Each link carries `hreflang` and `lang`; the current language is marked `aria-current`.
+  - It is built on `<details>`, so it works without JavaScript; with JavaScript, Escape and a click outside close it.
+  - Code: `src/components/Header.astro`; tests: `tests/i18n.spec.ts`.
+- **Language line, articles:** an article with other published versions also shows "Disponibile anche in: Français" (and the French page shows "Également disponible en : Italiano").
 
 ## 5. hreflang and sitemap
 

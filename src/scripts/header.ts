@@ -57,3 +57,22 @@ if (toggle && panel) {
     if (event.matches) setOpen(false);
   });
 }
+
+/*
+ * Language switcher (<details>, works without JavaScript): close it on Escape
+ * (focus back on its toggle) and on a click outside.
+ */
+const langSwitch = document.querySelector<HTMLDetailsElement>("[data-lang-switch]");
+
+if (langSwitch) {
+  const summary = langSwitch.querySelector("summary");
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && langSwitch.open) {
+      langSwitch.open = false;
+      summary?.focus();
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (langSwitch.open && !langSwitch.contains(event.target as Node)) langSwitch.open = false;
+  });
+}

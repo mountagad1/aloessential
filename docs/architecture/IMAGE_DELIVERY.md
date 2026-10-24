@@ -116,4 +116,4 @@ Choices that needed a decision:
 - article heroes have `srcset`, `sizes`, `fetchpriority`, a caption and an ImageObject;
 - `og:image` points to an existing JPEG of the declared size.
 
-**Unused SVGs:** the article SVG illustrations (`public/covers/*.svg` other than `produit-*`, `aloe-peau`, `jus-aloe`) are no longer used by articles. They are kept, since `tools/generate-covers.mjs` still produces them.
+**Unused SVGs:** the 13 SVG illustrations that only articles used (and their JPEG twins) were deleted on 2026-10-24, and removed from `tools/generate-covers.mjs`. What remains: the product illustrations (`produit-*`), plus `aloe-peau` and `jus-aloe`, used only by the test fixtures.

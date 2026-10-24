@@ -299,6 +299,28 @@ test.describe("localized pages (static scan)", () => {
     }
   });
 
+  test("every page has a language switcher: each published language, to this page or that language's home", () => {
+    const locales = [DEFAULT_LOCALE, ...published.map(([code]) => code), ...LOCALE_CODES.filter((l) => l !== DEFAULT_LOCALE && existsSync(join(dist, l)) && !(l in PUBLISHED))];
+    for (const file of pages()) {
+      const p = pathOf(file);
+      const html = readFileSync(file, "utf8");
+      const menu = html.match(/<ul class="lang-switch__menu">([\s\S]*?)<\/ul>/)?.[1];
+      expect(menu, `${p} has no language switcher`).toBeTruthy();
+      const links = [...menu!.matchAll(/<a href="([^"]+)" hreflang="([^"]+)"[^>]*>/g)];
+      expect(links.length, p).toBe(new Set(locales).size);
+      const alternates = alternatesOf(html);
+      for (const [, href, lang] of links) {
+        const target = LOCALES[localeOf(href)];
+        expect(lang, `${p} → ${href}`).toBe(target.htmlLang);
+        // Same page in that language when it exists, else that language's home.
+        // (The page's own language links to the page itself, hreflang or not.)
+        expect([alternates[lang]?.replace(ORIGIN, ""), `${target.prefix}/`, ...(target.code === localeOf(p) ? [p] : [])], `${p} → ${href}`).toContain(href);
+        expect(exists(href.slice(1)), `${p} → ${href}`).toBe(true);
+      }
+      expect(menu!.match(/aria-current="true"/g)?.length, p).toBe(1);
+    }
+  });
+
   test("the unreviewed draft never surfaces", () => {
     for (const file of [...htmlFiles(dist), join(dist, "sitemap.xml")]) {
       const text = readFileSync(file, "utf8");
@@ -438,6 +460,17 @@ test.describe("localized pages (browser)", () => {
         await expect(page.locator("html")).toHaveAttribute("lang", LOCALES[code].htmlLang);
       }
       await expect(page.locator("h1")).toHaveText(l.categoryLabel);
+    });
+
+    test(`${code}: the header language switcher leads to the same article in French and back`, async ({ page }) => {
+      await page.goto(l.article);
+      await page.locator(".lang-switch__toggle").click();
+      await page.locator(".lang-switch__menu a", { hasText: "Français" }).click();
+      await expect(page).toHaveURL(/\/articles\/article-demo\/$/);
+      await page.locator(".lang-switch__toggle").click();
+      await page.locator(".lang-switch__menu a", { hasText: l.name }).click();
+      await expect(page).toHaveURL(new RegExp(`${l.article}$`));
+      await expect(page.locator("html")).toHaveAttribute("lang", LOCALES[code].htmlLang);
     });
 
     test(`${code}: an article links to its French version and back`, async ({ page }) => {

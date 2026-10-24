@@ -112,7 +112,7 @@ const ogImage = absoluteUrl(image.src, Astro.site);
   </head>
   <body>
     <a class="skip-link" href="#main">{t.skipLink}</a>
-    <Header current={current} locale={locale} />
+    <Header current={current} locale={locale} alternates={alternates} />
     <main id="main" tabindex="-1">
       <slot />
     </main>

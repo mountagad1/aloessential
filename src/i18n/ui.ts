@@ -39,6 +39,8 @@ export interface UiStrings {
   pageStatus: (page: number, total: number) => string;
   pageSuffix: (page: number) => string;
   alsoIn: string;
+  /** Accessible name of the language switcher, with the current language. */
+  languageLabel: (current: string) => string;
   footerTagline: string;
   footerCategories: string;
   footerExplore: string;
@@ -101,6 +103,7 @@ const fr: UiStrings = {
   pageStatus: (p, t) => `Page ${p} sur ${t}`,
   pageSuffix: (p) => ` (page ${p})`,
   alsoIn: "Également disponible en :",
+  languageLabel: (c) => `Langue : ${c}`,
   footerTagline: "Naturellement essentiel",
   footerCategories: "Rubriques",
   footerExplore: "Explorer",
@@ -164,6 +167,7 @@ const it: UiStrings = {
   pageStatus: (p, t) => `Pagina ${p} di ${t}`,
   pageSuffix: (p) => ` (pagina ${p})`,
   alsoIn: "Disponibile anche in:",
+  languageLabel: (c) => `Lingua: ${c}`,
   footerTagline: "Naturalmente essenziale",
   footerCategories: "Rubriche",
   footerExplore: "Esplora",
@@ -227,6 +231,7 @@ const en: UiStrings = {
   pageStatus: (p, t) => `Page ${p} of ${t}`,
   pageSuffix: (p) => ` (page ${p})`,
   alsoIn: "Also available in:",
+  languageLabel: (c) => `Language: ${c}`,
   footerTagline: "Naturally essential",
   footerCategories: "Topics",
   footerExplore: "Explore",
@@ -290,6 +295,7 @@ const de: UiStrings = {
   pageStatus: (p, t) => `Seite ${p} von ${t}`,
   pageSuffix: (p) => ` (Seite ${p})`,
   alsoIn: "Auch verfügbar auf:",
+  languageLabel: (c) => `Sprache: ${c}`,
   footerTagline: "Natürlich essenziell",
   footerCategories: "Rubriken",
   footerExplore: "Entdecken",
@@ -353,6 +359,7 @@ const es: UiStrings = {
   pageStatus: (p, t) => `Página ${p} de ${t}`,
   pageSuffix: (p) => ` (página ${p})`,
   alsoIn: "También disponible en:",
+  languageLabel: (c) => `Idioma: ${c}`,
   footerTagline: "Naturalmente esencial",
   footerCategories: "Secciones",
   footerExplore: "Explorar",
@@ -416,6 +423,7 @@ const ptPt: UiStrings = {
   pageStatus: (p, t) => `Página ${p} de ${t}`,
   pageSuffix: (p) => ` (página ${p})`,
   alsoIn: "Também disponível em:",
+  languageLabel: (c) => `Idioma: ${c}`,
   footerTagline: "Naturalmente essencial",
   footerCategories: "Rubricas",
   footerExplore: "Explorar",
@@ -479,6 +487,7 @@ const pl: UiStrings = {
   pageStatus: (p, t) => `Strona ${p} z ${t}`,
   pageSuffix: (p) => ` (strona ${p})`,
   alsoIn: "Dostępne także w języku:",
+  languageLabel: (c) => `Język: ${c}`,
   footerTagline: "Naturalnie niezbędne",
   footerCategories: "Działy",
   footerExplore: "Odkrywaj",
