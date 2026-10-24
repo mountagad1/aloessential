@@ -91,7 +91,7 @@
 | soins-cheveux-naturel | `es/cuidado-natural-del-cabello` |
 | sommeil-pilier-bien-etre | `es/el-sueno-pilar-del-bienestar` |
 
-**Portuguese** (Portugal, `pt-pt`): 0 published, **16 drafts** (every French article). **Polish** (`pl`): 0 published, **7 drafts**, 9 not started. EU rules apply as in French. Portuguese: *tu*, European Portuguese, farmácia/ervanária, SNS 24 (808 24 24 24) and 112, frost-free coast and islands; footer links to LR Portugal's site (the PT shop requires login). Polish: *ty*, „…” quotes, suplement diety, apteka/drogeria/sklep zielarski, lekarz rodzinny, nocna i świąteczna opieka, NFZ 800 190 590, 112/999.
+**Portuguese** (Portugal, `pt-pt`): 0 published, **16 drafts** (every French article). **Polish** (`pl`): 0 published, **16 drafts** (every French article). EU rules apply as in French. Portuguese: *tu*, European Portuguese, farmácia/ervanária, SNS 24 (808 24 24 24) and 112, frost-free coast and islands; footer links to LR Portugal's site (the PT shop requires login). Polish: *ty*, „…” quotes, suplement diety, apteka/drogeria/sklep zielarski, lekarz rodzinny, nocna i świąteczna opieka, NFZ 800 190 590, 112/999.
 
 | French source | Portuguese draft | Polish draft |
 | --- | --- | --- |
@@ -102,15 +102,15 @@
 | routine-peau-apres-soleil | `pt-pt/pele-sensivel-depois-do-sol` | `pl/skora-wrazliwa-po-sloncu` |
 | gel-aloe-vera-maison | `pt-pt/gel-de-aloe-vera-da-tua-planta` | `pl/zel-z-wlasnego-aloesu` |
 | cultiver-aloe-vera-en-pot | `pt-pt/cultivar-aloe-vera-em-vaso` | `pl/uprawa-aloesu-w-doniczce` |
-| vitamines-fatigue-reglementation | `pt-pt/vitaminas-e-cansaco-o-que-diz-a-lei` | — |
-| digestion-foie-detox-complements | `pt-pt/digestao-figado-detox-suplementos` | — |
-| articulations-mobilite-quotidien | `pt-pt/articulacoes-e-mobilidade-no-dia-a-dia` | — |
-| hydratation-aliments-riches-en-eau | `pt-pt/alimentos-ricos-em-agua` | — |
-| petit-dejeuner-equilibre | `pt-pt/pequeno-almoco-equilibrado-ideias-simples` | — |
-| routine-matin-energie | `pt-pt/rotina-da-manha-para-mais-energia` | — |
-| soin-anti-age-quels-actifs | `pt-pt/creme-antienvelhecimento-que-ativos` | — |
-| soins-cheveux-naturel | `pt-pt/cuidar-do-cabelo-ao-natural` | — |
-| sommeil-pilier-bien-etre | `pt-pt/o-sono-pilar-do-bem-estar` | — |
+| vitamines-fatigue-reglementation | `pt-pt/vitaminas-e-cansaco-o-que-diz-a-lei` | `pl/witaminy-i-zmeczenie-co-mowia-przepisy` |
+| digestion-foie-detox-complements | `pt-pt/digestao-figado-detox-suplementos` | `pl/trawienie-watroba-detoks-suplementy` |
+| articulations-mobilite-quotidien | `pt-pt/articulacoes-e-mobilidade-no-dia-a-dia` | `pl/stawy-i-sprawnosc-na-co-dzien` |
+| hydratation-aliments-riches-en-eau | `pt-pt/alimentos-ricos-em-agua` | `pl/produkty-bogate-w-wode` |
+| petit-dejeuner-equilibre | `pt-pt/pequeno-almoco-equilibrado-ideias-simples` | `pl/zbilansowane-sniadanie-proste-pomysly` |
+| routine-matin-energie | `pt-pt/rotina-da-manha-para-mais-energia` | `pl/poranna-rutyna-wiecej-energii` |
+| soin-anti-age-quels-actifs | `pt-pt/creme-antienvelhecimento-que-ativos` | `pl/pielegnacja-anti-aging-jakie-skladniki` |
+| soins-cheveux-naturel | `pt-pt/cuidar-do-cabelo-ao-natural` | `pl/naturalna-pielegnacja-wlosow` |
+| sommeil-pilier-bien-etre | `pt-pt/o-sono-pilar-do-bem-estar` | `pl/sen-filar-dobrego-samopoczucia` |
 
 Drafts are never built into the site. **Review notes for the reviewer** are written as `#` comments at the top of each file.
 
