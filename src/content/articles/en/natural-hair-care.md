@@ -8,7 +8,8 @@ coverAlt: "Illustration of flowing green curves suggesting hair, with a leaf"
 locale: en
 translationOf: soins-cheveux-naturel
 sourceHash: "abbfae249c0a"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Healthy hair often owes more to gentle handling than to a long list of products.

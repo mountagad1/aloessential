@@ -10,7 +10,8 @@ coverAlt: "Illustration of a drop of clear aloe vera gel surrounded by leaves"
 locale: en
 translationOf: choisir-gel-aloe-vera
 sourceHash: "ea2a88778edf"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Faced with dozens of "aloe vera" gels at the chemist, the supermarket or the health food shop, it is hard to know where to start. A few simple checks help you choose with confidence.

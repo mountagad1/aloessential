@@ -15,7 +15,8 @@ sources:
 locale: en
 translationOf: gel-aloe-vera-maison
 sourceHash: "bd3c649d5e58"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 An aloe vera on the windowsill makes you want to use its gel. You can, on your skin, as long as you take a few precautions. The main one: separate the gel from the latex properly.

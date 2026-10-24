@@ -8,7 +8,8 @@ coverAlt: "Illustration of a golden crescent moon above dark foliage"
 locale: en
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Sleep affects your mood, concentration, appetite and recovery. The good news: a few habits have a real effect on its quality.

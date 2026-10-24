@@ -17,7 +17,8 @@ sources:
 locale: en
 translationOf: soin-anti-age-quels-actifs
 sourceHash: "75f22806a9f4"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 The anti-ageing aisle is full of active ingredients, percentages and promises. To find your way, start from a simple idea: a cream works on how your skin **looks** (hydration, radiance, suppleness, the appearance of fine lines). It does not turn back time. Well chosen and well used, though, it can make a real difference day to day.

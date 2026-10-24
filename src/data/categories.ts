@@ -100,7 +100,7 @@ export const CATEGORY_I18N: Partial<Record<string, Record<CategorySlug, Localize
     },
     nutrition: {
       slug: "nutrition",
-      label: "Nutrition",
+      label: "Food and nutrition",
       description: "Tasty, balanced eating, from the plate to the glass of water.",
       intro: [
         "Varied, tasty eating, from the plate to the glass: hydration, breakfast, aloe vera drinks, food supplements and nutrition labels.",

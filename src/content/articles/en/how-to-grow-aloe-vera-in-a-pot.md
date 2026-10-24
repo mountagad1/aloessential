@@ -15,7 +15,8 @@ sources:
 locale: en
 translationOf: cultiver-aloe-vera-en-pot
 sourceHash: "68d1d6053660"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Aloe vera is one of the easiest houseplants to keep… as long as you do not love it too much. This succulent comes from hot, dry regions: what kills it is almost never neglect, but too much water.

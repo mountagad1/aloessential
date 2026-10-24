@@ -8,7 +8,8 @@ coverAlt: "Illustration of a bowl of fresh orange, yellow and green fruit"
 locale: en
 translationOf: petit-dejeuner-equilibre
 sourceHash: "2cf27e1bfb8d"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 A balanced breakfast is nothing complicated. It rests on three things: fibre, protein and a piece of fruit.

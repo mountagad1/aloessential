@@ -24,7 +24,8 @@ sources:
 locale: en
 translationOf: vitamines-fatigue-reglementation
 sourceHash: "364ffbf6ad87"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Feeling run down? There is no shortage of food supplements promising energy. Behind those promises, though, sits a very precise set of rules. Knowing them helps you read labels with a more critical eye, and avoid missing tiredness that needs more than a course of vitamins.

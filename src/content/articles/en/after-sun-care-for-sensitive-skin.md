@@ -14,7 +14,8 @@ sources:
 locale: en
 translationOf: routine-peau-apres-soleil
 sourceHash: "284a4c8eb2a1"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 A day outdoors, at the beach or in the garden, and by the evening your skin feels tight, warm and a little red. People with sensitive skin know this well: the sun puts it to the test, even with protection. A few simple steps help you feel comfortable again. They do not replace good sun protection, and they do not treat real sunburn.

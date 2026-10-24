@@ -13,7 +13,8 @@ sources:
 locale: en
 translationOf: aloe-vera-bienfaits-peau
 sourceHash: "c26974842af3"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Aloe vera is one of the most common plants in our bathroom cabinets. Its gel, taken from the heart of the leaf, is more than 98% water, along with polysaccharides, vitamins and minerals. Here is what you can reasonably expect from it.

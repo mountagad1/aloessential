@@ -8,7 +8,8 @@ coverAlt: "Illustration of cucumber slices, leaves and water droplets"
 locale: en
 translationOf: hydratation-aliments-riches-en-eau
 sourceHash: "16e7e38e09cd"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 When we think about staying hydrated, drinks come to mind first. Yet a fair share of the water we take in comes from food.

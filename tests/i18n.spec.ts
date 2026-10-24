@@ -52,7 +52,8 @@ const PUBLISHED = {
     article: "/en/articles/demo-article/",
     category: "/en/topics/health/",
     categoryLabel: "Health",
-    emptyCategories: ["en/topics/advice", "en/topics/beauty", "en/topics/nutrition"],
+    // English is published for real (src/content/articles/en/): every English category holds articles.
+    emptyCategories: [],
     body: "Test paragraph in English",
     name: "English",
     fab: "Become an LR distributor",
@@ -123,8 +124,12 @@ const PUBLISHED = {
     menu: ["Otwórz menu", "Zamknij menu"],
   },
 } as const;
-/** Real published Italian content: 16 articles and 3 more categories (Santé is already counted), each with its French page. */
-const IT_ANNOTATED = (16 + 3) * 2;
+/**
+ * Real published translations (Italian, English): 16 articles and 3 more categories each
+ * (Santé is already counted), plus the same 19 French pages, annotated once.
+ */
+const REAL_LOCALES = 2;
+const REAL_ANNOTATED = (16 + 3) * (REAL_LOCALES + 1);
 const published = Object.entries(PUBLISHED) as [keyof typeof PUBLISHED, (typeof PUBLISHED)[keyof typeof PUBLISHED]][];
 
 /** hreflang → absolute URL, from <link rel="alternate" hreflang> tags. */
@@ -289,8 +294,8 @@ test.describe("localized pages (static scan)", () => {
       }
     }
     // Demo article, homepages and the Santé category, in all seven locales (21 pages),
-    // plus the published Italian articles and categories with their French sources.
-    expect(annotated).toBe(21 + IT_ANNOTATED);
+    // plus the published Italian and English articles and categories with their French sources.
+    expect(annotated).toBe(21 + REAL_ANNOTATED);
     expect(alternatesOf(read("articles/article-demo"))).toEqual({
       fr: `${ORIGIN}/articles/article-demo/`,
       en: `${ORIGIN}/en/articles/demo-article/`,
@@ -307,6 +312,7 @@ test.describe("localized pages (static scan)", () => {
     expect(alternatesOf(read("rubriques/beaute"))).toEqual({
       fr: `${ORIGIN}/rubriques/beaute/`,
       it: `${ORIGIN}/it/rubriche/bellezza/`,
+      en: `${ORIGIN}/en/topics/beauty/`,
       "x-default": `${ORIGIN}/rubriques/beaute/`,
     });
   });

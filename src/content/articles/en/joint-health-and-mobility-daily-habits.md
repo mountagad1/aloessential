@@ -18,7 +18,8 @@ sources:
 locale: en
 translationOf: articulations-mobilite-quotidien
 sourceHash: "30e39976d2dc"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Getting up without stiffness, climbing the stairs without thinking, spending a whole afternoon in the garden: mobility is a comfort you mostly notice when it fades. The good news is that much of what keeps it going comes down to everyday habits.

@@ -27,7 +27,8 @@ sources:
 locale: en
 translationOf: aloe-vera-a-boire-comment-choisir
 sourceHash: "99a4832eaa0d"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Aloe vera drinks all look alike on the shelf: a bottle, a green leaf, a promise of wellbeing. What is inside varies a lot. Before you choose, it helps to know what to look for on the label… and what the label is not allowed to promise.

@@ -8,7 +8,8 @@ coverAlt: "Illustration of the sun rising over green hills"
 locale: en
 translationOf: routine-matin-energie
 sourceHash: "31ab0570e763"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 You do not need a two-hour routine to get off to a good start. A few regular habits are often enough to change how a morning feels.

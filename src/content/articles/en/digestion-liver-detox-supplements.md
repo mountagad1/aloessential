@@ -24,7 +24,8 @@ sources:
 locale: en
 translationOf: digestion-foie-detox-complements
 sourceHash: "85886cfc227c"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 In spring, and again after Christmas, "detox" plans and gut supplements fill the shelves. Their packs promise to cleanse, drain and rebalance. The rules on what a food supplement can claim are strict, though. Knowing them helps you sort the useful from the hype.

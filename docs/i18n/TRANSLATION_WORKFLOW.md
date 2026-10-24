@@ -28,9 +28,9 @@
 | soins-cheveux-naturel | `it/cura-dei-capelli-al-naturale` | — |
 | sommeil-pilier-bien-etre | `it/sonno-pilastro-del-benessere` | — |
 
-**English** (UK readers): 0 published, **16 drafts** (every French article), 0 not started.
+**English** (UK readers): **16 published** (2026-10-24, reviewer Philippe Cros). The English "nutrition" category is labelled *Food and nutrition* so its page title differs from the French *Nutrition* (titles must be unique site-wide).
 
-| French source | English draft | Localization beyond translation |
+| French source | English article (published) | Localization beyond translation |
 | --- | --- | --- |
 | aloe-vera-bienfaits-peau | `en/aloe-vera-for-skin` | pharmacist / GP / NHS 111 |
 | choisir-gel-aloe-vera | `en/how-to-choose-aloe-vera-gel` | chemist and health food shop context |

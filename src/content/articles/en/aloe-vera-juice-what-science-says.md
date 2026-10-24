@@ -20,7 +20,8 @@ sources:
 locale: en
 translationOf: jus-aloe-vera-science
 sourceHash: "63507b38c25e"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Aloe vera juice has found its place on the wellbeing shelf. But between marketing claims and scientific data, the gap is sometimes wide.
