@@ -3,8 +3,11 @@ title: "Aloe vera à boire : comment bien le choisir"
 description: "Gel ou jus, teneur en aloe, aloïne, additifs, allégations : les repères pour lire une étiquette d'aloe vera à boire et choisir en connaissance de cause."
 category: nutrition
 date: 2026-10-15
-cover: /covers/jus-aloe.svg
-coverAlt: "Illustration d'un verre de boisson vert pâle à côté d'une feuille d'aloe vera"
+cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
+coverAlt: "Boisson à l’aloe vera dans un verre avec citron, menthe et glaçons, entourée de feuilles fraîches dans une cuisine ouverte sur une salle à manger lumineuse."
+coverTitle: "Aloe vera à boire : comment choisir ?"
+coverCaption: "Découvrez les critères à vérifier pour choisir une boisson à l’aloe vera et connaître les précautions à prendre."
+coverDescription: "Photographie réaliste d’une boisson translucide à l’aloe vera versée dans un verre avec des glaçons, du citron et de la menthe. Des feuilles fraîches d’aloe vera sont disposées sur un plan de travail en bois dans une cuisine ouverte sur une salle à manger ensoleillée."
 products: [aloe-vera-drinking-gel-active-freedom, aloe-vera-gel-a-boire-immune-plus, set-vitalite]
 sources:
   - title: "Règlement (UE) 2021/468 relatif aux dérivés hydroxyanthracéniques"

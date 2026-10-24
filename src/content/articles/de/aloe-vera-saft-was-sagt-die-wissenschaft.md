@@ -5,8 +5,10 @@ title: "Aloe-vera-Saft: was sagt die Wissenschaft?"
 description: "Verdauung, Detox, Abwehrkräfte: Um Aloe-vera-Saft ranken sich viele Versprechen. Das lassen die Studien tatsächlich zu."
 category: sante
 date: 2026-10-22
-cover: /covers/jus-aloe.svg
-coverAlt: "Illustration eines Glases mit hellgrünem Saft neben einem Aloe-vera-Blatt"
+cover: /covers/photos/jus-aloe-vera-science-laboratoire-analyse.webp
+coverAlt: "Glasflasche und Glas mit blassgelbgrünem Aloe-vera-Saft auf einem Labortisch, mit frischen Blättern, Bechergläsern, Reagenzgläsern und einem Mikroskop."
+coverTitle: "Aloe-vera-Saft: Analyse und Zusammensetzung"
+coverCaption: "Die Forschung zu Aloe-vera-Saft betrachtet vor allem Zusammensetzung, Herstellung, Qualität und die verfügbaren Daten."
 sources:
   - title: "Verordnung (EU) 2021/468 zu Hydroxyanthracenderivaten"
     url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32021R0468"

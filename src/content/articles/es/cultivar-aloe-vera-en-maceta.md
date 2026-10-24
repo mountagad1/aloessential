@@ -5,8 +5,10 @@ title: "Cultivar aloe vera en maceta: la guía sencilla"
 description: "Luz, sustrato, riego, invierno, hijuelos para trasplantar: cómo mantener en forma un aloe vera en casa, y los errores que lo pudren."
 category: conseils
 date: 2026-10-23
-cover: /covers/aloe-pot.svg
-coverAlt: "Ilustración de un aloe vera en una maceta de barro, al sol en el alféizar"
+cover: /covers/photos/cultiver-aloe-vera-en-pot-guide.webp
+coverAlt: "Aloe vera en maceta junto a una ventana luminosa, con sustrato drenante, un hijuelo joven y material para trasplantar."
+coverTitle: "Cultivar aloe vera en maceta: la guía sencilla"
+coverCaption: "Luz, riego, sustrato y cuidados en invierno: los gestos adecuados para mantener tu aloe vera en plena forma."
 sources:
   - title: "Royal Horticultural Society (RHS), Aloe vera (en inglés)"
     url: "https://www.rhs.org.uk/plants/981/aloe-vera/details"

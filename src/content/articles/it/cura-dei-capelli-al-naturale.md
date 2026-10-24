@@ -3,8 +3,10 @@ title: "Prendersi cura dei capelli al naturale"
 description: "Lavaggi, maschere, asciugatura: una routine per capelli semplice e delicata, con qualche ingrediente naturale che ha dato buona prova di sé."
 category: beaute
 date: 2026-10-23
-cover: /covers/cheveux.svg
-coverAlt: "Illustrazione di curve fluide verdi che evocano una chioma, con una foglia"
+cover: /covers/photos/soins-cheveux-naturels-aloe-vera-huiles.webp
+coverAlt: "Donna dai capelli lunghi e mossi che applica un trattamento naturale, con foglie di aloe vera, olio vegetale e una spazzola di legno in un bagno luminoso."
+coverTitle: "Cura naturale dei capelli: una routine botanica"
+coverCaption: "L'aloe vera e alcuni oli vegetali possono entrare in una routine adatta alla natura dei capelli."
 locale: it
 translationOf: soins-cheveux-naturel
 sourceHash: "abbfae249c0a"

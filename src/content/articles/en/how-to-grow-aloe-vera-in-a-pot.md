@@ -5,8 +5,10 @@ title: "How to grow aloe vera in a pot: a simple guide"
 description: "Light, compost, watering, winter, offsets to repot: how to keep an aloe vera thriving indoors, and the mistakes that make it rot."
 category: conseils
 date: 2026-10-22
-cover: /covers/aloe-pot.svg
-coverAlt: "Illustration of an aloe vera in a terracotta pot, in the sun on a windowsill"
+cover: /covers/photos/cultiver-aloe-vera-en-pot-guide.webp
+coverAlt: "Aloe vera in a pot by a bright window, with free-draining compost, a young offset and repotting tools."
+coverTitle: "How to grow aloe vera in a pot: a simple guide"
+coverCaption: "Light, watering, compost and winter care: the right habits to keep your aloe vera thriving."
 sources:
   - title: "Royal Horticultural Society (RHS), Aloe vera"
     url: "https://www.rhs.org.uk/plants/981/aloe-vera/details"

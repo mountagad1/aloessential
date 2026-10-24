@@ -5,8 +5,10 @@ title: "Il gel di aloe vera della tua pianta: istruzioni prudenti"
 description: "Tagliare una foglia, far colare il lattice, estrarre e conservare il gel: come usare sulla pelle il gel della tua pianta, e perché non berlo."
 category: beaute
 date: 2026-10-22
-cover: /covers/aloe-coupe.svg
-coverAlt: "Illustrazione di una foglia di aloe vera tagliata che mostra il gel trasparente"
+cover: /covers/photos/gel-aloe-vera-maison-mode-emploi.webp
+coverAlt: "Gel trasparente estratto da una foglia fresca di aloe vera in un barattolo di vetro, con pezzi di foglia e un cucchiaio di legno."
+coverTitle: "Gel di aloe vera fatto in casa: preparazione e precauzioni"
+coverCaption: "Preparare il gel di aloe vera fresco richiede qualche precauzione per separare il gel trasparente dal lattice giallo della foglia."
 sources:
   - title: "NCCIH (National Institutes of Health), Aloe Vera: usi e sicurezza (in inglese)"
     url: "https://www.nccih.nih.gov/health/aloe-vera"

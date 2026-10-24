@@ -3,8 +3,10 @@ title: "Natural hair care: a simple, gentle routine"
 description: "Washing, masks, drying: a simple and gentle hair care routine, with a few natural ingredients that have proved their worth."
 category: beaute
 date: 2026-10-23
-cover: /covers/cheveux.svg
-coverAlt: "Illustration of flowing green curves suggesting hair, with a leaf"
+cover: /covers/photos/soins-cheveux-naturels-aloe-vera-huiles.webp
+coverAlt: "Woman with long wavy hair applying a natural hair treatment, with aloe vera leaves, plant oil and a wooden brush in a bright bathroom."
+coverTitle: "Natural hair care: a botanical routine"
+coverCaption: "Aloe vera and some plant oils can be part of a routine suited to your hair type."
 locale: en
 translationOf: soins-cheveux-naturel
 sourceHash: "abbfae249c0a"

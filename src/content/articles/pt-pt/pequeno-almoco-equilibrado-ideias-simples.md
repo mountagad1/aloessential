@@ -3,8 +3,10 @@ title: "Pequeno-almoço equilibrado: as nossas ideias simples"
 description: "Salgado ou doce, rápido ou mais guloso: cinco pequenos-almoços equilibrados e fáceis para chegar ao almoço sem fome."
 category: nutrition
 date: 2026-10-23
-cover: /covers/petit-dejeuner.svg
-coverAlt: "Ilustração de uma taça de fruta fresca cor de laranja, amarela e verde"
+cover: /covers/photos/petit-dejeuner-equilibre-fruits-granola.webp
+coverAlt: "Taça de iogurte com granola, banana, frutos vermelhos e sementes, com um copo de sumo de laranja numa mesa luminosa."
+coverTitle: "Pequeno-almoço equilibrado: começar bem o dia"
+coverCaption: "Um pequeno-almoço equilibrado pode juntar fruta, cereais, uma fonte de proteína e uma bebida."
 locale: pt-pt
 translationOf: petit-dejeuner-equilibre
 sourceHash: "2cf27e1bfb8d"

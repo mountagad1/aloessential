@@ -7,8 +7,10 @@ title: "Digestão, fígado, detox: o que os suplementos podem prometer"
 description: "Curas detox, probióticos, plantas para o fígado: o que diz a regulamentação europeia, o que a alimentação já faz bem e quando ir ao médico."
 category: sante
 date: 2026-10-23
-cover: /covers/digestion.svg
-coverAlt: "Ilustração de uma taça de cereais coloridos rodeada de folhas"
+cover: /covers/photos/digestion-foie-detox-complements-guide.webp
+coverAlt: "Aloe vera fresca, bebida vegetal, limão, gengibre e ervas aromáticas numa bancada luminosa, com uma ilustração anatómica do fígado e do aparelho digestivo."
+coverTitle: "Digestão, fígado e detox: escolher bem os suplementos"
+coverCaption: "Suplementos, plantas e hábitos de vida: o que saber para cuidar da digestão e do fígado."
 sources:
   - title: "Regulamento (CE) n.º 1924/2006 relativo às alegações nutricionais e de saúde sobre os alimentos"
     url: "https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32006R1924"

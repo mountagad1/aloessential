@@ -10,8 +10,10 @@ title: "Digestion, liver, detox: what supplements can really promise"
 description: "Detox plans, probiotics, liver herbs: what UK rules allow, what a good diet already does well, and when to see your GP."
 category: sante
 date: 2026-10-23
-cover: /covers/digestion.svg
-coverAlt: "Illustration of a bowl of colourful cereals surrounded by leaves"
+cover: /covers/photos/digestion-foie-detox-complements-guide.webp
+coverAlt: "Fresh aloe vera, a plant-based drink, lemon, ginger and herbs on a bright worktop, with an anatomical illustration of the liver and digestive system."
+coverTitle: "Digestion, liver and detox: choosing supplements wisely"
+coverCaption: "Supplements, plants and lifestyle: what to know to look after your digestion and your liver."
 sources:
   - title: "Regulation (EC) No 1924/2006 on nutrition and health claims, version in force in Great Britain (legislation.gov.uk)"
     url: "https://www.legislation.gov.uk/eur/2006/1924/contents"

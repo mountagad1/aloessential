@@ -3,8 +3,10 @@ title: "Sleep, a pillar of wellbeing"
 description: "Regular hours, light, temperature, screens: the most reliable ways to sleep better, according to current recommendations."
 category: sante
 date: 2026-10-23
-cover: /covers/sommeil.svg
-coverAlt: "Illustration of a golden crescent moon above dark foliage"
+cover: /covers/photos/reveil-difficile-fatigue-chambre-blanche.webp
+coverAlt: "Tired woman sitting up in bed with white sheets on waking, one hand on her temple, in a bright, minimalist bedroom."
+coverTitle: "A hard morning: understanding tiredness on waking"
+coverCaption: "Waking up tired can be linked to how well or how long you slept, or to the previous evening's habits."
 locale: en
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"

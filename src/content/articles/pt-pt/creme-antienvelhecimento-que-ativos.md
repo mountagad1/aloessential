@@ -5,8 +5,10 @@ title: "Creme antienvelhecimento: que ativos para que necessidades?"
 description: "Proteção solar, retinol, vitamina C, niacinamida, ácido hialurónico: o que fazem realmente os ativos antienvelhecimento e como combiná-los."
 category: beaute
 date: 2026-10-23
-cover: /covers/anti-age.svg
-coverAlt: "Ilustração de uma flor estilizada e de gotas de óleo sobre fundo creme"
+cover: /covers/photos/soin-anti-age-actifs-couple-peau-mature.webp
+coverAlt: "Mulher de pele madura a aplicar creme na face ao lado de um homem de cabelo grisalho, com aloe vera, óleos e ingredientes botânicos em primeiro plano."
+coverTitle: "Creme antienvelhecimento: os ativos a conhecer"
+coverCaption: "O cuidado da pele madura pode apoiar-se em diferentes ativos cosméticos, consoante as necessidades da pele."
 sources:
   - title: "Regulamento (UE) 2024/996 (vitamina A nos produtos cosméticos)"
     url: "https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R0996"

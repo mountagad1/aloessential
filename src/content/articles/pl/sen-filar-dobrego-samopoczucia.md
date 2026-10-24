@@ -3,8 +3,10 @@ title: "Sen, filar dobrego samopoczucia"
 description: "Regularność, światło, temperatura, ekrany: najpewniejsze sposoby na lepszy sen według aktualnych zaleceń."
 category: sante
 date: 2026-10-23
-cover: /covers/sommeil.svg
-coverAlt: "Ilustracja złotego sierpa księżyca nad ciemnym listowiem"
+cover: /covers/photos/reveil-difficile-fatigue-chambre-blanche.webp
+coverAlt: "Zmęczona kobieta siedzi po przebudzeniu w łóżku z białą pościelą, z dłonią na skroni, w jasnej, minimalistycznej sypialni."
+coverTitle: "Trudne przebudzenie: skąd poranne zmęczenie"
+coverCaption: "Trudne przebudzenie może wynikać z jakości lub długości snu albo z wieczornych nawyków."
 locale: pl
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"

@@ -5,8 +5,10 @@ title: "Uprawa aloesu w doniczce: prosty poradnik"
 description: "Światło, podłoże, podlewanie, zimowanie, odrosty do przesadzenia: jak dbać o aloes w domu i jakie błędy sprawiają, że gnije."
 category: conseils
 date: 2026-10-23
-cover: /covers/aloe-pot.svg
-coverAlt: "Ilustracja aloesu w glinianej doniczce, w słońcu na parapecie"
+cover: /covers/photos/cultiver-aloe-vera-en-pot-guide.webp
+coverAlt: "Aloes w doniczce przy jasnym oknie, z przepuszczalnym podłożem, młodym odrostem i narzędziami do przesadzania."
+coverTitle: "Uprawa aloesu w doniczce: prosty poradnik"
+coverCaption: "Światło, podlewanie, podłoże i zimowanie: dobre nawyki, dzięki którym Twój aloes pozostanie w świetnej formie."
 sources:
   - title: "Royal Horticultural Society (RHS), Aloe vera (po angielsku)"
     url: "https://www.rhs.org.uk/plants/981/aloe-vera/details"

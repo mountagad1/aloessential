@@ -3,8 +3,11 @@ title: "Utiliser le gel d'un aloe vera maison : le mode d'emploi prudent"
 description: "Couper une feuille, laisser s'écouler le latex, extraire le gel, le conserver : comment utiliser le gel de sa plante sur la peau, et pourquoi ne pas le boire."
 category: beaute
 date: 2026-10-16
-cover: /covers/aloe-coupe.svg
-coverAlt: "Illustration d'une feuille d'aloe vera coupée laissant voir son gel translucide"
+cover: /covers/photos/gel-aloe-vera-maison-mode-emploi.webp
+coverAlt: "Gel translucide extrait d’une feuille fraîche d’aloe vera dans un bocal en verre, accompagné de morceaux de feuille et d’une cuillère en bois."
+coverTitle: "Gel d’aloe vera maison : préparation et précautions"
+coverCaption: "Préparer du gel d’aloe vera frais demande quelques précautions pour séparer le gel transparent du latex jaune de la feuille."
+coverDescription: "Photographie réaliste de gel d’aloe vera fraîchement extrait, dans un bocal en verre, avec des feuilles coupées et une cuillère en bois."
 sources:
   - title: "NCCIH (National Institutes of Health), Aloe Vera : usages et sécurité"
     url: "https://www.nccih.nih.gov/health/aloe-vera"

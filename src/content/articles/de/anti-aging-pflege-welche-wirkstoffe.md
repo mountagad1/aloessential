@@ -5,8 +5,10 @@ title: "Anti-Aging-Pflege: welche Wirkstoffe für welche Bedürfnisse?"
 description: "Sonnenschutz, Retinol, Vitamin C, Niacinamid, Hyaluronsäure: was Anti-Aging-Wirkstoffe wirklich leisten und wie Sie sie kombinieren."
 category: beaute
 date: 2026-10-23
-cover: /covers/anti-age.svg
-coverAlt: "Illustration einer stilisierten Blume und Öltropfen auf cremefarbenem Grund"
+cover: /covers/photos/soin-anti-age-actifs-couple-peau-mature.webp
+coverAlt: "Frau mit reifer Haut trägt Creme auf ihre Wange auf, neben einem Mann mit grauen Haaren, mit Aloe vera, Ölen und pflanzlichen Zutaten im Vordergrund."
+coverTitle: "Anti-Aging-Pflege: die wichtigsten Wirkstoffe"
+coverCaption: "Die Pflege reifer Haut kann je nach Bedarf auf unterschiedliche kosmetische Wirkstoffe setzen."
 sources:
   - title: "Verordnung (EU) 2024/996 (Vitamin A in kosmetischen Mitteln)"
     url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32024R0996"

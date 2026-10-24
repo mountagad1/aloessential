@@ -3,8 +3,10 @@ title: "Poranna rutyna, która doda Ci energii"
 description: "Światło dzienne, nawodnienie, łagodny ruch: pięć prostych nawyków na dobry początek dnia, bez wstawania o świcie."
 category: conseils
 date: 2026-10-23
-cover: /covers/routine-matin.svg
-coverAlt: "Ilustracja wschodzącego słońca nad zielonymi wzgórzami"
+cover: /covers/photos/routine-matin-energie-soleil-levant-aloe-vera.webp
+coverAlt: "Butelka i szklanka napoju z aloesu na minimalistycznym tarasie przy basenie, ze świeżymi liśćmi aloesu i wschodzącym słońcem nad morzem."
+coverTitle: "Poranna rutyna: jasny początek dnia"
+coverCaption: "Prosta poranna rutyna może łączyć nawodnienie, światło dzienne i nawyki dopasowane do Twojego rytmu."
 locale: pl
 translationOf: routine-matin-energie
 sourceHash: "31ab0570e763"

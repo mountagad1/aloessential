@@ -3,8 +3,10 @@ title: "Flüssigkeit aus dem Teller: wasserreiche Lebensmittel"
 description: "Gurke, Wassermelone, Zucchini, Zitrusfrüchte: Ein Teil unserer Flüssigkeit kommt vom Teller. Unsere Ideen, das ganze Jahr davon zu profitieren."
 category: nutrition
 date: 2026-10-23
-cover: /covers/hydratation.svg
-coverAlt: "Illustration von Gurkenscheiben, Blättern und Wassertropfen"
+cover: /covers/photos/aliments-riches-en-eau-hydratation.webp
+coverAlt: "Scheiben von Wassermelone, Gurke und Zucchini mit Zitrusfrüchten auf einem hellen Steintisch, im Hintergrund unscharf das Meer."
+coverTitle: "Wasserreiche Lebensmittel"
+coverCaption: "Gurke, Wassermelone, Zucchini und Zitrusfrüchte tragen zur täglichen Flüssigkeitszufuhr bei."
 locale: de
 translationOf: hydratation-aliments-riches-en-eau
 sourceHash: "16e7e38e09cd"

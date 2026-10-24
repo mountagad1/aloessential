@@ -5,8 +5,10 @@ title: "Piel sensible después del sol: la rutina que calma"
 description: "Refrescar, limpiar con suavidad, hidratar, proteger: la rutina que calma la piel sensible después del sol, y cuándo pedir ayuda."
 category: beaute
 date: 2026-10-23
-cover: /covers/apres-soleil.svg
-coverAlt: "Ilustración de una puesta de sol detrás de hojas de aloe vera con gotas"
+cover: /covers/photos/routine-peau-apres-soleil-aloe-vera-plage.webp
+coverAlt: "Mujer aplicándose gel de aloe vera en el hombro en una terraza soleada frente a una playa mediterránea, con hojas frescas de aloe vera y cosméticos naturales."
+coverTitle: "Piel después del sol: los gestos adecuados"
+coverCaption: "Después de un día al sol, una rutina suave para hidratar la piel y mantener su confort."
 locale: es
 translationOf: routine-peau-apres-soleil
 sourceHash: "284a4c8eb2a1"

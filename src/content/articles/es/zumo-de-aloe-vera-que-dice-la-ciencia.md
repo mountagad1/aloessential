@@ -5,8 +5,10 @@ title: "Zumo de aloe vera: qué dice la ciencia"
 description: "Digestión, détox, defensas: el zumo de aloe vera va acompañado de muchas promesas. Esto es lo que los estudios permiten afirmar de verdad."
 category: sante
 date: 2026-10-23
-cover: /covers/jus-aloe.svg
-coverAlt: "Ilustración de un vaso de zumo verde claro junto a una hoja de aloe vera"
+cover: /covers/photos/jus-aloe-vera-science-laboratoire-analyse.webp
+coverAlt: "Botella y vaso de zumo de aloe vera amarillo verdoso pálido en una mesa de laboratorio, con hojas frescas, vasos de precipitados, tubos de ensayo y un microscopio."
+coverTitle: "Zumo de aloe vera: análisis científico y composición"
+coverCaption: "El estudio del zumo de aloe vera se centra en su composición, su elaboración, su calidad y los datos científicos disponibles."
 sources:
   - title: "Reglamento (UE) 2021/468 sobre los derivados hidroxiantracénicos"
     url: "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32021R0468"

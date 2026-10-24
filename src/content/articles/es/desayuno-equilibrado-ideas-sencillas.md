@@ -3,8 +3,10 @@ title: "Desayuno equilibrado: nuestras ideas sencillas"
 description: "Salado o dulce, rápido o más elaborado: cinco desayunos equilibrados y fáciles para llegar a la comida sin hambre."
 category: nutrition
 date: 2026-10-23
-cover: /covers/petit-dejeuner.svg
-coverAlt: "Ilustración de un cuenco de fruta fresca naranja, amarilla y verde"
+cover: /covers/photos/petit-dejeuner-equilibre-fruits-granola.webp
+coverAlt: "Cuenco de yogur con granola, plátano, frutos rojos y semillas, con un vaso de zumo de naranja sobre una mesa luminosa."
+coverTitle: "Desayuno equilibrado: empezar bien el día"
+coverCaption: "Un desayuno equilibrado puede combinar fruta, cereales, una fuente de proteínas y una bebida."
 locale: es
 translationOf: petit-dejeuner-equilibre
 sourceHash: "2cf27e1bfb8d"

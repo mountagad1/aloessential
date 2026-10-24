@@ -5,8 +5,10 @@ title: "Crema antiedad: ¿qué activos para qué necesidades?"
 description: "Protección solar, retinol, vitamina C, niacinamida, ácido hialurónico: lo que hacen de verdad los activos antiedad y cómo combinarlos."
 category: beaute
 date: 2026-10-23
-cover: /covers/anti-age.svg
-coverAlt: "Ilustración de una flor estilizada y gotas de aceite sobre fondo crema"
+cover: /covers/photos/soin-anti-age-actifs-couple-peau-mature.webp
+coverAlt: "Mujer de piel madura aplicándose crema en la mejilla junto a un hombre de pelo gris, con aloe vera, aceites e ingredientes botánicos en primer plano."
+coverTitle: "Crema antiedad: los activos que conviene conocer"
+coverCaption: "El cuidado de la piel madura puede apoyarse en distintos activos cosméticos, según las necesidades de la piel."
 sources:
   - title: "Reglamento (UE) 2024/996 (vitamina A en los productos cosméticos)"
     url: "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R0996"

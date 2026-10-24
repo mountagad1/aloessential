@@ -5,8 +5,10 @@ title: "Using the gel from your own aloe vera plant: a careful guide"
 description: "Cut a leaf, let the latex drain, extract and store the gel: how to use your plant's gel on your skin, and why you should not drink it."
 category: beaute
 date: 2026-10-22
-cover: /covers/aloe-coupe.svg
-coverAlt: "Illustration of a cut aloe vera leaf showing its clear gel"
+cover: /covers/photos/gel-aloe-vera-maison-mode-emploi.webp
+coverAlt: "Clear gel taken from a fresh aloe vera leaf in a glass jar, with pieces of leaf and a wooden spoon."
+coverTitle: "Aloe vera gel from your plant: preparation and precautions"
+coverCaption: "Preparing fresh aloe vera gel takes a few precautions to separate the clear gel from the leaf's yellow latex."
 sources:
   - title: "NCCIH (National Institutes of Health), Aloe Vera: usefulness and safety"
     url: "https://www.nccih.nih.gov/health/aloe-vera"

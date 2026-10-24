@@ -10,8 +10,10 @@ title: "Vitamins and tiredness: what the rules really say"
 description: "Which nutrients may \"contribute to the reduction of tiredness and fatigue\"? How to read %NRV on a label, and when tiredness needs a GP."
 category: sante
 date: 2026-10-23
-cover: /covers/vitamines.svg
-coverAlt: "Illustration of colourful citrus slices surrounded by leaves"
+cover: /covers/photos/vitamines-fatigue-reglementation-vnr.webp
+coverAlt: "Tired woman at a table in a bright kitchen, with a variety of foods, a glass of lemon water and a bottle of supplements showing a nutrition table."
+coverTitle: "Vitamins and tiredness: understanding %NRV on labels"
+coverCaption: "The vitamins and minerals allowed to claim a contribution to reducing tiredness are subject to precise regulatory conditions."
 sources:
   - title: "Regulation (EC) No 1924/2006 on nutrition and health claims, version in force in Great Britain (legislation.gov.uk)"
     url: "https://www.legislation.gov.uk/eur/2006/1924/contents"

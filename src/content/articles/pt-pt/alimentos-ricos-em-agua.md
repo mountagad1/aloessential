@@ -3,8 +3,10 @@ title: "Hidratação: os alimentos ricos em água"
 description: "Pepino, melancia, curgete, citrinos: parte da hidratação vem do prato. As nossas ideias para aproveitar isso durante todo o ano."
 category: nutrition
 date: 2026-10-23
-cover: /covers/hydratation.svg
-coverAlt: "Ilustração de rodelas de pepino, folhas e gotas de água"
+cover: /covers/photos/aliments-riches-en-eau-hydratation.webp
+coverAlt: "Fatias de melancia, pepino e curgete com citrinos numa mesa de pedra clara, com o mar desfocado ao fundo."
+coverTitle: "Hidratação: os alimentos ricos em água"
+coverCaption: "O pepino, a melancia, a curgete e os citrinos contribuem para o aporte diário de água."
 locale: pt-pt
 translationOf: hydratation-aliments-riches-en-eau
 sourceHash: "16e7e38e09cd"

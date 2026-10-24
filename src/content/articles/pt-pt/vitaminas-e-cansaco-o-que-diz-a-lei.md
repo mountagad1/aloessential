@@ -8,8 +8,10 @@ title: "Vitaminas e cansaço: o que diz realmente a lei"
 description: "Que nutrientes podem «contribuir para a redução do cansaço e da fadiga»? Como ler o % VRN no rótulo e quando o cansaço merece ir ao médico."
 category: sante
 date: 2026-10-23
-cover: /covers/vitamines.svg
-coverAlt: "Ilustração de rodelas de citrinos coloridas rodeadas de folhas"
+cover: /covers/photos/vitamines-fatigue-reglementation-vnr.webp
+coverAlt: "Mulher cansada a uma mesa numa cozinha luminosa, com alimentos variados, um copo de água com limão e um frasco de suplementos com tabela nutricional."
+coverTitle: "Vitaminas e cansaço: perceber o % VRN nos rótulos"
+coverCaption: "As vitaminas e os minerais que podem alegar contribuir para a redução do cansaço estão sujeitos a condições regulamentares precisas."
 sources:
   - title: "Regulamento (CE) n.º 1924/2006 relativo às alegações nutricionais e de saúde sobre os alimentos"
     url: "https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32006R1924"

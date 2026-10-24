@@ -6,8 +6,10 @@ title: "Skóra wrażliwa po słońcu: kojąca pielęgnacja"
 description: "Ochłodzić, delikatnie oczyścić, nawilżyć, chronić: pielęgnacja, która koi wrażliwą skórę po słońcu, i kiedy szukać pomocy."
 category: beaute
 date: 2026-10-23
-cover: /covers/apres-soleil.svg
-coverAlt: "Ilustracja zachodu słońca za liśćmi aloesu z kroplami"
+cover: /covers/photos/routine-peau-apres-soleil-aloe-vera-plage.webp
+coverAlt: "Kobieta nakłada żel aloesowy na ramię na słonecznym tarasie z widokiem na śródziemnomorską plażę, obok świeże liście aloesu i naturalne kosmetyki."
+coverTitle: "Skóra po słońcu: dobre nawyki"
+coverCaption: "Po dniu na słońcu łagodna pielęgnacja pomaga nawilżyć skórę i zachować jej komfort."
 sources:
   - title: "Pacjent.gov.pl (Ministerstwo Zdrowia), gdzie szukać pomocy medycznej"
     url: "https://pacjent.gov.pl/"

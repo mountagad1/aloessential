@@ -14,8 +14,10 @@ title: "Digestione, fegato, detox: cosa promettono gli integratori"
 description: "Cure detox, probiotici, piante per il fegato: cosa dicono le regole europee e italiane, cosa fa già benissimo l'alimentazione e quando rivolgersi al medico."
 category: sante
 date: 2026-10-23
-cover: /covers/digestion.svg
-coverAlt: "Illustrazione di una ciotola di cereali colorati circondata da foglie"
+cover: /covers/photos/digestion-foie-detox-complements-guide.webp
+coverAlt: "Aloe vera fresca, bevanda vegetale, limone, zenzero ed erbe aromatiche su un piano di lavoro luminoso, con un'illustrazione anatomica del fegato e dell'apparato digerente."
+coverTitle: "Digestione, fegato e detox: scegliere bene gli integratori"
+coverCaption: "Integratori, piante e abitudini di vita: i criteri da conoscere per prendersi cura della digestione e del fegato."
 sources:
   - title: "Regolamento (CE) n. 1924/2006 relativo alle indicazioni nutrizionali e sulla salute"
     url: "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32006R1924"

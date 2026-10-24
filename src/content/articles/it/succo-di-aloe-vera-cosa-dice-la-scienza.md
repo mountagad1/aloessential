@@ -8,8 +8,10 @@ title: "Succo di aloe vera: cosa dice la scienza"
 description: "Digestione, detox, difese immunitarie: il succo di aloe vera è circondato da promesse. Ecco cosa permettono davvero di affermare gli studi."
 category: sante
 date: 2026-10-22
-cover: /covers/jus-aloe.svg
-coverAlt: "Illustrazione di un bicchiere di succo verde chiaro accanto a una foglia di aloe vera"
+cover: /covers/photos/jus-aloe-vera-science-laboratoire-analyse.webp
+coverAlt: "Bottiglia di vetro e bicchiere di succo di aloe vera giallo-verde pallido su un bancone di laboratorio, con foglie fresche, becher, provette e un microscopio."
+coverTitle: "Succo di aloe vera: analisi scientifica e composizione"
+coverCaption: "Lo studio del succo di aloe vera riguarda in particolare composizione, preparazione, qualità e dati scientifici disponibili."
 sources:
   - title: "Regolamento (UE) 2021/468 sui derivati idrossiantracenici"
     url: "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32021R0468"

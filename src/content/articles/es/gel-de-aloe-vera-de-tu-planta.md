@@ -5,8 +5,10 @@ title: "El gel de aloe vera de tu planta: instrucciones prudentes"
 description: "Cortar una hoja, dejar escurrir el látex, extraer y conservar el gel: cómo usar en la piel el gel de tu planta, y por qué no beberlo."
 category: beaute
 date: 2026-10-23
-cover: /covers/aloe-coupe.svg
-coverAlt: "Ilustración de una hoja de aloe vera cortada que deja ver su gel transparente"
+cover: /covers/photos/gel-aloe-vera-maison-mode-emploi.webp
+coverAlt: "Gel transparente extraído de una hoja fresca de aloe vera en un tarro de cristal, con trozos de hoja y una cuchara de madera."
+coverTitle: "Gel de aloe vera casero: preparación y precauciones"
+coverCaption: "Preparar gel de aloe vera fresco exige algunas precauciones para separar el gel transparente del látex amarillo de la hoja."
 sources:
   - title: "NCCIH (National Institutes of Health), Aloe Vera: utilidad y seguridad (en inglés)"
     url: "https://www.nccih.nih.gov/health/aloe-vera"

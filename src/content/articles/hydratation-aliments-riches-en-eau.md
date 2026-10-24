@@ -3,8 +3,11 @@ title: "Hydratation : les aliments riches en eau"
 description: "Concombre, pastèque, courgette, agrumes : une part de notre hydratation vient de l'assiette. Nos idées pour en profiter toute l'année."
 category: nutrition
 date: 2026-09-10
-cover: /covers/hydratation.svg
-coverAlt: "Illustration de rondelles de concombre, de feuilles et de gouttes d'eau"
+cover: /covers/photos/aliments-riches-en-eau-hydratation.webp
+coverAlt: "Tranches de pastèque, concombre et courgette accompagnés d’agrumes sur une table en pierre claire, avec la mer floue en arrière-plan."
+coverTitle: "Hydratation : les aliments riches en eau"
+coverCaption: "Le concombre, la pastèque, la courgette et les agrumes contribuent aux apports en eau au quotidien."
+coverDescription: "Photographie éditoriale lumineuse et minimaliste de pastèque fraîchement coupée, de concombre, de courgette et d’agrumes sur une table en pierre claire, avec la mer légèrement floutée en arrière-plan."
 ---
 
 On pense spontanément aux boissons pour s'hydrater. Pourtant, une partie non négligeable de l'eau que nous consommons provient des aliments.

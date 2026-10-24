@@ -3,8 +3,11 @@ title: "Articulations et mobilité : les bons gestes au quotidien"
 description: "Bouger, renforcer ses muscles, bien manger : ce qui aide à rester mobile, ce que les compléments peuvent promettre et quand consulter."
 category: sante
 date: 2026-10-12
-cover: /covers/mobilite.svg
-coverAlt: "Illustration d'un chemin sinueux à travers des collines vertes"
+cover: /covers/photos/articulations-mobilite-quotidien-homme-femme.webp
+coverAlt: "Un homme et une femme réalisent des étirements sur une terrasse ensoleillée face à la mer, avec de l’aloe vera, du gingembre et des ingrédients naturels au premier plan."
+coverTitle: "Articulations et mobilité au quotidien"
+coverCaption: "Les étirements réguliers, l’activité physique adaptée et les habitudes de vie participent à entretenir la mobilité au quotidien."
+coverDescription: "Photographie éditoriale réaliste d’un homme et d’une femme effectuant des étirements sur une terrasse méditerranéenne ensoleillée, avec la mer et des collines en arrière-plan. Au premier plan, des feuilles d’aloe vera, du gingembre, du curcuma et une boisson citronnée."
 products: [lifetakt-active-freedom-capsules, aloe-vera-drinking-gel-active-freedom]
 sources:
   - title: "OMS, lignes directrices sur l'activité physique et la sédentarité (2020)"

@@ -3,8 +3,10 @@ title: "Hydration: water-rich foods to eat all year"
 description: "Cucumber, watermelon, courgette, citrus fruit: part of your hydration comes from your plate. Our ideas to make the most of it all year round."
 category: nutrition
 date: 2026-10-23
-cover: /covers/hydratation.svg
-coverAlt: "Illustration of cucumber slices, leaves and water droplets"
+cover: /covers/photos/aliments-riches-en-eau-hydratation.webp
+coverAlt: "Slices of watermelon, cucumber and courgette with citrus fruit on a pale stone table, with the sea blurred in the background."
+coverTitle: "Hydration: water-rich foods"
+coverCaption: "Cucumber, watermelon, courgette and citrus fruit add to your daily water intake."
 locale: en
 translationOf: hydratation-aliments-riches-en-eau
 sourceHash: "16e7e38e09cd"

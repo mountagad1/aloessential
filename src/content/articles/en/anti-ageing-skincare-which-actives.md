@@ -9,8 +9,10 @@ title: "Anti-ageing skincare: which actives for which needs?"
 description: "Sunscreen, retinol, vitamin C, niacinamide, hyaluronic acid: what anti-ageing actives really do and how to combine them."
 category: beaute
 date: 2026-10-23
-cover: /covers/anti-age.svg
-coverAlt: "Illustration of a stylised flower and drops of oil on a cream background"
+cover: /covers/photos/soin-anti-age-actifs-couple-peau-mature.webp
+coverAlt: "Woman with mature skin applying cream to her cheek beside a grey-haired man, with aloe vera, oils and botanical ingredients in the foreground."
+coverTitle: "Anti-ageing skincare: the actives to know"
+coverCaption: "Care for mature skin can rely on different cosmetic actives, depending on your skin's needs."
 sources:
   - title: "Regulation (EU) 2024/996 (vitamin A in cosmetics) (EU)"
     url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0996"

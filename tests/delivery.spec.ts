@@ -61,7 +61,7 @@ test.describe("listing pagination", () => {
 });
 
 test.describe("image delivery", () => {
-  test("every cover used by content has a 1200 × 800 raster twin for sharing", () => {
+  test("every cover used by content has a raster for sharing: 1200 × 800 for illustrations, 1200 px 16:9 for photos", () => {
     const covers = new Set<string>();
     for (const dir of ["src/content/articles", "src/content/products", "tests/fixtures/articles", "tests/fixtures/products"]) {
       for (const name of readdirSync(join(root, dir), { recursive: true }) as string[]) {
@@ -71,11 +71,49 @@ test.describe("image delivery", () => {
       }
     }
     expect(covers.size).toBeGreaterThan(0);
+    const photos = JSON.parse(readFileSync(join(root, "src/data/cover-photos.json"), "utf8")) as Record<string, { width: number; height: number }>;
     for (const cover of covers) {
-      const raster = join(root, "public", cover.replace(/\.svg$/, ".jpg"));
-      expect(existsSync(raster), `${raster} missing: run node tools/rasterize-covers.mjs`).toBe(true);
-      expect(jpegSize(raster), raster).toEqual({ width: 1200, height: 800 });
+      const photo = cover.match(/^\/covers\/photos\/([a-z0-9-]+)\.webp$/)?.[1];
+      if (!photo) {
+        const raster = join(root, "public", cover.replace(/\.svg$/, ".jpg"));
+        expect(existsSync(raster), `${raster} missing: run node tools/rasterize-covers.mjs`).toBe(true);
+        expect(jpegSize(raster), raster).toEqual({ width: 1200, height: 800 });
+        continue;
+      }
+      // Photos: imported with tools/import-cover-photos.mjs (original, srcset candidates, share JPEG).
+      const size = photos[photo];
+      expect(size, `${cover}: run node tools/import-cover-photos.mjs`).toBeTruthy();
+      expect(size.width, cover).toBeGreaterThanOrEqual(1200);
+      expect(Math.abs(size.width / size.height - 16 / 9), cover).toBeLessThan(0.01);
+      for (const file of [`${photo}.webp`, `${photo}-1200.webp`, `${photo}-800.webp`, `${photo}-480.webp`]) {
+        expect(existsSync(join(root, "public/covers/photos", file)), file).toBe(true);
+      }
+      const share = join(root, "public/covers/photos", `${photo}.jpg`);
+      expect(jpegSize(share), share).toEqual({ width: 1200, height: Math.round((1200 * size.height) / size.width) });
     }
+  });
+
+  test("article photos: responsive candidates, caption, and an ImageObject for search", () => {
+    let checked = 0;
+    for (const file of htmlFiles(dist).filter((f) => /\/(articles|articoli|artikel|articulos|artigos|artykuly)\/[^/]+\/index\.html$/.test(f))) {
+      const html = readFileSync(file, "utf8");
+      const hero = html.match(/<figure class="article-cover[\s\S]*?<\/figure>/)?.[0] ?? "";
+      if (!hero.includes("/covers/photos/")) continue;
+      checked++;
+      const img = hero.match(/<img\b[^>]*>/)![0];
+      expect(img, pathOf(file)).toMatch(/srcset="[^"]*-480\.webp 480w, [^"]*-800\.webp 800w, [^"]*-1200\.webp 1200w, [^"]*\.webp \d+w"/);
+      expect(img, pathOf(file)).toContain('sizes="');
+      expect(img, pathOf(file)).toContain('fetchpriority="high"');
+      expect(img, pathOf(file)).not.toContain('loading="lazy"');
+      expect(hero, pathOf(file)).toMatch(/<figcaption>[^<]{20,}<\/figcaption>/);
+      const data = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]);
+      const article = data["@graph"].find((n: { "@type": string }) => n["@type"] === "Article");
+      expect(article.image["@type"], pathOf(file)).toBe("ImageObject");
+      expect(article.image.url, pathOf(file)).toMatch(new RegExp(`^${ORIGIN}/covers/photos/[a-z0-9-]+\\.jpg$`));
+      expect(article.image.width, pathOf(file)).toBe(1200);
+      expect(article.image.caption, pathOf(file)).toBeTruthy();
+    }
+    expect(checked).toBeGreaterThan(0);
   });
 
   test("indexable pages allow large image previews; noindex pages do not carry it", () => {

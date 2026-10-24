@@ -5,8 +5,10 @@ title: "Sok z aloesu: co mówi nauka"
 description: "Trawienie, detoks, odporność: sokowi z aloesu towarzyszy wiele obietnic. Oto co naprawdę pozwalają stwierdzić badania."
 category: sante
 date: 2026-10-23
-cover: /covers/jus-aloe.svg
-coverAlt: "Ilustracja szklanki jasnozielonego soku obok liścia aloesu"
+cover: /covers/photos/jus-aloe-vera-science-laboratoire-analyse.webp
+coverAlt: "Szklana butelka i szklanka bladozielonożółtego soku z aloesu na stole laboratoryjnym, ze świeżymi liśćmi, zlewkami, probówkami i mikroskopem."
+coverTitle: "Sok z aloesu: analiza naukowa i skład"
+coverCaption: "Badania soku z aloesu dotyczą przede wszystkim jego składu, sposobu przygotowania, jakości i dostępnych danych naukowych."
 sources:
   - title: "Rozporządzenie (UE) 2021/468 w sprawie pochodnych hydroksyantracenu"
     url: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32021R0468"

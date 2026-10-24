@@ -3,8 +3,10 @@ title: "Idratazione: gli alimenti ricchi di acqua"
 description: "Cetriolo, anguria, zucchine, agrumi: una parte dell'idratazione arriva dal piatto. Le nostre idee per approfittarne tutto l'anno."
 category: nutrition
 date: 2026-10-23
-cover: /covers/hydratation.svg
-coverAlt: "Illustrazione di fette di cetriolo, foglie e gocce d'acqua"
+cover: /covers/photos/aliments-riches-en-eau-hydratation.webp
+coverAlt: "Fette di anguria, cetriolo e zucchina con agrumi su un tavolo di pietra chiara, con il mare sfocato sullo sfondo."
+coverTitle: "Idratazione: gli alimenti ricchi di acqua"
+coverCaption: "Cetriolo, anguria, zucchina e agrumi contribuiscono all'apporto di acqua di ogni giorno."
 locale: it
 translationOf: hydratation-aliments-riches-en-eau
 sourceHash: "16e7e38e09cd"

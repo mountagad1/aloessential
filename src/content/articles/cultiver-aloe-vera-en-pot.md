@@ -3,8 +3,11 @@ title: "Cultiver un aloe vera en pot : le guide simple"
 description: "Lumière, terre, arrosage, hiver, rejets à replanter : tout pour garder un aloe vera en pleine forme à la maison, et les erreurs qui le font pourrir."
 category: conseils
 date: 2026-10-16
-cover: /covers/aloe-pot.svg
-coverAlt: "Illustration d'un aloe vera dans un pot en terre cuite, au soleil sur un rebord de fenêtre"
+cover: /covers/photos/cultiver-aloe-vera-en-pot-guide.webp
+coverAlt: "Aloe vera en pot près d’une fenêtre lumineuse, avec terreau drainant, jeune rejet et matériel de rempotage."
+coverTitle: "Cultiver un aloe vera en pot : le guide simple"
+coverCaption: "Lumière, arrosage, terreau et entretien hivernal : les bons gestes pour garder votre aloe vera en pleine forme."
+coverDescription: "Photographie réaliste d’un aloe vera luxuriant dans un pot en céramique crème, baigné de lumière naturelle. Un jeune rejet, du terreau drainant, une petite pelle de jardinage et un second aloe vera en pot illustrent l’entretien et le rempotage à la maison."
 sources:
   - title: "Royal Horticultural Society (RHS), fiche Aloe vera"
     url: "https://www.rhs.org.uk/plants/981/aloe-vera/details"

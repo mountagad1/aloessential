@@ -3,8 +3,11 @@ title: "Jus d'aloe vera : ce que dit la science"
 description: "Digestion, détox, immunité : le jus d'aloe vera est entouré de promesses. Voici ce que les études permettent réellement d'affirmer."
 category: sante
 date: 2026-09-24
-cover: /covers/jus-aloe.svg
-coverAlt: "Illustration d'un verre de jus vert pâle à côté d'une feuille d'aloe vera"
+cover: /covers/photos/jus-aloe-vera-science-laboratoire-analyse.webp
+coverAlt: "Bouteille en verre et verre de jus d’aloe vera jaune-vert pâle sur une paillasse de laboratoire, entourés de feuilles fraîches, de béchers, de tubes à essai et d’un microscope."
+coverTitle: "Jus d’aloe vera : analyse scientifique et composition"
+coverCaption: "L’étude du jus d’aloe vera porte notamment sur sa composition, sa préparation, sa qualité et les données scientifiques disponibles."
+coverDescription: "Photographie éditoriale d’une bouteille et d’un verre de jus d’aloe vera jaune-vert pâle dans un laboratoire lumineux, avec des feuilles fraîches, des fragments de gel, des béchers, des tubes à essai et un microscope."
 products: [aloe-vera-drinking-gel-active-freedom, aloe-vera-gel-a-boire-immune-plus]
 sources:
   - title: "Règlement (UE) 2021/468 relatif aux dérivés hydroxyanthracéniques"

@@ -6,8 +6,10 @@ title: "Coltivare l'aloe vera in vaso: la guida semplice"
 description: "Luce, terriccio, annaffiature, inverno, polloni da trapiantare: come mantenere in forma un'aloe vera in casa, e gli errori che la fanno marcire."
 category: conseils
 date: 2026-10-22
-cover: /covers/aloe-pot.svg
-coverAlt: "Illustrazione di un'aloe vera in un vaso di terracotta, al sole su un davanzale"
+cover: /covers/photos/cultiver-aloe-vera-en-pot-guide.webp
+coverAlt: "Aloe vera in vaso vicino a una finestra luminosa, con terriccio drenante, un giovane pollone e attrezzi per il rinvaso."
+coverTitle: "Coltivare l'aloe vera in vaso: la guida semplice"
+coverCaption: "Luce, annaffiature, terriccio e cure invernali: i gesti giusti per mantenere l'aloe vera in piena forma."
 sources:
   - title: "Royal Horticultural Society (RHS), scheda Aloe vera (in inglese)"
     url: "https://www.rhs.org.uk/plants/981/aloe-vera/details"

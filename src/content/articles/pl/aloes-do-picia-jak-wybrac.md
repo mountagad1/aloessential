@@ -7,8 +7,10 @@ title: "Aloes do picia: jak go wybrać"
 description: "Żel czy sok, zawartość aloesu, aloina, dodatki, oświadczenia: jak czytać etykietę napoju z aloesem i świadomie wybrać."
 category: nutrition
 date: 2026-10-23
-cover: /covers/jus-aloe.svg
-coverAlt: "Ilustracja szklanki jasnozielonego napoju obok liścia aloesu"
+cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
+coverAlt: "Napój z aloesu w szklance z cytryną, miętą i lodem, otoczony świeżymi liśćmi, w kuchni otwartej na jasną jadalnię."
+coverTitle: "Aloes do picia: jak go wybrać?"
+coverCaption: "Na co zwrócić uwagę przy wyborze napoju z aloesu i jakie środki ostrożności warto znać."
 sources:
   - title: "Rozporządzenie (UE) 2021/468 w sprawie pochodnych hydroksyantracenu"
     url: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32021R0468"

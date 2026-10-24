@@ -3,8 +3,11 @@ title: "Peau sensible après le soleil : la routine qui apaise"
 description: "Rafraîchir, nettoyer en douceur, hydrater, protéger : la routine qui apaise une peau sensible après le soleil, et quand consulter."
 category: beaute
 date: 2026-10-14
-cover: /covers/apres-soleil.svg
-coverAlt: "Illustration d'un soleil couchant derrière des feuilles d'aloe vera perlées de gouttes"
+cover: /covers/photos/routine-peau-apres-soleil-aloe-vera-plage.webp
+coverAlt: "Femme appliquant du gel d’aloe vera sur son épaule sur une terrasse ensoleillée face à une plage méditerranéenne, avec des feuilles fraîches d’aloe vera et des soins naturels."
+coverTitle: "Routine peau après-soleil : les bons gestes"
+coverCaption: "Après une journée au soleil, adoptez une routine douce pour hydrater la peau et préserver son confort."
+coverDescription: "Photographie éditoriale lumineuse d’une femme appliquant un soin à l’aloe vera sur son épaule, dans un cadre méditerranéen avec plage, mer turquoise et soleil doré. Des feuilles fraîches d’aloe vera et des soins cosmétiques sont disposés au premier plan."
 products: [aloe-vera-emergency-spray, aloe-vera-dermaintense-creme-regeneratrice]
 ---
 

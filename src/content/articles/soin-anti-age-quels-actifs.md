@@ -3,8 +3,11 @@ title: "Soin anti-âge : quels actifs pour quels besoins ?"
 description: "Protection solaire, rétinol, vitamine C, niacinamide, acide hyaluronique : ce que font vraiment les actifs anti-âge et comment les associer."
 category: beaute
 date: 2026-10-10
-cover: /covers/anti-age.svg
-coverAlt: "Illustration d'une fleur stylisée et de gouttes d'huile sur fond crème"
+cover: /covers/photos/soin-anti-age-actifs-couple-peau-mature.webp
+coverAlt: "Femme à la peau mature appliquant une crème sur sa joue, aux côtés d’un homme aux cheveux gris, avec de l’aloe vera, des huiles et des ingrédients botaniques au premier plan."
+coverTitle: "Soin anti-âge : les actifs à connaître"
+coverCaption: "Les soins de la peau mature peuvent s’appuyer sur différents actifs cosmétiques, selon les besoins de la peau."
+coverDescription: "Photographie éditoriale lumineuse d’un couple mature dans un intérieur chaleureux. La femme applique une crème sur sa joue tandis que son compagnon sourit à ses côtés. Au premier plan, des feuilles d’aloe vera, des flacons d’huile, des pots de crème, des grenades et des myrtilles."
 products: [creme-anti-age-platinum, aloe-vera-dermaintense-creme-regeneratrice]
 sources:
   - title: "Règlement (UE) 2024/996 (vitamine A dans les cosmétiques)"

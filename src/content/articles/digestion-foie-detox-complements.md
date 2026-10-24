@@ -3,8 +3,11 @@ title: "Digestion, foie, détox : ce que les compléments peuvent vraiment prome
 description: "Cures « détox », probiotiques, plantes pour le foie : ce que dit la réglementation européenne, ce que l'alimentation fait déjà très bien, et quand consulter."
 category: sante
 date: 2026-10-15
-cover: /covers/digestion.svg
-coverAlt: "Illustration d'un bol de céréales colorées entouré de feuilles"
+cover: /covers/photos/digestion-foie-detox-complements-guide.webp
+coverAlt: "Aloe vera frais, boisson végétale, citron, gingembre et plantes aromatiques disposés sur un plan de travail lumineux, avec une illustration anatomique du foie et du système digestif."
+coverTitle: "Digestion, foie et détox : bien choisir ses compléments"
+coverCaption: "Compléments alimentaires, plantes et habitudes de vie : les critères à connaître pour prendre soin de sa digestion et de son foie."
+coverDescription: "Photographie éditoriale réaliste dans une cuisine lumineuse, associant aloe vera frais, citron, gingembre, herbes aromatiques et compléments alimentaires. À droite, une silhouette vêtue de lin naturel présente une illustration lumineuse du foie et du système digestif."
 products: [capsules-pro-12-plus, lifetakt-liver-support]
 sources:
   - title: "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé"

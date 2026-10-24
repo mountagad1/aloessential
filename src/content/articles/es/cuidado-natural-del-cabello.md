@@ -3,8 +3,10 @@ title: "Cuidar el cabello de forma natural"
 description: "Lavado, mascarillas, secado: una rutina capilar sencilla y suave, con algunos ingredientes naturales que han demostrado su utilidad."
 category: beaute
 date: 2026-10-23
-cover: /covers/cheveux.svg
-coverAlt: "Ilustración de curvas verdes fluidas que evocan una melena, con una hoja"
+cover: /covers/photos/soins-cheveux-naturels-aloe-vera-huiles.webp
+coverAlt: "Mujer de pelo largo y ondulado aplicándose un cuidado capilar natural, con hojas de aloe vera, aceite vegetal y un cepillo de madera en un baño luminoso."
+coverTitle: "Cuidado natural del cabello: una rutina botánica"
+coverCaption: "El aloe vera y algunos aceites vegetales pueden formar parte de una rutina adaptada a tu tipo de pelo."
 locale: es
 translationOf: soins-cheveux-naturel
 sourceHash: "abbfae249c0a"

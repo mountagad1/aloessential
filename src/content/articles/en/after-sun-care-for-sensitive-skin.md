@@ -6,8 +6,10 @@ title: "Sensitive skin after the sun: a soothing routine"
 description: "Cool down, cleanse gently, moisturise, protect: the routine that soothes sensitive skin after a day in the sun, and when to get help."
 category: beaute
 date: 2026-10-22
-cover: /covers/apres-soleil.svg
-coverAlt: "Illustration of a sunset behind aloe vera leaves beaded with droplets"
+cover: /covers/photos/routine-peau-apres-soleil-aloe-vera-plage.webp
+coverAlt: "Woman applying aloe vera gel to her shoulder on a sunny terrace overlooking a Mediterranean beach, with fresh aloe vera leaves and natural skincare."
+coverTitle: "After-sun care: the right habits"
+coverCaption: "After a day in the sun, a gentle routine to moisturise your skin and keep it comfortable."
 sources:
   - title: "NHS, Sunburn"
     url: "https://www.nhs.uk/conditions/sunburn/"

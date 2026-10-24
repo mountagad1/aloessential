@@ -1,4 +1,5 @@
 ---
+import CoverImage from "./CoverImage.astro";
 import Icon from "./Icon.astro";
 import { localizedCategory } from "../data/categories";
 import { ui } from "../i18n/ui";
@@ -20,14 +21,12 @@ const t = ui(locale);
 
 <article class="card">
   <div class="media">
-    <img
-      src={cover}
+    <CoverImage
+      cover={cover}
       alt={coverAlt}
-      width="1200"
-      height="800"
-      loading={priority ? "eager" : "lazy"}
-      decoding="async"
-      data-fade={priority ? undefined : ""}
+      sizes="(min-width: 64rem) 22rem, (min-width: 40rem) 50vw, 100vw"
+      load={priority ? "eager" : "lazy"}
+      fade={!priority}
     />
   </div>
   <div class="card__body">

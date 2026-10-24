@@ -7,8 +7,10 @@ title: "Trawienie, wątroba, detoks: co mogą obiecywać suplementy"
 description: "Kuracje detoks, probiotyki, zioła na wątrobę: co mówią przepisy UE, co dieta robi już dobrze i kiedy iść do lekarza."
 category: sante
 date: 2026-10-23
-cover: /covers/digestion.svg
-coverAlt: "Ilustracja miski kolorowych płatków zbożowych otoczonej liśćmi"
+cover: /covers/photos/digestion-foie-detox-complements-guide.webp
+coverAlt: "Świeży aloes, napój roślinny, cytryna, imbir i zioła na jasnym blacie, z ilustracją anatomiczną wątroby i układu pokarmowego."
+coverTitle: "Trawienie, wątroba i detoks: jak mądrze wybierać suplementy"
+coverCaption: "Suplementy, rośliny i styl życia: co warto wiedzieć, aby zadbać o trawienie i wątrobę."
 sources:
   - title: "Rozporządzenie (WE) nr 1924/2006 w sprawie oświadczeń żywieniowych i zdrowotnych dotyczących żywności"
     url: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32006R1924"

@@ -3,8 +3,10 @@ title: "Schlaf, eine Säule des Wohlbefindens"
 description: "Regelmäßigkeit, Licht, Temperatur, Bildschirme: die verlässlichsten Stellschrauben für besseren Schlaf, nach aktuellen Empfehlungen."
 category: sante
 date: 2026-10-23
-cover: /covers/sommeil.svg
-coverAlt: "Illustration einer goldenen Mondsichel über dunklem Laub"
+cover: /covers/photos/reveil-difficile-fatigue-chambre-blanche.webp
+coverAlt: "Müde Frau sitzt nach dem Aufwachen in einem Bett mit weißer Wäsche, eine Hand an der Schläfe, in einem hellen, schlichten Schlafzimmer."
+coverTitle: "Schweres Aufwachen: Müdigkeit am Morgen verstehen"
+coverCaption: "Schweres Aufwachen kann mit der Qualität oder Dauer des Schlafs oder mit den Gewohnheiten am Vorabend zusammenhängen."
 locale: de
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"

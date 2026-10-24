@@ -3,8 +3,11 @@ title: "Vitamines et fatigue : ce que dit vraiment la réglementation"
 description: "Quels nutriments peuvent « contribuer à réduire la fatigue » ? Lire les VNR sur une étiquette, et savoir quand la fatigue mérite un avis médical."
 category: sante
 date: 2026-10-13
-cover: /covers/vitamines.svg
-coverAlt: "Illustration de tranches d'agrumes colorées entourées de feuilles"
+cover: /covers/photos/vitamines-fatigue-reglementation-vnr.webp
+coverAlt: "Femme fatiguée à une table dans une cuisine lumineuse, avec des aliments variés, un verre d’eau citronnée et un flacon de compléments alimentaires présentant un tableau nutritionnel."
+coverTitle: "Vitamines et fatigue : comprendre les VNR sur les étiquettes"
+coverCaption: "Les vitamines et minéraux autorisés à revendiquer une contribution à la réduction de la fatigue sont soumis à des conditions réglementaires précises."
+coverDescription: "Photographie éditoriale réaliste d’une femme fatiguée, assise à une table en bois dans une cuisine lumineuse. Devant elle, des légumes verts, des fruits rouges, des agrumes, du saumon et des noix, un flacon de compléments alimentaires avec un tableau nutritionnel et un verre d’eau citronnée évoquent la lecture des étiquettes."
 products: [set-vitalite, vita-active-fruits-rouges]
 sources:
   - title: "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé"

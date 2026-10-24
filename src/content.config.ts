@@ -32,6 +32,12 @@ const articles = defineCollection({
       date: z.coerce.date(),
       cover: z.string(),
       coverAlt: z.string(),
+      /** Shown under the cover (figcaption) and used as the image caption in structured data. */
+      coverCaption: z.string().optional(),
+      /** Image name in structured data. */
+      coverTitle: z.string().optional(),
+      /** Longer description of the image, for structured data only. */
+      coverDescription: z.string().optional(),
       featured: z.boolean().default(false),
       /** LR products discussed in the article; only published ones are shown. */
       products: z.array(reference("products")).default([]),

@@ -6,8 +6,10 @@ title: "Aloe vera per la pelle: cosa sappiamo davvero"
 description: "Idratazione, sollievo dopo il sole, piccole irritazioni: cosa può fare davvero l'aloe vera per la pelle, e dove si fermano i suoi effetti."
 category: beaute
 date: 2026-10-22
-cover: /covers/aloe-peau.svg
-coverAlt: "Illustrazione di foglie di aloe vera imperlate di gocce d'acqua sotto il sole del mattino"
+cover: /covers/photos/aloe-vera-bienfaits-peau-soin-corps-douche.webp
+coverAlt: "Donna che applica gel di aloe vera sulla spalla sotto una doccia a pioggia, circondata da foglie fresche di aloe vera e prodotti naturali in un bagno luminoso."
+coverTitle: "Aloe vera: i benefici per la pelle"
+coverCaption: "Il gel di aloe vera si usa nei cosmetici per idratare la pelle e contribuire al suo comfort."
 sources:
   - title: "NCCIH (National Institutes of Health), Aloe Vera: usi e sicurezza (in inglese)"
     url: "https://www.nccih.nih.gov/health/aloe-vera"

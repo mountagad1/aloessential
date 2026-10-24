@@ -70,10 +70,12 @@ test.describe("SEO foundations", () => {
       const products = `${LOCALES[locale].prefix}/${LOCALES[locale].segments.products}/`;
       const isProduct = p.startsWith(products) && p !== products;
       if (isArticle || isProduct) {
-        // Articles and product pages share their own cover, as a raster (see image delivery tests).
-        expect(image, p).toMatch(new RegExp(`^${ORIGIN}/covers/[a-z0-9-]+\\.jpg$`));
+        // Articles and product pages share their own cover, as a raster (see image delivery tests):
+        // a 1200 × 800 twin for illustrations, a 1200 px wide 16:9 JPEG for photos.
+        expect(image, p).toMatch(new RegExp(`^${ORIGIN}/covers/(photos/)?[a-z0-9-]+\\.jpg$`));
+        expect(existsSync(join(dist, image.replace(ORIGIN, ""))), image).toBe(true);
         expect(html, p).toContain('<meta property="og:image:width" content="1200">');
-        expect(html, p).toContain('<meta property="og:image:height" content="800">');
+        expect(html, p).toMatch(image.includes("/photos/") ? /<meta property="og:image:height" content="67[45]">/ : /<meta property="og:image:height" content="800">/);
         expect(html, p).toContain('<meta property="og:image:alt"');
       } else {
         expect(image, p).toBe(`${ORIGIN}/brand/og-default.png`);

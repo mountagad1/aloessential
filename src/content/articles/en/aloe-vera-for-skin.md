@@ -5,8 +5,10 @@ title: "Aloe vera for skin: what we really know"
 description: "Moisture, soothing after the sun, minor irritation: what aloe vera can really do for your skin, and where its effects stop."
 category: beaute
 date: 2026-10-22
-cover: /covers/aloe-peau.svg
-coverAlt: "Illustration of aloe vera leaves beaded with water droplets under a rising sun"
+cover: /covers/photos/aloe-vera-bienfaits-peau-soin-corps-douche.webp
+coverAlt: "Woman applying aloe vera gel to her shoulder under a rainfall shower, surrounded by fresh aloe vera leaves and natural skincare in a bright bathroom."
+coverTitle: "Aloe vera: the benefits for your skin"
+coverCaption: "Aloe vera gel is used in skincare to moisturise the skin and help keep it comfortable."
 sources:
   - title: "NCCIH (National Institutes of Health), Aloe Vera: usefulness and safety"
     url: "https://www.nccih.nih.gov/health/aloe-vera"

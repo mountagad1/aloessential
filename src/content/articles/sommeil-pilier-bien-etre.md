@@ -3,8 +3,11 @@ title: "Le sommeil, pilier du bien-être"
 description: "Régularité, lumière, température, écrans : les leviers les plus solides pour mieux dormir, selon les recommandations actuelles."
 category: sante
 date: 2026-09-03
-cover: /covers/sommeil.svg
-coverAlt: "Illustration d'un croissant de lune doré au-dessus de feuillages sombres"
+cover: /covers/photos/reveil-difficile-fatigue-chambre-blanche.webp
+coverAlt: "Femme fatiguée assise dans un lit aux draps blancs au réveil, une main sur la tempe, dans une chambre lumineuse et minimaliste."
+coverTitle: "Réveil difficile : comprendre la fatigue au réveil"
+coverCaption: "Un réveil difficile peut être lié à la qualité du sommeil, à sa durée ou aux habitudes de la veille."
+coverDescription: "Photographie éditoriale d’une femme qui se réveille difficilement dans une chambre blanche et lumineuse, assise sur un lit aux draps froissés, une main sur la tempe, près d’une fenêtre ouverte, d’une table de chevet, d’un verre d’eau et d’une plante."
 ---
 
 Le sommeil influence l'humeur, la concentration, l'appétit et la récupération. Bonne nouvelle : quelques habitudes ont un effet réel sur sa qualité.

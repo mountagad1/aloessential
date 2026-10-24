@@ -8,8 +8,10 @@ title: "Vitaminas y cansancio: lo que dice de verdad la normativa"
 description: "¿Qué nutrientes pueden «contribuir a disminuir el cansancio y la fatiga»? Cómo leer el % VRN de la etiqueta y cuándo el cansancio merece consulta."
 category: sante
 date: 2026-10-23
-cover: /covers/vitamines.svg
-coverAlt: "Ilustración de rodajas de cítricos de colores rodeadas de hojas"
+cover: /covers/photos/vitamines-fatigue-reglementation-vnr.webp
+coverAlt: "Mujer cansada en una mesa de una cocina luminosa, con alimentos variados, un vaso de agua con limón y un bote de complementos con su tabla nutricional."
+coverTitle: "Vitaminas y cansancio: entender el % VRN de las etiquetas"
+coverCaption: "Las vitaminas y minerales que pueden declarar una contribución a disminuir el cansancio están sujetos a condiciones normativas precisas."
 sources:
   - title: "Reglamento (CE) n.º 1924/2006 relativo a las declaraciones nutricionales y de propiedades saludables en los alimentos"
     url: "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32006R1924"

@@ -5,8 +5,10 @@ title: "Pielęgnacja anti-aging: jakie składniki na jakie potrzeby?"
 description: "Ochrona przeciwsłoneczna, retinol, witamina C, niacynamid, kwas hialuronowy: co naprawdę robią składniki anti-aging i jak je łączyć."
 category: beaute
 date: 2026-10-23
-cover: /covers/anti-age.svg
-coverAlt: "Ilustracja stylizowanego kwiatu i kropli olejku na kremowym tle"
+cover: /covers/photos/soin-anti-age-actifs-couple-peau-mature.webp
+coverAlt: "Kobieta o dojrzałej skórze nakłada krem na policzek obok siwowłosego mężczyzny, z aloesem, olejkami i składnikami roślinnymi na pierwszym planie."
+coverTitle: "Pielęgnacja anti-aging: składniki, które warto znać"
+coverCaption: "Pielęgnacja dojrzałej skóry może opierać się na różnych składnikach kosmetycznych, zależnie od potrzeb skóry."
 sources:
   - title: "Rozporządzenie (UE) 2024/996 (witamina A w produktach kosmetycznych)"
     url: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32024R0996"

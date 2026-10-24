@@ -7,8 +7,10 @@ title: "Articulaciones y movilidad: los buenos hábitos del día a día"
 description: "Moverte, fortalecer los músculos, comer bien: lo que ayuda a seguir ágil, lo que pueden prometer los complementos y cuándo consultar."
 category: sante
 date: 2026-10-23
-cover: /covers/mobilite.svg
-coverAlt: "Ilustración de un camino sinuoso entre colinas verdes"
+cover: /covers/photos/articulations-mobilite-quotidien-homme-femme.webp
+coverAlt: "Un hombre y una mujer hacen estiramientos en una terraza soleada frente al mar, con aloe vera, jengibre e ingredientes naturales en primer plano."
+coverTitle: "Articulaciones y movilidad en el día a día"
+coverCaption: "Los estiramientos regulares, una actividad física adecuada y los hábitos de vida ayudan a mantener la movilidad."
 sources:
   - title: "OMS, directrices sobre actividad física y hábitos sedentarios (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"

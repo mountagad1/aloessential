@@ -1,0 +1,32 @@
+---
+/* A cover in an <img>: responsive candidates for photographs, the SVG as is
+ * for illustrations. Always declares its intrinsic size (no layout shift). */
+import { coverImage } from "../lib/images";
+
+interface Props {
+  cover: string;
+  alt: string;
+  /** Rendered width of the image, for the browser's choice among candidates. */
+  sizes: string;
+  /** "high": the page's main image (LCP); "eager": above the fold; "lazy" otherwise. */
+  load?: "high" | "eager" | "lazy";
+  /** Lazy images fade in once loaded (src/scripts). */
+  fade?: boolean;
+}
+
+const { cover, alt, sizes, load = "lazy", fade = false } = Astro.props;
+const img = coverImage(cover);
+---
+
+<img
+  src={img.src}
+  srcset={img.srcset}
+  sizes={img.srcset ? sizes : undefined}
+  alt={alt}
+  width={img.width}
+  height={img.height}
+  loading={load === "high" ? undefined : load}
+  fetchpriority={load === "high" ? "high" : undefined}
+  decoding="async"
+  data-fade={fade ? "" : undefined}
+/>

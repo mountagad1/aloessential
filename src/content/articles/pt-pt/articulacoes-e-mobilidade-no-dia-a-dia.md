@@ -6,8 +6,10 @@ title: "Articulações e mobilidade: os bons hábitos no dia a dia"
 description: "Mexer-se, fortalecer os músculos, comer bem: o que ajuda a manter a mobilidade, o que os suplementos podem prometer e quando ir ao médico."
 category: sante
 date: 2026-10-23
-cover: /covers/mobilite.svg
-coverAlt: "Ilustração de um caminho sinuoso entre colinas verdes"
+cover: /covers/photos/articulations-mobilite-quotidien-homme-femme.webp
+coverAlt: "Um homem e uma mulher fazem alongamentos num terraço soalheiro virado para o mar, com aloe vera, gengibre e ingredientes naturais em primeiro plano."
+coverTitle: "Articulações e mobilidade no dia a dia"
+coverCaption: "Alongamentos regulares, atividade física adequada e bons hábitos ajudam a manter a mobilidade no dia a dia."
 sources:
   - title: "OMS, diretrizes sobre atividade física e comportamento sedentário (2020, em inglês)"
     url: "https://www.who.int/publications/i/item/9789240015128"

@@ -3,8 +3,10 @@ title: "Nawodnienie: produkty bogate w wodę"
 description: "Ogórek, arbuz, cukinia, cytrusy: część nawodnienia pochodzi z talerza. Nasze pomysły, jak z tego korzystać przez cały rok."
 category: nutrition
 date: 2026-10-23
-cover: /covers/hydratation.svg
-coverAlt: "Ilustracja plasterków ogórka, liści i kropli wody"
+cover: /covers/photos/aliments-riches-en-eau-hydratation.webp
+coverAlt: "Plastry arbuza, ogórka i cukinii z cytrusami na stole z jasnego kamienia, w tle rozmyte morze."
+coverTitle: "Nawodnienie: produkty bogate w wodę"
+coverCaption: "Ogórek, arbuz, cukinia i cytrusy uzupełniają codzienne spożycie wody."
 locale: pl
 translationOf: hydratation-aliments-riches-en-eau
 sourceHash: "16e7e38e09cd"

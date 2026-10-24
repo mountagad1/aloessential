@@ -7,8 +7,10 @@ title: "Aloe vera para beber: cómo elegirlo"
 description: "Gel o zumo, cantidad de aloe, aloína, aditivos, declaraciones: cómo leer la etiqueta de una bebida de aloe vera y elegir con conocimiento."
 category: nutrition
 date: 2026-10-23
-cover: /covers/jus-aloe.svg
-coverAlt: "Ilustración de un vaso de bebida verde claro junto a una hoja de aloe vera"
+cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
+coverAlt: "Bebida de aloe vera en un vaso con limón, menta y hielo, rodeada de hojas frescas en una cocina abierta a un comedor luminoso."
+coverTitle: "Aloe vera para beber: ¿cómo elegirlo?"
+coverCaption: "Los criterios que debes comprobar para elegir una bebida de aloe vera y las precauciones que conviene conocer."
 sources:
   - title: "Reglamento (UE) 2021/468 sobre los derivados hidroxiantracénicos"
     url: "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32021R0468"

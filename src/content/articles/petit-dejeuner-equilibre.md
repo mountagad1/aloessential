@@ -3,8 +3,11 @@ title: "Petit-déjeuner équilibré : nos idées simples"
 description: "Salé ou sucré, rapide ou gourmand : cinq petits-déjeuners équilibrés et faciles, pour tenir jusqu'à midi sans fringale."
 category: nutrition
 date: 2026-08-27
-cover: /covers/petit-dejeuner.svg
-coverAlt: "Illustration d'un bol de fruits frais, orange, jaune et vert"
+cover: /covers/photos/petit-dejeuner-equilibre-fruits-granola.webp
+coverAlt: "Bol de yaourt garni de granola, de banane, de fruits rouges et de graines, accompagné d’un verre de jus d’orange sur une table lumineuse."
+coverTitle: "Petit-déjeuner équilibré : bien commencer la journée"
+coverCaption: "Un petit-déjeuner équilibré peut associer des fruits, des céréales, une source de protéines et une boisson."
+coverDescription: "Photographie éditoriale d’un bol de yaourt garni de granola, de banane, de fruits rouges, de graines et de noix, avec un verre de jus d’orange et une tasse chaude sur une table en pierre claire."
 ---
 
 Un petit-déjeuner équilibré n'a rien de compliqué. Il repose sur trois éléments : des fibres, des protéines et un fruit.

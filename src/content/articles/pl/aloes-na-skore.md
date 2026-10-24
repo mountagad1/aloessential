@@ -6,8 +6,10 @@ title: "Aloes na skórę: co naprawdę wiemy"
 description: "Nawilżenie, ukojenie po słońcu, drobne podrażnienia: co aloes może naprawdę zrobić dla Twojej skóry i gdzie kończy się jego działanie."
 category: beaute
 date: 2026-10-23
-cover: /covers/aloe-peau.svg
-coverAlt: "Ilustracja liści aloesu z kroplami wody w porannym słońcu"
+cover: /covers/photos/aloe-vera-bienfaits-peau-soin-corps-douche.webp
+coverAlt: "Kobieta nakłada żel aloesowy na ramię pod deszczownicą, otoczona świeżymi liśćmi aloesu i naturalnymi kosmetykami w jasnej łazience."
+coverTitle: "Aloes: korzyści dla skóry"
+coverCaption: "Żel aloesowy jest stosowany w kosmetykach, aby nawilżać skórę i dbać o jej komfort."
 sources:
   - title: "NCCIH (National Institutes of Health), Aloe Vera: przydatność i bezpieczeństwo (po angielsku)"
     url: "https://www.nccih.nih.gov/health/aloe-vera"

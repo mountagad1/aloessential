@@ -11,6 +11,7 @@ import Newsletter from "./Newsletter.astro";
 import ReadingProgress from "./ReadingProgress.astro";
 import TableOfContents from "./TableOfContents.astro";
 import ProductCallout from "./ProductCallout.astro";
+import CoverImage from "./CoverImage.astro";
 import { productsForArticle } from "../lib/products";
 import { articleLd, breadcrumbLd, coverShareImage, organizationLd } from "../lib/seo";
 import { DEFAULT_AUTHOR, DEFAULT_REVIEWER } from "../data/site";
@@ -26,7 +27,7 @@ interface Props {
 }
 
 const { article, others } = Astro.props;
-const { title, description, category, date, cover, coverAlt, locale } = article.data;
+const { title, description, category, date, cover, coverAlt, coverCaption, coverTitle, coverDescription, locale } = article.data;
 const t = ui(locale);
 const french = locale === DEFAULT_LOCALE;
 const { Content, headings } = await render(article);
@@ -46,7 +47,19 @@ const reviewer = article.data.reviewer ?? article.data.translationReviewer ?? DE
 const teamLang = french ? undefined : "fr";
 const jsonLd = [
   organizationLd(Astro.site),
-  articleLd({ title, description, date, cover, path, author, inLanguage: LOCALES[locale].schemaLang }, Astro.site),
+  articleLd(
+    {
+      title,
+      description,
+      date,
+      cover,
+      image: { name: coverTitle, caption: coverCaption, description: coverDescription },
+      path,
+      author,
+      inLanguage: LOCALES[locale].schemaLang,
+    },
+    Astro.site,
+  ),
   breadcrumbLd(
     [
       { name: t.home, path: homePath(locale) },
@@ -105,8 +118,9 @@ const related = [...others.filter((a) => a.data.category === category), ...other
 
     <figure class="article-cover container" data-hero-step="visual" style="--step: 3">
       <div class="media">
-        <img src={cover} alt={coverAlt} width="1200" height="800" fetchpriority="high" decoding="async" />
+        <CoverImage cover={cover} alt={coverAlt} sizes="(min-width: 64rem) 60rem, 100vw" load="high" />
       </div>
+      {coverCaption && <figcaption>{coverCaption}</figcaption>}
     </figure>
 
     <div class="container">

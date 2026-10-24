@@ -5,8 +5,10 @@ title: "Cultivar aloe vera em vaso: o guia simples"
 description: "Luz, substrato, rega, inverno, rebentos para transplantar: como manter um aloe vera em forma em casa, e os erros que o fazem apodrecer."
 category: conseils
 date: 2026-10-23
-cover: /covers/aloe-pot.svg
-coverAlt: "Ilustração de um aloe vera num vaso de barro, ao sol no parapeito da janela"
+cover: /covers/photos/cultiver-aloe-vera-en-pot-guide.webp
+coverAlt: "Aloe vera num vaso junto a uma janela luminosa, com substrato drenante, um rebento jovem e material para transplantar."
+coverTitle: "Cultivar aloe vera em vaso: o guia simples"
+coverCaption: "Luz, rega, substrato e cuidados de inverno: os gestos certos para manter a tua aloe vera em plena forma."
 sources:
   - title: "Royal Horticultural Society (RHS), Aloe vera (em inglês)"
     url: "https://www.rhs.org.uk/plants/981/aloe-vera/details"

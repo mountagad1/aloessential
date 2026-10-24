@@ -6,8 +6,10 @@ title: "Aloe vera juice: what the science says"
 description: "Digestion, detox, immunity: aloe vera juice comes with plenty of promises. Here is what the studies actually allow us to say."
 category: sante
 date: 2026-10-22
-cover: /covers/jus-aloe.svg
-coverAlt: "Illustration of a glass of pale green juice next to an aloe vera leaf"
+cover: /covers/photos/jus-aloe-vera-science-laboratoire-analyse.webp
+coverAlt: "Glass bottle and glass of pale yellow-green aloe vera juice on a laboratory bench, with fresh leaves, beakers, test tubes and a microscope."
+coverTitle: "Aloe vera juice: scientific analysis and composition"
+coverCaption: "Research on aloe vera juice looks at its composition, how it is made, its quality and the scientific data available."
 sources:
   - title: "Commission Regulation (EU) 2021/468 on hydroxyanthracene derivatives (EU)"
     url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0468"

@@ -5,8 +5,10 @@ title: "Jak wybrać żel aloesowy"
 description: "Procent aloesu, dodatki, certyfikaty, przechowywanie: nasze kryteria, by rozpoznać na półce dobry żel aloesowy."
 category: conseils
 date: 2026-10-23
-cover: /covers/gel-aloe.svg
-coverAlt: "Ilustracja kropli przezroczystego żelu aloesowego otoczonej liśćmi"
+cover: /covers/photos/comment-choisir-gel-aloe-vera-qualite.webp
+coverAlt: "Słoiczki i butelki żelu aloesowego ze świeżo pokrojonymi liśćmi, przezroczystym żelem i lupą na stole z kamienia i drewna."
+coverTitle: "Jak wybrać dobry żel aloesowy"
+coverCaption: "Wybierając żel aloesowy, sprawdź skład, listę INCI, dodatki i warunki przechowywania."
 locale: pl
 translationOf: choisir-gel-aloe-vera
 sourceHash: "ea2a88778edf"

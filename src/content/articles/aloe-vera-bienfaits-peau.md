@@ -3,8 +3,11 @@ title: "Aloe vera et peau : ce que l'on sait vraiment"
 description: "Hydratation, apaisement après le soleil, petites irritations : le point sur les usages de l'aloe vera en soin de la peau, et ses limites."
 category: beaute
 date: 2026-10-08
-cover: /covers/aloe-peau.svg
-coverAlt: "Illustration de feuilles d'aloe vera perlées de gouttes d'eau sous un soleil levant"
+cover: /covers/photos/aloe-vera-bienfaits-peau-soin-corps-douche.webp
+coverAlt: "Femme appliquant du gel d’aloe vera sur son épaule sous une douche à effet pluie, entourée de feuilles fraîches d’aloe vera et de soins naturels dans une salle de bain lumineuse."
+coverTitle: "Aloe vera : les bienfaits pour la peau"
+coverCaption: "Le gel d’aloe vera est utilisé dans les soins cosmétiques pour hydrater la peau et contribuer à son confort."
+coverDescription: "Photographie éditoriale réaliste d’une femme appliquant du gel translucide d’aloe vera sur son épaule dans une salle de bain lumineuse inspirée d’un spa naturel, avec une douche à effet pluie, des feuilles fraîches et coupées d’aloe vera et un flacon de soin."
 products: [aloe-vera-emergency-spray, aloe-vera-dermaintense-creme-regeneratrice]
 featured: true
 sources:

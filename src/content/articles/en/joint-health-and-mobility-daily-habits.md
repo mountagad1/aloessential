@@ -6,8 +6,10 @@ title: "Joint health and mobility: the right everyday habits"
 description: "Moving, building strength, eating well: what helps you stay mobile, what joint supplements can claim and when to see your GP."
 category: sante
 date: 2026-10-23
-cover: /covers/mobilite.svg
-coverAlt: "Illustration of a winding path through green hills"
+cover: /covers/photos/articulations-mobilite-quotidien-homme-femme.webp
+coverAlt: "A man and a woman stretching on a sunny terrace overlooking the sea, with aloe vera, ginger and natural ingredients in the foreground."
+coverTitle: "Joint health and everyday mobility"
+coverCaption: "Regular stretching, suitable physical activity and everyday habits help maintain mobility."
 sources:
   - title: "WHO guidelines on physical activity and sedentary behaviour (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"

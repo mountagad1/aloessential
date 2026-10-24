@@ -3,8 +3,11 @@ title: "Bien choisir son gel d'aloe vera"
 description: "Pourcentage, additifs, labels, conservation : nos repères pour reconnaître un gel d'aloe vera de qualité en rayon."
 category: conseils
 date: 2026-10-01
-cover: /covers/gel-aloe.svg
-coverAlt: "Illustration d'une goutte de gel d'aloe vera translucide entourée de feuilles"
+cover: /covers/photos/comment-choisir-gel-aloe-vera-qualite.webp
+coverAlt: "Pots et flacons de gel d’aloe vera présentés avec des feuilles fraîches coupées, du gel translucide et une loupe sur une table en pierre et en bois."
+coverTitle: "Comment choisir un gel d’aloe vera de qualité"
+coverCaption: "Pour choisir un gel d’aloe vera, examinez sa composition, la liste INCI, les ingrédients ajoutés et les conditions de conservation."
+coverDescription: "Photographie éditoriale de plusieurs contenants de gel d’aloe vera dans un décor lumineux. Un pot ouvert de gel translucide occupe le centre, entouré de feuilles fraîches d’aloe vera, de morceaux de feuilles coupées, de flacons et d’une loupe."
 products: [aloe-vera-emergency-spray]
 ---
 

@@ -5,8 +5,10 @@ title: "Como escolher um gel de aloe vera"
 description: "Percentagem, aditivos, selos, conservação: os nossos critérios para reconhecer um bom gel de aloe vera na prateleira."
 category: conseils
 date: 2026-10-23
-cover: /covers/gel-aloe.svg
-coverAlt: "Ilustração de uma gota de gel de aloe vera transparente rodeada de folhas"
+cover: /covers/photos/comment-choisir-gel-aloe-vera-qualite.webp
+coverAlt: "Frascos e boiões de gel de aloe vera com folhas frescas cortadas, gel transparente e uma lupa numa mesa de pedra e madeira."
+coverTitle: "Como escolher um gel de aloe vera de qualidade"
+coverCaption: "Para escolher um gel de aloe vera, vê a composição, a lista INCI, os ingredientes adicionados e as condições de conservação."
 locale: pt-pt
 translationOf: choisir-gel-aloe-vera
 sourceHash: "ea2a88778edf"

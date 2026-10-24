@@ -3,8 +3,10 @@ title: "A morning routine for more energy"
 description: "Daylight, a glass of water, gentle movement: five simple habits to start the day on the right foot, without getting up at dawn."
 category: conseils
 date: 2026-10-23
-cover: /covers/routine-matin.svg
-coverAlt: "Illustration of the sun rising over green hills"
+cover: /covers/photos/routine-matin-energie-soleil-levant-aloe-vera.webp
+coverAlt: "Bottle and glass of aloe vera drink on a minimalist poolside terrace, with fresh aloe vera leaves and the sun rising over the sea."
+coverTitle: "Morning routine: a bright start to the day"
+coverCaption: "A simple morning routine can combine hydration, daylight and habits that suit your pace of life."
 locale: en
 translationOf: routine-matin-energie
 sourceHash: "31ab0570e763"

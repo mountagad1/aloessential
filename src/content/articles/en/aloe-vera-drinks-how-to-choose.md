@@ -11,8 +11,10 @@ title: "Aloe vera drinks: how to choose one"
 description: "Gel or juice, aloe content, aloin, additives, health claims: how to read an aloe vera drink label in the UK and choose with confidence."
 category: nutrition
 date: 2026-10-22
-cover: /covers/jus-aloe.svg
-coverAlt: "Illustration of a glass of pale green drink next to an aloe vera leaf"
+cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
+coverAlt: "Aloe vera drink in a glass with lemon, mint and ice, surrounded by fresh leaves in a kitchen opening onto a bright dining room."
+coverTitle: "Aloe vera drinks: how to choose one"
+coverCaption: "What to check when choosing an aloe vera drink, and the precautions to know about."
 sources:
   - title: "Regulation (EC) No 1925/2006, Annex III, version in force in Great Britain (legislation.gov.uk)"
     url: "https://www.legislation.gov.uk/eur/2006/1925/annex/III"

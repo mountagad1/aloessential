@@ -3,8 +3,10 @@ title: "Natürliche Haarpflege: sanft und einfach"
 description: "Waschen, Masken, Trocknen: eine einfache, sanfte Haarpflegeroutine mit einigen natürlichen Zutaten, die sich bewährt haben."
 category: beaute
 date: 2026-10-23
-cover: /covers/cheveux.svg
-coverAlt: "Illustration fließender grüner Kurven, die an Haar erinnern, mit einem Blatt"
+cover: /covers/photos/soins-cheveux-naturels-aloe-vera-huiles.webp
+coverAlt: "Frau mit langen, welligen Haaren bei der natürlichen Haarpflege, mit Aloe-vera-Blättern, Pflanzenöl und einer Holzbürste in einem hellen Bad."
+coverTitle: "Natürliche Haarpflege: eine pflanzliche Routine"
+coverCaption: "Aloe vera und manche Pflanzenöle passen in eine Pflegeroutine, die auf den Haartyp abgestimmt ist."
 locale: de
 translationOf: soins-cheveux-naturel
 sourceHash: "abbfae249c0a"

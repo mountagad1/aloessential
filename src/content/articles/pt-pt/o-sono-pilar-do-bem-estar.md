@@ -3,8 +3,10 @@ title: "O sono, pilar do bem-estar"
 description: "Regularidade, luz, temperatura, ecrãs: as alavancas mais sólidas para dormir melhor, segundo as recomendações atuais."
 category: sante
 date: 2026-10-23
-cover: /covers/sommeil.svg
-coverAlt: "Ilustração de um crescente de lua dourado sobre folhagem escura"
+cover: /covers/photos/reveil-difficile-fatigue-chambre-blanche.webp
+coverAlt: "Mulher cansada sentada numa cama de lençóis brancos ao acordar, com uma mão na têmpora, num quarto luminoso e minimalista."
+coverTitle: "Acordar com dificuldade: perceber o cansaço matinal"
+coverCaption: "Acordar com dificuldade pode estar ligado à qualidade do sono, à sua duração ou aos hábitos da véspera."
 locale: pt-pt
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"

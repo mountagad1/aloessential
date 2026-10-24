@@ -10,8 +10,10 @@ title: "Aloe vera da bere: come sceglierla"
 description: "Gel o succo, quantità di aloe, aloina, additivi, indicazioni in etichetta: come leggere l'etichetta di un'aloe vera da bere e scegliere con consapevolezza."
 category: nutrition
 date: 2026-10-22
-cover: /covers/jus-aloe.svg
-coverAlt: "Illustrazione di un bicchiere di bevanda verde chiaro accanto a una foglia di aloe vera"
+cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
+coverAlt: "Bevanda all'aloe vera in un bicchiere con limone, menta e ghiaccio, circondata da foglie fresche in una cucina aperta su una sala da pranzo luminosa."
+coverTitle: "Aloe vera da bere: come sceglierla?"
+coverCaption: "I criteri da verificare per scegliere una bevanda all'aloe vera e le precauzioni da conoscere."
 sources:
   - title: "Regolamento (UE) 2021/468 sui derivati idrossiantracenici"
     url: "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32021R0468"

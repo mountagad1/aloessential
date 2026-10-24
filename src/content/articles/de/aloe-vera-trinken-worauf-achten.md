@@ -7,8 +7,10 @@ title: "Aloe vera zum Trinken: worauf Sie achten sollten"
 description: "Gel oder Saft, Aloe-Anteil, Aloin, Zusatzstoffe, Werbeaussagen: so lesen Sie das Etikett eines Aloe-vera-Getränks und wählen bewusst."
 category: nutrition
 date: 2026-10-22
-cover: /covers/jus-aloe.svg
-coverAlt: "Illustration eines Glases mit hellgrünem Getränk neben einem Aloe-vera-Blatt"
+cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
+coverAlt: "Aloe-vera-Getränk im Glas mit Zitrone, Minze und Eiswürfeln, umgeben von frischen Blättern in einer Küche mit hellem Essbereich."
+coverTitle: "Aloe vera zum Trinken: worauf achten?"
+coverCaption: "Worauf Sie bei der Wahl eines Aloe-vera-Getränks achten sollten und welche Vorsicht geboten ist."
 sources:
   - title: "Verordnung (EU) 2021/468 zu Hydroxyanthracenderivaten"
     url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32021R0468"

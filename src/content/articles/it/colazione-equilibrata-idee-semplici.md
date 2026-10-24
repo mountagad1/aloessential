@@ -3,8 +3,10 @@ title: "Colazione equilibrata: le nostre idee semplici"
 description: "Salata o dolce, veloce o golosa: cinque colazioni equilibrate e facili, per arrivare a pranzo senza attacchi di fame."
 category: nutrition
 date: 2026-10-23
-cover: /covers/petit-dejeuner.svg
-coverAlt: "Illustrazione di una ciotola di frutta fresca arancione, gialla e verde"
+cover: /covers/photos/petit-dejeuner-equilibre-fruits-granola.webp
+coverAlt: "Ciotola di yogurt con granola, banana, frutti di bosco e semi, con un bicchiere di succo d'arancia su un tavolo luminoso."
+coverTitle: "Colazione equilibrata: iniziare bene la giornata"
+coverCaption: "Una colazione equilibrata può unire frutta, cereali, una fonte di proteine e una bevanda."
 locale: it
 translationOf: petit-dejeuner-equilibre
 sourceHash: "2cf27e1bfb8d"

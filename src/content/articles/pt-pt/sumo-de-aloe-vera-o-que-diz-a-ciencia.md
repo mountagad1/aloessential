@@ -5,8 +5,10 @@ title: "Sumo de aloe vera: o que diz a ciência"
 description: "Digestão, detox, defesas: o sumo de aloe vera vem acompanhado de muitas promessas. Eis o que os estudos permitem realmente afirmar."
 category: sante
 date: 2026-10-23
-cover: /covers/jus-aloe.svg
-coverAlt: "Ilustração de um copo de sumo verde-claro junto a uma folha de aloe vera"
+cover: /covers/photos/jus-aloe-vera-science-laboratoire-analyse.webp
+coverAlt: "Garrafa e copo de sumo de aloe vera amarelo-esverdeado pálido numa bancada de laboratório, com folhas frescas, gobelés, tubos de ensaio e um microscópio."
+coverTitle: "Sumo de aloe vera: análise científica e composição"
+coverCaption: "O estudo do sumo de aloe vera incide sobretudo na composição, na preparação, na qualidade e nos dados científicos disponíveis."
 sources:
   - title: "Regulamento (UE) 2021/468 relativo aos derivados hidroxiantracénicos"
     url: "https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32021R0468"

@@ -3,8 +3,10 @@ title: "Naturalna pielęgnacja włosów"
 description: "Mycie, maski, suszenie: prosta i delikatna pielęgnacja włosów z kilkoma naturalnymi składnikami, które się sprawdziły."
 category: beaute
 date: 2026-10-23
-cover: /covers/cheveux.svg
-coverAlt: "Ilustracja płynnych zielonych linii przypominających włosy, z liściem"
+cover: /covers/photos/soins-cheveux-naturels-aloe-vera-huiles.webp
+coverAlt: "Kobieta o długich, falowanych włosach nakłada naturalny kosmetyk do włosów, obok liście aloesu, olej roślinny i drewniana szczotka w jasnej łazience."
+coverTitle: "Naturalna pielęgnacja włosów: roślinna rutyna"
+coverCaption: "Aloes i niektóre oleje roślinne mogą być częścią pielęgnacji dopasowanej do rodzaju włosów."
 locale: pl
 translationOf: soins-cheveux-naturel
 sourceHash: "abbfae249c0a"

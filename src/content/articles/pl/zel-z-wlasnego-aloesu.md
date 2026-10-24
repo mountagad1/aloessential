@@ -5,8 +5,10 @@ title: "Żel z własnego aloesu: jak go bezpiecznie używać"
 description: "Odciąć liść, odsączyć lateks, wydobyć i przechować żel: jak stosować na skórę żel z własnej rośliny i dlaczego nie należy go pić."
 category: beaute
 date: 2026-10-23
-cover: /covers/aloe-coupe.svg
-coverAlt: "Ilustracja przeciętego liścia aloesu z widocznym przezroczystym żelem"
+cover: /covers/photos/gel-aloe-vera-maison-mode-emploi.webp
+coverAlt: "Przezroczysty żel ze świeżego liścia aloesu w szklanym słoiku, obok kawałki liścia i drewniana łyżka."
+coverTitle: "Żel z własnego aloesu: przygotowanie i środki ostrożności"
+coverCaption: "Przygotowanie świeżego żelu aloesowego wymaga ostrożności, aby oddzielić przezroczysty żel od żółtego lateksu liścia."
 sources:
   - title: "NCCIH (National Institutes of Health), Aloe Vera: przydatność i bezpieczeństwo (po angielsku)"
     url: "https://www.nccih.nih.gov/health/aloe-vera"

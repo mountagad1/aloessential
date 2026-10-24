@@ -8,8 +8,10 @@ title: "Articolazioni e mobilità: i gesti giusti ogni giorno"
 description: "Muoversi, rinforzare i muscoli, mangiare bene: cosa aiuta a restare mobili, cosa possono promettere gli integratori e quando rivolgersi al medico."
 category: sante
 date: 2026-10-23
-cover: /covers/mobilite.svg
-coverAlt: "Illustrazione di un sentiero sinuoso tra colline verdi"
+cover: /covers/photos/articulations-mobilite-quotidien-homme-femme.webp
+coverAlt: "Un uomo e una donna fanno stretching su una terrazza soleggiata davanti al mare, con aloe vera, zenzero e ingredienti naturali in primo piano."
+coverTitle: "Articolazioni e mobilità ogni giorno"
+coverCaption: "Lo stretching regolare, un'attività fisica adatta e le abitudini di vita aiutano a mantenere la mobilità ogni giorno."
 sources:
   - title: "OMS, linee guida sull'attività fisica e la sedentarietà (2020, in inglese)"
     url: "https://www.who.int/publications/i/item/9789240015128"

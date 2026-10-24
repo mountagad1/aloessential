@@ -5,8 +5,10 @@ title: "Aloe-vera-Gel aus der eigenen Pflanze: so geht es sicher"
 description: "Blatt schneiden, Blattsaft abtropfen lassen, Gel gewinnen und aufbewahren: so nutzen Sie es auf der Haut, und warum Sie es nicht trinken sollten."
 category: beaute
 date: 2026-10-22
-cover: /covers/aloe-coupe.svg
-coverAlt: "Illustration eines angeschnittenen Aloe-vera-Blattes mit klarem Gel"
+cover: /covers/photos/gel-aloe-vera-maison-mode-emploi.webp
+coverAlt: "Durchsichtiges Gel aus einem frischen Aloe-vera-Blatt in einem Glas, mit Blattstücken und einem Holzlöffel."
+coverTitle: "Aloe-vera-Gel aus der eigenen Pflanze: Zubereitung und Vorsicht"
+coverCaption: "Frisches Aloe-vera-Gel braucht etwas Sorgfalt, um das klare Gel vom gelben Blattsaft zu trennen."
 sources:
   - title: "NCCIH (National Institutes of Health), Aloe Vera: Nutzen und Sicherheit (englisch)"
     url: "https://www.nccih.nih.gov/health/aloe-vera"

@@ -7,8 +7,10 @@ title: "Verdauung, Leber, Detox: was Präparate versprechen dürfen"
 description: "Detox-Kuren, Probiotika, Leberpflanzen: was die EU-Regeln erlauben, was die Ernährung schon gut erledigt und wann Sie ärztlichen Rat brauchen."
 category: sante
 date: 2026-10-23
-cover: /covers/digestion.svg
-coverAlt: "Illustration einer Schale mit bunten Getreideflocken, umgeben von Blättern"
+cover: /covers/photos/digestion-foie-detox-complements-guide.webp
+coverAlt: "Frische Aloe vera, ein pflanzliches Getränk, Zitrone, Ingwer und Kräuter auf einer hellen Arbeitsfläche, mit einer anatomischen Darstellung von Leber und Verdauungstrakt."
+coverTitle: "Verdauung, Leber und Detox: Präparate richtig wählen"
+coverCaption: "Nahrungsergänzungsmittel, Pflanzen und Lebensweise: was Sie für Verdauung und Leber wissen sollten."
 sources:
   - title: "Verordnung (EG) Nr. 1924/2006 über nährwert- und gesundheitsbezogene Angaben"
     url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32006R1924"

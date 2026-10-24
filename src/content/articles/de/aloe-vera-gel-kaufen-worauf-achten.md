@@ -5,8 +5,10 @@ title: "Aloe-vera-Gel kaufen: worauf achten?"
 description: "Prozentangabe, Zusatzstoffe, Siegel, Aufbewahrung: unsere Kriterien, um im Regal ein gutes Aloe-vera-Gel zu erkennen."
 category: conseils
 date: 2026-10-22
-cover: /covers/gel-aloe.svg
-coverAlt: "Illustration eines Tropfens klaren Aloe-vera-Gels, umgeben von Blättern"
+cover: /covers/photos/comment-choisir-gel-aloe-vera-qualite.webp
+coverAlt: "Tiegel und Flaschen mit Aloe-vera-Gel, frisch geschnittenen Blättern, klarem Gel und einer Lupe auf einem Tisch aus Stein und Holz."
+coverTitle: "Ein gutes Aloe-vera-Gel erkennen"
+coverCaption: "Achten Sie bei Aloe-vera-Gel auf Zusammensetzung, INCI-Liste, zugesetzte Inhaltsstoffe und Aufbewahrung."
 locale: de
 translationOf: choisir-gel-aloe-vera
 sourceHash: "ea2a88778edf"

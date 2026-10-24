@@ -6,8 +6,10 @@ title: "Aloe vera für die Haut: was wir wirklich wissen"
 description: "Feuchtigkeit, Linderung nach der Sonne, kleine Irritationen: was Aloe vera für die Haut wirklich leisten kann und wo ihre Wirkung endet."
 category: beaute
 date: 2026-10-22
-cover: /covers/aloe-peau.svg
-coverAlt: "Illustration von Aloe-vera-Blättern mit Wassertropfen unter der aufgehenden Sonne"
+cover: /covers/photos/aloe-vera-bienfaits-peau-soin-corps-douche.webp
+coverAlt: "Frau trägt unter einer Regendusche Aloe-vera-Gel auf ihre Schulter auf, umgeben von frischen Aloe-vera-Blättern und Naturkosmetik in einem hellen Bad."
+coverTitle: "Aloe vera: was sie der Haut bringt"
+coverCaption: "Aloe-vera-Gel wird in der Hautpflege verwendet, um die Haut zu befeuchten und ihr Wohlbefinden zu unterstützen."
 sources:
   - title: "NCCIH (National Institutes of Health), Aloe Vera: Nutzen und Sicherheit (englisch)"
     url: "https://www.nccih.nih.gov/health/aloe-vera"

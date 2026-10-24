@@ -3,8 +3,10 @@ title: "Healthy breakfast ideas: simple and balanced"
 description: "Savoury or sweet, quick or indulgent: five easy, balanced breakfasts to keep you going until lunch without hunger pangs."
 category: nutrition
 date: 2026-10-23
-cover: /covers/petit-dejeuner.svg
-coverAlt: "Illustration of a bowl of fresh orange, yellow and green fruit"
+cover: /covers/photos/petit-dejeuner-equilibre-fruits-granola.webp
+coverAlt: "Bowl of yoghurt topped with granola, banana, berries and seeds, with a glass of orange juice on a bright table."
+coverTitle: "A balanced breakfast: starting the day well"
+coverCaption: "A balanced breakfast can combine fruit, cereals, a source of protein and a drink."
 locale: en
 translationOf: petit-dejeuner-equilibre
 sourceHash: "2cf27e1bfb8d"

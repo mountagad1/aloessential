@@ -7,8 +7,10 @@ title: "Digestión, hígado, detox: qué prometen los complementos"
 description: "Curas detox, probióticos, plantas para el hígado: lo que dice la normativa europea, lo que la alimentación ya hace bien y cuándo consultar."
 category: sante
 date: 2026-10-23
-cover: /covers/digestion.svg
-coverAlt: "Ilustración de un cuenco de cereales de colores rodeado de hojas"
+cover: /covers/photos/digestion-foie-detox-complements-guide.webp
+coverAlt: "Aloe vera fresco, bebida vegetal, limón, jengibre y hierbas aromáticas sobre una encimera luminosa, con una ilustración anatómica del hígado y del aparato digestivo."
+coverTitle: "Digestión, hígado y detox: elegir bien los complementos"
+coverCaption: "Complementos, plantas y hábitos de vida: lo que conviene saber para cuidar la digestión y el hígado."
 sources:
   - title: "Reglamento (CE) n.º 1924/2006 relativo a las declaraciones nutricionales y de propiedades saludables en los alimentos"
     url: "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32006R1924"

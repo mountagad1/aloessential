@@ -8,8 +8,10 @@ title: "Witaminy i zmęczenie: co naprawdę mówią przepisy"
 description: "Które składniki mogą „pomagać w zmniejszeniu uczucia zmęczenia i znużenia”? Jak czytać % RWS na etykiecie i kiedy zmęczenie wymaga wizyty u lekarza."
 category: sante
 date: 2026-10-23
-cover: /covers/vitamines.svg
-coverAlt: "Ilustracja kolorowych plasterków cytrusów otoczonych liśćmi"
+cover: /covers/photos/vitamines-fatigue-reglementation-vnr.webp
+coverAlt: "Zmęczona kobieta przy stole w jasnej kuchni, z różnorodną żywnością, szklanką wody z cytryną i opakowaniem suplementu z tabelą wartości odżywczych."
+coverTitle: "Witaminy i zmęczenie: jak czytać % RWS na etykiecie"
+coverCaption: "Witaminy i składniki mineralne, które mogą pomagać w zmniejszeniu uczucia zmęczenia, podlegają ścisłym warunkom prawnym."
 sources:
   - title: "Rozporządzenie (WE) nr 1924/2006 w sprawie oświadczeń żywieniowych i zdrowotnych dotyczących żywności"
     url: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32006R1924"

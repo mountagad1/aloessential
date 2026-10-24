@@ -3,8 +3,10 @@ title: "Una rutina de mañana para tener más energía"
 description: "Luz natural, hidratación, movimiento suave: cinco gestos sencillos para empezar bien el día, sin tener que madrugar al amanecer."
 category: conseils
 date: 2026-10-23
-cover: /covers/routine-matin.svg
-coverAlt: "Ilustración de un sol saliendo sobre colinas verdes"
+cover: /covers/photos/routine-matin-energie-soleil-levant-aloe-vera.webp
+coverAlt: "Botella y vaso de bebida de aloe vera en una terraza minimalista junto a una piscina, con hojas frescas de aloe vera y el sol saliendo sobre el mar."
+coverTitle: "Rutina de mañana: un comienzo luminoso"
+coverCaption: "Una rutina matinal sencilla puede combinar hidratación, luz natural y hábitos adaptados a tu ritmo de vida."
 locale: es
 translationOf: routine-matin-energie
 sourceHash: "31ab0570e763"

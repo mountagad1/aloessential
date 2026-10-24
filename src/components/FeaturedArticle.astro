@@ -1,4 +1,5 @@
 ---
+import CoverImage from "./CoverImage.astro";
 import Icon from "./Icon.astro";
 import { CATEGORIES } from "../data/categories";
 import { articleUrl, formatDate, readingTime, type Article } from "../lib/articles";
@@ -13,7 +14,7 @@ const { title, description, category, date, cover, coverAlt } = article.data;
 
 <article class="featured" data-reveal>
   <div class="media">
-    <img src={cover} alt={coverAlt} width="1200" height="800" loading="lazy" decoding="async" data-fade />
+    <CoverImage cover={cover} alt={coverAlt} sizes="(min-width: 64rem) 36rem, 100vw" fade />
   </div>
   <div class="featured__body">
     <p class="card__meta">

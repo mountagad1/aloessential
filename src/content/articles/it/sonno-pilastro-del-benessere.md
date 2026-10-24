@@ -3,8 +3,10 @@ title: "Il sonno, pilastro del benessere"
 description: "Regolarità, luce, temperatura, schermi: le leve più solide per dormire meglio, secondo le raccomandazioni attuali."
 category: sante
 date: 2026-10-23
-cover: /covers/sommeil.svg
-coverAlt: "Illustrazione di una falce di luna dorata sopra un fogliame scuro"
+cover: /covers/photos/reveil-difficile-fatigue-chambre-blanche.webp
+coverAlt: "Donna stanca seduta in un letto dalle lenzuola bianche al risveglio, una mano sulla tempia, in una camera luminosa e minimalista."
+coverTitle: "Risveglio difficile: capire la stanchezza al mattino"
+coverCaption: "Un risveglio difficile può dipendere dalla qualità del sonno, dalla sua durata o dalle abitudini della sera prima."
 locale: it
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"

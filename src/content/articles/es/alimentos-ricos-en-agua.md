@@ -3,8 +3,10 @@ title: "Hidratación: los alimentos ricos en agua"
 description: "Pepino, sandía, calabacín, cítricos: parte de la hidratación llega del plato. Nuestras ideas para aprovecharlo durante todo el año."
 category: nutrition
 date: 2026-10-23
-cover: /covers/hydratation.svg
-coverAlt: "Ilustración de rodajas de pepino, hojas y gotas de agua"
+cover: /covers/photos/aliments-riches-en-eau-hydratation.webp
+coverAlt: "Rodajas de sandía, pepino y calabacín con cítricos sobre una mesa de piedra clara, con el mar desenfocado al fondo."
+coverTitle: "Hidratación: los alimentos ricos en agua"
+coverCaption: "El pepino, la sandía, el calabacín y los cítricos contribuyen al aporte diario de agua."
 locale: es
 translationOf: hydratation-aliments-riches-en-eau
 sourceHash: "16e7e38e09cd"

@@ -5,8 +5,10 @@ title: "Crema anti-age: quali attivi per quali esigenze?"
 description: "Protezione solare, retinolo, vitamina C, niacinamide, acido ialuronico: cosa fanno davvero gli attivi anti-age e come abbinarli."
 category: beaute
 date: 2026-10-23
-cover: /covers/anti-age.svg
-coverAlt: "Illustrazione di un fiore stilizzato e di gocce d'olio su fondo crema"
+cover: /covers/photos/soin-anti-age-actifs-couple-peau-mature.webp
+coverAlt: "Donna dalla pelle matura che applica una crema sulla guancia accanto a un uomo dai capelli grigi, con aloe vera, oli e ingredienti botanici in primo piano."
+coverTitle: "Crema anti-age: gli attivi da conoscere"
+coverCaption: "La cura della pelle matura può basarsi su diversi attivi cosmetici, in base alle esigenze della pelle."
 sources:
   - title: "Regolamento (UE) 2024/996 (vitamina A nei cosmetici)"
     url: "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32024R0996"

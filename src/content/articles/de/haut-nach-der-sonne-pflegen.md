@@ -5,8 +5,10 @@ title: "Empfindliche Haut nach der Sonne: die beruhigende Routine"
 description: "Abkühlen, sanft reinigen, Feuchtigkeit spenden, schützen: die Routine, die empfindliche Haut nach der Sonne beruhigt, und wann Sie Hilfe brauchen."
 category: beaute
 date: 2026-10-22
-cover: /covers/apres-soleil.svg
-coverAlt: "Illustration eines Sonnenuntergangs hinter Aloe-vera-Blättern mit Tropfen"
+cover: /covers/photos/routine-peau-apres-soleil-aloe-vera-plage.webp
+coverAlt: "Frau trägt auf einer sonnigen Terrasse am Mittelmeerstrand Aloe-vera-Gel auf ihre Schulter auf, mit frischen Aloe-vera-Blättern und Naturkosmetik."
+coverTitle: "Haut nach der Sonne: die richtige Pflege"
+coverCaption: "Nach einem Tag in der Sonne: eine sanfte Routine, die der Haut Feuchtigkeit gibt und sie angenehm hält."
 sources:
   - title: "116117, ärztlicher Bereitschaftsdienst (Bundesministerium für Gesundheit)"
     url: "https://www.116117.de/de/index.php"

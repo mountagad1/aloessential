@@ -5,8 +5,10 @@ title: "Pelle sensibile dopo il sole: la routine che lenisce"
 description: "Rinfrescare, detergere con delicatezza, idratare, proteggere: la routine che lenisce la pelle sensibile dopo il sole, e quando rivolgersi al medico."
 category: beaute
 date: 2026-10-22
-cover: /covers/apres-soleil.svg
-coverAlt: "Illustrazione di un tramonto dietro foglie di aloe vera imperlate di gocce"
+cover: /covers/photos/routine-peau-apres-soleil-aloe-vera-plage.webp
+coverAlt: "Donna che applica gel di aloe vera sulla spalla su una terrazza soleggiata davanti a una spiaggia mediterranea, con foglie fresche di aloe vera e prodotti naturali."
+coverTitle: "Pelle dopo il sole: i gesti giusti"
+coverCaption: "Dopo una giornata al sole, una routine delicata per idratare la pelle e mantenerne il comfort."
 locale: it
 translationOf: routine-peau-apres-soleil
 sourceHash: "284a4c8eb2a1"

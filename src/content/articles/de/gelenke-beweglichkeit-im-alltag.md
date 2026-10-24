@@ -6,8 +6,10 @@ title: "Gelenke und Beweglichkeit: gute Gewohnheiten im Alltag"
 description: "Bewegen, Muskeln stärken, gut essen: was hilft, beweglich zu bleiben, was Gelenkpräparate versprechen dürfen und wann Sie ärztlichen Rat brauchen."
 category: sante
 date: 2026-10-23
-cover: /covers/mobilite.svg
-coverAlt: "Illustration eines gewundenen Wegs durch grüne Hügel"
+cover: /covers/photos/articulations-mobilite-quotidien-homme-femme.webp
+coverAlt: "Ein Mann und eine Frau dehnen sich auf einer sonnigen Terrasse am Meer, mit Aloe vera, Ingwer und natürlichen Zutaten im Vordergrund."
+coverTitle: "Gelenke und Beweglichkeit im Alltag"
+coverCaption: "Regelmäßiges Dehnen, passende Bewegung und gute Gewohnheiten helfen, im Alltag beweglich zu bleiben."
 sources:
   - title: "WHO-Leitlinien zu körperlicher Aktivität und sitzendem Verhalten (2020, englisch)"
     url: "https://www.who.int/publications/i/item/9789240015128"

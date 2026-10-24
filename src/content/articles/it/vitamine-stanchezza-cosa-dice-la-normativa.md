@@ -9,8 +9,10 @@ title: "Vitamine e stanchezza: cosa dice davvero la normativa"
 description: "Quali nutrienti possono «contribuire alla riduzione della stanchezza»? Come leggere i VNR in etichetta e quando la stanchezza merita un parere medico."
 category: sante
 date: 2026-10-23
-cover: /covers/vitamines.svg
-coverAlt: "Illustrazione di fette di agrumi colorate circondate da foglie"
+cover: /covers/photos/vitamines-fatigue-reglementation-vnr.webp
+coverAlt: "Donna stanca a un tavolo in una cucina luminosa, con alimenti vari, un bicchiere d'acqua e limone e un flacone di integratori con la tabella nutrizionale."
+coverTitle: "Vitamine e stanchezza: capire i VNR in etichetta"
+coverCaption: "Le vitamine e i minerali che possono vantare un contributo alla riduzione della stanchezza sono soggetti a condizioni normative precise."
 sources:
   - title: "Regolamento (CE) n. 1924/2006 relativo alle indicazioni nutrizionali e sulla salute"
     url: "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32006R1924"

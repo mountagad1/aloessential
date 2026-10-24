@@ -3,8 +3,10 @@ title: "El sueño, pilar del bienestar"
 description: "Regularidad, luz, temperatura, pantallas: las palancas más sólidas para dormir mejor, según las recomendaciones actuales."
 category: sante
 date: 2026-10-23
-cover: /covers/sommeil.svg
-coverAlt: "Ilustración de una luna creciente dorada sobre un follaje oscuro"
+cover: /covers/photos/reveil-difficile-fatigue-chambre-blanche.webp
+coverAlt: "Mujer cansada sentada en una cama de sábanas blancas al despertar, con una mano en la sien, en un dormitorio luminoso y minimalista."
+coverTitle: "Despertar difícil: entender el cansancio al levantarse"
+coverCaption: "Un despertar difícil puede deberse a la calidad del sueño, a su duración o a los hábitos de la noche anterior."
 locale: es
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"

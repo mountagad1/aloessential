@@ -60,3 +60,60 @@ node tools/generate-covers.mjs      # if the cover is generated
 node tools/rasterize-covers.mjs     # writes public/covers/<name>.jpg
 npx playwright test tests/delivery.spec.ts --project=desktop
 ```
+
+## 6. Article photographs (2026-10-24)
+
+The 16 articles now use photographs instead of the SVG illustrations. Product pages keep their illustrations.
+
+**Choosing a photo for an article.** Each candidate was checked in this order:
+1. **Subject:** the photo shows what the article is about.
+2. **Consistency with the advice:** it does not contradict what the article recommends.
+3. **No implied claim:** it does not suggest an effect the article does not claim.
+4. **Technical fit:** 16:9, at least 1200 px wide, no text added on the image.
+
+Choices that needed a decision:
+
+| Article | Photo kept | Photo set aside, and why |
+| --- | --- | --- |
+| sommeil-pilier-bien-etre | `reveil-difficile-fatigue-chambre-blanche` | `sommeil-chambre-fenetre-ouverte-cour-nuit`: a TV is switched on facing the bed, while the article advises keeping screens away from it |
+| vitamines-fatigue-reglementation | `vitamines-fatigue-reglementation-vnr` (nutrition label, matches the %NRV section) | `vitamines-fatigue-complements-alimentaires`: described in the metadata but missing from the archive |
+| aloe-vera-bienfaits-peau | `aloe-vera-bienfaits-peau-soin-corps-douche` | `aloe-vera-peau-cellules-hydratation`: DNA and molecules entering skin layers suggest a cellular effect the article does not claim; no metadata |
+
+`aloe-vera-a-boire-comment-choisir.webp` was imported under the file name given in its metadata: `aloe-vera-a-boire-cuisine-salle-a-manger`.
+
+**Import:**
+- Command: `node tools/import-cover-photos.mjs <folder>`. It refuses images that are not 16:9 or are under 1200 px wide.
+- It writes to `public/covers/photos/`:
+  - the original WebP (1672 × 941);
+  - candidates at 1200, 800 and 480 px for `srcset`;
+  - a 1200 × 675 JPEG for sharing.
+- It records each photo's size in `src/data/cover-photos.json`.
+- Page code reads covers through `src/lib/images.ts`: `coverImage` for display, `coverShare` for sharing.
+
+**Metadata per article** (front matter):
+
+| Field | Used for |
+| --- | --- |
+| `coverAlt` | `alt` text and `og:image:alt` |
+| `coverCaption` | `<figcaption>` under the photo, and `caption` in the ImageObject |
+| `coverTitle` | `name` in the ImageObject |
+| `coverDescription` | `description` in the ImageObject, French only (translations omit it rather than mix languages) |
+
+- **No `title` attribute:** the image title is not used as the `<img>` `title` attribute, which only adds a mouse-over tooltip and duplicates the alt text for screen readers.
+- **Descriptions:** internal notes from the briefs ("conforme à la charte graphique Aloessential") were left out of the public descriptions.
+- **Translations:** each translation has its own `coverAlt`, `coverTitle` and `coverCaption` in its language.
+
+**Delivery and Discover:**
+- **Hero image:** loaded with `fetchpriority="high"`, never lazy. It has `srcset`, plus `sizes` of 60rem on desktop and 100vw on mobile, and declares its intrinsic size, so there is no layout shift.
+- **Cards:** load lazily, with `sizes` matching the grid.
+- **Sharing and search:**
+  - `og:image` is the 1200 × 675 JPEG;
+  - Article structured data carries an `ImageObject` with `url`, `width`, `height`, `name` and `caption`;
+  - `max-image-preview:large` is unchanged.
+
+**Tests** (`tests/delivery.spec.ts`, `tests/seo.spec.ts`) check:
+- every photo cover has its candidates and its share JPEG at the right size;
+- article heroes have `srcset`, `sizes`, `fetchpriority`, a caption and an ImageObject;
+- `og:image` points to an existing JPEG of the declared size.
+
+**Unused SVGs:** the article SVG illustrations (`public/covers/*.svg` other than `produit-*`, `aloe-peau`, `jus-aloe`) are no longer used by articles. They are kept, since `tools/generate-covers.mjs` still produces them.

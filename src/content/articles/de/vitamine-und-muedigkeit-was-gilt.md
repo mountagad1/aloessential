@@ -7,8 +7,10 @@ title: "Vitamine und Müdigkeit: was die Vorschriften wirklich sagen"
 description: "Welche Nährstoffe dürfen „zur Verringerung von Müdigkeit und Ermüdung beitragen“? So lesen Sie den NRV-Wert, und wann Müdigkeit ärztlichen Rat braucht."
 category: sante
 date: 2026-10-23
-cover: /covers/vitamines.svg
-coverAlt: "Illustration bunter Zitrusscheiben, umgeben von Blättern"
+cover: /covers/photos/vitamines-fatigue-reglementation-vnr.webp
+coverAlt: "Müde Frau an einem Tisch in einer hellen Küche, mit verschiedenen Lebensmitteln, einem Glas Zitronenwasser und einer Dose Nahrungsergänzungsmittel mit Nährwerttabelle."
+coverTitle: "Vitamine und Müdigkeit: den NRV auf dem Etikett verstehen"
+coverCaption: "Vitamine und Mineralstoffe, die zur Verringerung von Müdigkeit beitragen dürfen, unterliegen genauen rechtlichen Bedingungen."
 sources:
   - title: "Verordnung (EG) Nr. 1924/2006 über nährwert- und gesundheitsbezogene Angaben"
     url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32006R1924"

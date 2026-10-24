@@ -3,8 +3,11 @@ title: "Prendre soin de ses cheveux au naturel"
 description: "Lavages, masques, séchage : une routine capillaire simple et douce, avec quelques ingrédients naturels qui ont fait leurs preuves."
 category: beaute
 date: 2026-08-20
-cover: /covers/cheveux.svg
-coverAlt: "Illustration de courbes fluides vertes évoquant une chevelure, avec une feuille"
+cover: /covers/photos/soins-cheveux-naturels-aloe-vera-huiles.webp
+coverAlt: "Femme aux cheveux longs et ondulés appliquant un soin capillaire naturel, entourée de feuilles d’aloe vera, d’huile végétale et d’une brosse en bois dans une salle de bain lumineuse."
+coverTitle: "Soins naturels pour les cheveux : une routine botanique"
+coverCaption: "L’aloe vera et certaines huiles végétales peuvent s’intégrer à une routine de soin adaptée à la nature des cheveux."
+coverDescription: "Photographie éditoriale d’une femme aux longs cheveux bruns et ondulés qui lisse sa chevelure dans une salle de bain lumineuse, avec des feuilles d’aloe vera, une bouteille d’huile végétale et une brosse en bois au premier plan."
 ---
 
 Des cheveux en bonne santé tiennent souvent davantage à la douceur des gestes qu'à la multiplication des produits.

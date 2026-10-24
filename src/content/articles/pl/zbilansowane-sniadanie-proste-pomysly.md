@@ -3,8 +3,10 @@ title: "Zbilansowane śniadanie: nasze proste pomysły"
 description: "Na słono czy na słodko, szybko czy z przyjemnością: pięć zbilansowanych, łatwych śniadań, dzięki którym dotrwasz do obiadu bez napadów głodu."
 category: nutrition
 date: 2026-10-23
-cover: /covers/petit-dejeuner.svg
-coverAlt: "Ilustracja miski świeżych owoców w kolorach pomarańczowym, żółtym i zielonym"
+cover: /covers/photos/petit-dejeuner-equilibre-fruits-granola.webp
+coverAlt: "Miska jogurtu z granolą, bananem, owocami jagodowymi i nasionami oraz szklanka soku pomarańczowego na jasnym stole."
+coverTitle: "Zbilansowane śniadanie: dobry początek dnia"
+coverCaption: "Zbilansowane śniadanie może łączyć owoce, produkty zbożowe, źródło białka i napój."
 locale: pl
 translationOf: petit-dejeuner-equilibre
 sourceHash: "2cf27e1bfb8d"

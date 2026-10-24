@@ -5,8 +5,10 @@ title: "Aloe vera im Topf pflegen: der einfache Ratgeber"
 description: "Licht, Erde, Gießen, Überwinterung, Ableger: so bleibt eine Aloe vera im Haus gesund, und diese Fehler lassen sie faulen."
 category: conseils
 date: 2026-10-22
-cover: /covers/aloe-pot.svg
-coverAlt: "Illustration einer Aloe vera in einem Terrakottatopf, in der Sonne auf einer Fensterbank"
+cover: /covers/photos/cultiver-aloe-vera-en-pot-guide.webp
+coverAlt: "Aloe vera im Topf an einem hellen Fenster, mit durchlässiger Erde, einem jungen Ableger und Werkzeug zum Umtopfen."
+coverTitle: "Aloe vera im Topf: der einfache Leitfaden"
+coverCaption: "Licht, Gießen, Erde und Überwinterung: die richtigen Handgriffe, damit Ihre Aloe vera gesund bleibt."
 sources:
   - title: "Royal Horticultural Society (RHS), Aloe vera (englisch)"
     url: "https://www.rhs.org.uk/plants/981/aloe-vera/details"

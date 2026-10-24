@@ -6,8 +6,10 @@ title: "Stawy i sprawność: dobre nawyki na co dzień"
 description: "Ruch, wzmacnianie mięśni, dobra dieta: co pomaga zachować sprawność, co mogą obiecywać suplementy na stawy i kiedy iść do lekarza."
 category: sante
 date: 2026-10-23
-cover: /covers/mobilite.svg
-coverAlt: "Ilustracja krętej ścieżki wśród zielonych wzgórz"
+cover: /covers/photos/articulations-mobilite-quotidien-homme-femme.webp
+coverAlt: "Mężczyzna i kobieta rozciągają się na słonecznym tarasie z widokiem na morze, z aloesem, imbirem i naturalnymi składnikami na pierwszym planie."
+coverTitle: "Stawy i sprawność na co dzień"
+coverCaption: "Regularne rozciąganie, odpowiednia aktywność fizyczna i dobre nawyki pomagają zachować sprawność na co dzień."
 sources:
   - title: "WHO, wytyczne dotyczące aktywności fizycznej i siedzącego trybu życia (2020, po angielsku)"
     url: "https://www.who.int/publications/i/item/9789240015128"
