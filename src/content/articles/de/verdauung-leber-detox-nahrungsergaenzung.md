@@ -17,7 +17,8 @@ sources:
 locale: de
 translationOf: digestion-foie-detox-complements
 sourceHash: "85886cfc227c"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Im Frühjahr wie nach den Feiertagen füllen „Detox“-Kuren und Präparate für den Darm die Regale. Ihre Verpackungen versprechen zu reinigen, zu entschlacken, ins Gleichgewicht zu bringen. Der europäische Rahmen dafür, was ein Nahrungsergänzungsmittel behaupten darf, ist jedoch streng. Wer ihn kennt, kann besser sortieren.

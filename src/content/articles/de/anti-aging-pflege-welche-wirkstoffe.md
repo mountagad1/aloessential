@@ -13,7 +13,8 @@ sources:
 locale: de
 translationOf: soin-anti-age-quels-actifs
 sourceHash: "75f22806a9f4"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Die Anti-Aging-Regale sind voller Wirkstoffnamen, Prozentangaben und Versprechen. Um sich zurechtzufinden, hilft eine einfache Idee: Eine Creme wirkt auf das **Erscheinungsbild** der Haut (Feuchtigkeit, Ausstrahlung, Geschmeidigkeit, Aussehen feiner Linien). Sie dreht die Zeit nicht zurück. Gut gewählt und richtig angewendet, kann sie im Alltag aber einen echten Unterschied machen.

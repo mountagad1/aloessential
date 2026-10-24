@@ -18,7 +18,8 @@ sources:
 locale: de
 translationOf: articulations-mobilite-quotidien
 sourceHash: "30e39976d2dc"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Ohne Steifheit aufstehen, Treppen steigen, ohne nachzudenken, einen ganzen Nachmittag im Garten verbringen: Beweglichkeit ist ein Komfort, den man vor allem bemerkt, wenn er nachlässt. Die gute Nachricht: Vieles, was sie erhält, liegt in unseren Gewohnheiten.

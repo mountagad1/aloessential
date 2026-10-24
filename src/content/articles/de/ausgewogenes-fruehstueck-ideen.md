@@ -8,7 +8,8 @@ coverAlt: "Illustration einer Schale mit frischem Obst in Orange, Gelb und Grün
 locale: de
 translationOf: petit-dejeuner-equilibre
 sourceHash: "2cf27e1bfb8d"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Ein ausgewogenes Frühstück ist nicht kompliziert. Es beruht auf drei Elementen: Ballaststoffen, Eiweiß und einem Stück Obst.

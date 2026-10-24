@@ -49,9 +49,9 @@
 | soins-cheveux-naturel | `en/natural-hair-care` | GP |
 | sommeil-pilier-bien-etre | `en/sleep-a-pillar-of-wellbeing` | GP |
 
-**German** (readers in Germany): 0 published, **16 drafts** (every French article), 0 not started. EU rules apply as in French; the adaptation covers register (*Sie*), German typography, Apotheke/Drogerie/Reformhaus, Hausarztpraxis, 116117 and 112, overwintering indoors.
+**German** (readers in Germany): **16 published** (2026-10-24, reviewer Philippe Cros). EU rules apply as in French; the adaptation covers register (*Sie*), German typography, Apotheke/Drogerie/Reformhaus, Hausarztpraxis, 116117 and 112, overwintering indoors.
 
-| French source | German draft |
+| French source | German article (published) |
 | --- | --- |
 | aloe-vera-bienfaits-peau | `de/aloe-vera-fuer-die-haut` |
 | choisir-gel-aloe-vera | `de/aloe-vera-gel-kaufen-worauf-achten` |

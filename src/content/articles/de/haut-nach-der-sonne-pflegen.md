@@ -13,7 +13,8 @@ sources:
 locale: de
 translationOf: routine-peau-apres-soleil
 sourceHash: "284a4c8eb2a1"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Ein Tag an der frischen Luft, am See oder am Meer, und am Abend spannt die Haut, ist warm und leicht gerötet. Wer empfindliche Haut hat, kennt das: Die Sonne stellt sie auf die Probe, selbst mit Sonnenschutz. Ein paar einfache Handgriffe helfen, wieder Wohlbefinden zu finden. Sie ersetzen keinen guten Sonnenschutz und behandeln keinen echten Sonnenbrand.

@@ -15,7 +15,8 @@ sources:
 locale: de
 translationOf: cultiver-aloe-vera-en-pot
 sourceHash: "68d1d6053660"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Aloe vera gehört zu den pflegeleichtesten Zimmerpflanzen … solange man es nicht zu gut mit ihr meint. Die Sukkulente stammt aus heißen, trockenen Regionen: Was sie umbringt, ist fast nie Vergesslichkeit, sondern zu viel Wasser.

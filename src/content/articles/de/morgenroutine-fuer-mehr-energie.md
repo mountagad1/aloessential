@@ -8,7 +8,8 @@ coverAlt: "Illustration einer aufgehenden Sonne über grünen Hügeln"
 locale: de
 translationOf: routine-matin-energie
 sourceHash: "31ab0570e763"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Für einen guten Start brauchen Sie keine zweistündige Routine. Oft reichen ein paar regelmäßige Gewohnheiten, um einen Vormittag spürbar zu verändern.

@@ -8,7 +8,8 @@ coverAlt: "Illustration fließender grüner Kurven, die an Haar erinnern, mit ei
 locale: de
 translationOf: soins-cheveux-naturel
 sourceHash: "abbfae249c0a"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Gesundes Haar verdankt oft mehr einem sanften Umgang als einer Vielzahl von Produkten.

@@ -8,7 +8,8 @@ coverAlt: "Illustration von Gurkenscheiben, Blättern und Wassertropfen"
 locale: de
 translationOf: hydratation-aliments-riches-en-eau
 sourceHash: "16e7e38e09cd"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Beim Thema Flüssigkeit denken wir zuerst an Getränke. Dabei stammt ein nicht unerheblicher Teil des Wassers, das wir aufnehmen, aus Lebensmitteln.

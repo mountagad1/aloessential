@@ -17,7 +17,8 @@ sources:
 locale: de
 translationOf: jus-aloe-vera-science
 sourceHash: "63507b38c25e"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Aloe-vera-Saft hat sich seinen Platz im Wellness-Regal erobert. Doch zwischen Werbeversprechen und wissenschaftlichen Daten klafft manchmal eine große Lücke.

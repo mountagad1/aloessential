@@ -19,7 +19,8 @@ sources:
 locale: de
 translationOf: aloe-vera-a-boire-comment-choisir
 sourceHash: "99a4832eaa0d"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Im Regal sehen Aloe-vera-Getränke alle ähnlich aus: eine Flasche, ein grünes Blatt, ein Versprechen von Wohlbefinden. Ihre Zusammensetzung unterscheidet sich jedoch stark. Bevor Sie wählen, lohnt es sich zu wissen, worauf Sie auf dem Etikett achten sollten … und was es nicht versprechen darf.

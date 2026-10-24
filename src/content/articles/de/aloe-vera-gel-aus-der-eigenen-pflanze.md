@@ -15,7 +15,8 @@ sources:
 locale: de
 translationOf: gel-aloe-vera-maison
 sourceHash: "bd3c649d5e58"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Eine Aloe vera auf der Fensterbank macht Lust, ihr Gel zu verwenden. Das ist auf der Haut möglich, wenn Sie einige Vorsichtsmaßnahmen beachten. Die wichtigste: Gel und Blattsaft sauber trennen.

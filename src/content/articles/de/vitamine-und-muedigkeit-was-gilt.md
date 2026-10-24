@@ -19,7 +19,8 @@ sources:
 locale: de
 translationOf: vitamines-fatigue-reglementation
 sourceHash: "364ffbf6ad87"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 „Schlapp und müde?“ Nahrungsergänzungsmittel, die Energie versprechen, gibt es viele. Hinter diesen Versprechen steht jedoch ein sehr genauer rechtlicher Rahmen. Wer ihn kennt, liest Etiketten kritischer und übersieht keine Müdigkeit, die mehr braucht als eine Vitaminkur.

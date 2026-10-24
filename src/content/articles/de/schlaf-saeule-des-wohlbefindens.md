@@ -8,7 +8,8 @@ coverAlt: "Illustration einer goldenen Mondsichel über dunklem Laub"
 locale: de
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Schlaf beeinflusst Stimmung, Konzentration, Appetit und Erholung. Die gute Nachricht: Einige Gewohnheiten wirken sich tatsächlich auf seine Qualität aus.

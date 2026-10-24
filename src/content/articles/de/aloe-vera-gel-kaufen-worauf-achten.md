@@ -10,7 +10,8 @@ coverAlt: "Illustration eines Tropfens klaren Aloe-vera-Gels, umgeben von Blätt
 locale: de
 translationOf: choisir-gel-aloe-vera
 sourceHash: "ea2a88778edf"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 In Drogerie, Apotheke oder Reformhaus stehen Dutzende Gele „mit Aloe vera“. Da fällt die Orientierung schwer. Ein paar einfache Kriterien helfen bei einer bewussten Wahl.

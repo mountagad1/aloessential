@@ -14,7 +14,8 @@ sources:
 locale: de
 translationOf: aloe-vera-bienfaits-peau
 sourceHash: "c26974842af3"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Aloe vera gehört zu den Pflanzen, die in fast jedem Badezimmer zu finden sind. Ihr Gel aus dem Inneren des Blattes besteht zu mehr als 98 % aus Wasser, enthält aber auch Polysaccharide, Vitamine und Mineralstoffe. Das können Sie realistischerweise davon erwarten.
