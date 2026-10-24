@@ -22,7 +22,8 @@ sources:
 locale: it
 translationOf: jus-aloe-vera-science
 sourceHash: "63507b38c25e"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Il succo di aloe vera si è conquistato un posto tra i prodotti per il benessere, dal supermercato all'erboristeria. Ma tra le promesse commerciali e i dati scientifici la distanza è a volte notevole.

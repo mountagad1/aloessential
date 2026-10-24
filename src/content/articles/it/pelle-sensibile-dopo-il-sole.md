@@ -10,7 +10,8 @@ coverAlt: "Illustrazione di un tramonto dietro foglie di aloe vera imperlate di 
 locale: it
 translationOf: routine-peau-apres-soleil
 sourceHash: "284a4c8eb2a1"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Una giornata all'aria aperta, al mare o in montagna, e la sera la pelle tira, scotta un po', si arrossa. Chi ha la pelle sensibile lo sa bene: il sole la mette alla prova, anche con la protezione. Alcuni gesti semplici aiutano a ritrovare il comfort. Non sostituiscono una buona protezione solare e non curano una vera scottatura.

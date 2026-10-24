@@ -13,7 +13,8 @@ sources:
 locale: it
 translationOf: soin-anti-age-quels-actifs
 sourceHash: "75f22806a9f4"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Gli scaffali «anti-age» sono pieni di nomi di attivi, percentuali e promesse. Per orientarsi conviene partire da un'idea semplice: una crema agisce sull'**aspetto** della pelle (idratazione, luminosità, elasticità, aspetto delle piccole rughe). Non riporta indietro il tempo. Scelta e usata bene, però, può fare una vera differenza ogni giorno.

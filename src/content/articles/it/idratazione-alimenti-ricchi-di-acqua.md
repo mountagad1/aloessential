@@ -8,7 +8,8 @@ coverAlt: "Illustrazione di fette di cetriolo, foglie e gocce d'acqua"
 locale: it
 translationOf: hydratation-aliments-riches-en-eau
 sourceHash: "16e7e38e09cd"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Quando si pensa all'idratazione vengono in mente subito le bevande. Eppure una parte non trascurabile dell'acqua che assumiamo arriva dagli alimenti.

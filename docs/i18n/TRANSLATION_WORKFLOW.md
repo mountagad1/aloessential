@@ -2,14 +2,14 @@
 
 *How an article goes from French to a published translation. Architecture: docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md. Conventions per language: IT_STYLE_GUIDE.md (Italian), EN_STYLE_GUIDE.md (English, UK), DE_STYLE_GUIDE.md (German, Germany), ES_STYLE_GUIDE.md (Spanish, Spain), PT_STYLE_GUIDE.md (Portuguese, Portugal), PL_STYLE_GUIDE.md (Polish).*
 
-## 1. Status today (2026-10-23)
+## 1. Status today (2026-10-24)
 
 `node tools/i18n-status.mjs`:
 
-- **Italian:** 0 published, **16 drafts** (every French article), 0 not started.
+- **Italian:** **16 published** (2026-10-24, reviewer Philippe Cros), 0 drafts.
 - **Other locales:** 7 drafts each (the aloe vera pole), see below.
 
-| French source | Italian draft | Localization beyond translation |
+| French source | Italian article (published) | Localization beyond translation |
 | --- | --- | --- |
 | aloe-vera-bienfaits-peau | `it/aloe-vera-pelle-benefici` | link to the Italian gel guide |
 | choisir-gel-aloe-vera | `it/come-scegliere-gel-aloe-vera` | farmacia/erboristeria context, PAO symbol |
@@ -167,7 +167,7 @@ Drafts are never built into the site. **Review notes for the reviewer** are writ
 
 ## 5. Open decisions (owner)
 
-- **Who reviews Italian content** (D8 in INTERNATIONAL_SEO_ARCHITECTURE.md). The same reviewer should also review the Italian interface text (`src/i18n/ui.ts`) and category text.
+- ~~Who reviews Italian content (D8)~~: decided 2026-10-24, Philippe Cros.
 - ~~Distributor window in other languages (D7)~~: decided 2026-10-23, Philippe accepts contacts in all supported languages.
 - **Product pages for Italy** (D6): Italian LR shop links with `ref=cros` and Italian mandatory mentions. Until then Italian articles carry no product links (enforced by the schema).
 

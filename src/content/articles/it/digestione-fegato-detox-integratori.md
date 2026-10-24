@@ -28,7 +28,8 @@ sources:
 locale: it
 translationOf: digestion-foie-detox-complements
 sourceHash: "85886cfc227c"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 In primavera come dopo le feste, le cure «detox» e gli integratori per l'intestino invadono gli scaffali. Le confezioni promettono di depurare, drenare, riequilibrare. Le regole su ciò che un integratore può affermare, però, sono precise. Conoscerle aiuta a fare ordine.

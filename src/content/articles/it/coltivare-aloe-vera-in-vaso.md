@@ -16,7 +16,8 @@ sources:
 locale: it
 translationOf: cultiver-aloe-vera-en-pot
 sourceHash: "68d1d6053660"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 L'aloe vera è una delle piante da interno più facili da tenere… a patto di non volerle troppo bene. Questa pianta grassa viene da regioni calde e secche: a farla morire non è quasi mai la dimenticanza, ma l'eccesso d'acqua.

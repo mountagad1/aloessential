@@ -1,10 +1,10 @@
 # International SEO architecture
 
-*Updated 2026-10-22.*
+*Updated 2026-10-24.*
 
 **Status:**
 - The locale **infrastructure is implemented and tested**.
-- **No translation is published yet**, so production remains French-only (verified: production build page set and sitemap unchanged).
+- **Italian is published** (2026-10-24): 16 articles, reviewed by Philippe Cros, under `/it/`. The other locales are drafts only.
 - Supported locales: fr (source), en, es, de, **it**, pt-pt, pl.
 - **Italian is first-class:** registry, interface text, category text, routing, metadata, hreflang, sitemap and tests.
 - The other five locales exist in the registry only. They cannot publish until their interface text is added; the build enforces this.
@@ -13,15 +13,15 @@
 
 | Item | Finding |
 | --- | --- |
-| Italian routes in production | none (before and after this change) |
-| Italian content | 0 of 16 published; **16 drafts** (every article) in `src/content/articles/it/`, awaiting an Italian-speaking reviewer — see docs/i18n/TRANSLATION_WORKFLOW.md |
+| Italian routes in production | `/it/`, 4 categories and 16 articles (published 2026-10-24) |
+| Italian content | **16 of 16 published** (reviewer: Philippe Cros) in `src/content/articles/it/`, awaiting an Italian-speaking reviewer — see docs/i18n/TRANSLATION_WORKFLOW.md |
 | English content (UK) | 0 of 16 published; **16 drafts** in `src/content/articles/en/`; interface and category text in British English; GB LR shop linked in the English footer |
 | German content (Germany) | 0 of 16 published; **16 drafts** in `src/content/articles/de/`; interface and category text (*Sie*); DE LR shop linked in the German footer |
 | Spanish content (Spain) | 0 of 16 published; **16 drafts** in `src/content/articles/es/`; interface and category text (*tú*); ES LR shop linked in the Spanish footer |
 | Portuguese content (Portugal) | 0 of 16 published; **16 drafts** in `src/content/articles/pt-pt/`; interface and category text (*tu*); footer links to LR Portugal's site (the PT shop requires an LR login) |
 | Polish content (Poland) | 0 of 16 published; **16 drafts** in `src/content/articles/pl/`; interface and category text (*ty*); PL LR shop linked in the Polish footer |
 | Products in Italian | none; product pages stay French-only (decision D4/D6) |
-| hreflang | none in production: no page has a published translation, so none is emitted (by design) |
+| hreflang | French ↔ Italian on the home page, the 4 categories and the 16 articles; none for the other locales (drafts) |
 | Fallbacks | none: a locale without a published article has no URL at all; `/it/anything/` returns the real 404 status |
 
 ## 2. URL structure (decisions D1, D2 — implemented)
@@ -139,7 +139,7 @@ Mutation checks run during development:
 | D6 | Italian product pages: Italian LR shop link + mentions required in Italy | **partly done**: Italian shop home `https://shop.lrworld.com/home/IT/it?ref=cros` (from the publisher, 2026-10-22) is linked in the Italian footer with a partner disclosure (`LR_SHOP_HOME` in `src/lib/partner.ts`). Product pages still need each product's Italian shop URL and the Italian mandatory mentions |
 | D7 | Distributor window on translated pages: text and WhatsApp message in the page's language, to Philippe | **decided 2026-10-23**: Philippe accepts contacts in all supported languages; the window stays on every page in every locale |
 | D9 | English targets the UK (GB shop link, British English, GB rules); hreflang stays `en` so other English readers are not excluded | **done** (EN_STYLE_GUIDE.md) |
-| D8 | Native-speaker review of the Italian interface and category text (`src/i18n/ui.ts`, `CATEGORY_I18N`) | open, required before the first Italian publication |
+| D8 | Review of the Italian interface and category text (`src/i18n/ui.ts`, `CATEGORY_I18N`) | **decided 2026-10-24** by the owner: Philippe Cros reviews the Italian content; Italian published |
 
 ## 9. Adding a further locale (e.g. German)
 

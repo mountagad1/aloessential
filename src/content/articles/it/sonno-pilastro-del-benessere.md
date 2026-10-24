@@ -8,7 +8,8 @@ coverAlt: "Illustrazione di una falce di luna dorata sopra un fogliame scuro"
 locale: it
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Il sonno influenza l'umore, la concentrazione, l'appetito e il recupero. La buona notizia: alcune abitudini hanno un effetto reale sulla sua qualità.

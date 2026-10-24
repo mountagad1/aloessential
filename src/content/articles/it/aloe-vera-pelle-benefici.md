@@ -14,7 +14,8 @@ sources:
 locale: it
 translationOf: aloe-vera-bienfaits-peau
 sourceHash: "c26974842af3"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 L'aloe vera è una delle piante più presenti nei nostri bagni. Il suo gel, estratto dal cuore della foglia, è composto per oltre il 98% da acqua, ma contiene anche polisaccaridi, vitamine e minerali. Ecco cosa ci si può ragionevolmente aspettare.

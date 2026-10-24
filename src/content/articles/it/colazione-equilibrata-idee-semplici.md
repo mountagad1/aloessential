@@ -8,7 +8,8 @@ coverAlt: "Illustrazione di una ciotola di frutta fresca arancione, gialla e ver
 locale: it
 translationOf: petit-dejeuner-equilibre
 sourceHash: "2cf27e1bfb8d"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Una colazione equilibrata non ha niente di complicato. Si basa su tre elementi: fibre, proteine e un frutto.

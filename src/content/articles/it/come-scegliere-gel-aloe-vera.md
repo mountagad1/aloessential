@@ -10,7 +10,8 @@ coverAlt: "Illustrazione di una goccia di gel di aloe vera trasparente circondat
 locale: it
 translationOf: choisir-gel-aloe-vera
 sourceHash: "ea2a88778edf"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Tra le decine di gel «all'aloe vera» in profumeria, in farmacia e in erboristeria, orientarsi non è facile. Alcuni criteri semplici aiutano a scegliere con consapevolezza.

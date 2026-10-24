@@ -24,7 +24,8 @@ sources:
 locale: it
 translationOf: aloe-vera-a-boire-comment-choisir
 sourceHash: "99a4832eaa0d"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Al supermercato, in farmacia o in erboristeria, le bevande a base di aloe vera si somigliano tutte: una bottiglia, una foglia verde, una promessa di benessere. Le composizioni, invece, cambiano molto. Prima di scegliere, conviene sapere cosa cercare in etichetta… e cosa l'etichetta può davvero promettere.

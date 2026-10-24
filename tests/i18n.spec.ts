@@ -36,7 +36,8 @@ const PUBLISHED = {
     article: "/it/articoli/articolo-demo/",
     category: "/it/rubriche/salute/",
     categoryLabel: "Salute",
-    emptyCategories: ["it/rubriche/consigli", "it/rubriche/bellezza", "it/rubriche/nutrizione"],
+    // Italian is published for real (src/content/articles/it/): every Italian category holds articles.
+    emptyCategories: [],
     body: "Paragrafo di prova in italiano",
     name: "Italiano",
     fab: "Diventa distributore LR",
@@ -122,6 +123,8 @@ const PUBLISHED = {
     menu: ["Otwórz menu", "Zamknij menu"],
   },
 } as const;
+/** Real published Italian content: 16 articles and 3 more categories (Santé is already counted), each with its French page. */
+const IT_ANNOTATED = (16 + 3) * 2;
 const published = Object.entries(PUBLISHED) as [keyof typeof PUBLISHED, (typeof PUBLISHED)[keyof typeof PUBLISHED]][];
 
 /** hreflang → absolute URL, from <link rel="alternate" hreflang> tags. */
@@ -241,8 +244,8 @@ test.describe("localized pages (static scan)", () => {
       expect(text, pathOf(file)).not.toContain("bozza-demo");
       expect(text, pathOf(file)).not.toContain("Bozza non revisionata");
     }
-    // Its French source therefore has no language alternates.
-    expect(read("articles/jus-aloe-vera-science")).not.toContain("hreflang");
+    // Its French source points only to the reviewed Italian translation.
+    expect(alternatesOf(read("articles/jus-aloe-vera-science")).it).toBe(`${ORIGIN}/it/articoli/succo-di-aloe-vera-cosa-dice-la-scienza/`);
   });
 
   test("html lang, Open Graph locale and structured data language match the URL's locale", () => {
@@ -285,8 +288,9 @@ test.describe("localized pages (static scan)", () => {
         expect(alternatesOf(targetHtml), `reciprocity ${p} ↔ ${target}`).toEqual(alts);
       }
     }
-    // Demo article, homepages and the Santé category, in all seven locales.
-    expect(annotated).toBe(21);
+    // Demo article, homepages and the Santé category, in all seven locales (21 pages),
+    // plus the published Italian articles and categories with their French sources.
+    expect(annotated).toBe(21 + IT_ANNOTATED);
     expect(alternatesOf(read("articles/article-demo"))).toEqual({
       fr: `${ORIGIN}/articles/article-demo/`,
       en: `${ORIGIN}/en/articles/demo-article/`,
@@ -299,8 +303,12 @@ test.describe("localized pages (static scan)", () => {
     });
     expect(alternatesOf(read("rubriques/sante"))).toMatchObject({ it: `${ORIGIN}/it/rubriche/salute/`, en: `${ORIGIN}/en/topics/health/` });
     expect(alternatesOf(read(""))).toMatchObject({ it: `${ORIGIN}/it/`, en: `${ORIGIN}/en/` });
-    // A French category with no translated articles has no alternates.
-    expect(read("rubriques/beaute")).not.toContain("hreflang");
+    // A French category lists only the locales that have articles in it.
+    expect(alternatesOf(read("rubriques/beaute"))).toEqual({
+      fr: `${ORIGIN}/rubriques/beaute/`,
+      it: `${ORIGIN}/it/rubriche/bellezza/`,
+      "x-default": `${ORIGIN}/rubriques/beaute/`,
+    });
   });
 
   test("the sitemap lists translated URLs with the same alternates as the HTML", () => {

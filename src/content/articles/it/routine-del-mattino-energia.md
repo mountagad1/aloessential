@@ -8,7 +8,8 @@ coverAlt: "Illustrazione di un sole che sorge sopra colline verdi"
 locale: it
 translationOf: routine-matin-energie
 sourceHash: "31ab0570e763"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Non serve una routine di due ore per partire bene. Spesso bastano pochi gesti regolari per cambiare la qualità di una mattinata.

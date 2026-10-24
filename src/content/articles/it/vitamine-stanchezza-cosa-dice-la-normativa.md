@@ -23,7 +23,8 @@ sources:
 locale: it
 translationOf: vitamines-fatigue-reglementation
 sourceHash: "364ffbf6ad87"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 «Ti senti giù di energia?» Gli integratori che promettono energia sono tanti. Dietro queste promesse esiste però un quadro normativo molto preciso. Conoscerlo aiuta a leggere le etichette con occhio più critico e a non sottovalutare una stanchezza che merita qualcosa di più di una cura di vitamine.

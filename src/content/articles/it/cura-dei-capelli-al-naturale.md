@@ -8,7 +8,8 @@ coverAlt: "Illustrazione di curve fluide verdi che evocano una chioma, con una f
 locale: it
 translationOf: soins-cheveux-naturel
 sourceHash: "abbfae249c0a"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Capelli in salute dipendono spesso più dalla delicatezza dei gesti che dalla quantità di prodotti.

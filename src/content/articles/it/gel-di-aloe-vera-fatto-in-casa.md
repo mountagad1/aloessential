@@ -15,7 +15,8 @@ sources:
 locale: it
 translationOf: gel-aloe-vera-maison
 sourceHash: "bd3c649d5e58"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Avere un'aloe vera sul davanzale fa venire voglia di usarne il gel. Si può fare, sulla pelle, rispettando alcune precauzioni. La principale: separare bene il gel dal lattice.
