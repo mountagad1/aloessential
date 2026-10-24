@@ -38,8 +38,11 @@ faq:
   - { q: "Le gel pêche contient-il du sucre ?", a: "Il est sans sucres ajoutés : il est adouci par des édulcorants (cyclamate de sodium, acésulfame K, saccharine de sodium). LR précise que l'aloe vera contient des sucres naturellement présents." }
   - { q: "Quelles vitamines apporte Vita Active ?", a: "Sa liste d'ingrédients mentionne la niacine, la vitamine E, l'acide pantothénique, la vitamine B12, la biotine, la vitamine D, la vitamine B6, la thiamine, la riboflavine et l'acide folique. LR ne publie pas leurs quantités sur sa fiche ; consultez l'étiquette pour les connaître." }
   - { q: "Peut-on prendre les deux produits le même jour ?", a: "Oui, c'est le principe du coffret : le gel avant les repas, Vita Active pendant ou après un repas. Respectez la dose de chaque produit et vérifiez ce que contiennent vos autres compléments." }
-cover: /covers/produit-coffret.svg
-coverAlt: "Illustration d'un coffret contenant deux flacons"
+cover: /covers/photos/set-vitalite-aloe-vera-vita-active.webp
+coverAlt: "Set Vitalité LR LIFETAKT composé d’un grand flacon de gel à boire Aloe Vera saveur pêche et d’un flacon Vita Active aux fruits rouges, présentés avec de l’aloe vera, des pêches et des baies fraîches."
+coverTitle: "Set Vitalité : gel à boire Aloe Vera pêche et Vita Active"
+coverCaption: "Le Set Vitalité associe le gel à boire Aloe Vera saveur pêche et le concentré Vita Active aux fruits rouges."
+coverDescription: "Photographie éditoriale des deux produits du Set Vitalité LR LIFETAKT sur une planche en bois dans une cuisine lumineuse : le grand flacon Aloe Vera Drinking Gel saveur pêche et le flacon Vita Active aux fruits rouges, avec des morceaux d’aloe vera, des pêches, des baies fraîches et un verre de boisson fruitée."
 sourceCheckedAt: 2026-10-15
 ---
 

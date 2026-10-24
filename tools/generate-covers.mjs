@@ -1,6 +1,6 @@
 // Generates the botanical cover illustrations in public/covers/.
 //   node tools/generate-covers.mjs
-// Lightweight brand-palette illustrations, used by product pages and the
+// Lightweight brand-palette illustrations, used by draft products and the
 // test fixtures. Articles use photographs (tools/import-cover-photos.mjs).
 // Outputs are committed.
 
@@ -155,22 +155,6 @@ Object.assign(covers, {
       leaf({ x: 880, y: 760, len: 260, width: 64, angle: 32, fill: C.forest }),
     C.cream,
   ),
-  "produit-spray": svg(
-    "Illustration d'un flacon spray et d'une feuille d'aloe vera",
-    aloeLeaf({ x: 430, y: 820, len: 560, width: 66, angle: -14 }) +
-      `<g transform="translate(660 720)">
-        <rect x="-26" y="-500" width="52" height="70" rx="10" fill="${C.forest}"/>
-        <rect x="-70" y="-520" width="70" height="26" rx="8" fill="${C.forest}"/>
-        <rect x="-40" y="-436" width="80" height="40" fill="#fff" fill-opacity=".9"/>
-        <rect x="-100" y="-400" width="200" height="400" rx="40" fill="#fff" fill-opacity=".92" stroke="#fff" stroke-width="5"/>
-        <rect x="-86" y="-250" width="172" height="236" rx="30" fill="${C.leafLight}" fill-opacity=".85"/>
-      </g>` +
-      [[560, 210, 6], [530, 190, 4], [520, 230, 5], [500, 205, 3], [545, 170, 3], [490, 240, 4]]
-        .map(([x, y, s]) => `<circle cx="${x}" cy="${y}" r="${s}" fill="${C.leaf}" fill-opacity=".55"/>`)
-        .join("") +
-      sun(960, 180, 60, false),
-    C.mint,
-  ),
   "produit-creme": svg(
     "Illustration d'un pot de crème et de feuilles",
     `<circle cx="600" cy="430" r="300" fill="#FFEFC9"/>` +
@@ -192,16 +176,6 @@ Object.assign(covers, {
         .join("") +
       leaf({ x: 420, y: 600, len: 120, width: 34, angle: -30, fill: C.leaf }) +
       leaf({ x: 790, y: 600, len: 120, width: 34, angle: 30, fill: C.leaf }),
-    C.cream,
-  ),
-  "produit-coffret": svg(
-    "Illustration d'un coffret avec deux flacons",
-    `<circle cx="600" cy="430" r="310" fill="${C.mint}"/>` +
-      bottle(520, 520, 150, 280) +
-      bottle(690, 520, 150, 250, "#fff", "#FFB35C") +
-      `<rect x="330" y="470" width="540" height="250" rx="24" fill="${C.forest}"/>
-       <rect x="580" y="470" width="40" height="250" fill="${C.sun}"/>
-       <path d="M600 470 q-80 -70 -120 -20 q40 40 120 20 q80 20 120 -20 q-40 -50 -120 20Z" fill="${C.sun}"/>`,
     C.cream,
   ),
 });

@@ -128,6 +128,10 @@ const products = defineCollection({
     faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     cover: z.string(),
     coverAlt: z.string(),
+    /** Photo metadata, as for articles: caption (shown), name and description (structured data). */
+    coverCaption: z.string().optional(),
+    coverTitle: z.string().optional(),
+    coverDescription: z.string().optional(),
     sourceCheckedAt: z.coerce.date().optional(),
     /*
      * Translations, as for articles: src/content/products/<locale>/<slug>.md

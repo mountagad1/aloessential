@@ -47,12 +47,14 @@ faq:
   - { q: "Which ingredient carries the liver claim?", a: "Choline. At 82.5 mg per capsule, it allows the authorised claim \"choline contributes to the maintenance of normal liver function\". The plant extracts in the formula have no authorised claim to date." }
   - { q: "Is it a \"detox\" product?", a: "No. LR talks about detoxification on its product sheet, but that kind of claim is not authorised and we do not repeat it. Your liver does its own job of elimination; this supplement provides nutrients, it does not \"cleanse\" your body." }
   - { q: "When should I take it?", a: "One capsule a day, ideally in the evening, with a glass of water or another drink." }
-cover: /covers/produit-gelules.svg
-coverAlt: "Illustration of capsules surrounded by leaves"
+cover: /covers/photos/lifetakt-liver-support-routine-familiale.webp
+coverAlt: "An older couple and a younger couple together in a bright kitchen around the LR LIFETAKT Liver Support capsules tub, with herbs and a glass of water."
+coverTitle: "LR LIFETAKT Liver Support: one capsule a day"
+coverCaption: "The Liver Support food supplement in a warm, natural family scene."
 sourceCheckedAt: 2026-10-15
 locale: en
 translationOf: lifetakt-liver-support
-sourceHash: "e4db578e1a80"
+sourceHash: "c91aeedadb17"
 ---
 
 Liver Support is part of the LR Lifetakt range. It is a single capsule, taken in the evening, that brings together four micronutrients and three plant-based ingredients.

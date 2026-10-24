@@ -1,4 +1,4 @@
-// Imports cover photographs (WebP, 16:9, at least 1200 px wide) into
+// Imports cover photographs (WebP, 16:9 or 3:2, at least 1200 px wide) into
 // public/covers/photos/ and records their size in src/data/cover-photos.json.
 //   node tools/import-cover-photos.mjs <folder>     every *.webp in <folder>
 // For each photo <name>.webp it writes:
@@ -31,7 +31,8 @@ for (const file of readdirSync(source).filter((n) => n.endsWith(".webp")).sort()
   const input = join(source, file);
   const { width, height } = await sharp(input).metadata();
   if (width < 1200) throw new Error(`${file}: ${width} px wide, at least 1200 needed (Google Discover)`);
-  if (Math.abs(width / height - 16 / 9) > 0.01) throw new Error(`${file}: ${width} × ${height} is not 16:9`);
+  // 16:9 (articles) or 3:2 (product photos, kept whole rather than cropped).
+  if (![16 / 9, 3 / 2].some((ratio) => Math.abs(width / height - ratio) < 0.01)) throw new Error(`${file}: ${width} × ${height} is neither 16:9 nor 3:2`);
 
   copyFileSync(input, join(OUT, `${name}.webp`));
   for (const w of WIDTHS) {

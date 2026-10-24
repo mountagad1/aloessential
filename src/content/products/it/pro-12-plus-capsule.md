@@ -57,12 +57,14 @@ faq:
   - { q: "Cosa significa «tindalizzato»?", a: "È un trattamento termico. I Lactobacillus acidophilus tindalizzati (100 mg per capsula) non sono più vivi; LR li presenta come l'ingrediente «postbiotico» della sua formula." }
   - { q: "Va conservato in frigorifero?", a: "No. LR consiglia di conservare la confezione ben chiusa, in luogo asciutto e a temperatura ambiente." }
   - { q: "Quali benefici ci si può aspettare?", a: "A oggi nell'Unione europea non è autorizzata alcuna indicazione sulla salute per i batteri lattici o i frutto-oligosaccaridi negli integratori. Descriviamo quindi la composizione senza promettere effetti." }
-cover: /covers/produit-gelules.svg
-coverAlt: "Illustrazione di capsule circondate da foglie"
+cover: /covers/photos/pro-12-plus-capsules-routine-bureau.webp
+coverAlt: "Uomo che prende una capsula con un bicchiere d'acqua alla scrivania, con il barattolo di capsule LR LIFETAKT PRO 12 + in primo piano."
+coverTitle: "PRO 12 +: una capsula al giorno nella routine"
+coverCaption: "Una capsula al giorno con un bicchiere d'acqua: l'assunzione di PRO 12 + si inserisce semplicemente in una giornata di lavoro."
 sourceCheckedAt: 2026-10-15
 locale: it
 translationOf: capsules-pro-12-plus
-sourceHash: "e9f014e1d95e"
+sourceHash: "ea7ec3dc6d83"
 ---
 
 PRO 12 + è la preparazione di batteri della linea LR Lifetakt. LR la costruisce attorno a quello che chiama un complesso «TRIPLEBIOTIC»: fibre (frutto-oligosaccaridi), dodici ceppi di batteri e Lactobacillus acidophilus tindalizzati, cioè inattivati dal calore.

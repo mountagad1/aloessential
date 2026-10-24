@@ -7,16 +7,17 @@
 import { render } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CardGrid from "./CardGrid.astro";
+import CoverImage from "./CoverImage.astro";
 import Icon from "./Icon.astro";
 import ShopButton from "./ShopButton.astro";
 import StickyCta from "./StickyCta.astro";
 import { localizedCategory } from "../data/categories";
-import { DEFAULT_LOCALE, homePath, productsPath } from "../i18n/locales";
+import { DEFAULT_LOCALE, LOCALES, homePath, productsPath } from "../i18n/locales";
 import { productUi } from "../i18n/product-ui";
 import { ui } from "../i18n/ui";
 import { formatDate, getArticles, translationKey } from "../lib/articles";
 import { productAlternates, productKey, productUrl, type Product } from "../lib/products";
-import { breadcrumbLd, coverShareImage } from "../lib/seo";
+import { absoluteUrl, breadcrumbLd, coverShareImage, imageObjectLd } from "../lib/seo";
 
 interface Props {
   product: Product;
@@ -56,6 +57,15 @@ const jsonLd = [
     ],
     Astro.site,
   ),
+  // The product photo, described for image search and Discover (no Product markup: the page sells nothing).
+  {
+    "@type": "WebPage",
+    "@id": absoluteUrl(productUrl(product), Astro.site),
+    url: absoluteUrl(productUrl(product), Astro.site),
+    name: seoTitle,
+    inLanguage: LOCALES[locale].schemaLang,
+    primaryImageOfPage: imageObjectLd(d.cover, { name: d.coverTitle, caption: d.coverCaption, description: d.coverDescription }, Astro.site),
+  },
 ];
 ---
 
@@ -72,8 +82,11 @@ const jsonLd = [
   <article class="product">
     <header class="product-hero">
       <div class="container product-hero__grid">
-        <figure class="product-hero__visual media" data-hero-step="visual" style="--step: 1">
-          <img src={d.cover} alt={d.coverAlt} width="1200" height="800" fetchpriority="high" decoding="async" />
+        <figure class="product-hero__visual" data-hero-step="visual" style="--step: 1">
+          <div class="media">
+            <CoverImage cover={d.cover} alt={d.coverAlt} sizes="(min-width: 56rem) 36rem, 100vw" load="high" />
+          </div>
+          {d.coverCaption && <figcaption>{d.coverCaption}</figcaption>}
         </figure>
 
         <div class="product-hero__body">

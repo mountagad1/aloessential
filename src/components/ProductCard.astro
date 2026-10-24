@@ -1,4 +1,5 @@
 ---
+import CoverImage from "./CoverImage.astro";
 import Icon from "./Icon.astro";
 import { productUrl, type Product } from "../lib/products";
 import { productUi } from "../i18n/product-ui";
@@ -16,7 +17,7 @@ const Heading = `h${headingLevel}` as "h2" | "h3";
 
 <article class="card product-card">
   <div class="media" style="--ratio: 4 / 3">
-    <img src={cover} alt={coverAlt} width="1200" height="800" loading="lazy" decoding="async" data-fade />
+    <CoverImage cover={cover} alt={coverAlt} sizes="(min-width: 64rem) 22rem, (min-width: 40rem) 50vw, 100vw" fade />
   </div>
   <div class="card__body">
     <p class="card__meta">

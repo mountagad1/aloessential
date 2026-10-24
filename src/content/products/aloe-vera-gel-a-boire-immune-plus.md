@@ -40,8 +40,11 @@ faq:
   - { q: "Comment le prendre ?", a: "En trois prises de 30 ml, de préférence avant les repas, pur ou dilué dans de l'eau ou du jus de fruit. Secouez la bouteille avant chaque prise et gardez-la au réfrigérateur une fois ouverte." }
   - { q: "Quelle partie de l'aloe est utilisée ?", a: "LR indique utiliser uniquement le gel de la feuille d'Aloe barbadensis Miller, cultivée au Mexique, et faire certifier ses gels à boire par le SGS Institut Fresenius et l'International Aloe Science Council." }
   - { q: "Puis-je le prendre en même temps qu'un autre complément ?", a: "Vérifiez d'abord ce que contiennent vos autres compléments, surtout s'ils apportent aussi du zinc ou du sélénium : une dose d'Immune Plus couvre déjà 100 % des VNR en zinc. En cas de doute, demandez conseil à votre pharmacien." }
-cover: /covers/produit-gel-boire.svg
-coverAlt: "Illustration d'une bouteille de gel à boire entourée de feuilles d'aloe vera"
+cover: /covers/photos/aloe-vera-gel-a-boire-immune-plus-sport.webp
+coverAlt: "Homme buvant une boisson à l’aloe vera après une séance de sport, avec le flacon de gel à boire Aloe Vera Immune Plus au premier plan dans une salle de fitness."
+coverTitle: "Gel à boire Aloe Vera Immune Plus : une pause après le sport"
+coverCaption: "Une pause boisson après l’activité physique, avec le gel à boire Aloe Vera Immune Plus."
+coverDescription: "Photographie éditoriale d’un homme qui boit dans une salle de sport lumineuse. Le flacon de gel à boire Aloe Vera Immune Plus est au premier plan, avec des feuilles d’aloe vera, du citron et du gingembre ; des équipements de fitness flous apparaissent en arrière-plan."
 sourceCheckedAt: 2026-10-15
 ---
 

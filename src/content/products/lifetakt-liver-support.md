@@ -37,8 +37,11 @@ faq:
   - { q: "Quel ingrédient porte l'allégation sur le foie ?", a: "La choline. Avec 82,5 mg par gélule, elle permet l'allégation autorisée « la choline contribue au maintien d'une fonction hépatique normale ». Les extraits de plantes de la formule n'ont pas d'allégation autorisée à ce jour." }
   - { q: "Est-ce un produit « détox » ?", a: "Non. LR parle de détoxification sur sa fiche, mais ce type d'allégation n'est pas autorisé en Europe et nous ne le reprenons pas. Le foie assure lui-même ses fonctions d'élimination ; ce complément apporte des nutriments, il ne « nettoie » pas l'organisme." }
   - { q: "Quand le prendre ?", a: "Une gélule par jour, de préférence le soir, avec un verre d'eau ou d'une autre boisson." }
-cover: /covers/produit-gelules.svg
-coverAlt: "Illustration de gélules entourées de feuilles"
+cover: /covers/photos/lifetakt-liver-support-routine-familiale.webp
+coverAlt: "Couple senior et jeune couple réunis dans une cuisine lumineuse autour du pot de capsules LR LIFETAKT Liver Support, avec des plantes aromatiques et un verre d’eau."
+coverTitle: "LR LIFETAKT Liver Support : une gélule par jour"
+coverCaption: "Le complément alimentaire Liver Support présenté dans une scène familiale chaleureuse et naturelle."
+coverDescription: "Photographie éditoriale d’un couple senior et d’un jeune couple réunis dans une cuisine lumineuse. Le pot LR LIFETAKT Liver Support est au premier plan sur un plan de travail en bois, avec des herbes aromatiques, quelques capsules et un verre d’eau."
 sourceCheckedAt: 2026-10-15
 ---
 

@@ -45,8 +45,11 @@ faq:
   - { q: "Que signifie « tyndallisé » ?", a: "C'est un procédé de traitement par la chaleur. Les Lactobacillus acidophilus tyndallisés (100 mg par gélule) ne sont plus vivants ; LR les présente comme l'ingrédient « postbiotique » de sa formule." }
   - { q: "Faut-il le conserver au réfrigérateur ?", a: "Non. LR recommande de conserver la boîte bien fermée, au sec et à température ambiante." }
   - { q: "Quels bienfaits peut-on en attendre ?", a: "À ce jour, aucune allégation de santé n'est autorisée en Europe pour les bactéries lactiques ou les fructo-oligosaccharides en complément alimentaire. Nous décrivons donc la composition sans promettre d'effet." }
-cover: /covers/produit-gelules.svg
-coverAlt: "Illustration de gélules entourées de feuilles"
+cover: /covers/photos/pro-12-plus-capsules-routine-bureau.webp
+coverAlt: "Homme prenant une capsule avec un verre d’eau à son bureau, avec le pot de capsules LR LIFETAKT PRO 12 + posé au premier plan."
+coverTitle: "PRO 12 + : une capsule par jour dans sa routine"
+coverCaption: "Une gélule par jour, avec un verre d’eau : la prise de PRO 12 + s’intègre simplement à une journée de travail."
+coverDescription: "Photographie éditoriale d’un homme qui prend une capsule avec un verre d’eau dans un bureau lumineux. Le pot LR LIFETAKT PRO 12 + est au premier plan sur un bureau en bois, à côté d’un ordinateur portable, d’un carnet, de quelques capsules et d’une plante verte."
 sourceCheckedAt: 2026-10-15
 ---
 

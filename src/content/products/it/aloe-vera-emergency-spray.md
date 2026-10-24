@@ -46,12 +46,14 @@ faq:
   - { q: "Si può usare sul viso?", a: "La scheda LR lo presenta come uno spray per tutto il corpo e non descrive un'applicazione diretta sul viso. Per il contorno occhi, LR consiglia di usare un panno freddo imbevuto." }
   - { q: "Contiene alcol?", a: "Nell'elenco non c'è alcol etilico. Contiene alcol benzilico, usato come conservante." }
   - { q: "Che differenza c'è con la crema DermaIntense?", a: "Lo spray è leggero e fresco, per grandi superfici. DermaIntense è una crema ricca per zone localizzate e molto secche." }
-cover: /covers/produit-spray.svg
-coverAlt: "Illustrazione di un flacone spray e di una foglia di aloe vera"
+cover: /covers/photos/aloe-vera-emergency-spray-soin-familial.webp
+coverAlt: "Un padre vaporizza uno spray all'aloe vera sul braccio della figlia in una cucina luminosa, con il flacone Aloe Vera Emergency Spray sul piano di lavoro."
+coverTitle: "Aloe Vera Emergency Spray: un gesto di cura quotidiano"
+coverCaption: "Uno spray all'aloe vera in un semplice momento di cura in famiglia."
 sourceCheckedAt: 2026-10-15
 locale: it
 translationOf: aloe-vera-emergency-spray
-sourceHash: "89534ccdb44b"
+sourceHash: "221c62683a19"
 ---
 
 L'Emergency Spray porta male il suo nome, o forse fin troppo bene: fa pensare a una cassetta di pronto soccorso. In realtà è un trattamento cosmetico per il corpo, molto semplice da usare. Si vaporizza, si lascia asciugare e la pelle ritrova comfort. Il suo vero punto di forza è questo: permette di prendersi cura di una pelle che si preferisce non toccare.

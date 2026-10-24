@@ -84,7 +84,7 @@ test.describe("image delivery", () => {
       const size = photos[photo];
       expect(size, `${cover}: run node tools/import-cover-photos.mjs`).toBeTruthy();
       expect(size.width, cover).toBeGreaterThanOrEqual(1200);
-      expect(Math.abs(size.width / size.height - 16 / 9), cover).toBeLessThan(0.01);
+      expect([16 / 9, 3 / 2].some((ratio) => Math.abs(size.width / size.height - ratio) < 0.01), `${cover}: 16:9 or 3:2`).toBe(true);
       for (const file of [`${photo}.webp`, `${photo}-1200.webp`, `${photo}-800.webp`, `${photo}-480.webp`]) {
         expect(existsSync(join(root, "public/covers/photos", file)), file).toBe(true);
       }

@@ -48,12 +48,14 @@ faq:
   - { q: "Can I use it after the sun?", a: "Yes, on skin that simply feels hot or tight. Kept in the fridge, it is even more refreshing. See also our soothing routine for sensitive skin after the sun." }
   - { q: "Can I use it on my face?", a: "LR presents it as an all-over body spray and does not describe applying it directly to the face. For the eye area, LR recommends using a cold cloth soaked in the spray." }
   - { q: "Does it contain alcohol?", a: "There is no ethyl alcohol in the list. It contains benzyl alcohol, used as a preservative." }
-cover: /covers/produit-spray.svg
-coverAlt: "Illustration of a spray bottle and an aloe vera leaf"
+cover: /covers/photos/aloe-vera-emergency-spray-soin-familial.webp
+coverAlt: "A father spraying aloe vera on his daughter's arm in a bright kitchen, with the Aloe Vera Instant Emergency Spray bottle on the worktop."
+coverTitle: "Aloe Vera Instant Emergency Spray: an everyday care moment"
+coverCaption: "An aloe vera spray in a simple moment of family care."
 sourceCheckedAt: 2026-10-15
 locale: en
 translationOf: aloe-vera-emergency-spray
-sourceHash: "89534ccdb44b"
+sourceHash: "221c62683a19"
 ---
 
 The Emergency Spray has a misleading name, or perhaps too apt a one: it makes you think of a first aid kit. In fact it is a cosmetic body spray that is very easy to use. You spray it on, let it dry, and your skin feels comfortable again. That is its main strength: it lets you care for skin you would rather not touch.

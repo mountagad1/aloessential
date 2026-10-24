@@ -90,24 +90,31 @@ export function articleLd(
   },
   site: URL | undefined,
 ): JsonLd {
-  const share = coverShareImage(a.cover);
-  const url = absoluteUrl(share.src, site);
-  const details = a.image && Object.fromEntries(Object.entries(a.image).filter(([, v]) => v));
+  const image = imageObjectLd(a.cover, a.image ?? {}, site);
   return {
     "@type": "Article",
     headline: a.title,
     description: a.description,
     datePublished: a.date.toISOString(),
     // A plain URL, or an ImageObject when the cover has a name or caption.
-    image:
-      details && Object.keys(details).length
-        ? { "@type": "ImageObject", url, contentUrl: url, width: share.width, height: share.height, ...details }
-        : url,
+    image: Object.keys(image).length > 5 ? image : image.url,
     inLanguage: a.inLanguage ?? "fr-FR",
     mainEntityOfPage: absoluteUrl(a.path, site),
     author: { "@type": "Person", name: a.author, url: absoluteUrl("/equipe/", site) },
     publisher: { "@id": absoluteUrl("/#organization", site) },
   };
+}
+
+/** The share raster of a cover as a schema.org ImageObject, with its name, caption and description when given. */
+export function imageObjectLd(
+  cover: string,
+  details: { name?: string; caption?: string; description?: string },
+  site: URL | undefined,
+): JsonLd {
+  const share = coverShareImage(cover);
+  const url = absoluteUrl(share.src, site);
+  const extra = Object.fromEntries(Object.entries(details).filter(([, v]) => v));
+  return { "@type": "ImageObject", url, contentUrl: url, width: share.width, height: share.height, ...extra };
 }
 
 /** Wraps nodes in a single @graph document. */

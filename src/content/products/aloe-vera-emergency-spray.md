@@ -41,8 +41,11 @@ faq:
   - { q: "Peut-on l'utiliser sur le visage ?", a: "La fiche LR le présente comme un spray pour tout le corps et ne décrit pas d'application directe sur le visage. Pour le contour des yeux, LR recommande de passer par un linge froid imprégné." }
   - { q: "Contient-il de l'alcool ?", a: "Pas d'alcool éthylique dans la liste. Il contient de l'alcool benzylique, utilisé comme conservateur." }
   - { q: "Quelle différence avec la crème DermaIntense ?", a: "Le spray est léger et frais, pour de grandes surfaces. DermaIntense est une crème riche pour des zones localisées et très sèches." }
-cover: /covers/produit-spray.svg
-coverAlt: "Illustration d'un flacon spray et d'une feuille d'aloe vera"
+cover: /covers/photos/aloe-vera-emergency-spray-soin-familial.webp
+coverAlt: "Père appliquant un spray à l’aloe vera sur le bras de sa fille dans une cuisine lumineuse, avec le flacon Aloe Vera Emergency Spray posé sur le plan de travail."
+coverTitle: "Aloe Vera Emergency Spray : un geste de soin au quotidien"
+coverCaption: "Un spray à l’aloe vera intégré à un moment simple de soin familial."
+coverDescription: "Photographie éditoriale d’un père qui vaporise un spray sur l’avant-bras de sa fille dans une cuisine familiale lumineuse. Le flacon Aloe Vera Emergency Spray est au premier plan sur un plan de travail en bois, avec quelques feuilles d’aloe vera."
 sourceCheckedAt: 2026-10-15
 ---
 

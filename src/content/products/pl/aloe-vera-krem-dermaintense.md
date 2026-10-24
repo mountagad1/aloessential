@@ -44,12 +44,14 @@ faq:
   - { q: "Czy zawiera substancje zapachowe?", a: "LR podaje, że jest wytwarzany bez olejków zapachowych, a skład INCI nie wymienia kompozycji zapachowej. Zawiera natomiast alkohol denaturowany (Alcohol denat.)." }
   - { q: "Jak często go nakładać?", a: "W razie potrzeby kilka razy dziennie, na czystą skórę, w odpowiedniej ilości." }
   - { q: "Czy może zastąpić leczenie dermatologiczne?", a: "Nie. To kosmetyk. Skórę, która swędzi, sączy się, pęka lub ma utrzymujące się zmiany, powinien obejrzeć lekarz." }
-cover: /covers/produit-creme.svg
-coverAlt: "Ilustracja słoiczka kremu otoczonego liśćmi"
+cover: /covers/photos/aloe-vera-dermaintense-creme-zones-seches.webp
+coverAlt: "Tubka kremu Aloe Vera DermaIntense obok świeżych liści aloesu i butelki oleju roślinnego, w tle kobieta nakłada biały krem na ramię."
+coverTitle: "Aloe Vera DermaIntense: bogaty krem do suchych miejsc"
+coverCaption: "Bogaty krem z 20% żelu aloesowego do pielęgnacji suchych i wrażliwych miejsc."
 sourceCheckedAt: 2026-10-15
 locale: pl
 translationOf: aloe-vera-dermaintense-creme-regeneratrice
-sourceHash: "e709e6a7ee2e"
+sourceHash: "ef80759d2edf"
 ---
 
 DermaIntense to według LR krem „bardzo bogaty” z linii kosmetyków z aloesem LR ALOE VIA. Podczas gdy wiele kosmetyków z aloesem stawia na lekkość i świeżość, ten stawia na komfort: odżywczą konsystencję dla miejsc, którym naprawdę brakuje wody i lipidów.

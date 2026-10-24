@@ -117,3 +117,33 @@ Choices that needed a decision:
 - `og:image` points to an existing JPEG of the declared size.
 
 **Unused SVGs:** the 13 SVG illustrations that only articles used (and their JPEG twins) were deleted on 2026-10-24, and removed from `tools/generate-covers.mjs`. What remains: the product illustrations (`produit-*`), plus `aloe-peau` and `jus-aloe`, used only by the test fixtures.
+
+## 7. Product photographs (2026-10-24)
+
+The six published French products and their 14 translations now use photographs.
+
+**Format.** One photo is 16:9 (DermaIntense); five are 3:2 (1536 × 1024).
+- **No cropping:** the 3:2 photos were not cropped to 16:9, so that bottles, tubes and faces stay whole.
+- **Import:** `tools/import-cover-photos.mjs` accepts 16:9 and 3:2, and the share JPEG keeps the ratio (1200 × 800 for 3:2).
+- **Page frames:** product pages frame the photo at 16:9 on mobile and 4:3 on desktop (`object-fit: cover`, centred). The products stay visible; this was checked on screenshots.
+
+**Metadata.** The briefs were applied with these changes, for regulatory reasons:
+
+| Product | Change | Why |
+| --- | --- | --- |
+| PRO 12 + | File renamed `pro-12-plus-capsules-routine-bureau` (was `…-probiotiques-…`); "probiotiques" removed from the alt text, title and caption | The page avoids the word: the European Commission treats "probiotic" as an implied health claim (the visible LR packaging still carries it) |
+| Immune Plus | Caption "moment de récupération après l'activité physique" became "pause boisson après l'activité physique" | The brief itself warns against implying recovery or performance |
+| Liver Support | Title "une routine bien-être au quotidien" became "une gélule par jour" | Factual and closer to the page; avoids an implied effect |
+| All | Internal notes ("fidèle à l'identité visuelle d'Aloessential") left out of the public descriptions | Not information for readers or search engines |
+
+**Structured data.** Product pages carry no `Product` markup (the site sells nothing). They now have a `WebPage` node whose `primaryImageOfPage` is an `ImageObject` (url, size, name, caption, description). This is the same helper (`imageObjectLd` in `src/lib/seo.ts`) as the article image.
+
+**Translations.**
+- Translations have their own alt text, title and caption.
+- The product fingerprint (`productSourceHash`) now ignores `cover*` fields, like the article fingerprint, so a new photo does not mark translations stale. The 14 product translations were re-stamped against the new fingerprint; their text did not change.
+
+**Points for the reviewer:**
+- **Emergency Spray:** the photo shows the spray used on a child's arm with a visible red patch, while the page says the spray is not a first aid product and gives no specific advice for children.
+- **DermaIntense and PRO 12 +:** the visible packaging carries LR's own claims (for example "regenerates", "probiotic"), which the page text deliberately does not repeat.
+
+**Unused illustrations.** `produit-spray` and `produit-coffret` (and their JPEG twins) are no longer used and were deleted. The other product illustrations remain, used by draft products and test fixtures.

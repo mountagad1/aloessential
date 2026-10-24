@@ -33,12 +33,13 @@ export function sourceHash(frenchText) {
 
 /**
  * Fingerprint of what a translator translates in a French product page: every
- * front matter field except the publication status and the shop link, and the
- * body. A new composition check (sourceCheckedAt) makes translations stale.
+ * front matter field except the publication status, the shop link and the
+ * cover fields, and the body. A new composition check (sourceCheckedAt) makes translations stale.
  */
 export function productSourceHash(frenchText) {
   const { frontMatter, body } = parseMarkdown(frenchText);
-  const fields = frontMatter.split("\n").filter((line) => !/^(status|shopUrl):/.test(line));
+  // Cover fields are translated with the photo (their own alt, title, caption): they do not make a translation stale.
+  const fields = frontMatter.split("\n").filter((line) => !/^(status|shopUrl|cover\w*):/.test(line));
   return createHash("sha256").update([...fields, body.trim()].join("\n")).digest("hex").slice(0, 12);
 }
 

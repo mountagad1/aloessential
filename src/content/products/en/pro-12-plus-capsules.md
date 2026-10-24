@@ -54,12 +54,14 @@ faq:
   - { q: "What does \"tyndallised\" mean?", a: "It is a heat treatment. Tyndallised Lactobacillus acidophilus (100 mg per capsule) is no longer alive; LR presents it as the \"postbiotic\" ingredient of its formula." }
   - { q: "Does it need to be kept in the fridge?", a: "No. LR recommends keeping the pack tightly closed, in a dry place at room temperature." }
   - { q: "What benefits can I expect?", a: "To date, no health claim is authorised in Great Britain or the EU for lactic acid bacteria or fructo-oligosaccharides in food supplements. We therefore describe the ingredients without promising any effect." }
-cover: /covers/produit-gelules.svg
-coverAlt: "Illustration of capsules surrounded by leaves"
+cover: /covers/photos/pro-12-plus-capsules-routine-bureau.webp
+coverAlt: "Man taking a capsule with a glass of water at his desk, with the LR LIFETAKT PRO 12 + capsules tub in the foreground."
+coverTitle: "PRO 12 +: one capsule a day in your routine"
+coverCaption: "One capsule a day with a glass of water: PRO 12 + fits easily into a working day."
 sourceCheckedAt: 2026-10-15
 locale: en
 translationOf: capsules-pro-12-plus
-sourceHash: "e9f014e1d95e"
+sourceHash: "ea7ec3dc6d83"
 ---
 
 PRO 12 + is the bacteria preparation in the LR Lifetakt range. LR builds it around what it calls a "TRIPLEBIOTIC" complex: fibre (fructo-oligosaccharides), twelve bacterial strains, and tyndallised Lactobacillus acidophilus, meaning bacteria inactivated by heat.

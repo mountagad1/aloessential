@@ -46,12 +46,14 @@ faq:
   - { q: "Welcher Bestandteil trägt die Angabe zur Leber?", a: "Cholin. Mit 82,5 mg pro Kapsel erlaubt es die zugelassene Angabe „Cholin trägt zur Erhaltung einer normalen Leberfunktion bei“. Die Pflanzenextrakte der Rezeptur haben bis heute keine zugelassene Angabe." }
   - { q: "Ist es ein „Detox“-Produkt?", a: "Nein. LR spricht auf seinem Produktblatt von Entgiftung, aber solche Angaben sind in Europa nicht zugelassen, und wir übernehmen sie nicht. Die Leber erledigt ihre Ausscheidungsaufgaben selbst; dieses Präparat liefert Nährstoffe, es „reinigt“ den Körper nicht." }
   - { q: "Wann sollte ich es einnehmen?", a: "Eine Kapsel pro Tag, am besten abends, mit einem Glas Wasser oder einem anderen Getränk." }
-cover: /covers/produit-gelules.svg
-coverAlt: "Illustration von Kapseln, umgeben von Blättern"
+cover: /covers/photos/lifetakt-liver-support-routine-familiale.webp
+coverAlt: "Ein älteres und ein junges Paar in einer hellen Küche rund um die Dose LR LIFETAKT Liver Support Kapseln, mit Kräutern und einem Glas Wasser."
+coverTitle: "LR LIFETAKT Liver Support: eine Kapsel pro Tag"
+coverCaption: "Das Nahrungsergänzungsmittel Liver Support in einer warmen, natürlichen Familienszene."
 sourceCheckedAt: 2026-10-15
 locale: de
 translationOf: lifetakt-liver-support
-sourceHash: "e4db578e1a80"
+sourceHash: "c91aeedadb17"
 ---
 
 Liver Support gehört zur Linie LR Lifetakt. Es ist eine einzelne Kapsel für den Abend, die vier Mikronährstoffe und drei pflanzliche Zutaten vereint.

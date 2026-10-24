@@ -43,12 +43,14 @@ faq:
   - { q: "Quanto spesso applicarla?", a: "Più volte al giorno se necessario, sulla pelle pulita, in quantità sufficiente." }
   - { q: "Che differenza c'è con l'Emergency Spray?", a: "Lo spray è un trattamento leggero e rinfrescante per grandi superfici. DermaIntense è una crema ricca, più nutriente, per zone localizzate e molto secche." }
   - { q: "Può sostituire una terapia del dermatologo?", a: "No. È un trattamento cosmetico. Una pelle che prude, trasuda, si screpola o presenta chiazze persistenti deve essere vista da un medico." }
-cover: /covers/produit-creme.svg
-coverAlt: "Illustrazione di un vasetto di crema circondato da foglie"
+cover: /covers/photos/aloe-vera-dermaintense-creme-zones-seches.webp
+coverAlt: "Tubetto di crema Aloe Vera DermaIntense accanto a foglie fresche di aloe vera e a un flacone di olio vegetale, con una donna che applica una crema bianca sulla spalla."
+coverTitle: "Aloe Vera DermaIntense: crema ricca per le zone secche"
+coverCaption: "Una crema ricca al 20% di gel di aloe vera, pensata per le zone di pelle secche e sensibili."
 sourceCheckedAt: 2026-10-15
 locale: it
 translationOf: aloe-vera-dermaintense-creme-regeneratrice
-sourceHash: "e709e6a7ee2e"
+sourceHash: "ef80759d2edf"
 ---
 
 DermaIntense è una crema «ultra-ricca», per usare le parole di LR, della sua linea di trattamenti all'aloe vera LR ALOE VIA. Dove molti prodotti all'aloe puntano su leggerezza e freschezza, questa punta sul comfort: una texture nutriente, pensata per le zone di pelle a cui mancano davvero acqua e lipidi.

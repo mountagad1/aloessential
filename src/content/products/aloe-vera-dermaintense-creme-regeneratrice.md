@@ -37,8 +37,11 @@ faq:
   - { q: "À quelle fréquence l'appliquer ?", a: "Plusieurs fois par jour si nécessaire, sur une peau propre, en quantité suffisante." }
   - { q: "Quelle différence avec l'Emergency Spray ?", a: "Le spray est un soin léger et rafraîchissant pour de grandes surfaces. DermaIntense est une crème riche, plus nourrissante, pour des zones localisées et très sèches." }
   - { q: "Peut-elle remplacer un traitement de dermatologue ?", a: "Non. C'est un soin cosmétique. Une peau qui démange, suinte, se fissure ou présente des plaques persistantes doit être examinée par un médecin." }
-cover: /covers/produit-creme.svg
-coverAlt: "Illustration d'un pot de crème entouré de feuilles"
+cover: /covers/photos/aloe-vera-dermaintense-creme-zones-seches.webp
+coverAlt: "Tube de crème Aloe Vera DermaIntense posé près de feuilles fraîches d’aloe vera et d’un flacon d’huile végétale, avec une femme appliquant une crème blanche sur son épaule."
+coverTitle: "Aloe Vera DermaIntense : crème riche pour les zones sèches"
+coverCaption: "Une crème riche à 20 % de gel d’aloe vera, conçue pour prendre soin des zones de peau sèches et sensibles."
+coverDescription: "Photographie éditoriale du tube de crème Aloe Vera DermaIntense au premier plan, avec des feuilles fraîches d’aloe vera et un flacon d’huile végétale. En arrière-plan, une femme en linge blanc applique délicatement une crème sur son épaule."
 sourceCheckedAt: 2026-10-15
 ---
 

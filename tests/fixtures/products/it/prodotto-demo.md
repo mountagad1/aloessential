@@ -27,7 +27,7 @@ coverAlt: "Illustrazione di una bottiglia"
 sourceCheckedAt: 2026-10-15
 locale: it
 translationOf: produit-demo
-sourceHash: "58d1c4971daa"
+sourceHash: "e535418fa4f5"
 translationReviewer: "Revisore di prova"
 ---
 

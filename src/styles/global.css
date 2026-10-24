@@ -1881,11 +1881,20 @@ main:focus {
 .product-hero__visual {
   --ratio: 16 / 9;
   margin: 0;
-  border-radius: var(--radius-lg);
   /* Small screens: the illustration follows the text, so the first CTA and
      the partner disclosure sit in the first viewport. Decorative only, so the
      visual order does not change the reading or focus order. */
   order: 1;
+}
+
+.product-hero__visual .media {
+  border-radius: var(--radius-lg);
+}
+
+.product-hero__visual figcaption {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
 }
 
 .product-hero h1 {
