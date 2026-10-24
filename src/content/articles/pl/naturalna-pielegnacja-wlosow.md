@@ -8,7 +8,8 @@ coverAlt: "Ilustracja płynnych zielonych linii przypominających włosy, z liś
 locale: pl
 translationOf: soins-cheveux-naturel
 sourceHash: "abbfae249c0a"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Zdrowe włosy często zawdzięczają więcej delikatnym gestom niż mnożeniu kosmetyków.

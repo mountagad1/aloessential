@@ -19,7 +19,8 @@ sources:
 locale: pl
 translationOf: aloe-vera-a-boire-comment-choisir
 sourceHash: "99a4832eaa0d"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Na półce napoje z aloesem wyglądają podobnie: butelka, zielony liść, obietnica dobrego samopoczucia. Ich skład bardzo się jednak różni. Zanim wybierzesz, warto wiedzieć, czego szukać na etykiecie… i czego nie wolno jej obiecywać.

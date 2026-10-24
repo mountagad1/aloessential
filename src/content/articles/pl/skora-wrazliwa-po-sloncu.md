@@ -14,7 +14,8 @@ sources:
 locale: pl
 translationOf: routine-peau-apres-soleil
 sourceHash: "284a4c8eb2a1"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Dzień na świeżym powietrzu, nad jeziorem czy nad morzem, a wieczorem skóra jest napięta, ciepła i lekko zaczerwieniona. Osoby o wrażliwej skórze dobrze to znają: słońce wystawia ją na próbę, nawet przy ochronie. Kilka prostych kroków pomaga odzyskać komfort. Nie zastępują one dobrej ochrony przeciwsłonecznej i nie leczą prawdziwego oparzenia.

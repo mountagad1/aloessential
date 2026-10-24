@@ -8,7 +8,8 @@ coverAlt: "Ilustracja złotego sierpa księżyca nad ciemnym listowiem"
 locale: pl
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Sen wpływa na nastrój, koncentrację, apetyt i regenerację. Dobra wiadomość: kilka nawyków realnie poprawia jego jakość.

@@ -8,7 +8,8 @@ coverAlt: "Ilustracja wschodzącego słońca nad zielonymi wzgórzami"
 locale: pl
 translationOf: routine-matin-energie
 sourceHash: "31ab0570e763"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Nie potrzebujesz dwugodzinnej rutyny, żeby dobrze zacząć dzień. Często wystarczy kilka regularnych nawyków, aby zmienić jakość poranka.

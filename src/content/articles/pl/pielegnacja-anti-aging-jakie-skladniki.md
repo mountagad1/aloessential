@@ -13,7 +13,8 @@ sources:
 locale: pl
 translationOf: soin-anti-age-quels-actifs
 sourceHash: "75f22806a9f4"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Półki z kosmetykami „anti-aging” pełne są nazw składników, procentów i obietnic. Aby się w nich odnaleźć, warto wyjść od prostej myśli: krem działa na **wygląd** skóry (nawilżenie, blask, elastyczność, wygląd drobnych zmarszczek). Nie cofa czasu. Dobrze dobrany i właściwie stosowany może jednak zrobić realną różnicę na co dzień.

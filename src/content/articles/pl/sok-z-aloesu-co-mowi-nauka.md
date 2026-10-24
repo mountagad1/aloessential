@@ -17,7 +17,8 @@ sources:
 locale: pl
 translationOf: jus-aloe-vera-science
 sourceHash: "63507b38c25e"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Sok z aloesu zdobył swoje miejsce na półkach z produktami dla zdrowia. Jednak między obietnicami reklam a danymi naukowymi bywa spora przepaść.

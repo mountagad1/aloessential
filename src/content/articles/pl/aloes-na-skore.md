@@ -14,7 +14,8 @@ sources:
 locale: pl
 translationOf: aloe-vera-bienfaits-peau
 sourceHash: "c26974842af3"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Aloes to jedna z roślin, które najczęściej goszczą w naszych łazienkach. Jego żel, pozyskiwany z wnętrza liścia, w ponad 98% składa się z wody, ale zawiera też polisacharydy, witaminy i składniki mineralne. Oto czego można się po nim rozsądnie spodziewać.

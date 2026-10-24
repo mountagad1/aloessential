@@ -17,7 +17,8 @@ sources:
 locale: pl
 translationOf: digestion-foie-detox-complements
 sourceHash: "85886cfc227c"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Wiosną, a także po świętach, kuracje „detoks” i suplementy na jelita zalewają półki. Opakowania obiecują oczyszczanie, odwadnianie, przywracanie równowagi. Unijne przepisy są jednak surowe w kwestii tego, co suplement diety może twierdzić. Znajomość ich pozwala oddzielić wartościowe od reszty.

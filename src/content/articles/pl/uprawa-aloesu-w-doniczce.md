@@ -15,7 +15,8 @@ sources:
 locale: pl
 translationOf: cultiver-aloe-vera-en-pot
 sourceHash: "68d1d6053660"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Aloes to jedna z najłatwiejszych w uprawie roślin doniczkowych… pod warunkiem, że nie okazujesz mu za dużo troski. Ten sukulent pochodzi z gorących i suchych regionów: niemal nigdy nie ginie z zapomnienia, lecz z nadmiaru wody.

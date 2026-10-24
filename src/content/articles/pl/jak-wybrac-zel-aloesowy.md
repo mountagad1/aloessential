@@ -10,7 +10,8 @@ coverAlt: "Ilustracja kropli przezroczystego żelu aloesowego otoczonej liśćmi
 locale: pl
 translationOf: choisir-gel-aloe-vera
 sourceHash: "ea2a88778edf"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Wśród dziesiątek żeli „z aloesem” w aptece, drogerii czy sklepie zielarskim trudno się odnaleźć. Kilka prostych kryteriów pomoże Ci świadomie wybrać.

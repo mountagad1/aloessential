@@ -8,7 +8,8 @@ coverAlt: "Ilustracja plasterków ogórka, liści i kropli wody"
 locale: pl
 translationOf: hydratation-aliments-riches-en-eau
 sourceHash: "16e7e38e09cd"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Myśląc o nawodnieniu, od razu mamy na myśli napoje. Tymczasem spora część wody, którą przyjmujemy, pochodzi z jedzenia.

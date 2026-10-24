@@ -8,7 +8,8 @@ coverAlt: "Ilustracja miski świeżych owoców w kolorach pomarańczowym, żół
 locale: pl
 translationOf: petit-dejeuner-equilibre
 sourceHash: "2cf27e1bfb8d"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Zbilansowane śniadanie nie jest niczym skomplikowanym. Opiera się na trzech elementach: błonniku, białku i owocu.

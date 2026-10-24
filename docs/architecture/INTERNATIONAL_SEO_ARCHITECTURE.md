@@ -4,7 +4,7 @@
 
 **Status:**
 - The locale **infrastructure is implemented and tested**.
-- **Italian, English, German, Spanish and Portuguese are published** (2026-10-24): 16 articles each, reviewed by Philippe Cros, under `/it/`, `/en/`, `/de/`, `/es/` and `/pt-pt/`. The other locales are drafts only.
+- **All six translated locales are published** (2026-10-24): 16 articles each, reviewed by Philippe Cros, under `/it/`, `/en/`, `/de/`, `/es/`, `/pt-pt/` and `/pl/`.
 - Supported locales: fr (source), en, es, de, **it**, pt-pt, pl.
 - **Italian is first-class:** registry, interface text, category text, routing, metadata, hreflang, sitemap and tests.
 - The other five locales exist in the registry only. They cannot publish until their interface text is added; the build enforces this.
@@ -19,9 +19,9 @@
 | German content (Germany) | **16 of 16 published** (2026-10-24, reviewer: Philippe Cros) in `src/content/articles/de/`; interface and category text (*Sie*); DE LR shop linked in the German footer |
 | Spanish content (Spain) | **16 of 16 published** (2026-10-24, reviewer: Philippe Cros) in `src/content/articles/es/`; interface and category text (*tú*); ES LR shop linked in the Spanish footer |
 | Portuguese content (Portugal) | **16 of 16 published** (2026-10-24, reviewer: Philippe Cros) in `src/content/articles/pt-pt/`; interface and category text (*tu*); footer links to LR Portugal's site (the PT shop requires an LR login) |
-| Polish content (Poland) | 0 of 16 published; **16 drafts** in `src/content/articles/pl/`; interface and category text (*ty*); PL LR shop linked in the Polish footer |
+| Polish content (Poland) | **16 of 16 published** (2026-10-24, reviewer: Philippe Cros) in `src/content/articles/pl/`; interface and category text (*ty*); PL LR shop linked in the Polish footer |
 | Products in Italian | none; product pages stay French-only (decision D4/D6) |
-| hreflang | French ↔ Italian ↔ English ↔ German ↔ Spanish ↔ Portuguese on the home page, the 4 categories and the 16 articles; none for the other locales (drafts) |
+| hreflang | all seven locales on the home page, the 4 categories and the 16 articles |
 | Fallbacks | none: a locale without a published article has no URL at all; `/it/anything/` returns the real 404 status |
 
 ## 2. URL structure (decisions D1, D2 — implemented)

@@ -20,7 +20,8 @@ sources:
 locale: pl
 translationOf: vitamines-fatigue-reglementation
 sourceHash: "364ffbf6ad87"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 „Brak energii?” Suplementów diety, które obiecują energię, jest mnóstwo. Za tymi obietnicami stoją jednak bardzo precyzyjne przepisy. Znajomość ich pomaga czytać etykiety bardziej krytycznie i nie przeoczyć zmęczenia, które wymaga czegoś więcej niż kuracji witaminowej.

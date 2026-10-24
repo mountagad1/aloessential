@@ -18,7 +18,8 @@ sources:
 locale: pl
 translationOf: articulations-mobilite-quotidien
 sourceHash: "30e39976d2dc"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Wstać bez sztywności, wejść po schodach bez zastanowienia, spędzić całe popołudnie na działce: sprawność to wygoda, którą zauważamy głównie wtedy, gdy jej ubywa. Dobra wiadomość jest taka, że wiele z tego, co ją podtrzymuje, zależy od naszych nawyków.

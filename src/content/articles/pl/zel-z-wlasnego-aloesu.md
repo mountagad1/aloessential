@@ -15,7 +15,8 @@ sources:
 locale: pl
 translationOf: gel-aloe-vera-maison
 sourceHash: "bd3c649d5e58"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Aloes na parapecie kusi, by sięgnąć po jego żel. Można to zrobić, na skórę, pod warunkiem zachowania kilku środków ostrożności. Najważniejszy: dokładnie oddzielić żel od lateksu.
