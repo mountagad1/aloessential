@@ -18,7 +18,8 @@ sources:
 locale: pt-pt
 translationOf: articulations-mobilite-quotidien
 sourceHash: "30e39976d2dc"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Levantar-se sem rigidez, subir as escadas sem pensar, passar uma tarde inteira na horta ou no jardim: a mobilidade é um conforto que se nota sobretudo quando diminui. A boa notícia é que grande parte do que a mantém depende dos nossos hábitos.

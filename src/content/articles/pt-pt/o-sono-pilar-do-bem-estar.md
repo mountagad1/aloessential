@@ -8,7 +8,8 @@ coverAlt: "Ilustração de um crescente de lua dourado sobre folhagem escura"
 locale: pt-pt
 translationOf: sommeil-pilier-bien-etre
 sourceHash: "fed2a31d72e8"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 O sono influencia o humor, a concentração, o apetite e a recuperação. A boa notícia: alguns hábitos têm um efeito real na sua qualidade.

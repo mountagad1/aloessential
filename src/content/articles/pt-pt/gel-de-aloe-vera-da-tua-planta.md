@@ -15,7 +15,8 @@ sources:
 locale: pt-pt
 translationOf: gel-aloe-vera-maison
 sourceHash: "bd3c649d5e58"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Ter um aloe vera no parapeito da janela dá vontade de usar o seu gel. É possível, na pele, respeitando algumas precauções. A principal: separar bem o gel do látex.

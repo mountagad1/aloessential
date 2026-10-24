@@ -8,7 +8,8 @@ coverAlt: "Ilustração de um sol nascente sobre colinas verdes"
 locale: pt-pt
 translationOf: routine-matin-energie
 sourceHash: "31ab0570e763"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Não precisas de uma rotina de duas horas para começar bem. Muitas vezes, alguns gestos regulares chegam para mudar a qualidade de uma manhã.

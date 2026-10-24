@@ -17,7 +17,8 @@ sources:
 locale: pt-pt
 translationOf: jus-aloe-vera-science
 sourceHash: "63507b38c25e"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 O sumo de aloe vera conquistou o seu lugar nas prateleiras do bem-estar. Mas entre as promessas comerciais e os dados científicos, a distância é por vezes grande.

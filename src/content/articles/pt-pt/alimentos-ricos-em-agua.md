@@ -8,7 +8,8 @@ coverAlt: "Ilustração de rodelas de pepino, folhas e gotas de água"
 locale: pt-pt
 translationOf: hydratation-aliments-riches-en-eau
 sourceHash: "16e7e38e09cd"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Quando pensamos em hidratação, lembramo-nos logo das bebidas. No entanto, uma parte nada desprezável da água que consumimos vem dos alimentos.

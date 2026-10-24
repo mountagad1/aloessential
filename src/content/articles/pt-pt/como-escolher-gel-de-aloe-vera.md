@@ -10,7 +10,8 @@ coverAlt: "Ilustração de uma gota de gel de aloe vera transparente rodeada de 
 locale: pt-pt
 translationOf: choisir-gel-aloe-vera
 sourceHash: "ea2a88778edf"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Entre as dezenas de géis «com aloe vera» à venda na farmácia, na parafarmácia ou na ervanária, não é fácil orientarmo-nos. Alguns critérios simples ajudam-te a escolher com conhecimento.

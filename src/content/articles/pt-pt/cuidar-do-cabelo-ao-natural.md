@@ -8,7 +8,8 @@ coverAlt: "Ilustração de curvas verdes fluidas que lembram uma cabeleira, com 
 locale: pt-pt
 translationOf: soins-cheveux-naturel
 sourceHash: "abbfae249c0a"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Um cabelo saudável deve muitas vezes mais à suavidade dos gestos do que à quantidade de produtos.

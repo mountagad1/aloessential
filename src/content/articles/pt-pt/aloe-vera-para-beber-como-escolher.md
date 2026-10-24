@@ -19,7 +19,8 @@ sources:
 locale: pt-pt
 translationOf: aloe-vera-a-boire-comment-choisir
 sourceHash: "99a4832eaa0d"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Na prateleira, as bebidas de aloe vera parecem-se todas: uma garrafa, uma folha verde, uma promessa de bem-estar. A composição, essa, varia muito. Antes de escolher, convém saber o que procurar no rótulo… e o que ele não pode prometer.

@@ -91,9 +91,9 @@
 | soins-cheveux-naturel | `es/cuidado-natural-del-cabello` |
 | sommeil-pilier-bien-etre | `es/el-sueno-pilar-del-bienestar` |
 
-**Portuguese** (Portugal, `pt-pt`): 0 published, **16 drafts** (every French article). **Polish** (`pl`): 0 published, **16 drafts** (every French article). EU rules apply as in French. Portuguese: *tu*, European Portuguese, farmácia/ervanária, SNS 24 (808 24 24 24) and 112, frost-free coast and islands; footer links to LR Portugal's site (the PT shop requires login). Polish: *ty*, „…” quotes, suplement diety, apteka/drogeria/sklep zielarski, lekarz rodzinny, nocna i świąteczna opieka, NFZ 800 190 590, 112/999.
+**Portuguese** (Portugal, `pt-pt`): **16 published** (2026-10-24, reviewer Philippe Cros). **Polish** (`pl`): 0 published, **16 drafts** (every French article). EU rules apply as in French. Portuguese: *tu*, European Portuguese, farmácia/ervanária, SNS 24 (808 24 24 24) and 112, frost-free coast and islands; footer links to LR Portugal's site (the PT shop requires login). Polish: *ty*, „…” quotes, suplement diety, apteka/drogeria/sklep zielarski, lekarz rodzinny, nocna i świąteczna opieka, NFZ 800 190 590, 112/999.
 
-| French source | Portuguese draft | Polish draft |
+| French source | Portuguese article (published) | Polish draft |
 | --- | --- | --- |
 | aloe-vera-bienfaits-peau | `pt-pt/aloe-vera-para-a-pele` | `pl/aloes-na-skore` |
 | choisir-gel-aloe-vera | `pt-pt/como-escolher-gel-de-aloe-vera` | `pl/jak-wybrac-zel-aloesowy` |

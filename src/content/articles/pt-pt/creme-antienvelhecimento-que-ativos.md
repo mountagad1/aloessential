@@ -13,7 +13,8 @@ sources:
 locale: pt-pt
 translationOf: soin-anti-age-quels-actifs
 sourceHash: "75f22806a9f4"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 As prateleiras «antienvelhecimento» estão cheias de nomes de ativos, percentagens e promessas. Para te orientares, parte de uma ideia simples: um creme atua no **aspeto** da pele (hidratação, luminosidade, elasticidade, aspeto das linhas finas). Não faz recuar o tempo. Bem escolhido e bem usado, pode, no entanto, fazer uma diferença real no dia a dia.

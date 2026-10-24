@@ -10,7 +10,8 @@ coverAlt: "Ilustração de um pôr do sol atrás de folhas de aloe vera com gota
 locale: pt-pt
 translationOf: routine-peau-apres-soleil
 sourceHash: "284a4c8eb2a1"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Um dia ao ar livre, na praia ou na piscina, e à noite a pele repuxa, aquece um pouco, fica vermelha. Quem tem pele sensível sabe-o bem: o sol põe-na à prova, mesmo com proteção. Alguns gestos simples ajudam a recuperar o conforto. Não substituem uma boa proteção solar e não tratam uma verdadeira queimadura solar.

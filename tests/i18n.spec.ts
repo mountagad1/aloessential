@@ -100,7 +100,8 @@ const PUBLISHED = {
     article: "/pt-pt/artigos/artigo-demo/",
     category: "/pt-pt/rubricas/saude/",
     categoryLabel: "Saúde",
-    emptyCategories: ["pt-pt/rubricas/conselhos", "pt-pt/rubricas/beleza", "pt-pt/rubricas/nutricao"],
+    // Portuguese is published for real (src/content/articles/pt-pt/): every Portuguese category holds articles.
+    emptyCategories: [],
     body: "Parágrafo de teste em português",
     name: "Português",
     fab: "Torna-te distribuidor LR",
@@ -127,10 +128,10 @@ const PUBLISHED = {
   },
 } as const;
 /**
- * Real published translations (Italian, English, German, Spanish): 16 articles and 3 more categories each
+ * Real published translations (Italian, English, German, Spanish, Portuguese): 16 articles and 3 more categories each
  * (Santé is already counted), plus the same 19 French pages, annotated once.
  */
-const REAL_LOCALES = 4;
+const REAL_LOCALES = 5;
 const REAL_ANNOTATED = (16 + 3) * (REAL_LOCALES + 1);
 const published = Object.entries(PUBLISHED) as [keyof typeof PUBLISHED, (typeof PUBLISHED)[keyof typeof PUBLISHED]][];
 
@@ -296,7 +297,7 @@ test.describe("localized pages (static scan)", () => {
       }
     }
     // Demo article, homepages and the Santé category, in all seven locales (21 pages),
-    // plus the published Italian, English, German and Spanish articles and categories with their French sources.
+    // plus the published Italian, English, German, Spanish and Portuguese articles and categories with their French sources.
     expect(annotated).toBe(21 + REAL_ANNOTATED);
     expect(alternatesOf(read("articles/article-demo"))).toEqual({
       fr: `${ORIGIN}/articles/article-demo/`,
@@ -317,6 +318,7 @@ test.describe("localized pages (static scan)", () => {
       en: `${ORIGIN}/en/topics/beauty/`,
       de: `${ORIGIN}/de/rubriken/schoenheit/`,
       es: `${ORIGIN}/es/secciones/belleza/`,
+      "pt-PT": `${ORIGIN}/pt-pt/rubricas/beleza/`,
       "x-default": `${ORIGIN}/rubriques/beaute/`,
     });
   });

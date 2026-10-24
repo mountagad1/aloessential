@@ -20,7 +20,8 @@ sources:
 locale: pt-pt
 translationOf: vitamines-fatigue-reglementation
 sourceHash: "364ffbf6ad87"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 «Sem energia?» Os suplementos alimentares que prometem energia são muitos. Por trás dessas promessas existe, no entanto, um enquadramento muito preciso. Conhecê-lo ajuda a ler os rótulos com olhar mais crítico e a não ignorar um cansaço que merece mais do que uma cura de vitaminas.

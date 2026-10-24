@@ -8,7 +8,8 @@ coverAlt: "Ilustração de uma taça de fruta fresca cor de laranja, amarela e v
 locale: pt-pt
 translationOf: petit-dejeuner-equilibre
 sourceHash: "2cf27e1bfb8d"
-status: draft
+status: published
+translationReviewer: "Philippe Cros"
 ---
 
 Um pequeno-almoço equilibrado não tem nada de complicado. Assenta em três elementos: fibra, proteína e uma peça de fruta.
