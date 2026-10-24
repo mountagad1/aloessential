@@ -3,18 +3,21 @@
  * and hides again when the closing CTA is on screen. Without JavaScript it is
  * not rendered visibly: the in-flow CTAs remain. */
 import ShopButton from "./ShopButton.astro";
+import { DEFAULT_LOCALE, type Locale } from "../i18n/locales";
+import { productUi } from "../i18n/product-ui";
 
 interface Props {
   href: string;
   productName: string;
+  locale?: Locale;
 }
 
-const { href, productName } = Astro.props;
+const { href, productName, locale = DEFAULT_LOCALE } = Astro.props;
 ---
 
 <div class="sticky-cta" data-sticky-cta aria-hidden="true" inert>
   <p class="sticky-cta__name">{productName}</p>
-  <ShopButton href={href} productName={productName} label="Voir le produit" />
+  <ShopButton href={href} productName={productName} label={productUi(locale).stickyButton} locale={locale} />
 </div>
 
 <script>

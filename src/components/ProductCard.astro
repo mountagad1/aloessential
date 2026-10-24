@@ -1,6 +1,7 @@
 ---
 import Icon from "./Icon.astro";
-import { KIND_LABEL, productUrl, type Product } from "../lib/products";
+import { productUrl, type Product } from "../lib/products";
+import { productUi } from "../i18n/product-ui";
 
 interface Props {
   product: Product;
@@ -8,7 +9,8 @@ interface Props {
 }
 
 const { product, headingLevel = 3 } = Astro.props;
-const { name, tagline, kind, range, cover, coverAlt, format } = product.data;
+const { name, tagline, kind, range, cover, coverAlt, format, locale } = product.data;
+const p = productUi(locale);
 const Heading = `h${headingLevel}` as "h2" | "h3";
 ---
 
@@ -18,7 +20,7 @@ const Heading = `h${headingLevel}` as "h2" | "h3";
   </div>
   <div class="card__body">
     <p class="card__meta">
-      <span class="card__category">{KIND_LABEL[kind]}</span>
+      <span class="card__category">{p.kind[kind]}</span>
       <span aria-hidden="true">·</span>
       <span>{range}</span>
       {format && <><span aria-hidden="true">·</span><span>{format}</span></>}
@@ -26,7 +28,7 @@ const Heading = `h${headingLevel}` as "h2" | "h3";
     <Heading class="card__title"><a href={productUrl(product)}>{name}</a></Heading>
     <p class="card__excerpt">{tagline}</p>
     <p class="card__more" aria-hidden="true">
-      Découvrir <Icon name="arrow-right" class="btn__icon" />
+      {p.discover} <Icon name="arrow-right" class="btn__icon" />
     </p>
   </div>
 </article>

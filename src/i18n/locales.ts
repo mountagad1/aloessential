@@ -31,7 +31,7 @@ export interface LocaleInfo {
   /** Name of the language in that language (language switchers). */
   name: string;
   /** Localized path segments. */
-  segments: { articles: string; categories: string };
+  segments: { articles: string; categories: string; products: string };
 }
 
 export const LOCALES: Record<Locale, LocaleInfo> = {
@@ -43,7 +43,7 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     schemaLang: "fr-FR",
     dateLocale: "fr-FR",
     name: "Français",
-    segments: { articles: "articles", categories: "rubriques" },
+    segments: { articles: "articles", categories: "rubriques", products: "produits" },
   },
   en: {
     code: "en",
@@ -53,7 +53,7 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     schemaLang: "en",
     dateLocale: "en-GB",
     name: "English",
-    segments: { articles: "articles", categories: "topics" },
+    segments: { articles: "articles", categories: "topics", products: "products" },
   },
   es: {
     code: "es",
@@ -63,7 +63,7 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     schemaLang: "es-ES",
     dateLocale: "es-ES",
     name: "Español",
-    segments: { articles: "articulos", categories: "secciones" },
+    segments: { articles: "articulos", categories: "secciones", products: "productos" },
   },
   de: {
     code: "de",
@@ -73,7 +73,7 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     schemaLang: "de-DE",
     dateLocale: "de-DE",
     name: "Deutsch",
-    segments: { articles: "artikel", categories: "rubriken" },
+    segments: { articles: "artikel", categories: "rubriken", products: "produkte" },
   },
   it: {
     code: "it",
@@ -83,7 +83,7 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     schemaLang: "it-IT",
     dateLocale: "it-IT",
     name: "Italiano",
-    segments: { articles: "articoli", categories: "rubriche" },
+    segments: { articles: "articoli", categories: "rubriche", products: "prodotti" },
   },
   "pt-pt": {
     code: "pt-pt",
@@ -93,7 +93,7 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     schemaLang: "pt-PT",
     dateLocale: "pt-PT",
     name: "Português",
-    segments: { articles: "artigos", categories: "rubricas" },
+    segments: { articles: "artigos", categories: "rubricas", products: "produtos" },
   },
   pl: {
     code: "pl",
@@ -103,7 +103,7 @@ export const LOCALES: Record<Locale, LocaleInfo> = {
     schemaLang: "pl-PL",
     dateLocale: "pl-PL",
     name: "Polski",
-    segments: { articles: "artykuly", categories: "dzialy" },
+    segments: { articles: "artykuly", categories: "dzialy", products: "produkty" },
   },
 };
 
@@ -123,3 +123,29 @@ export function categoryPath(locale: Locale, localizedSlug: string): string {
   const l = LOCALES[locale];
   return `${l.prefix}/${l.segments.categories}/${localizedSlug}/`;
 }
+
+/** "/produits/" (fr) or "/it/prodotti/": the product listing. */
+export function productsPath(locale: Locale): string {
+  const l = LOCALES[locale];
+  return `${l.prefix}/${l.segments.products}/`;
+}
+
+/** "/produits/<slug>/" (fr) or "/it/prodotti/<slug>/". */
+export function productPath(locale: Locale, slug: string): string {
+  return `${productsPath(locale)}${slug}/`;
+}
+
+/**
+ * LR shop country and language of each locale, as they appear in LR product
+ * URLs (https://shop.lrworld.com/product/<country>/<language>/…). A product
+ * page in a locale links to that country's shop only.
+ */
+export const LR_SHOP_PATH: Record<Locale, string> = {
+  fr: "fr/fr",
+  en: "gb/en",
+  es: "es/es",
+  de: "de/de",
+  it: "it/it",
+  "pt-pt": "pt/pt",
+  pl: "pl/pl",
+};

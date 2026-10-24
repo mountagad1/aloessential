@@ -1,6 +1,8 @@
 ---
 import Icon from "./Icon.astro";
 import { withPartnerRef } from "../lib/partner";
+import { DEFAULT_LOCALE, type Locale } from "../i18n/locales";
+import { productUi } from "../i18n/product-ui";
 
 interface Props {
   href: string;
@@ -8,9 +10,12 @@ interface Props {
   variant?: "sun" | "primary" | "outline";
   label?: string;
   class?: string;
+  locale?: Locale;
 }
 
-const { href, productName, variant = "sun", label = "Voir sur la boutique LR", class: className } = Astro.props;
+const { href, productName, variant = "sun", locale = DEFAULT_LOCALE, class: className } = Astro.props;
+const p = productUi(locale);
+const label = Astro.props.label ?? p.shopButton;
 ---
 
 <a
@@ -20,6 +25,6 @@ const { href, productName, variant = "sun", label = "Voir sur la boutique LR", c
   rel="sponsored noopener"
   data-shop-link
 >
-  {label}<span class="visually-hidden"> : {productName} (lien partenaire, nouvel onglet)</span>
+  {label}<span class="visually-hidden">{p.shopButtonHidden(productName)}</span>
   <Icon name="external" class="btn__icon" />
 </a>

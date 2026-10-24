@@ -1,9 +1,11 @@
 ---
 import { categoryList, localizedCategory } from "../data/categories";
 import { LR_HOME_URL, LR_SHOP_HOME } from "../lib/partner";
-import { DEFAULT_LOCALE, categoryPath, homePath, type Locale } from "../i18n/locales";
+import { DEFAULT_LOCALE, categoryPath, homePath, productsPath, type Locale } from "../i18n/locales";
+import { productUi } from "../i18n/product-ui";
 import { ui } from "../i18n/ui";
 import { getArticles } from "../lib/articles";
+import { getPublishedProducts } from "../lib/products";
 
 interface Props {
   locale?: Locale;
@@ -25,6 +27,7 @@ const categories = categoryList
   );
 const frenchOnly = french ? undefined : "fr";
 const shopHome = LR_SHOP_HOME[locale];
+const hasProducts = !french && (await getPublishedProducts(locale)).length > 0;
 ---
 
 <footer class="site-footer on-dark">
@@ -68,6 +71,7 @@ const shopHome = LR_SHOP_HOME[locale];
           ) : (
             <ul>
               <li><a href={homePath(locale)}>{t.allArticles}</a></li>
+              {hasProducts && <li><a href={productsPath(locale)}>{productUi(locale).listingTitle}</a></li>}
               <li><a href="/" hreflang="fr" lang="fr">{t.frenchSite}</a></li>
               {shopHome && (
                 <>

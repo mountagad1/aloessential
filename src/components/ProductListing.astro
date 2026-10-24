@@ -1,0 +1,63 @@
+---
+/*
+ * The product listing, in any locale: /produits/ (French) and
+ * /<locale>/<products>/ (src/pages/[locale]/[...path].astro). A locale lists
+ * only the products LR sells in its country, with that country's shop links.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductCard from "./ProductCard.astro";
+import Newsletter from "./Newsletter.astro";
+import ShopButton from "./ShopButton.astro";
+import { DEFAULT_LOCALE, type Locale } from "../i18n/locales";
+import { productUi } from "../i18n/product-ui";
+import { ui } from "../i18n/ui";
+import { LR_HOME_URL } from "../lib/partner";
+import { getPublishedProducts, productsListingAlternates } from "../lib/products";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = DEFAULT_LOCALE } = Astro.props;
+const french = locale === DEFAULT_LOCALE;
+const t = ui(locale);
+const p = productUi(locale);
+const products = await getPublishedProducts(locale);
+const alternates = await productsListingAlternates();
+---
+
+<BaseLayout title={p.listingTitle} description={p.listingDescription} current="produits" locale={locale} alternates={alternates}>
+  <header class="page-header">
+    <div class="container">
+      <p class="eyebrow" data-hero-step style="--step: 0">{p.listingEyebrow}</p>
+      <h1 data-hero-step style="--step: 1">{p.listingHeading}</h1>
+      <p data-hero-step style="--step: 2">{p.listingLead}</p>
+      <p class="disclosure-inline" data-hero-step style="--step: 3">
+        {p.listingDisclosure} <a href="/transparence/" hreflang={french ? undefined : "fr"}>{french ? "Notre transparence" : `${t.transparency}${t.inFrench}`}</a>
+      </p>
+    </div>
+  </header>
+
+  <section class="section section--tight" aria-label={p.listingLabel}>
+    <div class="container">
+      {
+        products.length ? (
+          <ul class="card-grid">
+            {products.map((product, i) => (
+              <li data-reveal={i < 3 ? undefined : ""}>
+                <ProductCard product={product} headingLevel={2} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div class="empty-state">
+            <p>Notre sélection arrive très bientôt. En attendant, la gamme complète est disponible sur la boutique officielle.</p>
+            <ShopButton href={LR_HOME_URL} productName="Boutique officielle LR" label="Découvrir la boutique LR" />
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  {french && <Newsletter />}
+</BaseLayout>

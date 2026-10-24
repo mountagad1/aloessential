@@ -4,22 +4,29 @@
  * to the shop. */
 import ProductCard from "./ProductCard.astro";
 import type { Product } from "../lib/products";
+import { DEFAULT_LOCALE, type Locale } from "../i18n/locales";
+import { productUi } from "../i18n/product-ui";
+import { ui } from "../i18n/ui";
 
 interface Props {
   products: Product[];
+  locale?: Locale;
 }
 
-const { products } = Astro.props;
+const { products, locale = DEFAULT_LOCALE } = Astro.props;
+const p = productUi(locale);
+// The transparency page exists in French only: links to it say so.
+const french = locale === DEFAULT_LOCALE;
 ---
 
 {
   products.length > 0 && (
     <aside class="product-callout prose" aria-labelledby="product-callout-title" data-reveal>
-      <p class="eyebrow">Notre sélection</p>
-      <h2 id="product-callout-title">Pour aller plus loin</h2>
+      <p class="eyebrow">{p.calloutEyebrow}</p>
+      <h2 id="product-callout-title">{p.calloutTitle}</h2>
       <p class="product-callout__note">
-        Des produits LR que nous avons étudiés en lien avec ce sujet. Liens partenaires :{" "}
-        <a href="/transparence/">en savoir plus</a>.
+        {p.calloutNote}{" "}
+        <a href="/transparence/" hreflang={french ? undefined : "fr"}>{p.calloutLink}{ui(locale).inFrench}</a>.
       </p>
       <ul class="card-grid card-grid--compact">
         {products.map((product) => (

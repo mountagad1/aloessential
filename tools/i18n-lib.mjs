@@ -6,6 +6,7 @@ import { join } from "node:path";
 
 export const ROOT = new URL("..", import.meta.url).pathname;
 export const ARTICLES = join(ROOT, "src/content/articles");
+export const PRODUCTS = join(ROOT, "src/content/products");
 
 /** Front matter (simple `key: value` lines) and body of a Markdown file. */
 export function parseMarkdown(text) {
@@ -29,6 +30,20 @@ export function sourceHash(frenchText) {
   const basis = [data.title ?? "", data.description ?? "", body.trim()].join("\n");
   return createHash("sha256").update(basis).digest("hex").slice(0, 12);
 }
+
+/**
+ * Fingerprint of what a translator translates in a French product page: every
+ * front matter field except the publication status and the shop link, and the
+ * body. A new composition check (sourceCheckedAt) makes translations stale.
+ */
+export function productSourceHash(frenchText) {
+  const { frontMatter, body } = parseMarkdown(frenchText);
+  const fields = frontMatter.split("\n").filter((line) => !/^(status|shopUrl):/.test(line));
+  return createHash("sha256").update([...fields, body.trim()].join("\n")).digest("hex").slice(0, 12);
+}
+
+/** The fingerprint function for a content folder. */
+export const hashFor = (base) => (base === PRODUCTS || base.endsWith("/products") ? productSourceHash : sourceHash);
 
 export function frenchFile(id, base = ARTICLES) {
   return join(base, `${id}.md`);
@@ -54,5 +69,6 @@ export function freshness(t, bases = [ARTICLES]) {
   const source = [bases].flat().map((b) => frenchFile(t.data.translationOf, b)).find((f) => existsSync(f));
   if (!source) return "orphan";
   if (!t.data.sourceHash) return "unstamped";
-  return t.data.sourceHash === sourceHash(readFileSync(source, "utf8")) ? "current" : "stale";
+  const hash = hashFor([bases].flat()[0])(readFileSync(source, "utf8"));
+  return t.data.sourceHash === hash ? "current" : "stale";
 }

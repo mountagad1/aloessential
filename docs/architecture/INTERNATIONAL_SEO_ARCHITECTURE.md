@@ -20,7 +20,7 @@
 | Spanish content (Spain) | **16 of 16 published** (2026-10-24, reviewer: Philippe Cros) in `src/content/articles/es/`; interface and category text (*tú*); ES LR shop linked in the Spanish footer |
 | Portuguese content (Portugal) | **16 of 16 published** (2026-10-24, reviewer: Philippe Cros) in `src/content/articles/pt-pt/`; interface and category text (*tu*); footer links to LR Portugal's site (the PT shop requires an LR login) |
 | Polish content (Poland) | **16 of 16 published** (2026-10-24, reviewer: Philippe Cros) in `src/content/articles/pl/`; interface and category text (*ty*); PL LR shop linked in the Polish footer |
-| Products in Italian | none; product pages stay French-only (decision D4/D6) |
+| Product pages in other locales | **14 published** (2026-10-24, reviewer: Philippe Cros) in `src/content/products/<locale>/`, only where LR sells the same article number in that country (§10) |
 | hreflang | all seven locales on the home page, the 4 categories and the 16 articles |
 | Fallbacks | none: a locale without a published article has no URL at all; `/it/anything/` returns the real 404 status |
 
@@ -134,7 +134,7 @@ Mutation checks run during development:
 | D1 | Subdirectories, French unprefixed | **done** |
 | D2 | Translated slugs per locale | **done** (segments in the registry; article slug = file name) |
 | D3 | Only reviewed translations are published | **enforced** (`translationReviewer`) |
-| D4 | Products per country need that country's LR link with `ref=cros` and local mentions | open — products stay French-only |
+| D4 | Products per country need that country's LR link with `ref=cros` and local mentions | **implemented 2026-10-24** (§10): country shop link enforced by the schema, national supplement notices per locale; 14 product pages published 2026-10-24 (reviewer: Philippe Cros) |
 | D5 | First locale | Italian infrastructure ready; owner chooses which articles to translate first |
 | D6 | Italian product pages: Italian LR shop link + mentions required in Italy | **partly done**: Italian shop home `https://shop.lrworld.com/home/IT/it?ref=cros` (from the publisher, 2026-10-22) is linked in the Italian footer with a partner disclosure (`LR_SHOP_HOME` in `src/lib/partner.ts`). Product pages still need each product's Italian shop URL and the Italian mandatory mentions |
 | D7 | Distributor window on translated pages: text and WhatsApp message in the page's language, to Philippe | **decided 2026-10-23**: Philippe accepts contacts in all supported languages; the window stays on every page in every locale |
@@ -148,3 +148,41 @@ Mutation checks run during development:
 3. Translate and review articles into `src/content/articles/de/`.
 
 Routing, hreflang and the sitemap need no change.
+
+## 10. Product pages in other locales (2026-10-24)
+
+**Rule:** a product gets a page in a locale only if LR sells **the same article number** in that country's shop. No page links to another country's shop, and nothing falls back to French.
+
+Availability checked on 2026-10-24, for each published French product and country (a product URL that stays on the product page counts as available; one that redirects to the shop home does not):
+
+| Product (LR no.) | IT | GB | DE | ES | PL | PT |
+| --- | --- | --- | --- | --- | --- | --- |
+| DermaIntense (20606-101) | ✓ | — | ✓ | ✓ | ✓ | — |
+| Emergency Spray (20600-301) | ✓ | ✓ | ✓ | ✓ | — | — |
+| Immune Plus (81000-4) | — | — | — | — | — | — |
+| PRO 12 + (81180-99) | ✓ | ✓ | — | ✓ | ✓ | — |
+| Liver Support (81330-99) | — | ✓ | ✓ | — | — | — |
+| Set vitalité (97902-4) | — | — | — | — | — | — |
+
+- **Portugal:** the PT shop requires an LR login, so there is no product page in Portuguese.
+- **Other countries:** a "—" may mean the product is sold there under another article number. Only the LR distributor can confirm that.
+- **Draft products:** French drafts were not checked.
+
+**Model:**
+- Files live in `src/content/products/<locale>/<slug>.md`.
+- Each file sets `locale`, `translationOf`, `status` (draft by default), `translationReviewer` and `sourceHash`.
+- The stamp command is `node tools/i18n-status.mjs --stamp products/<locale>/<slug>`. The fingerprint covers every French field except `status` and `shopUrl`, plus the body, so a new composition check makes translations stale.
+- The schema refuses a translation whose `shopUrl` is not under `/product/<country>/<language>/` (`LR_SHOP_PATH` in `src/i18n/locales.ts`).
+
+**Rendering:**
+- Product pages use one view in every locale, `src/components/ProductView.astro`; listings use `src/components/ProductListing.astro`.
+- Interface text and the national supplement notices are in `src/i18n/product-ui.ts`.
+- URLs: `/it/prodotti/`, `/en/products/`, `/de/produkte/`, `/es/productos/`, `/pt-pt/produtos/`, `/pl/produkty/`.
+- hreflang links each product page to its French page, and the listings to each other. The sitemap lists the same alternates.
+- Header and footer show the products link only in locales that have published products.
+- A translated article shows the "Going further" products of its French source when they exist in its locale.
+
+**Content:**
+- Composition and INCI lists are taken from the French LR sheet (checked 2026-10-15). Each page says the label of the product received is binding and that composition may vary by country.
+- Comparisons with products not sold in that country are removed.
+- Reviewer notes sit at the top of each file.

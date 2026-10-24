@@ -67,7 +67,9 @@ test.describe("SEO foundations", () => {
       const locale = LOCALE_CODES.find((l) => l !== DEFAULT_LOCALE && p.startsWith(`${LOCALES[l].prefix}/`)) ?? DEFAULT_LOCALE;
       const articles = `${LOCALES[locale].prefix}/${LOCALES[locale].segments.articles}/`;
       const isArticle = p.startsWith(articles) && p !== articles && !/^\d+\/$/.test(p.slice(articles.length));
-      if (isArticle || /^\/produits\/[^/]+\/$/.test(p)) {
+      const products = `${LOCALES[locale].prefix}/${LOCALES[locale].segments.products}/`;
+      const isProduct = p.startsWith(products) && p !== products;
+      if (isArticle || isProduct) {
         // Articles and product pages share their own cover, as a raster (see image delivery tests).
         expect(image, p).toMatch(new RegExp(`^${ORIGIN}/covers/[a-z0-9-]+\\.jpg$`));
         expect(html, p).toContain('<meta property="og:image:width" content="1200">');

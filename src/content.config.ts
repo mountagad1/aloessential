@@ -2,15 +2,14 @@ import { defineCollection, reference, z } from "astro:content";
 import { glob } from "astro/loaders";
 import { CATEGORY_SLUGS } from "./data/categories";
 import { hasPartnerRef } from "./lib/partner";
-import { DEFAULT_LOCALE, LOCALE_CODES } from "./i18n/locales";
+import { DEFAULT_LOCALE, LOCALE_CODES, LR_SHOP_PATH } from "./i18n/locales";
 
 /*
  * CONTENT_FIXTURES=1 (set by the Playwright config) adds the fictional
- * fixtures in tests/fixtures/ to the real content. Ids are file names.
+ * fixtures in tests/fixtures/ to the real content.
  */
 const FIXTURES = !!process.env.CONTENT_FIXTURES;
-const fileId = ({ entry }: { entry: string }) => entry.split("/").pop()!.replace(/\.md$/, "");
-/** Articles: "slug" for French files, "<locale>/slug" for translations in a locale folder. */
+/** Articles and products: "slug" for French files, "<locale>/slug" for translations in a locale folder. */
 const articleId = ({ entry }: { entry: string }) => {
   const parts = entry.replace(/\.md$/, "").split("/");
   const folder = parts.at(-2);
@@ -88,10 +87,13 @@ const articles = defineCollection({
 const products = defineCollection({
   loader: glob({
     base: ".",
-    pattern: FIXTURES ? ["src/content/products/*.md", "tests/fixtures/products/*.md"] : "src/content/products/*.md",
-    generateId: fileId,
+    pattern: FIXTURES
+      ? ["src/content/products/**/*.md", "tests/fixtures/products/**/*.md"]
+      : "src/content/products/**/*.md",
+    generateId: articleId,
   }),
-  schema: z.object({
+  schema: z
+    .object({
     name: z.string(),
     /** LR article number, e.g. "81180-99". */
     sku: z.string(),
@@ -121,6 +123,31 @@ const products = defineCollection({
     cover: z.string(),
     coverAlt: z.string(),
     sourceCheckedAt: z.coerce.date().optional(),
+    /*
+     * Translations, as for articles: src/content/products/<locale>/<slug>.md
+     * names its French source, links to that country's LR shop and stays a
+     * draft until reviewed. A product gets a page in a locale only if LR sells
+     * the same article number in that country.
+     */
+    locale: z.enum(LOCALE_CODES).default(DEFAULT_LOCALE),
+    translationOf: z.string().optional(),
+    /** Fingerprint of the French product page the translation matches (tools/i18n-status.mjs --stamp products/<locale>/<slug>). */
+    sourceHash: z.string().optional(),
+    translationReviewer: z.string().optional(),
+  })
+  .superRefine((p, ctx) => {
+    if (p.locale === DEFAULT_LOCALE) {
+      if (p.translationOf) ctx.addIssue({ code: "custom", message: "French products are sources: no translationOf" });
+      return;
+    }
+    // A translation links to its own country's LR shop, never to another one.
+    if (!p.shopUrl.includes(`/product/${LR_SHOP_PATH[p.locale]}/`))
+      ctx.addIssue({ code: "custom", message: `A "${p.locale}" product links to the LR shop of that country (/product/${LR_SHOP_PATH[p.locale]}/)` });
+    if (!p.translationOf) ctx.addIssue({ code: "custom", message: "A translation must name its French source (translationOf)" });
+    if (p.status === "published" && !p.translationReviewer)
+      ctx.addIssue({ code: "custom", message: "A published translation needs a translationReviewer" });
+    if (p.status === "published" && !p.sourceHash)
+      ctx.addIssue({ code: "custom", message: "A published translation needs a sourceHash (tools/i18n-status.mjs --stamp)" });
   }),
 });
 

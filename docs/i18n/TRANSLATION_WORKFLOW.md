@@ -112,6 +112,23 @@
 | soins-cheveux-naturel | `pt-pt/cuidar-do-cabelo-ao-natural` | `pl/naturalna-pielegnacja-wlosow` |
 | sommeil-pilier-bien-etre | `pt-pt/o-sono-pilar-do-bem-estar` | `pl/sen-filar-dobrego-samopoczucia` |
 
+**Product pages** (2026-10-24): **14 published** (reviewer Philippe Cros), only where LR sells the same article number in that country (INTERNATIONAL_SEO_ARCHITECTURE.md §10).
+
+| Product | IT | EN (GB) | DE | ES | PL |
+| --- | --- | --- | --- | --- | --- |
+| DermaIntense | `it/aloe-vera-dermaintense` | — | `de/aloe-vera-dermaintense-creme` | `es/aloe-vera-crema-dermaintense` | `pl/aloe-vera-krem-dermaintense` |
+| Emergency Spray | `it/aloe-vera-emergency-spray` | `en/aloe-vera-instant-emergency-spray` | `de/aloe-vera-instant-emergency-spray` | `es/aloe-vera-spray-de-emergencia` | — |
+| PRO 12 + | `it/pro-12-plus-capsule` | `en/pro-12-plus-capsules` | — | `es/pro-12-plus-capsulas` | `pl/lr-lifetakt-pro12-plus` |
+| Liver Support | — | `en/lr-lifetakt-liver-support` | `de/lr-lifetakt-liver-support` | — | — |
+
+Still to check against each country's sheet and label (reviewer notes in each file):
+- **Product name:** each country's product name is taken from its LR shop.
+- **Composition:** compare the composition with that country's LR sheet and label.
+- **Supplement notices:** check the national wording in `src/i18n/product-ui.ts`.
+- **Italy, PRO 12 +:** check the probiotics guidance for the Italian page.
+
+When publishing products, update the expected count of annotated pages in `tests/i18n.spec.ts`.
+
 Drafts are never built into the site. **Review notes for the reviewer** are written as `#` comments at the top of each file.
 
 ## 2. Roles

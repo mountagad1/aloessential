@@ -11,13 +11,13 @@ import Newsletter from "./Newsletter.astro";
 import ReadingProgress from "./ReadingProgress.astro";
 import TableOfContents from "./TableOfContents.astro";
 import ProductCallout from "./ProductCallout.astro";
-import { resolvePublished } from "../lib/products";
+import { productsForArticle } from "../lib/products";
 import { articleLd, breadcrumbLd, coverShareImage, organizationLd } from "../lib/seo";
 import { DEFAULT_AUTHOR, DEFAULT_REVIEWER } from "../data/site";
 import { localizedCategory } from "../data/categories";
 import { DEFAULT_LOCALE, LOCALES, categoryPath, homePath } from "../i18n/locales";
 import { ui } from "../i18n/ui";
-import { articleAlternates, articleUrl, formatDate, readingTime, type Article } from "../lib/articles";
+import { articleAlternates, articleUrl, formatDate, getArticles, readingTime, type Article } from "../lib/articles";
 
 interface Props {
   article: Article;
@@ -32,7 +32,9 @@ const french = locale === DEFAULT_LOCALE;
 const { Content, headings } = await render(article);
 const cat = localizedCategory(category, locale);
 const catPath = categoryPath(locale, cat.slug);
-const products = await resolvePublished(article.data.products);
+// Translations show the products of their French source that exist in their locale.
+const source = french ? article : (await getArticles()).find((a) => a.id === article.data.translationOf);
+const products = await productsForArticle(article, source);
 const alternates = await articleAlternates(article);
 const otherVersions = alternates.filter((a) => a.locale !== locale);
 
@@ -132,7 +134,7 @@ const related = [...others.filter((a) => a.data.category === category), ...other
         }
       </div>
       <p class="disclaimer prose">{t.disclaimer}</p>
-      <ProductCallout products={products} />
+      <ProductCallout products={products} locale={locale} />
     </div>
   </article>
 

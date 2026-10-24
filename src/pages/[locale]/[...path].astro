@@ -5,11 +5,15 @@
  *   /<locale>/                         all articles (page 1), /<locale>/2/ …
  *   /<locale>/<categories>/<slug>/     one category, paginated the same way
  *   /<locale>/<articles>/<slug>/       one article
+ *   /<locale>/<products>/              products LR sells in that country
+ *   /<locale>/<products>/<slug>/       one product, with that country's shop link
  * A locale with no published article has no page at all: nothing falls back
  * to French under a foreign prefix.
  */
 import ArticleView from "../../components/ArticleView.astro";
 import LocaleListing from "../../components/LocaleListing.astro";
+import ProductListing from "../../components/ProductListing.astro";
+import ProductView from "../../components/ProductView.astro";
 import { categoryList, localizedCategory, type CategorySlug } from "../../data/categories";
 import { LOCALES, categoryPath, homePath, type Locale } from "../../i18n/locales";
 import { ui } from "../../i18n/ui";
@@ -23,9 +27,12 @@ import {
   type Article,
 } from "../../lib/articles";
 import { listingPages, pageCount, pageSlice } from "../../lib/pagination";
+import { getProductLocales, getPublishedProducts, productSlug, type Product } from "../../lib/products";
 
 type PageProps =
   | { kind: "article"; article: Article; others: Article[] }
+  | { kind: "products" }
+  | { kind: "product"; product: Product }
   | {
       kind: "listing";
       category?: CategorySlug;
@@ -40,7 +47,11 @@ type PageProps =
 export async function getStaticPaths() {
   const paths: { params: { locale: string; path: string | undefined }; props: PageProps }[] = [];
   const homeAlts = await homeAlternates();
-  for (const locale of await getTranslatedLocales()) {
+  const locales = await getTranslatedLocales();
+  for (const locale of await getProductLocales()) {
+    if (!locales.includes(locale)) throw new Error(`"${locale}" has product pages but no published article: publish articles first`);
+  }
+  for (const locale of locales) {
     ui(locale); // fails the build if the locale has no interface text yet
     const l = LOCALES[locale];
     const articles = await getArticles(locale);
@@ -72,6 +83,12 @@ export async function getStaticPaths() {
         props: { kind: "article", article, others: articles.filter((a) => a.id !== article.id) },
       });
     }
+
+    const products = await getPublishedProducts(locale);
+    if (products.length) paths.push({ params: { locale, path: l.segments.products }, props: { kind: "products" } });
+    for (const product of products) {
+      paths.push({ params: { locale, path: `${l.segments.products}/${productSlug(product)}` }, props: { kind: "product", product } });
+    }
   }
   return paths;
 }
@@ -83,6 +100,10 @@ const locale = Astro.params.locale as Locale;
 {
   props.kind === "article" ? (
     <ArticleView article={props.article} others={props.others} />
+  ) : props.kind === "products" ? (
+    <ProductListing locale={locale} />
+  ) : props.kind === "product" ? (
+    <ProductView product={props.product} />
   ) : (
     <LocaleListing
       locale={locale}

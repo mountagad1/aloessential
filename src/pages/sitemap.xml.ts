@@ -9,10 +9,10 @@ import {
   homeAlternates,
   type Alternate,
 } from "../lib/articles";
-import { getPublishedProducts } from "../lib/products";
+import { getPublishedProducts, productAlternates, productUrl, productsListingAlternates } from "../lib/products";
 import { absoluteUrl } from "../lib/seo";
 import { listingPages } from "../lib/pagination";
-import { DEFAULT_LOCALE, categoryPath, homePath } from "../i18n/locales";
+import { DEFAULT_LOCALE, categoryPath, homePath, productsPath } from "../i18n/locales";
 
 /*
  * XML sitemap of every indexable page (canonical URLs, trailing slash), in
@@ -22,13 +22,19 @@ import { DEFAULT_LOCALE, categoryPath, homePath } from "../i18n/locales";
  * tags, so the two cannot disagree.
  */
 export const GET: APIRoute = async ({ site }) => {
-  const [articles, products, locales, homeAlts] = await Promise.all([
+  const [articles, products, locales, homeAlts, productsAlts] = await Promise.all([
     getArticles(),
     getPublishedProducts(),
     getTranslatedLocales(),
     homeAlternates(),
+    productsListingAlternates(),
   ]);
   const day = (d: Date) => d.toISOString().slice(0, 10);
+  const productEntry = async (p: (typeof products)[number]) => ({
+    path: productUrl(p),
+    lastmod: p.data.sourceCheckedAt ? day(p.data.sourceCheckedAt) : undefined,
+    alternates: await productAlternates(p),
+  });
   const categoryAlts = Object.fromEntries(
     await Promise.all(
       categoryList.map(async (c) => [c.slug, await categoryAlternates(c.slug, (l) => localizedCategory(c.slug, l).slug)] as const),
@@ -38,7 +44,7 @@ export const GET: APIRoute = async ({ site }) => {
   const entries: { path: string; lastmod?: string; alternates?: Alternate[] }[] = [
     ...listingPages("/", 1).map(({ path }) => ({ path, alternates: homeAlts })),
     ...listingPages("/articles/", articles.length).map(({ path }) => ({ path })),
-    { path: "/produits/" },
+    { path: "/produits/", alternates: productsAlts },
     { path: "/aloe-vera/" },
     { path: "/transparence/" },
     { path: "/equipe/" },
@@ -54,10 +60,7 @@ export const GET: APIRoute = async ({ site }) => {
     ...(await Promise.all(
       articles.map(async (a) => ({ path: articleUrl(a), lastmod: day(a.data.date), alternates: await articleAlternates(a) })),
     )),
-    ...products.map((p) => ({
-      path: `/produits/${p.id}/`,
-      lastmod: p.data.sourceCheckedAt ? day(p.data.sourceCheckedAt) : undefined,
-    })),
+    ...(await Promise.all(products.map(productEntry))),
   ];
 
   for (const locale of locales) {
@@ -72,6 +75,9 @@ export const GET: APIRoute = async ({ site }) => {
     for (const a of local) {
       entries.push({ path: articleUrl(a), lastmod: day(a.data.date), alternates: await articleAlternates(a) });
     }
+    const localProducts = await getPublishedProducts(locale);
+    if (localProducts.length) entries.push({ path: productsPath(locale), alternates: productsAlts });
+    entries.push(...(await Promise.all(localProducts.map(productEntry))));
   }
 
   const links = (alternates: Alternate[] | undefined) => {

@@ -3,9 +3,11 @@ import { join } from "node:path";
 import { test, expect } from "./fixtures";
 import { DEFAULT_LOCALE, LOCALES, LOCALE_CODES } from "../src/i18n/locales";
 import { UI } from "../src/i18n/ui";
+import { productUi } from "../src/i18n/product-ui";
 import { CATEGORY_I18N, CATEGORY_SLUGS } from "../src/data/categories";
 // @ts-expect-error plain .mjs helper shared with tools/i18n-status.mjs
 import { freshness, parseMarkdown, translations } from "../tools/i18n-lib.mjs";
+import { LR_SHOP_PATH } from "../src/i18n/locales";
 
 /*
  * International SEO regression checks (docs/architecture/INTERNATIONAL_SEO_ARCHITECTURE.md).
@@ -154,7 +156,8 @@ test.describe("locale registry", () => {
       expect(l.ogLocale, code).toMatch(/^[a-z]{2}_[A-Z]{2}$/);
       expect(l.segments.articles, code).toMatch(/^[a-z-]+$/);
       expect(l.segments.categories, code).toMatch(/^[a-z-]+$/);
-      expect(l.segments.articles, code).not.toBe(l.segments.categories);
+      expect(l.segments.products, code).toMatch(/^[a-z-]+$/);
+      expect(new Set(Object.values(l.segments)).size, code).toBe(3);
     }
     expect(LOCALES.it).toMatchObject({ prefix: "/it", htmlLang: "it", ogLocale: "it_IT", schemaLang: "it-IT" });
     expect(LOCALES.en).toMatchObject({ prefix: "/en", htmlLang: "en", ogLocale: "en_GB" });
@@ -178,6 +181,11 @@ test.describe("locale registry", () => {
         slugs.add(text.slug);
       }
       expect(slugs.size).toBe(CATEGORY_SLUGS.length);
+      // Product pages: same keys as French, nothing empty, the three supplement notices.
+      const p = productUi(locale);
+      expect(Object.keys(p).sort()).toEqual(Object.keys(productUi("fr")).sort());
+      for (const [key, value] of Object.entries(p)) if (typeof value === "string") expect(value, key).not.toBe("");
+      expect(p.supplementMentions).toHaveLength(3);
     });
   }
 });
@@ -207,6 +215,29 @@ test.describe("translation files", () => {
         const target = href.match(new RegExp(`^/${t.locale}/${LOCALES[t.locale as keyof typeof LOCALES].segments.articles}/([a-z0-9-]+)/$`));
         expect(target, `${id} links to ${href}: link to a ${t.locale} article instead`).toBeTruthy();
         expect(existsSync(join(base, t.locale, `${target![1]}.md`)), `${id} → ${href} has no ${t.locale} file`).toBe(true);
+      }
+    }
+  });
+
+  const productRoots = ["src/content/products", "tests/fixtures/products"].map((d) => join(process.cwd(), d));
+  const products = (): { base: string; t: T }[] =>
+    productRoots.flatMap((base) => (translations(base) as T[]).map((t) => ({ base, t })));
+
+  test("product translations: stamped, current when published, own country's shop, links in their language", () => {
+    const articleRoots = roots;
+    for (const { t } of products()) {
+      const id = `products/${t.locale}/${t.slug}`;
+      expect(t.data.locale, id).toBe(t.locale);
+      const state = freshness(t, productRoots);
+      expect(["current", "stale"], `${id} needs translationOf + sourceHash`).toContain(state);
+      if (t.data.status === "published") expect(state, `${id}: update it, then run node tools/i18n-status.mjs --stamp ${id}`).toBe("current");
+      expect(t.data.shopUrl, id).toContain(`https://shop.lrworld.com/product/${LR_SHOP_PATH[t.locale as keyof typeof LR_SHOP_PATH]}/`);
+      expect(t.data.shopUrl, id).toContain("ref=cros");
+      const { body } = parseMarkdown(readFileSync(t.file, "utf8"));
+      for (const [, href] of body.matchAll(/\]\((\/[^)\s]*)\)/g)) {
+        const target = href.match(new RegExp(`^/${t.locale}/${LOCALES[t.locale as keyof typeof LOCALES].segments.articles}/([a-z0-9-]+)/$`));
+        expect(target, `${id} links to ${href}: link to a ${t.locale} article instead`).toBeTruthy();
+        expect(articleRoots.some((b) => existsSync(join(b, t.locale, `${target![1]}.md`))), `${id} → ${href}`).toBe(true);
       }
     }
   });
@@ -244,6 +275,27 @@ test.describe("localized pages (static scan)", () => {
     // Locales without a published article have no page at all.
     for (const code of LOCALE_CODES.filter((l) => l !== DEFAULT_LOCALE && !(l in PUBLISHED))) {
       expect(existsSync(join(dist, code)), code).toBe(false);
+    }
+  });
+
+  test("translated product pages: only published ones, with that country's shop and notices", () => {
+    expect(exists("it/prodotti")).toBe(true);
+    const html = read("it/prodotti/prodotto-demo");
+    expect(html).toContain("Gel dimostrativo");
+    expect(html).toContain("Paragrafo di recensione di prova in italiano");
+    for (const m of productUi("it").supplementMentions) expect(html).toContain(m.replace(/'/g, "&#39;"));
+    for (const [, href] of html.matchAll(/href="(https:\/\/shop\.lrworld\.com[^"]*)"/g)) {
+      expect(href.replace(/&amp;/g, "&")).toMatch(/^https:\/\/shop\.lrworld\.com\/(product\/it\/it\/|home\/IT\/it\?)/);
+    }
+    // The Italian demo article shows the Italian version of the product its French source cites.
+    expect(read("it/articoli/articolo-demo")).toContain('href="/it/prodotti/prodotto-demo/"');
+    // Draft product translations have no page in any locale.
+    for (const base of ["src/content/products", "tests/fixtures/products"]) {
+      for (const t of translations(join(process.cwd(), base)) as { locale: string; slug: string; data: Record<string, string> }[]) {
+        if (t.data.status === "published") continue;
+        const l = LOCALES[t.locale as keyof typeof LOCALES];
+        expect(exists(`${t.locale}/${l.segments.products}/${t.slug}`), `${t.locale}/${t.slug}`).toBe(false);
+      }
     }
   });
 
@@ -298,8 +350,15 @@ test.describe("localized pages (static scan)", () => {
       }
     }
     // Demo article, homepages and the Santé category, in all seven locales (21 pages),
+    // the demo product and the product listing in French and Italian (4 pages),
+    // and the 14 published product translations with their 4 French sources and 5 listings (23 pages, /produits/ already counted),
     // plus the published articles and categories of all six locales with their French sources.
-    expect(annotated).toBe(21 + REAL_ANNOTATED);
+    expect(annotated).toBe(21 + 4 + REAL_ANNOTATED + 22);
+    expect(alternatesOf(read("produits/produit-demo"))).toEqual({
+      fr: `${ORIGIN}/produits/produit-demo/`,
+      it: `${ORIGIN}/it/prodotti/prodotto-demo/`,
+      "x-default": `${ORIGIN}/produits/produit-demo/`,
+    });
     expect(alternatesOf(read("articles/article-demo"))).toEqual({
       fr: `${ORIGIN}/articles/article-demo/`,
       en: `${ORIGIN}/en/articles/demo-article/`,
@@ -357,7 +416,7 @@ test.describe("localized pages (static scan)", () => {
   });
 
   test("translated pages carry no French interface text and render their own body", () => {
-    const french = ["Accueil", "Sommaire", "Relecture", "Publié le", "min de lecture", "Tous les articles", "Lire ·", "Aller au contenu", "Devenir distributeur", "Fil d'Ariane", "Fil d&#39;Ariane", "Rubriques"];
+    const french = ["Accueil", "Sommaire", "Relecture", "Publié le", "min de lecture", "Tous les articles", "Lire ·", "Aller au contenu", "Devenir distributeur", "Fil d'Ariane", "Fil d&#39;Ariane", "Rubriques", "Lien partenaire", "Notre avis", "Précautions", "Questions fréquentes", "Mode d&#39;emploi", "Commander sur la boutique", "Découvrir", "Ne pas dépasser"];
     for (const file of pages().filter((f) => localeOf(pathOf(f)) !== DEFAULT_LOCALE)) {
       const html = readFileSync(file, "utf8");
       for (const marker of french) expect(html, `${pathOf(file)} contains "${marker}"`).not.toContain(marker);

@@ -1,8 +1,10 @@
 ---
 import { categoryList, localizedCategory } from "../data/categories";
-import { DEFAULT_LOCALE, categoryPath, homePath, type Locale } from "../i18n/locales";
+import { DEFAULT_LOCALE, categoryPath, homePath, productsPath, type Locale } from "../i18n/locales";
+import { productUi } from "../i18n/product-ui";
 import { ui } from "../i18n/ui";
 import { getArticles } from "../lib/articles";
+import { getPublishedProducts } from "../lib/products";
 
 interface Props {
   /** Category slug of the current page, for aria-current. */
@@ -15,7 +17,8 @@ const t = ui(locale);
 
 /*
  * French: the full navigation. Other locales: only sections that exist in
- * that locale (categories with published articles, the article listing), so
+ * that locale (categories with published articles, the article listing, the
+ * products sold in that country), so
  * navigation never leads to an empty page or silently to French.
  */
 let links: { href: string; label: string; key: string }[];
@@ -37,6 +40,9 @@ if (locale === DEFAULT_LOCALE) {
       }),
     { href: homePath(locale), label: t.allArticles, key: "articles" },
   ];
+  if ((await getPublishedProducts(locale)).length) {
+    links.push({ href: productsPath(locale), label: productUi(locale).products, key: "produits" });
+  }
 }
 ---
 

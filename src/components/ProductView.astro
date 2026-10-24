@@ -1,0 +1,268 @@
+---
+/*
+ * A full product page, in any locale: the French route
+ * (src/pages/produits/[slug].astro) and the translated routes
+ * (src/pages/[locale]/[...path].astro) both render this view.
+ */
+import { render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CardGrid from "./CardGrid.astro";
+import Icon from "./Icon.astro";
+import ShopButton from "./ShopButton.astro";
+import StickyCta from "./StickyCta.astro";
+import { localizedCategory } from "../data/categories";
+import { DEFAULT_LOCALE, homePath, productsPath } from "../i18n/locales";
+import { productUi } from "../i18n/product-ui";
+import { ui } from "../i18n/ui";
+import { formatDate, getArticles, translationKey } from "../lib/articles";
+import { productAlternates, productKey, productUrl, type Product } from "../lib/products";
+import { breadcrumbLd, coverShareImage } from "../lib/seo";
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const d = product.data;
+const locale = d.locale;
+const french = locale === DEFAULT_LOCALE;
+const t = ui(locale);
+const p = productUi(locale);
+const { Content } = await render(product);
+const cat = localizedCategory(d.category, locale);
+const alternates = await productAlternates(product);
+
+// Articles that cite this product first, then same-category articles, in the page's locale.
+// Translations cite products through their French source.
+const sources = new Map((await getArticles()).map((a) => [a.id, a]));
+const articles = await getArticles(locale);
+const cites = (a: (typeof articles)[number]) =>
+  (sources.get(translationKey(a))?.data.products ?? []).some((ref) => ref.id === productKey(product));
+const citing = articles.filter(cites);
+const related = [...citing, ...articles.filter((a) => !citing.includes(a) && a.data.category === d.category)].slice(0, 3);
+
+const isSupplement = d.kind === "complement";
+// The transparency page exists in French only: links to it say so.
+const frenchOnly = french ? undefined : "fr";
+
+// The page reviews the product; it does not sell it, so no Product/Offer markup.
+const seoTitle = p.seoTitle(d.name);
+const jsonLd = [
+  breadcrumbLd(
+    [
+      { name: t.home, path: homePath(locale) },
+      { name: p.products, path: productsPath(locale) },
+      { name: d.name, path: productUrl(product) },
+    ],
+    Astro.site,
+  ),
+];
+---
+
+
+<BaseLayout
+  title={seoTitle}
+  description={d.tagline}
+  current="produits"
+  jsonLd={jsonLd}
+  image={coverShareImage(d.cover, d.coverAlt)}
+  locale={locale}
+  alternates={alternates}
+>
+  <article class="product">
+    <header class="product-hero">
+      <div class="container product-hero__grid">
+        <figure class="product-hero__visual media" data-hero-step="visual" style="--step: 1">
+          <img src={d.cover} alt={d.coverAlt} width="1200" height="800" fetchpriority="high" decoding="async" />
+        </figure>
+
+        <div class="product-hero__body">
+          <nav class="breadcrumb" aria-label={t.breadcrumb} data-hero-step style="--step: 0">
+            <ol>
+              <li><a href={homePath(locale)}>{t.home}</a></li>
+              <li><a href={productsPath(locale)}>{p.products}</a></li>
+              <li aria-current="page">{d.name}</li>
+            </ol>
+          </nav>
+          <p class="eyebrow" data-hero-step style="--step: 0">{d.range} · {p.kind[d.kind]}</p>
+          <h1 data-hero-step style="--step: 1">{d.name}</h1>
+          <p class="product-hero__tagline" data-hero-step style="--step: 2">{d.tagline}</p>
+          <p class="product-hero__summary" data-hero-step style="--step: 2">{d.summary}</p>
+
+          <div class="product-hero__actions" data-hero-step style="--step: 3" data-sticky-start>
+            <ShopButton href={d.shopUrl} productName={d.name} locale={locale} />
+            <a class="btn btn--outline" href="#avis">{p.readReview} <Icon name="arrow-right" class="btn__icon" /></a>
+          </div>
+          <p class="disclosure-inline" data-hero-step style="--step: 3">
+            <Icon name="info" /> {p.partnerInline}{" "}
+            <a href="/transparence/" hreflang={frenchOnly}>{p.learnMore}{t.inFrench}</a>
+          </p>
+          <ul class="product-facts" data-hero-step style="--step: 3">
+            {d.format && <li><Icon name="check" /> {d.format}</li>}
+            <li><Icon name="check" /> {p.sku(d.sku)}</li>
+            <li><Icon name="check" /> {p.priceOnShop}</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    {
+      d.highlights.length > 0 && (
+        <section class="section section--tight" aria-labelledby="highlights-title">
+          <div class="container">
+            <h2 class="visually-hidden" id="highlights-title">{p.keyPoints}</h2>
+            <ul class="highlights">
+              {d.highlights.map((h) => (
+                <li class="highlight" data-reveal>
+                  <span class:list={["pillar__icon", { "pillar__icon--sun": h.icon === "sun" }]}>
+                    <Icon name={h.icon} />
+                  </span>
+                  <h3>{h.title}</h3>
+                  <p>{h.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+
+    <div class="container product-layout">
+      <div class="product-main">
+        <section id="avis" aria-labelledby="avis-title">
+          <h2 id="avis-title" class="product-section-title">{p.review}</h2>
+          <div class="prose">
+            <Content />
+          </div>
+        </section>
+
+        {
+          d.forWhom.length > 0 && (
+            <section class="product-block" aria-labelledby="pour-qui-title" data-reveal>
+              <h2 id="pour-qui-title" class="product-section-title">{p.forWhom}</h2>
+              <ul class="check-list">
+                {d.forWhom.map((item) => (
+                  <li><Icon name="check" /> {item}</li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+
+        {
+          d.composition.length > 0 && (
+            <section class="product-block" aria-labelledby="composition-title" data-reveal>
+              <h2 id="composition-title" class="product-section-title">{p.composition}</h2>
+              <div class="table-wrap">
+                <table class="composition">
+                  <thead>
+                    <tr>
+                      <th scope="col">{p.ingredient}</th>
+                      <th scope="col">{p.quantity}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {d.composition.map((c) => (
+                      <tr>
+                        <th scope="row">
+                          {c.name}
+                          {c.note && <span class="composition__note">{c.note}</span>}
+                        </th>
+                        <td>{c.amount ?? "—"}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {d.compositionNote && <p class="small-print">{d.compositionNote}</p>}
+            </section>
+          )
+        }
+
+        {
+          d.usage.length > 0 && (
+            <section class="product-block" aria-labelledby="usage-title" data-reveal>
+              <h2 id="usage-title" class="product-section-title">{p.usage}</h2>
+              <ol class="steps">
+                {d.usage.map((step) => <li>{step}</li>)}
+              </ol>
+            </section>
+          )
+        }
+
+        {
+          (d.precautions.length > 0 || isSupplement) && (
+            <section class="product-block product-block--notice" aria-labelledby="precautions-title" data-reveal>
+              <h2 id="precautions-title" class="product-section-title">{p.precautions}</h2>
+              <ul>
+                {d.precautions.map((p) => <li>{p}</li>)}
+                {isSupplement && p.supplementMentions.map((m) => <li>{m}</li>)}
+              </ul>
+              <p class="small-print">{p.precautionsNote}</p>
+            </section>
+          )
+        }
+
+        {
+          d.faq.length > 0 && (
+            <section class="product-block" aria-labelledby="faq-title" data-reveal>
+              <h2 id="faq-title" class="product-section-title">{p.faq}</h2>
+              <div class="faq">
+                {d.faq.map((item) => (
+                  <details class="faq__item">
+                    <summary>
+                      {item.q} <Icon name="chevron-down" class="toc__chevron" />
+                    </summary>
+                    <p>{item.a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )
+        }
+
+        {
+          d.sourceCheckedAt && (
+            <p class="small-print">
+              {p.checkedOn}{" "}
+              <time datetime={d.sourceCheckedAt.toISOString()}>{formatDate(d.sourceCheckedAt, locale)}</time> {p.checkedAfter}
+            </p>
+          )
+        }
+      </div>
+    </div>
+
+    <section class="section section--tight" aria-labelledby="final-cta-title">
+      <div class="container">
+        <div class="final-cta on-dark" data-reveal data-sticky-end>
+          <p class="eyebrow" style="color: var(--color-sun)">{d.range}</p>
+          <h2 id="final-cta-title">{d.name}</h2>
+          <p>{d.tagline}</p>
+          <ShopButton href={d.shopUrl} productName={d.name} label={p.orderOnShop} locale={locale} />
+          <p class="final-cta__note">
+            {p.fulfilment}{" "}
+            <a href="/transparence/" hreflang={frenchOnly}>{p.ourTransparency}{t.inFrench}</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  {
+    related.length > 0 && (
+      <section class="section" aria-labelledby="related-title">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <p class="eyebrow">{cat.label}</p>
+              <h2 id="related-title">{p.readMore}</h2>
+            </div>
+          </div>
+          <CardGrid articles={related} />
+        </div>
+      </section>
+    )
+  }
+
+  <StickyCta href={d.shopUrl} productName={d.name} locale={locale} />
+</BaseLayout>
