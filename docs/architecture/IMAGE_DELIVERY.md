@@ -143,7 +143,7 @@ The six published French products and their 14 translations now use photographs.
 - The product fingerprint (`productSourceHash`) now ignores `cover*` fields, like the article fingerprint, so a new photo does not mark translations stale. The 14 product translations were re-stamped against the new fingerprint; their text did not change.
 
 **Points for the reviewer:**
-- **Emergency Spray:** the photo shows the spray used on a child's arm with a visible red patch, while the page says the spray is not a first aid product and gives no specific advice for children.
+- **Emergency Spray:** the photo shows the spray used on a child's arm with a visible red patch, while the page says the spray is not a first aid product and gives no specific advice for children. **Kept as is by decision of the owner (2026-10-24).**
 - **DermaIntense and PRO 12 +:** the visible packaging carries LR's own claims (for example "regenerates", "probiotic"), which the page text deliberately does not repeat.
 
 **Unused illustrations.** `produit-spray` and `produit-coffret` (and their JPEG twins) are no longer used and were deleted. The other product illustrations remain, used by draft products and test fixtures.
