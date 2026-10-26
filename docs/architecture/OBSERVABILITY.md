@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | Visits, page views, referrers, landing pages, countries | Vercel Web Analytics or a cookieless alternative (ADR-006) | yes | **owner** |
 | Core Web Vitals in the field (LCP, INP, CLS) by route | Vercel Speed Insights; later CrUX / Search Console once the origin has enough traffic | yes | **owner** |
-| Indexing, crawl errors, sitemap status, Discover traffic | Google Search Console (Pages, Sitemaps, Discover reports) | yes | **owner** (verification + sitemap submission already pending in `docs/seo/`) |
+| Indexing, crawl errors, sitemap status, Discover traffic | Google Search Console (Pages, Sitemaps, Discover reports) | yes | **done**: `sc-domain:aloessential.com` is verified and the sitemap is read. Since 2026-10-26 the property is queried through OpenSEO; see `docs/growth/ORGANIC_GROWTH_METRICS.md` |
 | Availability and HTTP errors | External uptime probe on `/`, one article, `/sitemap.xml` (any uptime service); Vercel observability for 4xx/5xx | yes | **owner** |
 | CDN cache behaviour | `x-vercel-cache` on sampled requests (CACHING_STRATEGY.md §5); Vercel Observability | yes | manual check |
 | Bandwidth and edge requests | Vercel Usage page; usage notifications | yes | **owner** |

@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "test": "playwright test",
-    "size": "node tools/report-bundle-size.mjs"
+    "size": "node tools/report-bundle-size.mjs",
+    "seo:audit": "node tools/seo-audit.mjs"
   },
   "engines": {
     "node": ">=20.3"
