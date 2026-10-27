@@ -46,14 +46,14 @@ export interface WaterUi {
 }
 
 const fr: WaterUi = {
-  navLabel: "Combien d'eau boire par jour",
+  navLabel: "Quelle quantité d'eau boire par jour",
   path: "/combien-d-eau-par-jour/",
   hydrationArticle: "hydratation-aliments-riches-en-eau",
-  title: "Combien d'eau boire par jour ? Le calculateur",
+  title: "Quelle quantité d'eau doit-on boire par jour ? Le calculateur",
   description:
     "Combien de litres d'eau par jour ? Les repères de l'EFSA selon l'âge, la grossesse ou l'allaitement, la part des boissons et des aliments, et quand consulter.",
   eyebrow: "Outil gratuit",
-  h1: "Combien d'eau boire par jour ?",
+  h1: "Quelle quantité d'eau doit-on boire par jour ?",
   intro:
     "On entend souvent « 1,5 litre » ou « 2 litres ». Les repères européens sont plus précis : ils dépendent de l'âge et du sexe, et comptent aussi l'eau apportée par les aliments. Choisissez votre profil pour voir ce qu'ils disent.",
   byline: "Par l'équipe Aloessential",

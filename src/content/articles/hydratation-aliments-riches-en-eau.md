@@ -40,7 +40,7 @@ La plupart des légumes frais et beaucoup de fruits contiennent plus de 85 % d'e
 
 Ils apportent aussi des fibres, des vitamines et des minéraux, dont le potassium.
 
-Le tableau complet, avec l'eau apportée par une portion de chaque aliment, se trouve sur notre page [Combien d'eau boire par jour ?](/combien-d-eau-par-jour/).
+Le tableau complet, avec l'eau apportée par une portion de chaque aliment, se trouve sur notre page [Quelle quantité d'eau doit-on boire par jour ?](/combien-d-eau-par-jour/).
 
 ## Des idées faciles au quotidien
 
