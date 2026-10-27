@@ -76,6 +76,6 @@ Five queries were fetched: "aliments riches en fibres", "combien de litres d'eau
 
 - Analytics: none installed (owner decision MEAS-01), so no engagement, tool usage, conversions or AI referrals.
 - Field Core Web Vitals: none.
-- Backlinks: no backlink data was pulled; OpenSEO has 6 credits left.
+- Backlinks: no backlink data was pulled; OpenSEO has no credits left.
 - Server logs: not available. Vercel keeps no crawl logs for static files, so crawl frequency is not observable.
 - Search volumes beyond those listed in `docs/growth/ENGINEERING_AS_MARKETING_BACKLOG.md`.

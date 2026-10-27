@@ -18,4 +18,4 @@
 
 ## Not analysed yet (credits)
 
-"high fibre foods" (UK), "aloe vera da bere" (IT), "aloes do picia" (PL), "aloe vera à boire" (FR), "quanta acqua bere al giorno" (IT). These cost about 2.5 credits each at depth 10; 6 credits are left.
+"high fibre foods" (UK), "aloes do picia" (PL), "quanta acqua bere al giorno" (IT). These cost about 2.5 credits each at depth 10; no credits are left. "aloe vera à boire" (FR) and "aloe vera da bere" (IT) were fetched on 2026-10-27: see `content/CONTENT_REFRESH_BACKLOG.md`, "Done".

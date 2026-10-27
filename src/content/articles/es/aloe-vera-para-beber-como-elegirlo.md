@@ -7,6 +7,7 @@ title: "Aloe vera para beber: cómo elegirlo"
 description: "Gel o zumo, cantidad de aloe, aloína, aditivos, declaraciones: cómo leer la etiqueta de una bebida de aloe vera y elegir con conocimiento."
 category: nutrition
 date: 2026-10-23
+updated: 2026-10-27
 cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
 coverAlt: "Bebida de aloe vera en un vaso con limón, menta y hielo, rodeada de hojas frescas en una cocina abierta a un comedor luminoso."
 coverTitle: "Aloe vera para beber: ¿cómo elegirlo?"
@@ -18,9 +19,15 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:62021TJ0189"
   - title: "Reglamento (CE) n.º 1924/2006 relativo a las declaraciones nutricionales y de propiedades saludables en los alimentos"
     url: "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32006R1924"
+  - title: "Tribunal de Justicia de la UE, repertorio de jurisprudencia: efectos de la anulación de un reglamento (artículo 60 del Estatuto, en francés)"
+    url: "https://curia.europa.eu/common/recdoc/repertoire_jurisp/bull_3/data/3_02_06.htm"
+  - title: "Directiva 2002/46/CE relativa a los complementos alimenticios (indicación de la dosis diaria)"
+    url: "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32002L0046"
+  - title: "Guo X., Mei N. Aloe vera: a review of toxicity and adverse clinical effects. J Environ Sci Health C, 2016"
+    url: "https://doi.org/10.1080/10590501.2016.1166826"
 locale: es
 translationOf: aloe-vera-a-boire-comment-choisir
-sourceHash: "9165325ff96e"
+sourceHash: "83d082c9d11c"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -41,7 +48,9 @@ Ninguna de estas formas es «mala» en sí. Lo importante es que la etiqueta dig
 
 ## La aloína, una cuestión normativa
 
-En 2021, el Reglamento (UE) 2021/468 prohibió en los alimentos la aloe-emodina, la emodina y los preparados de hojas de aloe que contienen derivados hidroxiantracénicos. En noviembre de 2024, el Tribunal General de la Unión Europea anuló la parte de ese texto que se refería a los preparados de hojas de aloe (asunto T-189/21). La Comisión ha recurrido en casación y el asunto sigue pendiente ante el Tribunal de Justicia. La prohibición de la aloe-emodina y de la emodina, en cambio, no se ha puesto en duda.
+En 2021, el Reglamento (UE) 2021/468 prohibió en los alimentos la aloe-emodina, la emodina y los preparados de hojas de aloe que contienen derivados hidroxiantracénicos. En noviembre de 2024, el Tribunal General de la Unión Europea anuló la parte de ese texto que se refería a los preparados de hojas de aloe (asunto T-189/21). La Comisión ha recurrido en casación (asunto C-38/25 P) y el asunto sigue pendiente ante el Tribunal de Justicia. Ahora bien, la anulación de un reglamento por el Tribunal General solo surte efecto una vez desestimado el recurso: mientras tanto, la prohibición sigue aplicándose. La de la aloe-emodina y la emodina, en cambio, no se ha puesto en duda.
+
+Esta prudencia tiene un origen. En ratas, un extracto de hoja entera de aloe vera mostró actividad cancerígena, y el Centro Internacional de Investigaciones sobre el Cáncer (IARC) lo clasificó como «posiblemente cancerígeno para el ser humano» (grupo 2B). Esos estudios se referían a un extracto de la hoja entera, látex incluido, y no al gel sin látex.
 
 En la práctica, los fabricantes serios utilizan gel filtrado o decolorado, sin estos compuestos, y a menudo lo indican en la etiqueta.
 
@@ -63,11 +72,29 @@ Cuando una bebida destaca un beneficio concreto, suele deberse a una **vitamina 
 
 Desconfía, en cambio, de las promesas de «détox», de «limpieza» del organismo o de prevención de enfermedades: no están autorizadas y no tienen una base sólida. Repasamos lo que dicen los estudios en [nuestro artículo sobre el zumo de aloe vera](/es/articulos/zumo-de-aloe-vera-que-dice-la-ciencia/).
 
-## Cómo tomarlo
+## Cómo tomarlo en el día a día
 
-- Respeta la dosis indicada, normalmente diluida en agua o sola, según el fabricante.
-- Guarda la botella abierta en la nevera si la etiqueta lo pide y consúmela en el plazo indicado.
-- Empieza con una cantidad pequeña si tienes el estómago sensible.
+### ¿Qué cantidad?
+
+La de la etiqueta, sin superarla. Cuando la bebida se vende como complemento alimenticio, la dosis diaria recomendada tiene que figurar en el envase. Varía de un producto a otro: sola o diluida en agua, según el fabricante. Empieza con una cantidad pequeña si tienes el estómago sensible.
+
+### ¿Por la mañana, por la noche, antes de comer?
+
+A menudo se lee que hay que tomar el aloe en ayunas o antes de las comidas «para asimilarlo mejor». Ningún estudio muestra que un momento del día sea mejor que otro. Sigue las indicaciones del fabricante y elige el momento en que te acuerdes de tomarlo.
+
+### ¿Cuánto dura una botella?
+
+Divide el volumen de la botella por la dosis diaria. Una botella de 1 litro tomada a razón de 3 × 30 ml al día (90 ml) dura unos diez días; a 30 ml al día, más de un mes.
+
+Compáralo después con el plazo de conservación una vez abierta que indica la etiqueta, a menudo en la nevera. Si a tu dosis la botella dura más que ese plazo, te conviene un formato más pequeño. Este cálculo también sirve para comparar precios: calcula el precio por dosis diaria, no por litro.
+
+### ¿Qué sabor tiene?
+
+El gel natural tiene un sabor vegetal, a veces algo amargo o ácido según el producto, que no a todo el mundo le gusta. Las versiones aromatizadas lo suavizan con zumos de fruta, miel o aromas: fíjate entonces en la cantidad de azúcares por dosis. Diluirlo en un vaso de agua también suaviza el sabor.
+
+### ¿Una «cura»? ¿Durante cuánto tiempo?
+
+Las marcas proponen a menudo «curas» de varias semanas. Esas duraciones no se basan en estudios, y en Europa no está autorizada ninguna declaración de propiedades saludables propia del aloe. Si lo tomas con regularidad, elige un producto a base de gel filtrado y coméntalo con tu médico si sigues un tratamiento o si un problema digestivo persiste.
 
 ## Para quién sí, y para quién no
 

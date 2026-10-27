@@ -10,7 +10,7 @@
 | Page and sitemap delivery | every request | static files from the CDN: no function invocation, no database |
 | Tools (water, fibre, watering) | in the reader's browser | none on the server |
 | Search Console reads (OpenSEO) | by hand, during audits | free; within Google quotas |
-| SERP and keyword research (OpenSEO, DataForSEO) | by hand | credits: about 2.5 per keyword at depth 10; **6 credits left on 2026-10-27** |
+| SERP and keyword research (OpenSEO, DataForSEO) | by hand | credits: about 2.5 per keyword at depth 10; **no credits left on 2026-10-27** |
 | Ciqual extraction | by hand, when Anses publishes a new table | none |
 
 ## Rules (all met today)

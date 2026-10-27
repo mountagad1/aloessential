@@ -7,6 +7,7 @@ title: "Aloes do picia: jak go wybrać"
 description: "Żel czy sok, zawartość aloesu, aloina, dodatki, oświadczenia: jak czytać etykietę napoju z aloesem i świadomie wybrać."
 category: nutrition
 date: 2026-10-23
+updated: 2026-10-27
 cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
 coverAlt: "Napój z aloesu w szklance z cytryną, miętą i lodem, otoczony świeżymi liśćmi, w kuchni otwartej na jasną jadalnię."
 coverTitle: "Aloes do picia: jak go wybrać?"
@@ -18,9 +19,15 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:62021TJ0189"
   - title: "Rozporządzenie (WE) nr 1924/2006 w sprawie oświadczeń żywieniowych i zdrowotnych dotyczących żywności"
     url: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32006R1924"
+  - title: "Trybunał Sprawiedliwości UE, repertorium orzecznictwa: skutki stwierdzenia nieważności rozporządzenia (art. 60 statutu, po francusku)"
+    url: "https://curia.europa.eu/common/recdoc/repertoire_jurisp/bull_3/data/3_02_06.htm"
+  - title: "Dyrektywa 2002/46/WE w sprawie suplementów żywnościowych (podawanie porcji dziennej)"
+    url: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32002L0046"
+  - title: "Guo X., Mei N. Aloe vera: a review of toxicity and adverse clinical effects. J Environ Sci Health C, 2016"
+    url: "https://doi.org/10.1080/10590501.2016.1166826"
 locale: pl
 translationOf: aloe-vera-a-boire-comment-choisir
-sourceHash: "9165325ff96e"
+sourceHash: "83d082c9d11c"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -41,7 +48,9 @@ Rzetelny napój z aloesem powstaje z żelu. W zależności od marki znajdziesz:
 
 ## Aloina: kwestia przepisów
 
-W 2021 roku rozporządzenie (UE) 2021/468 zakazało w żywności aloe-emodyny, emodyny oraz preparatów z liści aloesu zawierających pochodne hydroksyantracenu. W listopadzie 2024 roku Sąd Unii Europejskiej stwierdził nieważność części tego aktu dotyczącej preparatów z liści aloesu (sprawa T-189/21). Komisja wniosła odwołanie i sprawa wciąż toczy się przed Trybunałem Sprawiedliwości. Zakaz aloe-emodyny i emodyny nie został natomiast podważony.
+W 2021 roku rozporządzenie (UE) 2021/468 zakazało w żywności aloe-emodyny, emodyny oraz preparatów z liści aloesu zawierających pochodne hydroksyantracenu. W listopadzie 2024 roku Sąd Unii Europejskiej stwierdził nieważność części tego aktu dotyczącej preparatów z liści aloesu (sprawa T-189/21). Komisja wniosła odwołanie (sprawa C-38/25 P), które wciąż rozpatruje Trybunał Sprawiedliwości. Stwierdzenie nieważności rozporządzenia przez Sąd staje się jednak skuteczne dopiero po oddaleniu odwołania: do tego czasu zakaz nadal obowiązuje. Zakaz aloe-emodyny i emodyny nie został natomiast podważony.
+
+Ta ostrożność ma swoje źródło. U szczurów ekstrakt z całego liścia aloesu wykazał działanie rakotwórcze, a Międzynarodowa Agencja Badań nad Rakiem (IARC) zaklasyfikowała go jako „możliwie rakotwórczy dla ludzi” (grupa 2B). Badania te dotyczyły ekstraktu z całego liścia, łącznie z lateksem, a nie żelu pozbawionego lateksu.
 
 W praktyce rzetelni producenci używają żelu filtrowanego lub odbarwionego, pozbawionego tych związków, i często informują o tym na etykiecie.
 
@@ -63,11 +72,29 @@ Jeśli napój podkreśla konkretną korzyść, zwykle zawdzięcza ją **dodanej 
 
 Uważaj natomiast na obietnice „detoksu”, „oczyszczania” organizmu czy zapobiegania chorobom: nie są dozwolone i nie mają solidnych podstaw. O tym, co pokazują badania, piszemy w [artykule o soku z aloesu](/pl/artykuly/sok-z-aloesu-co-mowi-nauka/).
 
-## Jak go przyjmować
+## Jak go przyjmować na co dzień
 
-- Trzymaj się podanej porcji, zwykle rozcieńczonej w wodzie lub bez rozcieńczania, zgodnie z zaleceniem producenta.
-- Otwartą butelkę przechowuj w lodówce, jeśli wymaga tego etykieta, i zużyj ją w podanym terminie.
-- Zacznij od małej ilości, jeśli masz wrażliwy żołądek.
+### Ile?
+
+Tyle, ile podano na etykiecie, i nie więcej. Jeśli napój jest sprzedawany jako suplement diety, zalecana dzienna porcja musi być podana na opakowaniu. Zależy ona od produktu: bez rozcieńczania lub z wodą, zgodnie z zaleceniem producenta. Zacznij od małej ilości, jeśli masz wrażliwy żołądek.
+
+### Rano, wieczorem, przed posiłkiem?
+
+Często można przeczytać, że aloes trzeba pić na czczo albo przed posiłkami, „żeby lepiej się wchłaniał”. Żadne badanie nie pokazuje, że jakaś pora dnia jest lepsza od innej. Kieruj się wskazówkami producenta i wybierz porę, o której najłatwiej Ci będzie pamiętać.
+
+### Na jak długo wystarcza butelka?
+
+Podziel pojemność butelki przez dzienną porcję. Butelka 1 litra przy 3 × 30 ml dziennie (90 ml) wystarcza na około dziesięć dni, a przy 30 ml dziennie na ponad miesiąc.
+
+Porównaj to z okresem przydatności po otwarciu podanym na etykiecie, często przy przechowywaniu w lodówce. Jeśli przy Twojej porcji butelka wystarcza na dłużej niż ten okres, lepiej wybrać mniejsze opakowanie. Ten sam rachunek pozwala porównywać ceny: przeliczaj cenę na dzienną porcję, a nie na litr.
+
+### Jaki ma smak?
+
+Naturalny żel ma roślinny smak, zależnie od produktu lekko gorzki lub kwaskowy, który nie każdemu odpowiada. Wersje smakowe łagodzą go sokami owocowymi, miodem lub aromatami: sprawdź wtedy zawartość cukrów w porcji. Rozcieńczenie w szklance wody również łagodzi smak.
+
+### „Kuracja”, ale jak długa?
+
+Marki często proponują „kuracje” trwające kilka tygodni. Te okresy nie wynikają z badań, a w Europie nie zatwierdzono żadnego oświadczenia zdrowotnego dotyczącego samego aloesu. Jeśli pijesz go regularnie, wybierz produkt na bazie filtrowanego żelu i porozmawiaj z lekarzem, jeśli przyjmujesz leki albo dolegliwości trawienne się utrzymują.
 
 ## Dla kogo tak, a dla kogo nie
 

@@ -4,7 +4,7 @@
 
 | Priority | Page | Evidence | Refresh | Risk |
 | --- | --- | --- | --- | --- |
-| 1 | `/articles/aloe-vera-a-boire-comment-choisir/` (+6) | FR 2,900, IT 5,400, PL 5,400, UK 6,600 searches a month (EXT); highest business fit | SEO-05: dose and serving size as labelled, taste, how long an opened bottle keeps, gel against juice, aloin limits (Regulation 2021/468). Brief first; fetch the SERPs for FR and IT | Health claims; regulatory accuracy |
+| 1 (**done 2026-10-27**, `updated` set; awaiting review) | `/articles/aloe-vera-a-boire-comment-choisir/` (+6) | FR 2,900, IT 5,400, PL 5,400, UK 6,600 searches a month (EXT); highest business fit | SEO-05: dose and serving size as labelled, taste, how long an opened bottle keeps, gel against juice, aloin limits (Regulation 2021/468). Brief first; fetch the SERPs for FR and IT | Health claims; regulatory accuracy |
 | 2 | `/articles/cultiver-aloe-vera-en-pot/` (+6) | 20 impressions at position ~80; soil queries ("quelle terre pour aloe vera", "terre pour aloes") at 35 to 98 | Expand the soil section: mix, pot size, repotting. Keep watering short and point to the planner | Low |
 | 3 | `/articles/hydratation-aliments-riches-en-eau/` (+6) | 48 impressions, positions 55 to 93, the site's largest query cluster | Add Ciqual figures for the foods already named, and decide with the cannibalization rule whether the water-rich table moves here | Nutrition wording |
 | 4 | `/articles/aloe-vera-bienfaits-peau/` (+6) | 18 impressions at ~78; the SERP is brand-led | Add how to read an aloe gel label (aloe position, percentage), patch-test detail, what studies do and do not show | Cosmetic claims |
@@ -13,3 +13,21 @@
 | 7 | `/articles/petit-dejeuner-equilibre/` (+6) | 11 impressions on "petit déjeuner équilibré prêt à mixer" | Check intent first: it may be product-led. No change until the SERP is checked | Low |
 
 Not in the backlog: pages without Search Console demand. Write no new article before items 1 to 3 have been measured.
+
+## Done
+
+### 1. Aloe vera drinks (2026-10-27)
+
+- **SERPs checked (OBS, 2026-10-27):**
+  - "aloe vera à boire" (FR): brands and pharmacies (Ponroy, Léopold, Pur Aloé), with unsupported timing advice ("20 ml before each meal", "on an empty stomach to absorb it better") and digestive promises.
+  - "aloe vera da bere" (IT): brand blogs and Amazon, promising "depurative" and "anti-inflammatory" effects.
+- **Correction:**
+  - The appeal against T-189/21 is case C-38/25 P, still pending.
+  - Under Article 60 of the Statute of the Court of Justice (checked in the Court's case-law digest), an annulment by the General Court takes effect only once the appeal is dismissed. The ban on aloe leaf preparations with hydroxyanthracene derivatives therefore still applies.
+  - The article previously gave no such indication.
+  - **Not cited:** an Advocate General opinion of 2026-09-10 found in a secondary source could not be verified.
+- **Added:**
+  - **Why the caution:** IARC group 2B classification of whole-leaf extract, via Guo & Mei 2016. The page states the studies concern the whole leaf with its latex, not decolourised gel.
+  - **Practical section:** how much (the daily amount must be on a food supplement's label, Directive 2002/46/EC); when (no evidence for a best time); how long a bottle lasts and price per daily dose; taste and sugars in flavoured versions; "courses" (no evidence, no authorised claim).
+- **Languages:** the same changes in all 6 translations. The English version keeps its UK framing, where the EU regulation does not apply in Great Britain. Translations re-stamped.
+- **Review required:** health and regulatory content.

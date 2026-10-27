@@ -7,6 +7,7 @@ title: "Aloe vera zum Trinken: worauf Sie achten sollten"
 description: "Gel oder Saft, Aloe-Anteil, Aloin, Zusatzstoffe, Werbeaussagen: so lesen Sie das Etikett eines Aloe-vera-Getränks und wählen bewusst."
 category: nutrition
 date: 2026-10-22
+updated: 2026-10-27
 cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
 coverAlt: "Aloe-vera-Getränk im Glas mit Zitrone, Minze und Eiswürfeln, umgeben von frischen Blättern in einer Küche mit hellem Essbereich."
 coverTitle: "Aloe vera zum Trinken: worauf achten?"
@@ -18,9 +19,15 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:62021TJ0189"
   - title: "Verordnung (EG) Nr. 1924/2006 über nährwert- und gesundheitsbezogene Angaben"
     url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32006R1924"
+  - title: "Gerichtshof der EU, Rechtsprechungsübersicht: Wirksamwerden der Nichtigerklärung einer Verordnung (Artikel 60 der Satzung, auf Französisch)"
+    url: "https://curia.europa.eu/common/recdoc/repertoire_jurisp/bull_3/data/3_02_06.htm"
+  - title: "Richtlinie 2002/46/EG über Nahrungsergänzungsmittel (Angabe der Tagesdosis)"
+    url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32002L0046"
+  - title: "Guo X., Mei N. Aloe vera: a review of toxicity and adverse clinical effects. J Environ Sci Health C, 2016"
+    url: "https://doi.org/10.1080/10590501.2016.1166826"
 locale: de
 translationOf: aloe-vera-a-boire-comment-choisir
-sourceHash: "9165325ff96e"
+sourceHash: "83d082c9d11c"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -41,7 +48,9 @@ Keine dieser Formen ist an sich „schlecht“. Entscheidend ist, dass das Etike
 
 ## Aloin: eine Frage des Rechts
 
-2021 hat die Verordnung (EU) 2021/468 Aloe-Emodin, Emodin und Zubereitungen aus Aloe-Blättern, die Hydroxyanthracenderivate enthalten, in Lebensmitteln verboten. Im November 2024 hat das Gericht der Europäischen Union den Teil der Verordnung für nichtig erklärt, der die Zubereitungen aus Aloe-Blättern betraf (Rechtssache T-189/21). Die Kommission hat Rechtsmittel eingelegt; das Verfahren ist beim Gerichtshof noch anhängig. Das Verbot von Aloe-Emodin und Emodin selbst wurde nicht infrage gestellt.
+2021 hat die Verordnung (EU) 2021/468 Aloe-Emodin, Emodin und Zubereitungen aus Aloe-Blättern, die Hydroxyanthracenderivate enthalten, in Lebensmitteln verboten. Im November 2024 hat das Gericht der Europäischen Union den Teil der Verordnung für nichtig erklärt, der die Zubereitungen aus Aloe-Blättern betraf (Rechtssache T-189/21). Die Kommission hat Rechtsmittel eingelegt (Rechtssache C-38/25 P); das Verfahren ist beim Gerichtshof noch anhängig. Die Nichtigerklärung einer Verordnung durch das Gericht wird jedoch erst wirksam, wenn das Rechtsmittel zurückgewiesen ist: Bis dahin gilt das Verbot weiter. Das Verbot von Aloe-Emodin und Emodin selbst wurde nicht infrage gestellt.
+
+Diese Vorsicht hat einen Grund. Bei Ratten zeigte ein Extrakt aus dem ganzen Aloe-vera-Blatt krebserregende Wirkung, und die Internationale Agentur für Krebsforschung (IARC) stufte ihn als „möglicherweise krebserregend für den Menschen“ ein (Gruppe 2B). Diese Studien betrafen einen Extrakt aus dem ganzen Blatt, einschließlich des Blattsafts, nicht das davon befreite Gel.
 
 In der Praxis verwenden seriöse Hersteller gefiltertes oder entfärbtes Gel ohne diese Stoffe und weisen oft auf dem Etikett darauf hin.
 
@@ -63,11 +72,29 @@ Wenn ein Getränk einen bestimmten Nutzen hervorhebt, liegt das daher meist an e
 
 Vorsicht dagegen bei Versprechen von „Detox“, „Entschlackung“ oder der Vorbeugung von Krankheiten: Sie sind nicht zulässig und haben keine solide Grundlage. Was Studien tatsächlich zeigen, lesen Sie in [unserem Artikel über Aloe-vera-Saft](/de/artikel/aloe-vera-saft-was-sagt-die-wissenschaft/).
 
-## Wie man es einnimmt
+## Wie man es im Alltag einnimmt
 
-- Halten Sie sich an die angegebene Menge, je nach Hersteller mit Wasser verdünnt oder pur.
-- Bewahren Sie die geöffnete Flasche im Kühlschrank auf, wenn das Etikett es verlangt, und verbrauchen Sie sie innerhalb der angegebenen Frist.
-- Beginnen Sie mit einer kleinen Menge, wenn Sie einen empfindlichen Magen haben.
+### Wie viel?
+
+So viel, wie auf dem Etikett steht, und nicht mehr. Wird das Getränk als Nahrungsergänzungsmittel verkauft, muss die empfohlene Tagesdosis auf der Verpackung stehen. Sie ist von Produkt zu Produkt verschieden: pur oder mit Wasser verdünnt, je nach Hersteller. Beginnen Sie mit einer kleinen Menge, wenn Sie einen empfindlichen Magen haben.
+
+### Morgens, abends, vor dem Essen?
+
+Oft liest man, Aloe solle nüchtern oder vor den Mahlzeiten getrunken werden, „damit der Körper sie besser aufnimmt“. Keine Studie zeigt, dass eine Tageszeit besser wäre als eine andere. Folgen Sie den Angaben des Herstellers und wählen Sie den Moment, an den Sie am ehesten denken.
+
+### Wie lange reicht eine Flasche?
+
+Teilen Sie den Inhalt der Flasche durch die Tagesmenge. Eine 1-Liter-Flasche reicht bei 3 × 30 ml am Tag (90 ml) etwa zehn Tage, bei 30 ml am Tag über einen Monat.
+
+Vergleichen Sie das mit der Haltbarkeit nach dem Öffnen, die auf dem Etikett steht, oft im Kühlschrank. Reicht die Flasche bei Ihrer Dosis länger als diese Frist, ist eine kleinere Packung sinnvoller. Mit derselben Rechnung lassen sich auch Preise vergleichen: Rechnen Sie den Preis auf die Tagesdosis um, nicht auf den Liter.
+
+### Wie schmeckt es?
+
+Naturbelassenes Gel schmeckt pflanzlich, je nach Produkt etwas bitter oder säuerlich, und das mag nicht jeder. Aromatisierte Varianten mildern den Geschmack mit Fruchtsaft, Honig oder Aromen: Achten Sie dann auf den Zuckergehalt pro Portion. Mit Wasser verdünnt schmeckt es ebenfalls milder.
+
+### Eine „Kur“, aber wie lange?
+
+Marken bieten oft „Kuren“ über mehrere Wochen an. Diese Zeiträume beruhen nicht auf Studien, und in Europa ist keine gesundheitsbezogene Angabe speziell zu Aloe zugelassen. Wenn Sie regelmäßig Aloe trinken, wählen Sie ein Produkt aus gefiltertem Gel und sprechen Sie mit Ihrer Ärztin oder Ihrem Arzt, wenn Sie Medikamente nehmen oder Verdauungsbeschwerden anhalten.
 
 ## Für wen, und für wen nicht
 

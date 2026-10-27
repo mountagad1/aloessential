@@ -25,7 +25,7 @@ Confidence levels:
 | # | Query (market) | Destination | Demand | Relevance | Achievable | Original | Authority | Cost | **Score** | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | O1 | arroser aloe vera (FR) | `/aloe-vera/arrosage/` | 15 | 20 | 17 | 16 | 7 | 9 | **84** | High |
-| O2 | aloe vera à boire (FR, IT, PL, UK) | `/articles/aloe-vera-a-boire-comment-choisir/` and translations | 15 | 20 | 10 | 14 | 7 | 6 | **72** | Low (SERP not fetched) |
+| O2 | aloe vera à boire (FR, IT, PL, UK) | `/articles/aloe-vera-a-boire-comment-choisir/` and translations | 15 | 20 | 10 | 14 | 7 | 6 | **72** | Medium (SERP fetched 2026-10-27 for FR and IT) |
 | O3 | aliments riches en fibres (FR) | `/aliments-riches-en-fibres/` | 20 | 12 | 9 | 17 | 4 | 9 | **71** | High |
 | O4 | pro 12 lr avis (FR) | `/produits/capsules-pro-12-plus/` | 10 | 20 | 16 | 10 | 8 | 7 | **71** | Medium (SERP not fetched) |
 | O5 | combien de litres d'eau par jour (FR) | `/combien-d-eau-par-jour/` | 15 | 12 | 13 | 15 | 5 | 9 | **69** | High |
@@ -42,7 +42,7 @@ Confidence levels:
 - **O2:**
   - Volumes (EXT): FR 2,900, IT 5,400, PL 5,400, UK 6,600.
   - The French article had one impression at position 8.
-  - The SERP was not fetched (credits). Business fit is the highest of all: LR sells aloe drinking gels.
+  - SERPs fetched on 2026-10-27 (FR, IT): brands, pharmacies and Amazon, with unsupported timing advice and health promises. Business fit is the highest of all: LR sells aloe drinking gels.
 - **O3:**
   - Volume (EXT): 18,100, difficulty 10.
   - The SERP (OBS) is led by Ameli (national health insurance), two hospitals, a laboratory, Nestlé and Nutri&Co. All are static lists, and some quote Ciqual figures without per-portion values or a calculator.

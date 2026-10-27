@@ -4,7 +4,7 @@ Earn editorial references with resources people have a reason to cite. No link i
 
 ## 1. Baseline (unknown today)
 
-- **Backlinks:** no data pulled yet. OpenSEO `get_backlinks_overview` costs credits (6 left on 2026-10-27). Search Console → Links shows the external links Google has found; export it monthly. **Owner action.**
+- **Backlinks:** no data pulled yet. OpenSEO `get_backlinks_overview` costs credits (none left on 2026-10-27). Search Console → Links shows the external links Google has found; export it monthly. **Owner action.**
 - **Brand mentions:** a near-identical name exists, "AloEssentials", a different business listed in directories (`docs/growth/GROWTH_ENGINEERING_STRATEGY.md`). Never claim its mentions.
 - **Legacy domain:** an earlier site lived on this domain (`/product/aloe-first-spray/` 404). The Search Console 404 export will show whether old URLs still receive links (SEO-03).
 
