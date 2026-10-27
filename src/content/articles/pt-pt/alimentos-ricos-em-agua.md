@@ -3,30 +3,48 @@ title: "Hidratação: os alimentos ricos em água"
 description: "Pepino, melancia, curgete, citrinos: parte da hidratação vem do prato. As nossas ideias para aproveitar isso durante todo o ano."
 category: nutrition
 date: 2026-10-23
+updated: 2026-10-27
 cover: /covers/photos/aliments-riches-en-eau-hydratation.webp
 coverAlt: "Fatias de melancia, pepino e curgete com citrinos numa mesa de pedra clara, com o mar desfocado ao fundo."
 coverTitle: "Hidratação: os alimentos ricos em água"
 coverCaption: "O pepino, a melancia, a curgete e os citrinos contribuem para o aporte diário de água."
+sources:
+  - title: "Anses, tabela de composição dos alimentos Ciqual 2025"
+    url: "https://doi.org/10.57745/RDMHWY"
+  - title: "EFSA, parecer científico sobre os valores de referência para a água (2010)"
+    url: "https://doi.org/10.2903/j.efsa.2010.1459"
+  - title: "Guelinckx I. et al., contributo da água dos alimentos e das bebidas para a ingestão total, Nutrients 2016"
+    url: "https://doi.org/10.3390/nu8100630"
 locale: pt-pt
 translationOf: hydratation-aliments-riches-en-eau
-sourceHash: "7bdf5a9e8219"
+sourceHash: "9937313c843c"
 status: published
 translationReviewer: "Philippe Cros"
 ---
 
-Quando pensamos em hidratação, lembramo-nos logo das bebidas. No entanto, uma parte nada desprezável da água que consumimos vem dos alimentos.
+Quando pensamos em hidratação, lembramo-nos logo das bebidas. No entanto, uma parte importante da água que consumimos vem dos alimentos: cerca de 20 a 30 %, segundo a estimativa adotada pela Autoridade Europeia para a Segurança dos Alimentos (EFSA).
 
 ## Os campeões da água
 
-Algumas frutas e legumes têm mais de 90% de água:
+A maioria dos legumes frescos e muitas frutas têm mais de 85 % de água, alguns mais de 95 %. Alguns exemplos, segundo a tabela francesa de composição dos alimentos Ciqual (Anses):
 
-- o pepino e a curgete;
-- a melancia e o melão;
-- o tomate e o rabanete;
-- a alface e o aipo;
-- os morangos e os citrinos.
+| Alimento | Água por 100 g |
+| --- | --- |
+| Rabanetes | 95,5 g |
+| Alface, crua | 95,4 g |
+| Pepino, cru | 95,2 g |
+| Curgete, crua | 94,8 g |
+| Tomate, cru | 94,6 g |
+| Aipo, cru | 93,4 g |
+| Melancia | 91 g |
+| Morangos | 90,3 g |
+| Toranja | 90 g |
+| Laranja | 87,3 g |
+| Melão cantalupo | 84,2 g |
 
-Também fornecem fibra, vitaminas e minerais, como o potássio, úteis para o equilíbrio hídrico.
+Também fornecem fibra, vitaminas e minerais, entre os quais o potássio.
+
+A tabela completa, com a água de uma porção de cada alimento, está na nossa página [Quanta água se deve beber por dia?](/pt-pt/quanta-agua-beber-por-dia/).
 
 ## Ideias fáceis para o dia a dia
 
