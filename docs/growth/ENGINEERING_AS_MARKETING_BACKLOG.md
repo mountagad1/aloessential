@@ -16,7 +16,7 @@
 | --- | --- | --- | --- | --- |
 | SEO-01 | Contextual internal links: 52 articles without inbound body links; the aloe guide is an orphan | SEO | 56 | in progress: links written, awaiting publication |
 | EAM-03 | Aloe vera watering planner | Interactive tool | 56 | in progress: built in 7 locales, awaiting review and publication |
-| EAM-02 | How much water per day, plus a water-rich foods table | Calculator and dataset | 51 | planned |
+| EAM-02 | How much water per day, plus a water-rich foods table | Calculator and dataset | 51 | in progress: calculator built in 7 locales, awaiting review; foods table not started |
 | EAM-01 | High-fibre foods: searchable table and daily-fibre calculator | Dataset and calculator | 40 | planned, awaiting approval |
 | SEO-05 | Deepen the highest-demand aloe articles | Content | 34 | planned |
 | SEO-04 | PRO 12 + snippet test | Experiment | 30 | waiting for data |
@@ -105,6 +105,16 @@
   | Risk | 2 | Health: reference values only, no personal prescription |
 - **Measurement:** clicks and impressions of the hydration article cluster in each locale, after the change compared with before.
 - **Score inputs:** U4 D4 X3 L3 B3, C4.
+- **Build (2026-10-27), calculator only:**
+  - Values: `src/data/water.ts`; text and URLs: `src/i18n/water-ui.ts`; page: `src/components/WaterCalculatorView.astro`.
+  - URLs: `/combien-d-eau-par-jour/`, `/en/how-much-water-per-day/`, `/es/cuanta-agua-beber-al-dia/`, `/de/wie-viel-wasser-am-tag/`, `/it/quanta-acqua-bere-al-giorno/`, `/pt-pt/quanta-agua-beber-por-dia/`, `/pl/ile-wody-dziennie/`.
+  - Sources checked on 2026-10-27: EFSA 2010 opinion (abstract: adequate intakes by age, pregnancy +300 mL, lactation about +700 mL); Guelinckx et al. 2016 (EFSA assumed food supplies 20 to 30 %); NHS "Water, drinks and hydration" (tea and coffee count, pale urine, situations that raise needs).
+  - Heat, exercise and illness add notes only: EFSA gives no figure for them, so the tool shows none.
+  - Linked from the hydration article in all 7 languages, and links back to it.
+  - Tests: `tests/water.spec.ts`.
+- **Not done yet:**
+  - The water-rich foods table: needs the data licence check shared with EAM-01.
+  - National reference values (for example D-A-CH in Germany) where they differ from EFSA: not researched; every locale shows EFSA values today.
 
 ### EAM-01: high-fibre foods table and daily-fibre calculator (score 40, largest prize)
 - **Problem:** readers want to know which foods contain the most fibre and how to reach the recommended intake. Aloessential mentions 30 g/day (digestion article) but offers no resource.

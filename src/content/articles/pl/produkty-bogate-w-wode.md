@@ -9,7 +9,7 @@ coverTitle: "Nawodnienie: produkty bogate w wodę"
 coverCaption: "Ogórek, arbuz, cukinia i cytrusy uzupełniają codzienne spożycie wody."
 locale: pl
 translationOf: hydratation-aliments-riches-en-eau
-sourceHash: "16e7e38e09cd"
+sourceHash: "7bdf5a9e8219"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -39,3 +39,5 @@ Zupy i buliony warzywne to doskonały sposób na nawodnienie, gdy jest zimno. Cy
 ## Woda pozostaje podstawą
 
 Jedzenie uzupełnia nawodnienie, ale go nie zastępuje. Pij regularnie przez cały dzień, nie czekając na pragnienie, i więcej, gdy jest gorąco lub się wysilasz.
+
+Ile w sumie trzeba pić? Nasz [kalkulator dziennego spożycia wody](/pl/ile-wody-dziennie/) podaje europejskie wartości referencyjne według wieku, ciąży lub karmienia piersią.

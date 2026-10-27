@@ -9,7 +9,7 @@ coverTitle: "Idratazione: gli alimenti ricchi di acqua"
 coverCaption: "Cetriolo, anguria, zucchina e agrumi contribuiscono all'apporto di acqua di ogni giorno."
 locale: it
 translationOf: hydratation-aliments-riches-en-eau
-sourceHash: "16e7e38e09cd"
+sourceHash: "7bdf5a9e8219"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -39,3 +39,5 @@ Minestre, minestroni e brodi di verdure sono un ottimo modo per idratarsi quando
 ## L'acqua resta la base
 
 Gli alimenti completano l'idratazione, non la sostituiscono. Bevi regolarmente durante la giornata, senza aspettare di avere sete, e di più quando fa caldo o fai sforzi fisici.
+
+Quanto bisogna bere in tutto? Il nostro [calcolatore dell'acqua al giorno](/it/quanta-acqua-bere-al-giorno/) riporta i valori di riferimento europei per età, gravidanza o allattamento.

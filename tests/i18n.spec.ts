@@ -5,6 +5,11 @@ import { DEFAULT_LOCALE, LOCALES, LOCALE_CODES } from "../src/i18n/locales";
 import { UI } from "../src/i18n/ui";
 import { productUi } from "../src/i18n/product-ui";
 import { WATERING_UI } from "../src/i18n/watering-ui";
+import { WATER_UI } from "../src/i18n/water-ui";
+
+/** Tool pages a translation may link to, in its own language (watering planner, water calculator). */
+const toolPaths = (locale: string) =>
+  [WATERING_UI, WATER_UI].map((tool) => tool[locale as keyof typeof tool]?.path).filter(Boolean);
 import { CATEGORY_I18N, CATEGORY_SLUGS } from "../src/data/categories";
 // @ts-expect-error plain .mjs helper shared with tools/i18n-status.mjs
 import { freshness, parseMarkdown, translations } from "../tools/i18n-lib.mjs";
@@ -213,7 +218,7 @@ test.describe("translation files", () => {
       expect(["current", "stale"], `${id} needs translationOf + sourceHash`).toContain(freshness(t, roots));
       const { body } = parseMarkdown(readFileSync(t.file, "utf8"));
       for (const [, href] of body.matchAll(/\]\((\/[^)\s]*)\)/g)) {
-        if (href === WATERING_UI[t.locale as keyof typeof WATERING_UI]?.path) continue; // the watering planner in the same language
+        if (toolPaths(t.locale).includes(href)) continue;
         const target = href.match(new RegExp(`^/${t.locale}/${LOCALES[t.locale as keyof typeof LOCALES].segments.articles}/([a-z0-9-]+)/$`));
         expect(target, `${id} links to ${href}: link to a ${t.locale} article instead`).toBeTruthy();
         expect(existsSync(join(base, t.locale, `${target![1]}.md`)), `${id} → ${href} has no ${t.locale} file`).toBe(true);
@@ -237,7 +242,7 @@ test.describe("translation files", () => {
       expect(t.data.shopUrl, id).toContain("ref=cros");
       const { body } = parseMarkdown(readFileSync(t.file, "utf8"));
       for (const [, href] of body.matchAll(/\]\((\/[^)\s]*)\)/g)) {
-        if (href === WATERING_UI[t.locale as keyof typeof WATERING_UI]?.path) continue; // the watering planner in the same language
+        if (toolPaths(t.locale).includes(href)) continue;
         const target = href.match(new RegExp(`^/${t.locale}/${LOCALES[t.locale as keyof typeof LOCALES].segments.articles}/([a-z0-9-]+)/$`));
         expect(target, `${id} links to ${href}: link to a ${t.locale} article instead`).toBeTruthy();
         expect(articleRoots.some((b) => existsSync(join(b, t.locale, `${target![1]}.md`))), `${id} → ${href}`).toBe(true);
@@ -378,8 +383,8 @@ test.describe("localized pages (static scan)", () => {
     // the demo product and the product listing in French and Italian (4 pages),
     // and the 14 published product translations with their 4 French sources and 5 listings (23 pages, /produits/ already counted),
     // plus the published articles and categories of all six locales with their French sources,
-    // and the aloe vera watering planner in all seven locales (7 pages).
-    expect(annotated).toBe(21 + 4 + REAL_ANNOTATED + 22 + 7);
+    // and the two tools (aloe vera watering planner, water calculator) in all seven locales (14 pages).
+    expect(annotated).toBe(21 + 4 + REAL_ANNOTATED + 22 + 14);
     expect(alternatesOf(read("produits/produit-demo"))).toEqual({
       fr: `${ORIGIN}/produits/produit-demo/`,
       it: `${ORIGIN}/it/prodotti/prodotto-demo/`,

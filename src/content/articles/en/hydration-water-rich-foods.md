@@ -9,7 +9,7 @@ coverTitle: "Hydration: water-rich foods"
 coverCaption: "Cucumber, watermelon, courgette and citrus fruit add to your daily water intake."
 locale: en
 translationOf: hydratation-aliments-riches-en-eau
-sourceHash: "16e7e38e09cd"
+sourceHash: "7bdf5a9e8219"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -39,3 +39,5 @@ Vegetable soups and broths are a great way to stay hydrated when it is cold. Cit
 ## Water is still the basis
 
 Food adds to your hydration; it does not replace drinking. Drink regularly through the day, without waiting until you are thirsty, and more when it is hot or you are active.
+
+How much should you drink in total? Our [water-per-day calculator](/en/how-much-water-per-day/) gives the European reference values by age, pregnancy or breastfeeding.

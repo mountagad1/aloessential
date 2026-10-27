@@ -35,3 +35,5 @@ Les soupes et les bouillons de légumes sont une excellente façon de s'hydrater
 ## L'eau reste la base
 
 Les aliments complètent l'hydratation, ils ne la remplacent pas. Buvez régulièrement au cours de la journée, sans attendre d'avoir soif, et davantage en cas de chaleur ou d'effort.
+
+Combien faut-il boire au total ? Notre [calculateur d'eau par jour](/combien-d-eau-par-jour/) donne les repères européens selon l'âge, la grossesse ou l'allaitement.

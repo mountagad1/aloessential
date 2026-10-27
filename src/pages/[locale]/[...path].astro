@@ -8,6 +8,7 @@
  *   /<locale>/<products>/              products LR sells in that country
  *   /<locale>/<products>/<slug>/       one product, with that country's shop link
  *   WATERING_UI[locale].path           the aloe vera watering planner
+ *   WATER_UI[locale].path              the water-per-day calculator
  * A locale with no published article has no page at all: nothing falls back
  * to French under a foreign prefix.
  */
@@ -16,6 +17,8 @@ import LocaleListing from "../../components/LocaleListing.astro";
 import ProductListing from "../../components/ProductListing.astro";
 import ProductView from "../../components/ProductView.astro";
 import WateringPlannerView from "../../components/WateringPlannerView.astro";
+import WaterCalculatorView from "../../components/WaterCalculatorView.astro";
+import { WATER_UI } from "../../i18n/water-ui";
 import { WATERING_UI } from "../../i18n/watering-ui";
 import { categoryList, localizedCategory, type CategorySlug } from "../../data/categories";
 import { LOCALES, categoryPath, homePath, type Locale } from "../../i18n/locales";
@@ -37,6 +40,7 @@ type PageProps =
   | { kind: "products" }
   | { kind: "product"; product: Product }
   | { kind: "watering" }
+  | { kind: "water" }
   | {
       kind: "listing";
       category?: CategorySlug;
@@ -95,6 +99,7 @@ export async function getStaticPaths() {
     }
 
     paths.push({ params: { locale, path: sub(WATERING_UI[locale].path) }, props: { kind: "watering" } });
+    paths.push({ params: { locale, path: sub(WATER_UI[locale].path) }, props: { kind: "water" } });
   }
   return paths;
 }
@@ -112,6 +117,8 @@ const locale = Astro.params.locale as Locale;
     <ProductView product={props.product} />
   ) : props.kind === "watering" ? (
     <WateringPlannerView locale={locale} />
+  ) : props.kind === "water" ? (
+    <WaterCalculatorView locale={locale} />
   ) : (
     <LocaleListing
       locale={locale}

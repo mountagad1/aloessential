@@ -1,0 +1,206 @@
+---
+/*
+ * "How much water per day" calculator (backlog EAM-02), one page per locale.
+ * The reference table, guidance, method and sources are static HTML; the
+ * calculator runs in the browser from the same values (src/data/water.ts).
+ * Reference values only: the page says when a doctor's advice comes first.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { DEFAULT_LOCALE, LOCALES, articlePath, homePath, type Locale } from "../i18n/locales";
+import { ui } from "../i18n/ui";
+import { WATER_UI, waterAlternates } from "../i18n/water-ui";
+import { PROFILES, SITUATIONS, WATER_SOURCES, waterNeeds } from "../data/water";
+import { getTranslatedLocales } from "../lib/articles";
+import { breadcrumbLd } from "../lib/seo";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const w = WATER_UI[locale];
+const t = ui(locale);
+const lang = LOCALES[locale].dateLocale;
+const litres = new Intl.NumberFormat(lang, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+const alternates = waterAlternates(await getTranslatedLocales());
+const crumbs = [
+  { name: t.home, path: homePath(locale) },
+  { name: w.h1, path: w.path },
+];
+const jsonLd = [breadcrumbLd(crumbs, Astro.site)];
+
+const glasses = (min: number, max: number) =>
+  min === max ? String(min) : w.result.glassesRange.replace("{min}", String(min)).replace("{max}", String(max));
+const rows = PROFILES.map((profile) => ({ profile, r: waterNeeds(profile) }));
+
+const text = { lang, total: w.result.total, drinks: w.result.drinks, glassesRange: w.result.glassesRange, notes: w.result.notes };
+---
+
+<BaseLayout title={w.title} description={w.description} locale={locale} alternates={alternates} jsonLd={jsonLd}>
+  <article class="tool-page">
+    <header class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label={t.breadcrumb}>
+          <ol>
+            <li><a href={homePath(locale)}>{t.home}</a></li>
+            <li aria-current="page">{w.h1}</li>
+          </ol>
+        </nav>
+        <p class="eyebrow">{w.eyebrow}</p>
+        <h1>{w.h1}</h1>
+        <p>{w.intro}</p>
+        <p class="byline">{w.byline}</p>
+      </div>
+    </header>
+
+    <section class="section section--tight" aria-labelledby="calculator-title">
+      <div class="container">
+        <div class="tool">
+          <h2 id="calculator-title">{w.form.title}</h2>
+          <noscript><p>{w.form.noscript}</p></noscript>
+          <form class="tool__form" data-water data-text={JSON.stringify(text)} hidden>
+            <div class="tool__field">
+              <label for="water-profile">{w.form.profile}</label>
+              <select id="water-profile" name="profile">
+                {PROFILES.map((p) => <option value={p}>{w.profiles[p]}</option>)}
+              </select>
+            </div>
+            <fieldset class="tool__field tool__choices">
+              <legend>{w.form.situations}</legend>
+              {
+                SITUATIONS.map((s) => (
+                  <label>
+                    <input type="checkbox" name="situation" value={s} /> {w.situations[s]}
+                  </label>
+                ))
+              }
+            </fieldset>
+            <button class="btn" type="submit">{w.form.submit}</button>
+          </form>
+          <div class="tool__result" data-water-result aria-live="polite" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="water-table-title">
+      <div class="container">
+        <div class="prose">
+          <h2 id="water-table-title">{w.table.title}</h2>
+          <div class="table-wrap">
+            <table class="composition">
+              <caption class="small-print">{w.table.caption}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">{w.table.profile}</th>
+                  <th scope="col">{w.table.total}</th>
+                  <th scope="col">{w.table.drinks}</th>
+                  <th scope="col">{w.table.glasses}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  rows.map(({ profile, r }) => (
+                    <tr>
+                      <th scope="row">{w.profiles[profile]}</th>
+                      <td>{litres.format(r.total)} {w.unit}</td>
+                      <td>
+                        {litres.format(r.drinksMin)}–{litres.format(r.drinksMax)} {w.unit}
+                      </td>
+                      <td>{glasses(r.glassesMin, r.glassesMax)}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+
+          <h2>{w.counts.title}</h2>
+          <ul>
+            {w.counts.items.map((s) => <li>{s}</li>)}
+          </ul>
+
+          <h2>{w.enough.title}</h2>
+          <ul>
+            {w.enough.items.map((s) => <li>{s}</li>)}
+          </ul>
+
+          <h2>{w.doctor.title}</h2>
+          <ul>
+            {w.doctor.items.map((s) => <li>{s}</li>)}
+          </ul>
+
+          <h2>{w.method.title}</h2>
+          {w.method.text.map((p) => <p>{p}</p>)}
+
+          <h2>{w.sources}</h2>
+          <ul class="sources">
+            {
+              WATER_SOURCES.map((s) => (
+                <li>
+                  {s.publisher}, <a href={s.url} rel="noopener"><cite>{s.title}</cite></a>
+                </li>
+              ))
+            }
+          </ul>
+
+          <h2>{w.related}</h2>
+          <p><a href={articlePath(locale, w.hydrationArticle)}>{w.relatedLink}</a></p>
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<script>
+  import { waterNeeds, type Profile, type Situation } from "../data/water";
+
+  const form = document.querySelector<HTMLFormElement>("[data-water]");
+  const out = document.querySelector<HTMLElement>("[data-water-result]");
+  if (form && out) {
+    const text = JSON.parse(form.dataset.text ?? "{}") as {
+      lang: string;
+      total: string;
+      drinks: string;
+      glassesRange: string;
+      notes: Record<string, string>;
+    };
+    const litres = new Intl.NumberFormat(text.lang, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    form.hidden = false;
+
+    const paragraph = (content: string, className?: string) => {
+      const p = document.createElement("p");
+      if (className) p.className = className;
+      p.textContent = content;
+      return p;
+    };
+
+    const render = () => {
+      const data = new FormData(form);
+      const r = waterNeeds(data.get("profile") as Profile, data.getAll("situation") as Situation[]);
+      const glasses =
+        r.glassesMin === r.glassesMax
+          ? String(r.glassesMin)
+          : text.glassesRange.replace("{min}", String(r.glassesMin)).replace("{max}", String(r.glassesMax));
+      out.replaceChildren(
+        paragraph(text.total.replace("{total}", litres.format(r.total)), "tool__headline"),
+        paragraph(
+          text.drinks
+            .replace("{min}", litres.format(r.drinksMin))
+            .replace("{max}", litres.format(r.drinksMax))
+            .replace("{glasses}", glasses),
+        ),
+        ...r.notes.map((n) => paragraph(text.notes[n], "tool__warning")),
+      );
+      out.hidden = false;
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      render();
+    });
+    form.addEventListener("change", () => {
+      if (!out.hidden) render();
+    });
+  }
+</script>

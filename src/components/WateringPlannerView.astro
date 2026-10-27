@@ -82,7 +82,7 @@ const text = { result: w.result, check: w.resultCheck, warnings: w.warnings };
 ---
 
 <BaseLayout title={w.title} description={w.description} locale={locale} alternates={alternates} jsonLd={jsonLd}>
-  <article class="watering">
+  <article class="tool-page">
     <header class="page-header">
       <div class="container">
         <nav class="breadcrumb" aria-label={t.breadcrumb}>
@@ -100,13 +100,13 @@ const text = { result: w.result, check: w.resultCheck, warnings: w.warnings };
 
     <section class="section section--tight" aria-labelledby="planner-title">
       <div class="container">
-        <div class="planner">
+        <div class="tool">
           <h2 id="planner-title">{w.form.title}</h2>
           <noscript><p>{w.form.noscript}</p></noscript>
-          <form class="planner__form" data-planner data-text={JSON.stringify(text)} hidden>
+          <form class="tool__form" data-planner data-text={JSON.stringify(text)} hidden>
             {
               fields.map((f) => (
-                <div class="planner__field">
+                <div class="tool__field">
                   <label for={`planner-${f.name}`}>{f.label}</label>
                   <select id={`planner-${f.name}`} name={f.name}>
                     {f.options.map((o) => (
@@ -120,7 +120,7 @@ const text = { result: w.result, check: w.resultCheck, warnings: w.warnings };
             }
             <button class="btn" type="submit">{w.form.submit}</button>
           </form>
-          <div class="planner__result" data-planner-result aria-live="polite" hidden></div>
+          <div class="tool__result" data-planner-result aria-live="polite" hidden></div>
         </div>
       </div>
     </section>
@@ -225,14 +225,14 @@ const text = { result: w.result, check: w.resultCheck, warnings: w.warnings };
       const fill = (s: string) => s.replace("{from}", String(r.from)).replace("{to}", String(r.to));
       out.replaceChildren();
       const strong = document.createElement("p");
-      strong.className = "planner__rhythm";
+      strong.className = "tool__headline";
       strong.textContent = fill(text.result);
       const check = document.createElement("p");
       check.textContent = fill(text.check);
       out.append(strong, check);
       for (const key of r.warnings) {
         const p = document.createElement("p");
-        p.className = "planner__warning";
+        p.className = "tool__warning";
         p.textContent = text.warnings[key];
         out.append(p);
       }
@@ -248,79 +248,3 @@ const text = { result: w.result, check: w.resultCheck, warnings: w.warnings };
     });
   }
 </script>
-
-<style>
-  .planner {
-    max-width: 46rem;
-    padding: var(--space-6);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    background: var(--color-surface-green);
-  }
-
-  .planner h2 {
-    margin-bottom: var(--space-4);
-    font-size: var(--text-lg);
-  }
-
-  .planner__form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-    gap: var(--space-4);
-    align-items: end;
-  }
-
-  .planner__form[hidden] {
-    display: none;
-  }
-
-  .planner__field {
-    display: grid;
-    gap: var(--space-1);
-  }
-
-  .planner__field label {
-    font-size: var(--text-sm);
-    font-weight: 600;
-  }
-
-  .planner__field select {
-    width: 100%;
-    min-height: 2.75rem;
-    padding: var(--space-2) var(--space-3);
-    border: 1px solid var(--color-border-strong);
-    border-radius: var(--radius-sm);
-    background: var(--color-surface);
-    color: var(--color-text);
-    font: inherit;
-  }
-
-  .planner__result {
-    margin-top: var(--space-5);
-    padding: var(--space-4) var(--space-5);
-    border-radius: var(--radius-md);
-    background: var(--color-surface);
-  }
-
-  .planner__result > :global(* + *) {
-    margin-top: var(--space-2);
-  }
-
-  :global(.planner__rhythm) {
-    color: var(--color-heading);
-    font-family: var(--font-heading);
-    font-size: var(--text-md);
-    font-weight: 600;
-  }
-
-  :global(.planner__warning) {
-    padding-left: var(--space-3);
-    border-left: 3px solid var(--color-orange);
-  }
-
-  .watering caption {
-    caption-side: bottom;
-    padding: var(--space-3) var(--space-4);
-    text-align: left;
-  }
-</style>

@@ -49,11 +49,11 @@ test.describe("watering planner pages", () => {
       await expect(page.locator("tbody tr")).toHaveCount(4);
       await page.locator("#planner-season").selectOption("spring");
       await page.locator("#planner-drainage").selectOption("no");
-      await page.locator(".planner__form button").click();
+      await page.locator(".tool__form button").click();
       const result = page.locator("[data-planner-result]");
       await expect(result).toBeVisible();
       await expect(result).toContainText(w.warnings.drainage);
-      await expect(result.locator(".planner__rhythm")).toHaveText(/\d/);
+      await expect(result.locator(".tool__headline")).toHaveText(/\d/);
     });
   }
 
@@ -68,7 +68,7 @@ test.describe("watering planner without JavaScript", () => {
 
   test("the summary table, method and sources are readable; the inert form stays hidden", async ({ page }) => {
     await page.goto(WATERING_UI.fr.path);
-    await expect(page.locator(".planner__form")).toBeHidden();
+    await expect(page.locator(".tool__form")).toBeHidden();
     await expect(page.locator("tbody tr")).toHaveCount(4);
     await expect(page.getByRole("heading", { name: WATERING_UI.fr.method.title })).toBeVisible();
     await expect(page.locator(".sources a")).toHaveCount(3);

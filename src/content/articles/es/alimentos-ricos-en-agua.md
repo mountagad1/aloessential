@@ -9,7 +9,7 @@ coverTitle: "Hidratación: los alimentos ricos en agua"
 coverCaption: "El pepino, la sandía, el calabacín y los cítricos contribuyen al aporte diario de agua."
 locale: es
 translationOf: hydratation-aliments-riches-en-eau
-sourceHash: "16e7e38e09cd"
+sourceHash: "7bdf5a9e8219"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -39,3 +39,5 @@ Las sopas y los caldos de verduras son una forma excelente de hidratarse cuando 
 ## El agua sigue siendo la base
 
 Los alimentos completan la hidratación, no la sustituyen. Bebe con regularidad a lo largo del día, sin esperar a tener sed, y más cuando hace calor o haces esfuerzo.
+
+¿Cuánto hay que beber en total? Nuestra [calculadora de agua al día](/es/cuanta-agua-beber-al-dia/) da las referencias europeas según la edad, el embarazo o la lactancia.

@@ -9,7 +9,7 @@ coverTitle: "Wasserreiche Lebensmittel"
 coverCaption: "Gurke, Wassermelone, Zucchini und Zitrusfrüchte tragen zur täglichen Flüssigkeitszufuhr bei."
 locale: de
 translationOf: hydratation-aliments-riches-en-eau
-sourceHash: "16e7e38e09cd"
+sourceHash: "7bdf5a9e8219"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -39,3 +39,5 @@ Gemüsesuppen und Brühen sind eine sehr gute Möglichkeit, bei Kälte genug Fl�
 ## Wasser bleibt die Grundlage
 
 Lebensmittel ergänzen die Flüssigkeitszufuhr, sie ersetzen sie nicht. Trinken Sie regelmäßig über den Tag verteilt, ohne auf Durst zu warten, und mehr bei Hitze oder Anstrengung.
+
+Wie viel sollte man insgesamt trinken? Unser [Rechner für die tägliche Wassermenge](/de/wie-viel-wasser-am-tag/) nennt die europäischen Richtwerte nach Alter, Schwangerschaft oder Stillzeit.
