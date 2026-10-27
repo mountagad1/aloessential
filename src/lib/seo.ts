@@ -81,6 +81,8 @@ export function articleLd(
     title: string;
     description: string;
     date: Date;
+    /** Last meaningful update, when there was one. */
+    updated?: Date;
     cover: string;
     /** Name, caption and description of the cover, when the article provides them. */
     image?: { name?: string; caption?: string; description?: string };
@@ -96,6 +98,7 @@ export function articleLd(
     headline: a.title,
     description: a.description,
     datePublished: a.date.toISOString(),
+    dateModified: (a.updated ?? a.date).toISOString(),
     // A plain URL, or an ImageObject when the cover has a name or caption.
     image: Object.keys(image).length > 5 ? image : image.url,
     inLanguage: a.inLanguage ?? "fr-FR",

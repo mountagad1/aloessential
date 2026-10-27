@@ -8,6 +8,8 @@ import { DEFAULT_LOCALE, LOCALES, type Locale } from "./locales";
 import type { Drainage, Pot, Position, Season, Size, Temperature, Warning } from "../data/watering";
 
 export interface WateringUi {
+  /** Short label for the footer's tools column. */
+  navLabel: string;
   /** Page path, trailing slash. */
   path: string;
   /** Slug of the localized "growing aloe vera in a pot" article. */
@@ -51,6 +53,7 @@ export interface WateringUi {
 }
 
 const fr: WateringUi = {
+  navLabel: "Planificateur d'arrosage de l'aloe vera",
   path: "/aloe-vera/arrosage/",
   growingArticle: "cultiver-aloe-vera-en-pot",
   title: "Arroser un aloe vera : le planificateur d'arrosage",
@@ -134,6 +137,7 @@ const fr: WateringUi = {
 };
 
 const en: WateringUi = {
+  navLabel: "Aloe vera watering planner",
   path: "/en/aloe-vera-watering-planner/",
   growingArticle: "how-to-grow-aloe-vera-in-a-pot",
   title: "How to water aloe vera: a watering planner",
@@ -217,6 +221,7 @@ const en: WateringUi = {
 };
 
 const es: WateringUi = {
+  navLabel: "Planificador de riego del aloe vera",
   path: "/es/riego-aloe-vera/",
   growingArticle: "cultivar-aloe-vera-en-maceta",
   title: "Cómo regar el aloe vera: el planificador de riego",
@@ -300,6 +305,7 @@ const es: WateringUi = {
 };
 
 const de: WateringUi = {
+  navLabel: "Gießplaner für Aloe vera",
   path: "/de/aloe-vera-giessen/",
   growingArticle: "aloe-vera-im-topf-pflegen",
   title: "Aloe vera gießen: der Gießplaner",
@@ -383,6 +389,7 @@ const de: WateringUi = {
 };
 
 const it: WateringUi = {
+  navLabel: "Calendario delle annaffiature dell'aloe vera",
   path: "/it/annaffiare-aloe-vera/",
   growingArticle: "coltivare-aloe-vera-in-vaso",
   title: "Come annaffiare l'aloe vera: il calendario delle annaffiature",
@@ -466,6 +473,7 @@ const it: WateringUi = {
 };
 
 const ptPt: WateringUi = {
+  navLabel: "Planeador de rega do aloe vera",
   path: "/pt-pt/rega-aloe-vera/",
   growingArticle: "cultivar-aloe-vera-em-vaso",
   title: "Como regar o aloe vera: o planeador de rega",
@@ -549,6 +557,7 @@ const ptPt: WateringUi = {
 };
 
 const pl: WateringUi = {
+  navLabel: "Planer podlewania aloesu",
   path: "/pl/podlewanie-aloesu/",
   growingArticle: "uprawa-aloesu-w-doniczce",
   title: "Jak podlewać aloes: planer podlewania",

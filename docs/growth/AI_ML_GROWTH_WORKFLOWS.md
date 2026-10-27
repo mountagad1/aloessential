@@ -23,6 +23,6 @@ The site has no AI or data infrastructure today, and none is added here. At this
 - **No secrets in prompts:** no private data or credentials go into a model; Search Console data stays aggregated.
 - **Structured outputs:** use JSON with a schema, so outputs can be validated.
 - **Provenance:** every factual recommendation keeps its source reference.
-- **Costs:** keep model and API costs visible. OpenSEO credits are logged in `ORGANIC_GROWTH_METRICS.md`; 21 were left on 2026-10-26.
+- **Costs:** keep model and API costs visible. OpenSEO credits are logged in `ORGANIC_GROWTH_METRICS.md`; 6 were left on 2026-10-27.
 - **No automatic production edits:** no model edits production SEO configuration or publishes content.
 - **Model choice:** a bigger model is not assumed to be better; compare on the evaluation sample first.

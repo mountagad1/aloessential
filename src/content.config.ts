@@ -30,6 +30,12 @@ const articles = defineCollection({
       description: z.string(),
       category: z.enum(CATEGORY_SLUGS),
       date: z.coerce.date(),
+      /**
+       * Date of the last meaningful update (new or corrected information, not a
+       * typo, a link or a re-stamp). Drives the visible "updated on" line,
+       * dateModified and the sitemap lastmod; omit it when nothing changed.
+       */
+      updated: z.coerce.date().optional(),
       cover: z.string(),
       coverAlt: z.string(),
       /** Shown under the cover (figcaption) and used as the image caption in structured data. */

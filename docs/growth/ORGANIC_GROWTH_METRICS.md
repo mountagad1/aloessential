@@ -5,7 +5,7 @@
 | Source | Status (2026-10-26) | What it gives | Limits |
 | --- | --- | --- | --- |
 | Google Search Console, property `sc-domain:aloessential.com` | **verified, connected to OpenSEO** (OBS) | Clicks, impressions, CTR, average position by query, page, country and device; index status per URL | About 3 days of lag; anonymised rare queries; position is an average, not a rank |
-| OpenSEO (DataForSEO) | connected; **21 credits left** (2026-10-26) | Search volume, keyword difficulty, intent, SERPs | Third-party estimates; costs credits |
+| OpenSEO (DataForSEO) | connected; **6 credits left** (2026-10-27, after 5 SERP fetches) | Search volume, keyword difficulty, intent, SERPs | Third-party estimates; costs credits |
 | Web analytics | **none**: Vercel Web Analytics answers `web_analytics_not_enabled` | Would give landing-page visits, engagement, tool usage, AI referrers, conversions (partner-link clicks) | **Owner decision (ADR-006)**; the privacy policy must be updated when enabled |
 | Field performance (Core Web Vitals) | none | Would give LCP, INP and CLS by template | Vercel Speed Insights, or CrUX once traffic is enough |
 | Search Console links report | available in the Search Console interface | Earned links | Not exposed by the API used here |

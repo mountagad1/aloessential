@@ -10,6 +10,8 @@ import { DEFAULT_LOCALE, LOCALES, type Locale } from "./locales";
 import type { Category, FibreLabel } from "../data/fibre";
 
 export interface FibreUi {
+  /** Short label for the footer's tools column. */
+  navLabel: string;
   path: string;
   /** Slug of the localized digestion article (it states the daily target). */
   digestionArticle: string;
@@ -65,6 +67,7 @@ export interface FibreUi {
 }
 
 const fr: FibreUi = {
+  navLabel: "Tableau des aliments riches en fibres",
   path: "/aliments-riches-en-fibres/",
   digestionArticle: "digestion-foie-detox-complements",
   title: "Aliments riches en fibres : le tableau et le calculateur",
@@ -158,6 +161,7 @@ const fr: FibreUi = {
 };
 
 const en: FibreUi = {
+  navLabel: "High-fibre foods table",
   path: "/en/high-fibre-foods/",
   digestionArticle: "digestion-liver-detox-supplements",
   title: "High-fibre foods: table and daily fibre calculator",
@@ -251,6 +255,7 @@ const en: FibreUi = {
 };
 
 const es: FibreUi = {
+  navLabel: "Tabla de alimentos ricos en fibra",
   path: "/es/alimentos-ricos-en-fibra/",
   digestionArticle: "digestion-higado-detox-complementos",
   title: "Alimentos ricos en fibra: la tabla y la calculadora",
@@ -344,6 +349,7 @@ const es: FibreUi = {
 };
 
 const de: FibreUi = {
+  navLabel: "Tabelle ballaststoffreicher Lebensmittel",
   path: "/de/ballaststoffreiche-lebensmittel/",
   digestionArticle: "verdauung-leber-detox-nahrungsergaenzung",
   title: "Ballaststoffreiche Lebensmittel: Tabelle und Rechner",
@@ -437,6 +443,7 @@ const de: FibreUi = {
 };
 
 const it: FibreUi = {
+  navLabel: "Tabella degli alimenti ricchi di fibre",
   path: "/it/alimenti-ricchi-di-fibre/",
   digestionArticle: "digestione-fegato-detox-integratori",
   title: "Alimenti ricchi di fibre: la tabella e il calcolatore",
@@ -530,6 +537,7 @@ const it: FibreUi = {
 };
 
 const ptPt: FibreUi = {
+  navLabel: "Tabela de alimentos ricos em fibra",
   path: "/pt-pt/alimentos-ricos-em-fibra/",
   digestionArticle: "digestao-figado-detox-suplementos",
   title: "Alimentos ricos em fibra: a tabela e a calculadora",
@@ -623,6 +631,7 @@ const ptPt: FibreUi = {
 };
 
 const pl: FibreUi = {
+  navLabel: "Tabela produktów bogatych w błonnik",
   path: "/pl/produkty-bogate-w-blonnik/",
   digestionArticle: "trawienie-watroba-detoks-suplementy",
   title: "Produkty bogate w błonnik: tabela i kalkulator",

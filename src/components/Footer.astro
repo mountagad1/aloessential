@@ -6,6 +6,9 @@ import { productUi } from "../i18n/product-ui";
 import { ui } from "../i18n/ui";
 import { getArticles } from "../lib/articles";
 import { getPublishedProducts } from "../lib/products";
+import { WATER_UI } from "../i18n/water-ui";
+import { FIBRE_UI } from "../i18n/fibre-ui";
+import { WATERING_UI } from "../i18n/watering-ui";
 
 interface Props {
   locale?: Locale;
@@ -27,6 +30,8 @@ const categories = categoryList
   );
 const frenchOnly = french ? undefined : "fr";
 const shopHome = LR_SHOP_HOME[locale];
+/* The free tools exist in every locale (src/pages/[locale]/[...path].astro). */
+const tools = [WATER_UI, FIBRE_UI, WATERING_UI].map((tool) => ({ href: tool[locale].path, label: tool[locale].navLabel }));
 const hasProducts = !french && (await getPublishedProducts(locale)).length > 0;
 ---
 
@@ -47,6 +52,18 @@ const hasProducts = !french && (await getPublishedProducts(locale)).length > 0;
             categories.map((c) => (
               <li>
                 <a href={c.href}>{c.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <h2>{t.footerTools}</h2>
+        <ul>
+          {
+            tools.map((tool) => (
+              <li>
+                <a href={tool.href}>{tool.label}</a>
               </li>
             ))
           }

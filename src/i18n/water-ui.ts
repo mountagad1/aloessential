@@ -8,6 +8,8 @@ import { DEFAULT_LOCALE, LOCALES, type Locale } from "./locales";
 import type { Profile, Situation } from "../data/water";
 
 export interface WaterUi {
+  /** Short label for the footer's tools column. */
+  navLabel: string;
   path: string;
   /** Slug of the localized water-rich foods article. */
   hydrationArticle: string;
@@ -44,6 +46,7 @@ export interface WaterUi {
 }
 
 const fr: WaterUi = {
+  navLabel: "Combien d'eau boire par jour",
   path: "/combien-d-eau-par-jour/",
   hydrationArticle: "hydratation-aliments-riches-en-eau",
   title: "Combien d'eau boire par jour ? Le calculateur",
@@ -143,6 +146,7 @@ const fr: WaterUi = {
 };
 
 const en: WaterUi = {
+  navLabel: "How much water to drink a day",
   path: "/en/how-much-water-per-day/",
   hydrationArticle: "hydration-water-rich-foods",
   title: "How much water should you drink a day? Calculator",
@@ -242,6 +246,7 @@ const en: WaterUi = {
 };
 
 const es: WaterUi = {
+  navLabel: "Cuánta agua beber al día",
   path: "/es/cuanta-agua-beber-al-dia/",
   hydrationArticle: "alimentos-ricos-en-agua",
   title: "¿Cuánta agua beber al día? La calculadora",
@@ -341,6 +346,7 @@ const es: WaterUi = {
 };
 
 const de: WaterUi = {
+  navLabel: "Wie viel Wasser am Tag",
   path: "/de/wie-viel-wasser-am-tag/",
   hydrationArticle: "wasserreiche-lebensmittel",
   title: "Wie viel Wasser am Tag trinken? Der Rechner",
@@ -440,6 +446,7 @@ const de: WaterUi = {
 };
 
 const it: WaterUi = {
+  navLabel: "Quanta acqua bere al giorno",
   path: "/it/quanta-acqua-bere-al-giorno/",
   hydrationArticle: "idratazione-alimenti-ricchi-di-acqua",
   title: "Quanta acqua bere al giorno? Il calcolatore",
@@ -539,6 +546,7 @@ const it: WaterUi = {
 };
 
 const ptPt: WaterUi = {
+  navLabel: "Quanta água beber por dia",
   path: "/pt-pt/quanta-agua-beber-por-dia/",
   hydrationArticle: "alimentos-ricos-em-agua",
   title: "Quanta água beber por dia? A calculadora",
@@ -638,6 +646,7 @@ const ptPt: WaterUi = {
 };
 
 const pl: WaterUi = {
+  navLabel: "Ile wody pić dziennie",
   path: "/pl/ile-wody-dziennie/",
   hydrationArticle: "produkty-bogate-w-wode",
   title: "Ile wody dziennie pić? Kalkulator",

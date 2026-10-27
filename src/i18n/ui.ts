@@ -22,6 +22,8 @@ export interface UiStrings {
   allArticles: string;
   breadcrumb: string;
   publishedOn: string;
+  /** Before the date of the last meaningful update of an article. */
+  updatedOn: string;
   minRead: (n: number) => string;
   readCard: (n: number) => string;
   by: string;
@@ -44,6 +46,8 @@ export interface UiStrings {
   footerTagline: string;
   footerCategories: string;
   footerExplore: string;
+  /** Footer column linking the free tools (water, fibre, aloe watering). */
+  footerTools: string;
   footerLegal: (year: number) => string;
   /** LR shop link in the footer (partner link). */
   shopLink: string;
@@ -85,6 +89,7 @@ const fr: UiStrings = {
   allArticles: "Tous les articles",
   breadcrumb: "Fil d'Ariane",
   publishedOn: "Publié le",
+  updatedOn: "Mis à jour le",
   minRead: (n) => `${n} min de lecture`,
   readCard: (n) => `Lire · ${n} min`,
   by: "Par",
@@ -107,6 +112,7 @@ const fr: UiStrings = {
   footerTagline: "Naturellement essentiel",
   footerCategories: "Rubriques",
   footerExplore: "Explorer",
+  footerTools: "Nos outils",
   footerLegal: (y) =>
     `© ${y} Aloessential. Les contenus de ce site sont informatifs et ne remplacent pas l'avis d'un professionnel de santé.`,
   shopLink: "Boutique officielle LR",
@@ -149,6 +155,7 @@ const it: UiStrings = {
   allArticles: "Tutti gli articoli",
   breadcrumb: "Percorso",
   publishedOn: "Pubblicato il",
+  updatedOn: "Aggiornato il",
   minRead: (n) => `${n} min di lettura`,
   readCard: (n) => `Leggi · ${n} min`,
   by: "Di",
@@ -171,6 +178,7 @@ const it: UiStrings = {
   footerTagline: "Naturalmente essenziale",
   footerCategories: "Rubriche",
   footerExplore: "Esplora",
+  footerTools: "I nostri strumenti",
   footerLegal: (y) =>
     `© ${y} Aloessential. I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere di un professionista sanitario.`,
   shopLink: "Negozio ufficiale LR",
@@ -213,6 +221,7 @@ const en: UiStrings = {
   allArticles: "All articles",
   breadcrumb: "Breadcrumb",
   publishedOn: "Published on",
+  updatedOn: "Updated on",
   minRead: (n) => `${n} min read`,
   readCard: (n) => `Read · ${n} min`,
   by: "By",
@@ -235,6 +244,7 @@ const en: UiStrings = {
   footerTagline: "Naturally essential",
   footerCategories: "Topics",
   footerExplore: "Explore",
+  footerTools: "Our tools",
   footerLegal: (y) =>
     `© ${y} Aloessential. The content on this site is for information only and does not replace advice from a healthcare professional.`,
   shopLink: "Official LR shop",
@@ -277,6 +287,7 @@ const de: UiStrings = {
   allArticles: "Alle Artikel",
   breadcrumb: "Brotkrumennavigation",
   publishedOn: "Veröffentlicht am",
+  updatedOn: "Aktualisiert am",
   minRead: (n) => `${n} Min. Lesezeit`,
   readCard: (n) => `Lesen · ${n} Min.`,
   by: "Von",
@@ -299,6 +310,7 @@ const de: UiStrings = {
   footerTagline: "Natürlich essenziell",
   footerCategories: "Rubriken",
   footerExplore: "Entdecken",
+  footerTools: "Unsere Tools",
   footerLegal: (y) =>
     `© ${y} Aloessential. Die Inhalte dieser Website dienen der Information und ersetzen nicht den Rat medizinischen Fachpersonals.`,
   shopLink: "Offizieller LR-Shop",
@@ -341,6 +353,7 @@ const es: UiStrings = {
   allArticles: "Todos los artículos",
   breadcrumb: "Ruta de navegación",
   publishedOn: "Publicado el",
+  updatedOn: "Actualizado el",
   minRead: (n) => `${n} min de lectura`,
   readCard: (n) => `Leer · ${n} min`,
   by: "Por",
@@ -363,6 +376,7 @@ const es: UiStrings = {
   footerTagline: "Naturalmente esencial",
   footerCategories: "Secciones",
   footerExplore: "Explorar",
+  footerTools: "Nuestras herramientas",
   footerLegal: (y) =>
     `© ${y} Aloessential. Los contenidos de este sitio son informativos y no sustituyen la opinión de un profesional sanitario.`,
   shopLink: "Tienda oficial de LR",
@@ -405,6 +419,7 @@ const ptPt: UiStrings = {
   allArticles: "Todos os artigos",
   breadcrumb: "Caminho de navegação",
   publishedOn: "Publicado a",
+  updatedOn: "Atualizado a",
   minRead: (n) => `${n} min de leitura`,
   readCard: (n) => `Ler · ${n} min`,
   by: "Por",
@@ -427,6 +442,7 @@ const ptPt: UiStrings = {
   footerTagline: "Naturalmente essencial",
   footerCategories: "Rubricas",
   footerExplore: "Explorar",
+  footerTools: "As nossas ferramentas",
   footerLegal: (y) =>
     `© ${y} Aloessential. Os conteúdos deste site são informativos e não substituem o parecer de um profissional de saúde.`,
   shopLink: "Site oficial da LR",
@@ -469,6 +485,7 @@ const pl: UiStrings = {
   allArticles: "Wszystkie artykuły",
   breadcrumb: "Ścieżka nawigacji",
   publishedOn: "Opublikowano",
+  updatedOn: "Zaktualizowano",
   minRead: (n) => `${n} min czytania`,
   readCard: (n) => `Czytaj · ${n} min`,
   by: "Autor:",
@@ -491,6 +508,7 @@ const pl: UiStrings = {
   footerTagline: "Naturalnie niezbędne",
   footerCategories: "Działy",
   footerExplore: "Odkrywaj",
+  footerTools: "Nasze narzędzia",
   footerLegal: (y) =>
     `© ${y} Aloessential. Treści w tym serwisie mają charakter informacyjny i nie zastępują porady specjalisty ochrony zdrowia.`,
   shopLink: "Oficjalny sklep LR",

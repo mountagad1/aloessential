@@ -107,4 +107,4 @@ Architecture and capacity are covered by the existing documents in `docs/archite
 - **Health and nutrition:** tools must present data and regulatory thresholds, never personal medical advice. Each tool needs a review before publication (`ENGINEERING_AS_MARKETING_PLAYBOOK.md` §4).
 - **Data licences:** open datasets (for example ANSES Ciqual) must have their licence and attribution checked before reuse. **Not verified yet.**
 - **Search volumes** are third-party estimates (DataForSEO via OpenSEO, 2026-10-26). They rank opportunities; they do not predict traffic.
-- **OpenSEO credits:** 21 remain. Further keyword research needs a top-up or a decision on which markets to research.
+- **OpenSEO credits:** 6 remain (2026-10-27). Further keyword research needs a top-up or a decision on which markets to research.

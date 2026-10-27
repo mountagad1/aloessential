@@ -27,7 +27,7 @@ interface Props {
 }
 
 const { article, others } = Astro.props;
-const { title, description, category, date, cover, coverAlt, coverCaption, coverTitle, coverDescription, locale } = article.data;
+const { title, description, category, date, updated, cover, coverAlt, coverCaption, coverTitle, coverDescription, locale } = article.data;
 const t = ui(locale);
 const french = locale === DEFAULT_LOCALE;
 const { Content, headings } = await render(article);
@@ -52,6 +52,7 @@ const jsonLd = [
       title,
       description,
       date,
+      updated,
       cover,
       image: { name: coverTitle, caption: coverCaption, description: coverDescription },
       path,
@@ -99,6 +100,7 @@ const related = [...others.filter((a) => a.data.category === category), ...other
         <p class="article-meta" data-hero-step style="--step: 3">
           <a href={catPath}>{cat.label}</a>
           <span>{t.publishedOn} <time datetime={date.toISOString()}>{formatDate(date, locale)}</time></span>
+          {updated && <span>{t.updatedOn} <time datetime={updated.toISOString()}>{formatDate(updated, locale)}</time></span>}
           <span>{t.minRead(readingTime(article))}</span>
         </p>
         <p class="byline" data-hero-step style="--step: 3">

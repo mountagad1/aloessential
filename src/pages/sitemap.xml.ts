@@ -64,7 +64,7 @@ export const GET: APIRoute = async ({ site }) => {
       })),
     ),
     ...(await Promise.all(
-      articles.map(async (a) => ({ path: articleUrl(a), lastmod: day(a.data.date), alternates: await articleAlternates(a) })),
+      articles.map(async (a) => ({ path: articleUrl(a), lastmod: day(a.data.updated ?? a.data.date), alternates: await articleAlternates(a) })),
     )),
     ...(await Promise.all(products.map(productEntry))),
   ];
@@ -79,7 +79,7 @@ export const GET: APIRoute = async ({ site }) => {
       entries.push(...listingPages(base, count).map(({ path, page }) => ({ path, alternates: page === 1 ? categoryAlts[c.slug] : undefined })));
     }
     for (const a of local) {
-      entries.push({ path: articleUrl(a), lastmod: day(a.data.date), alternates: await articleAlternates(a) });
+      entries.push({ path: articleUrl(a), lastmod: day(a.data.updated ?? a.data.date), alternates: await articleAlternates(a) });
     }
     const localProducts = await getPublishedProducts(locale);
     if (localProducts.length) entries.push({ path: productsPath(locale), alternates: productsAlts });
