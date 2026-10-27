@@ -15,7 +15,7 @@ sources:
     url: "https://pacjent.gov.pl/"
 locale: pl
 translationOf: routine-peau-apres-soleil
-sourceHash: "284a4c8eb2a1"
+sourceHash: "61e86a728131"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -55,6 +55,8 @@ Słońce, wiatr oraz woda w morzu czy basenie wysuszają skórę. To moment, by 
 
 Trzymaj żel w lodówce: efekt chłodu będzie wyraźniejszy. Jak wybrać żel, wyjaśniamy w artykule [„Jak wybrać żel aloesowy”](/pl/artykuly/jak-wybrac-zel-aloesowy/).
 
+Co aloes naprawdę daje skórze i gdzie są jego granice, wyjaśniamy w [artykule o aloesie na skórę](/pl/artykuly/aloes-na-skore/).
+
 ## 4. Unikać tego, co podrażnia
 
 Na rozgrzanej skórze przez kilka dni lepiej odstawić:
@@ -65,9 +67,11 @@ Na rozgrzanej skórze przez kilka dni lepiej odstawić:
 
 ## 5. Pić i chronić się następnego dnia
 
-Pij regularnie, przede wszystkim wodę: słońce i upał zwiększają utratę płynów. Pomagają też produkty bogate w wodę, takie jak arbuz, ogórek czy pomidory.
+Pij regularnie, przede wszystkim wodę: słońce i upał zwiększają utratę płynów. Pomagają też [produkty bogate w wodę](/pl/artykuly/produkty-bogate-w-wode/), takie jak arbuz, ogórek czy pomidory.
 
 Następnego dnia skóra jest nadal bardziej wrażliwa. Zakryj ją (ubranie, kapelusz), w najgorętszych godzinach zostań w cieniu i co dwie godziny oraz po każdej kąpieli nakładaj ponownie odpowiedni krem z filtrem.
+
+Taka codzienna ochrona to także pierwszy krok anti-aging, ważniejszy niż jakikolwiek składnik aktywny, o czym piszemy w [artykule o składnikach anti-aging](/pl/artykuly/pielegnacja-anti-aging-jakie-skladniki/).
 
 ## Pielęgnacja w skrócie
 

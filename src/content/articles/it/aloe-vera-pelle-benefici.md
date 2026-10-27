@@ -15,7 +15,7 @@ sources:
     url: "https://www.nccih.nih.gov/health/aloe-vera"
 locale: it
 translationOf: aloe-vera-bienfaits-peau
-sourceHash: "c26974842af3"
+sourceHash: "ef0d663a0f10"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -47,6 +47,8 @@ Dopo la rasatura o la depilazione, un velo di gel può calmare i rossori passegg
 - **Conserva il gel al fresco** una volta aperto e rispetta il periodo di utilizzo indicato.
 
 Per scegliere il prodotto giusto, trovi i nostri criteri in [«Come scegliere un gel di aloe vera»](/it/articoli/come-scegliere-gel-aloe-vera/).
+
+Gli stessi principi di delicatezza valgono per il cuoio capelluto: si veda la [nostra routine per curare i capelli al naturale](/it/articoli/cura-dei-capelli-al-naturale/).
 
 ## In sintesi
 

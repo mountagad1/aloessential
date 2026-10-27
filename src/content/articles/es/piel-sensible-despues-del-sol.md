@@ -11,7 +11,7 @@ coverTitle: "Piel después del sol: los gestos adecuados"
 coverCaption: "Después de un día al sol, una rutina suave para hidratar la piel y mantener su confort."
 locale: es
 translationOf: routine-peau-apres-soleil
-sourceHash: "284a4c8eb2a1"
+sourceHash: "61e86a728131"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -51,6 +51,8 @@ El sol, el viento y el agua del mar o de la piscina resecan la piel. Es el momen
 
 Guarda el gel en la nevera: el efecto fresco es mayor. Para elegir tu gel, consulta nuestros criterios en [«Cómo elegir un gel de aloe vera»](/es/articulos/como-elegir-gel-de-aloe-vera/).
 
+Lo que el aloe vera aporta de verdad a la piel, y sus límites, lo explicamos en [nuestro artículo sobre el aloe vera para la piel](/es/articulos/aloe-vera-para-la-piel/).
+
 ## 4. Evitar lo que irrita
 
 En una piel acalorada, mejor dejar de lado durante unos días:
@@ -61,9 +63,11 @@ En una piel acalorada, mejor dejar de lado durante unos días:
 
 ## 5. Beber y protegerse al día siguiente
 
-Bebe con regularidad, sobre todo agua: el sol y el calor aumentan las pérdidas de líquido. Los alimentos ricos en agua, como la sandía, el pepino o el tomate, también ayudan.
+Bebe con regularidad, sobre todo agua: el sol y el calor aumentan las pérdidas de líquido. Los [alimentos ricos en agua](/es/articulos/alimentos-ricos-en-agua/), como la sandía, el pepino o el tomate, también ayudan.
 
 Al día siguiente, la piel sigue más frágil. Cúbrela (ropa, sombrero), quédate a la sombra en las horas de más calor y vuelve a aplicar un protector solar adecuado cada dos horas y después de cada baño.
+
+Esta protección diaria es también el primer gesto antiedad, antes que cualquier activo, como explicamos en [nuestro artículo sobre los activos antiedad](/es/articulos/crema-antiedad-que-activos-elegir/).
 
 ## La rutina de un vistazo
 

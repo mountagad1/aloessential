@@ -9,7 +9,7 @@ coverTitle: "Despertar difícil: entender el cansancio al levantarse"
 coverCaption: "Un despertar difícil puede deberse a la calidad del sueño, a su duración o a los hábitos de la noche anterior."
 locale: es
 translationOf: sommeil-pilier-bien-etre
-sourceHash: "fed2a31d72e8"
+sourceHash: "103a58bd21a8"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -29,6 +29,8 @@ Acostarse y levantarse a horas parecidas, también el fin de semana, es uno de l
 ## Luz y pantallas
 
 La luz intensa por la noche retrasa el sueño. Baja la intensidad de la luz una hora antes de acostarte y aleja las pantallas de la cama. Un libro de papel o unos minutos de respiración lenta son buenos rituales de transición.
+
+Al contrario, la luz del día al despertar ayuda a ajustar el reloj interno: es el primer punto de [nuestra rutina de mañana para tener más energía](/es/articulos/rutina-de-manana-para-mas-energia/).
 
 ## Cuidado con los excitantes
 

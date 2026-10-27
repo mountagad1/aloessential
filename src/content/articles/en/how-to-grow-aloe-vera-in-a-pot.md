@@ -16,7 +16,7 @@ sources:
     url: "https://www.aspca.org/Pet-care/poison-control/Plants/barbados-aloe"
 locale: en
 translationOf: cultiver-aloe-vera-en-pot
-sourceHash: "68d1d6053660"
+sourceHash: "ab575e7e4902"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -42,6 +42,8 @@ Its roots hate sitting in water. It needs:
 The rule is simple: water only when the compost is dry all the way down, then water thoroughly and empty the saucer. In practice, that often means watering every two or three weeks in spring and summer, depending on the warmth and the size of the pot. In winter, water very little.
 
 Soft, brown or translucent leaves at the base are the classic sign of overwatering: let it dry out completely and water less often.
+
+For a rhythm suited to your pot, your room and the season, try [our aloe vera watering planner](/en/aloe-vera-watering-planner/).
 
 ## Cold is its enemy
 

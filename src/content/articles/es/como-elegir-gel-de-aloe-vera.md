@@ -11,7 +11,7 @@ coverTitle: "Cómo elegir un gel de aloe vera de calidad"
 coverCaption: "Para elegir un gel de aloe vera, fíjate en su composición, la lista INCI, los ingredientes añadidos y la conservación."
 locale: es
 translationOf: choisir-gel-aloe-vera
-sourceHash: "ea2a88778edf"
+sourceHash: "160b848011bf"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -41,3 +41,5 @@ Las certificaciones ecológicas o las del International Aloe Science Council gar
 - Respeta el plazo después de abrir, indicado por el pequeño tarro abierto del envase (por ejemplo «12M»).
 
 Un buen gel no es necesariamente el más caro: es el que tiene una composición corta, clara y coherente con el uso que le vas a dar.
+
+Para saber qué se puede esperar razonablemente de un gel sobre la piel, lee [lo que sabemos de verdad sobre el aloe vera para la piel](/es/articulos/aloe-vera-para-la-piel/).

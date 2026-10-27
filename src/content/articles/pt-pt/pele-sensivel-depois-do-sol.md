@@ -11,7 +11,7 @@ coverTitle: "Pele depois do sol: os gestos certos"
 coverCaption: "Depois de um dia ao sol, uma rotina suave para hidratar a pele e manter o seu conforto."
 locale: pt-pt
 translationOf: routine-peau-apres-soleil
-sourceHash: "284a4c8eb2a1"
+sourceHash: "61e86a728131"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -51,6 +51,8 @@ O sol, o vento e a água do mar ou da piscina secam a pele. É altura de lhe dar
 
 Guarda o gel no frigorífico: o efeito fresco é maior. Para escolher o teu gel, consulta os nossos critérios em [«Como escolher um gel de aloe vera»](/pt-pt/artigos/como-escolher-gel-de-aloe-vera/).
 
+O que o aloe vera traz realmente à pele, e os seus limites, explicamos no [nosso artigo sobre aloe vera para a pele](/pt-pt/artigos/aloe-vera-para-a-pele/).
+
 ## 4. Evitar o que irrita
 
 Numa pele aquecida, mais vale pôr de lado durante alguns dias:
@@ -61,9 +63,11 @@ Numa pele aquecida, mais vale pôr de lado durante alguns dias:
 
 ## 5. Beber e proteger-se no dia seguinte
 
-Bebe regularmente, sobretudo água: o sol e o calor aumentam as perdas de líquidos. Os alimentos ricos em água, como a melancia, o pepino ou o tomate, também ajudam.
+Bebe regularmente, sobretudo água: o sol e o calor aumentam as perdas de líquidos. Os [alimentos ricos em água](/pt-pt/artigos/alimentos-ricos-em-agua/), como a melancia, o pepino ou o tomate, também ajudam.
 
 No dia seguinte, a pele continua mais frágil. Cobre-a (roupa, chapéu), fica à sombra nas horas de maior calor e volta a aplicar um protetor solar adequado de duas em duas horas e depois de cada banho.
+
+Esta proteção diária é também o primeiro gesto antienvelhecimento, antes de qualquer ativo, como explicamos no [nosso artigo sobre ativos antienvelhecimento](/pt-pt/artigos/creme-antienvelhecimento-que-ativos/).
 
 ## A rotina num relance
 

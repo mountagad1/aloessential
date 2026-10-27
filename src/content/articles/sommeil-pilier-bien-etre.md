@@ -26,6 +26,8 @@ Se coucher et se lever à des heures proches, y compris le week-end, est l'un de
 
 La lumière vive en soirée retarde l'endormissement. Tamisez l'éclairage une heure avant le coucher et éloignez les écrans du lit. Un livre papier ou quelques minutes de respiration lente constituent de bons rituels de transition.
 
+À l'inverse, la lumière du jour au réveil aide à caler l'horloge interne : c'est le premier point de [notre routine du matin pour plus d'énergie](/articles/routine-matin-energie/).
+
 ## Attention aux excitants
 
 La caféine peut agir plusieurs heures après le dernier café. Si vous dormez mal, essayez de ne plus en consommer après le début de l'après-midi. L'alcool, lui, facilite parfois l'endormissement mais fragmente le sommeil.

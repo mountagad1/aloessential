@@ -1,0 +1,326 @@
+---
+/*
+ * Aloe vera watering planner (backlog EAM-03), one page per locale. The
+ * summary table, the method and the sources are static HTML; the planner
+ * itself runs in the browser from the same rules (src/data/watering.ts).
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { DEFAULT_LOCALE, LOCALES, articlePath, homePath, type Locale } from "../i18n/locales";
+import { ui } from "../i18n/ui";
+import { WATERING_UI, wateringAlternates } from "../i18n/watering-ui";
+import {
+  BASE_DAYS,
+  DRAINAGE,
+  FACTORS,
+  POSITIONS,
+  POTS,
+  SEASONS,
+  SIZES,
+  TABLE_DEFAULTS,
+  TEMPERATURES,
+  WATERING_SOURCES,
+  plan,
+} from "../data/watering";
+import { getTranslatedLocales } from "../lib/articles";
+import { breadcrumbLd } from "../lib/seo";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const w = WATERING_UI[locale];
+const t = ui(locale);
+const colon = locale === DEFAULT_LOCALE ? " : " : ": ";
+const number = new Intl.NumberFormat(LOCALES[locale].dateLocale);
+
+const alternates = wateringAlternates(await getTranslatedLocales());
+
+const crumbs =
+  locale === DEFAULT_LOCALE
+    ? [
+        { name: t.home, path: "/" },
+        { name: "Aloe vera", path: "/aloe-vera/" },
+        { name: w.h1, path: w.path },
+      ]
+    : [
+        { name: t.home, path: homePath(locale) },
+        { name: w.h1, path: w.path },
+      ];
+const jsonLd = [breadcrumbLd(crumbs, Astro.site)];
+
+const range = (from: number, to: number) => `${from}–${to} ${w.table.days}`;
+const tableRows = SEASONS.map((season) => ({
+  season,
+  cells: POTS.map((pot) => plan({ season, pot, ...TABLE_DEFAULTS })),
+}));
+
+const defaults: Record<string, string> = { season: "spring", pot: "terracotta", ...TABLE_DEFAULTS };
+const options = <K extends keyof typeof w.options>(name: K, values: readonly (keyof (typeof w.options)[K])[]) => ({
+  name,
+  label: w.form[name],
+  options: values.map((value) => ({ value: String(value), label: w.options[name][value] as string })),
+});
+const fields = [
+  options("season", SEASONS),
+  options("pot", POTS),
+  options("drainage", DRAINAGE),
+  options("size", SIZES),
+  options("position", POSITIONS),
+  options("temperature", TEMPERATURES),
+];
+
+const factorGroups = [
+  { label: w.form.pot, entries: POTS.map((v) => [w.options.pot[v], FACTORS.pot[v]] as const) },
+  { label: w.form.size, entries: SIZES.map((v) => [w.options.size[v], FACTORS.size[v]] as const) },
+  { label: w.form.position, entries: POSITIONS.map((v) => [w.options.position[v], FACTORS.position[v]] as const) },
+  { label: w.form.temperature, entries: TEMPERATURES.map((v) => [w.options.temperature[v], FACTORS.temperature[v]] as const) },
+  { label: w.form.drainage, entries: [[w.options.drainage.no, FACTORS.noDrainage]] as const },
+];
+
+const text = { result: w.result, check: w.resultCheck, warnings: w.warnings };
+---
+
+<BaseLayout title={w.title} description={w.description} locale={locale} alternates={alternates} jsonLd={jsonLd}>
+  <article class="watering">
+    <header class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label={t.breadcrumb}>
+          <ol>
+            {crumbs.slice(0, -1).map((c) => <li><a href={c.path}>{c.name}</a></li>)}
+            <li aria-current="page">{w.h1}</li>
+          </ol>
+        </nav>
+        <p class="eyebrow">{w.eyebrow}</p>
+        <h1>{w.h1}</h1>
+        <p>{w.intro}</p>
+        <p class="byline">{w.byline}</p>
+      </div>
+    </header>
+
+    <section class="section section--tight" aria-labelledby="planner-title">
+      <div class="container">
+        <div class="planner">
+          <h2 id="planner-title">{w.form.title}</h2>
+          <noscript><p>{w.form.noscript}</p></noscript>
+          <form class="planner__form" data-planner data-text={JSON.stringify(text)} hidden>
+            {
+              fields.map((f) => (
+                <div class="planner__field">
+                  <label for={`planner-${f.name}`}>{f.label}</label>
+                  <select id={`planner-${f.name}`} name={f.name}>
+                    {f.options.map((o) => (
+                      <option value={o.value} selected={defaults[f.name] === o.value}>
+                        {o.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              ))
+            }
+            <button class="btn" type="submit">{w.form.submit}</button>
+          </form>
+          <div class="planner__result" data-planner-result aria-live="polite" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="table-title">
+      <div class="container">
+        <div class="prose">
+          <h2 id="table-title">{w.table.title}</h2>
+          <div class="table-wrap">
+            <table class="composition">
+              <caption class="small-print">{w.table.caption}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">{w.table.season}</th>
+                  {POTS.map((pot) => <th scope="col">{w.options.pot[pot]}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  tableRows.map((row) => (
+                    <tr>
+                      <th scope="row">{w.options.season[row.season]}</th>
+                      {row.cells.map((c) => (
+                        <td>{range(c.from, c.to)}</td>
+                      ))}
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+
+          <h2>{w.howTo.title}</h2>
+          <ol>
+            {w.howTo.steps.map((s) => <li>{s}</li>)}
+          </ol>
+
+          <h2>{w.signs.title}</h2>
+          <h3>{w.signs.tooMuch}</h3>
+          <ul>
+            {w.signs.tooMuchList.map((s) => <li>{s}</li>)}
+          </ul>
+          <h3>{w.signs.tooLittle}</h3>
+          <ul>
+            {w.signs.tooLittleList.map((s) => <li>{s}</li>)}
+          </ul>
+
+          <h2>{w.method.title}</h2>
+          {w.method.text.map((p) => <p>{p}</p>)}
+          <h3>{w.method.base}</h3>
+          <ul>
+            {SEASONS.map((s) => <li>{w.options.season[s]}{colon}{BASE_DAYS[s]} {w.table.days}</li>)}
+          </ul>
+          <h3>{w.method.factors}</h3>
+          <ul>
+            {
+              factorGroups.map((g) => (
+                <li>
+                  <strong>{g.label}</strong>{colon}{g.entries.map(([label, f]) => `${label} ×${number.format(f)}`).join(" · ")}
+                </li>
+              ))
+            }
+          </ul>
+
+          <h2>{w.sources}</h2>
+          <ul class="sources">
+            {
+              WATERING_SOURCES.map((s) => (
+                <li>
+                  {s.publisher}, <a href={s.url} rel="noopener"><cite>{s.title}</cite></a>
+                </li>
+              ))
+            }
+          </ul>
+
+          <h2>{w.related}</h2>
+          <p><a href={articlePath(locale, w.growingArticle)}>{w.relatedLink}</a></p>
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<script>
+  import { plan, seasonOfMonth, type PlannerInput } from "../data/watering";
+
+  const form = document.querySelector<HTMLFormElement>("[data-planner]");
+  const out = document.querySelector<HTMLElement>("[data-planner-result]");
+  if (form && out) {
+    const text = JSON.parse(form.dataset.text ?? "{}") as {
+      result: string;
+      check: string;
+      warnings: Record<string, string>;
+    };
+    const season = form.elements.namedItem("season") as HTMLSelectElement;
+    season.value = seasonOfMonth(new Date().getMonth());
+    form.hidden = false;
+
+    const render = () => {
+      const input = Object.fromEntries(new FormData(form)) as unknown as PlannerInput;
+      const r = plan(input);
+      const fill = (s: string) => s.replace("{from}", String(r.from)).replace("{to}", String(r.to));
+      out.replaceChildren();
+      const strong = document.createElement("p");
+      strong.className = "planner__rhythm";
+      strong.textContent = fill(text.result);
+      const check = document.createElement("p");
+      check.textContent = fill(text.check);
+      out.append(strong, check);
+      for (const key of r.warnings) {
+        const p = document.createElement("p");
+        p.className = "planner__warning";
+        p.textContent = text.warnings[key];
+        out.append(p);
+      }
+      out.hidden = false;
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      render();
+    });
+    form.addEventListener("change", () => {
+      if (!out.hidden) render();
+    });
+  }
+</script>
+
+<style>
+  .planner {
+    max-width: 46rem;
+    padding: var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-green);
+  }
+
+  .planner h2 {
+    margin-bottom: var(--space-4);
+    font-size: var(--text-lg);
+  }
+
+  .planner__form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--space-4);
+    align-items: end;
+  }
+
+  .planner__form[hidden] {
+    display: none;
+  }
+
+  .planner__field {
+    display: grid;
+    gap: var(--space-1);
+  }
+
+  .planner__field label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .planner__field select {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+  }
+
+  .planner__result {
+    margin-top: var(--space-5);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .planner__result > :global(* + *) {
+    margin-top: var(--space-2);
+  }
+
+  :global(.planner__rhythm) {
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-size: var(--text-md);
+    font-weight: 600;
+  }
+
+  :global(.planner__warning) {
+    padding-left: var(--space-3);
+    border-left: 3px solid var(--color-orange);
+  }
+
+  .watering caption {
+    caption-side: bottom;
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+  }
+</style>

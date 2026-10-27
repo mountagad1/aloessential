@@ -9,7 +9,7 @@ coverTitle: "Poranna rutyna: jasny początek dnia"
 coverCaption: "Prosta poranna rutyna może łączyć nawodnienie, światło dzienne i nawyki dopasowane do Twojego rytmu."
 locale: pl
 translationOf: routine-matin-energie
-sourceHash: "31ab0570e763"
+sourceHash: "a9ffd8473a38"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -28,6 +28,8 @@ Po nocy bez picia szklanka wody po przebudzeniu to prosty sposób na dobry pocz�
 
 Pięć minut rozciągania, kilka ćwiczeń mobilizujących albo krótki spacer łagodnie budzą ciało. Liczy się regularność, nie intensywność.
 
+Kilka pomysłów na łagodny ruch zebraliśmy w [artykule o stawach i sprawności](/pl/artykuly/stawy-i-sprawnosc-na-co-dzien/).
+
 ## 4. Sycące śniadanie
 
 Połącz źródło błonnika (pieczywo razowe, płatki owsiane), źródło białka (jogurt, jajko, twaróg) i owoc. To połączenie pomaga zachować sytość do obiadu. Pomysły znajdziesz w artykule [„Zbilansowane śniadanie: nasze proste pomysły”](/pl/artykuly/zbilansowane-sniadanie-proste-pomysly/).
@@ -39,3 +41,5 @@ Sprawdzanie powiadomień zaraz po przebudzeniu często wprowadza napięcie. Spr�
 ## Zacznij od małych kroków
 
 Wybierz tylko jeden z tych nawyków i praktykuj go przez tydzień. Jeden dobrze utrwalony nawyk jest wart więcej niż pięć porzuconych postanowień.
+
+Jeśli zmęczenie utrzymuje się mimo tych nawyków, warto porozmawiać z lekarzem, a przed zakupem suplementu sprawdzić, [co przepisy pozwalają mówić o witaminach i zmęczeniu](/pl/artykuly/witaminy-i-zmeczenie-co-mowia-przepisy/).

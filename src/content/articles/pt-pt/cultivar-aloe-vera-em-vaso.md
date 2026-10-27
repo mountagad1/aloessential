@@ -16,7 +16,7 @@ sources:
     url: "https://www.aspca.org/Pet-care/poison-control/Plants/barbados-aloe"
 locale: pt-pt
 translationOf: cultiver-aloe-vera-en-pot
-sourceHash: "68d1d6053660"
+sourceHash: "ab575e7e4902"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -42,6 +42,8 @@ As raízes não suportam humidade parada. Precisa de:
 A regra é simples: só se rega quando a terra está seca em toda a profundidade, e aí rega-se bem e esvazia-se o prato. Na prática, costuma ser uma rega de duas em duas ou de três em três semanas na primavera e no verão, conforme o calor e o tamanho do vaso. No inverno, rega-se muito pouco.
 
 Folhas moles, castanhas ou translúcidas na base são o sinal típico de excesso de água: deixa secar por completo e espaça as regas.
+
+Para um ritmo adaptado ao teu vaso, à tua casa e à estação, experimenta o [nosso planeador de rega do aloe vera](/pt-pt/rega-aloe-vera/).
 
 ## O frio, o seu inimigo
 

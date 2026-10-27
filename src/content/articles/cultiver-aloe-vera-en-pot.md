@@ -37,6 +37,8 @@ La règle est simple : on arrose uniquement quand la terre est sèche sur toute 
 
 Des feuilles molles, brunes ou translucides à la base sont le signe classique d'un excès d'eau : laissez sécher complètement et espacez les arrosages.
 
+Pour un rythme adapté à votre pot, à votre pièce et à la saison, essayez [notre planificateur d'arrosage de l'aloe vera](/aloe-vera/arrosage/).
+
 ## Le froid, son ennemi
 
 L'aloe vera ne supporte pas le gel. S'il passe l'été dehors, rentrez-le dès que les nuits fraîchissent. À l'intérieur, une pièce lumineuse et tempérée lui convient toute l'année.
@@ -60,6 +62,8 @@ L'aloe vera est **toxique pour les chats et les chiens**. Le latex jaune de ses 
 ## Et pour utiliser son gel ?
 
 Une plante bien installée peut fournir une feuille de temps en temps pour un usage sur la peau. Mieux vaut savoir comment s'y prendre : nous l'expliquons dans [« Utiliser le gel d'un aloe vera maison »](/articles/gel-aloe-vera-maison/).
+
+Pour tout comprendre de la plante, du gel au latex, consultez [notre guide complet de l'aloe vera](/aloe-vera/).
 
 ## En résumé
 

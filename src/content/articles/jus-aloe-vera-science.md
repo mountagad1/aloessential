@@ -43,3 +43,5 @@ Le foie et les reins assurent déjà l'élimination des déchets de l'organisme.
 ## Notre avis
 
 Le jus d'aloe peut s'intégrer occasionnellement dans une alimentation variée, à condition de choisir un produit contrôlé. Il ne remplace ni une alimentation équilibrée, ni un avis médical.
+
+Si vous envisagez une boisson à l'aloe, nos critères pour lire l'étiquette sont réunis dans [notre guide pour choisir un aloe vera à boire](/articles/aloe-vera-a-boire-comment-choisir/).

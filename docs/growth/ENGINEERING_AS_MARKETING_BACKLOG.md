@@ -14,8 +14,8 @@
 
 | ID | Initiative | Type | Score | Status |
 | --- | --- | --- | --- | --- |
-| SEO-01 | Contextual internal links: 52 articles without inbound body links; the aloe guide is an orphan | SEO | 56 | planned |
-| EAM-03 | Aloe vera watering planner | Interactive tool | 56 | planned |
+| SEO-01 | Contextual internal links: 52 articles without inbound body links; the aloe guide is an orphan | SEO | 56 | in progress: links written, awaiting publication |
+| EAM-03 | Aloe vera watering planner | Interactive tool | 56 | in progress: built in 7 locales, awaiting review and publication |
 | EAM-02 | How much water per day, plus a water-rich foods table | Calculator and dataset | 51 | planned |
 | EAM-01 | High-fibre foods: searchable table and daily-fibre calculator | Dataset and calculator | 40 | planned, awaiting approval |
 | SEO-05 | Deepen the highest-demand aloe articles | Content | 34 | planned |
@@ -73,6 +73,12 @@
   | Risk | 1 | No health claim. It is the safest first asset for testing the Engineering-as-Marketing pipeline in 7 languages |
 - **Measurement:** impressions and clicks for watering queries on the tool and the growing guide; tool usage once analytics exist.
 - **Score inputs:** U4 D3 X3 L2 B2, C4.
+- **Build (2026-10-27):**
+  - Rules: `src/data/watering.ts`; text and URLs: `src/i18n/watering-ui.ts`; page: `src/components/WateringPlannerView.astro`.
+  - URLs: `/aloe-vera/arrosage/`, `/en/aloe-vera-watering-planner/`, `/es/riego-aloe-vera/`, `/de/aloe-vera-giessen/`, `/it/annaffiare-aloe-vera/`, `/pt-pt/rega-aloe-vera/`, `/pl/podlewanie-aloesu/`, with hreflang and sitemap alternates.
+  - Sources checked on 2026-10-26: RHS (Indoor plants resources), Penn State Extension, UF/IFAS Gardening Solutions. None gives a calendar; the day counts are the team's own estimate, calibrated on the growing guide and stated as such on the page.
+  - Linked from the growing article in all 7 languages and from `/aloe-vera/`.
+  - Tests: `tests/watering.spec.ts`.
 
 ### EAM-02: how much water per day, plus a water-rich foods table (score 51)
 - **Problem:** the hydration article has the most impressions (41, position about 75) but does not answer the most searched question.

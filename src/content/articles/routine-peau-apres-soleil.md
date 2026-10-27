@@ -46,6 +46,8 @@ Le soleil, le vent et l'eau de baignade assèchent la peau. C'est le moment de l
 
 Gardez votre gel au réfrigérateur : l'effet frais est plus marqué. Pour mieux choisir votre gel, voyez nos repères dans [« Bien choisir son gel d'aloe vera »](/articles/choisir-gel-aloe-vera/).
 
+Ce que l'aloe vera apporte réellement à la peau, et ses limites, est détaillé dans [notre article sur l'aloe vera et la peau](/articles/aloe-vera-bienfaits-peau/).
+
 ## 4. Éviter ce qui irrite
 
 Sur une peau échauffée, mieux vaut laisser de côté pendant quelques jours :
@@ -59,6 +61,8 @@ Sur une peau échauffée, mieux vaut laisser de côté pendant quelques jours :
 Pensez à boire régulièrement, de l'eau surtout : le soleil et la chaleur augmentent les pertes. Nos idées pour s'hydrater aussi en mangeant sont dans [« Hydratation : les aliments riches en eau »](/articles/hydratation-aliments-riches-en-eau/).
 
 Le lendemain, la peau reste plus fragile. Couvrez-la (vêtements, chapeau), restez à l'ombre aux heures les plus chaudes et réappliquez une protection solaire adaptée toutes les deux heures, et après chaque baignade.
+
+Cette protection quotidienne est aussi le premier geste anti-âge, avant tout actif : nous l'expliquons dans [notre article sur les actifs anti-âge](/articles/soin-anti-age-quels-actifs/).
 
 ## La routine en un coup d'œil
 

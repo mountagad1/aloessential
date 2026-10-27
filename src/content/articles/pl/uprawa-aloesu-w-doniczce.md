@@ -16,7 +16,7 @@ sources:
     url: "https://www.aspca.org/Pet-care/poison-control/Plants/barbados-aloe"
 locale: pl
 translationOf: cultiver-aloe-vera-en-pot
-sourceHash: "68d1d6053660"
+sourceHash: "ab575e7e4902"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -42,6 +42,8 @@ Jego korzenie nie znoszą stojącej wody. Potrzebuje:
 Zasada jest prosta: podlewamy tylko wtedy, gdy ziemia jest sucha na całej głębokości, wtedy obficie, a potem wylewamy wodę z podstawki. W praktyce wiosną i latem oznacza to często podlewanie co dwa–trzy tygodnie, w zależności od temperatury i wielkości doniczki. Zimą podlewamy bardzo mało.
 
 Miękkie, brązowe lub szkliste liście u podstawy to typowy objaw nadmiaru wody: pozwól ziemi całkowicie wyschnąć i podlewaj rzadziej.
+
+Rytm dopasowany do doniczki, pomieszczenia i pory roku podpowie [nasz planer podlewania aloesu](/pl/podlewanie-aloesu/).
 
 ## Zimno, jego największy wróg
 

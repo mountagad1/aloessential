@@ -36,3 +36,5 @@ Les certifications biologiques ou de l'International Aloe Science Council garant
 - Respectez la période après ouverture, indiquée par le petit pot ouvert sur l'emballage.
 
 Un bon gel n'est pas forcément le plus cher : c'est celui dont la composition est courte, claire et cohérente avec l'usage que vous en faites.
+
+Pour savoir ce que l'on peut raisonnablement attendre d'un gel sur la peau, lisez [ce que l'on sait vraiment de l'aloe vera pour la peau](/articles/aloe-vera-bienfaits-peau/).

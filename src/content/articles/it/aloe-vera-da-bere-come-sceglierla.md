@@ -25,7 +25,7 @@ sources:
     url: "https://www.salute.gov.it/new/it/tema/alimenti-fini-medici-speciali-ed-integratori/sostanze-e-preparati-vegetali/"
 locale: it
 translationOf: aloe-vera-a-boire-comment-choisir
-sourceHash: "99a4832eaa0d"
+sourceHash: "9165325ff96e"
 status: published
 translationReviewer: "Philippe Cros"
 ---

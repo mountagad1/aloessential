@@ -18,7 +18,7 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32012R0432"
 locale: es
 translationOf: digestion-foie-detox-complements
-sourceHash: "85886cfc227c"
+sourceHash: "11ba384d386a"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -66,6 +66,8 @@ Aumenta la fibra poco a poco y bebe lo suficiente, para evitar la hinchazón de 
 - **Distingue las plantas** de la fórmula: los beneficios que se les atribuyen no son declaraciones autorizadas.
 - **Desconfía de palabras** como «detox», «drenante», «depurativo» o de las promesas de resultados en pocos días.
 - **Para las bacterias**, busca el nombre completo de cada cepa y su cantidad.
+
+El mismo razonamiento vale para los complementos «energía»: consulta [lo que la normativa permite sobre vitaminas y cansancio](/es/articulos/vitaminas-y-cansancio-que-dice-la-normativa/).
 
 ## Cuándo consultar
 

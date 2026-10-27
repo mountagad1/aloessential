@@ -16,7 +16,7 @@ sources:
     url: "https://www.aspca.org/Pet-care/poison-control/Plants/barbados-aloe"
 locale: de
 translationOf: cultiver-aloe-vera-en-pot
-sourceHash: "68d1d6053660"
+sourceHash: "ab575e7e4902"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -42,6 +42,8 @@ Ihre Wurzeln vertragen keine Staunässe. Sie braucht:
 Die Regel ist einfach: Gießen Sie nur, wenn die Erde durch und durch trocken ist, dann aber durchdringend, und leeren Sie den Untersetzer. In der Praxis bedeutet das im Frühling und Sommer oft alle zwei bis drei Wochen, je nach Wärme und Topfgröße. Im Winter gießen Sie sehr wenig.
 
 Weiche, braune oder glasige Blätter an der Basis sind das typische Zeichen für zu viel Wasser: Lassen Sie die Erde vollständig abtrocknen und gießen Sie seltener.
+
+Einen auf Topf, Raum und Jahreszeit abgestimmten Rhythmus liefert [unser Gießplaner für Aloe vera](/de/aloe-vera-giessen/).
 
 ## Kälte, ihr größter Feind
 

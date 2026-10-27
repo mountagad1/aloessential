@@ -9,7 +9,7 @@ coverTitle: "A hard morning: understanding tiredness on waking"
 coverCaption: "Waking up tired can be linked to how well or how long you slept, or to the previous evening's habits."
 locale: en
 translationOf: sommeil-pilier-bien-etre
-sourceHash: "fed2a31d72e8"
+sourceHash: "103a58bd21a8"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -29,6 +29,8 @@ Going to bed and getting up at similar times, weekends included, is one of the m
 ## Light and screens
 
 Bright light in the evening delays falling asleep. Dim the lights an hour before bed and keep screens away from your bed. A paper book or a few minutes of slow breathing make good wind-down rituals.
+
+Conversely, daylight soon after waking helps set your body clock, the first step in [our morning routine for more energy](/en/articles/morning-routine-for-more-energy/).
 
 ## Watch out for stimulants
 

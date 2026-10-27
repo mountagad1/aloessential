@@ -9,7 +9,7 @@ coverTitle: "Rotina da manhã: um início de dia luminoso"
 coverCaption: "Uma rotina matinal simples pode juntar hidratação, luz natural e hábitos adaptados ao teu ritmo."
 locale: pt-pt
 translationOf: routine-matin-energie
-sourceHash: "31ab0570e763"
+sourceHash: "a9ffd8473a38"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -28,6 +28,8 @@ Depois de uma noite sem beber, um copo de água ao acordar é um gesto simples p
 
 Cinco minutos de alongamentos, alguns exercícios de mobilidade ou uma pequena caminhada despertam o corpo com suavidade. O importante é a regularidade, não a intensidade.
 
+Reunimos algumas ideias de movimentos suaves no [nosso artigo sobre articulações e mobilidade](/pt-pt/artigos/articulacoes-e-mobilidade-no-dia-a-dia/).
+
 ## 4. Um pequeno-almoço que sacia
 
 Junta uma fonte de fibra (pão integral, flocos de aveia), uma fonte de proteína (iogurte, ovo, queijo fresco) e uma peça de fruta. Esta combinação ajuda a ficar saciado até ao almoço. Tens ideias em [«Pequeno-almoço equilibrado: as nossas ideias simples»](/pt-pt/artigos/pequeno-almoco-equilibrado-ideias-simples/).
@@ -39,3 +41,5 @@ Ver as notificações logo ao acordar cria muitas vezes um estado de tensão. Ex
 ## Começar pelo pouco
 
 Escolhe só um destes gestos e pratica-o durante uma semana. Um hábito bem enraizado vale mais do que cinco resoluções abandonadas.
+
+Se o cansaço persistir apesar destes hábitos, fala com o teu médico e, antes de comprares o que quer que seja, lê [o que a lei permite dizer sobre vitaminas e cansaço](/pt-pt/artigos/vitaminas-e-cansaco-o-que-diz-a-lei/).

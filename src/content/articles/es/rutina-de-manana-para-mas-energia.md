@@ -9,7 +9,7 @@ coverTitle: "Rutina de mañana: un comienzo luminoso"
 coverCaption: "Una rutina matinal sencilla puede combinar hidratación, luz natural y hábitos adaptados a tu ritmo de vida."
 locale: es
 translationOf: routine-matin-energie
-sourceHash: "31ab0570e763"
+sourceHash: "a9ffd8473a38"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -28,6 +28,8 @@ Después de una noche sin beber, un vaso de agua al despertar es un gesto sencil
 
 Cinco minutos de estiramientos, unos ejercicios de movilidad o un paseo corto despiertan el cuerpo con suavidad. Lo importante es la regularidad, no la intensidad.
 
+Reunimos algunas ideas de movimientos suaves en [nuestro artículo sobre articulaciones y movilidad](/es/articulos/articulaciones-y-movilidad-dia-a-dia/).
+
 ## 4. Un desayuno que sacie
 
 Combina una fuente de fibra (pan integral, copos de avena), una fuente de proteínas (yogur, huevo, queso fresco) y una fruta. Esta combinación ayuda a no tener hambre hasta la comida. Tienes ideas en [«Desayuno equilibrado: nuestras ideas sencillas»](/es/articulos/desayuno-equilibrado-ideas-sencillas/).
@@ -39,3 +41,5 @@ Mirar las notificaciones nada más despertarte suele generar tensión. Prueba a 
 ## Empezar poco a poco
 
 Elige uno solo de estos gestos y practícalo durante una semana. Un hábito bien asentado vale más que cinco propósitos abandonados.
+
+Si el cansancio persiste pese a estos hábitos, coméntalo con tu médico y, antes de comprar nada, lee [lo que la normativa permite decir sobre vitaminas y cansancio](/es/articulos/vitaminas-y-cansancio-que-dice-la-normativa/).

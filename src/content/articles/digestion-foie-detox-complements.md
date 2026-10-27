@@ -60,6 +60,8 @@ Augmentez les fibres progressivement et buvez suffisamment, pour éviter les bal
 - **Méfiez-vous des mots** « détox », « drainant », « purifiant » ou des promesses de résultats en quelques jours.
 - **Pour les bactéries**, cherchez le nom complet de chaque souche et sa quantité.
 
+Le même raisonnement s'applique aux compléments « énergie » : voyez [ce que la réglementation autorise pour les vitamines et la fatigue](/articles/vitamines-fatigue-reglementation/).
+
 ## Quand consulter
 
 Un inconfort digestif passager est banal. Consultez un médecin si vous observez :

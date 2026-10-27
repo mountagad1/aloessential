@@ -11,7 +11,7 @@ coverTitle: "Pelle dopo il sole: i gesti giusti"
 coverCaption: "Dopo una giornata al sole, una routine delicata per idratare la pelle e mantenerne il comfort."
 locale: it
 translationOf: routine-peau-apres-soleil
-sourceHash: "284a4c8eb2a1"
+sourceHash: "61e86a728131"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -51,6 +51,8 @@ Sole, vento e acqua di mare o di piscina seccano la pelle. È il momento di darl
 
 Tieni il gel in frigorifero: l'effetto fresco sarà più marcato. Per scegliere il gel giusto, trovi i nostri criteri in [«Come scegliere un gel di aloe vera»](/it/articoli/come-scegliere-gel-aloe-vera/).
 
+Cosa apporta davvero l'aloe vera alla pelle, e quali sono i suoi limiti, è spiegato nel [nostro articolo sull'aloe vera per la pelle](/it/articoli/aloe-vera-pelle-benefici/).
+
 ## 4. Evitare ciò che irrita
 
 Sulla pelle accaldata è meglio mettere da parte per qualche giorno:
@@ -61,9 +63,11 @@ Sulla pelle accaldata è meglio mettere da parte per qualche giorno:
 
 ## 5. Bere e proteggersi il giorno dopo
 
-Ricordati di bere regolarmente, soprattutto acqua: sole e caldo aumentano le perdite di liquidi. Anche frutta e verdura ricche d'acqua, come anguria, cetriolo o pomodori, contribuiscono all'idratazione.
+Ricordati di bere regolarmente, soprattutto acqua: sole e caldo aumentano le perdite di liquidi. Anche [frutta e verdura ricche d'acqua](/it/articoli/idratazione-alimenti-ricchi-di-acqua/), come anguria, cetriolo o pomodori, contribuiscono all'idratazione.
 
 Il giorno dopo la pelle resta più fragile. Coprila (vestiti, cappello), resta all'ombra nelle ore più calde e riapplica una protezione solare adeguata ogni due ore e dopo ogni bagno.
+
+Questa protezione quotidiana è anche il primo gesto anti-age, prima di qualsiasi attivo, come spieghiamo nel [nostro articolo sugli attivi anti-age](/it/articoli/crema-anti-age-quali-attivi/).
 
 ## La routine in breve
 

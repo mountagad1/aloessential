@@ -9,7 +9,7 @@ coverTitle: "Trudne przebudzenie: skąd poranne zmęczenie"
 coverCaption: "Trudne przebudzenie może wynikać z jakości lub długości snu albo z wieczornych nawyków."
 locale: pl
 translationOf: sommeil-pilier-bien-etre
-sourceHash: "fed2a31d72e8"
+sourceHash: "103a58bd21a8"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -29,6 +29,8 @@ Kładzenie się spać i wstawanie o podobnych porach, także w weekend, to jedna
 ## Światło i ekrany
 
 Jasne światło wieczorem opóźnia zasypianie. Przyciemnij światło godzinę przed snem i trzymaj ekrany z dala od łóżka. Papierowa książka lub kilka minut spokojnego oddychania to dobre rytuały wyciszenia.
+
+Z kolei światło dzienne tuż po przebudzeniu pomaga ustawić zegar biologiczny: to pierwszy punkt [naszej porannej rutyny dla większej energii](/pl/artykuly/poranna-rutyna-wiecej-energii/).
 
 ## Uwaga na używki
 

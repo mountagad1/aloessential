@@ -15,7 +15,7 @@ sources:
     url: "https://www.nccih.nih.gov/health/aloe-vera"
 locale: pl
 translationOf: aloe-vera-bienfaits-peau
-sourceHash: "c26974842af3"
+sourceHash: "ef0d663a0f10"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -47,6 +47,8 @@ Po goleniu lub depilacji cienka warstwa żelu może złagodzić przejściowe zac
 - **Po otwarciu przechowuj żel w chłodnym miejscu** i przestrzegaj podanego okresu używania.
 
 Jak wybrać dobry produkt, wyjaśniamy w artykule [„Jak wybrać żel aloesowy”](/pl/artykuly/jak-wybrac-zel-aloesowy/).
+
+Te same zasady delikatności dotyczą skóry głowy: zajrzyj do [naszej naturalnej pielęgnacji włosów](/pl/artykuly/naturalna-pielegnacja-wlosow/).
 
 ## W skrócie
 

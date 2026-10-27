@@ -14,7 +14,7 @@ sources:
     url: "https://www.nccih.nih.gov/health/aloe-vera"
 locale: en
 translationOf: aloe-vera-bienfaits-peau
-sourceHash: "c26974842af3"
+sourceHash: "ef0d663a0f10"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -46,6 +46,8 @@ After shaving or waxing, a thin layer of gel can calm temporary redness. Choose 
 - **Keep the gel somewhere cool** once opened, and use it within the period shown.
 
 To pick the right product, see our checklist in [How to choose an aloe vera gel](/en/articles/how-to-choose-aloe-vera-gel/).
+
+The same gentle principles apply to your scalp: see [our natural hair care routine](/en/articles/natural-hair-care/).
 
 ## In short
 

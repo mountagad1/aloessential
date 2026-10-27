@@ -14,7 +14,7 @@ sources:
     url: "https://www.nccih.nih.gov/health/aloe-vera"
 locale: es
 translationOf: aloe-vera-bienfaits-peau
-sourceHash: "c26974842af3"
+sourceHash: "ef0d663a0f10"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -46,6 +46,8 @@ Después del afeitado o la depilación, una capa fina de gel puede calmar las ro
 - **Guarda el gel en un lugar fresco** una vez abierto y respeta el plazo de uso indicado.
 
 Para elegir el producto adecuado, consulta nuestros criterios en [«Cómo elegir un gel de aloe vera»](/es/articulos/como-elegir-gel-de-aloe-vera/).
+
+Los mismos principios de suavidad valen para el cuero cabelludo: consulta [nuestra rutina para cuidar el cabello de forma natural](/es/articulos/cuidado-natural-del-cabello/).
 
 ## En resumen
 

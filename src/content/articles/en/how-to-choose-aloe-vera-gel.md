@@ -11,7 +11,7 @@ coverTitle: "How to choose a good aloe vera gel"
 coverCaption: "To choose an aloe vera gel, look at its ingredients, the INCI list, added ingredients and how to store it."
 locale: en
 translationOf: choisir-gel-aloe-vera
-sourceHash: "ea2a88778edf"
+sourceHash: "160b848011bf"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -41,3 +41,5 @@ Organic certifications and the International Aloe Science Council seal guarantee
 - Respect the period after opening, shown by the small open-jar symbol on the pack (for example "12M").
 
 A good gel is not necessarily the most expensive: it is the one with a short, clear ingredient list that matches how you plan to use it.
+
+To see what you can reasonably expect from a gel on your skin, read [what we really know about aloe vera for skin](/en/articles/aloe-vera-for-skin/).

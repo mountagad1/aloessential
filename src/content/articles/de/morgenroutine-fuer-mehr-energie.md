@@ -9,7 +9,7 @@ coverTitle: "Morgenroutine: ein heller Start in den Tag"
 coverCaption: "Eine einfache Morgenroutine kann Trinken, Tageslicht und Gewohnheiten verbinden, die zu Ihrem Rhythmus passen."
 locale: de
 translationOf: routine-matin-energie
-sourceHash: "31ab0570e763"
+sourceHash: "a9ffd8473a38"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -28,6 +28,8 @@ Nach einer Nacht ohne Trinken ist ein Glas Wasser nach dem Aufwachen ein einfach
 
 Fünf Minuten Dehnen, ein paar Mobilisationsübungen oder ein kurzer Spaziergang wecken den Körper sanft auf. Wichtig ist die Regelmäßigkeit, nicht die Intensität.
 
+Einige Ideen für sanfte Bewegung finden Sie in [unserem Artikel über Gelenke und Beweglichkeit](/de/artikel/gelenke-beweglichkeit-im-alltag/).
+
 ## 4. Ein Frühstück, das satt hält
 
 Kombinieren Sie eine Ballaststoffquelle (Vollkornbrot, Haferflocken), eine Eiweißquelle (Joghurt, Ei, Quark) und ein Stück Obst. Diese Kombination hilft, bis zum Mittagessen satt zu bleiben. Ideen dazu in [„Ausgewogenes Frühstück: unsere einfachen Ideen“](/de/artikel/ausgewogenes-fruehstueck-ideen/).
@@ -39,3 +41,5 @@ Gleich nach dem Aufwachen die Benachrichtigungen zu lesen, erzeugt oft Anspannun
 ## Klein anfangen
 
 Wählen Sie nur eine dieser Gewohnheiten und üben Sie sie eine Woche lang. Eine fest verankerte Gewohnheit ist mehr wert als fünf aufgegebene Vorsätze.
+
+Hält die Müdigkeit trotz dieser Gewohnheiten an, sprechen Sie mit Ihrer Ärztin oder Ihrem Arzt. Und lesen Sie vor jedem Kauf, [was die Vorschriften zu Vitaminen und Müdigkeit erlauben](/de/artikel/vitamine-und-muedigkeit-was-gilt/).

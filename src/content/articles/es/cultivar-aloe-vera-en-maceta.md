@@ -16,7 +16,7 @@ sources:
     url: "https://www.aspca.org/Pet-care/poison-control/Plants/barbados-aloe"
 locale: es
 translationOf: cultiver-aloe-vera-en-pot
-sourceHash: "68d1d6053660"
+sourceHash: "ab575e7e4902"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -42,6 +42,8 @@ Sus raíces no soportan la humedad estancada. Necesita:
 La regla es sencilla: se riega solo cuando la tierra está seca en toda su profundidad, y entonces se riega a fondo y se vacía el plato. En la práctica, suele ser un riego cada dos o tres semanas en primavera y verano, según el calor y el tamaño de la maceta. En invierno se riega muy poco.
 
 Las hojas blandas, marrones o translúcidas en la base son la señal típica de exceso de agua: deja que se seque por completo y espacia los riegos.
+
+Para un ritmo adaptado a tu maceta, a tu casa y a la estación, prueba [nuestro planificador de riego del aloe vera](/es/riego-aloe-vera/).
 
 ## El frío, su enemigo
 

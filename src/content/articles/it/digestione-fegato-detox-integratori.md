@@ -29,7 +29,7 @@ sources:
     url: "https://www.salute.gov.it/portale/documentazione/p6_2_2_1.jsp?id=1016"
 locale: it
 translationOf: digestion-foie-detox-complements
-sourceHash: "85886cfc227c"
+sourceHash: "11ba384d386a"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -87,6 +87,8 @@ Aumenta le fibre gradualmente e bevi a sufficienza, per evitare il gonfiore dei 
 - **Distingui le piante** della formula: le loro diciture sono ammesse in Italia come effetti fisiologici, non sono indicazioni autorizzate a livello europeo.
 - **Diffida delle parole** «detox», «drenante», «purificante» o delle promesse di risultati in pochi giorni.
 - **Per i probiotici**, cerca il nome completo di ogni ceppo e la sua quantità.
+
+Lo stesso ragionamento vale per gli integratori «energia»: si veda [cosa consente la normativa su vitamine e stanchezza](/it/articoli/vitamine-stanchezza-cosa-dice-la-normativa/).
 
 ## Quando rivolgersi al medico
 

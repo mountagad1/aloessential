@@ -11,7 +11,7 @@ coverTitle: "Ein gutes Aloe-vera-Gel erkennen"
 coverCaption: "Achten Sie bei Aloe-vera-Gel auf Zusammensetzung, INCI-Liste, zugesetzte Inhaltsstoffe und Aufbewahrung."
 locale: de
 translationOf: choisir-gel-aloe-vera
-sourceHash: "ea2a88778edf"
+sourceHash: "160b848011bf"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -41,3 +41,5 @@ Bio-Zertifizierungen oder das Siegel des International Aloe Science Council gara
 - Beachten Sie die Haltbarkeit nach dem Öffnen, angegeben durch das Symbol des geöffneten Tiegels auf der Verpackung (zum Beispiel „12M“).
 
 Ein gutes Gel ist nicht unbedingt das teuerste: Es ist das mit einer kurzen, klaren Zusammensetzung, die zu Ihrer Anwendung passt.
+
+Was man von einem Gel auf der Haut realistisch erwarten kann, lesen Sie in [was wir über Aloe vera für die Haut wirklich wissen](/de/artikel/aloe-vera-fuer-die-haut/).

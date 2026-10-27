@@ -9,7 +9,7 @@ coverTitle: "Risveglio difficile: capire la stanchezza al mattino"
 coverCaption: "Un risveglio difficile può dipendere dalla qualità del sonno, dalla sua durata o dalle abitudini della sera prima."
 locale: it
 translationOf: sommeil-pilier-bien-etre
-sourceHash: "fed2a31d72e8"
+sourceHash: "103a58bd21a8"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -29,6 +29,8 @@ Andare a letto e alzarsi a orari simili, anche nel fine settimana, è uno dei co
 ## Luce e schermi
 
 La luce intensa la sera ritarda l'addormentamento. Abbassa le luci un'ora prima di andare a letto e tieni gli schermi lontani dal letto. Un libro di carta o qualche minuto di respirazione lenta sono buoni rituali di passaggio.
+
+Al contrario, la luce del giorno al risveglio aiuta a regolare l'orologio interno: è il primo punto della [nostra routine del mattino per avere più energia](/it/articoli/routine-del-mattino-energia/).
 
 ## Attenzione agli eccitanti
 

@@ -11,7 +11,7 @@ coverTitle: "Jak wybrać dobry żel aloesowy"
 coverCaption: "Wybierając żel aloesowy, sprawdź skład, listę INCI, dodatki i warunki przechowywania."
 locale: pl
 translationOf: choisir-gel-aloe-vera
-sourceHash: "ea2a88778edf"
+sourceHash: "160b848011bf"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -41,3 +41,5 @@ Certyfikaty ekologiczne lub znak International Aloe Science Council gwarantują 
 - Przestrzegaj okresu przydatności po otwarciu, oznaczonego symbolem otwartego słoiczka na opakowaniu (na przykład „12M”).
 
 Dobry żel nie musi być najdroższy: to ten, który ma krótki, jasny skład dopasowany do tego, jak zamierzasz go używać.
+
+Czego można rozsądnie oczekiwać od żelu na skórze, opisujemy w artykule [co naprawdę wiemy o aloesie na skórę](/pl/artykuly/aloes-na-skore/).

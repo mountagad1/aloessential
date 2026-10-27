@@ -73,3 +73,5 @@ Une boisson à l'aloe peut trouver sa place dans une alimentation variée, comme
 ## En résumé
 
 Une bonne boisson d'aloe se reconnaît à une étiquette claire : la forme d'aloe utilisée, sa part dans la formule, des ingrédients ajoutés justifiés et des allégations qui portent sur des nutriments identifiés. Le reste relève du marketing.
+
+Pour replacer la boisson dans l'ensemble des usages de la plante, consultez [notre guide complet de l'aloe vera](/aloe-vera/).

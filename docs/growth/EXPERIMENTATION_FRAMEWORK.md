@@ -40,6 +40,18 @@
   - 0 broken links;
   - translations not stale;
   - tests pass.
+- **Status:** changes prepared on 2026-10-26, not yet deployed. The 28-day window starts on the deployment date, which is recorded here once the owner publishes.
+- **Test group (French source → link added from):**
+  - aloe-vera-a-boire-comment-choisir ← jus-aloe-vera-science (French only; the translations already had it)
+  - aloe-vera-bienfaits-peau ← choisir-gel-aloe-vera, routine-peau-apres-soleil
+  - soin-anti-age-quels-actifs ← routine-peau-apres-soleil
+  - routine-matin-energie ← sommeil-pilier-bien-etre
+  - articulations-mobilite-quotidien ← routine-matin-energie
+  - vitamines-fatigue-reglementation ← routine-matin-energie, digestion-foie-detox-complements
+  - soins-cheveux-naturel ← aloe-vera-bienfaits-peau
+  - `/aloe-vera/` (French only) ← cultiver-aloe-vera-en-pot, aloe-vera-a-boire-comment-choisir
+  - Translations of hydratation-aliments-riches-en-eau ← their after-sun article (the French already had this link)
+- **Not covered:** 3 translated articles (pt-pt digestion and after-sun, pl after-sun) whose French inbound links come from product pages that do not exist in those languages.
 
 ### EXP-002: PRO 12 + title (initiative SEO-04)
 - **Start condition:** 200 impressions in 28 days on `/produits/capsules-pro-12-plus/`. On 2026-10-23 the page had 12.

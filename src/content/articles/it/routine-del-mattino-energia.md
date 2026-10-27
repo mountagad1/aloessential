@@ -9,7 +9,7 @@ coverTitle: "Routine del mattino: una mattina luminosa"
 coverCaption: "Una routine mattutina semplice può unire idratazione, luce naturale e abitudini adatte al proprio ritmo."
 locale: it
 translationOf: routine-matin-energie
-sourceHash: "31ab0570e763"
+sourceHash: "a9ffd8473a38"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -28,6 +28,8 @@ Dopo una notte senza bere, un bicchiere d'acqua al risveglio è un gesto semplic
 
 Cinque minuti di stretching, qualche esercizio di mobilità o una breve camminata risvegliano il corpo con dolcezza. Conta la regolarità, non l'intensità.
 
+Alcune idee di movimenti dolci sono raccolte nel [nostro articolo su articolazioni e mobilità](/it/articoli/articolazioni-mobilita-gesti-quotidiani/).
+
 ## 4. Una colazione che sazia
 
 Abbina una fonte di fibre (pane integrale, fiocchi d'avena), una fonte di proteine (yogurt, uovo, ricotta) e un frutto. Questa combinazione aiuta a restare sazi fino a pranzo. Qualche idea in [«Colazione equilibrata: le nostre idee semplici»](/it/articoli/colazione-equilibrata-idee-semplici/).
@@ -39,3 +41,5 @@ Controllare le notifiche appena svegli crea spesso uno stato di tensione. Prova 
 ## Cominciare in piccolo
 
 Scegli uno solo di questi gesti e praticalo per una settimana. Un'abitudine ben radicata vale più di cinque buoni propositi abbandonati.
+
+Se la stanchezza persiste nonostante queste abitudini, è bene parlarne con il medico e, prima di qualsiasi acquisto, leggere [cosa consente di dire la normativa su vitamine e stanchezza](/it/articoli/vitamine-stanchezza-cosa-dice-la-normativa/).

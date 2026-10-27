@@ -9,7 +9,7 @@ coverTitle: "Morning routine: a bright start to the day"
 coverCaption: "A simple morning routine can combine hydration, daylight and habits that suit your pace of life."
 locale: en
 translationOf: routine-matin-energie
-sourceHash: "31ab0570e763"
+sourceHash: "a9ffd8473a38"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -28,6 +28,8 @@ After a night without drinking, a glass of water when you wake up is a simple wa
 
 Five minutes of stretching, a few mobility exercises or a short walk wake your body up gently. What matters is regularity, not intensity.
 
+A few ideas for gentle movement are gathered in [our article on joint health and mobility](/en/articles/joint-health-and-mobility-daily-habits/).
+
 ## 4. A breakfast that keeps you going
 
 Combine a source of fibre (wholemeal bread, oats), a source of protein (yoghurt, egg, cottage cheese) and a piece of fruit. This combination helps you stay full until lunch. Some ideas in [Healthy breakfast ideas](/en/articles/healthy-breakfast-ideas/).
@@ -39,3 +41,5 @@ Checking notifications as soon as you wake up often puts you on edge. Try giving
 ## Start small
 
 Pick just one of these habits and practise it for a week. One well-rooted habit is worth more than five abandoned resolutions.
+
+If tiredness persists despite these habits, talk to your GP, and before buying anything read [what the rules allow labels to say about vitamins and tiredness](/en/articles/vitamins-and-tiredness-what-the-rules-say/).

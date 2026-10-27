@@ -24,6 +24,8 @@ Après une nuit sans boire, un verre d'eau au réveil est un geste simple pour b
 
 Cinq minutes d'étirements, quelques mouvements de mobilité ou une courte marche réveillent le corps en douceur. L'important est la régularité, pas l'intensité.
 
+Quelques idées de mouvements doux sont réunies dans [notre article sur les articulations et la mobilité](/articles/articulations-mobilite-quotidien/).
+
 ## 4. Un petit-déjeuner qui tient au corps
 
 Associez une source de fibres (pain complet, flocons d'avoine), une source de protéines (yaourt, œuf, fromage blanc) et un fruit. Cette combinaison aide à rester rassasié jusqu'au déjeuner.
@@ -35,3 +37,5 @@ Consulter ses notifications dès le réveil installe souvent un état de tension
 ## Commencer petit
 
 Choisissez un seul de ces gestes et pratiquez-le pendant une semaine. Une habitude bien ancrée vaut mieux que cinq résolutions abandonnées.
+
+Si la fatigue persiste malgré ces habitudes, parlez-en à votre médecin, et lisez avant tout achat [ce que la réglementation autorise à dire sur les vitamines et la fatigue](/articles/vitamines-fatigue-reglementation/).

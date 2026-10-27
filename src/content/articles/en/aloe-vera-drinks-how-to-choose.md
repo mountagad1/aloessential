@@ -28,7 +28,7 @@ sources:
     url: "https://www.asa.org.uk/advice-online/food-health-claims.html"
 locale: en
 translationOf: aloe-vera-a-boire-comment-choisir
-sourceHash: "99a4832eaa0d"
+sourceHash: "9165325ff96e"
 status: published
 translationReviewer: "Philippe Cros"
 ---

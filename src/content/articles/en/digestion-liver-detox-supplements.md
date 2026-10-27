@@ -25,7 +25,7 @@ sources:
     url: "https://www.nhs.uk/live-well/eat-well/digestive-health/how-to-get-more-fibre-into-your-diet/"
 locale: en
 translationOf: digestion-foie-detox-complements
-sourceHash: "85886cfc227c"
+sourceHash: "11ba384d386a"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -73,6 +73,8 @@ Increase fibre gradually and drink enough, to avoid bloating in the first few da
 - **Pick out the plants** in the formula: their advertised benefits are not authorised claims.
 - **Be wary of words** such as "detox", "draining" or "purifying", and of promised results in a few days.
 - **For bacteria**, look for the full name of each strain and its amount.
+
+The same reasoning applies to "energy" supplements: see [what the rules allow for vitamins and tiredness](/en/articles/vitamins-and-tiredness-what-the-rules-say/).
 
 ## When to see your GP
 

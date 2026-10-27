@@ -9,7 +9,7 @@ coverTitle: "Schweres Aufwachen: Müdigkeit am Morgen verstehen"
 coverCaption: "Schweres Aufwachen kann mit der Qualität oder Dauer des Schlafs oder mit den Gewohnheiten am Vorabend zusammenhängen."
 locale: de
 translationOf: sommeil-pilier-bien-etre
-sourceHash: "fed2a31d72e8"
+sourceHash: "103a58bd21a8"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -29,6 +29,8 @@ Zu ähnlichen Zeiten ins Bett gehen und aufstehen, auch am Wochenende, ist einer
 ## Licht und Bildschirme
 
 Helles Licht am Abend verzögert das Einschlafen. Dimmen Sie das Licht eine Stunde vor dem Schlafengehen und halten Sie Bildschirme vom Bett fern. Ein Buch aus Papier oder ein paar Minuten langsames Atmen sind gute Übergangsrituale.
+
+Umgekehrt hilft Tageslicht nach dem Aufwachen, die innere Uhr zu stellen: Das ist der erste Punkt [unserer Morgenroutine für mehr Energie](/de/artikel/morgenroutine-fuer-mehr-energie/).
 
 ## Vorsicht mit anregenden Stoffen
 

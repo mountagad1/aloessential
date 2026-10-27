@@ -18,7 +18,7 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32012R0432"
 locale: de
 translationOf: digestion-foie-detox-complements
-sourceHash: "85886cfc227c"
+sourceHash: "11ba384d386a"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -66,6 +66,8 @@ Steigern Sie die Ballaststoffe schrittweise und trinken Sie ausreichend, um Blä
 - **Unterscheiden Sie die Pflanzen** in der Rezeptur: Ihre beworbenen Vorzüge sind keine zugelassenen Angaben.
 - **Seien Sie bei Wörtern** wie „Detox“, „entschlackend“, „reinigend“ oder bei Ergebnisversprechen in wenigen Tagen vorsichtig.
 - **Bei Bakterien** suchen Sie den vollständigen Namen jedes Stamms und seine Menge.
+
+Dieselbe Logik gilt für „Energie“-Präparate: Lesen Sie, [was die Vorschriften zu Vitaminen und Müdigkeit erlauben](/de/artikel/vitamine-und-muedigkeit-was-gilt/).
 
 ## Wann Sie ärztlichen Rat brauchen
 

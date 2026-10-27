@@ -41,6 +41,8 @@ Après le rasage ou l'épilation, une fine couche de gel peut calmer les rougeur
 - **Lisez la liste des ingrédients** : l'aloe vera doit idéalement apparaître en tête.
 - **Conservez le gel au frais** une fois ouvert, et respectez la durée d'utilisation indiquée.
 
+Les mêmes principes de douceur valent pour le cuir chevelu : voyez [notre routine pour prendre soin de ses cheveux au naturel](/articles/soins-cheveux-naturel/).
+
 ## En résumé
 
 L'aloe vera est un allié simple pour hydrater légèrement et apaiser. Ce n'est pas un remède miracle, mais un geste doux, à intégrer sans excès dans une routine bien pensée.

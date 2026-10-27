@@ -17,7 +17,7 @@ sources:
     url: "https://www.aspca.org/Pet-care/poison-control/Plants/barbados-aloe"
 locale: it
 translationOf: cultiver-aloe-vera-en-pot
-sourceHash: "68d1d6053660"
+sourceHash: "ab575e7e4902"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -43,6 +43,8 @@ Le sue radici temono l'umidità stagnante. Le servono:
 La regola è semplice: si annaffia solo quando la terra è asciutta in tutta la sua profondità, poi si bagna abbondantemente e si svuota il sottovaso. In pratica, spesso si tratta di un'annaffiatura ogni due o tre settimane in primavera e in estate, a seconda del caldo e delle dimensioni del vaso. In inverno si annaffia pochissimo.
 
 Foglie molli, marroni o traslucide alla base sono il segnale tipico di un eccesso d'acqua: lascia asciugare completamente e distanzia le annaffiature.
+
+Per un ritmo adatto al vaso, all'ambiente e alla stagione, prova il [nostro calendario delle annaffiature dell'aloe vera](/it/annaffiare-aloe-vera/).
 
 ## Il freddo, il suo nemico
 

@@ -18,7 +18,7 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32012R0432"
 locale: pl
 translationOf: digestion-foie-detox-complements
-sourceHash: "85886cfc227c"
+sourceHash: "11ba384d386a"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -66,6 +66,8 @@ Zwiększaj ilość błonnika stopniowo i pij wystarczająco dużo, aby uniknąć
 - **Odróżnij rośliny** w składzie: przypisywane im korzyści nie są dopuszczonymi oświadczeniami.
 - **Uważaj na słowa** „detoks”, „drenujący”, „oczyszczający” albo obietnice efektów w kilka dni.
 - **W przypadku bakterii** szukaj pełnej nazwy każdego szczepu i jego ilości.
+
+To samo dotyczy suplementów „na energię”: sprawdź, [co przepisy mówią o witaminach i zmęczeniu](/pl/artykuly/witaminy-i-zmeczenie-co-mowia-przepisy/).
 
 ## Kiedy iść do lekarza
 

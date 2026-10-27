@@ -23,7 +23,7 @@ sources:
     url: "https://www.nccih.nih.gov/health/aloe-vera"
 locale: it
 translationOf: jus-aloe-vera-science
-sourceHash: "63507b38c25e"
+sourceHash: "a6c31dc9c7d2"
 status: published
 translationReviewer: "Philippe Cros"
 ---

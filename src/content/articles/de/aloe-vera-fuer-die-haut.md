@@ -15,7 +15,7 @@ sources:
     url: "https://www.nccih.nih.gov/health/aloe-vera"
 locale: de
 translationOf: aloe-vera-bienfaits-peau
-sourceHash: "c26974842af3"
+sourceHash: "ef0d663a0f10"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -47,6 +47,8 @@ Nach dem Rasieren oder Epilieren kann eine dünne Schicht Gel vorübergehende R�
 - **Bewahren Sie das Gel nach dem Öffnen kühl auf** und beachten Sie die angegebene Verwendungsdauer.
 
 Worauf Sie beim Kauf achten sollten, lesen Sie in [„Aloe-vera-Gel kaufen: worauf achten?“](/de/artikel/aloe-vera-gel-kaufen-worauf-achten/).
+
+Dieselben sanften Grundsätze gelten für die Kopfhaut: Lesen Sie [unsere natürliche Haarpflege-Routine](/de/artikel/haarpflege-natuerlich/).
 
 ## Kurz gesagt
 

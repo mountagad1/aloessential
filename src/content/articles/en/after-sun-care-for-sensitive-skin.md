@@ -15,7 +15,7 @@ sources:
     url: "https://www.nhs.uk/conditions/sunburn/"
 locale: en
 translationOf: routine-peau-apres-soleil
-sourceHash: "284a4c8eb2a1"
+sourceHash: "61e86a728131"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -55,6 +55,8 @@ Sun, wind and sea or pool water dry the skin out. Now is the time to give it wat
 
 Keep your gel in the fridge: the cooling effect is stronger. To choose your gel, see our checklist in [How to choose an aloe vera gel](/en/articles/how-to-choose-aloe-vera-gel/).
 
+What aloe vera really does for skin, and where it stops, is covered in [our article on aloe vera for skin](/en/articles/aloe-vera-for-skin/).
+
 ## 4. Avoid anything that irritates
 
 On sun-warmed skin, it is best to leave out for a few days:
@@ -65,9 +67,11 @@ On sun-warmed skin, it is best to leave out for a few days:
 
 ## 5. Drink, and protect yourself the next day
 
-Drink regularly, mainly water: sun and heat increase fluid loss. Water-rich foods such as watermelon, cucumber or tomatoes help too.
+Drink regularly, mainly water: sun and heat increase fluid loss. [Water-rich foods](/en/articles/hydration-water-rich-foods/) such as watermelon, cucumber or tomatoes help too.
 
 The next day your skin is still more fragile. Cover up (clothes, hat), stay in the shade during the hottest hours, and reapply a suitable sunscreen every two hours and after swimming.
+
+This daily protection is also the first anti-ageing step, before any active ingredient, as we explain in [our article on anti-ageing actives](/en/articles/anti-ageing-skincare-which-actives/).
 
 ## The routine at a glance
 

@@ -13,6 +13,7 @@ import { getPublishedProducts, productAlternates, productUrl, productsListingAlt
 import { absoluteUrl } from "../lib/seo";
 import { listingPages } from "../lib/pagination";
 import { DEFAULT_LOCALE, categoryPath, homePath, productsPath } from "../i18n/locales";
+import { WATERING_UI, wateringAlternates } from "../i18n/watering-ui";
 
 /*
  * XML sitemap of every indexable page (canonical URLs, trailing slash), in
@@ -46,6 +47,7 @@ export const GET: APIRoute = async ({ site }) => {
     ...listingPages("/articles/", articles.length).map(({ path }) => ({ path })),
     { path: "/produits/", alternates: productsAlts },
     { path: "/aloe-vera/" },
+    { path: WATERING_UI[DEFAULT_LOCALE].path, alternates: wateringAlternates(locales) },
     { path: "/transparence/" },
     { path: "/equipe/" },
     { path: "/contact/" },
@@ -78,6 +80,7 @@ export const GET: APIRoute = async ({ site }) => {
     const localProducts = await getPublishedProducts(locale);
     if (localProducts.length) entries.push({ path: productsPath(locale), alternates: productsAlts });
     entries.push(...(await Promise.all(localProducts.map(productEntry))));
+    entries.push({ path: WATERING_UI[locale].path, alternates: wateringAlternates(locales) });
   }
 
   const links = (alternates: Alternate[] | undefined) => {

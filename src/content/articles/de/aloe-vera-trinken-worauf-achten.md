@@ -20,7 +20,7 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32006R1924"
 locale: de
 translationOf: aloe-vera-a-boire-comment-choisir
-sourceHash: "99a4832eaa0d"
+sourceHash: "9165325ff96e"
 status: published
 translationReviewer: "Philippe Cros"
 ---

@@ -18,7 +18,7 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32012R0432"
 locale: pt-pt
 translationOf: digestion-foie-detox-complements
-sourceHash: "85886cfc227c"
+sourceHash: "11ba384d386a"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -66,6 +66,8 @@ Aumenta a fibra aos poucos e bebe o suficiente, para evitar o inchaço dos prime
 - **Distingue as plantas** da fórmula: os benefícios anunciados não são alegações autorizadas.
 - **Desconfia de palavras** como «detox», «drenante», «purificante» ou de promessas de resultados em poucos dias.
 - **No caso das bactérias**, procura o nome completo de cada estirpe e a sua quantidade.
+
+O mesmo raciocínio aplica-se aos suplementos «energia»: vê [o que a lei permite sobre vitaminas e cansaço](/pt-pt/artigos/vitaminas-e-cansaco-o-que-diz-a-lei/).
 
 ## Quando ir ao médico
 

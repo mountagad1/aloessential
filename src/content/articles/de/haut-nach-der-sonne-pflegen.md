@@ -14,7 +14,7 @@ sources:
     url: "https://www.116117.de/de/index.php"
 locale: de
 translationOf: routine-peau-apres-soleil
-sourceHash: "284a4c8eb2a1"
+sourceHash: "61e86a728131"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -54,6 +54,8 @@ Sonne, Wind und Bade- oder Poolwasser trocknen die Haut aus. Jetzt braucht sie W
 
 Bewahren Sie Ihr Gel im Kühlschrank auf: Der Frischeeffekt ist dann stärker. Wie Sie das richtige Gel wählen, lesen Sie in [„Aloe-vera-Gel kaufen: worauf achten?“](/de/artikel/aloe-vera-gel-kaufen-worauf-achten/).
 
+Was Aloe vera der Haut tatsächlich bringt und wo die Grenzen liegen, steht in [unserem Artikel über Aloe vera für die Haut](/de/artikel/aloe-vera-fuer-die-haut/).
+
 ## 4. Vermeiden, was reizt
 
 Auf erhitzter Haut lassen Sie einige Tage lang besser weg:
@@ -64,9 +66,11 @@ Auf erhitzter Haut lassen Sie einige Tage lang besser weg:
 
 ## 5. Trinken und sich am nächsten Tag schützen
 
-Trinken Sie regelmäßig, vor allem Wasser: Sonne und Hitze erhöhen den Flüssigkeitsverlust. Auch wasserreiche Lebensmittel wie Wassermelone, Gurke oder Tomaten tragen dazu bei.
+Trinken Sie regelmäßig, vor allem Wasser: Sonne und Hitze erhöhen den Flüssigkeitsverlust. Auch [wasserreiche Lebensmittel](/de/artikel/wasserreiche-lebensmittel/) wie Wassermelone, Gurke oder Tomaten tragen dazu bei.
 
 Am nächsten Tag ist die Haut noch empfindlicher. Bedecken Sie sie (Kleidung, Hut), bleiben Sie in den heißesten Stunden im Schatten und tragen Sie alle zwei Stunden sowie nach jedem Baden erneut einen geeigneten Sonnenschutz auf.
+
+Dieser tägliche Schutz ist auch der wichtigste Anti-Aging-Schritt, noch vor jedem Wirkstoff, wie wir in [unserem Artikel über Anti-Aging-Wirkstoffe](/de/artikel/anti-aging-pflege-welche-wirkstoffe/) erklären.
 
 ## Die Routine auf einen Blick
 

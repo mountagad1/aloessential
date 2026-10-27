@@ -14,7 +14,7 @@ sources:
     url: "https://www.nccih.nih.gov/health/aloe-vera"
 locale: pt-pt
 translationOf: aloe-vera-bienfaits-peau
-sourceHash: "c26974842af3"
+sourceHash: "ef0d663a0f10"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -46,6 +46,8 @@ Depois de barbear ou depilar, uma camada fina de gel pode acalmar as vermelhidõ
 - **Guarda o gel num local fresco** depois de aberto e respeita o prazo de utilização indicado.
 
 Para escolher o produto certo, consulta os nossos critérios em [«Como escolher um gel de aloe vera»](/pt-pt/artigos/como-escolher-gel-de-aloe-vera/).
+
+Os mesmos princípios de suavidade valem para o couro cabeludo: vê a [nossa rotina para cuidar do cabelo ao natural](/pt-pt/artigos/cuidar-do-cabelo-ao-natural/).
 
 ## Em resumo
 
