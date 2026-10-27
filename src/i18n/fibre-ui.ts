@@ -3,7 +3,8 @@
  * (src/data/fibre.ts) in every locale, with its localized URL. Wording
  * follows each market's own query (docs/growth/ENGINEERING_AS_MARKETING_BACKLOG.md,
  * EAM-01): "aliments riches en fibres", "high fibre foods",
- * "ballaststoffreiche Lebensmittel"… Placeholders: {total}, {efsa}, {national}.
+ * "ballaststoffreiche Lebensmittel"… Placeholders: {n} (number of foods),
+ * {total}, {efsa}, {national}.
  */
 import { DEFAULT_LOCALE, LOCALES, type Locale } from "./locales";
 import type { Category, FibreLabel } from "../data/fibre";
@@ -72,7 +73,7 @@ const fr: FibreUi = {
   eyebrow: "Tableau et outil gratuits",
   h1: "Les aliments riches en fibres",
   intro:
-    "Légumineuses, céréales complètes, fruits, légumes, oléagineux : voici la teneur en fibres de 94 aliments courants, pour 100 g et pour une portion habituelle. Les valeurs viennent de la table officielle Ciqual de l'Anses. Ajoutez vos aliments du jour pour voir où vous en êtes.",
+    "Légumineuses, céréales complètes, fruits, légumes, oléagineux : voici la teneur en fibres de {n} aliments courants, pour 100 g et pour une portion habituelle. Les valeurs viennent de la table officielle Ciqual de l'Anses. Ajoutez vos aliments du jour pour voir où vous en êtes.",
   byline: "Par l'équipe Aloessential",
   categories: {
     legumes: "Légumineuses",
@@ -145,7 +146,7 @@ const fr: FibreUi = {
     title: "D'où viennent ces chiffres",
     text: [
       "Les teneurs en fibres, en eau et en énergie viennent de la table Ciqual 2025 publiée par l'Anses, version du 3 novembre 2025. Une valeur notée « traces » ou « inférieure à » dans Ciqual est comptée comme 0.",
-      "Nous avons choisi 94 aliments courants et traduit leurs noms. Les portions habituelles sont une estimation de notre équipe, pour donner un ordre de grandeur. Les fibres par portion sont calculées à partir de la valeur pour 100 g.",
+      "Nous avons choisi {n} aliments courants et traduit leurs noms. Les portions habituelles sont une estimation de notre équipe, pour donner un ordre de grandeur. Les fibres par portion sont calculées à partir de la valeur pour 100 g.",
       "Les repères journaliers sont ceux de l'EFSA (25 g par jour, jugés adéquats pour un bon transit chez l'adulte) et l'objectif de 30 g retenu par plusieurs autorités nationales, comme le SACN au Royaume-Uni. Ce sont des repères pour des adultes en bonne santé.",
     ],
     licence: "Données : Anses, table Ciqual 2025, sous Licence Ouverte 2.0. Sélection, noms traduits, portions et calculs : Aloessential.",
@@ -165,7 +166,7 @@ const en: FibreUi = {
   eyebrow: "Free table and tool",
   h1: "High-fibre foods",
   intro:
-    "Pulses, wholegrains, fruit, vegetables, nuts and seeds: here is the fibre content of 94 common foods, per 100 g and per usual portion. The values come from Ciqual, the official food composition database of the French food safety agency (Anses). Add the foods you eat in a day to see where you stand.",
+    "Pulses, wholegrains, fruit, vegetables, nuts and seeds: here is the fibre content of {n} common foods, per 100 g and per usual portion. The values come from Ciqual, the official food composition database of the French food safety agency (Anses). Add the foods you eat in a day to see where you stand.",
   byline: "By the Aloessential team",
   categories: {
     legumes: "Pulses",
@@ -238,7 +239,7 @@ const en: FibreUi = {
     title: "Where these figures come from",
     text: [
       "Fibre, water and energy values come from the Ciqual 2025 table published by Anses, version of 3 November 2025. A value Ciqual gives as \"traces\" or \"less than\" is counted as 0.",
-      "We chose 94 common foods and translated their names. Usual portions are our team's estimate, to give an order of magnitude. Fibre per portion is calculated from the value per 100 g.",
+      "We chose {n} common foods and translated their names. Usual portions are our team's estimate, to give an order of magnitude. Fibre per portion is calculated from the value per 100 g.",
       "The daily references are EFSA's (25 g a day, judged adequate for normal bowel function in adults) and the 30 g target of several national bodies, such as SACN in the UK. They apply to healthy adults.",
     ],
     licence: "Data: Anses, Ciqual 2025 table, under the Open Licence 2.0 (Etalab). Selection, translated names, portions and calculations: Aloessential.",
@@ -258,7 +259,7 @@ const es: FibreUi = {
   eyebrow: "Tabla y herramienta gratuitas",
   h1: "Alimentos ricos en fibra",
   intro:
-    "Legumbres, cereales integrales, frutas, verduras, frutos secos y semillas: aquí tienes el contenido en fibra de 94 alimentos habituales, por 100 g y por ración. Los valores proceden de Ciqual, la tabla oficial de composición de alimentos de la agencia francesa de seguridad alimentaria (Anses). Añade lo que comes en un día para ver cómo vas.",
+    "Legumbres, cereales integrales, frutas, verduras, frutos secos y semillas: aquí tienes el contenido en fibra de {n} alimentos habituales, por 100 g y por ración. Los valores proceden de Ciqual, la tabla oficial de composición de alimentos de la agencia francesa de seguridad alimentaria (Anses). Añade lo que comes en un día para ver cómo vas.",
   byline: "Por el equipo de Aloessential",
   categories: {
     legumes: "Legumbres",
@@ -331,7 +332,7 @@ const es: FibreUi = {
     title: "De dónde salen estas cifras",
     text: [
       "Los valores de fibra, agua y energía proceden de la tabla Ciqual 2025 publicada por la Anses, versión del 3 de noviembre de 2025. Un valor que Ciqual indica como «trazas» o «menor que» se cuenta como 0.",
-      "Hemos elegido 94 alimentos habituales y traducido sus nombres. Las raciones habituales son una estimación de nuestro equipo, para dar un orden de magnitud. La fibra por ración se calcula a partir del valor por 100 g.",
+      "Hemos elegido {n} alimentos habituales y traducido sus nombres. Las raciones habituales son una estimación de nuestro equipo, para dar un orden de magnitud. La fibra por ración se calcula a partir del valor por 100 g.",
       "Las referencias diarias son las de la EFSA (25 g al día, adecuados para un buen tránsito en adultos) y el objetivo de 30 g de varias autoridades nacionales, como el SACN en el Reino Unido. Se aplican a adultos sanos.",
     ],
     licence: "Datos: Anses, tabla Ciqual 2025, con Licencia Abierta 2.0 (Etalab). Selección, nombres traducidos, raciones y cálculos: Aloessential.",
@@ -351,7 +352,7 @@ const de: FibreUi = {
   eyebrow: "Kostenlose Tabelle und Tool",
   h1: "Ballaststoffreiche Lebensmittel",
   intro:
-    "Hülsenfrüchte, Vollkorn, Obst, Gemüse, Nüsse und Samen: Hier finden Sie den Ballaststoffgehalt von 94 gängigen Lebensmitteln, pro 100 g und pro üblicher Portion. Die Werte stammen aus Ciqual, der offiziellen Nährwerttabelle der französischen Behörde für Lebensmittelsicherheit (Anses). Fügen Sie hinzu, was Sie an einem Tag essen, und sehen Sie, wo Sie stehen.",
+    "Hülsenfrüchte, Vollkorn, Obst, Gemüse, Nüsse und Samen: Hier finden Sie den Ballaststoffgehalt von {n} gängigen Lebensmitteln, pro 100 g und pro üblicher Portion. Die Werte stammen aus Ciqual, der offiziellen Nährwerttabelle der französischen Behörde für Lebensmittelsicherheit (Anses). Fügen Sie hinzu, was Sie an einem Tag essen, und sehen Sie, wo Sie stehen.",
   byline: "Vom Aloessential-Team",
   categories: {
     legumes: "Hülsenfrüchte",
@@ -424,7 +425,7 @@ const de: FibreUi = {
     title: "Woher diese Zahlen stammen",
     text: [
       "Die Werte für Ballaststoffe, Wasser und Energie stammen aus der Ciqual-Tabelle 2025 der Anses, Version vom 3. November 2025. Ein Wert, den Ciqual als „Spuren“ oder „kleiner als“ angibt, wird als 0 gezählt.",
-      "Wir haben 94 gängige Lebensmittel ausgewählt und ihre Namen übersetzt. Die üblichen Portionen sind eine Schätzung unseres Teams und geben eine Größenordnung an. Die Ballaststoffe pro Portion werden aus dem Wert pro 100 g berechnet.",
+      "Wir haben {n} gängige Lebensmittel ausgewählt und ihre Namen übersetzt. Die üblichen Portionen sind eine Schätzung unseres Teams und geben eine Größenordnung an. Die Ballaststoffe pro Portion werden aus dem Wert pro 100 g berechnet.",
       "Die Tagesrichtwerte sind der der EFSA (25 g am Tag, für eine normale Darmfunktion bei Erwachsenen als angemessen bewertet) und das Ziel von 30 g mehrerer nationaler Stellen, etwa des britischen SACN. Sie gelten für gesunde Erwachsene.",
     ],
     licence: "Daten: Anses, Ciqual-Tabelle 2025, unter der Licence Ouverte 2.0 (Etalab). Auswahl, übersetzte Namen, Portionen und Berechnungen: Aloessential.",
@@ -444,7 +445,7 @@ const it: FibreUi = {
   eyebrow: "Tabella e strumento gratuiti",
   h1: "Gli alimenti ricchi di fibre",
   intro:
-    "Legumi, cereali integrali, frutta, verdura, frutta secca e semi: ecco il contenuto di fibre di 94 alimenti comuni, per 100 g e per porzione abituale. I valori provengono da Ciqual, la tabella ufficiale di composizione degli alimenti dell'agenzia francese per la sicurezza alimentare (Anses). Aggiungi ciò che mangi in una giornata per vedere a che punto sei.",
+    "Legumi, cereali integrali, frutta, verdura, frutta secca e semi: ecco il contenuto di fibre di {n} alimenti comuni, per 100 g e per porzione abituale. I valori provengono da Ciqual, la tabella ufficiale di composizione degli alimenti dell'agenzia francese per la sicurezza alimentare (Anses). Aggiungi ciò che mangi in una giornata per vedere a che punto sei.",
   byline: "A cura della redazione di Aloessential",
   categories: {
     legumes: "Legumi",
@@ -517,7 +518,7 @@ const it: FibreUi = {
     title: "Da dove vengono questi numeri",
     text: [
       "I valori di fibre, acqua ed energia provengono dalla tabella Ciqual 2025 pubblicata dall'Anses, versione del 3 novembre 2025. Un valore indicato da Ciqual come «tracce» o «inferiore a» è contato come 0.",
-      "Abbiamo scelto 94 alimenti comuni e ne abbiamo tradotto i nomi. Le porzioni abituali sono una stima della nostra redazione, per dare un ordine di grandezza. Le fibre per porzione sono calcolate dal valore per 100 g.",
+      "Abbiamo scelto {n} alimenti comuni e ne abbiamo tradotto i nomi. Le porzioni abituali sono una stima della nostra redazione, per dare un ordine di grandezza. Le fibre per porzione sono calcolate dal valore per 100 g.",
       "I riferimenti giornalieri sono quelli dell'EFSA (25 g al giorno, adeguati per una normale funzione intestinale negli adulti) e l'obiettivo di 30 g di diverse autorità nazionali, come il SACN nel Regno Unito. Valgono per adulti in buona salute.",
     ],
     licence: "Dati: Anses, tabella Ciqual 2025, con Licence Ouverte 2.0 (Etalab). Selezione, nomi tradotti, porzioni e calcoli: Aloessential.",
@@ -537,7 +538,7 @@ const ptPt: FibreUi = {
   eyebrow: "Tabela e ferramenta gratuitas",
   h1: "Alimentos ricos em fibra",
   intro:
-    "Leguminosas, cereais integrais, fruta, legumes, frutos secos e sementes: aqui tens o teor de fibra de 94 alimentos comuns, por 100 g e por porção habitual. Os valores vêm da Ciqual, a tabela oficial de composição dos alimentos da agência francesa de segurança alimentar (Anses). Junta o que comes num dia para veres em que ponto estás.",
+    "Leguminosas, cereais integrais, fruta, legumes, frutos secos e sementes: aqui tens o teor de fibra de {n} alimentos comuns, por 100 g e por porção habitual. Os valores vêm da Ciqual, a tabela oficial de composição dos alimentos da agência francesa de segurança alimentar (Anses). Junta o que comes num dia para veres em que ponto estás.",
   byline: "Pela equipa Aloessential",
   categories: {
     legumes: "Leguminosas",
@@ -610,7 +611,7 @@ const ptPt: FibreUi = {
     title: "De onde vêm estes números",
     text: [
       "Os valores de fibra, água e energia vêm da tabela Ciqual 2025 publicada pela Anses, versão de 3 de novembro de 2025. Um valor que a Ciqual indica como «vestígios» ou «inferior a» é contado como 0.",
-      "Escolhemos 94 alimentos comuns e traduzimos os nomes. As porções habituais são uma estimativa da nossa equipa, para dar uma ordem de grandeza. A fibra por porção é calculada a partir do valor por 100 g.",
+      "Escolhemos {n} alimentos comuns e traduzimos os nomes. As porções habituais são uma estimativa da nossa equipa, para dar uma ordem de grandeza. A fibra por porção é calculada a partir do valor por 100 g.",
       "As referências diárias são as da EFSA (25 g por dia, adequados para um bom trânsito intestinal em adultos) e o objetivo de 30 g de várias autoridades nacionais, como o SACN no Reino Unido. Aplicam-se a adultos saudáveis.",
     ],
     licence: "Dados: Anses, tabela Ciqual 2025, com a Licence Ouverte 2.0 (Etalab). Seleção, nomes traduzidos, porções e cálculos: Aloessential.",
@@ -630,7 +631,7 @@ const pl: FibreUi = {
   eyebrow: "Bezpłatna tabela i narzędzie",
   h1: "Produkty bogate w błonnik",
   intro:
-    "Rośliny strączkowe, produkty pełnoziarniste, owoce, warzywa, orzechy i nasiona: oto zawartość błonnika w 94 popularnych produktach, na 100 g i na zwykłą porcję. Wartości pochodzą z Ciqual, oficjalnej tabeli składu żywności francuskiej agencji ds. bezpieczeństwa żywności (Anses). Dodaj to, co jesz w ciągu dnia, aby zobaczyć, ile już masz.",
+    "Rośliny strączkowe, produkty pełnoziarniste, owoce, warzywa, orzechy i nasiona: oto zawartość błonnika w {n} popularnych produktach, na 100 g i na zwykłą porcję. Wartości pochodzą z Ciqual, oficjalnej tabeli składu żywności francuskiej agencji ds. bezpieczeństwa żywności (Anses). Dodaj to, co jesz w ciągu dnia, aby zobaczyć, ile już masz.",
   byline: "Zespół Aloessential",
   categories: {
     legumes: "Rośliny strączkowe",
@@ -703,7 +704,7 @@ const pl: FibreUi = {
     title: "Skąd pochodzą te liczby",
     text: [
       "Wartości błonnika, wody i energii pochodzą z tabeli Ciqual 2025 opublikowanej przez Anses, wersja z 3 listopada 2025 r. Wartość, którą Ciqual podaje jako „śladowe ilości” lub „poniżej”, liczymy jako 0.",
-      "Wybraliśmy 94 popularne produkty i przetłumaczyliśmy ich nazwy. Zwykłe porcje to szacunek naszego zespołu, który daje rząd wielkości. Błonnik na porcję obliczamy na podstawie wartości na 100 g.",
+      "Wybraliśmy {n} popularne produkty i przetłumaczyliśmy ich nazwy. Zwykłe porcje to szacunek naszego zespołu, który daje rząd wielkości. Błonnik na porcję obliczamy na podstawie wartości na 100 g.",
       "Dzienne wartości referencyjne to wartość EFSA (25 g dziennie, uznane za wystarczające dla prawidłowej pracy jelit u dorosłych) i cel 30 g przyjęty przez kilka instytucji krajowych, na przykład brytyjski SACN. Dotyczą zdrowych dorosłych.",
     ],
     licence: "Dane: Anses, tabela Ciqual 2025, na licencji Licence Ouverte 2.0 (Etalab). Wybór, przetłumaczone nazwy, porcje i obliczenia: Aloessential.",

@@ -30,6 +30,17 @@ export interface WaterUi {
   sources: string;
   related: string;
   relatedLink: string;
+  /** Water-rich foods table. Placeholders: {min} (grams of water per 100 g), {n}. */
+  foods: {
+    title: string;
+    intro: string;
+    caption: string;
+    food: string;
+    per100g: string;
+    portion: string;
+    perPortion: string;
+    licence: string;
+  };
 }
 
 const fr: WaterUi = {
@@ -118,6 +129,17 @@ const fr: WaterUi = {
   sources: "Sources",
   related: "Pour aller plus loin",
   relatedLink: "Hydratation : les aliments riches en eau",
+  foods: {
+    title: "Les aliments les plus riches en eau",
+    intro:
+      "Fruits, légumes, soupes et laitages apportent une bonne part de l'eau de la journée. Voici les {n} aliments de notre sélection qui contiennent au moins {min} g d'eau pour 100 g, d'après la table Ciqual de l'Anses. Un gramme d'eau correspond à peu près à un millilitre.",
+    caption: "Teneur en eau d'après la table Ciqual 2025 de l'Anses. Portion habituelle : estimation de notre équipe.",
+    food: "Aliment",
+    per100g: "Eau pour 100 g",
+    portion: "Portion",
+    perPortion: "Eau par portion",
+    licence: "Données : Anses, table Ciqual 2025, sous Licence Ouverte 2.0. Sélection, noms traduits, portions et calculs : Aloessential.",
+  },
 };
 
 const en: WaterUi = {
@@ -206,6 +228,17 @@ const en: WaterUi = {
   sources: "Sources",
   related: "Read next",
   relatedLink: "Hydration: water-rich foods",
+  foods: {
+    title: "The foods richest in water",
+    intro:
+      "Fruit, vegetables, soups and dairy provide a good share of the day's water. Here are the {n} foods in our selection that contain at least {min} g of water per 100 g, from the Anses Ciqual table. One gram of water is about one millilitre.",
+    caption: "Water content from the Anses Ciqual 2025 table. Usual portion: our team's estimate.",
+    food: "Food",
+    per100g: "Water per 100 g",
+    portion: "Portion",
+    perPortion: "Water per portion",
+    licence: "Data: Anses, Ciqual 2025 table, under the Open Licence 2.0 (Etalab). Selection, translated names, portions and calculations: Aloessential.",
+  },
 };
 
 const es: WaterUi = {
@@ -294,6 +327,17 @@ const es: WaterUi = {
   sources: "Fuentes",
   related: "Para saber más",
   relatedLink: "Alimentos ricos en agua para hidratarse",
+  foods: {
+    title: "Los alimentos más ricos en agua",
+    intro:
+      "Frutas, verduras, sopas y lácteos aportan buena parte del agua del día. Estos son los {n} alimentos de nuestra selección que contienen al menos {min} g de agua por 100 g, según la tabla Ciqual de la Anses. Un gramo de agua equivale aproximadamente a un mililitro.",
+    caption: "Contenido de agua según la tabla Ciqual 2025 de la Anses. Ración habitual: estimación de nuestro equipo.",
+    food: "Alimento",
+    per100g: "Agua por 100 g",
+    portion: "Ración",
+    perPortion: "Agua por ración",
+    licence: "Datos: Anses, tabla Ciqual 2025, con Licencia Abierta 2.0 (Etalab). Selección, nombres traducidos, raciones y cálculos: Aloessential.",
+  },
 };
 
 const de: WaterUi = {
@@ -382,6 +426,17 @@ const de: WaterUi = {
   sources: "Quellen",
   related: "Weiterlesen",
   relatedLink: "Wasserreiche Lebensmittel für die Flüssigkeitszufuhr",
+  foods: {
+    title: "Die wasserreichsten Lebensmittel",
+    intro:
+      "Obst, Gemüse, Suppen und Milchprodukte liefern einen guten Teil des täglichen Wassers. Hier sind die {n} Lebensmittel unserer Auswahl, die laut Ciqual-Tabelle der Anses mindestens {min} g Wasser pro 100 g enthalten. Ein Gramm Wasser entspricht etwa einem Milliliter.",
+    caption: "Wassergehalt laut Ciqual-Tabelle 2025 der Anses. Übliche Portion: Schätzung unseres Teams.",
+    food: "Lebensmittel",
+    per100g: "Wasser pro 100 g",
+    portion: "Portion",
+    perPortion: "Wasser pro Portion",
+    licence: "Daten: Anses, Ciqual-Tabelle 2025, unter der Licence Ouverte 2.0 (Etalab). Auswahl, übersetzte Namen, Portionen und Berechnungen: Aloessential.",
+  },
 };
 
 const it: WaterUi = {
@@ -470,6 +525,17 @@ const it: WaterUi = {
   sources: "Fonti",
   related: "Per approfondire",
   relatedLink: "Idratazione: gli alimenti ricchi di acqua",
+  foods: {
+    title: "Gli alimenti più ricchi di acqua",
+    intro:
+      "Frutta, verdura, minestre e latticini forniscono buona parte dell'acqua della giornata. Ecco i {n} alimenti della nostra selezione che contengono almeno {min} g di acqua per 100 g, secondo la tabella Ciqual dell'Anses. Un grammo d'acqua corrisponde all'incirca a un millilitro.",
+    caption: "Contenuto d'acqua secondo la tabella Ciqual 2025 dell'Anses. Porzione abituale: stima della nostra redazione.",
+    food: "Alimento",
+    per100g: "Acqua per 100 g",
+    portion: "Porzione",
+    perPortion: "Acqua per porzione",
+    licence: "Dati: Anses, tabella Ciqual 2025, con Licence Ouverte 2.0 (Etalab). Selezione, nomi tradotti, porzioni e calcoli: Aloessential.",
+  },
 };
 
 const ptPt: WaterUi = {
@@ -558,6 +624,17 @@ const ptPt: WaterUi = {
   sources: "Fontes",
   related: "Para saber mais",
   relatedLink: "Alimentos ricos em água para te hidratares",
+  foods: {
+    title: "Os alimentos mais ricos em água",
+    intro:
+      "Fruta, legumes, sopas e laticínios dão uma boa parte da água do dia. Estes são os {n} alimentos da nossa seleção que têm pelo menos {min} g de água por 100 g, segundo a tabela Ciqual da Anses. Um grama de água corresponde a cerca de um mililitro.",
+    caption: "Teor de água segundo a tabela Ciqual 2025 da Anses. Porção habitual: estimativa da nossa equipa.",
+    food: "Alimento",
+    per100g: "Água por 100 g",
+    portion: "Porção",
+    perPortion: "Água por porção",
+    licence: "Dados: Anses, tabela Ciqual 2025, com a Licence Ouverte 2.0 (Etalab). Seleção, nomes traduzidos, porções e cálculos: Aloessential.",
+  },
 };
 
 const pl: WaterUi = {
@@ -646,6 +723,17 @@ const pl: WaterUi = {
   sources: "Źródła",
   related: "Czytaj dalej",
   relatedLink: "Produkty bogate w wodę, które pomagają się nawodnić",
+  foods: {
+    title: "Produkty najbogatsze w wodę",
+    intro:
+      "Owoce, warzywa, zupy i nabiał dostarczają sporą część wody w ciągu dnia. Oto produkty z naszej listy (w sumie {n}), które według tabeli Ciqual agencji Anses zawierają co najmniej {min} g wody na 100 g. Gram wody to mniej więcej jeden mililitr.",
+    caption: "Zawartość wody według tabeli Ciqual 2025 agencji Anses. Zwykła porcja: szacunek naszego zespołu.",
+    food: "Produkt",
+    per100g: "Woda na 100 g",
+    portion: "Porcja",
+    perPortion: "Woda na porcję",
+    licence: "Dane: Anses, tabela Ciqual 2025, na licencji Licence Ouverte 2.0 (Etalab). Wybór, przetłumaczone nazwy, porcje i obliczenia: Aloessential.",
+  },
 };
 
 export const WATER_UI: Record<Locale, WaterUi> = { fr, en, es, de, it, "pt-pt": ptPt, pl };

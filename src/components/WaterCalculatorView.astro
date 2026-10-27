@@ -10,6 +10,8 @@ import { DEFAULT_LOCALE, LOCALES, articlePath, homePath, type Locale } from "../
 import { ui } from "../i18n/ui";
 import { WATER_UI, waterAlternates } from "../i18n/water-ui";
 import { PROFILES, SITUATIONS, WATER_SOURCES, waterNeeds } from "../data/water";
+import { MIN_WATER, WATER_FOODS } from "../data/water-foods";
+import { CIQUAL_REFERENCE } from "../data/foods";
 import { getTranslatedLocales } from "../lib/articles";
 import { breadcrumbLd } from "../lib/seo";
 
@@ -32,6 +34,9 @@ const jsonLd = [breadcrumbLd(crumbs, Astro.site)];
 
 const glasses = (min: number, max: number) =>
   min === max ? String(min) : w.result.glassesRange.replace("{min}", String(min)).replace("{max}", String(max));
+const sources = [...WATER_SOURCES, CIQUAL_REFERENCE];
+const grams = new Intl.NumberFormat(lang, { maximumFractionDigits: 1 });
+const foodsIntro = w.foods.intro.replace("{n}", String(WATER_FOODS.length)).replace("{min}", String(MIN_WATER));
 const rows = PROFILES.map((profile) => ({ profile, r: waterNeeds(profile) }));
 
 const text = { lang, total: w.result.total, drinks: w.result.drinks, glassesRange: w.result.glassesRange, notes: w.result.notes };
@@ -120,6 +125,35 @@ const text = { lang, total: w.result.total, drinks: w.result.drinks, glassesRang
             {w.counts.items.map((s) => <li>{s}</li>)}
           </ul>
 
+          <h2 id="water-foods">{w.foods.title}</h2>
+          <p>{foodsIntro}</p>
+          <div class="table-wrap">
+            <table class="composition water-foods">
+              <caption class="small-print">{w.foods.caption}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">{w.foods.food}</th>
+                  <th scope="col">{w.foods.per100g}</th>
+                  <th scope="col">{w.foods.portion}</th>
+                  <th scope="col">{w.foods.perPortion}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  WATER_FOODS.map((food) => (
+                    <tr>
+                      <th scope="row">{food.names[locale]}</th>
+                      <td>{grams.format(food.water)} g</td>
+                      <td>{food.portion} g</td>
+                      <td>{food.waterPerPortion} g</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+          <p class="small-print">{w.foods.licence}</p>
+
           <h2>{w.enough.title}</h2>
           <ul>
             {w.enough.items.map((s) => <li>{s}</li>)}
@@ -136,7 +170,7 @@ const text = { lang, total: w.result.total, drinks: w.result.drinks, glassesRang
           <h2>{w.sources}</h2>
           <ul class="sources">
             {
-              WATER_SOURCES.map((s) => (
+              sources.map((s) => (
                 <li>
                   {s.publisher}, <a href={s.url} rel="noopener"><cite>{s.title}</cite></a>
                 </li>

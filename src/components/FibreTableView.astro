@@ -19,6 +19,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const f = FIBRE_UI[locale];
+const withCount = (s: string) => s.replace("{n}", String(FOODS.length));
 const t = ui(locale);
 const lang = LOCALES[locale].dateLocale;
 const grams = new Intl.NumberFormat(lang, { maximumFractionDigits: 1 });
@@ -58,7 +59,7 @@ const text = {
         </nav>
         <p class="eyebrow">{f.eyebrow}</p>
         <h1>{f.h1}</h1>
-        <p>{f.intro}</p>
+        <p>{withCount(f.intro)}</p>
         <p class="byline">{f.byline}</p>
       </div>
     </header>
@@ -194,7 +195,7 @@ const text = {
           </ul>
 
           <h2>{f.method.title}</h2>
-          {f.method.text.map((p) => <p>{p}</p>)}
+          {f.method.text.map((p) => <p>{withCount(p)}</p>)}
           <p class="small-print">{f.method.licence}</p>
 
           <h2>{f.sources}</h2>

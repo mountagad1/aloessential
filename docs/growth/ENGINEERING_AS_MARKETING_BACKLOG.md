@@ -16,7 +16,7 @@
 | --- | --- | --- | --- | --- |
 | SEO-01 | Contextual internal links: 52 articles without inbound body links; the aloe guide is an orphan | SEO | 56 | in progress: links written, awaiting publication |
 | EAM-03 | Aloe vera watering planner | Interactive tool | 56 | in progress: built in 7 locales, awaiting review and publication |
-| EAM-02 | How much water per day, plus a water-rich foods table | Calculator and dataset | 51 | in progress: calculator built in 7 locales, awaiting review; foods table not started |
+| EAM-02 | How much water per day, plus a water-rich foods table | Calculator and dataset | 51 | in progress: calculator and foods table built in 7 locales, awaiting review |
 | EAM-01 | High-fibre foods: searchable table and daily-fibre calculator | Dataset and calculator | 40 | in progress: built in 7 locales, awaiting review |
 | SEO-05 | Deepen the highest-demand aloe articles | Content | 34 | planned |
 | SEO-04 | PRO 12 + snippet test | Experiment | 30 | waiting for data |
@@ -112,8 +112,8 @@
   - Heat, exercise and illness add notes only: EFSA gives no figure for them, so the tool shows none.
   - Linked from the hydration article in all 7 languages, and links back to it.
   - Tests: `tests/water.spec.ts`.
+- **Water-rich foods table (2026-10-27):** on the calculator page, in every locale. It lists the foods of the shared selection (`src/data/foods.ts`, Ciqual 2025) with at least 80 g of water per 100 g, richest first, per 100 g and per usual portion (61 foods). 21 water-rich foods were added to the selection for it (watermelon, melon, radish, celery, soups, yoghurt…); they also appear in the fibre table. Ciqual is credited with its licence. Module: `src/data/water-foods.ts`.
 - **Not done yet:**
-  - The water-rich foods table. The Ciqual licence is now checked (EAM-01), and `src/data/ciqual-values.json` already holds water per 100 g for 93 of the 94 foods (Ciqual gives none for hummus).
   - National reference values (for example D-A-CH in Germany) where they differ from EFSA: not researched; every locale shows EFSA values today.
 
 ### EAM-01: high-fibre foods table and daily-fibre calculator (score 40, largest prize)
@@ -146,7 +146,7 @@
   EAM-02 reuses the same pipeline: build them together.
 - **Build (2026-10-27):**
   - **Licence checked:** Ciqual 2025 (Anses, version of 2025-11-03, https://doi.org/10.57745/RDMHWY) is published under the Etalab Open Licence 2.0. Reuse is allowed with attribution; the page credits Anses, the table and its version.
-  - **Data:** 94 curated foods in `src/data/foods.json` (Ciqual code, category, usual portion, names in 7 languages). `tools/extract-ciqual.py` reads the Ciqual Excel file, which is not stored in the repository, and writes fibre, water and energy per 100 g to `src/data/ciqual-values.json`. Portions are the team's estimate and the page says so.
+  - **Data:** curated foods in `src/data/foods.json` (94 at launch, 115 since the water-rich foods were added) (Ciqual code, category, usual portion, names in 7 languages). `tools/extract-ciqual.py` reads the Ciqual Excel file, which is not stored in the repository, and writes fibre, water and energy per 100 g to `src/data/ciqual-values.json`. Portions are the team's estimate and the page says so.
   - **Labels:** EU claim thresholds checked: "source of fibre" from 3 g per 100 g or 1.5 g per 100 kcal, "high fibre" from 6 g per 100 g or 3 g per 100 kcal. They are applied to foods as benchmarks, not as product claims.
   - **Daily references:** EFSA 25 g (opinion 2010, DOI 10.2903/j.efsa.2010.1462) and 30 g, the target of SACN (UK, 2015, checked in the report). The ANSES 30 g figure was found only in secondary sources, so the page does not cite ANSES.
   - **Pages:** `/aliments-riches-en-fibres/`, `/en/high-fibre-foods/`, `/es/alimentos-ricos-en-fibra/`, `/de/ballaststoffreiche-lebensmittel/`, `/it/alimenti-ricchi-di-fibre/`, `/pt-pt/alimentos-ricos-em-fibra/`, `/pl/produkty-bogate-w-blonnik/`. The full table is static HTML; search, sort and the day calculator run in the browser (about 2.4 kB of script, no food data in it).
