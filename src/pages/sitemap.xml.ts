@@ -15,6 +15,7 @@ import { listingPages } from "../lib/pagination";
 import { DEFAULT_LOCALE, categoryPath, homePath, productsPath } from "../i18n/locales";
 import { WATERING_UI, wateringAlternates } from "../i18n/watering-ui";
 import { WATER_UI, waterAlternates } from "../i18n/water-ui";
+import { FIBRE_UI, fibreAlternates } from "../i18n/fibre-ui";
 
 /*
  * XML sitemap of every indexable page (canonical URLs, trailing slash), in
@@ -50,6 +51,7 @@ export const GET: APIRoute = async ({ site }) => {
     { path: "/aloe-vera/" },
     { path: WATERING_UI[DEFAULT_LOCALE].path, alternates: wateringAlternates(locales) },
     { path: WATER_UI[DEFAULT_LOCALE].path, alternates: waterAlternates(locales) },
+    { path: FIBRE_UI[DEFAULT_LOCALE].path, alternates: fibreAlternates(locales) },
     { path: "/transparence/" },
     { path: "/equipe/" },
     { path: "/contact/" },
@@ -84,6 +86,7 @@ export const GET: APIRoute = async ({ site }) => {
     entries.push(...(await Promise.all(localProducts.map(productEntry))));
     entries.push({ path: WATERING_UI[locale].path, alternates: wateringAlternates(locales) });
     entries.push({ path: WATER_UI[locale].path, alternates: waterAlternates(locales) });
+    entries.push({ path: FIBRE_UI[locale].path, alternates: fibreAlternates(locales) });
   }
 
   const links = (alternates: Alternate[] | undefined) => {

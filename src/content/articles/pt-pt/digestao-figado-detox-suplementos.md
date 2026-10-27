@@ -18,7 +18,7 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32012R0432"
 locale: pt-pt
 translationOf: digestion-foie-detox-complements
-sourceHash: "11ba384d386a"
+sourceHash: "368084d24249"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -59,6 +59,8 @@ Para te aproximares:
 5. **Alimentos fermentados** se gostares: iogurte, kefir, chucrute cru.
 
 Aumenta a fibra aos poucos e bebe o suficiente, para evitar o inchaço dos primeiros dias. As nossas ideias para começar bem o dia estão em [«Pequeno-almoço equilibrado: as nossas ideias simples»](/pt-pt/artigos/pequeno-almoco-equilibrado-ideias-simples/).
+
+Para saberes que alimentos dão mais fibra, consulta a [nossa tabela de alimentos ricos em fibra](/pt-pt/alimentos-ricos-em-fibra/), que também permite somar a fibra do teu dia.
 
 ## Ler o rótulo de um suplemento «digestão» ou «fígado»
 

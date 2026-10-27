@@ -53,6 +53,8 @@ Pour vous en rapprocher :
 
 Augmentez les fibres progressivement et buvez suffisamment, pour éviter les ballonnements des premiers jours. Nos idées pour bien commencer la journée sont dans [« Petit-déjeuner équilibré : nos idées simples »](/articles/petit-dejeuner-equilibre/).
 
+Pour savoir quels aliments en apportent le plus, consultez [notre tableau des aliments riches en fibres](/aliments-riches-en-fibres/), qui permet aussi de compter les fibres de sa journée.
+
 ## Lire l'étiquette d'un complément « digestion » ou « foie »
 
 - **Repérez les nutriments** qui portent les allégations (vitamines, minéraux, choline) et leur pourcentage des valeurs nutritionnelles de référence.

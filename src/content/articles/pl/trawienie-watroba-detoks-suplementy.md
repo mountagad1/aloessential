@@ -18,7 +18,7 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32012R0432"
 locale: pl
 translationOf: digestion-foie-detox-complements
-sourceHash: "11ba384d386a"
+sourceHash: "368084d24249"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -59,6 +59,8 @@ Jak się do niego zbliżyć:
 5. **Produkty fermentowane**, jeśli je lubisz: jogurt, kefir, kiszona kapusta, ogórki kiszone.
 
 Zwiększaj ilość błonnika stopniowo i pij wystarczająco dużo, aby uniknąć wzdęć w pierwszych dniach. Nasze pomysły na dobry początek dnia znajdziesz w artykule [„Zbilansowane śniadanie: nasze proste pomysły”](/pl/artykuly/zbilansowane-sniadanie-proste-pomysly/).
+
+Które produkty dostarczają go najwięcej, pokazuje [nasza tabela produktów bogatych w błonnik](/pl/produkty-bogate-w-blonnik/), w której można też zsumować błonnik z całego dnia.
 
 ## Jak czytać etykietę suplementu „na trawienie” lub „na wątrobę”
 

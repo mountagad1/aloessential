@@ -18,7 +18,7 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32012R0432"
 locale: es
 translationOf: digestion-foie-detox-complements
-sourceHash: "11ba384d386a"
+sourceHash: "368084d24249"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -59,6 +59,8 @@ Para acercarte:
 5. **Alimentos fermentados** si te gustan: yogur, kéfir, chucrut crudo.
 
 Aumenta la fibra poco a poco y bebe lo suficiente, para evitar la hinchazón de los primeros días. Nuestras ideas para empezar bien el día están en [«Desayuno equilibrado: nuestras ideas sencillas»](/es/articulos/desayuno-equilibrado-ideas-sencillas/).
+
+Para saber qué alimentos aportan más, consulta [nuestra tabla de alimentos ricos en fibra](/es/alimentos-ricos-en-fibra/), que también permite sumar la fibra de tu día.
 
 ## Leer la etiqueta de un complemento «digestión» o «hígado»
 

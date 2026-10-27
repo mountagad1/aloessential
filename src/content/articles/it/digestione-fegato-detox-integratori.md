@@ -29,7 +29,7 @@ sources:
     url: "https://www.salute.gov.it/portale/documentazione/p6_2_2_1.jsp?id=1016"
 locale: it
 translationOf: digestion-foie-detox-complements
-sourceHash: "11ba384d386a"
+sourceHash: "368084d24249"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -80,6 +80,8 @@ Per avvicinarti:
 5. **Alimenti fermentati** se ti piacciono: yogurt, kefir, crauti crudi.
 
 Aumenta le fibre gradualmente e bevi a sufficienza, per evitare il gonfiore dei primi giorni. Le nostre idee per iniziare bene la giornata sono in [«Colazione equilibrata: le nostre idee semplici»](/it/articoli/colazione-equilibrata-idee-semplici/).
+
+Per sapere quali alimenti ne apportano di più, consulta la [nostra tabella degli alimenti ricchi di fibre](/it/alimenti-ricchi-di-fibre/), che permette anche di contare le fibre della giornata.
 
 ## Leggere l'etichetta di un integratore «digestione» o «fegato»
 

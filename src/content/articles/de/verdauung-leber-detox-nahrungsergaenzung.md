@@ -18,7 +18,7 @@ sources:
     url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32012R0432"
 locale: de
 translationOf: digestion-foie-detox-complements
-sourceHash: "11ba384d386a"
+sourceHash: "368084d24249"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -59,6 +59,8 @@ So kommen Sie näher heran:
 5. **Fermentierte Lebensmittel**, wenn Sie sie mögen: Joghurt, Kefir, rohes Sauerkraut.
 
 Steigern Sie die Ballaststoffe schrittweise und trinken Sie ausreichend, um Blähungen in den ersten Tagen zu vermeiden. Ideen für einen guten Start in den Tag finden Sie in [„Ausgewogenes Frühstück: unsere einfachen Ideen“](/de/artikel/ausgewogenes-fruehstueck-ideen/).
+
+Welche Lebensmittel am meisten liefern, zeigt [unsere Tabelle ballaststoffreicher Lebensmittel](/de/ballaststoffreiche-lebensmittel/), mit der Sie auch die Ballaststoffe Ihres Tages zusammenzählen können.
 
 ## Das Etikett eines „Verdauungs“- oder „Leber“-Präparats lesen
 

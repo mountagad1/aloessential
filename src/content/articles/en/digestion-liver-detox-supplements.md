@@ -25,7 +25,7 @@ sources:
     url: "https://www.nhs.uk/live-well/eat-well/digestive-health/how-to-get-more-fibre-into-your-diet/"
 locale: en
 translationOf: digestion-foie-detox-complements
-sourceHash: "11ba384d386a"
+sourceHash: "368084d24249"
 status: published
 translationReviewer: "Philippe Cros"
 ---
@@ -66,6 +66,8 @@ To get closer:
 5. **Fermented foods** if you like them: yoghurt, kefir, raw sauerkraut.
 
 Increase fibre gradually and drink enough, to avoid bloating in the first few days. Our ideas for starting the day well are in [Healthy breakfast ideas](/en/articles/healthy-breakfast-ideas/).
+
+To see which foods provide the most, check [our table of high-fibre foods](/en/high-fibre-foods/), which also lets you add up the fibre in your day.
 
 ## Reading the label of a "digestion" or "liver" supplement
 

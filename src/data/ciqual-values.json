@@ -1,0 +1,575 @@
+{
+ "source": {
+  "name": "Anses. Table de composition nutritionnelle des aliments Ciqual 2025",
+  "version": "2025-11-03",
+  "url": "https://doi.org/10.57745/RDMHWY",
+  "licence": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+  "licenceUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
+ },
+ "foods": {
+  "13001": {
+   "nameFr": "Abricot, dénoyauté, sec",
+   "fibre": 8.3,
+   "water": 24.7,
+   "kcal": 239.0
+  },
+  "13002": {
+   "nameFr": "Ananas, chair sans peau, cru",
+   "fibre": 1.2,
+   "water": 85.5,
+   "kcal": 51.6
+  },
+  "13004": {
+   "nameFr": "Avocat, chair sans peau, sans noyau, cru",
+   "fibre": 3.6,
+   "water": 70.3,
+   "kcal": 203.0
+  },
+  "13005": {
+   "nameFr": "Banane, chair sans peau, crue",
+   "fibre": 2.7,
+   "water": 75.8,
+   "kcal": 87.6
+  },
+  "13007": {
+   "nameFr": "Cassis, cru",
+   "fibre": 7.13,
+   "water": 80.9,
+   "kcal": 70.2
+  },
+  "13011": {
+   "nameFr": "Datte, chair et peau, sans noyau, sèche",
+   "fibre": 7.3,
+   "water": 22.9,
+   "kcal": 287.0
+  },
+  "13013": {
+   "nameFr": "Figue, sèche",
+   "fibre": 8.15,
+   "water": 30.1,
+   "kcal": 261.0
+  },
+  "13014": {
+   "nameFr": "Fraise, crue",
+   "fibre": 3.8,
+   "water": 90.3,
+   "kcal": 35.1
+  },
+  "13015": {
+   "nameFr": "Framboise, crue",
+   "fibre": 4.3,
+   "water": 86.8,
+   "kcal": 47.9
+  },
+  "13016": {
+   "nameFr": "Fruit de la passion ou maracudja, chair sans peau, avec pépins, cru",
+   "fibre": 6.8,
+   "water": 73.6,
+   "kcal": 102.0
+  },
+  "13019": {
+   "nameFr": "Groseille, crue",
+   "fibre": 4.6,
+   "water": 82.1,
+   "kcal": 67.2
+  },
+  "13021": {
+   "nameFr": "Kiwi, chair sans peau, avec pépins, cru",
+   "fibre": 2.4,
+   "water": 83.5,
+   "kcal": 60.9
+  },
+  "13025": {
+   "nameFr": "Mangue, chair sans peau, sans noyau, crue",
+   "fibre": 1.6,
+   "water": 81.1,
+   "kcal": 71.1
+  },
+  "13028": {
+   "nameFr": "Myrtille, crue",
+   "fibre": 2.4,
+   "water": 84.2,
+   "kcal": 57.7
+  },
+  "13029": {
+   "nameFr": "Mûre (de ronce), crue",
+   "fibre": 5.2,
+   "water": 86.1,
+   "kcal": 46.0
+  },
+  "13034": {
+   "nameFr": "Orange, chair sans peau, sans pépins, crue",
+   "fibre": 2.7,
+   "water": 87.3,
+   "kcal": 42.0
+  },
+  "13037": {
+   "nameFr": "Poire, chair et peau, crue",
+   "fibre": 2.9,
+   "water": 83.5,
+   "kcal": 56.6
+  },
+  "13039": {
+   "nameFr": "Pomme, chair et peau, crue",
+   "fibre": 1.4,
+   "water": 85.4,
+   "kcal": 54.0
+  },
+  "13042": {
+   "nameFr": "Pruneau, sans noyau, sec",
+   "fibre": 5.1,
+   "water": 34.9,
+   "kcal": 229.0
+  },
+  "13043": {
+   "nameFr": "Pêche, chair et peau, sans noyau, crue",
+   "fibre": 1.5,
+   "water": 88.9,
+   "kcal": 37.9
+  },
+  "13046": {
+   "nameFr": "Raisin sec",
+   "fibre": 4.2,
+   "water": 16.0,
+   "kcal": 322.0
+  },
+  "15000": {
+   "nameFr": "Amande, avec peau, sans sel ajouté",
+   "fibre": 12.5,
+   "water": 4.8,
+   "kcal": 615.0
+  },
+  "15001": {
+   "nameFr": "Cacahuète, sans sel ajouté",
+   "fibre": 8.6,
+   "water": 2.2,
+   "kcal": 623.0
+  },
+  "15004": {
+   "nameFr": "Noisette, sans sel ajouté",
+   "fibre": 11.6,
+   "water": 7.3,
+   "kcal": 632.0
+  },
+  "15005": {
+   "nameFr": "Noix, cerneau, séchée",
+   "fibre": 6.7,
+   "water": 4.0,
+   "kcal": 709.0
+  },
+  "15006": {
+   "nameFr": "Noix de coco, chair, fraîche",
+   "fibre": 10.6,
+   "water": 45.5,
+   "kcal": 369.0
+  },
+  "15010": {
+   "nameFr": "Sésame, graine",
+   "fibre": 11.8,
+   "water": 3.48,
+   "kcal": 606.0
+  },
+  "15011": {
+   "nameFr": "Tournesol, graine",
+   "fibre": 6.4,
+   "water": 3.38,
+   "kcal": 653.0
+  },
+  "15034": {
+   "nameFr": "Lin, graine",
+   "fibre": 24.4,
+   "water": 6.1,
+   "kcal": 528.0
+  },
+  "15044": {
+   "nameFr": "Pistache, grillée, sans sel ajouté",
+   "fibre": 10.2,
+   "water": 1.85,
+   "kcal": 631.0
+  },
+  "15047": {
+   "nameFr": "Chia, graine, séchée",
+   "fibre": 34.4,
+   "water": 5.8,
+   "kcal": 454.0
+  },
+  "15054": {
+   "nameFr": "Noix de cajou, grillée, sans sel ajouté",
+   "fibre": 8.4,
+   "water": 1.7,
+   "kcal": 618.0
+  },
+  "15064": {
+   "nameFr": "Courge, graine, séchée",
+   "fibre": 6.0,
+   "water": 5.23,
+   "kcal": 618.0
+  },
+  "15202": {
+   "nameFr": "Beurre de cacahuète ou pâte d'arachide",
+   "fibre": 5.0,
+   "water": 1.23,
+   "kcal": 643.0
+  },
+  "18100": {
+   "nameFr": "Cacao, sans sucres ajoutés, poudre soluble",
+   "fibre": 29.5,
+   "water": 3.5,
+   "kcal": 387.0
+  },
+  "20000": {
+   "nameFr": "Artichaut, cuit",
+   "fibre": 8.3,
+   "water": 85.8,
+   "kcal": 33.2
+  },
+  "20002": {
+   "nameFr": "Aubergine, cuite",
+   "fibre": 2.5,
+   "water": 89.7,
+   "kcal": 27.1
+  },
+  "20003": {
+   "nameFr": "Betterave rouge, cuite",
+   "fibre": 2.5,
+   "water": 88.3,
+   "kcal": 41.5
+  },
+  "20009": {
+   "nameFr": "Carotte, crue",
+   "fibre": 2.9,
+   "water": 90.0,
+   "kcal": 30.2
+  },
+  "20014": {
+   "nameFr": "Chou rouge, cru",
+   "fibre": 2.8,
+   "water": 90.7,
+   "kcal": 26.4
+  },
+  "20017": {
+   "nameFr": "Chou-fleur, bouilli/cuit à l'eau",
+   "fibre": 2.0,
+   "water": 93.7,
+   "kcal": 20.9
+  },
+  "20019": {
+   "nameFr": "Concombre, chair et peau, cru",
+   "fibre": 0.5,
+   "water": 95.2,
+   "kcal": 16.8
+  },
+  "20021": {
+   "nameFr": "Courgette, chair et peau, cuite",
+   "fibre": 1.5,
+   "water": 93.8,
+   "kcal": 15.5
+  },
+  "20031": {
+   "nameFr": "Laitue, crue",
+   "fibre": 1.1,
+   "water": 95.4,
+   "kcal": 14.7
+  },
+  "20034": {
+   "nameFr": "Oignon, cru",
+   "fibre": 1.7,
+   "water": 89.6,
+   "kcal": 39.0
+  },
+  "20037": {
+   "nameFr": "Petits pois, cuits",
+   "fibre": 5.8,
+   "water": 82.9,
+   "kcal": 61.4
+  },
+  "20041": {
+   "nameFr": "Poivron, vert, jaune ou rouge, cru",
+   "fibre": 1.5,
+   "water": 92.1,
+   "kcal": 22.6
+  },
+  "20055": {
+   "nameFr": "Céleri-rave, cru",
+   "fibre": 4.5,
+   "water": 88.8,
+   "kcal": 26.3
+  },
+  "20056": {
+   "nameFr": "Champignon de Paris ou champignon de couche, cru",
+   "fibre": 1.0,
+   "water": 93.9,
+   "kcal": 21.0
+  },
+  "20066": {
+   "nameFr": "Maïs doux, appertisé, égoutté",
+   "fibre": 3.1,
+   "water": 75.4,
+   "kcal": 105.0
+  },
+  "20096": {
+   "nameFr": "Potiron, cuit",
+   "fibre": 2.0,
+   "water": 92.0,
+   "kcal": 26.1
+  },
+  "20099": {
+   "nameFr": "Mâche, crue",
+   "fibre": 2.3,
+   "water": 93.7,
+   "kcal": 15.0
+  },
+  "20118": {
+   "nameFr": "Fenouil, bouilli/cuit à l'eau",
+   "fibre": 2.0,
+   "water": 94.4,
+   "kcal": 11.7
+  },
+  "20216": {
+   "nameFr": "Pois mange-tout ou pois gourmand, bouilli/cuit à l'eau",
+   "fibre": 2.8,
+   "water": 90.9,
+   "kcal": 30.9
+  },
+  "20276": {
+   "nameFr": "Tomate ronde, crue",
+   "fibre": 1.0,
+   "water": 94.6,
+   "kcal": 17.5
+  },
+  "20308": {
+   "nameFr": "Chou blanc, bouilli/cuit à l'eau",
+   "fibre": 2.7,
+   "water": 92.9,
+   "kcal": 20.8
+  },
+  "20309": {
+   "nameFr": "Chou de Bruxelles, bouilli/cuit à l'eau",
+   "fibre": 4.8,
+   "water": 85.5,
+   "kcal": 44.4
+  },
+  "20320": {
+   "nameFr": "Haricot vert, bouilli/cuit à l'eau",
+   "fibre": 3.2,
+   "water": 90.8,
+   "kcal": 27.0
+  },
+  "20325": {
+   "nameFr": "Panais, cuit à l'étouffée",
+   "fibre": 5.6,
+   "water": 73.6,
+   "kcal": 91.2
+  },
+  "20327": {
+   "nameFr": "Poireau, bouilli/cuit à l'eau",
+   "fibre": 3.4,
+   "water": 91.6,
+   "kcal": 24.7
+  },
+  "20333": {
+   "nameFr": "Salsifis, bouilli/cuit à l'eau",
+   "fibre": 4.5,
+   "water": 82.8,
+   "kcal": 56.9
+  },
+  "20336": {
+   "nameFr": "Épinard, bouilli/cuit à l'eau",
+   "fibre": 3.5,
+   "water": 91.9,
+   "kcal": 26.8
+  },
+  "20350": {
+   "nameFr": "Brocoli, bouilli/cuit à l'eau (aliment moyen)",
+   "fibre": 3.0,
+   "water": 93.8,
+   "kcal": 21.8
+  },
+  "20352": {
+   "nameFr": "Carotte, bouillie/cuite à l'eau (aliment moyen)",
+   "fibre": 3.3,
+   "water": 90.1,
+   "kcal": 29.6
+  },
+  "20502": {
+   "nameFr": "Haricot blanc, bouilli/cuit à l'eau",
+   "fibre": 13.8,
+   "water": 66.9,
+   "kcal": 112.0
+  },
+  "20503": {
+   "nameFr": "Haricot rouge, bouilli/cuit à l'eau",
+   "fibre": 11.6,
+   "water": 65.0,
+   "kcal": 116.0
+  },
+  "20506": {
+   "nameFr": "Pois cassé, bouilli/cuit à l'eau",
+   "fibre": 7.95,
+   "water": 64.9,
+   "kcal": 129.0
+  },
+  "20507": {
+   "nameFr": "Pois chiche, bouilli/cuit à l'eau",
+   "fibre": 8.2,
+   "water": 62.0,
+   "kcal": 148.0
+  },
+  "20513": {
+   "nameFr": "Haricot flageolet, bouilli/cuit à l'eau",
+   "fibre": 13.8,
+   "water": 66.9,
+   "kcal": 112.0
+  },
+  "20531": {
+   "nameFr": "Haricot mungo, frais, bouilli/cuit à l'eau",
+   "fibre": 6.4,
+   "water": 72.5,
+   "kcal": 95.7
+  },
+  "20587": {
+   "nameFr": "Lentille verte, bouillie/cuite à l'eau",
+   "fibre": 8.45,
+   "water": 64.8,
+   "kcal": 125.0
+  },
+  "20589": {
+   "nameFr": "Lentille corail, bouillie/cuite à l'eau",
+   "fibre": 8.2,
+   "water": 65.1,
+   "kcal": 123.0
+  },
+  "25621": {
+   "nameFr": "Houmous, préemballé",
+   "fibre": 5.18,
+   "water": null,
+   "kcal": 258.0
+  },
+  "31074": {
+   "nameFr": "Chocolat noir 70 % de cacao environ, de dégustation, tablette",
+   "fibre": 12.8,
+   "water": 0.9,
+   "kcal": 591.0
+  },
+  "32004": {
+   "nameFr": "Muesli (aliment moyen)",
+   "fibre": 6.9,
+   "water": 4.54,
+   "kcal": 433.0
+  },
+  "32014": {
+   "nameFr": "Pétales de maïs nature, non enrichis en vitamines et minéraux",
+   "fibre": 4.6,
+   "water": 3.4,
+   "kcal": 372.0
+  },
+  "32140": {
+   "nameFr": "Flocons d'avoine",
+   "fibre": 11.2,
+   "water": 11.0,
+   "kcal": 369.0
+  },
+  "4003": {
+   "nameFr": "Pomme de terre, bouillie/cuite à l'eau",
+   "fibre": 1.8,
+   "water": 78.3,
+   "kcal": 81.0
+  },
+  "4102": {
+   "nameFr": "Patate douce, cuite",
+   "fibre": 2.9,
+   "water": 78.0,
+   "kcal": 79.1
+  },
+  "7001": {
+   "nameFr": "Pain blanc (par ex. : baguette, boule…)",
+   "fibre": 2.7,
+   "water": 30.0,
+   "kcal": 287.0
+  },
+  "7110": {
+   "nameFr": "Pain complet ou intégral (à la farine T150)",
+   "fibre": 7.3,
+   "water": 35.9,
+   "kcal": 234.0
+  },
+  "7115": {
+   "nameFr": "Pain au son",
+   "fibre": 6.21,
+   "water": 35.9,
+   "kcal": 244.0
+  },
+  "7125": {
+   "nameFr": "Pain de seigle et froment",
+   "fibre": 4.5,
+   "water": 31.6,
+   "kcal": 260.0
+  },
+  "7340": {
+   "nameFr": "Biscotte au blé complet",
+   "fibre": 11.0,
+   "water": 3.5,
+   "kcal": 389.0
+  },
+  "7352": {
+   "nameFr": "Galette de riz complet soufflé",
+   "fibre": 3.4,
+   "water": 5.8,
+   "kcal": 381.0
+  },
+  "9103": {
+   "nameFr": "Riz complet, cuit, sans sel ajouté",
+   "fibre": 2.1,
+   "water": 54.0,
+   "kcal": 187.0
+  },
+  "9104": {
+   "nameFr": "Riz blanc, cuit, sans sel ajouté",
+   "fibre": 1.4,
+   "water": 61.4,
+   "kcal": 155.0
+  },
+  "9231": {
+   "nameFr": "Pop-corn ou maïs éclaté, sans huile, non salé",
+   "fibre": 12.8,
+   "water": 2.95,
+   "kcal": 419.0
+  },
+  "9322": {
+   "nameFr": "Orge perlée, bouilli/cuite à l'eau, sans sel ajouté",
+   "fibre": 3.8,
+   "water": 68.8,
+   "kcal": 119.0
+  },
+  "9341": {
+   "nameFr": "Quinoa, bouilli/cuit à l'eau, sans sel ajouté",
+   "fibre": 3.8,
+   "water": 61.6,
+   "kcal": 149.0
+  },
+  "9621": {
+   "nameFr": "Son de blé",
+   "fibre": 42.9,
+   "water": 9.89,
+   "kcal": 270.0
+  },
+  "9691": {
+   "nameFr": "Boulgour de blé, cuit, sans sel ajouté",
+   "fibre": 3.7,
+   "water": 66.5,
+   "kcal": 131.0
+  },
+  "9811": {
+   "nameFr": "Pâtes sèches, standard, cuites, sans sel ajouté",
+   "fibre": 2.2,
+   "water": 58.9,
+   "kcal": 167.0
+  },
+  "9877": {
+   "nameFr": "Pâtes sèches, semi-complètes, cuites, sans sel ajouté",
+   "fibre": 4.5,
+   "water": 56.0,
+   "kcal": 173.0
+  }
+ }
+}

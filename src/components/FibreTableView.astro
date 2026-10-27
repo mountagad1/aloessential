@@ -1,0 +1,320 @@
+---
+/*
+ * High-fibre foods table and daily fibre calculator (backlog EAM-01), one
+ * page per locale. The full table, guidance, method, sources and the data
+ * licence are static HTML, sorted by fibre per 100 g; search, sorting and the
+ * calculator run in the browser from the same data (src/data/fibre.ts).
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { LOCALES, articlePath, homePath, type Locale } from "../i18n/locales";
+import { ui } from "../i18n/ui";
+import { FIBRE_UI, fibreAlternates } from "../i18n/fibre-ui";
+import { CATEGORIES, DAILY_REFERENCES, FIBRE_SOURCES, FOODS } from "../data/fibre";
+import { getTranslatedLocales } from "../lib/articles";
+import { breadcrumbLd } from "../lib/seo";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const f = FIBRE_UI[locale];
+const t = ui(locale);
+const lang = LOCALES[locale].dateLocale;
+const grams = new Intl.NumberFormat(lang, { maximumFractionDigits: 1 });
+
+const alternates = fibreAlternates(await getTranslatedLocales());
+const crumbs = [
+  { name: t.home, path: homePath(locale) },
+  { name: f.h1, path: f.path },
+];
+const jsonLd = [breadcrumbLd(crumbs, Astro.site)];
+
+const byName = [...FOODS].sort((a, b) => a.names[locale].localeCompare(b.names[locale], lang));
+const calculatorFoods = byName.map((food) => ({ code: food.code, fibrePerPortion: food.fibrePerPortion }));
+const text = {
+  lang,
+  colon: locale === "fr" ? " : " : ": ",
+  total: f.calculator.total,
+  efsa: f.calculator.efsa.replace("{efsa}", String(DAILY_REFERENCES.efsa)),
+  national: f.calculator.national.replace("{national}", String(DAILY_REFERENCES.national)),
+  reached: f.calculator.reached,
+  remove: f.calculator.remove,
+  count: f.table.count,
+  references: DAILY_REFERENCES,
+  foods: calculatorFoods,
+};
+---
+
+<BaseLayout title={f.title} description={f.description} locale={locale} alternates={alternates} jsonLd={jsonLd}>
+  <article class="tool-page">
+    <header class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label={t.breadcrumb}>
+          <ol>
+            <li><a href={homePath(locale)}>{t.home}</a></li>
+            <li aria-current="page">{f.h1}</li>
+          </ol>
+        </nav>
+        <p class="eyebrow">{f.eyebrow}</p>
+        <h1>{f.h1}</h1>
+        <p>{f.intro}</p>
+        <p class="byline">{f.byline}</p>
+      </div>
+    </header>
+
+    <section class="section section--tight" aria-labelledby="fibre-table-title">
+      <div class="container">
+        <h2 id="fibre-table-title">{f.table.title}</h2>
+        <noscript><p>{f.table.noscript}</p></noscript>
+        <form class="tool__form fibre-filters" data-fibre-filters hidden>
+          <div class="tool__field">
+            <label for="fibre-search">{f.table.search}</label>
+            <input id="fibre-search" name="q" type="search" autocomplete="off" />
+          </div>
+          <div class="tool__field">
+            <label for="fibre-category">{f.table.category}</label>
+            <select id="fibre-category" name="category">
+              <option value="">{f.table.allCategories}</option>
+              {CATEGORIES.map((c) => <option value={c}>{f.categories[c]}</option>)}
+            </select>
+          </div>
+          <div class="tool__field">
+            <label for="fibre-sort">{f.table.sort}</label>
+            <select id="fibre-sort" name="sort">
+              <option value="fibre">{f.table.sortFibre}</option>
+              <option value="portion">{f.table.sortPortion}</option>
+              <option value="name">{f.table.sortName}</option>
+            </select>
+          </div>
+        </form>
+        <p class="small-print" data-fibre-count aria-live="polite" hidden></p>
+        <div class="table-wrap">
+          <table class="composition fibre-table">
+            <caption class="small-print">{f.table.caption}</caption>
+            <thead>
+              <tr>
+                <th scope="col">{f.table.food}</th>
+                <th scope="col">{f.table.category}</th>
+                <th scope="col">{f.table.per100g}</th>
+                <th scope="col">{f.table.portion}</th>
+                <th scope="col">{f.table.perPortion}</th>
+                <th scope="col">{f.table.label}</th>
+              </tr>
+            </thead>
+            <tbody data-fibre-rows>
+              {
+                FOODS.map((food) => (
+                  <tr
+                    data-code={food.code}
+                    data-name={food.names[locale].toLocaleLowerCase(lang)}
+                    data-category={food.category}
+                    data-fibre={food.fibre}
+                    data-portion={food.fibrePerPortion}
+                  >
+                    <th scope="row">{food.names[locale]}</th>
+                    <td>{f.categories[food.category]}</td>
+                    <td>
+                      {grams.format(food.fibre)} {f.grams}
+                    </td>
+                    <td>
+                      {food.portion} {f.grams}
+                    </td>
+                    <td>
+                      {grams.format(food.fibrePerPortion)} {f.grams}
+                    </td>
+                    <td>{food.label === "none" ? "–" : <span class={`fibre-label fibre-label--${food.label}`}>{f.labels[food.label]}</span>}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="fibre-calculator-title">
+      <div class="container">
+        <div class="tool">
+          <h2 id="fibre-calculator-title">{f.calculator.title}</h2>
+          <noscript><p>{f.calculator.noscript}</p></noscript>
+          <div data-fibre-calculator data-text={JSON.stringify(text)} hidden>
+            <p>{f.calculator.intro}</p>
+            <form class="tool__form" data-fibre-add>
+              <div class="tool__field">
+                <label for="fibre-food">{f.calculator.food}</label>
+                <select id="fibre-food" name="food">
+                  {
+                    byName.map((food) => (
+                      <option value={food.code}>
+                        {food.names[locale]} ({food.portion} {f.grams})
+                      </option>
+                    ))
+                  }
+                </select>
+              </div>
+              <div class="tool__field">
+                <label for="fibre-portions">{f.calculator.portions}</label>
+                <input id="fibre-portions" name="portions" type="number" min="0.5" max="10" step="0.5" value="1" inputmode="decimal" />
+              </div>
+              <button class="btn" type="submit">{f.calculator.add}</button>
+            </form>
+            <div class="tool__result" data-fibre-result aria-live="polite">
+              <p class="tool__headline" data-fibre-total></p>
+              <ul class="fibre-day" data-fibre-day></ul>
+              <p data-fibre-empty>{f.calculator.empty}</p>
+              <div class="fibre-progress">
+                <p data-fibre-efsa></p>
+                <progress data-fibre-efsa-bar max={DAILY_REFERENCES.efsa} value="0"></progress>
+                <p data-fibre-national></p>
+                <progress data-fibre-national-bar max={DAILY_REFERENCES.national} value="0"></progress>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="fibre-read-title">
+      <div class="container">
+        <div class="prose">
+          <h2 id="fibre-read-title">{f.read.title}</h2>
+          <ul>
+            {f.read.items.map((s) => <li>{s}</li>)}
+          </ul>
+
+          <h2>{f.increase.title}</h2>
+          <ul>
+            {f.increase.items.map((s) => <li>{s}</li>)}
+          </ul>
+
+          <h2>{f.doctor.title}</h2>
+          <ul>
+            {f.doctor.items.map((s) => <li>{s}</li>)}
+          </ul>
+
+          <h2>{f.method.title}</h2>
+          {f.method.text.map((p) => <p>{p}</p>)}
+          <p class="small-print">{f.method.licence}</p>
+
+          <h2>{f.sources}</h2>
+          <ul class="sources">
+            {
+              FIBRE_SOURCES.map((s) => (
+                <li>
+                  {s.publisher}, <a href={s.url} rel="noopener"><cite>{s.title}</cite></a>
+                </li>
+              ))
+            }
+          </ul>
+
+          <h2>{f.related}</h2>
+          <p><a href={articlePath(locale, f.digestionArticle)}>{f.relatedLink}</a></p>
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<script>
+  import { dailyFibre } from "../data/fibre-calc";
+
+  // Search, category filter and sorting of the static table.
+  const filters = document.querySelector<HTMLFormElement>("[data-fibre-filters]");
+  const tbody = document.querySelector<HTMLElement>("[data-fibre-rows]");
+  const count = document.querySelector<HTMLElement>("[data-fibre-count]");
+  const calculator = document.querySelector<HTMLElement>("[data-fibre-calculator]");
+  const text = JSON.parse(calculator?.dataset.text ?? "{}") as {
+    lang: string;
+    colon: string;
+    total: string;
+    efsa: string;
+    national: string;
+    reached: string;
+    remove: string;
+    count: string;
+    references: { efsa: number; national: number };
+    foods: { code: string; fibrePerPortion: number }[];
+  };
+
+  if (filters && tbody && count) {
+    const rows = [...tbody.querySelectorAll<HTMLTableRowElement>("tr")];
+    const normalize = (s: string) => s.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLocaleLowerCase(text.lang);
+    const update = () => {
+      const data = new FormData(filters);
+      const q = normalize(String(data.get("q") ?? "").trim());
+      const category = String(data.get("category") ?? "");
+      const sort = String(data.get("sort") ?? "fibre");
+      const sorted = [...rows].sort((a, b) =>
+        sort === "name"
+          ? (a.dataset.name ?? "").localeCompare(b.dataset.name ?? "", text.lang)
+          : Number(b.dataset[sort]) - Number(a.dataset[sort]),
+      );
+      let shown = 0;
+      for (const row of sorted) {
+        const visible = (!q || normalize(row.dataset.name ?? "").includes(q)) && (!category || row.dataset.category === category);
+        row.hidden = !visible;
+        if (visible) shown++;
+        tbody.append(row);
+      }
+      count.textContent = text.count.replace("{n}", String(shown));
+    };
+    filters.hidden = false;
+    count.hidden = false;
+    filters.addEventListener("input", update);
+    filters.addEventListener("submit", (e) => e.preventDefault());
+    update();
+  }
+
+  // Daily calculator.
+  const add = document.querySelector<HTMLFormElement>("[data-fibre-add]");
+  if (calculator && add) {
+    const number = new Intl.NumberFormat(text.lang, { maximumFractionDigits: 1 });
+    const selection: Record<string, number> = {};
+    const day = calculator.querySelector<HTMLElement>("[data-fibre-day]")!;
+    const names = Object.fromEntries(
+      [...add.querySelectorAll<HTMLOptionElement>("option")].map((o) => [o.value, o.textContent ?? ""]),
+    );
+    const set = (selector: string, content: string) => {
+      calculator.querySelector<HTMLElement>(selector)!.textContent = content;
+    };
+    const render = () => {
+      const total = dailyFibre(selection, text.foods);
+      set("[data-fibre-total]", text.total.replace("{total}", number.format(total)));
+      const reached = (ref: number) => (total >= ref ? ` ✓ ${text.reached}` : "");
+      set("[data-fibre-efsa]", text.efsa + reached(text.references.efsa));
+      set("[data-fibre-national]", text.national + reached(text.references.national));
+      calculator.querySelector<HTMLProgressElement>("[data-fibre-efsa-bar]")!.value = Math.min(total, text.references.efsa);
+      calculator.querySelector<HTMLProgressElement>("[data-fibre-national-bar]")!.value = Math.min(total, text.references.national);
+      day.replaceChildren(
+        ...Object.entries(selection).map(([code, portions]) => {
+          const li = document.createElement("li");
+          const fibre = (text.foods.find((f) => f.code === code)?.fibrePerPortion ?? 0) * portions;
+          li.append(`${number.format(portions)} × ${names[code]}${text.colon}${number.format(fibre)} g `);
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "text-link";
+          button.textContent = text.remove;
+          button.addEventListener("click", () => {
+            delete selection[code];
+            render();
+          });
+          li.append(button);
+          return li;
+        }),
+      );
+      calculator.querySelector<HTMLElement>("[data-fibre-empty]")!.hidden = Object.keys(selection).length > 0;
+    };
+    add.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(add);
+      const portions = Number(String(data.get("portions")).replace(",", "."));
+      if (!(portions > 0)) return;
+      const code = String(data.get("food"));
+      selection[code] = (selection[code] ?? 0) + portions;
+      render();
+    });
+    calculator.hidden = false;
+    render();
+  }
+</script>
