@@ -12,6 +12,8 @@ import ReadingProgress from "./ReadingProgress.astro";
 import TableOfContents from "./TableOfContents.astro";
 import ProductCallout from "./ProductCallout.astro";
 import CoverImage from "./CoverImage.astro";
+import BreakfastBuilder from "./BreakfastBuilder.astro";
+import { BREAKFAST_HEADINGS, BREAKFAST_UI } from "../i18n/breakfast-ui";
 import { productsForArticle } from "../lib/products";
 import { articleLd, breadcrumbLd, coverShareImage, organizationLd } from "../lib/seo";
 import { DEFAULT_AUTHOR, DEFAULT_REVIEWER } from "../data/site";
@@ -30,7 +32,18 @@ const { article, others } = Astro.props;
 const { title, description, category, date, updated, cover, coverAlt, coverCaption, coverTitle, coverDescription, locale } = article.data;
 const t = ui(locale);
 const french = locale === DEFAULT_LOCALE;
-const { Content, headings } = await render(article);
+const { Content, headings: bodyHeadings } = await render(article);
+// An article with a tool lists the tool's sections in its table of contents too.
+const tool = article.data.tool;
+const toolHeadings =
+  tool === "breakfast"
+    ? [
+        { depth: 2, slug: BREAKFAST_HEADINGS.ideas, text: BREAKFAST_UI[locale].ideas.title },
+        { depth: 2, slug: BREAKFAST_HEADINGS.builder, text: BREAKFAST_UI[locale].builder.title },
+        { depth: 2, slug: BREAKFAST_HEADINGS.method, text: BREAKFAST_UI[locale].method.title },
+      ]
+    : [];
+const headings = [...bodyHeadings, ...toolHeadings];
 const cat = localizedCategory(category, locale);
 const catPath = categoryPath(locale, cat.slug);
 // Translations show the products of their French source that exist in their locale.
@@ -131,6 +144,7 @@ const related = [...others.filter((a) => a.data.category === category), ...other
       </div>
       <div class="prose">
         <Content />
+        {tool === "breakfast" && <BreakfastBuilder locale={locale} />}
         {
           article.data.sources.length > 0 && (
             <section class="sources" aria-labelledby="sources-title">

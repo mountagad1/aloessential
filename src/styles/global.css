@@ -2943,3 +2943,55 @@ main:focus {
   height: 0.75rem;
   accent-color: var(--color-leaf);
 }
+
+/* ---------- Breakfast builder (balanced-breakfast article) -------------- */
+
+.breakfast-ideas td {
+  white-space: normal;
+}
+
+.breakfast-ideas td[data-kcal],
+.breakfast-ideas td[data-fibre] {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.prose .tool > h2:first-child {
+  margin-top: 0;
+}
+
+.breakfast-builder .tool__form + .tool__form {
+  margin-top: var(--space-4);
+}
+
+.breakfast-builder__checklist {
+  margin-top: var(--space-4);
+  font-size: var(--text-md);
+}
+
+.prose .breakfast-checklist {
+  padding-left: 0;
+  list-style: none;
+}
+
+.breakfast-checklist .is-present {
+  color: var(--color-forest);
+  font-weight: 600;
+}
+
+.breakfast-checklist .is-missing {
+  color: var(--color-text-muted);
+}
+
+[data-breakfast-clear] {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.prose > section:not(.tool) > * + * {
+  margin-top: var(--space-5);
+}

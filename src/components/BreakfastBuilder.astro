@@ -1,0 +1,279 @@
+---
+/*
+ * Breakfast ideas table and breakfast builder, shown at the end of the
+ * balanced-breakfast article in every locale (front matter `tool: breakfast`).
+ * The ideas table, method and sources are static HTML; the builder runs in
+ * the browser from the numbers the page hands it (src/data/breakfast.ts).
+ */
+import { LOCALES, type Locale } from "../i18n/locales";
+import { BREAKFAST_HEADINGS, BREAKFAST_UI } from "../i18n/breakfast-ui";
+import {
+  BREAKFAST_FOODS,
+  BREAKFAST_SOURCES,
+  DAILY_REFERENCES,
+  GROUPS,
+  IDEAS,
+  IDEA_TOTALS,
+  breakfastFood,
+} from "../data/breakfast";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const b = BREAKFAST_UI[locale];
+const lang = LOCALES[locale].dateLocale;
+const number = new Intl.NumberFormat(lang, { maximumFractionDigits: 1 });
+const ids = BREAKFAST_HEADINGS;
+
+// German capitalizes nouns: names keep their case there.
+const foodName = (code: string) => {
+  const name = breakfastFood(code).names[locale];
+  return locale === "de" ? name : name.toLocaleLowerCase(lang);
+};
+const byName = (codes: typeof BREAKFAST_FOODS) =>
+  [...codes].sort((x, y) => x.names[locale].localeCompare(y.names[locale], lang));
+const optionGroups = GROUPS.map((g) => ({ group: g, foods: byName(BREAKFAST_FOODS.filter((f) => f.group === g)) }));
+const extras = byName(BREAKFAST_FOODS.filter((f) => f.group === null));
+
+const data = {
+  lang,
+  text: {
+    fibre: b.builder.fibre,
+    kcal: b.builder.kcal,
+    share: b.builder.share,
+    present: b.builder.present,
+    missing: b.builder.missing,
+    remove: b.builder.remove,
+    complete: b.builder.complete,
+    colon: b.colon,
+    groups: b.groups,
+    tips: b.builder.tips,
+  },
+  references: DAILY_REFERENCES,
+  foods: BREAKFAST_FOODS.map((f) => ({ code: f.code, group: f.group, fibre: f.fibre, kcal: f.kcal, name: f.names[locale] })),
+  ideas: Object.fromEntries(IDEAS.map((i) => [i.id, i.items])),
+};
+---
+
+<section class="breakfast" aria-labelledby={ids.ideas}>
+  <h2 id={ids.ideas}>{b.ideas.title}</h2>
+  <p>{b.ideas.intro}</p>
+  <div class="table-wrap">
+    <table class="composition breakfast-ideas">
+      <caption class="small-print">{b.ideas.caption}</caption>
+      <thead>
+        <tr>
+          <th scope="col">{b.ideas.idea}</th>
+          <th scope="col">{b.ideas.contents}</th>
+          <th scope="col">{b.ideas.fibre}</th>
+          <th scope="col">{b.ideas.kcal}</th>
+          <th scope="col">{b.ideas.groups}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          IDEA_TOTALS.map((idea) => (
+            <tr data-idea={idea.id}>
+              <th scope="row">{b.ideaNames[idea.id]}</th>
+              <td>{idea.items.map((i) => `${i.grams} g ${foodName(i.code)}`).join(" + ")}</td>
+              <td data-fibre>{number.format(idea.fibre)} g</td>
+              <td data-kcal>{idea.kcal} kcal</td>
+              <td>{GROUPS.filter((g) => idea.groups.includes(g)).map((g) => b.groups[g]).join(", ")}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="tool breakfast-builder" aria-labelledby={ids.builder}>
+  <h2 id={ids.builder}>{b.builder.title}</h2>
+  <noscript><p>{b.builder.noscript}</p></noscript>
+  <div data-breakfast data-config={JSON.stringify(data)} hidden>
+    <p>{b.builder.intro}</p>
+    <form class="tool__form" data-breakfast-load>
+      <div class="tool__field">
+        <label for="breakfast-idea">{b.builder.start}</label>
+        <select id="breakfast-idea" name="idea">
+          <option value="">{b.builder.startNone}</option>
+          {IDEAS.map((i) => <option value={i.id}>{b.ideaNames[i.id]}</option>)}
+        </select>
+      </div>
+      <button class="btn btn--outline" type="submit">{b.builder.load}</button>
+    </form>
+    <form class="tool__form" data-breakfast-add>
+      <div class="tool__field">
+        <label for="breakfast-food">{b.builder.food}</label>
+        <select id="breakfast-food" name="food">
+          {
+            optionGroups.map(({ group, foods }) => (
+              <optgroup label={b.groups[group]}>
+                {foods.map((f) => (
+                  <option value={f.code} data-portion={f.portion}>
+                    {f.names[locale]}
+                  </option>
+                ))}
+              </optgroup>
+            ))
+          }
+          {
+            extras.map((f) => (
+              <option value={f.code} data-portion={f.portion}>
+                {f.names[locale]}
+              </option>
+            ))
+          }
+        </select>
+      </div>
+      <div class="tool__field">
+        <label for="breakfast-grams">{b.builder.grams}</label>
+        <input id="breakfast-grams" name="grams" type="number" min="1" max="1000" step="1" value="40" inputmode="numeric" />
+      </div>
+      <button class="btn" type="submit">{b.builder.add}</button>
+    </form>
+    <div class="tool__result" data-breakfast-result aria-live="polite">
+      <p class="tool__headline" data-breakfast-fibre></p>
+      <p data-breakfast-kcal></p>
+      <p class="small-print" data-breakfast-share></p>
+      <ul class="fibre-day" data-breakfast-items></ul>
+      <p data-breakfast-empty>{b.builder.empty}</p>
+      <h3 class="breakfast-builder__checklist">{b.builder.checklist}</h3>
+      <ul class="breakfast-checklist" data-breakfast-groups></ul>
+      <p data-breakfast-advice></p>
+      <button class="text-link" type="button" data-breakfast-clear>{b.builder.clear}</button>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby={ids.method}>
+  <h2 id={ids.method}>{b.method.title}</h2>
+  {b.method.text.map((p) => <p>{p}</p>)}
+  <h3>{b.method.sources}</h3>
+  <ul class="breakfast-sources">
+    {
+      BREAKFAST_SOURCES.map((s) => (
+        <li>
+          {s.publisher}, <a href={s.url} rel="noopener"><cite>{s.title}</cite></a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<script>
+  import { breakfastTotals, shareOf, type BreakfastFood, type Group } from "../data/breakfast-calc";
+
+  type Config = {
+    lang: string;
+    text: {
+      fibre: string;
+      kcal: string;
+      share: string;
+      present: string;
+      missing: string;
+      remove: string;
+      complete: string;
+      colon: string;
+      groups: Record<Group, string>;
+      tips: Record<Group, string>;
+    };
+    references: { efsa: number; national: number };
+    foods: (BreakfastFood & { name: string })[];
+    ideas: Record<string, { code: string; grams: number }[]>;
+  };
+
+  const root = document.querySelector<HTMLElement>("[data-breakfast]");
+  if (root) {
+    const config = JSON.parse(root.dataset.config ?? "{}") as Config;
+    const { text, references, foods } = config;
+    const number = new Intl.NumberFormat(config.lang, { maximumFractionDigits: 1 });
+    const fill = (template: string, values: Record<string, string | number>) =>
+      template.replace(/\{(\w+)\}/g, (_, key) => String(values[key] ?? ""));
+    const el = <T extends HTMLElement = HTMLElement>(selector: string) => root.querySelector<T>(selector)!;
+
+    let items: { code: string; grams: number }[] = [];
+
+    const render = () => {
+      const totals = breakfastTotals(items, foods);
+      el("[data-breakfast-fibre]").textContent = fill(text.fibre, { fibre: number.format(totals.fibre) });
+      el("[data-breakfast-kcal]").textContent = fill(text.kcal, { kcal: totals.kcal });
+      el("[data-breakfast-share]").textContent = fill(text.share, {
+        efsa: shareOf(totals.fibre, references.efsa),
+        national: shareOf(totals.fibre, references.national),
+        efsaRef: references.efsa,
+        nationalRef: references.national,
+      });
+
+      el("[data-breakfast-items]").replaceChildren(
+        ...items.map((item, index) => {
+          const food = foods.find((f) => f.code === item.code)!;
+          const li = document.createElement("li");
+          li.append(`${item.grams} g ${food.name}${text.colon}${number.format((food.fibre * item.grams) / 100)} g `);
+          const button = document.createElement("button");
+          button.type = "button";
+          button.textContent = text.remove;
+          button.addEventListener("click", () => {
+            items.splice(index, 1);
+            render();
+          });
+          li.append(button);
+          return li;
+        }),
+      );
+      el("[data-breakfast-empty]").hidden = items.length > 0;
+
+      const groups = Object.keys(text.groups) as Group[];
+      el("[data-breakfast-groups]").replaceChildren(
+        ...groups.map((g) => {
+          const li = document.createElement("li");
+          const present = totals.groups.includes(g);
+          li.className = present ? "is-present" : "is-missing";
+          li.dataset.group = g;
+          li.textContent = `${present ? "✓" : "○"} ${text.groups[g]}${text.colon}${present ? text.present : text.missing}`;
+          return li;
+        }),
+      );
+      const missing = groups.filter((g) => !totals.groups.includes(g));
+      el("[data-breakfast-advice]").textContent = missing.length
+        ? missing.map((g) => text.tips[g]).join(" ")
+        : text.complete;
+    };
+
+    const add = el<HTMLFormElement>("[data-breakfast-add]");
+    const foodSelect = add.querySelector<HTMLSelectElement>("select")!;
+    const gramsInput = add.querySelector<HTMLInputElement>("input")!;
+    const syncPortion = () => {
+      gramsInput.value = foodSelect.selectedOptions[0]?.dataset.portion ?? gramsInput.value;
+    };
+    foodSelect.addEventListener("change", syncPortion);
+    syncPortion();
+
+    add.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const grams = Math.round(Number(gramsInput.value.replace(",", ".")));
+      if (!(grams > 0 && grams <= 1000)) return;
+      const existing = items.find((i) => i.code === foodSelect.value);
+      if (existing) existing.grams += grams;
+      else items.push({ code: foodSelect.value, grams });
+      render();
+    });
+
+    el<HTMLFormElement>("[data-breakfast-load]").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const id = String(new FormData(e.currentTarget as HTMLFormElement).get("idea") ?? "");
+      items = (config.ideas[id] ?? []).map((i) => ({ ...i }));
+      render();
+    });
+
+    el("[data-breakfast-clear]").addEventListener("click", () => {
+      items = [];
+      render();
+    });
+
+    root.hidden = false;
+    render();
+  }
+</script>

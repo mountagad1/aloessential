@@ -3,6 +3,8 @@ title: "Ausgewogenes Frühstück: unsere einfachen Ideen"
 description: "Herzhaft oder süß, schnell oder genussvoll: fünf ausgewogene, einfache Frühstücksideen, die bis mittags ohne Heißhunger satt machen."
 category: nutrition
 date: 2026-10-23
+updated: 2026-11-25
+tool: breakfast
 cover: /covers/photos/petit-dejeuner-equilibre-fruits-granola.webp
 coverAlt: "Schale Joghurt mit Granola, Banane, Beeren und Samen, dazu ein Glas Orangensaft auf einem hellen Tisch."
 coverTitle: "Ausgewogenes Frühstück: gut in den Tag starten"

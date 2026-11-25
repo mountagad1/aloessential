@@ -3,6 +3,8 @@ title: "Petit-déjeuner équilibré : nos idées simples"
 description: "Salé ou sucré, rapide ou gourmand : cinq petits-déjeuners équilibrés et faciles, pour tenir jusqu'à midi sans fringale."
 category: nutrition
 date: 2026-08-27
+updated: 2026-11-25
+tool: breakfast
 cover: /covers/photos/petit-dejeuner-equilibre-fruits-granola.webp
 coverAlt: "Bol de yaourt garni de granola, de banane, de fruits rouges et de graines, accompagné d’un verre de jus d’orange sur une table lumineuse."
 coverTitle: "Petit-déjeuner équilibré : bien commencer la journée"

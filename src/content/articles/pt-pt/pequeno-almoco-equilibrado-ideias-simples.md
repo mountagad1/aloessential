@@ -3,6 +3,8 @@ title: "Pequeno-almoço equilibrado: as nossas ideias simples"
 description: "Salgado ou doce, rápido ou mais guloso: cinco pequenos-almoços equilibrados e fáceis para chegar ao almoço sem fome."
 category: nutrition
 date: 2026-10-23
+updated: 2026-11-25
+tool: breakfast
 cover: /covers/photos/petit-dejeuner-equilibre-fruits-granola.webp
 coverAlt: "Taça de iogurte com granola, banana, frutos vermelhos e sementes, com um copo de sumo de laranja numa mesa luminosa."
 coverTitle: "Pequeno-almoço equilibrado: começar bem o dia"
