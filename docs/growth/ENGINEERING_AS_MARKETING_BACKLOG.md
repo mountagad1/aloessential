@@ -19,6 +19,7 @@
 | EAM-02 | How much water per day, plus a water-rich foods table | Calculator and dataset | 51 | in progress: calculator and foods table built in 7 locales, awaiting review |
 | EAM-01 | High-fibre foods: searchable table and daily-fibre calculator | Dataset and calculator | 40 | in progress: built in 7 locales, awaiting review |
 | SEO-05 | Deepen the highest-demand aloe articles | Content | 34 | in progress: aloe drinks article refreshed in 7 locales (2026-10-27), awaiting review |
+| SEO-06 | Deepen the English breakfast article ("healthy breakfast ideas": 7,208 impressions at position 6.4, CTR 0.14%, 2026-10-25 to 11-21) and its French source and translations | Content | (not scored yet: new evidence from the 2026-11-24 review) | planned, awaiting approval |
 | SEO-04 | PRO 12 + snippet test | Experiment | 30 | waiting for data |
 | EAM-04 | Aloe drink label checker | Interactive checklist | 29 | planned |
 | SEO-03 | Redirect legacy URLs from the previous site | Technical | 24 | blocked: 404 export |

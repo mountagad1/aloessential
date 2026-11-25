@@ -10,7 +10,7 @@
 | 4 | `/articles/aloe-vera-bienfaits-peau/` (+6) | 18 impressions at ~78; the SERP is brand-led | Add how to read an aloe gel label (aloe position, percentage), patch-test detail, what studies do and do not show | Cosmetic claims |
 | 5 | `/articles/articulations-mobilite-quotidien/` (+6) | 18 impressions at ~80 on "renforcer les articulations" | Answer the query directly: movement, weight, when to see a doctor. Sources needed | Health |
 | 6 | `/articles/digestion-foie-detox-complements/` (+6) | positions 20 to 75 on "complément détox" queries | Sharpen the opening on what "détox" supplements may legally claim; the article already covers it | Health claims |
-| 7 | `/articles/petit-dejeuner-equilibre/` (+6) | 11 impressions on "petit déjeuner équilibré prêt à mixer" | Check intent first: it may be product-led. No change until the SERP is checked | Low |
+| 1b (new, 2026-11-24) | `/en/articles/healthy-breakfast-ideas/` and its French source `/articles/petit-dejeuner-equilibre/` (+5) | Review of 2026-11-24: "healthy breakfast ideas" 7,208 impressions at position 6.4 in 9 days, CTR 0.14%, mostly English searches across Europe | Brief first (`PAGE_BRIEF_TEMPLATE.md`): more concrete ideas, fibre and protein per idea from the Ciqual data, links to the fibre table. Keep the URL; no title change before 2026-12-08 | Nutrition wording |
 
 Not in the backlog: pages without Search Console demand. Write no new article before items 1 to 3 have been measured.
 
