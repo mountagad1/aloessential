@@ -9,6 +9,7 @@
  * Server-side only: browser scripts must not import it (it carries all the data).
  */
 import foodsJson from "./foods.json" with { type: "json" };
+import breakfastFoodsJson from "./breakfast-foods.json" with { type: "json" };
 import ciqual from "./ciqual-values.json" with { type: "json" };
 import type { Locale } from "../i18n/locales";
 
@@ -27,14 +28,21 @@ export interface FoodData {
   kcal: number;
   /** Grams of water per 100 g; null when Ciqual gives no value. */
   water: number | null;
+  /** Grams of protein per 100 g (N x 6.25, as on EU food labels). */
+  protein: number;
 }
 
 type FoodEntry = { code: string; cat: string; portion: number; names: Record<Locale, string> };
-type CiqualEntry = { fibre: number; kcal: number; water: number | null };
+type CiqualEntry = { fibre: number; kcal: number; water: number | null; protein: number };
+
+function ciqualValues(code: string): CiqualEntry {
+  const values = (ciqual.foods as Record<string, CiqualEntry>)[code];
+  if (!values) throw new Error(`Food ${code} has no Ciqual values: run tools/extract-ciqual.py`);
+  return values;
+}
 
 export const FOOD_DATA: FoodData[] = (foodsJson as FoodEntry[]).map((f) => {
-  const values = (ciqual.foods as Record<string, CiqualEntry>)[f.code];
-  if (!values) throw new Error(`Food ${f.code} has no Ciqual values: run tools/extract-ciqual.py`);
+  const values = ciqualValues(f.code);
   if (!CATEGORIES.includes(f.cat as Category)) throw new Error(`Food ${f.code}: unknown category "${f.cat}"`);
   return {
     code: f.code,
@@ -44,7 +52,19 @@ export const FOOD_DATA: FoodData[] = (foodsJson as FoodEntry[]).map((f) => {
     fibre: values.fibre,
     kcal: values.kcal,
     water: values.water,
+    protein: values.protein,
   };
+});
+
+/**
+ * Foods only the breakfast builder offers (milk, egg, honey…): they stay out
+ * of the fibre and water tables. Same shape, without a category.
+ */
+export const BREAKFAST_ONLY_DATA: Omit<FoodData, "category">[] = (
+  breakfastFoodsJson as Omit<FoodEntry, "cat">[]
+).map((f) => {
+  const values = ciqualValues(f.code);
+  return { code: f.code, portion: f.portion, names: f.names, fibre: values.fibre, kcal: values.kcal, water: values.water, protein: values.protein };
 });
 
 export const CIQUAL_SOURCE = ciqual.source;

@@ -42,6 +42,7 @@ const data = {
   text: {
     fibre: b.builder.fibre,
     kcal: b.builder.kcal,
+    protein: b.builder.protein,
     share: b.builder.share,
     present: b.builder.present,
     missing: b.builder.missing,
@@ -52,7 +53,7 @@ const data = {
     tips: b.builder.tips,
   },
   references: DAILY_REFERENCES,
-  foods: BREAKFAST_FOODS.map((f) => ({ code: f.code, group: f.group, fibre: f.fibre, kcal: f.kcal, name: f.names[locale] })),
+  foods: BREAKFAST_FOODS.map((f) => ({ code: f.code, group: f.group, fibre: f.fibre, kcal: f.kcal, protein: f.protein, name: f.names[locale] })),
   ideas: Object.fromEntries(IDEAS.map((i) => [i.id, i.items])),
 };
 ---
@@ -68,6 +69,7 @@ const data = {
           <th scope="col">{b.ideas.idea}</th>
           <th scope="col">{b.ideas.contents}</th>
           <th scope="col">{b.ideas.fibre}</th>
+          <th scope="col">{b.ideas.protein}</th>
           <th scope="col">{b.ideas.kcal}</th>
           <th scope="col">{b.ideas.groups}</th>
         </tr>
@@ -79,8 +81,9 @@ const data = {
               <th scope="row">{b.ideaNames[idea.id]}</th>
               <td>{idea.items.map((i) => `${i.grams} g ${foodName(i.code)}`).join(" + ")}</td>
               <td data-fibre>{number.format(idea.fibre)} g</td>
+              <td data-protein>{idea.protein} g</td>
               <td data-kcal>{idea.kcal} kcal</td>
-              <td>{GROUPS.filter((g) => idea.groups.includes(g)).map((g) => b.groups[g]).join(", ")}</td>
+              <td>{GROUPS.filter((g) => idea.groups.includes(g)).map((g) => b.groups[g]).join(" · ")}</td>
             </tr>
           ))
         }
@@ -136,6 +139,7 @@ const data = {
     </form>
     <div class="tool__result" data-breakfast-result aria-live="polite">
       <p class="tool__headline" data-breakfast-fibre></p>
+      <p data-breakfast-protein></p>
       <p data-breakfast-kcal></p>
       <p class="small-print" data-breakfast-share></p>
       <ul class="fibre-day" data-breakfast-items></ul>
@@ -171,6 +175,7 @@ const data = {
     text: {
       fibre: string;
       kcal: string;
+      protein: string;
       share: string;
       present: string;
       missing: string;
@@ -199,6 +204,7 @@ const data = {
     const render = () => {
       const totals = breakfastTotals(items, foods);
       el("[data-breakfast-fibre]").textContent = fill(text.fibre, { fibre: number.format(totals.fibre) });
+      el("[data-breakfast-protein]").textContent = fill(text.protein, { protein: totals.protein });
       el("[data-breakfast-kcal]").textContent = fill(text.kcal, { kcal: totals.kcal });
       el("[data-breakfast-share]").textContent = fill(text.share, {
         efsa: shareOf(totals.fibre, references.efsa),

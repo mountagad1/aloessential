@@ -3,7 +3,7 @@
  * the breakfast builder (src/components/BreakfastBuilder.astro) stays small.
  */
 
-/** The article's rule: a cereal or bread, a fruit or vegetable, and dairy, nuts or seeds. */
+/** The article's rule: a cereal or bread, a fruit or vegetable, and a protein food. */
 export const GROUPS = ["cereal", "fruit", "protein"] as const;
 export type Group = (typeof GROUPS)[number];
 
@@ -15,6 +15,8 @@ export interface BreakfastFood {
   fibre: number;
   /** kcal per 100 g. */
   kcal: number;
+  /** Grams of protein per 100 g. */
+  protein: number;
 }
 
 export interface BreakfastTotals {
@@ -22,6 +24,8 @@ export interface BreakfastTotals {
   fibre: number;
   /** kcal, rounded to 5. */
   kcal: number;
+  /** Grams of protein, whole number. */
+  protein: number;
   /** Groups present, in GROUPS order. */
   groups: Group[];
 }
@@ -30,17 +34,20 @@ export interface BreakfastTotals {
 export function breakfastTotals(items: { code: string; grams: number }[], foods: BreakfastFood[]): BreakfastTotals {
   let fibre = 0;
   let kcal = 0;
+  let protein = 0;
   const present = new Set<Group>();
   for (const { code, grams } of items) {
     const food = foods.find((f) => f.code === code);
     if (!food || !(grams > 0)) continue;
     fibre += (food.fibre * grams) / 100;
     kcal += (food.kcal * grams) / 100;
+    protein += (food.protein * grams) / 100;
     if (food.group) present.add(food.group);
   }
   return {
     fibre: Math.round(fibre * 10) / 10,
     kcal: Math.round(kcal / 5) * 5,
+    protein: Math.round(protein),
     groups: GROUPS.filter((g) => present.has(g)),
   };
 }

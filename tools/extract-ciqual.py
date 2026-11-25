@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Extract the values the fibre table needs from the Anses Ciqual table.
+Extract the values the food tools need from the Anses Ciqual table.
 
 Usage:
     python3 tools/extract-ciqual.py "Table Ciqual 2025_FR_2025_11_03.xlsx"
@@ -9,14 +9,18 @@ Input: the Ciqual Excel file, downloaded from Recherche Data Gouv
 (https://doi.org/10.57745/RDMHWY, Etalab Open Licence 2.0). It is not kept in
 the repository. Requires openpyxl.
 
-Reads the food codes listed in src/data/foods.json and writes
-src/data/ciqual-values.json: fibre, water and energy per 100 g for each code,
+Reads the food codes listed in src/data/foods.json (fibre and water tables)
+and src/data/breakfast-foods.json (foods only the breakfast builder offers)
+and writes src/data/ciqual-values.json: fibre, water, energy and protein per
+100 g for each code,
 with the source and licence. Run it again when Anses publishes a new version,
 then update CIQUAL_SOURCE below.
 
 A value Ciqual gives as "traces" or "< x" is stored as 0 with the original
 text kept in "fibreRaw"; a missing value ("-") stops the script, because a
-food without a fibre value cannot be listed.
+food without a fibre value cannot be listed. Protein is "N x 6.25", the factor
+EU food labels use (Regulation (EU) No 1169/2011, annex I); a missing protein
+value also stops the script.
 """
 import json
 import pathlib
@@ -26,7 +30,7 @@ import sys
 import openpyxl
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-FOODS = ROOT / "src" / "data" / "foods.json"
+FOOD_LISTS = [ROOT / "src" / "data" / "foods.json", ROOT / "src" / "data" / "breakfast-foods.json"]
 OUT = ROOT / "src" / "data" / "ciqual-values.json"
 
 CIQUAL_SOURCE = {
@@ -44,6 +48,7 @@ COLUMNS = {
     "kcal": "Energie, Règlement UE N° 1169 2011 (kcal 100 g)",
     "water": "Eau (g 100 g)",
     "fibre": "Fibres alimentaires (g 100 g)",
+    "protein": "Protéines, N x 6.25 (g 100 g)",
 }
 
 
@@ -58,7 +63,7 @@ def number(raw):
 
 
 def main(xlsx):
-    wanted = {food["code"] for food in json.loads(FOODS.read_text(encoding="utf-8"))}
+    wanted = {food["code"] for path in FOOD_LISTS for food in json.loads(path.read_text(encoding="utf-8"))}
     sheet = openpyxl.load_workbook(xlsx, read_only=True).worksheets[0]
     rows = sheet.iter_rows(values_only=True)
     header = [re.sub(r"\s+", " ", str(h or "")).replace("/", " ").strip() for h in next(rows)]
@@ -70,10 +75,10 @@ def main(xlsx):
         if code not in wanted:
             continue
         entry = {"nameFr": " ".join(str(row[index["name"]]).split())}
-        for key in ("fibre", "water", "kcal"):
+        for key in ("fibre", "water", "kcal", "protein"):
             value, raw = number(row[index[key]])
-            if value is None and key == "fibre":
-                sys.exit(f"{code} {entry['nameFr']}: no fibre value in Ciqual")
+            if value is None and key in ("fibre", "protein"):
+                sys.exit(f"{code} {entry['nameFr']}: no {key} value in Ciqual")
             entry[key] = value
             if raw and key == "fibre":
                 entry["fibreRaw"] = raw

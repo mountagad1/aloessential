@@ -2951,6 +2951,7 @@ main:focus {
 }
 
 .breakfast-ideas td[data-kcal],
+.breakfast-ideas td[data-protein],
 .breakfast-ideas td[data-fibre] {
   white-space: nowrap;
   font-weight: 600;

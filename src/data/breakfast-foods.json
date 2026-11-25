@@ -1,0 +1,15 @@
+[
+ {"code": "22010", "portion": 50, "names": {"fr": "Œuf dur", "en": "Hard-boiled egg", "es": "Huevo duro", "de": "Hartgekochtes Ei", "it": "Uovo sodo", "pt-pt": "Ovo cozido", "pl": "Jajko na twardo"}},
+ {"code": "19033", "portion": 200, "names": {"fr": "Lait demi-écrémé", "en": "Semi-skimmed milk", "es": "Leche semidesnatada", "de": "Teilentrahmte Milch", "it": "Latte parzialmente scremato", "pt-pt": "Leite meio-gordo", "pl": "Mleko półtłuste"}},
+ {"code": "18900", "portion": 200, "names": {"fr": "Boisson au soja nature", "en": "Soya drink, plain", "es": "Bebida de soja natural", "de": "Sojadrink, natur", "it": "Bevanda di soia, naturale", "pt-pt": "Bebida de soja natural", "pl": "Napój sojowy naturalny"}},
+ {"code": "18899", "portion": 200, "names": {"fr": "Boisson à l'avoine nature", "en": "Oat drink, plain", "es": "Bebida de avena natural", "de": "Haferdrink, natur", "it": "Bevanda d'avena, naturale", "pt-pt": "Bebida de aveia natural", "pl": "Napój owsiany naturalny"}},
+ {"code": "2070", "portion": 150, "names": {"fr": "Jus d'orange, pur jus", "en": "Orange juice, not from concentrate", "es": "Zumo de naranja, exprimido", "de": "Orangensaft, Direktsaft", "it": "Succo d'arancia, puro", "pt-pt": "Sumo de laranja, puro", "pl": "Sok pomarańczowy, tłoczony"}},
+ {"code": "31008", "portion": 10, "names": {"fr": "Miel", "en": "Honey", "es": "Miel", "de": "Honig", "it": "Miele", "pt-pt": "Mel", "pl": "Miód"}},
+ {"code": "16400", "portion": 10, "names": {"fr": "Beurre doux", "en": "Butter, unsalted", "es": "Mantequilla sin sal", "de": "Butter, ungesalzen", "it": "Burro", "pt-pt": "Manteiga sem sal", "pl": "Masło niesolone"}},
+ {"code": "31006", "portion": 20, "names": {"fr": "Confiture", "en": "Jam", "es": "Mermelada", "de": "Konfitüre", "it": "Marmellata", "pt-pt": "Doce de fruta", "pl": "Dżem"}},
+ {"code": "17270", "portion": 5, "names": {"fr": "Huile d'olive vierge extra", "en": "Extra virgin olive oil", "es": "Aceite de oliva virgen extra", "de": "Natives Olivenöl extra", "it": "Olio extravergine di oliva", "pt-pt": "Azeite virgem extra", "pl": "Oliwa z oliwek extra virgin"}},
+ {"code": "7002", "portion": 50, "names": {"fr": "Pain au levain", "en": "Sourdough bread", "es": "Pan de masa madre", "de": "Sauerteigbrot", "it": "Pane a lievitazione naturale", "pt-pt": "Pão de massa-mãe", "pl": "Chleb na zakwasie"}},
+ {"code": "7603", "portion": 60, "names": {"fr": "Croissant", "en": "Croissant", "es": "Cruasán", "de": "Croissant", "it": "Croissant", "pt-pt": "Croissant", "pl": "Rogalik francuski (croissant)"}},
+ {"code": "12115", "portion": 30, "names": {"fr": "Emmental", "en": "Emmental cheese", "es": "Queso emmental", "de": "Emmentaler", "it": "Emmental", "pt-pt": "Queijo emmental", "pl": "Ser ementaler"}},
+ {"code": "28900", "portion": 40, "names": {"fr": "Jambon cuit", "en": "Cooked ham", "es": "Jamón cocido", "de": "Kochschinken", "it": "Prosciutto cotto", "pt-pt": "Fiambre", "pl": "Szynka gotowana"}}
+]
