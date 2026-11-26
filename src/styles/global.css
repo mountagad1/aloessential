@@ -2996,3 +2996,27 @@ main:focus {
 .prose > section:not(.tool) > * + * {
   margin-top: var(--space-5);
 }
+
+/* ---------- Morning routine planner (morning-routine article) ----------- */
+
+.morning-examples td {
+  white-space: nowrap;
+}
+
+.morning-examples__total > * {
+  font-weight: 600;
+}
+
+.prose .morning-schedule,
+.prose .morning-weeks {
+  padding-left: var(--space-5);
+}
+
+.morning-suggestions[hidden] {
+  display: none;
+}
+
+.prose .morning-suggestions {
+  padding-left: var(--space-5);
+  list-style: disc;
+}

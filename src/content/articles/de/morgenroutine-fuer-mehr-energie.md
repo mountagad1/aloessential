@@ -3,6 +3,8 @@ title: "Eine Morgenroutine für mehr Energie"
 description: "Tageslicht, ein Glas Wasser, sanfte Bewegung: fünf einfache Gewohnheiten für einen guten Start in den Tag, ohne im Morgengrauen aufzustehen."
 category: conseils
 date: 2026-10-23
+updated: 2026-11-26
+tool: morning
 cover: /covers/photos/routine-matin-energie-soleil-levant-aloe-vera.webp
 coverAlt: "Flasche und Glas mit Aloe-vera-Getränk auf einer schlichten Terrasse am Pool, mit frischen Aloe-vera-Blättern und der aufgehenden Sonne über dem Meer."
 coverTitle: "Morgenroutine: ein heller Start in den Tag"

@@ -3,6 +3,8 @@ title: "Uma rotina da manhã para teres mais energia"
 description: "Luz natural, hidratação, movimento suave: cinco gestos simples para começar bem o dia, sem teres de acordar de madrugada."
 category: conseils
 date: 2026-10-23
+updated: 2026-11-26
+tool: morning
 cover: /covers/photos/routine-matin-energie-soleil-levant-aloe-vera.webp
 coverAlt: "Garrafa e copo de bebida de aloe vera num terraço minimalista junto a uma piscina, com folhas frescas de aloe vera e o sol a nascer sobre o mar."
 coverTitle: "Rotina da manhã: um início de dia luminoso"

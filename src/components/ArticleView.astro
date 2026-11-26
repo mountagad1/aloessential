@@ -13,7 +13,9 @@ import TableOfContents from "./TableOfContents.astro";
 import ProductCallout from "./ProductCallout.astro";
 import CoverImage from "./CoverImage.astro";
 import BreakfastBuilder from "./BreakfastBuilder.astro";
+import MorningPlanner from "./MorningPlanner.astro";
 import { BREAKFAST_HEADINGS, BREAKFAST_UI } from "../i18n/breakfast-ui";
+import { MORNING_HEADINGS, MORNING_UI } from "../i18n/morning-ui";
 import { productsForArticle } from "../lib/products";
 import { articleLd, breadcrumbLd, coverShareImage, organizationLd } from "../lib/seo";
 import { DEFAULT_AUTHOR, DEFAULT_REVIEWER } from "../data/site";
@@ -42,7 +44,13 @@ const toolHeadings =
         { depth: 2, slug: BREAKFAST_HEADINGS.builder, text: BREAKFAST_UI[locale].builder.title },
         { depth: 2, slug: BREAKFAST_HEADINGS.method, text: BREAKFAST_UI[locale].method.title },
       ]
-    : [];
+    : tool === "morning"
+      ? [
+          { depth: 2, slug: MORNING_HEADINGS.examples, text: MORNING_UI[locale].examples.title },
+          { depth: 2, slug: MORNING_HEADINGS.planner, text: MORNING_UI[locale].planner.title },
+          { depth: 2, slug: MORNING_HEADINGS.method, text: MORNING_UI[locale].method.title },
+        ]
+      : [];
 const headings = [...bodyHeadings, ...toolHeadings];
 const cat = localizedCategory(category, locale);
 const catPath = categoryPath(locale, cat.slug);
@@ -145,6 +153,7 @@ const related = [...others.filter((a) => a.data.category === category), ...other
       <div class="prose">
         <Content />
         {tool === "breakfast" && <BreakfastBuilder locale={locale} />}
+        {tool === "morning" && <MorningPlanner locale={locale} />}
         {
           article.data.sources.length > 0 && (
             <section class="sources" aria-labelledby="sources-title">

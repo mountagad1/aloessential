@@ -3,6 +3,8 @@ title: "Una routine del mattino per avere più energia"
 description: "Luce naturale, idratazione, movimento dolce: cinque gesti semplici per iniziare bene la giornata, senza doversi alzare all'alba."
 category: conseils
 date: 2026-10-23
+updated: 2026-11-26
+tool: morning
 cover: /covers/photos/routine-matin-energie-soleil-levant-aloe-vera.webp
 coverAlt: "Bottiglia e bicchiere di bevanda all'aloe vera su una terrazza minimalista a bordo piscina, con foglie fresche di aloe vera e il sole che sorge sul mare."
 coverTitle: "Routine del mattino: una mattina luminosa"

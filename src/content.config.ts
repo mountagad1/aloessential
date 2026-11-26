@@ -45,8 +45,12 @@ const articles = defineCollection({
       /** Longer description of the image, for structured data only. */
       coverDescription: z.string().optional(),
       featured: z.boolean().default(false),
-      /** Interactive tool shown after the body, in every locale of the article (src/components/BreakfastBuilder.astro). */
-      tool: z.enum(["breakfast"]).optional(),
+      /**
+       * Interactive tool shown after the body, in every locale of the article:
+       * "breakfast" (src/components/BreakfastBuilder.astro) or "morning"
+       * (src/components/MorningPlanner.astro).
+       */
+      tool: z.enum(["breakfast", "morning"]).optional(),
       /** LR products discussed in the article; only published ones are shown. */
       products: z.array(reference("products")).default([]),
       /** Byline. Defaults to the site's writer and reviewer (src/data/site.ts). */

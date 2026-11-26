@@ -1,0 +1,267 @@
+---
+/*
+ * Sample routines and morning routine planner, shown at the end of the
+ * morning-routine article in every locale (front matter `tool: morning`).
+ * The sample table, method and links are static HTML; the planner runs in
+ * the browser (src/data/morning.ts).
+ */
+import { articlePath, type Locale } from "../i18n/locales";
+import { MORNING_HEADINGS, MORNING_UI } from "../i18n/morning-ui";
+import { WATER_UI } from "../i18n/water-ui";
+import {
+  BREAKFAST_MINUTES,
+  EXAMPLES,
+  HABITS,
+  MOVEMENT_MINUTES,
+  SHOWER_MINUTES,
+  planRoutine,
+  type StepId,
+} from "../data/morning";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const m = MORNING_UI[locale];
+const ids = MORNING_HEADINGS;
+const min = (n: number) => m.minutes.replace("{n}", String(n));
+
+const routines = EXAMPLES.map((o) => planRoutine(o));
+const rows: StepId[] = ["light", "water", "movement", "shower", "dress", "breakfast"];
+const duration = (i: number, id: StepId) => routines[i].steps.find((s) => s.id === id)?.duration ?? 0;
+
+const config = {
+  text: {
+    steps: m.steps,
+    habits: m.habits,
+    fits: m.planner.fits,
+    over: m.planner.over,
+    suggestions: m.planner.suggestions,
+    phone: m.planner.phone,
+    week: m.planner.week,
+    minutes: m.minutes,
+    icsTitle: m.planner.icsTitle,
+  },
+};
+---
+
+<section aria-labelledby={ids.examples}>
+  <h2 id={ids.examples}>{m.examples.title}</h2>
+  <p>{m.examples.intro}</p>
+  <div class="table-wrap">
+    <table class="composition morning-examples">
+      <caption class="small-print">{m.examples.caption}</caption>
+      <thead>
+        <tr>
+          <th scope="col">{m.examples.step}</th>
+          {EXAMPLES.map((o) => <th scope="col">{m.examples.column.replace("{n}", String(o.available))}</th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((id) => (
+            <tr>
+              <th scope="row">{m.steps[id]}</th>
+              {EXAMPLES.map((_, i) => (
+                <td>{duration(i, id) ? min(duration(i, id)) : "–"}</td>
+              ))}
+            </tr>
+          ))
+        }
+        <tr class="morning-examples__total">
+          <th scope="row">{m.examples.total}</th>
+          {routines.map((r) => <td>{min(r.needed)}</td>)}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="tool morning-planner" aria-labelledby={ids.planner}>
+  <h2 id={ids.planner}>{m.planner.title}</h2>
+  <noscript><p>{m.planner.noscript}</p></noscript>
+  <div data-morning data-config={JSON.stringify(config)} hidden>
+    <p>{m.planner.intro}</p>
+    <form class="tool__form" data-morning-form>
+      <div class="tool__field">
+        <label for="morning-wake">{m.planner.wake}</label>
+        <input id="morning-wake" name="wake" type="time" value="07:00" required />
+      </div>
+      <div class="tool__field">
+        <label for="morning-leave">{m.planner.leave}</label>
+        <input id="morning-leave" name="leave" type="time" value="07:45" required />
+      </div>
+      <fieldset class="tool__choices">
+        <legend>{m.planner.habitsLegend}</legend>
+        {
+          HABITS.map((h) => (
+            <label>
+              <input type="checkbox" name="habit" value={h} checked />
+              {m.habits[h]}
+            </label>
+          ))
+        }
+      </fieldset>
+      <div class="tool__field">
+        <label for="morning-movement">{m.planner.movement}</label>
+        <select id="morning-movement" name="movement">
+          {MOVEMENT_MINUTES.map((n) => <option value={n} selected={n === 10}>{min(n)}</option>)}
+        </select>
+      </div>
+      <div class="tool__field">
+        <label for="morning-shower">{m.planner.shower}</label>
+        <select id="morning-shower" name="shower">
+          {SHOWER_MINUTES.map((n) => <option value={n} selected={n === 10}>{n === 0 ? m.planner.noShower : min(n)}</option>)}
+        </select>
+      </div>
+      <div class="tool__field">
+        <label for="morning-breakfast">{m.planner.breakfast}</label>
+        <select id="morning-breakfast" name="breakfast">
+          {BREAKFAST_MINUTES.map((n) => <option value={n} selected={n === 15}>{n === 0 ? m.planner.takeaway : min(n)}</option>)}
+        </select>
+      </div>
+      <button class="btn" type="submit">{m.planner.submit}</button>
+    </form>
+    <div class="tool__result" data-morning-result aria-live="polite" hidden>
+      <p class="tool__headline" data-morning-headline></p>
+      <ul class="tool__warning morning-suggestions" data-morning-suggestions></ul>
+      <ol class="morning-schedule" data-morning-schedule></ol>
+      <p data-morning-phone></p>
+      <h3>{m.planner.weekly}</h3>
+      <ol class="morning-weeks" data-morning-weeks></ol>
+      <button class="btn btn--outline" type="button" data-morning-ics>{m.planner.ics}</button>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby={ids.method}>
+  <h2 id={ids.method}>{m.method.title}</h2>
+  {m.method.text.map((p) => <p>{p}</p>)}
+  <ul class="morning-links">
+    <li><a href={articlePath(locale, m.breakfastArticle)}>{m.planner.breakfastLink}</a></li>
+    <li><a href={WATER_UI[locale].path}>{m.planner.waterLink}</a></li>
+  </ul>
+</section>
+
+<script>
+  import {
+    addMinutes,
+    minutesBetween,
+    planRoutine,
+    routineIcs,
+    shortenings,
+    weeklyPlan,
+    type Habit,
+    type RoutineOptions,
+    type StepId,
+  } from "../data/morning";
+
+  type Config = {
+    text: {
+      steps: Record<StepId, string>;
+      habits: Record<Habit, string>;
+      fits: string;
+      over: string;
+      suggestions: { movement: string; breakfast: string; takeaway: string; earlier: string };
+      phone: string;
+      week: string;
+      minutes: string;
+      icsTitle: string;
+    };
+  };
+
+  const root = document.querySelector<HTMLElement>("[data-morning]");
+  if (root) {
+    const { text } = JSON.parse(root.dataset.config ?? "{}") as Config;
+    const fill = (template: string, values: Record<string, string | number>) =>
+      template.replace(/\{(\w+)\}/g, (_, key) => String(values[key] ?? ""));
+    const el = <T extends HTMLElement = HTMLElement>(selector: string) => root.querySelector<T>(selector)!;
+    const form = el<HTMLFormElement>("[data-morning-form]");
+    const item = (content: string) => {
+      const li = document.createElement("li");
+      li.textContent = content;
+      return li;
+    };
+
+    let ics = "";
+
+    const plan = () => {
+      const data = new FormData(form);
+      const wake = String(data.get("wake") || "07:00");
+      const leave = String(data.get("leave") || "07:45");
+      const options: RoutineOptions = {
+        available: minutesBetween(wake, leave),
+        habits: data.getAll("habit").map(String) as Habit[],
+        movement: Number(data.get("movement")),
+        shower: Number(data.get("shower")),
+        breakfast: Number(data.get("breakfast")),
+      };
+      const routine = planRoutine(options);
+      const over = -routine.spare;
+
+      el("[data-morning-headline]").textContent =
+        over > 0 ? fill(text.over, { needed: routine.needed, over }) : fill(text.fits, { needed: routine.needed, spare: routine.spare });
+
+      const suggestions = el("[data-morning-suggestions]");
+      if (over > 0) {
+        suggestions.replaceChildren(
+          ...shortenings(options).map((s) =>
+            item(fill(text.suggestions[s.id], { saved: routine.needed - planRoutine(s.options).needed })),
+          ),
+          item(fill(text.suggestions.earlier, { over, time: addMinutes(wake, -over) })),
+        );
+        suggestions.hidden = false;
+      } else {
+        suggestions.replaceChildren();
+        suggestions.hidden = true;
+      }
+
+      const lines = routine.steps.map((s) => {
+        const label = s.duration ? `${text.steps[s.id]} (${fill(text.minutes, { n: s.duration })})` : text.steps[s.id];
+        return `${addMinutes(wake, s.start)} · ${label}`;
+      });
+      el("[data-morning-schedule]").replaceChildren(...lines.map(item));
+
+      const phone = el("[data-morning-phone]");
+      phone.hidden = routine.phoneFrom === null;
+      phone.textContent = routine.phoneFrom === null ? "" : fill(text.phone, { time: addMinutes(wake, routine.phoneFrom) });
+
+      el("[data-morning-weeks]").replaceChildren(
+        // Each week adds one habit to those of the weeks before.
+        ...weeklyPlan(options.habits).map((habits, i) => item(`${fill(text.week, { n: i + 1 })} – ${text.habits[habits.at(-1)!]}`)),
+      );
+
+      const today = new Date();
+      const ymd = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}`;
+      ics = routineIcs({
+        wake,
+        duration: Math.max(routine.needed, 1),
+        title: text.icsTitle,
+        description: lines.join("\n"),
+        today: ymd,
+        uid: `morning-routine-${ymd}-${wake.replace(":", "")}@aloessential.com`,
+      });
+      el("[data-morning-result]").hidden = false;
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      plan();
+    });
+
+    el("[data-morning-ics]").addEventListener("click", () => {
+      const url = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "morning-routine.ics";
+      document.body.append(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+
+    root.hidden = false;
+    plan();
+  }
+</script>

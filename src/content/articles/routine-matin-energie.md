@@ -3,6 +3,8 @@ title: "Une routine du matin pour plus d'énergie"
 description: "Lumière naturelle, hydratation, mouvement doux : cinq gestes simples pour commencer la journée du bon pied, sans se lever à l'aube."
 category: conseils
 date: 2026-09-17
+updated: 2026-11-26
+tool: morning
 cover: /covers/photos/routine-matin-energie-soleil-levant-aloe-vera.webp
 coverAlt: "Bouteille et verre de boisson à l’aloe vera sur une terrasse minimaliste au bord d’une piscine, avec des feuilles fraîches d’aloe vera et le soleil levant sur la mer en arrière-plan."
 coverTitle: "Routine du matin : une matinée lumineuse et énergisante"
