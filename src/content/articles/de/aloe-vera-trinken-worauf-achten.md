@@ -7,7 +7,8 @@ title: "Aloe vera zum Trinken: worauf Sie achten sollten"
 description: "Gel oder Saft, Aloe-Anteil, Aloin, Zusatzstoffe, Werbeaussagen: so lesen Sie das Etikett eines Aloe-vera-Getränks und wählen bewusst."
 category: nutrition
 date: 2026-10-22
-updated: 2026-10-27
+updated: 2026-11-26
+tool: aloeLabel
 cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
 coverAlt: "Aloe-vera-Getränk im Glas mit Zitrone, Minze und Eiswürfeln, umgeben von frischen Blättern in einer Küche mit hellem Essbereich."
 coverTitle: "Aloe vera zum Trinken: worauf achten?"

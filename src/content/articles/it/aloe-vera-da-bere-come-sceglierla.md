@@ -10,7 +10,8 @@ title: "Aloe vera da bere: come sceglierla"
 description: "Gel o succo, quantità di aloe, aloina, additivi, indicazioni in etichetta: come leggere l'etichetta di un'aloe vera da bere e scegliere con consapevolezza."
 category: nutrition
 date: 2026-10-22
-updated: 2026-10-27
+updated: 2026-11-26
+tool: aloeLabel
 cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
 coverAlt: "Bevanda all'aloe vera in un bicchiere con limone, menta e ghiaccio, circondata da foglie fresche in una cucina aperta su una sala da pranzo luminosa."
 coverTitle: "Aloe vera da bere: come sceglierla?"

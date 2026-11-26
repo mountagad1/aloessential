@@ -3,7 +3,8 @@ title: "Aloe vera à boire : comment bien le choisir"
 description: "Gel ou jus, teneur en aloe, aloïne, additifs, allégations : les repères pour lire une étiquette d'aloe vera à boire et choisir en connaissance de cause."
 category: nutrition
 date: 2026-10-15
-updated: 2026-10-27
+updated: 2026-11-26
+tool: aloeLabel
 cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
 coverAlt: "Boisson à l’aloe vera dans un verre avec citron, menthe et glaçons, entourée de feuilles fraîches dans une cuisine ouverte sur une salle à manger lumineuse."
 coverTitle: "Aloe vera à boire : comment choisir ?"

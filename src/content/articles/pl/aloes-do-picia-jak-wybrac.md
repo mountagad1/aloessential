@@ -7,7 +7,8 @@ title: "Aloes do picia: jak go wybrać"
 description: "Żel czy sok, zawartość aloesu, aloina, dodatki, oświadczenia: jak czytać etykietę napoju z aloesem i świadomie wybrać."
 category: nutrition
 date: 2026-10-23
-updated: 2026-10-27
+updated: 2026-11-26
+tool: aloeLabel
 cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
 coverAlt: "Napój z aloesu w szklance z cytryną, miętą i lodem, otoczony świeżymi liśćmi, w kuchni otwartej na jasną jadalnię."
 coverTitle: "Aloes do picia: jak go wybrać?"

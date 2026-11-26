@@ -14,6 +14,8 @@ import ProductCallout from "./ProductCallout.astro";
 import CoverImage from "./CoverImage.astro";
 import BreakfastBuilder from "./BreakfastBuilder.astro";
 import MorningPlanner from "./MorningPlanner.astro";
+import AloeLabelChecker from "./AloeLabelChecker.astro";
+import { ALOE_LABEL_HEADINGS, ALOE_LABEL_UI } from "../i18n/aloe-label-ui";
 import { BREAKFAST_HEADINGS, BREAKFAST_UI } from "../i18n/breakfast-ui";
 import { MORNING_HEADINGS, MORNING_UI } from "../i18n/morning-ui";
 import { productsForArticle } from "../lib/products";
@@ -50,7 +52,13 @@ const toolHeadings =
           { depth: 2, slug: MORNING_HEADINGS.planner, text: MORNING_UI[locale].planner.title },
           { depth: 2, slug: MORNING_HEADINGS.method, text: MORNING_UI[locale].method.title },
         ]
-      : [];
+      : tool === "aloeLabel"
+        ? [
+            { depth: 2, slug: ALOE_LABEL_HEADINGS.grid, text: ALOE_LABEL_UI[locale].grid.title },
+            { depth: 2, slug: ALOE_LABEL_HEADINGS.checker, text: ALOE_LABEL_UI[locale].checker.title },
+            { depth: 2, slug: ALOE_LABEL_HEADINGS.method, text: ALOE_LABEL_UI[locale].method.title },
+          ]
+        : [];
 const headings = [...bodyHeadings, ...toolHeadings];
 const cat = localizedCategory(category, locale);
 const catPath = categoryPath(locale, cat.slug);
@@ -154,6 +162,7 @@ const related = [...others.filter((a) => a.data.category === category), ...other
         <Content />
         {tool === "breakfast" && <BreakfastBuilder locale={locale} />}
         {tool === "morning" && <MorningPlanner locale={locale} />}
+        {tool === "aloeLabel" && <AloeLabelChecker locale={locale} />}
         {
           article.data.sources.length > 0 && (
             <section class="sources" aria-labelledby="sources-title">

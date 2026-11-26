@@ -7,7 +7,8 @@ title: "Aloe vera para beber: como escolher"
 description: "Gel ou sumo, teor de aloe, aloína, aditivos, alegações: como ler o rótulo de uma bebida de aloe vera e escolher com conhecimento."
 category: nutrition
 date: 2026-10-23
-updated: 2026-10-27
+updated: 2026-11-26
+tool: aloeLabel
 cover: /covers/photos/aloe-vera-a-boire-cuisine-salle-a-manger.webp
 coverAlt: "Bebida de aloe vera num copo com limão, hortelã e gelo, rodeada de folhas frescas numa cozinha aberta para uma sala de jantar luminosa."
 coverTitle: "Aloe vera para beber: como escolher?"

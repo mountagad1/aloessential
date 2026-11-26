@@ -1,0 +1,200 @@
+---
+/*
+ * Label checklist and aloe drink label checker (backlog EAM-04), shown at the
+ * end of the "aloe vera drinks: how to choose" article in every locale
+ * (front matter `tool: aloeLabel`). The checklist and method are static
+ * HTML; the checker runs in the browser (src/data/aloe-label.ts).
+ */
+import { LOCALES, type Locale } from "../i18n/locales";
+import { ALOE_LABEL_HEADINGS, ALOE_LABEL_UI } from "../i18n/aloe-label-ui";
+import { QUESTIONS, REGULATORY_CHECK, type Question } from "../data/aloe-label";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const a = ALOE_LABEL_UI[locale];
+const ids = ALOE_LABEL_HEADINGS;
+const lang = LOCALES[locale].dateLocale;
+const checked = new Intl.DateTimeFormat(lang, { dateStyle: "long", timeZone: "UTC" }).format(new Date(REGULATORY_CHECK));
+const optionLabels = a.checker.options as Record<Question, Record<string, string>>;
+const questions = (Object.keys(QUESTIONS) as Question[]).map((q) => ({
+  q,
+  options: QUESTIONS[q].map((value) => ({ value, label: optionLabels[q][value] })),
+}));
+
+const config = {
+  lang,
+  questions: a.checker.questions,
+  options: a.checker.options,
+  levels: a.checker.levels,
+  verdicts: a.checker.verdicts,
+  explanations: a.checker.explanations,
+  bottle: a.checker.bottle,
+};
+---
+
+<section aria-labelledby={ids.grid}>
+  <h2 id={ids.grid}>{a.grid.title}</h2>
+  <p>{a.grid.intro}</p>
+  <div class="table-wrap">
+    <table class="composition aloe-label-grid">
+      <caption class="small-print">{a.grid.caption}</caption>
+      <thead>
+        <tr>
+          <th scope="col">{a.grid.point}</th>
+          <th scope="col">{a.grid.look}</th>
+          <th scope="col">{a.grid.good}</th>
+          <th scope="col">{a.grid.careful}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          a.grid.rows.map((r) => (
+            <tr>
+              <th scope="row">{r.point}</th>
+              <td>{r.look}</td>
+              <td>{r.good}</td>
+              <td>{r.careful}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="tool aloe-label" aria-labelledby={ids.checker}>
+  <h2 id={ids.checker}>{a.checker.title}</h2>
+  <noscript><p>{a.checker.noscript}</p></noscript>
+  <div data-aloe-label data-config={JSON.stringify(config)} hidden>
+    <p>{a.checker.intro}</p>
+    <form class="tool__form aloe-label__form" data-aloe-label-form>
+      {
+        questions.map(({ q, options }) => (
+          <fieldset class="tool__choices">
+            <legend>{a.checker.questions[q]}</legend>
+            {options.map((o, i) => (
+              <label>
+                <input type="radio" name={q} value={o.value} required={i === 0} />
+                {o.label}
+              </label>
+            ))}
+          </fieldset>
+        ))
+      }
+      <fieldset class="tool__choices aloe-label__bottle">
+        <legend>{a.checker.bottle.title}</legend>
+        <div class="tool__field">
+          <label for="aloe-volume">{a.checker.bottle.volume}</label>
+          <input id="aloe-volume" name="volume" type="number" min="1" step="1" inputmode="numeric" />
+        </div>
+        <div class="tool__field">
+          <label for="aloe-dose">{a.checker.bottle.dose}</label>
+          <input id="aloe-dose" name="doseMl" type="number" min="1" step="1" inputmode="numeric" />
+        </div>
+        <div class="tool__field">
+          <label for="aloe-price">{a.checker.bottle.price}</label>
+          <input id="aloe-price" name="price" type="number" min="0" step="0.01" inputmode="decimal" />
+        </div>
+        <div class="tool__field">
+          <label for="aloe-opened">{a.checker.bottle.opened}</label>
+          <input id="aloe-opened" name="opened" type="number" min="1" step="1" inputmode="numeric" />
+        </div>
+      </fieldset>
+      <button class="btn" type="submit">{a.checker.submit}</button>
+    </form>
+    <div class="tool__result" data-aloe-label-result aria-live="polite" hidden>
+      <p class="tool__headline" data-aloe-label-verdict></p>
+      <ul class="aloe-label__findings" data-aloe-label-findings></ul>
+      <div data-aloe-label-bottle hidden></div>
+      <p class="small-print">{a.checker.pregnancy}</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby={ids.method}>
+  <h2 id={ids.method}>{a.method.title}</h2>
+  {a.method.text.map((p) => <p>{p}</p>)}
+  <p class="small-print">{a.method.checked.replace("{date}", checked)}</p>
+</section>
+
+<script>
+  import { bottleMaths, checkLabel, verdict, type Answers, type Level, type Question } from "../data/aloe-label";
+
+  type Config = {
+    lang: string;
+    questions: Record<Question, string>;
+    options: Record<Question, Record<string, string>>;
+    levels: Record<Level, string>;
+    verdicts: Record<Level, string>;
+    explanations: Record<Question, Record<string, string>>;
+    bottle: { days: string; perDay: string; outlasts: string; fits: string };
+  };
+
+  const root = document.querySelector<HTMLElement>("[data-aloe-label]");
+  if (root) {
+    const c = JSON.parse(root.dataset.config ?? "{}") as Config;
+    const form = root.querySelector<HTMLFormElement>("[data-aloe-label-form]")!;
+    const result = root.querySelector<HTMLElement>("[data-aloe-label-result]")!;
+    const fill = (template: string, values: Record<string, string | number>) =>
+      template.replace(/\{(\w+)\}/g, (_, key) => String(values[key] ?? ""));
+    const money = new Intl.NumberFormat(c.lang, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const num = (v: FormDataEntryValue | null) => Number(String(v ?? "").replace(",", "."));
+    const p = (text: string) => {
+      const el = document.createElement("p");
+      el.textContent = text;
+      return el;
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const answers: Partial<Answers> = {};
+      for (const q of Object.keys(c.questions) as Question[]) {
+        const v = data.get(q);
+        if (v) (answers as Record<string, string>)[q] = String(v);
+      }
+      const findings = checkLabel(answers);
+      const overall = verdict(findings);
+      const headline = result.querySelector<HTMLElement>("[data-aloe-label-verdict]")!;
+      headline.textContent = c.verdicts[overall];
+      headline.dataset.level = overall;
+
+      // Most serious first, in question order within a level.
+      const order: Level[] = ["stop", "check", "good"];
+      const sorted = [...findings].sort((x, y) => order.indexOf(x.level) - order.indexOf(y.level));
+      result.querySelector("[data-aloe-label-findings]")!.replaceChildren(
+        ...sorted.map((f) => {
+          const li = document.createElement("li");
+          li.className = `aloe-label__finding aloe-label__finding--${f.level}`;
+          li.dataset.level = f.level;
+          const answer = f.key.split(".")[1];
+          const badge = document.createElement("strong");
+          badge.textContent = `${c.levels[f.level]} · `;
+          li.append(badge, `${c.options[f.question][answer]}. ${c.explanations[f.question][answer]}`);
+          return li;
+        }),
+      );
+
+      const maths = bottleMaths({ volume: num(data.get("volume")), dose: num(data.get("doseMl")), price: num(data.get("price")), openedDays: num(data.get("opened")) });
+      const bottle = result.querySelector<HTMLElement>("[data-aloe-label-bottle]")!;
+      if (maths) {
+        const opened = num(data.get("opened"));
+        bottle.replaceChildren(
+          p(fill(c.bottle.days, { days: maths.days })),
+          ...(maths.perDay !== null ? [p(fill(c.bottle.perDay, { price: money.format(maths.perDay) }))] : []),
+          ...(maths.outlastsOpened !== null ? [p(fill(maths.outlastsOpened ? c.bottle.outlasts : c.bottle.fits, { opened }))] : []),
+        );
+        bottle.hidden = false;
+      } else {
+        bottle.replaceChildren();
+        bottle.hidden = true;
+      }
+      result.hidden = false;
+    });
+
+    root.hidden = false;
+  }
+</script>

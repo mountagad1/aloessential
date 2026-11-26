@@ -47,10 +47,11 @@ const articles = defineCollection({
       featured: z.boolean().default(false),
       /**
        * Interactive tool shown after the body, in every locale of the article:
-       * "breakfast" (src/components/BreakfastBuilder.astro) or "morning"
-       * (src/components/MorningPlanner.astro).
+       * "breakfast" (src/components/BreakfastBuilder.astro), "morning"
+       * (src/components/MorningPlanner.astro) or "aloeLabel"
+       * (src/components/AloeLabelChecker.astro).
        */
-      tool: z.enum(["breakfast", "morning"]).optional(),
+      tool: z.enum(["breakfast", "morning", "aloeLabel"]).optional(),
       /** LR products discussed in the article; only published ones are shown. */
       products: z.array(reference("products")).default([]),
       /** Byline. Defaults to the site's writer and reviewer (src/data/site.ts). */

@@ -3020,3 +3020,40 @@ main:focus {
   padding-left: var(--space-5);
   list-style: disc;
 }
+
+/* ---------- Aloe drink label checker (aloe drinks article) -------------- */
+
+.aloe-label-grid td {
+  white-space: normal;
+}
+
+.aloe-label__form .tool__choices {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.aloe-label__bottle .tool__field {
+  max-width: 20rem;
+}
+
+.prose .aloe-label__findings {
+  padding-left: 0;
+  list-style: none;
+}
+
+.aloe-label__finding {
+  padding-left: var(--space-3);
+  border-left: 3px solid var(--color-border);
+}
+
+.aloe-label__finding--good {
+  border-left-color: var(--color-leaf);
+}
+
+.aloe-label__finding--check {
+  border-left-color: var(--color-orange);
+}
+
+.aloe-label__finding--stop {
+  border-left-color: #b3261e;
+}
